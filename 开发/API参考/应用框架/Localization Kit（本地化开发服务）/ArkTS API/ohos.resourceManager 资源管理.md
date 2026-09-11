@@ -1,22 +1,30 @@
 # @ohos.resourceManager (资源管理)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-resource-manager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-本模块提供资源获取能力。根据当前的[Configuration](#configuration)配置，获取最匹配的应用资源或系统资源。具体匹配规则参考[资源匹配](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/resource-categories-and-access#资源匹配)。
+本模块提供应用资源和系统资源的访问能力，允许应用根据当前的[Configuration](#configuration)配置，获取最匹配的应用资源或系统资源，支持国际化资源匹配和多设备适配。具体匹配规则参考[资源匹配](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/resource-categories-and-access#资源匹配)。
 
-Configuration配置包括语言、区域、横竖屏、Mcc（移动国家码）和Mnc（移动网络码）、Device capability（设备类型）、Density（分辨率）。
+Configuration配置包括语言-文字-国家地区、横竖屏、颜色模式、Mcc（移动国家码）和Mnc（移动网络码）、设备类型、屏幕密度。
+
+**使用场景**：
+
+ - 应用国际化：根据用户语言和地区自动获取匹配的字符串资源。
+ - 多设备适配：根据设备类型、屏幕密度获取合适的媒体资源。
+ - 动态资源配置：根据设备状态（横竖屏、颜色模式等）获取对应配置的资源。
+
 
 > [!NOTE]
 > 本模块首批接口从API version 6开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { resourceManager } from '@kit.LocalizationKit';
@@ -24,16 +32,15 @@ import { resourceManager } from '@kit.LocalizationKit';
 
 
 
-#### 使用说明
+## 使用说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-从API version 9开始，Stage模型支持通过Context获取资源管理resourceManager对象，无需再导入模块。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-FA模型仍需要先导入模块，再调用[getResourceManager](#resourcemanagergetresourcemanager)接口获取资源管理对象。
+ - FA模型需要先导入模块，再调用[getResourceManager](#resourcemanagergetresourcemanager)接口获取资源管理对象。
+ - 从API version 9开始，Stage模型无需导入模块，支持通过Context获取资源管理resourceManager对象。Context的更多介绍请参考[应用上下文Context](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-context-stage)。
 
-Stage模型下Context的引用方法请参考[Stage模型的Context详细介绍](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-context-stage)。
-
+  
 ```text
 import { UIAbility } from '@kit.AbilityKit';
 import { window } from '@kit.ArkUI';
@@ -48,13 +55,16 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### resourceManager.getResourceManager
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## resourceManager.getResourceManager
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getResourceManager(callback: AsyncCallback&lt;ResourceManager&gt;): void
 
-获取当前应用的资源管理对象，使用callback异步回调。
+获取当前应用的资源管理对象。使用callback异步回调。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -62,9 +72,10 @@ getResourceManager(callback: AsyncCallback&lt;ResourceManager&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback&lt;ResourceManager&gt; | 是 | 回调函数，返回资源管理ResourceManager对象。 |
+| callback | AsyncCallback&lt;ResourceManager&gt; | 是 | 回调函数，返回资源管理对象。 |
 
 
 **示例：**
@@ -96,13 +107,14 @@ export default {
 
 
 
-#### resourceManager.getResourceManager
+## resourceManager.getResourceManager
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getResourceManager(bundleName: string, callback: AsyncCallback&lt;ResourceManager&gt;): void
 
-获取指定应用的资源管理对象，使用callback异步回调。
+获取指定应用的资源管理对象。使用callback异步回调。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -110,10 +122,11 @@ getResourceManager(bundleName: string, callback: AsyncCallback&lt;ResourceManage
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bundleName | string | 是 | 应用包名。 |
-| callback | AsyncCallback&lt;ResourceManager&gt; | 是 | 回调函数，返回应用包名对应的资源管理ResourceManager对象。 |
+| callback | AsyncCallback&lt;ResourceManager&gt; | 是 | 回调函数，返回应用包名对应的资源管理对象。 |
 
 
 **示例：**
@@ -147,13 +160,14 @@ export default {
 
 
 
-#### resourceManager.getResourceManager
+## resourceManager.getResourceManager
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getResourceManager(): Promise&lt;ResourceManager&gt;
 
-获取当前应用的资源管理对象，使用Promise异步回调。
+获取当前应用的资源管理对象。使用Promise异步回调。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -161,9 +175,10 @@ getResourceManager(): Promise&lt;ResourceManager&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;ResourceManager&gt; | Promise对象，返回资源管理ResourceManager对象。 |
+| Promise&lt;ResourceManager&gt; | Promise对象，返回资源管理对象。 |
 
 
 **示例：**
@@ -191,19 +206,21 @@ export default {
 
 
 
-#### resourceManager.getResourceManager
+## resourceManager.getResourceManager
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getResourceManager(bundleName: string): Promise&lt;ResourceManager&gt;
 
-获取指定应用的资源管理对象，使用Promise异步回调。
+获取指定应用的资源管理对象。使用Promise异步回调。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
 **模型约束：** 此接口仅可在FA模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -212,9 +229,10 @@ getResourceManager(bundleName: string): Promise&lt;ResourceManager&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;ResourceManager&gt; | Promise对象，返回应用包名对应的资源管理ResourceManager对象。 |
+| Promise&lt;ResourceManager&gt; | Promise对象，返回应用包名对应的资源管理对象。 |
 
 
 **示例：**
@@ -245,19 +263,21 @@ export default {
 
 
 
-#### resourceManager.getSysResourceManager20+
+## resourceManager.getSysResourceManager20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSysResourceManager(): ResourceManager
 
-获取系统资源管理对象。
+获取系统资源管理对象，用于访问系统预置的资源。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -267,6 +287,7 @@ getSysResourceManager(): ResourceManager
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -296,15 +317,17 @@ try {
 
 
 
-#### Direction
+## Direction
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于表示设备屏幕方向。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Global.ResourceManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -314,15 +337,17 @@ try {
 
 
 
-#### DeviceType
+## DeviceType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于表示当前设备类型。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Global.ResourceManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -337,15 +362,17 @@ try {
 
 
 
-#### ScreenDensity
+## ScreenDensity
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于表示当前设备屏幕密度。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Global.ResourceManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -359,15 +386,17 @@ try {
 
 
 
-#### ColorMode12+
+## ColorMode12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于表示当前设备颜色模式。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Global.ResourceManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -377,13 +406,15 @@ try {
 
 
 
-#### Configuration
+## Configuration
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示当前设备的状态。
 
 **系统能力：** SystemCapability.Global.ResourceManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -398,15 +429,17 @@ try {
 
 
 
-#### DeviceCapability
+## DeviceCapability
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示设备支持的能力。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Global.ResourceManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -416,15 +449,19 @@ try {
 
 
 
-#### RawFileDescriptor9+
+## RawFileDescriptor9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type RawFileDescriptor = _RawFileDescriptor
+
+表示rawfile文件所在HAP的文件描述符信息。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Global.ResourceManager
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -433,15 +470,19 @@ type RawFileDescriptor = _RawFileDescriptor
 
 
 
-#### Resource9+
+## Resource9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Resource = _Resource
+
+表示资源相关信息，包括应用包名、应用模块名、资源ID、资源类型和格式化参数等。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Global.ResourceManager
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -450,11 +491,12 @@ type Resource = _Resource
 
 
 
-#### ResourceManager
+## ResourceManager
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-提供访问应用资源和系统资源的能力。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+提供访问应用资源和系统资源的能力，可访问的资源范围为当前Context对应的HAP/HSP模块中的资源以及所有的系统资源。
 
 > [!NOTE]
 > ResourceManager涉及到的方法，仅限基于TS扩展的声明式开发范式使用。 资源文件在工程的resources目录中定义，通过resName、resId、Resource对象等可以获取对应的字符串、字符串数组、颜色等资源值，resName为资源名称，resId可通过\$r(资源地址).id的方式获取，例如\$r('app.string.test').id。 单HAP包获取自身资源、跨HAP/HSP包获取资源，由于入参为Resource的接口相比于入参为resName、resId的接口耗时更长，因此更推荐使用参数为resName或resId的接口。跨HAP/HSP包获取资源， 需要先使用 createModuleContext 创建对应module的context ，再调用参数为resName或resId的接口。更多请参考 资源访问 。 在API version 22及之前版本，中间码HAR、字节码HAR通过资源ID相关接口访问资源时，因ID无效会抛出异常；从API version 23开始，中间码HAR、字节码HAR通过资源ID相关接口可以正常访问资源，更多请参考 资源访问 。 示例代码中test文件的具体内容请参考 附录 。
@@ -462,9 +504,10 @@ type Resource = _Resource
 
 
 
-#### getStringSync9+
+### getStringSync9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStringSync(resId: number): string
 
@@ -476,12 +519,14 @@ getStringSync(resId: number): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resId | number | 是 | 资源ID值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -491,6 +536,7 @@ getStringSync(resId: number): string
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -536,13 +582,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getStringSync10+
+### getStringSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStringSync(resId: number, ...args: Array<string | number>): string
 
-获取指定资源ID对应的字符串，并根据args参数对字符串进行格式化，使用同步方式返回。
+获取指定资源ID对应的字符串，并使用args参数依次替换字符串中的格式化占位符。使用同步方式返回。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -550,13 +597,15 @@ getStringSync(resId: number, ...args: Array<string | number>): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resId | number | 是 | 资源ID值。 |
-| ...args | Array<string \| number> | 否 | 格式化字符串资源参数。 支持参数类型：%d、%f、%s、%%、%数字$d、%数字$f、%数字$s。 说明：%%转义为%; %数字$d中的数字表示使用args中的第几个参数。 举例：%%d格式化后为%d字符串; %1\$d表示使用第一个参数。 |
+| args | Array<string \| number> | 否 | 格式化字符串资源参数。支持的参数类型包括%d、%f、%s、%%、%数字$d、%数字$f和%数字$s。 说明： - %%转义为%，如%%d格式化后为%d。 - %数字$d中的数字表示参数索引，从1开始计数。如%1\$d表示使用args[0]格式化，%2\$d表示使用args[1]格式化，依此类推。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -567,9 +616,10 @@ getStringSync(resId: number, ...args: Array<string | number>): string
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001001 | Invalid resource ID. |
 | 9001002 | No matching resource is found based on the resource ID. |
 | 9001006 | The resource is referenced cyclically. |
@@ -612,9 +662,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getStringByNameSync9+
+### getStringByNameSync9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStringByNameSync(resName: string): string
 
@@ -626,12 +677,14 @@ getStringByNameSync(resName: string): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resName | string | 是 | 资源名称。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -642,9 +695,10 @@ getStringByNameSync(resName: string): string
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001003 | Invalid resource name. |
 | 9001004 | No matching resource is found based on the resource name. |
 | 9001006 | The resource is referenced cyclically. |
@@ -686,13 +740,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getStringByNameSync10+
+### getStringByNameSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStringByNameSync(resName: string, ...args: Array<string | number>): string
 
-获取指定资源名称对应的字符串，并根据args参数对字符串进行格式化，使用同步方式返回。
+获取指定资源名称对应的字符串，并使用args参数依次替换字符串中的格式化占位符，使用同步方式返回。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -700,13 +755,15 @@ getStringByNameSync(resName: string, ...args: Array<string | number>): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resName | string | 是 | 资源名称。 |
-| ...args | Array<string \| number> | 否 | 格式化字符串资源参数。 支持参数类型：%d、%f、%s、%%、%数字$d、%数字$f、%数字$s。 说明：%%转义为%; %数字$d中的数字表示使用args中的第几个参数。 举例：%%d格式化后为%d字符串; %1\$d表示使用第一个参数。 |
+| args | Array<string \| number> | 否 | 格式化字符串资源参数。支持的参数类型包括%d、%f、%s、%%、%数字$d、%数字$f和%数字$s。 说明： - %%转义为%，如%%d格式化后为%d。 - %数字$d中的数字表示参数索引，从1开始计数。如%1\$d表示使用args[0]格式化，%2\$d表示使用args[1]格式化，依此类推。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -717,13 +774,14 @@ getStringByNameSync(resName: string, ...args: Array<string | number>): string
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001003 | Invalid resource name. |
 | 9001004 | No matching resource is found based on the resource name. |
 | 9001006 | The resource is referenced cyclically. |
-| 9001008 | Failed to format the resource obtained based on the resource Name. |
+| 9001008 | Failed to format the resource obtained based on the resource name. |
 
 
 **示例：**
@@ -762,19 +820,21 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getStringValue9+
+### getStringValue9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStringValue(resId: number, callback: _AsyncCallback&lt;string&gt;): void
 
-获取指定资源ID对应的字符串，使用callback异步回调。
+获取指定资源ID对应的字符串。使用callback异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -785,6 +845,7 @@ getStringValue(resId: number, callback: _AsyncCallback&lt;string&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -829,13 +890,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getStringValue9+
+### getStringValue9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStringValue(resId: number): Promise&lt;string&gt;
 
-获取指定资源ID对应的字符串，使用Promise异步回调。
+获取指定资源ID对应的字符串。使用Promise异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -843,12 +905,14 @@ getStringValue(resId: number): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resId | number | 是 | 资源ID值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -858,6 +922,7 @@ getStringValue(resId: number): Promise&lt;string&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -900,13 +965,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getStringByName9+
+### getStringByName9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStringByName(resName: string, callback: _AsyncCallback&lt;string&gt;): void
 
-获取指定资源名称对应的字符串，使用callback异步回调。
+获取指定资源名称对应的字符串。使用callback异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -914,19 +980,21 @@ getStringByName(resName: string, callback: _AsyncCallback&lt;string&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resName | string | 是 | 资源名称。 |
-| callback | _AsyncCallback&lt;string&gt; | 是 | 返回获取的字符串。 |
+| callback | _AsyncCallback&lt;string&gt; | 是 | 回调函数，返回获取的字符串。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001003 | Invalid resource name. |
 | 9001004 | No matching resource is found based on the resource name. |
 | 9001006 | The resource is referenced cyclically. |
@@ -967,13 +1035,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getStringByName9+
+### getStringByName9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStringByName(resName: string): Promise&lt;string&gt;
 
-获取指定资源名称对应的字符串，使用Promise异步回调。
+获取指定资源名称对应的字符串。使用Promise异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -981,12 +1050,14 @@ getStringByName(resName: string): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resName | string | 是 | 资源名称。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -997,9 +1068,10 @@ getStringByName(resName: string): Promise&lt;string&gt;
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001003 | Invalid resource name. |
 | 9001004 | No matching resource is found based on the resource name. |
 | 9001006 | The resource is referenced cyclically. |
@@ -1038,9 +1110,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getStringArrayValueSync10+
+### getStringArrayValueSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStringArrayValueSync(resId: number): Array&lt;string&gt;
 
@@ -1052,12 +1125,14 @@ getStringArrayValueSync(resId: number): Array&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resId | number | 是 | 资源ID值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1067,6 +1142,7 @@ getStringArrayValueSync(resId: number): Array&lt;string&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1116,9 +1192,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getStringArrayByNameSync10+
+### getStringArrayByNameSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStringArrayByNameSync(resName: string): Array&lt;string&gt;
 
@@ -1130,12 +1207,14 @@ getStringArrayByNameSync(resName: string): Array&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resName | string | 是 | 资源名称。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1146,9 +1225,10 @@ getStringArrayByNameSync(resName: string): Array&lt;string&gt;
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001003 | Invalid resource name. |
 | 9001004 | No matching resource is found based on the resource name. |
 | 9001006 | The resource is referenced cyclically. |
@@ -1194,19 +1274,21 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getStringArrayValue9+
+### getStringArrayValue9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStringArrayValue(resId: number, callback: _AsyncCallback<Array&lt;string&gt;>): void
 
-获取指定资源ID对应的字符串数组，使用callback异步回调。
+获取指定资源ID对应的字符串数组。使用callback异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1217,6 +1299,7 @@ getStringArrayValue(resId: number, callback: _AsyncCallback<Array&lt;string&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1266,13 +1349,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getStringArrayValue9+
+### getStringArrayValue9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStringArrayValue(resId: number): Promise<Array&lt;string&gt;>
 
-获取指定资源ID对应的字符串数组，使用Promise异步回调。
+获取指定资源ID对应的字符串数组。使用Promise异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -1280,12 +1364,14 @@ getStringArrayValue(resId: number): Promise<Array&lt;string&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resId | number | 是 | 资源ID值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1295,6 +1381,7 @@ getStringArrayValue(resId: number): Promise<Array&lt;string&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1343,19 +1430,21 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getStringArrayByName9+
+### getStringArrayByName9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStringArrayByName(resName: string, callback: _AsyncCallback<Array&lt;string&gt;>): void
 
-获取指定资源名称对应的字符串数组，使用callback异步回调。
+获取指定资源名称对应的字符串数组。使用callback异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1367,9 +1456,10 @@ getStringArrayByName(resName: string, callback: _AsyncCallback<Array&lt;string&g
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001003 | Invalid resource name. |
 | 9001004 | No matching resource is found based on the resource name. |
 | 9001006 | The resource is referenced cyclically. |
@@ -1415,13 +1505,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getStringArrayByName9+
+### getStringArrayByName9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStringArrayByName(resName: string): Promise<Array&lt;string&gt;>
 
-获取指定资源名称对应的字符串数组，使用Promise异步回调。
+获取指定资源名称对应的字符串数组。使用Promise异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -1429,12 +1520,14 @@ getStringArrayByName(resName: string): Promise<Array&lt;string&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resName | string | 是 | 资源名称。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1445,9 +1538,10 @@ getStringArrayByName(resName: string): Promise<Array&lt;string&gt;>
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001003 | Invalid resource name. |
 | 9001004 | No matching resource is found based on the resource name. |
 | 9001006 | The resource is referenced cyclically. |
@@ -1492,13 +1586,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getIntPluralStringValueSync18+
+### getIntPluralStringValueSync18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getIntPluralStringValueSync(resId: number, num: number, ...args: Array<string | number>): string
 
-获取指定资源ID对应的[单复数](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/l10n-singular-plural)字符串，并根据args参数对字符串进行格式化，使用同步方式返回。
+获取指定资源ID对应的[单复数](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/l10n-singular-plural)字符串，并使用args参数依次替换字符串中的格式化占位符，使用同步方式返回。
 
 > [!NOTE]
 > 中文环境下，字符串不区分单复数；其他语言环境下，字符串区分单复数，具体规则参考 语言单复数规则 。 在英语、德语等语言中，单复数类型包括基数词（如1、2、3）和序数词（如1st、2nd、3rd），本接口仅支持在基数词类型下使用。
@@ -1510,14 +1605,16 @@ getIntPluralStringValueSync(resId: number, num: number, ...args: Array<string | 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resId | number | 是 | 资源ID值。 |
 | num | number | 是 | 数量值（整数）。根据当前语言的单复数规则获取该数量值对应的字符串。 |
-| ...args | Array<string \| number> | 否 | 格式化字符串资源参数。 支持参数类型：%d、%f、%s、%%、%数字$d、%数字$f、%数字$s。 说明：%%转义为%; %数字$d中的数字表示使用args中的第几个参数。 举例：%%d格式化后为%d字符串; %1\$d表示使用第一个参数。 |
+| args | Array<string \| number> | 否 | 格式化字符串资源参数。支持的参数类型包括%d、%f、%s、%%、%数字$d、%数字$f和%数字$s。 说明： - %%转义为%，如%%d格式化后为%d。 - %数字$d中的数字表示参数索引，从1开始计数。如%1\$d表示使用args[0]格式化，%2\$d表示使用args[1]格式化，依此类推。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1527,6 +1624,7 @@ getIntPluralStringValueSync(resId: number, num: number, ...args: Array<string | 
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1583,13 +1681,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getIntPluralStringByNameSync18+
+### getIntPluralStringByNameSync18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getIntPluralStringByNameSync(resName: string, num: number, ...args: Array<string | number>): string
 
-获取指定资源名称对应的[单复数](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/l10n-singular-plural)字符串，并根据args参数对字符串进行格式化，使用同步方式返回。
+获取指定资源名称对应的[单复数](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/l10n-singular-plural)字符串，并使用args参数依次替换字符串中的格式化占位符，使用同步方式返回。
 
 > [!NOTE]
 > 中文环境下，字符串不区分单复数；其他语言环境下，字符串区分单复数，具体规则参考 语言单复数规则 。 在英语、德语等语言中，单复数类型包括基数词（如1、2、3）和序数词（如1st、2nd、3rd），本接口仅支持在基数词类型下使用。
@@ -1601,14 +1700,16 @@ getIntPluralStringByNameSync(resName: string, num: number, ...args: Array<string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resName | string | 是 | 资源名称。 |
 | num | number | 是 | 数量值（整数）。根据当前语言的单复数规则获取该数量值对应的字符串。 |
-| ...args | Array<string \| number> | 否 | 格式化字符串资源参数。 支持参数类型：%d、%f、%s、%%、%数字$d、%数字$f、%数字$s。 说明：%%转义为%; %数字$d中的数字表示使用args中的第几个参数。 举例：%%d格式化后为%d字符串; %1\$d表示使用第一个参数。 |
+| args | Array<string \| number> | 否 | 格式化字符串资源参数。支持的参数类型包括%d、%f、%s、%%、%数字$d、%数字$f和%数字$s。 说明： - %%转义为%，如%%d格式化后为%d。 - %数字$d中的数字表示参数索引，从1开始计数。如%1\$d表示使用args[0]格式化，%2\$d表示使用args[1]格式化，依此类推。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1618,6 +1719,7 @@ getIntPluralStringByNameSync(resName: string, num: number, ...args: Array<string
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1674,13 +1776,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getDoublePluralStringValueSync18+
+### getDoublePluralStringValueSync18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDoublePluralStringValueSync(resId: number, num: number, ...args: Array<string | number>): string
 
-获取指定资源ID对应的[单复数](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/l10n-singular-plural)字符串，并根据args参数对字符串进行格式化，使用同步方式返回。
+获取指定资源ID对应的[单复数](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/l10n-singular-plural)字符串，并使用args参数依次替换字符串中的格式化占位符，使用同步方式返回。
 
 > [!NOTE]
 > 中文环境下，字符串不区分单复数；其他语言环境下，字符串区分单复数，具体规则参考 语言单复数规则 。 在英语、德语等语言中，单复数类型包括基数词（如1、2、3）和序数词（如1st、2nd、3rd），本接口仅支持在基数词类型下使用。
@@ -1692,14 +1795,16 @@ getDoublePluralStringValueSync(resId: number, num: number, ...args: Array<string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resId | number | 是 | 资源ID值。 |
 | num | number | 是 | 数量值（浮点数）。根据当前语言的单复数规则获取该数量值对应的字符串。 |
-| ...args | Array<string \| number> | 否 | 格式化字符串资源参数。 支持参数类型：%d、%f、%s、%%、%数字$d、%数字$f、%数字$s。 说明：%%转义为%; %数字$d中的数字表示使用args中的第几个参数。 举例：%%d格式化后为%d字符串; %1\$d表示使用第一个参数。 |
+| args | Array<string \| number> | 否 | 格式化字符串资源参数。支持的参数类型包括%d、%f、%s、%%、%数字$d、%数字$f和%数字$s。 说明： - %%转义为%，如%%d格式化后为%d。 - %数字$d中的数字表示参数索引，从1开始计数。如%1\$d表示使用args[0]格式化，%2\$d表示使用args[1]格式化，依此类推。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1709,6 +1814,7 @@ getDoublePluralStringValueSync(resId: number, num: number, ...args: Array<string
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1765,13 +1871,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getDoublePluralStringByNameSync18+
+### getDoublePluralStringByNameSync18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDoublePluralStringByNameSync(resName: string, num: number, ...args: Array<string | number>): string
 
-获取指定资源名称对应的[单复数](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/l10n-singular-plural)字符串，并根据args参数对字符串进行格式化，使用同步方式返回。
+获取指定资源名称对应的[单复数](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/l10n-singular-plural)字符串，并使用args参数依次替换字符串中的格式化占位符，使用同步方式返回。
 
 > [!NOTE]
 > 中文环境下，字符串不区分单复数；其他语言环境下，字符串区分单复数，具体规则参考 语言单复数规则 。 在英语、德语等语言中，单复数类型包括基数词（如1、2、3）和序数词（如1st、2nd、3rd），本接口仅支持在基数词类型下使用。
@@ -1783,14 +1890,16 @@ getDoublePluralStringByNameSync(resName: string, num: number, ...args: Array<str
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resName | string | 是 | 资源名称。 |
 | num | number | 是 | 数量值（浮点数）。根据当前语言的单复数规则获取该数量值对应的字符串。 |
-| ...args | Array<string \| number> | 否 | 格式化字符串资源参数。 支持参数类型：%d、%f、%s、%%、%数字$d、%数字$f、%数字$s。 说明：%%转义为%; %数字$d中的数字表示使用args中的第几个参数。 举例：%%d格式化后为%d字符串; %1\$d表示使用第一个参数。 |
+| args | Array<string \| number> | 否 | 格式化字符串资源参数。支持的参数类型包括%d、%f、%s、%%、%数字$d、%数字$f和%数字$s。 说明： - %%转义为%，如%%d格式化后为%d。 - %数字$d中的数字表示参数索引，从1开始计数。如%1\$d表示使用args[0]格式化，%2\$d表示使用args[1]格式化，依此类推。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1800,6 +1909,7 @@ getDoublePluralStringByNameSync(resName: string, num: number, ...args: Array<str
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1856,9 +1966,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getMediaContentSync10+
+### getMediaContentSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMediaContentSync(resId: number, density?: number): Uint8Array
 
@@ -1870,13 +1981,15 @@ getMediaContentSync(resId: number, density?: number): Uint8Array
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resId | number | 是 | 资源ID值。 |
-| density | number | 否 | 资源获取需要的屏幕密度，0或缺省表示默认屏幕密度。 |
+| density | number | 否 | 资源获取需要的屏幕密度，0或缺省表示默认屏幕密度。取值具体请参考枚举ScreenDensity。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1886,6 +1999,7 @@ getMediaContentSync(resId: number, density?: number): Uint8Array
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1925,9 +2039,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getMediaByNameSync10+
+### getMediaByNameSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMediaByNameSync(resName: string, density?: number): Uint8Array
 
@@ -1939,13 +2054,15 @@ getMediaByNameSync(resName: string, density?: number): Uint8Array
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resName | string | 是 | 资源名称。 |
-| density | number | 否 | 资源获取需要的屏幕密度，0或缺省表示默认屏幕密度。 |
+| density | number | 否 | 资源获取需要的屏幕密度，0或缺省表示默认屏幕密度。取值具体请参考枚举ScreenDensity。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1955,6 +2072,7 @@ getMediaByNameSync(resName: string, density?: number): Uint8Array
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1994,19 +2112,21 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getMediaContent9+
+### getMediaContent9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMediaContent(resId: number, callback: _AsyncCallback&lt;Uint8Array&gt;): void
 
-获取指定资源ID对应的媒体文件内容，使用callback异步回调。
+获取指定资源ID对应的媒体文件内容。使用callback异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2017,6 +2137,7 @@ getMediaContent(resId: number, callback: _AsyncCallback&lt;Uint8Array&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2054,13 +2175,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getMediaContent10+
+### getMediaContent10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMediaContent(resId: number, density: number, callback: _AsyncCallback&lt;Uint8Array&gt;): void
 
-获取指定资源ID对应的指定屏幕密度媒体文件内容，使用callback异步回调。
+获取指定资源ID对应的指定屏幕密度媒体文件内容。使用callback异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -2068,16 +2190,18 @@ getMediaContent(resId: number, density: number, callback: _AsyncCallback&lt;Uint
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resId | number | 是 | 资源ID值。 |
-| density | number | 是 | 资源获取需要的屏幕密度，0表示默认屏幕密度。 |
+| density | number | 是 | 资源获取需要的屏幕密度，0表示默认屏幕密度。取值具体请参考枚举ScreenDensity。 |
 | callback | _AsyncCallback&lt;Uint8Array&gt; | 是 | 回调函数，返回资源ID对应的媒体文件内容。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2114,13 +2238,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getMediaContent9+
+### getMediaContent9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMediaContent(resId: number): Promise&lt;Uint8Array&gt;
 
-获取指定资源ID对应的媒体文件内容，使用Promise异步回调。
+获取指定资源ID对应的媒体文件内容。使用Promise异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -2128,12 +2253,14 @@ getMediaContent(resId: number): Promise&lt;Uint8Array&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resId | number | 是 | 资源ID值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2143,6 +2270,7 @@ getMediaContent(resId: number): Promise&lt;Uint8Array&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2177,13 +2305,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getMediaContent10+
+### getMediaContent10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMediaContent(resId: number, density: number): Promise&lt;Uint8Array&gt;
 
-获取指定资源ID对应的指定屏幕密度媒体文件内容，使用Promise异步回调。
+获取指定资源ID对应的指定屏幕密度媒体文件内容。使用Promise异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -2191,13 +2320,15 @@ getMediaContent(resId: number, density: number): Promise&lt;Uint8Array&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resId | number | 是 | 资源ID值。 |
-| density | number | 是 | 资源获取需要的屏幕密度，0表示默认屏幕密度。 |
+| density | number | 是 | 资源获取需要的屏幕密度，0表示默认屏幕密度。取值具体请参考枚举ScreenDensity。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2207,6 +2338,7 @@ getMediaContent(resId: number, density: number): Promise&lt;Uint8Array&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2241,19 +2373,21 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getMediaByName9+
+### getMediaByName9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMediaByName(resName: string, callback: _AsyncCallback&lt;Uint8Array&gt;): void
 
-获取指定资源名称对应的媒体文件内容，使用callback异步回调。
+获取指定资源名称对应的媒体文件内容。使用callback异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2265,9 +2399,10 @@ getMediaByName(resName: string, callback: _AsyncCallback&lt;Uint8Array&gt;): voi
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001003 | Invalid resource name. |
 | 9001004 | No matching resource is found based on the resource name. |
 
@@ -2300,13 +2435,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getMediaByName10+
+### getMediaByName10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMediaByName(resName: string, density: number, callback: _AsyncCallback&lt;Uint8Array&gt;): void
 
-获取指定资源名称对应的指定屏幕密度媒体文件内容，使用callback异步回调。
+获取指定资源名称对应的指定屏幕密度媒体文件内容。使用callback异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -2314,16 +2450,18 @@ getMediaByName(resName: string, density: number, callback: _AsyncCallback&lt;Uin
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resName | string | 是 | 资源名称。 |
-| density | number | 是 | 资源获取需要的屏幕密度，0表示默认屏幕密度。 |
+| density | number | 是 | 资源获取需要的屏幕密度，0表示默认屏幕密度。取值具体请参考枚举ScreenDensity。 |
 | callback | _AsyncCallback&lt;Uint8Array&gt; | 是 | 回调函数，返回资源名称对应的媒体文件内容。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2360,13 +2498,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getMediaByName9+
+### getMediaByName9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMediaByName(resName: string): Promise&lt;Uint8Array&gt;
 
-获取指定资源名称对应的媒体文件内容，使用Promise异步回调。
+获取指定资源名称对应的媒体文件内容。使用Promise异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -2374,12 +2513,14 @@ getMediaByName(resName: string): Promise&lt;Uint8Array&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resName | string | 是 | 资源名称。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2390,9 +2531,10 @@ getMediaByName(resName: string): Promise&lt;Uint8Array&gt;
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001003 | Invalid resource name. |
 | 9001004 | No matching resource is found based on the resource name. |
 
@@ -2423,13 +2565,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getMediaByName10+
+### getMediaByName10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMediaByName(resName: string, density: number): Promise&lt;Uint8Array&gt;
 
-获取指定资源名称对应的指定屏幕密度媒体文件内容，使用Promise异步回调。
+获取指定资源名称对应的指定屏幕密度媒体文件内容。使用Promise异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -2437,13 +2580,15 @@ getMediaByName(resName: string, density: number): Promise&lt;Uint8Array&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resName | string | 是 | 资源名称。 |
-| density | number | 是 | 资源获取需要的屏幕密度，0表示默认屏幕密度。 |
+| density | number | 是 | 资源获取需要的屏幕密度，0表示默认屏幕密度。取值具体请参考枚举ScreenDensity。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2453,6 +2598,7 @@ getMediaByName(resName: string, density: number): Promise&lt;Uint8Array&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2487,9 +2633,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getMediaContentBase64Sync10+
+### getMediaContentBase64Sync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMediaContentBase64Sync(resId: number, density?: number): string
 
@@ -2501,13 +2648,15 @@ getMediaContentBase64Sync(resId: number, density?: number): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resId | number | 是 | 资源ID值。 |
-| density | number | 否 | 资源获取需要的屏幕密度，0或缺省表示默认屏幕密度。 |
+| density | number | 否 | 资源获取需要的屏幕密度，0或缺省表示默认屏幕密度。取值具体请参考枚举ScreenDensity。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2517,6 +2666,7 @@ getMediaContentBase64Sync(resId: number, density?: number): string
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2556,9 +2706,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getMediaBase64ByNameSync10+
+### getMediaBase64ByNameSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMediaBase64ByNameSync(resName: string, density?: number): string
 
@@ -2570,13 +2721,15 @@ getMediaBase64ByNameSync(resName: string, density?: number): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resName | string | 是 | 资源名称。 |
-| density | number | 否 | 资源获取需要的屏幕密度，0或缺省表示默认屏幕密度。 |
+| density | number | 否 | 资源获取需要的屏幕密度，0或缺省表示默认屏幕密度。取值具体请参考枚举ScreenDensity。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2586,6 +2739,7 @@ getMediaBase64ByNameSync(resName: string, density?: number): string
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2625,19 +2779,21 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getMediaContentBase649+
+### getMediaContentBase649+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMediaContentBase64(resId: number, callback: _AsyncCallback&lt;string&gt;): void
 
-获取指定资源ID对应的图片资源Base64编码，使用callback异步回调。
+获取指定资源ID对应的图片资源Base64编码。使用callback异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2648,6 +2804,7 @@ getMediaContentBase64(resId: number, callback: _AsyncCallback&lt;string&gt;): vo
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2684,13 +2841,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getMediaContentBase6410+
+### getMediaContentBase6410+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMediaContentBase64(resId: number, density: number, callback: _AsyncCallback&lt;string&gt;): void
 
-获取指定资源ID对应的指定屏幕密度图片资源Base64编码，使用callback异步回调。
+获取指定资源ID对应的指定屏幕密度图片资源Base64编码。使用callback异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -2698,16 +2856,18 @@ getMediaContentBase64(resId: number, density: number, callback: _AsyncCallback&l
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resId | number | 是 | 资源ID值。 |
-| density | number | 是 | 资源获取需要的屏幕密度，0表示默认屏幕密度。 |
+| density | number | 是 | 资源获取需要的屏幕密度，0表示默认屏幕密度。取值具体请参考枚举ScreenDensity。 |
 | callback | _AsyncCallback&lt;string&gt; | 是 | 回调函数，返回资源ID值对应的图片资源Base64编码。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2744,13 +2904,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getMediaContentBase649+
+### getMediaContentBase649+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMediaContentBase64(resId: number): Promise&lt;string&gt;
 
-获取指定资源ID对应的图片资源Base64编码，使用Promise异步回调。
+获取指定资源ID对应的图片资源Base64编码。使用Promise异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -2758,12 +2919,14 @@ getMediaContentBase64(resId: number): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resId | number | 是 | 资源ID值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2773,6 +2936,7 @@ getMediaContentBase64(resId: number): Promise&lt;string&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2807,13 +2971,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getMediaContentBase6410+
+### getMediaContentBase6410+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMediaContentBase64(resId: number, density: number): Promise&lt;string&gt;
 
-获取指定资源ID对应的指定屏幕密度图片资源Base64编码，使用Promise异步回调。
+获取指定资源ID对应的指定屏幕密度图片资源Base64编码。使用Promise异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -2821,13 +2986,15 @@ getMediaContentBase64(resId: number, density: number): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resId | number | 是 | 资源ID值。 |
-| density | number | 是 | 资源获取需要的屏幕密度，0表示默认屏幕密度。 |
+| density | number | 是 | 资源获取需要的屏幕密度，0表示默认屏幕密度。取值具体请参考枚举ScreenDensity。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2837,6 +3004,7 @@ getMediaContentBase64(resId: number, density: number): Promise&lt;string&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2871,19 +3039,21 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getMediaBase64ByName9+
+### getMediaBase64ByName9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMediaBase64ByName(resName: string, callback: _AsyncCallback&lt;string&gt;): void
 
-获取指定资源名称对应的图片资源Base64编码，使用callback异步回调。
+获取指定资源名称对应的图片资源Base64编码。使用callback异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2895,9 +3065,10 @@ getMediaBase64ByName(resName: string, callback: _AsyncCallback&lt;string&gt;): v
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001003 | Invalid resource name. |
 | 9001004 | No matching resource is found based on the resource name. |
 
@@ -2930,13 +3101,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getMediaBase64ByName10+
+### getMediaBase64ByName10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMediaBase64ByName(resName: string, density: number, callback: _AsyncCallback&lt;string&gt;): void
 
-获取指定资源名称对应的指定屏幕密度图片资源Base64编码，使用callback异步回调。
+获取指定资源名称对应的指定屏幕密度图片资源Base64编码。使用callback异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -2944,16 +3116,18 @@ getMediaBase64ByName(resName: string, density: number, callback: _AsyncCallback&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resName | string | 是 | 资源名称。 |
-| density | number | 是 | 资源获取需要的屏幕密度，0表示默认屏幕密度。 |
+| density | number | 是 | 资源获取需要的屏幕密度，0表示默认屏幕密度。取值具体请参考枚举ScreenDensity。 |
 | callback | _AsyncCallback&lt;string&gt; | 是 | 回调函数，返回资源名称的图片资源Base64编码。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2990,13 +3164,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getMediaBase64ByName9+
+### getMediaBase64ByName9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMediaBase64ByName(resName: string): Promise&lt;string&gt;
 
-获取指定资源名称对应的图片资源Base64编码，使用Promise异步回调。
+获取指定资源名称对应的图片资源Base64编码。使用Promise异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -3004,12 +3179,14 @@ getMediaBase64ByName(resName: string): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resName | string | 是 | 资源名称。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3020,9 +3197,10 @@ getMediaBase64ByName(resName: string): Promise&lt;string&gt;
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001003 | Invalid resource name. |
 | 9001004 | No matching resource is found based on the resource name. |
 
@@ -3053,13 +3231,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getMediaBase64ByName10+
+### getMediaBase64ByName10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMediaBase64ByName(resName: string, density: number): Promise&lt;string&gt;
 
-获取指定资源名称对应的指定屏幕密度图片资源Base64编码，使用Promise异步回调。
+获取指定资源名称对应的指定屏幕密度图片资源Base64编码。使用Promise异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -3067,13 +3246,15 @@ getMediaBase64ByName(resName: string, density: number): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resName | string | 是 | 资源名称。 |
-| density | number | 是 | 资源获取需要的屏幕密度，0表示默认屏幕密度。 |
+| density | number | 是 | 资源获取需要的屏幕密度，0表示默认屏幕密度。取值具体请参考枚举ScreenDensity。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3083,6 +3264,7 @@ getMediaBase64ByName(resName: string, density: number): Promise&lt;string&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3117,9 +3299,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getDrawableDescriptor10+
+### getDrawableDescriptor10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDrawableDescriptor(resId: number, density?: number, type?: number): DrawableDescriptor
 
@@ -3131,14 +3314,16 @@ getDrawableDescriptor(resId: number, density?: number, type?: number): DrawableD
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resId | number | 是 | 资源ID值。 |
-| density | number | 否 | 资源获取需要的屏幕密度，0或缺省表示默认屏幕密度。 |
-| type11+ | number | 否 | - 1表示获取主题资源包中应用的分层图标资源。 - 0或缺省表示获取应用自身图标资源。 |
+| density | number | 否 | 资源获取需要的屏幕密度，0或缺省表示默认屏幕密度。取值具体请参考枚举ScreenDensity。 |
+| type11+ | number | 否 | 图标类型。默认值为0。 0：表示获取应用自身图标资源。 1：表示获取主题资源包中应用的分层图标资源。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3148,6 +3333,7 @@ getDrawableDescriptor(resId: number, density?: number, type?: number): DrawableD
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3195,9 +3381,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getDrawableDescriptorByName10+
+### getDrawableDescriptorByName10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDrawableDescriptorByName(resName: string, density?: number, type?: number): DrawableDescriptor
 
@@ -3209,14 +3396,16 @@ getDrawableDescriptorByName(resName: string, density?: number, type?: number): D
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resName | string | 是 | 资源名称。 |
-| density | number | 否 | 资源获取需要的屏幕密度，0或缺省表示默认屏幕密度。 |
-| type11+ | number | 否 | - 1表示获取主题资源包中应用的分层图标资源。 - 0或缺省表示获取应用自身图标资源。 |
+| density | number | 否 | 资源获取需要的屏幕密度，0或缺省表示默认屏幕密度。取值具体请参考枚举ScreenDensity。 |
+| type11+ | number | 否 | 图标类型。默认值为0。 0：表示获取应用自身图标资源。 1：表示获取主题资源包中应用的分层图标资源。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3226,6 +3415,7 @@ getDrawableDescriptorByName(resName: string, density?: number, type?: number): D
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3273,9 +3463,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getBoolean9+
+### getBoolean9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBoolean(resId: number): boolean
 
@@ -3287,12 +3478,14 @@ getBoolean(resId: number): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resId | number | 是 | 资源ID值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3302,6 +3495,7 @@ getBoolean(resId: number): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3347,9 +3541,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getBooleanByName9+
+### getBooleanByName9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBooleanByName(resName: string): boolean
 
@@ -3361,12 +3556,14 @@ getBooleanByName(resName: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resName | string | 是 | 资源名称。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3377,9 +3574,10 @@ getBooleanByName(resName: string): boolean
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001003 | Invalid resource name. |
 | 9001004 | No matching resource is found based on the resource name. |
 | 9001006 | The resource is referenced cyclically. |
@@ -3421,9 +3619,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getNumber9+
+### getNumber9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getNumber(resId: number): number
 
@@ -3435,6 +3634,7 @@ getNumber(resId: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resId | number | 是 | 资源ID值。 |
@@ -3442,14 +3642,16 @@ getNumber(resId: number): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| number | 资源ID值对应的数值。 integer对应的是原数值，float不带单位时对应的是原数值，带"vp","fp"单位时对应的是px值，具体参考示例代码。 |
+| number | 资源ID值对应的数值。 integer类型资源返回资源文件中定义的原始数值。 float类型资源不带单位时返回资源文件中定义的原始数值，带"vp"或"fp"单位时返回转换后的像素(px)值。转换公式：像素值 = 原始数值 × densityPixels。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3521,9 +3723,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getNumberByName9+
+### getNumberByName9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getNumberByName(resName: string): number
 
@@ -3535,6 +3738,7 @@ getNumberByName(resName: string): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resName | string | 是 | 资源名称。 |
@@ -3542,14 +3746,16 @@ getNumberByName(resName: string): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| number | 资源名称对应的数值。 integer对应的是原数值，float不带单位时对应的是原数值，带"vp","fp"单位时对应的是px值。 |
+| number | 资源名称对应的数值。 integer类型资源返回资源文件中定义的原始数值。 float类型资源不带单位时返回资源文件中定义的原始数值，带"vp"或"fp"单位时返回转换后的像素(px)值。转换公式：像素值 = 原始数值 × densityPixels。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3621,9 +3827,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getColorSync10+
+### getColorSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getColorSync(resId: number) : number
 
@@ -3635,12 +3842,14 @@ getColorSync(resId: number) : number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resId | number | 是 | 资源ID值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3650,6 +3859,7 @@ getColorSync(resId: number) : number
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3695,9 +3905,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getColorByNameSync10+
+### getColorByNameSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getColorByNameSync(resName: string) : number
 
@@ -3709,12 +3920,14 @@ getColorByNameSync(resName: string) : number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resName | string | 是 | 资源名称。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3724,6 +3937,7 @@ getColorByNameSync(resName: string) : number
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3769,19 +3983,21 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getColor10+
+### getColor10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getColor(resId: number, callback: _AsyncCallback&lt;number&gt;): void
 
-获取指定资源ID对应的颜色值，使用callback异步回调。
+获取指定资源ID对应的颜色值。使用callback异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3792,6 +4008,7 @@ getColor(resId: number, callback: _AsyncCallback&lt;number&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3836,13 +4053,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getColor10+
+### getColor10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getColor(resId: number): Promise&lt;number&gt;
 
-获取指定资源ID对应的颜色值，使用Promise异步回调。
+获取指定资源ID对应的颜色值。使用Promise异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -3850,12 +4068,14 @@ getColor(resId: number): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resId | number | 是 | 资源ID值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3865,6 +4085,7 @@ getColor(resId: number): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3909,19 +4130,21 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getColorByName10+
+### getColorByName10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getColorByName(resName: string, callback: _AsyncCallback&lt;number&gt;): void
 
-获取指定资源名称对应的颜色值，使用callback异步回调。
+获取指定资源名称对应的颜色值。使用callback异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3932,6 +4155,7 @@ getColorByName(resName: string, callback: _AsyncCallback&lt;number&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3976,13 +4200,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getColorByName10+
+### getColorByName10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getColorByName(resName: string): Promise&lt;number&gt;
 
-获取指定资源名称对应的颜色值，使用Promise异步回调。
+获取指定资源名称对应的颜色值。使用Promise异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -3990,12 +4215,14 @@ getColorByName(resName: string): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resName | string | 是 | 资源名称。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4005,6 +4232,7 @@ getColorByName(resName: string): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4049,9 +4277,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getRawFileContentSync10+
+### getRawFileContentSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRawFileContentSync(path: string): Uint8Array
 
@@ -4063,12 +4292,14 @@ getRawFileContentSync(path: string): Uint8Array
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | 是 | rawfile文件路径。 |
+| path | string | 是 | 相对resources/rawfile目录的rawfile文件路径，如"test.txt"、"subdir/test.txt"，不以"/"开头。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4079,9 +4310,10 @@ getRawFileContentSync(path: string): Uint8Array
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001005 | Invalid relative path. |
 
 
@@ -4107,13 +4339,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getRawFileContent9+
+### getRawFileContent9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRawFileContent(path: string, callback: _AsyncCallback&lt;Uint8Array&gt;): void
 
-获取resources/rawfile目录下对应的rawfile文件内容，使用callback异步回调。
+获取resources/rawfile目录下对应的rawfile文件内容。使用callback异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -4121,9 +4354,10 @@ getRawFileContent(path: string, callback: _AsyncCallback&lt;Uint8Array&gt;): voi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | 是 | rawfile文件路径。 |
+| path | string | 是 | 相对resources/rawfile目录的rawfile文件路径，如"test.txt"、"subdir/test.txt"，不以"/"开头。 |
 | callback | _AsyncCallback&lt;Uint8Array&gt; | 是 | 回调函数，返回获取的rawfile文件内容。 |
 
 
@@ -4131,9 +4365,10 @@ getRawFileContent(path: string, callback: _AsyncCallback&lt;Uint8Array&gt;): voi
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001005 | Invalid relative path. |
 
 
@@ -4165,13 +4400,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getRawFileContent9+
+### getRawFileContent9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRawFileContent(path: string): Promise&lt;Uint8Array&gt;
 
-获取resources/rawfile目录下对应的rawfile文件内容，使用Promise异步回调。
+获取resources/rawfile目录下对应的rawfile文件内容。使用Promise异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -4179,12 +4415,14 @@ getRawFileContent(path: string): Promise&lt;Uint8Array&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | 是 | rawfile文件路径。 |
+| path | string | 是 | 相对resources/rawfile目录的rawfile文件路径，如"test.txt"、"subdir/test.txt"，不以"/"开头。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4195,9 +4433,10 @@ getRawFileContent(path: string): Promise&lt;Uint8Array&gt;
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001005 | Invalid relative path. |
 
 
@@ -4227,13 +4466,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getRawFileListSync10+
+### getRawFileListSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRawFileListSync(path: string): Array&lt;string&gt;
 
-获取resources/rawfile目录下文件夹及文件列表，使用同步形式返回。
+获取resources/rawfile下指定子目录中的文件夹及文件列表，使用同步形式返回。
 
 > [!NOTE]
 > 若文件夹中无文件，则抛出异常；若文件夹中有文件，则返回文件夹及文件列表。
@@ -4245,25 +4485,28 @@ getRawFileListSync(path: string): Array&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | 是 | rawfile文件夹路径。 |
+| path | string | 是 | 相对resources/rawfile目录的rawfile子目录路径，如"subdir"，不以"/"开头。 空字符串""表示获取rawfile根目录下的文件夹及文件列表。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Array&lt;string&gt; | rawfile文件目录下的文件夹及文件列表。 |
+| Array&lt;string&gt; | rawfile子目录下的文件夹及文件列表。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001005 | Invalid relative path. |
 
 
@@ -4292,13 +4535,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getRawFileList10+
+### getRawFileList10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRawFileList(path: string, callback: _AsyncCallback<Array&lt;string&gt;>): void
 
-获取resources/rawfile目录下文件夹及文件列表，使用callback异步回调。
+获取resources/rawfile下指定子目录中的文件夹及文件列表。使用callback异步回调。
 
 > [!NOTE]
 > 若文件夹中无文件，则抛出异常；若文件夹中有文件，则返回文件夹及文件列表。
@@ -4310,19 +4554,21 @@ getRawFileList(path: string, callback: _AsyncCallback<Array&lt;string&gt;>): voi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | 是 | rawfile文件夹路径。 |
-| callback | _AsyncCallback<Array&lt;string&gt;> | 是 | 回调函数，返回rawfile文件目录下的文件夹及文件列表。 |
+| path | string | 是 | 相对resources/rawfile目录的rawfile子目录路径，如"subdir"，不以"/"开头。 空字符串""表示获取rawfile根目录下的文件夹及文件列表。 |
+| callback | _AsyncCallback<Array&lt;string&gt;> | 是 | 回调函数，返回rawfile子目录下的文件夹及文件列表。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001005 | Invalid relative path. |
 
 
@@ -4350,13 +4596,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getRawFileList10+
+### getRawFileList10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRawFileList(path: string): Promise<Array&lt;string&gt;>
 
-获取resources/rawfile目录下文件夹及文件列表，使用Promise异步回调。
+获取resources/rawfile下指定子目录中的文件夹及文件列表。使用Promise异步回调。
 
 > [!NOTE]
 > 若文件夹中无文件，则抛出异常；若文件夹中有文件，则返回文件夹及文件列表。
@@ -4368,25 +4615,28 @@ getRawFileList(path: string): Promise<Array&lt;string&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | 是 | rawfile文件夹路径。 |
+| path | string | 是 | 相对resources/rawfile目录的rawfile子目录路径，如"subdir"，不以"/"开头。 空字符串""表示获取rawfile根目录下的文件夹及文件列表。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise<Array&lt;string&gt;> | Promise对象，返回rawfile文件目录下的文件夹及文件列表。 |
+| Promise<Array&lt;string&gt;> | Promise对象，返回rawfile子目录下的文件夹及文件列表。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001005 | Invalid relative path. |
 
 
@@ -4414,9 +4664,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getRawFdSync10+
+### getRawFdSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRawFdSync(path: string): RawFileDescriptor
 
@@ -4432,12 +4683,14 @@ getRawFdSync(path: string): RawFileDescriptor
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | 是 | rawfile文件路径。 |
+| path | string | 是 | 相对resources/rawfile目录的rawfile文件路径，如"test.txt"、"subdir/test.txt"，不以"/"开头。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4448,9 +4701,10 @@ getRawFdSync(path: string): RawFileDescriptor
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001005 | Invalid relative path. |
 
 
@@ -4476,13 +4730,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getRawFd9+
+### getRawFd9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRawFd(path: string, callback: _AsyncCallback&lt;RawFileDescriptor&gt;): void
 
-获取resources/rawfile目录下对应rawfile文件所在HAP的文件描述符（fd），使用callback异步回调。
+获取resources/rawfile目录下对应rawfile文件所在HAP的文件描述符（fd）。使用callback异步回调。
 
 > [!NOTE]
 > 文件描述符（fd）使用完毕后需调用 closeRawFdSync 或 closeRawFd 关闭fd，避免资源泄露。
@@ -4494,9 +4749,10 @@ getRawFd(path: string, callback: _AsyncCallback&lt;RawFileDescriptor&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | 是 | rawfile文件路径。 |
+| path | string | 是 | 相对resources/rawfile目录的rawfile文件路径，如"test.txt"、"subdir/test.txt"，不以"/"开头。 |
 | callback | _AsyncCallback&lt;RawFileDescriptor&gt; | 是 | 回调函数，返回的rawfile文件所在HAP的文件描述符（fd）。 |
 
 
@@ -4504,9 +4760,10 @@ getRawFd(path: string, callback: _AsyncCallback&lt;RawFileDescriptor&gt;): void
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001005 | Invalid relative path. |
 
 
@@ -4541,13 +4798,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getRawFd9+
+### getRawFd9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRawFd(path: string): Promise&lt;RawFileDescriptor&gt;
 
-获取resources/rawfile目录下rawfile文件所在HAP的文件描述符（fd），使用Promise异步回调。
+获取resources/rawfile目录下rawfile文件所在HAP的文件描述符（fd）。使用Promise异步回调。
 
 > [!NOTE]
 > 文件描述符（fd）使用完毕后需调用 closeRawFdSync 或 closeRawFd 关闭fd，避免资源泄露。
@@ -4559,12 +4817,14 @@ getRawFd(path: string): Promise&lt;RawFileDescriptor&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | 是 | rawfile文件路径。 |
+| path | string | 是 | 相对resources/rawfile目录的rawfile文件路径，如"test.txt"、"subdir/test.txt"，不以"/"开头。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4575,9 +4835,10 @@ getRawFd(path: string): Promise&lt;RawFileDescriptor&gt;
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001005 | Invalid relative path. |
 
 
@@ -4610,9 +4871,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### closeRawFdSync10+
+### closeRawFdSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 closeRawFdSync(path: string): void
 
@@ -4624,18 +4886,20 @@ closeRawFdSync(path: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | 是 | rawfile文件路径 。 |
+| path | string | 是 | 相对resources/rawfile目录的rawfile文件路径，如"test.txt"、"subdir/test.txt"，不以"/"开头。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001005 | Invalid relative path. |
 
 
@@ -4665,13 +4929,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### closeRawFd9+
+### closeRawFd9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 closeRawFd(path: string, callback: _AsyncCallback&lt;void&gt;): void
 
-关闭resources/rawfile目录下rawfile文件所在HAP的文件描述符（fd），使用callback异步回调。
+关闭resources/rawfile目录下rawfile文件所在HAP的文件描述符（fd）。使用callback异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -4679,9 +4944,10 @@ closeRawFd(path: string, callback: _AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | 是 | rawfile文件路径。 |
+| path | string | 是 | 相对resources/rawfile目录的rawfile文件路径，如"test.txt"、"subdir/test.txt"，不以"/"开头。 |
 | callback | _AsyncCallback&lt;void&gt; | 是 | 回调函数。当关闭rawfile所在HAP的文件描述符（fd）成功，err为undefined，否则为错误对象。 |
 
 
@@ -4689,9 +4955,10 @@ closeRawFd(path: string, callback: _AsyncCallback&lt;void&gt;): void
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001005 | Invalid relative path. |
 
 
@@ -4725,13 +4992,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### closeRawFd9+
+### closeRawFd9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 closeRawFd(path: string): Promise&lt;void&gt;
 
-关闭resources/rawfile目录下rawfile文件所在HAP的文件描述符（fd），使用Promise异步回调。
+关闭resources/rawfile目录下rawfile文件所在HAP的文件描述符（fd）。使用Promise异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -4739,12 +5007,14 @@ closeRawFd(path: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | 是 | rawfile文件路径。 |
+| path | string | 是 | 相对resources/rawfile目录的rawfile文件路径，如"test.txt"、"subdir/test.txt"，不以"/"开头。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4755,9 +5025,10 @@ closeRawFd(path: string): Promise&lt;void&gt;
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001005 | Invalid relative path. |
 
 
@@ -4786,9 +5057,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getConfigurationSync10+
+### getConfigurationSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getConfigurationSync(): Configuration
 
@@ -4799,6 +5071,7 @@ getConfigurationSync(): Configuration
 **系统能力：** SystemCapability.Global.ResourceManager
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4825,19 +5098,21 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getConfiguration
+### getConfiguration
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getConfiguration(callback: _AsyncCallback&lt;Configuration&gt;): void
 
-获取设备的Configuration，使用callback异步回调。
+获取设备的Configuration。使用callback异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4854,12 +5129,12 @@ import { resourceManager } from '@kit.LocalizationKit';
 export default class EntryAbility extends UIAbility {
     onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
         try {
-            this.context.resourceManager.getConfiguration((error: BusinessError, value: resourceManager.Configuration) => {
+            this.context.resourceManager.getConfiguration((error: BusinessError, config: resourceManager.Configuration) => {
                 if (error != null) {
                     console.error("getConfiguration callback error is " + error);
                 } else {
-                    let direction = value.direction;
-                    let locale = value.locale;
+                    let direction = config.direction;
+                    let locale = config.locale;
                 }
             });
         } catch (error) {
@@ -4871,19 +5146,21 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getConfiguration
+### getConfiguration
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getConfiguration(): Promise&lt;Configuration&gt;
 
-获取设备的Configuration，使用Promise异步回调。
+获取设备的Configuration。使用Promise异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4900,9 +5177,9 @@ import { resourceManager } from '@kit.LocalizationKit';
 export default class EntryAbility extends UIAbility {
     onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
         try {
-            this.context.resourceManager.getConfiguration().then((value: resourceManager.Configuration) => {
-                let direction = value.direction;
-                let locale = value.locale;
+            this.context.resourceManager.getConfiguration().then((config: resourceManager.Configuration) => {
+                let direction = config.direction;
+                let locale = config.locale;
             }).catch((error: BusinessError) => {
                 console.error("getConfiguration promise error is " + error);
             });
@@ -4915,9 +5192,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getDeviceCapabilitySync10+
+### getDeviceCapabilitySync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDeviceCapabilitySync(): DeviceCapability
 
@@ -4928,6 +5206,7 @@ getDeviceCapabilitySync(): DeviceCapability
 **系统能力：** SystemCapability.Global.ResourceManager
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4954,19 +5233,21 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getDeviceCapability
+### getDeviceCapability
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDeviceCapability(callback: _AsyncCallback&lt;DeviceCapability&gt;): void
 
-获取设备的DeviceCapability，使用callback异步回调。
+获取设备的DeviceCapability。使用callback异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5000,19 +5281,21 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getDeviceCapability
+### getDeviceCapability
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDeviceCapability(): Promise&lt;DeviceCapability&gt;
 
-获取设备的DeviceCapability，使用Promise异步回调。
+获取设备的DeviceCapability。使用Promise异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5044,13 +5327,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### addResource10+
+### addResource10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addResource(path: string): void
 
-应用运行时加载指定的资源路径，实现资源覆盖。
+应用运行时加载指定的overlay资源，实现主题切换或资源覆盖。
 
 > [!NOTE]
 > rawfile和resfile目录不支持资源覆盖。
@@ -5062,18 +5346,20 @@ addResource(path: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | 是 | 资源路径。 |
+| path | string | 是 | 待加载的HSP或HAP资源包的绝对路径。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001010 | Invalid overlay path. |
 
 
@@ -5100,13 +5386,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### removeResource10+
+### removeResource10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeResource(path: string): void
 
-应用运行时移除指定的资源路径，还原被覆盖前的资源。
+应用运行时移除指定的overlay资源，还原被覆盖前的资源。
 
 > [!NOTE]
 > rawfile和resfile目录不支持资源覆盖。
@@ -5118,18 +5405,20 @@ removeResource(path: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | 是 | 资源路径。 |
+| path | string | 是 | 待移除的HSP或HAP资源包的绝对路径。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001010 | Invalid overlay path. |
 
 
@@ -5156,9 +5445,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getLocales11+
+### getLocales11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLocales(includeSystem?: boolean): Array&lt;string&gt;
 
@@ -5170,12 +5460,14 @@ getLocales(includeSystem?: boolean): Array&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | includeSystem | boolean | 否 | 是否包含系统资源，默认值为false。 - false：表示仅获取应用资源的语言列表。 - true：表示获取系统资源和应用资源的语言列表。 当使用系统资源管理对象获取语言列表时，includeSystem值无效，始终返回系统资源语言列表。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5186,9 +5478,10 @@ getLocales(includeSystem?: boolean): Array&lt;string&gt;
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 
 
 **示例：**
@@ -5229,9 +5522,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getSymbol11+
+### getSymbol11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSymbol(resId: number): number
 
@@ -5243,12 +5537,14 @@ getSymbol(resId: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resId | number | 是 | 资源ID值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5258,6 +5554,7 @@ getSymbol(resId: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5291,9 +5588,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getSymbolByName11+
+### getSymbolByName11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSymbolByName(resName: string): number
 
@@ -5305,12 +5603,14 @@ getSymbolByName(resName: string): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resName | string | 是 | 资源名称。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5320,6 +5620,7 @@ getSymbolByName(resName: string): number
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5353,9 +5654,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### isRawDir12+
+### isRawDir12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isRawDir(path: string): boolean
 
@@ -5367,12 +5669,14 @@ isRawDir(path: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | 是 | rawfile路径。 |
+| path | string | 是 | 相对于resources/rawfile目录的rawfile文件或子目录路径。格式为不以"/"开头的相对路径，如"test.txt"、"subdir"。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5383,9 +5687,10 @@ isRawDir(path: string): boolean
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001005 | Invalid relative path. |
 
 
@@ -5420,9 +5725,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getOverrideResourceManager12+
+### getOverrideResourceManager12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOverrideResourceManager(configuration?: Configuration): ResourceManager
 
@@ -5436,12 +5742,14 @@ getOverrideResourceManager(configuration?: Configuration): ResourceManager
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | configuration | Configuration | 否 | 指定想要获取的资源配置。 通过getOverrideConfiguration获取差异化配置后，根据需求修改配置项，再作为参数传入该函数。 若缺省则表示使用当前系统的configuration。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5452,9 +5760,10 @@ getOverrideResourceManager(configuration?: Configuration): ResourceManager
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 
 
 **示例：**
@@ -5482,19 +5791,23 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getOverrideConfiguration12+
+### getOverrideConfiguration12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOverrideConfiguration(): Configuration
 
-获取差异化资源的配置，使用同步方式返回。普通资源管理对象与通过它的[getOverrideResourceManager](#getoverrideresourcemanager12)接口获取的差异化资源管理对象调用该方法可获得相同的返回值。
+获取差异化资源的配置，使用同步方式返回。
+
+无论是普通资源管理对象，还是通过[getOverrideResourceManager](#getoverrideresourcemanager12)接口获取的差异化资源管理对象，调用该接口都会返回相同的配置信息。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5526,19 +5839,23 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### updateOverrideConfiguration12+
+### updateOverrideConfiguration12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateOverrideConfiguration(configuration: Configuration): void
 
-更新差异化资源配置。普通资源管理对象与通过它的[getOverrideResourceManager](#getoverrideresourcemanager12)接口获取的差异化资源管理对象调用该方法均可更新差异化资源管理对象的配置。
+更新差异化资源管理对象的配置。
+
+无论是普通资源管理对象，还是通过[getOverrideResourceManager](#getoverrideresourcemanager12)接口获取的差异化资源管理对象，调用该方法均可更新差异化资源管理对象的配置。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5549,9 +5866,10 @@ updateOverrideConfiguration(configuration: Configuration): void
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 
 
 **示例：**
@@ -5579,9 +5897,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getResourceName
+### getResourceName
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getResourceName(resId: number): string
 
@@ -5597,12 +5916,14 @@ getResourceName(resId: number): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resId | number | 是 | 资源ID值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5612,6 +5933,7 @@ getResourceName(resId: number): string
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5654,13 +5976,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### release(deprecated)
+### release(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release()
 
-释放创建的resourceManager, 此接口暂不支持。
+释放创建的resourceManager。此接口暂不支持，调用后无实际作用。
 
 > [!NOTE]
 > 从API version 7开始支持，从API version 12开始废弃。
@@ -5682,13 +6005,14 @@ try {
 
 
 
-#### getString(deprecated)
+### getString(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getString(resId: number, callback: AsyncCallback&lt;string&gt;): void
 
-获取指定资源ID对应的字符串，使用callback异步回调。
+获取指定资源ID对应的字符串。使用callback异步回调。
 
 > [!NOTE]
 > 从API version 6开始支持，从API version 9开始废弃，建议使用 getStringValue 替代。
@@ -5697,6 +6021,7 @@ getString(resId: number, callback: AsyncCallback&lt;string&gt;): void
 **系统能力：** SystemCapability.Global.ResourceManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5720,13 +6045,14 @@ resourceManager.getResourceManager((error, mgr) => {
 
 
 
-#### getString(deprecated)
+### getString(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getString(resId: number): Promise&lt;string&gt;
 
-获取指定资源ID对应的字符串，使用Promise异步回调。
+获取指定资源ID对应的字符串。使用Promise异步回调。
 
 > [!NOTE]
 > 从API version 6开始支持，从API version 9开始废弃，建议使用 getStringValue 替代。
@@ -5736,12 +6062,14 @@ getString(resId: number): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resId | number | 是 | 资源ID值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5764,16 +6092,17 @@ resourceManager.getResourceManager((error, mgr) => {
 
 
 
-#### getStringSync(deprecated)
+### getStringSync(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStringSync(resource: Resource): string
 
 获取指定resource对象对应的字符串，使用同步方式返回。
 
 > [!NOTE]
-> 从API version 9开始支持，从API version 20开始废弃，建议使用 getStringByNameSync 或 getStringSync 替代。
+> 从API version 9开始支持，从API version 20开始废弃，建议使用 getStringSync 替代。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -5784,12 +6113,14 @@ getStringSync(resource: Resource): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resource | Resource | 是 | 资源信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5800,9 +6131,10 @@ getStringSync(resource: Resource): string
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001001 | Invalid resource ID. |
 | 9001002 | No matching resource is found based on the resource ID. |
 | 9001006 | The resource is referenced cyclically. |
@@ -5844,16 +6176,17 @@ try {
 
 
 
-#### getStringSync(deprecated)
+### getStringSync(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStringSync(resource: Resource, ...args: Array<string | number>): string
 
-获取指定resource对象对应的字符串，并根据args参数对字符串进行格式化，使用同步方式返回。
+获取指定resource对象对应的字符串，并使用args参数依次替换字符串中的格式化占位符，使用同步方式返回。
 
 > [!NOTE]
-> 从API version 10开始支持，从API version 20开始废弃，建议使用 getStringByNameSync 或 getStringSync 替代。
+> 从API version 10开始支持，从API version 20开始废弃，建议使用 getStringSync 替代。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -5864,13 +6197,15 @@ getStringSync(resource: Resource, ...args: Array<string | number>): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resource | Resource | 是 | 资源信息。 |
-| ...args | Array<string \| number> | 否 | 格式化字符串资源参数。 支持参数类型：%d、%f、%s、%%、%数字$d、%数字$f、%数字$s。 说明：%%转义为%; %数字$d中的数字表示使用args中的第几个参数。 举例：%%d格式化后为%d字符串; %1\$d表示使用第一个参数。 |
+| args | Array<string \| number> | 否 | 格式化字符串资源参数。支持的参数类型包括%d、%f、%s、%%、%数字$d、%数字$f和%数字$s。 说明： - %%转义为%，如%%d格式化后为%d。 - %数字$d中的数字表示参数索引，从1开始计数。如%1\$d表示使用args[0]格式化，%2\$d表示使用args[1]格式化，依此类推。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5881,9 +6216,10 @@ getStringSync(resource: Resource, ...args: Array<string | number>): string
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001001 | Invalid resource ID. |
 | 9001002 | No matching resource is found based on the resource ID. |
 | 9001006 | The resource is referenced cyclically. |
@@ -5926,16 +6262,17 @@ try {
 
 
 
-#### getStringValue(deprecated)
+### getStringValue(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStringValue(resource: Resource, callback: _AsyncCallback&lt;string&gt;): void
 
-获取指定resource对象对应的字符串，使用callback异步回调。
+获取指定resource对象对应的字符串。使用callback异步回调。
 
 > [!NOTE]
-> 从API version 9开始支持，从API version 20开始废弃，建议使用 getStringByName 或 getStringValue 替代。
+> 从API version 9开始支持，从API version 20开始废弃，建议使用 getStringValue 替代。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -5945,6 +6282,7 @@ getStringValue(resource: Resource, callback: _AsyncCallback&lt;string&gt;): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5956,9 +6294,10 @@ getStringValue(resource: Resource, callback: _AsyncCallback&lt;string&gt;): void
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001001 | Invalid resource ID. |
 | 9001002 | No matching resource is found based on the resource ID. |
 | 9001006 | The resource is referenced cyclically. |
@@ -5999,16 +6338,17 @@ this.context.resourceManager.getStringValue(resource, (error: BusinessError, val
 
 
 
-#### getStringValue(deprecated)
+### getStringValue(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStringValue(resource: Resource): Promise&lt;string&gt;
 
-获取指定resource对象对应的字符串，使用Promise异步回调。
+获取指定resource对象对应的字符串。使用Promise异步回调。
 
 > [!NOTE]
-> 从API version 9开始支持，从API version 20开始废弃，建议使用 getStringByName 或 getStringValue 替代。
+> 从API version 9开始支持，从API version 20开始废弃，建议使用 getStringValue 替代。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -6019,12 +6359,14 @@ getStringValue(resource: Resource): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resource | Resource | 是 | 资源信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6035,9 +6377,10 @@ getStringValue(resource: Resource): Promise&lt;string&gt;
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001001 | Invalid resource ID. |
 | 9001002 | No matching resource is found based on the resource ID. |
 | 9001006 | The resource is referenced cyclically. |
@@ -6066,13 +6409,14 @@ this.context.resourceManager.getStringValue(resource, (error: BusinessError, val
 
 
 
-#### getStringArray(deprecated)
+### getStringArray(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStringArray(resId: number, callback: AsyncCallback<Array&lt;string&gt;>): void
 
-获取指定资源ID对应的字符串数组，使用callback异步回调。
+获取指定资源ID对应的字符串数组。使用callback异步回调。
 
 > [!NOTE]
 > 从API version 6开始支持，从API version 9开始废弃，建议使用 getStringArrayValue 替代。
@@ -6081,6 +6425,7 @@ getStringArray(resId: number, callback: AsyncCallback<Array&lt;string&gt;>): voi
 **系统能力：** SystemCapability.Global.ResourceManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6104,13 +6449,14 @@ resourceManager.getResourceManager((error, mgr) => {
 
 
 
-#### getStringArray(deprecated)
+### getStringArray(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStringArray(resId: number): Promise<Array&lt;string&gt;>
 
-获取指定资源ID对应的字符串数组，使用Promise异步回调。
+获取指定资源ID对应的字符串数组。使用Promise异步回调。
 
 > [!NOTE]
 > 从API version 6开始支持，从API version 9开始废弃，建议使用 getStringArrayValue 替代。
@@ -6120,12 +6466,14 @@ getStringArray(resId: number): Promise<Array&lt;string&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resId | number | 是 | 资源ID值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6148,16 +6496,17 @@ resourceManager.getResourceManager((error, mgr) => {
 
 
 
-#### getStringArrayValueSync(deprecated)
+### getStringArrayValueSync(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStringArrayValueSync(resource: Resource): Array&lt;string&gt;
 
 获取指定resource对象对应的字符串数组，使用同步方式返回。
 
 > [!NOTE]
-> 从API version 10开始支持，从API version 20开始废弃，建议使用 getStringArrayByNameSync 或 getStringArrayValueSync 替代。
+> 从API version 10开始支持，从API version 20开始废弃，建议使用 getStringArrayValueSync 替代。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -6168,12 +6517,14 @@ getStringArrayValueSync(resource: Resource): Array&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resource | Resource | 是 | 资源信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6184,9 +6535,10 @@ getStringArrayValueSync(resource: Resource): Array&lt;string&gt;
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001001 | Invalid resource ID. |
 | 9001002 | No matching resource is found based on the resource ID. |
 | 9001006 | The resource is referenced cyclically. |
@@ -6232,16 +6584,17 @@ try {
 
 
 
-#### getStringArrayValue(deprecated)
+### getStringArrayValue(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStringArrayValue(resource: Resource, callback: _AsyncCallback<Array&lt;string&gt;>): void
 
-获取指定resource对象对应的字符串数组，使用callback异步回调。
+获取指定resource对象对应的字符串数组。使用callback异步回调。
 
 > [!NOTE]
-> 从API version 9开始支持，从API version 20开始废弃，建议使用 getStringArrayByName 或 getStringArrayValue 替代。
+> 从API version 9开始支持，从API version 20开始废弃，建议使用 getStringArrayValue 替代。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -6251,6 +6604,7 @@ getStringArrayValue(resource: Resource, callback: _AsyncCallback<Array&lt;string
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6262,9 +6616,10 @@ getStringArrayValue(resource: Resource, callback: _AsyncCallback<Array&lt;string
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001001 | Invalid resource ID. |
 | 9001002 | No matching resource is found based on the resource ID. |
 | 9001006 | The resource is referenced cyclically. |
@@ -6309,16 +6664,17 @@ this.context.resourceManager.getStringArrayValue(resource, (error: BusinessError
 
 
 
-#### getStringArrayValue(deprecated)
+### getStringArrayValue(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStringArrayValue(resource: Resource): Promise<Array&lt;string&gt;>
 
-获取指定resource对象对应的字符串数组，使用Promise异步回调。
+获取指定resource对象对应的字符串数组。使用Promise异步回调。
 
 > [!NOTE]
-> 从API version 9开始支持，从API version 20开始废弃，建议使用 getStringArrayByName 或 getStringArrayValue 替代。
+> 从API version 9开始支持，从API version 20开始废弃，建议使用 getStringArrayValue 替代。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -6329,12 +6685,14 @@ getStringArrayValue(resource: Resource): Promise<Array&lt;string&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resource | Resource | 是 | 资源信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6345,9 +6703,10 @@ getStringArrayValue(resource: Resource): Promise<Array&lt;string&gt;>
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001001 | Invalid resource ID. |
 | 9001002 | No matching resource is found based on the resource ID. |
 | 9001006 | The resource is referenced cyclically. |
@@ -6392,13 +6751,14 @@ this.context.resourceManager.getStringArrayValue(resource)
 
 
 
-#### getMedia(deprecated)
+### getMedia(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMedia(resId: number, callback: AsyncCallback&lt;Uint8Array&gt;): void
 
-获取指定资源ID对应的媒体文件内容，使用callback异步回调。
+获取指定资源ID对应的媒体文件内容。使用callback异步回调。
 
 > [!NOTE]
 > 从API version 6开始支持，从API version 9开始废弃，建议使用 getMediaContent 替代。
@@ -6407,6 +6767,7 @@ getMedia(resId: number, callback: AsyncCallback&lt;Uint8Array&gt;): void
 **系统能力：** SystemCapability.Global.ResourceManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6430,13 +6791,14 @@ resourceManager.getResourceManager((error, mgr) => {
 
 
 
-#### getMedia(deprecated)
+### getMedia(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMedia(resId: number): Promise&lt;Uint8Array&gt;
 
-获取指定资源ID对应的媒体文件内容，使用Promise异步回调。
+获取指定资源ID对应的媒体文件内容。使用Promise异步回调。
 
 > [!NOTE]
 > 从API version 6开始支持，从API version 9开始废弃，建议使用 getMediaContent 替代。
@@ -6446,12 +6808,14 @@ getMedia(resId: number): Promise&lt;Uint8Array&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resId | number | 是 | 资源ID值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6474,16 +6838,17 @@ resourceManager.getResourceManager((error, mgr) => {
 
 
 
-#### getMediaContentSync(deprecated)
+### getMediaContentSync(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMediaContentSync(resource: Resource, density?: number): Uint8Array
 
 获取指定resource对象对应的默认或指定的屏幕密度媒体文件内容，使用同步方式返回。
 
 > [!NOTE]
-> 从API version 10开始支持，从API version 20开始废弃，建议使用 getMediaByNameSync 或 getMediaContentSync 替代。
+> 从API version 10开始支持，从API version 20开始废弃，建议使用 getMediaContentSync 替代。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -6494,13 +6859,15 @@ getMediaContentSync(resource: Resource, density?: number): Uint8Array
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resource | Resource | 是 | 资源信息。 |
-| density | number | 否 | 资源获取需要的屏幕密度，0或缺省表示默认屏幕密度。 |
+| density | number | 否 | 资源获取需要的屏幕密度，0或缺省表示默认屏幕密度。取值具体请参考枚举ScreenDensity。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6511,9 +6878,10 @@ getMediaContentSync(resource: Resource, density?: number): Uint8Array
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed. |
 | 9001001 | Invalid resource ID. |
 | 9001002 | No matching resource is found based on the resource ID. |
 
@@ -6548,16 +6916,17 @@ try {
 
 
 
-#### getMediaContent(deprecated)
+### getMediaContent(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMediaContent(resource: Resource, callback: _AsyncCallback&lt;Uint8Array&gt;): void
 
-获取指定resource对象对应的媒体文件内容，使用callback异步回调。
+获取指定resource对象对应的媒体文件内容。使用callback异步回调。
 
 > [!NOTE]
-> 从API version 9开始支持，从API version 20开始废弃，建议使用 getMediaByName 或 getMediaContent 替代。
+> 从API version 9开始支持，从API version 20开始废弃，建议使用 getMediaContent 替代。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -6567,6 +6936,7 @@ getMediaContent(resource: Resource, callback: _AsyncCallback&lt;Uint8Array&gt;):
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6578,9 +6948,10 @@ getMediaContent(resource: Resource, callback: _AsyncCallback&lt;Uint8Array&gt;):
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001001 | Invalid resource ID. |
 | 9001002 | No matching resource is found based on the resource ID. |
 
@@ -6613,16 +6984,17 @@ try {
 
 
 
-#### getMediaContent(deprecated)
+### getMediaContent(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMediaContent(resource: Resource, density: number, callback: _AsyncCallback&lt;Uint8Array&gt;): void
 
-获取指定resource对象对应的指定屏幕密度媒体文件内容，使用callback异步回调。
+获取指定resource对象对应的指定屏幕密度媒体文件内容。使用callback异步回调。
 
 > [!NOTE]
-> 从API version 10开始支持，从API version 20开始废弃，建议使用 getMediaByName 或 getMediaContent 替代。
+> 从API version 10开始支持，从API version 20开始废弃，建议使用 getMediaContent 替代。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -6633,10 +7005,11 @@ getMediaContent(resource: Resource, density: number, callback: _AsyncCallback&lt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resource | Resource | 是 | 资源信息。 |
-| density | number | 是 | 资源获取需要的屏幕密度，0表示默认屏幕密度。 |
+| density | number | 是 | 资源获取需要的屏幕密度，0表示默认屏幕密度。取值具体请参考枚举ScreenDensity。 |
 | callback | _AsyncCallback&lt;Uint8Array&gt; | 是 | 回调函数，返回resource对象对应的媒体文件内容。 |
 
 
@@ -6644,9 +7017,10 @@ getMediaContent(resource: Resource, density: number, callback: _AsyncCallback&lt
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed. |
 | 9001001 | Invalid resource ID. |
 | 9001002 | No matching resource is found based on the resource ID. |
 
@@ -6679,16 +7053,17 @@ try {
 
 
 
-#### getMediaContent(deprecated)
+### getMediaContent(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMediaContent(resource: Resource): Promise&lt;Uint8Array&gt;
 
-获取指定resource对象对应的媒体文件内容，使用Promise异步回调。
+获取指定resource对象对应的媒体文件内容。使用Promise异步回调。
 
 > [!NOTE]
-> 从API version 9开始支持，从API version 20开始废弃，建议使用 getMediaByName 或 getMediaContent 替代。
+> 从API version 9开始支持，从API version 20开始废弃，建议使用 getMediaContent 替代。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -6699,12 +7074,14 @@ getMediaContent(resource: Resource): Promise&lt;Uint8Array&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resource | Resource | 是 | 资源信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6715,9 +7092,10 @@ getMediaContent(resource: Resource): Promise&lt;Uint8Array&gt;
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001001 | Invalid resource ID. |
 | 9001002 | No matching resource is found based on the resource ID. |
 
@@ -6748,16 +7126,17 @@ try {
 
 
 
-#### getMediaContent(deprecated)
+### getMediaContent(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMediaContent(resource: Resource, density: number): Promise&lt;Uint8Array&gt;
 
-获取指定resource对象对应的指定屏幕密度媒体文件内容，使用Promise异步回调。
+获取指定resource对象对应的指定屏幕密度媒体文件内容。使用Promise异步回调。
 
 > [!NOTE]
-> 从API version 10开始支持，从API version 20开始废弃，建议使用 getMediaByName 或 getMediaContent 替代。
+> 从API version 10开始支持，从API version 20开始废弃，建议使用 getMediaContent 替代。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -6768,13 +7147,15 @@ getMediaContent(resource: Resource, density: number): Promise&lt;Uint8Array&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resource | Resource | 是 | 资源信息。 |
-| density | number | 是 | 资源获取需要的屏幕密度，0表示默认屏幕密度。 |
+| density | number | 是 | 资源获取需要的屏幕密度，0表示默认屏幕密度。取值具体请参考枚举ScreenDensity。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6785,9 +7166,10 @@ getMediaContent(resource: Resource, density: number): Promise&lt;Uint8Array&gt;
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed. |
 | 9001001 | Invalid resource ID. |
 | 9001002 | No matching resource is found based on the resource ID. |
 
@@ -6818,13 +7200,14 @@ try {
 
 
 
-#### getMediaBase64(deprecated)
+### getMediaBase64(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMediaBase64(resId: number, callback: AsyncCallback&lt;string&gt;): void
 
-获取指定资源ID对应的图片资源Base64编码，使用callback异步回调。
+获取指定资源ID对应的图片资源Base64编码。使用callback异步回调。
 
 > [!NOTE]
 > 从API version 6开始支持，从API version 9开始废弃，建议使用 getMediaContentBase64 替代。
@@ -6833,6 +7216,7 @@ getMediaBase64(resId: number, callback: AsyncCallback&lt;string&gt;): void
 **系统能力：** SystemCapability.Global.ResourceManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6856,13 +7240,14 @@ resourceManager.getResourceManager((error, mgr) => {
 
 
 
-#### getMediaBase64(deprecated)
+### getMediaBase64(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMediaBase64(resId: number): Promise&lt;string&gt;
 
-获取指定资源ID对应的图片资源Base64编码，使用Promise异步回调。
+获取指定资源ID对应的图片资源Base64编码。使用Promise异步回调。
 
 > [!NOTE]
 > 从API version 6开始支持，从API version 9开始废弃，建议使用 getMediaContentBase64 替代。
@@ -6872,12 +7257,14 @@ getMediaBase64(resId: number): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resId | number | 是 | 资源ID值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6900,16 +7287,17 @@ resourceManager.getResourceManager((error, mgr) => {
 
 
 
-#### getMediaContentBase64Sync(deprecated)
+### getMediaContentBase64Sync(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMediaContentBase64Sync(resource: Resource, density?: number): string
 
 获取指定resource对象对应的默认或指定的屏幕密度图片资源Base64编码，使用同步方式返回。
 
 > [!NOTE]
-> 从API version 10开始支持，从API version 20开始废弃，建议使用 getMediaBase64ByNameSync 或 getMediaContentBase64Sync 替代。
+> 从API version 10开始支持，从API version 20开始废弃，建议使用 getMediaContentBase64Sync 替代。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -6920,13 +7308,15 @@ getMediaContentBase64Sync(resource: Resource, density?: number): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resource | Resource | 是 | 资源信息。 |
-| density | number | 否 | 资源获取需要的屏幕密度，0或缺省表示默认屏幕密度。 |
+| density | number | 否 | 资源获取需要的屏幕密度，0或缺省表示默认屏幕密度。取值具体请参考枚举ScreenDensity。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6937,9 +7327,10 @@ getMediaContentBase64Sync(resource: Resource, density?: number): string
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed. |
 | 9001001 | Invalid resource ID. |
 | 9001002 | No matching resource is found based on the resource ID. |
 
@@ -6974,16 +7365,17 @@ try {
 
 
 
-#### getMediaContentBase64(deprecated)
+### getMediaContentBase64(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMediaContentBase64(resource: Resource, callback: _AsyncCallback&lt;string&gt;): void
 
-获取指定resource对象对应的图片资源Base64编码，使用callback异步回调。
+获取指定resource对象对应的图片资源Base64编码。使用callback异步回调。
 
 > [!NOTE]
-> 从API version 9开始支持，从API version 20开始废弃，建议使用 getMediaBase64ByName 或 getMediaContentBase64 替代。
+> 从API version 9开始支持，从API version 20开始废弃，建议使用 getMediaContentBase64 替代。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -6993,6 +7385,7 @@ getMediaContentBase64(resource: Resource, callback: _AsyncCallback&lt;string&gt;
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -7004,9 +7397,10 @@ getMediaContentBase64(resource: Resource, callback: _AsyncCallback&lt;string&gt;
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001001 | Invalid resource ID. |
 | 9001002 | No matching resource is found based on the resource ID. |
 
@@ -7039,16 +7433,17 @@ try {
 
 
 
-#### getMediaContentBase64(deprecated)
+### getMediaContentBase64(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMediaContentBase64(resource: Resource, density: number, callback: _AsyncCallback&lt;string&gt;): void
 
-获取指定resource对象对应的指定屏幕密度图片资源Base64编码，使用callback异步回调。
+获取指定resource对象对应的指定屏幕密度图片资源Base64编码。使用callback异步回调。
 
 > [!NOTE]
-> 从API version 10开始支持，从API version 20开始废弃，建议使用 getMediaBase64ByName 或 getMediaContentBase64 替代。
+> 从API version 10开始支持，从API version 20开始废弃，建议使用 getMediaContentBase64 替代。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -7059,10 +7454,11 @@ getMediaContentBase64(resource: Resource, density: number, callback: _AsyncCallb
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resource | Resource | 是 | 资源信息。 |
-| density | number | 是 | 资源获取需要的屏幕密度，0表示默认屏幕密度。 |
+| density | number | 是 | 资源获取需要的屏幕密度，0表示默认屏幕密度。取值具体请参考枚举ScreenDensity。 |
 | callback | _AsyncCallback&lt;string&gt; | 是 | 回调函数，返回resource对象对应的图片资源Base64编码。 |
 
 
@@ -7070,9 +7466,10 @@ getMediaContentBase64(resource: Resource, density: number, callback: _AsyncCallb
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed. |
 | 9001001 | Invalid resource ID. |
 | 9001002 | No matching resource is found based on the resource ID. |
 
@@ -7105,16 +7502,17 @@ try {
 
 
 
-#### getMediaContentBase64(deprecated)
+### getMediaContentBase64(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMediaContentBase64(resource: Resource): Promise&lt;string&gt;
 
-获取指定resource对象对应的图片资源Base64编码，使用Promise异步回调。
+获取指定resource对象对应的图片资源Base64编码。使用Promise异步回调。
 
 > [!NOTE]
-> 从API version 9开始支持，从API version 20开始废弃，建议使用 getMediaBase64ByName 或 getMediaContentBase64 替代。
+> 从API version 9开始支持，从API version 20开始废弃，建议使用 getMediaContentBase64 替代。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -7125,12 +7523,14 @@ getMediaContentBase64(resource: Resource): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resource | Resource | 是 | 资源信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7141,9 +7541,10 @@ getMediaContentBase64(resource: Resource): Promise&lt;string&gt;
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001001 | Invalid resource ID. |
 | 9001002 | No matching resource is found based on the resource ID. |
 
@@ -7174,16 +7575,17 @@ try {
 
 
 
-#### getMediaContentBase64(deprecated)
+### getMediaContentBase64(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMediaContentBase64(resource: Resource, density: number): Promise&lt;string&gt;
 
-获取指定resource对象对应的指定屏幕密度图片资源Base64编码，使用Promise异步回调。
+获取指定resource对象对应的指定屏幕密度图片资源Base64编码。使用Promise异步回调。
 
 > [!NOTE]
-> 从API version 10开始支持，从API version 20开始废弃，建议使用 getMediaBase64ByName 或 getMediaContentBase64 替代。
+> 从API version 10开始支持，从API version 20开始废弃，建议使用 getMediaContentBase64 替代。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -7194,13 +7596,15 @@ getMediaContentBase64(resource: Resource, density: number): Promise&lt;string&gt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resource | Resource | 是 | 资源信息。 |
-| density | number | 是 | 资源获取需要的屏幕密度，0表示默认屏幕密度。 |
+| density | number | 是 | 资源获取需要的屏幕密度，0表示默认屏幕密度。取值具体请参考枚举ScreenDensity。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7211,9 +7615,10 @@ getMediaContentBase64(resource: Resource, density: number): Promise&lt;string&gt
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed. |
 | 9001001 | Invalid resource ID. |
 | 9001002 | No matching resource is found based on the resource ID. |
 
@@ -7244,16 +7649,17 @@ try {
 
 
 
-#### getDrawableDescriptor(deprecated)
+### getDrawableDescriptor(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDrawableDescriptor(resource: Resource, density?: number, type?: number): DrawableDescriptor
 
 获取指定resource对应的DrawableDescriptor对象，用于图标的显示，使用同步方式返回。
 
 > [!NOTE]
-> 从API version 10开始支持，从API version 20开始废弃，建议使用 getDrawableDescriptorByName 或 getDrawableDescriptor 替代。
+> 从API version 10开始支持，从API version 20开始废弃，建议使用 getDrawableDescriptor 替代。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -7264,14 +7670,16 @@ getDrawableDescriptor(resource: Resource, density?: number, type?: number): Draw
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resource | Resource | 是 | 资源信息。 |
-| density | number | 否 | 资源获取需要的屏幕密度，0或缺省表示默认屏幕密度。 |
-| type11+ | number | 否 | - 1表示获取主题资源包中应用的分层图标资源。 - 0或缺省表示获取应用自身图标资源。 |
+| density | number | 否 | 资源获取需要的屏幕密度，0或缺省表示默认屏幕密度。取值具体请参考枚举ScreenDensity。 |
+| type11+ | number | 否 | 图标类型。默认值为0。 0：表示获取应用自身图标资源。 1：表示获取主题资源包中应用的分层图标资源。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7282,9 +7690,10 @@ getDrawableDescriptor(resource: Resource, density?: number, type?: number): Draw
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed. |
 | 9001001 | Invalid resource ID. |
 | 9001002 | No matching resource is found based on the resource ID. |
 
@@ -7326,16 +7735,17 @@ try {
 
 
 
-#### getIntPluralStringValueSync(deprecated)
+### getIntPluralStringValueSync(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getIntPluralStringValueSync(resource: Resource, num: number, ...args: Array<string | number>): string
 
-获取指定resource对象对应的[单复数](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/l10n-singular-plural)字符串，并根据args参数对字符串进行格式化，使用同步方式返回。
+获取指定resource对象对应的[单复数](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/l10n-singular-plural)字符串，并使用args参数依次替换字符串中的格式化占位符，使用同步方式返回。
 
 > [!NOTE]
-> 从API version 18开始支持，从API version 20开始废弃，建议使用 getIntPluralStringByNameSync 或 getIntPluralStringValueSync 替代。 中文环境下，字符串不区分单复数；其他语言环境下，字符串区分单复数，具体规则参考 语言单复数规则 。
+> 从API version 18开始支持，从API version 20开始废弃，建议使用 getIntPluralStringValueSync 替代。 中文环境下，字符串不区分单复数；其他语言环境下，字符串区分单复数，具体规则参考 语言单复数规则 。
 
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
@@ -7346,14 +7756,16 @@ getIntPluralStringValueSync(resource: Resource, num: number, ...args: Array<stri
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resource | Resource | 是 | 资源信息。 |
 | num | number | 是 | 数量值（整数）。根据当前语言的单复数规则获取该数量值对应的字符串。 |
-| ...args | Array<string \| number> | 否 | 格式化字符串资源参数。 支持参数类型：%d、%f、%s、%%、%数字$d、%数字$f、%数字$s。 说明：%%转义为%; %数字$d中的数字表示使用args中的第几个参数。 举例：%%d格式化后为%d字符串; %1\$d表示使用第一个参数。 |
+| args | Array<string \| number> | 否 | 格式化字符串资源参数。支持的参数类型包括%d、%f、%s、%%、%数字$d、%数字$f和%数字$s。 说明： - %%转义为%，如%%d格式化后为%d。 - %数字$d中的数字表示参数索引，从1开始计数。如%1\$d表示使用args[0]格式化，%2\$d表示使用args[1]格式化，依此类推。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7363,6 +7775,7 @@ getIntPluralStringValueSync(resource: Resource, num: number, ...args: Array<stri
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7420,16 +7833,17 @@ try {
 
 
 
-#### getDoublePluralStringValueSync(deprecated)
+### getDoublePluralStringValueSync(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDoublePluralStringValueSync(resource: Resource, num: number, ...args: Array<string | number>): string
 
-获取指定resource对象对应的[单复数](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/l10n-singular-plural)字符串，并根据args参数对字符串进行格式化，使用同步方式返回。
+获取指定resource对象对应的[单复数](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/l10n-singular-plural)字符串，并使用args参数依次替换字符串中的格式化占位符，使用同步方式返回。
 
 > [!NOTE]
-> 从API version 18开始支持，从API version 20开始废弃，建议使用 getDoublePluralStringByNameSync 或 getDoublePluralStringValueSync 替代。 中文环境下，字符串不区分单复数；其他语言环境下，字符串区分单复数，具体规则参考 语言单复数规则 。
+> 从API version 18开始支持，从API version 20开始废弃，建议使用 getDoublePluralStringValueSync 替代。 中文环境下，字符串不区分单复数；其他语言环境下，字符串区分单复数，具体规则参考 语言单复数规则 。
 
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
@@ -7440,14 +7854,16 @@ getDoublePluralStringValueSync(resource: Resource, num: number, ...args: Array<s
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resource | Resource | 是 | 资源信息。 |
 | num | number | 是 | 数量值（浮点数）。根据当前语言的单复数规则获取该数量值对应的字符串。 |
-| ...args | Array<string \| number> | 否 | 格式化字符串资源参数。 支持参数类型：%d、%f、%s、%%、%数字$d、%数字$f、%数字$s。 说明：%%转义为%; %数字$d中的数字表示使用args中的第几个参数。 举例：%%d格式化后为%d字符串; %1\$d表示使用第一个参数。 |
+| args | Array<string \| number> | 否 | 格式化字符串资源参数。支持的参数类型包括%d、%f、%s、%%、%数字$d、%数字$f和%数字$s。 说明： - %%转义为%，如%%d格式化后为%d。 - %数字$d中的数字表示参数索引，从1开始计数。如%1\$d表示使用args[0]格式化，%2\$d表示使用args[1]格式化，依此类推。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7457,6 +7873,7 @@ getDoublePluralStringValueSync(resource: Resource, num: number, ...args: Array<s
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7514,9 +7931,10 @@ try {
 
 
 
-#### getPluralStringValueSync(deprecated)
+### getPluralStringValueSync(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPluralStringValueSync(resId: number, num: number): string
 
@@ -7532,13 +7950,15 @@ getPluralStringValueSync(resId: number, num: number): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resId | number | 是 | 资源ID值。 |
-| num | number | 是 | 数量值。根据当前语言的复数规则获取该数量值对应的字符串数字，语言的复数规则参见语言单复数规则。 |
+| num | number | 是 | 数量值。根据当前语言的单复数规则获取该数量值对应的字符串。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7549,9 +7969,10 @@ getPluralStringValueSync(resId: number, num: number): string
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001001 | Invalid resource ID. |
 | 9001002 | No matching resource is found based on the resource ID. |
 | 9001006 | The resource is referenced cyclically. |
@@ -7598,16 +8019,17 @@ try {
 
 
 
-#### getPluralStringValueSync(deprecated)
+### getPluralStringValueSync(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPluralStringValueSync(resource: Resource, num: number): string
 
 获取指定资源信息，指定资源数量的单复数字符串，使用同步方式返回。
 
 > [!NOTE]
-> 中文环境下，字符串不区分单复数；其他语言环境下，字符串区分单复数，具体规则参考 语言单复数规则 。 从API version 10开始支持，从API version 18开始废弃，建议使用 getIntPluralStringValueSync 或 getIntPluralStringByNameSync 替代。
+> 中文环境下，字符串不区分单复数；其他语言环境下，字符串区分单复数，具体规则参考 语言单复数规则 。 从API version 10开始支持，从API version 18开始废弃，建议使用 getIntPluralStringValueSync 替代。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -7618,13 +8040,15 @@ getPluralStringValueSync(resource: Resource, num: number): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resource | Resource | 是 | 资源信息。 |
-| num | number | 是 | 数量值。根据当前语言的复数规则获取该数量值对应的字符串数字，语言的复数规则参见语言单复数规则。 |
+| num | number | 是 | 数量值。根据当前语言的单复数规则获取该数量值对应的字符串。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7634,6 +8058,7 @@ getPluralStringValueSync(resource: Resource, num: number): string
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7690,9 +8115,10 @@ try {
 
 
 
-#### getPluralStringByNameSync(deprecated)
+### getPluralStringByNameSync(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPluralStringByNameSync(resName: string, num: number): string
 
@@ -7708,13 +8134,15 @@ getPluralStringByNameSync(resName: string, num: number): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resName | string | 是 | 资源名称。 |
-| num | number | 是 | 数量值。根据当前语言的复数规则获取该数量值对应的字符串数字，语言的复数规则参见语言单复数规则。 |
+| num | number | 是 | 数量值。根据当前语言的单复数规则获取该数量值对应的字符串。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7725,9 +8153,10 @@ getPluralStringByNameSync(resName: string, num: number): string
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001003 | Invalid resource name. |
 | 9001004 | No matching resource is found based on the resource name. |
 | 9001006 | The resource is referenced cyclically. |
@@ -7774,13 +8203,14 @@ try {
 
 
 
-#### getPluralStringValue(deprecated)
+### getPluralStringValue(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPluralStringValue(resId: number, num: number, callback: _AsyncCallback&lt;string&gt;): void
 
-获取指定资源ID，指定资源数量的单复数字符串，使用callback异步回调。
+获取指定资源ID，指定资源数量的单复数字符串。使用callback异步回调。
 
 > [!NOTE]
 > 中文环境下，字符串不区分单复数；其他语言环境下，字符串区分单复数，具体规则参考 语言单复数规则 。 从API version 9开始支持，从API version 18开始废弃，建议使用 getIntPluralStringValueSync 替代。
@@ -7792,10 +8222,11 @@ getPluralStringValue(resId: number, num: number, callback: _AsyncCallback&lt;str
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resId | number | 是 | 资源ID值。 |
-| num | number | 是 | 数量值。根据当前语言的复数规则获取该数量值对应的字符串数字，语言的复数规则参见语言单复数规则。 |
+| num | number | 是 | 数量值。根据当前语言的单复数规则获取该数量值对应的字符串。 |
 | callback | _AsyncCallback&lt;string&gt; | 是 | 回调函数，返回资源ID值对应的指定数量的单复数字符串。 |
 
 
@@ -7803,9 +8234,10 @@ getPluralStringValue(resId: number, num: number, callback: _AsyncCallback&lt;str
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001001 | Invalid resource ID. |
 | 9001002 | No matching resource is found based on the resource ID. |
 | 9001006 | The resource is referenced cyclically. |
@@ -7852,13 +8284,14 @@ this.context.resourceManager.getPluralStringValue($r("app.plural.test").id, 1,
 
 
 
-#### getPluralStringValue(deprecated)
+### getPluralStringValue(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPluralStringValue(resId: number, num: number): Promise&lt;string&gt;
 
-获取指定资源ID，指定资源数量的单复数字符串，使用Promise异步回调。
+获取指定资源ID，指定资源数量的单复数字符串。使用Promise异步回调。
 
 > [!NOTE]
 > 中文环境下，字符串不区分单复数；其他语言环境下，字符串区分单复数，具体规则参考 语言单复数规则 。 从API version 9开始支持，从API version 18开始废弃，建议使用 getIntPluralStringValueSync 替代。
@@ -7870,13 +8303,15 @@ getPluralStringValue(resId: number, num: number): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resId | number | 是 | 资源ID值。 |
-| num | number | 是 | 数量值。根据当前语言的复数规则获取该数量值对应的字符串数字，语言的复数规则参见语言单复数规则。 |
+| num | number | 是 | 数量值。根据当前语言的单复数规则获取该数量值对应的字符串。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7887,9 +8322,10 @@ getPluralStringValue(resId: number, num: number): Promise&lt;string&gt;
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001001 | Invalid resource ID. |
 | 9001002 | No matching resource is found based on the resource ID. |
 | 9001006 | The resource is referenced cyclically. |
@@ -7935,16 +8371,17 @@ this.context.resourceManager.getPluralStringValue($r("app.plural.test").id, 1)
 
 
 
-#### getPluralStringValue(deprecated)
+### getPluralStringValue(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPluralStringValue(resource: Resource, num: number, callback: _AsyncCallback&lt;string&gt;): void
 
-获取指定资源信息，指定资源数量的单复数字符串，使用callback异步回调。
+获取指定资源信息，指定资源数量的单复数字符串。使用callback异步回调。
 
 > [!NOTE]
-> 中文环境下，字符串不区分单复数；其他语言环境下，字符串区分单复数，具体规则参考 语言单复数规则 。 从API version 9开始支持，从API version 18开始废弃，建议使用 getIntPluralStringValueSync 或 getIntPluralStringByNameSync 替代。
+> 中文环境下，字符串不区分单复数；其他语言环境下，字符串区分单复数，具体规则参考 语言单复数规则 。 从API version 9开始支持，从API version 18开始废弃，建议使用 getIntPluralStringValueSync 替代。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -7955,10 +8392,11 @@ getPluralStringValue(resource: Resource, num: number, callback: _AsyncCallback&l
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resource | Resource | 是 | 资源信息。 |
-| num | number | 是 | 数量值。根据当前语言的复数规则获取该数量值对应的字符串数字，语言的复数规则参见语言单复数规则。 |
+| num | number | 是 | 数量值。根据当前语言的单复数规则获取该数量值对应的字符串。 |
 | callback | _AsyncCallback&lt;string&gt; | 是 | 回调函数，返回resource对象对应的指定数量的单复数字符串。 |
 
 
@@ -7966,9 +8404,10 @@ getPluralStringValue(resource: Resource, num: number, callback: _AsyncCallback&l
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001001 | Invalid resource ID. |
 | 9001002 | No matching resource is found based on the resource ID. |
 | 9001006 | The resource is referenced cyclically. |
@@ -8021,16 +8460,17 @@ this.context.resourceManager.getPluralStringValue(resource, 1,
 
 
 
-#### getPluralStringValue(deprecated)
+### getPluralStringValue(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPluralStringValue(resource: Resource, num: number): Promise&lt;string&gt;
 
-获取指定资源信息，指定资源数量的单复数字符串，使用Promise异步回调。
+获取指定资源信息，指定资源数量的单复数字符串。使用Promise异步回调。
 
 > [!NOTE]
-> 中文环境下，字符串不区分单复数；其他语言环境下，字符串区分单复数，具体规则参考 语言单复数规则 。 从API version 9开始支持，从API version 18开始废弃，建议使用 getIntPluralStringValueSync 或 getIntPluralStringByNameSync 替代。
+> 中文环境下，字符串不区分单复数；其他语言环境下，字符串区分单复数，具体规则参考 语言单复数规则 。 从API version 9开始支持，从API version 18开始废弃，建议使用 getIntPluralStringValueSync 替代。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -8041,13 +8481,15 @@ getPluralStringValue(resource: Resource, num: number): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resource | Resource | 是 | 资源信息。 |
-| num | number | 是 | 数量值。根据当前语言的复数规则获取该数量值对应的字符串数字，语言的复数规则参见语言单复数规则。 |
+| num | number | 是 | 数量值。根据当前语言的单复数规则获取该数量值对应的字符串。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8058,9 +8500,10 @@ getPluralStringValue(resource: Resource, num: number): Promise&lt;string&gt;
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001001 | Invalid resource ID. |
 | 9001002 | No matching resource is found based on the resource ID. |
 | 9001006 | The resource is referenced cyclically. |
@@ -8112,13 +8555,14 @@ this.context.resourceManager.getPluralStringValue(resource, 1)
 
 
 
-#### getPluralStringByName(deprecated)
+### getPluralStringByName(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPluralStringByName(resName: string, num: number, callback: _AsyncCallback&lt;string&gt;): void
 
-获取指定资源名称，指定资源数量的单复数字符串，使用callback异步回调。
+获取指定资源名称，指定资源数量的单复数字符串。使用callback异步回调。
 
 > [!NOTE]
 > 中文环境下，字符串不区分单复数；其他语言环境下，字符串区分单复数，具体规则参考 语言单复数规则 。 从API version 9开始支持，从API version 18开始废弃，建议使用 getIntPluralStringByNameSync 替代。
@@ -8130,10 +8574,11 @@ getPluralStringByName(resName: string, num: number, callback: _AsyncCallback&lt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resName | string | 是 | 资源名称。 |
-| num | number | 是 | 数量值。根据当前语言的复数规则获取该数量值对应的字符串数字，语言的复数规则参见语言单复数规则。 |
+| num | number | 是 | 数量值。根据当前语言的单复数规则获取该数量值对应的字符串。 |
 | callback | _AsyncCallback&lt;string&gt; | 是 | 回调函数，返回资源名称对应的指定数量的单复数字符串。 |
 
 
@@ -8141,9 +8586,10 @@ getPluralStringByName(resName: string, num: number, callback: _AsyncCallback&lt;
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001003 | Invalid resource name. |
 | 9001004 | No matching resource is found based on the resource name. |
 | 9001006 | The resource is referenced cyclically. |
@@ -8189,13 +8635,14 @@ this.context.resourceManager.getPluralStringByName("test", 1, (error: BusinessEr
 
 
 
-#### getPluralStringByName(deprecated)
+### getPluralStringByName(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPluralStringByName(resName: string, num: number): Promise&lt;string&gt;
 
-获取指定资源名称，指定资源数量的单复数字符串，使用Promise异步回调。
+获取指定资源名称，指定资源数量的单复数字符串。使用Promise异步回调。
 
 > [!NOTE]
 > 中文环境下，字符串不区分单复数；其他语言环境下，字符串区分单复数，具体规则参考 语言单复数规则 。 从API version 9开始支持，从API version 18开始废弃，建议使用 getIntPluralStringByNameSync 替代。
@@ -8207,13 +8654,15 @@ getPluralStringByName(resName: string, num: number): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resName | string | 是 | 资源名称。 |
-| num | number | 是 | 数量值。根据当前语言的复数规则获取该数量值对应的字符串数字，语言的复数规则参见语言单复数规则。 |
+| num | number | 是 | 数量值。根据当前语言的单复数规则获取该数量值对应的字符串。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8224,9 +8673,10 @@ getPluralStringByName(resName: string, num: number): Promise&lt;string&gt;
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001003 | Invalid resource name. |
 | 9001004 | No matching resource is found based on the resource name. |
 | 9001006 | The resource is referenced cyclically. |
@@ -8272,13 +8722,14 @@ this.context.resourceManager.getPluralStringByName("test", 1)
 
 
 
-#### getPluralString(deprecated)
+### getPluralString(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPluralString(resId: number, num: number): Promise&lt;string&gt;
 
-获取指定资源ID，指定资源数量的单复数字符串，使用Promise异步回调。
+获取指定资源ID，指定资源数量的单复数字符串。使用Promise异步回调。
 
 > [!NOTE]
 > 中文环境下，字符串不区分单复数；其他语言环境下，字符串区分单复数，具体规则参考 语言单复数规则 。 从API version 6开始支持，从API version 9开始废弃，建议使用 getPluralStringValue 替代。
@@ -8288,13 +8739,15 @@ getPluralString(resId: number, num: number): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resId | number | 是 | 资源ID值。 |
-| num | number | 是 | 数量值。根据当前语言的复数规则获取该数量值对应的字符串数字，语言的复数规则参见语言单复数规则。 |
+| num | number | 是 | 数量值。根据当前语言的单复数规则获取该数量值对应的字符串。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8317,13 +8770,14 @@ resourceManager.getResourceManager((error, mgr) => {
 
 
 
-#### getPluralString(deprecated)
+### getPluralString(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPluralString(resId: number, num: number, callback: AsyncCallback&lt;string&gt;): void
 
-获取指定资源ID，指定资源数量的单复数字符串，使用callback异步回调。
+获取指定资源ID，指定资源数量的单复数字符串。使用callback异步回调。
 
 > [!NOTE]
 > 中文环境下，字符串不区分单复数；其他语言环境下，字符串区分单复数，具体规则参考 语言单复数规则 。 从API version 6开始支持，从API version 9开始废弃，建议使用 getPluralStringValue 替代。
@@ -8333,10 +8787,11 @@ getPluralString(resId: number, num: number, callback: AsyncCallback&lt;string&gt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resId | number | 是 | 资源ID值。 |
-| num | number | 是 | 数量值。根据当前语言的复数规则获取该数量值对应的字符串数字，语言的复数规则参见语言单复数规则。 |
+| num | number | 是 | 数量值。根据当前语言的单复数规则获取该数量值对应的字符串。 |
 | callback | AsyncCallback&lt;string&gt; | 是 | 回调函数，返回资源ID值对应的指定数量的单复数字符串。 |
 
 
@@ -8358,16 +8813,17 @@ resourceManager.getResourceManager((error, mgr) => {
 
 
 
-#### getBoolean(deprecated)
+### getBoolean(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBoolean(resource: Resource): boolean
 
 获取指定resource对象对应的布尔值，使用同步方式返回。
 
 > [!NOTE]
-> 从API version 9开始支持，从API version 20开始废弃，建议使用 getBooleanByName 或 getBoolean 替代。
+> 从API version 9开始支持，从API version 20开始废弃，建议使用 getBoolean 替代。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -8378,12 +8834,14 @@ getBoolean(resource: Resource): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resource | Resource | 是 | 资源信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8394,9 +8852,10 @@ getBoolean(resource: Resource): boolean
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001001 | Invalid resource ID. |
 | 9001002 | No matching resource is found based on the resource ID. |
 | 9001006 | The resource is referenced cyclically. |
@@ -8438,16 +8897,17 @@ try {
 
 
 
-#### getNumber(deprecated)
+### getNumber(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getNumber(resource: Resource): number
 
 获取指定resource对象对应的integer数值或者float数值，使用同步方式返回。
 
 > [!NOTE]
-> 从API version 9开始支持，从API version 20开始废弃，建议使用 getNumberByName 或 getNumber 替代。
+> 从API version 9开始支持，从API version 20开始废弃，建议使用 getNumber 替代。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -8458,6 +8918,7 @@ getNumber(resource: Resource): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resource | Resource | 是 | 资源信息。 |
@@ -8465,18 +8926,20 @@ getNumber(resource: Resource): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| number | resource对象对应的数值。 integer对应的是原数值，float不带单位时对应的是原数值，带"vp","fp"单位时对应的是px值。 |
+| number | resource对象对应的数值。 integer类型资源返回资源文件中定义的原始数值。 float类型资源不带单位时返回资源文件中定义的原始数值，带"vp"或"fp"单位时返回转换后的像素(px)值。转换公式：像素值 = 原始数值 × densityPixels。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001001 | Invalid resource ID. |
 | 9001002 | No matching resource is found based on the resource ID. |
 | 9001006 | The resource is referenced cyclically. |
@@ -8519,16 +8982,17 @@ try {
 
 
 
-#### getColorSync(deprecated)
+### getColorSync(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getColorSync(resource: Resource): number
 
 获取指定resource对象对应的颜色值，使用同步方式返回。
 
 > [!NOTE]
-> 从API version 10开始支持，从API version 20开始废弃，建议使用 getColorByNameSync 或 getColorSync 替代。
+> 从API version 10开始支持，从API version 20开始废弃，建议使用 getColorSync 替代。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -8539,12 +9003,14 @@ getColorSync(resource: Resource): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resource | Resource | 是 | 资源信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8555,9 +9021,10 @@ getColorSync(resource: Resource): number
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001001 | Invalid resource ID. |
 | 9001002 | No matching resource is found based on the resource ID. |
 | 9001006 | The resource is referenced cyclically. |
@@ -8599,16 +9066,17 @@ try {
 
 
 
-#### getColor(deprecated)
+### getColor(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getColor(resource: Resource, callback: _AsyncCallback&lt;number&gt;): void
 
-获取指定resource对象对应的颜色值，使用callback异步回调。
+获取指定resource对象对应的颜色值。使用callback异步回调。
 
 > [!NOTE]
-> 从API version 10开始支持，从API version 20开始废弃，建议使用 getColorByName 或 getColor 替代。
+> 从API version 10开始支持，从API version 20开始废弃，建议使用 getColor 替代。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -8618,6 +9086,7 @@ getColor(resource: Resource, callback: _AsyncCallback&lt;number&gt;): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -8629,9 +9098,10 @@ getColor(resource: Resource, callback: _AsyncCallback&lt;number&gt;): void
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001001 | Invalid resource ID. |
 | 9001002 | No matching resource is found based on the resource ID. |
 | 9001006 | The resource is referenced cyclically. |
@@ -8672,16 +9142,17 @@ this.context.resourceManager.getColor(resource, (error: BusinessError, value: nu
 
 
 
-#### getColor(deprecated)
+### getColor(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getColor(resource: Resource): Promise&lt;number&gt;
 
-获取指定resource对象对应的颜色值，使用Promise异步回调。
+获取指定resource对象对应的颜色值。使用Promise异步回调。
 
 > [!NOTE]
-> 从API version 10开始支持，从API version 20开始废弃，建议使用 getColorByName 或 getColor 替代。
+> 从API version 10开始支持，从API version 20开始废弃，建议使用 getColor 替代。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -8692,12 +9163,14 @@ getColor(resource: Resource): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resource | Resource | 是 | 资源信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8708,9 +9181,10 @@ getColor(resource: Resource): Promise&lt;number&gt;
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001001 | Invalid resource ID. |
 | 9001002 | No matching resource is found based on the resource ID. |
 | 9001006 | The resource is referenced cyclically. |
@@ -8751,16 +9225,17 @@ this.context.resourceManager.getColor(resource)
 
 
 
-#### getSymbol(deprecated)
+### getSymbol(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSymbol(resource: Resource): number
 
 获取指定resource对象对应的[Symbol字符](https://developer.huawei.com/consumer/cn/design/harmonyos-symbol)Unicode码，使用同步方式返回。
 
 > [!NOTE]
-> 从API version 11开始支持，从API version 20开始废弃，建议使用 getSymbolByName 或 getSymbol 替代。
+> 从API version 11开始支持，从API version 20开始废弃，建议使用 getSymbol 替代。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -8771,12 +9246,14 @@ getSymbol(resource: Resource): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resource | Resource | 是 | 资源信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8787,9 +9264,10 @@ getSymbol(resource: Resource): number
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: Incorrect parameter types. |
 | 9001001 | Invalid resource ID. |
 | 9001002 | No matching resource is found based on the resource ID. |
 | 9001006 | The resource is referenced cyclically. |
@@ -8819,13 +9297,14 @@ try {
 
 
 
-#### getRawFile(deprecated)
+### getRawFile(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRawFile(path: string, callback: AsyncCallback&lt;Uint8Array&gt;): void
 
-获取resources/rawfile目录下对应的rawfile文件内容，使用callback异步回调。
+获取resources/rawfile目录下对应的rawfile文件内容。使用callback异步回调。
 
 > [!NOTE]
 > 从API version 8开始支持，从API version 9开始废弃，建议使用 getRawFileContent 替代。
@@ -8835,9 +9314,10 @@ getRawFile(path: string, callback: AsyncCallback&lt;Uint8Array&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | 是 | rawfile文件路径。 |
+| path | string | 是 | 相对resources/rawfile目录的rawfile文件路径，如"test.txt"、"subdir/test.txt"，不以"/"开头。 |
 | callback | AsyncCallback&lt;Uint8Array&gt; | 是 | 回调函数，返回rawfile文件内容。 |
 
 
@@ -8859,13 +9339,14 @@ resourceManager.getResourceManager((error, mgr) => {
 
 
 
-#### getRawFile(deprecated)
+### getRawFile(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRawFile(path: string): Promise&lt;Uint8Array&gt;
 
-获取resources/rawfile目录下对应的rawfile文件内容，使用Promise异步回调。
+获取resources/rawfile目录下对应的rawfile文件内容。使用Promise异步回调。
 
 > [!NOTE]
 > 从API version 8开始支持，从API version 9开始废弃，建议使用 getRawFileContent 替代。
@@ -8875,12 +9356,14 @@ getRawFile(path: string): Promise&lt;Uint8Array&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | 是 | rawfile文件路径。 |
+| path | string | 是 | 相对resources/rawfile目录的rawfile文件路径，如"test.txt"、"subdir/test.txt"，不以"/"开头。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8903,13 +9386,14 @@ resourceManager.getResourceManager((error, mgr) => {
 
 
 
-#### getRawFileDescriptor(deprecated)
+### getRawFileDescriptor(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRawFileDescriptor(path: string, callback: AsyncCallback&lt;RawFileDescriptor&gt;): void
 
-获取resources/rawfile目录下对应rawfile文件的文件描述符（fd），使用callback异步回调。
+获取resources/rawfile目录下对应rawfile文件的文件描述符（fd）。使用callback异步回调。
 
 > [!NOTE]
 > 从API version 8开始支持，从API version 9开始废弃，建议使用 getRawFd 替代。
@@ -8919,9 +9403,10 @@ getRawFileDescriptor(path: string, callback: AsyncCallback&lt;RawFileDescriptor&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | 是 | rawfile文件路径。 |
+| path | string | 是 | 相对resources/rawfile目录的rawfile文件路径，如"test.txt"、"subdir/test.txt"，不以"/"开头。 |
 | callback | AsyncCallback&lt;RawFileDescriptor&gt; | 是 | 回调函数，返回rawfile文件的文件描述符（fd）。 |
 
 
@@ -8945,13 +9430,14 @@ resourceManager.getResourceManager((error, mgr) => {
 
 
 
-#### getRawFileDescriptor(deprecated)
+### getRawFileDescriptor(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRawFileDescriptor(path: string): Promise&lt;RawFileDescriptor&gt;
 
-获取resources/rawfile目录下对应rawfile文件的文件描述符（fd），使用Promise异步回调。
+获取resources/rawfile目录下对应rawfile文件的文件描述符（fd）。使用Promise异步回调。
 
 > [!NOTE]
 > 从API version 8开始支持，从API version 9开始废弃，建议使用 getRawFd 替代。
@@ -8961,12 +9447,14 @@ getRawFileDescriptor(path: string): Promise&lt;RawFileDescriptor&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | 是 | rawfile文件路径。 |
+| path | string | 是 | 相对resources/rawfile目录的rawfile文件路径，如"test.txt"、"subdir/test.txt"，不以"/"开头。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8991,13 +9479,14 @@ resourceManager.getResourceManager((error, mgr) => {
 
 
 
-#### closeRawFileDescriptor(deprecated)
+### closeRawFileDescriptor(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 closeRawFileDescriptor(path: string, callback: AsyncCallback&lt;void&gt;): void
 
-关闭resources/rawfile目录下rawfile文件的文件描述符（fd），使用callback异步回调。
+关闭resources/rawfile目录下rawfile文件的文件描述符（fd）。使用callback异步回调。
 
 > [!NOTE]
 > 从API version 8开始支持，从API version 9开始废弃，建议使用 closeRawFd 替代。
@@ -9007,9 +9496,10 @@ closeRawFileDescriptor(path: string, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | 是 | rawfile文件路径。 |
+| path | string | 是 | 相对resources/rawfile目录的rawfile文件路径，如"test.txt"、"subdir/test.txt"，不以"/"开头。 |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当关闭rawfile文件的文件描述符（fd）成功，err为undefined，否则为错误对象。 |
 
 
@@ -9029,13 +9519,14 @@ resourceManager.getResourceManager((error, mgr) => {
 
 
 
-#### closeRawFileDescriptor(deprecated)
+### closeRawFileDescriptor(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 closeRawFileDescriptor(path: string): Promise&lt;void&gt;
 
-关闭resources/rawfile目录下rawfile文件的文件描述符（fd），使用Promise异步回调。
+关闭resources/rawfile目录下rawfile文件的文件描述符（fd）。使用Promise异步回调。
 
 > [!NOTE]
 > 从API version 8开始支持，从API version 9开始废弃，建议使用 closeRawFd 替代。
@@ -9045,12 +9536,14 @@ closeRawFileDescriptor(path: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | 是 | rawfile文件路径。 |
+| path | string | 是 | 相对resources/rawfile目录的rawfile文件路径，如"test.txt"、"subdir/test.txt"，不以"/"开头。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -9069,16 +9562,17 @@ resourceManager.getResourceManager((error, mgr) => {
 
 
 
-#### resourceManager.getSystemResourceManager(deprecated)
+## resourceManager.getSystemResourceManager(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSystemResourceManager(): ResourceManager
 
-获取系统资源管理ResourceManager对象。
+获取系统资源管理对象，用于访问系统预置的资源。
 
 > [!NOTE]
-> 当前接口获取到的系统资源管理ResourceManager对象中的Configuration为默认值。默认值如下： {"locale": "", "direction": -1, "deviceType": -1, "screenDensity": 0, "colorMode": 1, "mcc": 0, "mnc": 0}。 从API version 10开始支持，从API version 20开始废弃，建议使用 resourceManager.getSysResourceManager 替代。
+> 该接口获取到的系统资源管理ResourceManager对象中的Configuration为默认值。默认值如下：{"locale": "", "direction": -1, "deviceType": -1, "screenDensity": 0, "colorMode": 1, "mcc": 0, "mnc": 0}。 从API version 10开始支持，从API version 20开始废弃，建议使用 resourceManager.getSysResourceManager 替代。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -9086,6 +9580,7 @@ getSystemResourceManager(): ResourceManager
 **系统能力：** SystemCapability.Global.ResourceManager
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -9095,6 +9590,7 @@ getSystemResourceManager(): ResourceManager
 **错误码：**
 
 以下错误码的详细介绍请参见[资源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-resource-manager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -9123,9 +9619,10 @@ try {
 
 
 
-#### AsyncCallback(deprecated)
+## AsyncCallback(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 从API version 6开始支持，从API version 9开始废弃，建议使用 AsyncCallback 替代。
@@ -9133,9 +9630,10 @@ try {
 
 
 
-#### (err: Error, data: T)(deprecated)
+### (err: Error, data: T)(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 (err: Error, data: T): void;
 
@@ -9149,6 +9647,7 @@ try {
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | err | Error | 是 | 接口调用失败的错误信息。 |
@@ -9157,9 +9656,10 @@ try {
 
 
 
-#### 附录
+## 附录
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
  - 示例代码中用到的'app.string.test'文件内容如下：
 

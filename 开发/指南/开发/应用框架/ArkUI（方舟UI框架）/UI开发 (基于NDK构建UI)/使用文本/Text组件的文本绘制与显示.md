@@ -1,6 +1,6 @@
 # 使用属性字符串
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-styled-string
 
@@ -19,7 +19,7 @@
 
 
 
-#### 创建StyledString对象
+## 创建StyledString对象
 
 使用[OH_ArkUI_StyledString_Create](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-styled-string-h#oh_arkui_styledstring_create)接口创建StyledString对象，需要传入[段落样式](#设置段落样式)和字体集合。
 
@@ -30,13 +30,13 @@ ArkUI_StyledString *styledString = OH_ArkUI_StyledString_Create(typographyStyle,
 
 
 
-#### 通过StyledString设置样式
+## 通过StyledString设置样式
 
 StyledString支持为文本中的不同部分设置不同的样式，包括段落样式和文本样式。
 
 
 
-#### 设置段落样式
+### 设置段落样式
 
 通过如下接口可以设置StyledString的段落样式属性，包括最大行数、对齐方式等。
 
@@ -45,6 +45,7 @@ StyledString支持为文本中的不同部分设置不同的样式，包括段�
 
 
 **表1** 段落样式设置接口
+
 
 | 接口 | 描述 |
 | --- | --- |
@@ -66,7 +67,7 @@ OH_Drawing_SetTypographyTextMaxLines(typographyStyle, NUM_10);
 
 
 
-#### 设置文本样式
+### 设置文本样式
 
 不同内容的文本可以通过StyledString设置不同的文本样式，但必须按照以下三个接口的逻辑调用顺序进行设置，否则将无法生效。
 1. [OH_ArkUI_StyledString_PushTextStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-styled-string-h#oh_arkui_styledstring_pushtextstyle)：将文字样式推入栈中。
@@ -74,6 +75,7 @@ OH_Drawing_SetTypographyTextMaxLines(typographyStyle, NUM_10);
 3. [OH_ArkUI_StyledString_PopTextStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-styled-string-h#oh_arkui_styledstring_poptextstyle)：将文字样式弹出栈。
 
 **表2** 文本样式设置接口
+
 
 | 接口 | 描述 |
 | --- | --- |
@@ -110,7 +112,7 @@ OH_ArkUI_StyledString_PopTextStyle(styledString);
 
 
 
-#### 添加占位符
+## 添加占位符
 
 占位符功能主要用于图文混排场景，可以在文本中插入指定大小的空白区域，用于挂载Image组件或其他自定义内容。
 
@@ -124,7 +126,7 @@ OH_ArkUI_StyledString_AddPlaceholder(styledString, &placeHolder);
 
 
 
-#### 布局与绘制
+## 布局与绘制
 
 StyledString在设置到Text组件之前，需要先完成布局计算，然后再进行渲染。
 
@@ -140,11 +142,12 @@ nodeApi->setAttribute(text, NODE_TEXT_CONTENT_WITH_STYLED_STRING, &styledStringI
 
 
 
-#### 序列化与反序列化
+## 序列化与反序列化
 
 从API version 14开始，StyledString提供了序列化和反序列化功能，支持将字节数据反序列化为描述符，或将描述符转换为HTML格式，便于数据的存储、传输和跨平台使用。
 
 **表3** 序列化与反序列化接口
+
 
 | 接口 | 描述 |
 | --- | --- |
@@ -208,7 +211,7 @@ static void SerializeAndDeserializeStyledString()
 
 
 
-#### 销毁对象
+## 销毁对象
 
 Text组件不对本文涉及的任何对象的生命周期进行管理，需由开发者自行负责。字体引擎接口均配有相应的销毁方法。
 

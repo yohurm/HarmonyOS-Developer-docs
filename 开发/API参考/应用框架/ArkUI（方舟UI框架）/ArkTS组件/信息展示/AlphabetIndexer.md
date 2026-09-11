@@ -1,28 +1,30 @@
 # AlphabetIndexer
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-alphabet-indexer
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-可以与容器组件联动，用于按逻辑结构快速定位容器显示区域，适用于通讯录、城市列表、分类列表等需要快速定位内容的场景。
+可以与容器组件联动用于按逻辑结构快速定位容器显示区域的组件。
 
-> [!TIP]
-> 该组件从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。 一级索引项：索引条上的字母索引，如'#'、'A'、'B'、'C'等。 二级索引项：提示弹窗中显示的具体内容列表项，通过onRequestPopupData回调返回。 从API version 12开始，触控反馈默认开启；使用前请按 enableHapticFeedback 的说明配置振动权限。
+> [!NOTE]
+> 该组件从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 AlphabetIndexer(options: AlphabetIndexerOptions)
 
@@ -34,6 +36,7 @@ AlphabetIndexer(options: AlphabetIndexerOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | AlphabetIndexerOptions | 是 | 设置索引条组件参数。 |
@@ -41,9 +44,10 @@ AlphabetIndexer(options: AlphabetIndexerOptions)
 
 
 
-#### AlphabetIndexerOptions18+对象说明
+## AlphabetIndexerOptions18+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于设置索引条参数。
 
@@ -57,6 +61,7 @@ AlphabetIndexer(options: AlphabetIndexerOptions)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | arrayValue7+ | Array&lt;string&gt; | 否 | 否 | 字符串数组，每个字符串代表一个索引项。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
@@ -65,9 +70,10 @@ AlphabetIndexer(options: AlphabetIndexerOptions)
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [width](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size#width)属性设置"auto"时表示自适应宽度，宽度会随索引项最大宽度变化。
 
@@ -79,9 +85,10 @@ AlphabetIndexer(options: AlphabetIndexerOptions)
 
 
 
-#### color
+### color
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 color(value: ResourceColor)
 
@@ -93,6 +100,7 @@ color(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 未选中项文本颜色。 默认值：0x99182431，显示为略带透明的深暗蓝色。 |
@@ -100,9 +108,10 @@ color(value: ResourceColor)
 
 
 
-#### selectedColor
+### selectedColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectedColor(value: ResourceColor)
 
@@ -114,16 +123,18 @@ selectedColor(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | ResourceColor | 是 | 选中项文本颜色。 默认值：0xFF007DFF，显示为不透明的蓝色。 |
+| value | ResourceColor | 是 | 选中项文本颜色。 默认值：0xFF007DFF，显示为半透明蓝色。 |
 
 
 
 
-#### popupColor
+### popupColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 popupColor(value: ResourceColor)
 
@@ -135,16 +146,18 @@ popupColor(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | ResourceColor | 是 | 提示弹窗一级索引项文本颜色。 默认值：0xFF007DFF，显示为不透明的蓝色。 |
+| value | ResourceColor | 是 | 提示弹窗一级索引项文本颜色。 默认值：0xFF007DFF，显示为半透明蓝色。 |
 
 
 
 
-#### selectedBackgroundColor
+### selectedBackgroundColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectedBackgroundColor(value: ResourceColor)
 
@@ -156,6 +169,7 @@ selectedBackgroundColor(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 选中项背景颜色。 默认值：0x1A007DFF，显示为半透明的蓝色。 |
@@ -163,9 +177,10 @@ selectedBackgroundColor(value: ResourceColor)
 
 
 
-#### popupBackground
+### popupBackground
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 popupBackground(value: ResourceColor)
 
@@ -177,15 +192,14 @@ API version 11及以前版本，提示弹窗背景颜色默认为0xFFFFFFFF，�
 
 对于API version 12至API version 24版本，默认为#66808080，显示为半透明的灰色。
 
-从API版本26.0.0开始，如果[popupBackground](#popupbackground)和[popupBackgroundBlurStyle](#popupbackgroundblurstyle12)均未被主动调用或参数value传入undefined，高档、中档算力设备默认显示为沉浸式材质[ImmersiveStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uimaterial#immersivestyle)的THIN样式，低档算力设备默认显示为白色背景。
-
-如果popupBackgroundBlurStyle被主动调用且参数value传入有效值，提示弹窗背景颜色默认为#66808080，显示为半透明的灰色。
+从API版本26.0.0开始，如果和[popupBackgroundBlurStyle](#popupbackgroundblurstyle12)均未被主动调用或参数value传入undefined，高算力、中算力设备默认显示为沉浸式材质[ImmersiveStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uimaterial#immersivestyle)的THICK样式，低算力设备默认显示为白色背景。如果popupBackgroundBlurStyle被主动调用且参数value传入有效值，提示弹窗背景颜色默认为#66808080，显示为半透明的灰色。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -194,9 +208,10 @@ API version 11及以前版本，提示弹窗背景颜色默认为0xFFFFFFFF，�
 
 
 
-#### usingPopup
+### usingPopup
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 usingPopup(value: boolean)
 
@@ -208,6 +223,7 @@ usingPopup(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 是否显示提示弹窗。 默认值：false true：显示提示弹窗。 false：不显示提示弹窗。 |
@@ -215,9 +231,10 @@ usingPopup(value: boolean)
 
 
 
-#### selectedFont
+### selectedFont
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectedFont(value: Font)
 
@@ -229,6 +246,7 @@ selectedFont(value: Font)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Font | 是 | 选中项文本样式。 默认值： API version 11及以前： { size:'12.0fp', style:FontStyle.Normal, weight:FontWeight.Regular, family:'HarmonyOS Sans' } API version 12及以后： { size:'10.0vp', style:FontStyle.Normal, weight:FontWeight.Medium, family:'HarmonyOS Sans' } |
@@ -236,9 +254,10 @@ selectedFont(value: Font)
 
 
 
-#### popupFont
+### popupFont
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 popupFont(value: Font)
 
@@ -250,6 +269,7 @@ popupFont(value: Font)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Font | 是 | 提示弹窗一级索引文本样式。 默认值： { size:'24.0vp', style:FontStyle.Normal, weight:FontWeight.Medium, family:'HarmonyOS Sans' } |
@@ -257,9 +277,10 @@ popupFont(value: Font)
 
 
 
-#### font
+### font
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 font(value: Font)
 
@@ -271,6 +292,7 @@ font(value: Font)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Font | 是 | 未选中索引项文本样式。 默认值： API version 11及以前： { size:'12.0fp', style:FontStyle.Normal, weight:FontWeight.Regular, family:'HarmonyOS Sans' } API version 12及以后： { size:'10.0vp', style:FontStyle.Normal, weight:FontWeight.Medium, family:'HarmonyOS Sans' } |
@@ -278,9 +300,10 @@ font(value: Font)
 
 
 
-#### itemSize
+### itemSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 itemSize(value: string | number)
 
@@ -292,6 +315,7 @@ itemSize(value: string | number)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string \| number | 是 | 索引项区域大小，索引项区域为正方形，即正方形边长。不支持设置为百分比。 实际取值会受到组件尺寸的约束，索引项宽度最大为组件宽度-左右padding，索引项高度最大为（组件高度-上下padding）/索引项个数。传入值小于等于0时，按照默认值处理。 默认值：16.0 单位：vp |
@@ -299,9 +323,10 @@ itemSize(value: string | number)
 
 
 
-#### alignStyle
+### alignStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 alignStyle(value: IndexerAlign, offset?: Length)
 
@@ -313,6 +338,7 @@ alignStyle(value: IndexerAlign, offset?: Length)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | IndexerAlign | 是 | 索引条提示弹窗的对齐样式，支持弹窗显示在索引条右侧和左侧。 默认值：IndexerAlign.END |
@@ -321,13 +347,14 @@ alignStyle(value: IndexerAlign, offset?: Length)
 
 
 
-#### selected8+
+### selected8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selected(index: number)
 
-设置选中项索引值。与[AlphabetIndexerOptions](#alphabetindexeroptions18对象说明)中的selected同时设置时，该属性的优先级更高。
+设置选中项索引值。
 
 从API version 10开始，该参数支持[$$](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-two-way-sync)双向绑定变量。
 
@@ -337,20 +364,22 @@ selected(index: number)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| index | number | 是 | 选中项索引值。 取值范围：[0, arrayValue.length-1] 若超出索引值范围，则取默认值0。 默认值：0 |
+| index | number | 是 | 选中项索引值。 取值范围：[0, arrayValue.length-1] 默认值：0 |
 
 
 
 
-#### popupPosition8+
+### popupPosition8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 popupPosition(value: Position)
 
-设置提示弹窗相对于索引条上边框中点的位置。
+设置弹出窗口相对于索引条上边框中点的位置。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -358,16 +387,18 @@ popupPosition(value: Position)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | Position | 是 | 提示弹窗相对于索引条上边框中点的位置。与alignStyle同时设置时，水平方向由alignStyle的offset参数控制，竖直方向上value.y生效。 默认值：{x: 60.0, y: 48.0} 单位：vp |
+| value | Position | 是 | 弹出窗口相对于索引条上边框中点的位置。 默认值：{x: 60.0, y: 48.0} |
 
 
 
 
-#### popupSelectedColor10+
+### popupSelectedColor10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 popupSelectedColor(value: ResourceColor)
 
@@ -381,6 +412,7 @@ popupSelectedColor(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 提示弹窗二级索引选中项文本颜色。 默认值：#FF182431，显示为深暗蓝色。 |
@@ -388,9 +420,10 @@ popupSelectedColor(value: ResourceColor)
 
 
 
-#### popupUnselectedColor10+
+### popupUnselectedColor10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 popupUnselectedColor(value: ResourceColor)
 
@@ -404,6 +437,7 @@ popupUnselectedColor(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 提示弹窗二级索引未选中项文本颜色。 默认值：#FF182431，显示为深暗蓝色。 |
@@ -411,9 +445,10 @@ popupUnselectedColor(value: ResourceColor)
 
 
 
-#### popupItemFont10+
+### popupItemFont10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 popupItemFont(value: Font)
 
@@ -427,6 +462,7 @@ popupItemFont(value: Font)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Font | 是 | 提示弹窗二级索引项文本样式。 默认值： { size:24, weight:FontWeight.Medium } |
@@ -434,9 +470,10 @@ popupItemFont(value: Font)
 
 
 
-#### popupItemBackgroundColor10+
+### popupItemBackgroundColor10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 popupItemBackgroundColor(value: ResourceColor)
 
@@ -450,6 +487,7 @@ popupItemBackgroundColor(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 提示弹窗二级索引项背景颜色。 默认值： API version 11及以前：#FFFFFFFF，显示为白色。 API version 12及以后：#00000000，显示为透明色。 |
@@ -457,17 +495,18 @@ popupItemBackgroundColor(value: ResourceColor)
 
 
 
-#### autoCollapse11+
+### autoCollapse11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 autoCollapse(value: boolean)
 
 设置是否使用自适应折叠模式。
 
-如果索引项第一项为“#”，当除去第一项后剩余索引项数量 <= 9时，选择全显示模式（所有索引项完整显示）；9 < 剩余索引项数量 <= 13时，根据索引条高度自适应选择全显示模式或者短折叠模式；剩余索引项数量 > 13时，根据索引条高度自适应选择短折叠模式或者长折叠模式。
+如果索引项第一项为“#”，当除去第一项后剩余索引项数量 <= 9时，选择全显示模式；9 < 剩余索引项数量 <= 13时，根据索引条高度自适应选择全显示模式或者短折叠模式；剩余索引项数量 > 13时，根据索引条高度自适应选择短折叠模式或者长折叠模式。
 
-如果索引项第一项不为“#”，当所有索引项数量 <= 9时，选择全显示模式（所有索引项完整显示）；9 < 所有索引项数量 <= 13时，根据索引条高度自适应选择全显示模式或者短折叠模式；所有索引项数量 > 13时，根据索引条高度自适应选择短折叠模式或者长折叠模式。
+如果索引项第一项不为“#”，当所有索引项数量 <= 9时，选择全显示模式；9 < 所有索引项数量 <= 13时，根据索引条高度自适应选择全显示模式或者短折叠模式；所有索引项数量 > 13时，根据索引条高度自适应选择短折叠模式或者长折叠模式。
 
 > [!NOTE]
 > 从API version 12开始，该接口支持在 attributeModifier 中调用。
@@ -481,6 +520,7 @@ autoCollapse(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 是否使用自适应折叠模式。 默认值： API version 12之前：false API version 12及之后：true true：使用自适应折叠模式。 false：不使用自适应折叠模式。 |
@@ -488,9 +528,10 @@ autoCollapse(value: boolean)
 
 
 
-#### popupItemBorderRadius12+
+### popupItemBorderRadius12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 popupItemBorderRadius(value: number)
 
@@ -504,6 +545,7 @@ popupItemBorderRadius(value: number)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 设置提示弹窗索引项背板圆角半径。 默认值：24vp 不支持百分比，小于0时按照0设置。 提示弹窗背板圆角自适应变化（索引项圆角半径+4vp）。 |
@@ -511,9 +553,10 @@ popupItemBorderRadius(value: number)
 
 
 
-#### itemBorderRadius12+
+### itemBorderRadius12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 itemBorderRadius(value: number)
 
@@ -527,6 +570,7 @@ itemBorderRadius(value: number)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 设置索引项背板圆角半径。 默认值：8vp 不支持百分比，小于0时按照0设置。 索引条背板圆角自适应变化（索引项圆角半径+4vp）。 |
@@ -534,9 +578,10 @@ itemBorderRadius(value: number)
 
 
 
-#### popupBackgroundBlurStyle12+
+### popupBackgroundBlurStyle12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 popupBackgroundBlurStyle(value: BlurStyle)
 
@@ -550,6 +595,7 @@ popupBackgroundBlurStyle(value: BlurStyle)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | BlurStyle | 是 | 设置提示弹窗的背景模糊材质。 弹窗的背景模糊材质效果会对背景色popupBackground产生影响，可通过设置属性值为NONE关闭背景模糊材质效果。 |
@@ -557,9 +603,10 @@ popupBackgroundBlurStyle(value: BlurStyle)
 
 
 
-#### popupTitleBackground12+
+### popupTitleBackground12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 popupTitleBackground(value: ResourceColor)
 
@@ -573,6 +620,7 @@ popupTitleBackground(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 设置提示弹窗一级索引项背景颜色。 默认值： 提示弹窗只有一个索引项：#00FFFFFF。 提示弹窗有多个索引项：#0c182431。 |
@@ -580,13 +628,14 @@ popupTitleBackground(value: ResourceColor)
 
 
 
-#### enableHapticFeedback12+
+### enableHapticFeedback12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableHapticFeedback(value: boolean)
 
-设置是否开启触控反馈。开启后，在手指触摸或滑动选中索引项时会触发振动反馈。
+设置是否开启触控反馈。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -596,6 +645,7 @@ enableHapticFeedback(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 是否支持触控反馈。 true：支持触控反馈。 false：不支持触控反馈。 默认值：true 开启触控反馈时，需要在工程的module.json5中配置requestPermissions字段开启振动权限，配置如下： "requestPermissions": [{"name": "ohos.permission.VIBRATE"}] |
@@ -603,13 +653,15 @@ enableHapticFeedback(value: boolean)
 
 
 
-#### IndexerAlign枚举说明
+## IndexerAlign枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 索引条提示弹窗的对齐样式枚举。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -621,21 +673,23 @@ enableHapticFeedback(value: boolean)
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)外，还支持以下事件：
 
 
 
-#### onSelected(deprecated)
+### onSelected(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onSelected(callback: (index: number) => void)
 
-注册索引项选中事件回调，回调参数为当前选中项索引。
+索引项选中事件，回调参数为当前选中项索引。
 
 > [!NOTE]
 > 从API version 7开始支持，从API version 8开始废弃，建议使用 onSelect 替代。
@@ -645,6 +699,7 @@ onSelected(callback: (index: number) => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 当前选中的索引。 |
@@ -652,9 +707,10 @@ onSelected(callback: (index: number) => void)
 
 
 
-#### onSelect8+
+### onSelect8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onSelect(callback: OnAlphabetIndexerSelectCallback)
 
@@ -666,16 +722,18 @@ onSelect(callback: OnAlphabetIndexerSelectCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | OnAlphabetIndexerSelectCallback | 是 | 回调函数，用于处理索引项选中事件。 |
+| callback | OnAlphabetIndexerSelectCallback | 是 | 索引项选中事件。 |
 
 
 
 
-#### onRequestPopupData8+
+### onRequestPopupData8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onRequestPopupData(callback: OnAlphabetIndexerRequestPopupDataCallback)
 
@@ -687,20 +745,22 @@ onRequestPopupData(callback: OnAlphabetIndexerRequestPopupDataCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | OnAlphabetIndexerRequestPopupDataCallback | 是 | 回调函数，用于提供提示弹窗二级索引项内容。需先设置usingPopup为true。 |
+| callback | OnAlphabetIndexerRequestPopupDataCallback | 是 | 设置提示弹窗二级索引项内容事件。 |
 
 
 
 
-#### onPopupSelect8+
+### onPopupSelect8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onPopupSelect(callback: OnAlphabetIndexerPopupSelectCallback)
 
-提示弹窗二级索引选中事件，回调参数为当前选中二级索引项索引。仅在[usingPopup](#usingpopup)为true时触发。
+提示弹窗二级索引选中事件，回调参数为当前选中二级索引项索引。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -708,16 +768,18 @@ onPopupSelect(callback: OnAlphabetIndexerPopupSelectCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | OnAlphabetIndexerPopupSelectCallback | 是 | 回调函数，用于处理提示弹窗二级索引选中事件。需先设置usingPopup为true。 |
+| callback | OnAlphabetIndexerPopupSelectCallback | 是 | 提示弹窗二级索引选中事件。 |
 
 
 
 
-#### OnAlphabetIndexerSelectCallback18+
+## OnAlphabetIndexerSelectCallback18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnAlphabetIndexerSelectCallback = (index: number) => void
 
@@ -731,6 +793,7 @@ type OnAlphabetIndexerSelectCallback = (index: number) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 当前选中索引项的索引。 |
@@ -738,9 +801,10 @@ type OnAlphabetIndexerSelectCallback = (index: number) => void
 
 
 
-#### OnAlphabetIndexerPopupSelectCallback18+
+## OnAlphabetIndexerPopupSelectCallback18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnAlphabetIndexerPopupSelectCallback = (index: number) => void
 
@@ -754,6 +818,7 @@ type OnAlphabetIndexerPopupSelectCallback = (index: number) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 当前选中的提示弹窗二级索引项的索引。 |
@@ -761,9 +826,10 @@ type OnAlphabetIndexerPopupSelectCallback = (index: number) => void
 
 
 
-#### OnAlphabetIndexerRequestPopupDataCallback18+
+## OnAlphabetIndexerRequestPopupDataCallback18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnAlphabetIndexerRequestPopupDataCallback = (index: number) => Array&lt;string&gt;
 
@@ -777,12 +843,14 @@ type OnAlphabetIndexerRequestPopupDataCallback = (index: number) => Array&lt;str
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 当前选中索引项的索引。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -791,13 +859,17 @@ type OnAlphabetIndexerRequestPopupDataCallback = (index: number) => Array&lt;str
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（设置提示弹窗显示文本内容）
+
+
+### 示例1（设置提示弹窗显示文本内容）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过[onRequestPopupData](#onrequestpopupdata8)事件自定义提示弹窗显示文本内容。
 
@@ -917,7 +989,10 @@ struct AlphabetIndexerSample {
 
 
 
-#### 示例2（开启自适应折叠模式）
+### 示例2（开启自适应折叠模式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过[autoCollapse](#autocollapse11)属性开启自适应折叠模式。
 
@@ -999,7 +1074,7 @@ struct AlphabetIndexerSample {
               .popupFont({ size: 30, weight: FontWeight.Bolder }) // 提示弹窗一级索引的文本样式
               .itemSize(28) // 每一项的尺寸大小
               .alignStyle(IndexerAlign.Right) // 提示弹窗在索引条左侧弹出
-              .popupTitleBackground(0xD2B48C) // 设置提示弹窗一级索引项背景颜色
+              .popupTitleBackground("#D2B48C") // 设置提示弹窗一级索引项背景颜色
               .popupSelectedColor(0x00FF00) // 提示弹窗二级索引选中项文本颜色
               .popupUnselectedColor(0x0000FF) // 提示弹窗二级索引未选中项文本颜色
               .popupItemFont({ size: 30, style: FontStyle.Normal }) // 提示弹窗二级索引项文本样式
@@ -1063,7 +1138,10 @@ struct AlphabetIndexerSample {
 
 
 
-#### 示例3（设置提示弹窗背景模糊材质）
+### 示例3（设置提示弹窗背景模糊材质）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过[popupBackgroundBlurStyle](#popupbackgroundblurstyle12)属性实现提示弹窗的背景模糊效果。
 
@@ -1193,4 +1271,4 @@ struct AlphabetIndexerSample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/f9BhzeViR96CbKf3v1hLXw/zh-cn_image_0000002655848800.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071508Z&HW-CC-Expire=86400&HW-CC-Sign=637309F86B59102F6955648976463CFBF3D62A76B5CE512EFAF6E708732A785F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/zL7fRRcrQQeJ7SzFAoGHmA/zh-cn_image_0000002747292891.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073111Z&HW-CC-Expire=86400&HW-CC-Sign=521DDAF861021FBF393C3E6B7380A00277A288F5306B430A76B4C64C41576F90)

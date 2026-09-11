@@ -1,20 +1,21 @@
 # OH_NativeXComponent_MouseEvent
 
-更新时间：2026-07-28 11:23:46（官网已下线）
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-nativexcomponent-native-xcomponent-oh-nativexcomponent-mouseevent
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct {...} OH_NativeXComponent_MouseEvent
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-鼠标事件。该结构体用于在XComponent鼠标事件回调中携带鼠标事件的详细信息，包括鼠标触点的坐标、事件触发时间、鼠标动作类型以及按键信息等，适用于需要处理鼠标交互的场景。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+鼠标事件。用于在XComponent的鼠标事件回调中传递鼠标事件信息，包含触点相对于组件和屏幕的坐标、事件时间戳、鼠标动作及按键信息。
  
 **起始版本：** 9
  
@@ -24,16 +25,19 @@ typedef struct {...} OH_NativeXComponent_MouseEvent
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 成员变量
+### 成员变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | float x | 鼠标触点相对于当前组件左上角的x轴坐标。单位：vp。 |

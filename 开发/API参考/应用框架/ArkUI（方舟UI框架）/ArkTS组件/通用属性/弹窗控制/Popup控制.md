@@ -1,9 +1,9 @@
 # Popup控制
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-popup
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 为组件绑定Popup气泡，并设置气泡内容、交互逻辑和显示状态。
 
@@ -12,9 +12,10 @@
 
 
 
-#### bindPopup
+## bindPopup
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 bindPopup(show: boolean, popup: PopupOptions | CustomPopupOptions): T
 
@@ -30,6 +31,7 @@ bindPopup(show: boolean, popup: PopupOptions | CustomPopupOptions): T
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | show | boolean | 是 | 气泡显示状态。请等待页面全部构建完成后再展示Popup气泡，不要在页面构建中将show设置为true，否则会导致Popup气泡显示位置及形状错误。该参数从API version 18开始支持!!语法双向绑定变量。 true：弹出气泡；false：关闭气泡。 默认值：false |
@@ -38,6 +40,7 @@ bindPopup(show: boolean, popup: PopupOptions | CustomPopupOptions): T
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | T | 返回当前组件，用于支持链式调用。 |
@@ -45,13 +48,15 @@ bindPopup(show: boolean, popup: PopupOptions | CustomPopupOptions): T
 
 
 
-#### PopupOptions类型说明
+## PopupOptions类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 基础气泡的信息。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -96,9 +101,10 @@ bindPopup(show: boolean, popup: PopupOptions | CustomPopupOptions): T
 
 
 
-#### PopupMessageOptions10+类型说明
+## PopupMessageOptions10+类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 气泡文本的样式。
 
@@ -108,6 +114,7 @@ bindPopup(show: boolean, popup: PopupOptions | CustomPopupOptions): T
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | textColor | ResourceColor | 否 | 是 | 设置气泡信息文本颜色。 |
@@ -116,9 +123,10 @@ bindPopup(show: boolean, popup: PopupOptions | CustomPopupOptions): T
 
 
 
-#### DismissPopupAction12+类型说明
+## DismissPopupAction12+类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 气泡关闭的信息。
 
@@ -128,6 +136,7 @@ bindPopup(show: boolean, popup: PopupOptions | CustomPopupOptions): T
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | dismiss | Callback&lt;void&gt; | 否 | 否 | Popup关闭回调函数。开发者需要退出时调用，不需要退出时无需调用。 |
@@ -136,15 +145,17 @@ bindPopup(show: boolean, popup: PopupOptions | CustomPopupOptions): T
 
 
 
-#### DismissReason12+枚举说明
+## DismissReason12+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 关闭原因类型。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -157,13 +168,15 @@ bindPopup(show: boolean, popup: PopupOptions | CustomPopupOptions): T
 
 
 
-#### CustomPopupOptions8+类型说明
+## CustomPopupOptions8+类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 弹出自定义气泡的信息。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -206,15 +219,17 @@ bindPopup(show: boolean, popup: PopupOptions | CustomPopupOptions): T
 
 
 
-#### PopupCommonOptions18+类型说明
+## PopupCommonOptions18+类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 配置弹出气泡的参数。使用[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)中的[getPromptAction()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#getpromptaction)方法获取到[PromptAction](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-promptaction)对象，再通过该对象调用[openPopup](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-promptaction#openpopup18)和[updatePopup](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-promptaction#updatepopup18)时传入的options参数。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -254,9 +269,10 @@ bindPopup(show: boolean, popup: PopupOptions | CustomPopupOptions): T
 
 
 
-#### PopupStateChangeParam18+类型说明
+## PopupStateChangeParam18+类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 气泡的显示状态。
 
@@ -266,6 +282,7 @@ bindPopup(show: boolean, popup: PopupOptions | CustomPopupOptions): T
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | isVisible | boolean | 否 | 否 | 气泡的显示状态。true表示气泡打开，false表示气泡关闭。 |
@@ -273,11 +290,12 @@ bindPopup(show: boolean, popup: PopupOptions | CustomPopupOptions): T
 
 
 
-#### PopupStateChangeCallback18+
+## PopupStateChangeCallback18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-type PopupStateChangeCallback = (event: PopupStateChangeParam) => void;
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+type PopupStateChangeCallback = (event: PopupStateChangeParam) => void
 
 气泡状态变化事件回调。
 
@@ -289,6 +307,7 @@ type PopupStateChangeCallback = (event: PopupStateChangeParam) => void;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | PopupStateChangeParam | 是 | 气泡当前的显示状态。 |
@@ -296,9 +315,10 @@ type PopupStateChangeCallback = (event: PopupStateChangeParam) => void;
 
 
 
-#### PopupMaskType18+类型说明
+## PopupMaskType18+类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置遮罩层颜色。
 
@@ -308,6 +328,7 @@ type PopupStateChangeCallback = (event: PopupStateChangeParam) => void;
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | color | ResourceColor | 否 | 否 | 设置遮罩层颜色。 |
@@ -315,9 +336,10 @@ type PopupStateChangeCallback = (event: PopupStateChangeParam) => void;
 
 
 
-#### PopupBorderLinearGradient20+类型说明
+## PopupBorderLinearGradient20+类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置描边线性渐变的颜色和方向。
 
@@ -327,6 +349,7 @@ type PopupStateChangeCallback = (event: PopupStateChangeParam) => void;
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | direction | GradientDirection | 否 | 是 | 线性渐变的方向。 默认值：GradientDirection.Bottom 说明： 当线性渐变的方向设置为GradientDirection.None时，显示默认值。 |
@@ -335,9 +358,10 @@ type PopupStateChangeCallback = (event: PopupStateChangeParam) => void;
 
 
 
-#### KeyboardAvoidMode12+枚举说明
+## KeyboardAvoidMode12+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 气泡避让键盘时，避让模式的枚举类型。
 
@@ -347,6 +371,7 @@ type PopupStateChangeCallback = (event: PopupStateChangeParam) => void;
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DEFAULT | 0 | 默认避让软键盘并在到达极限高度之后进行高度压缩。 |
@@ -355,9 +380,10 @@ type PopupStateChangeCallback = (event: PopupStateChangeParam) => void;
 
 
 
-#### AnchoredColorMode
+## AnchoredColorMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 配置组件主题跟随的颜色模式。
 
@@ -369,6 +395,7 @@ type PopupStateChangeCallback = (event: PopupStateChangeParam) => void;
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | FOLLOW_SYSTEM | 0 | 跟随系统深浅色模式。 |
@@ -377,13 +404,17 @@ type PopupStateChangeCallback = (event: PopupStateChangeParam) => void;
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（弹出不同类型的气泡）
+
+
+### 示例1（弹出不同类型的气泡）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置[PopupOptions](#popupoptions类型说明)或[CustomPopupOptions](#custompopupoptions8类型说明)中的keyboardAvoidMode属性，设置气泡是否避让软键盘。
 
@@ -474,7 +505,10 @@ struct PopupExample {
 
 
 
-#### 示例2（设置气泡的文本样式）
+### 示例2（设置气泡的文本样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置[PopupOptions](#popupoptions类型说明)中的messageOptions属性，实现了弹出自定义文本样式的气泡。
 
@@ -525,7 +559,10 @@ struct PopupExample {
 
 
 
-#### 示例3（设置气泡的样式）
+### 示例3（设置气泡的样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置[PopupOptions](#popupoptions类型说明)中的arrowHeight、arrowWidth、radius、shadow和popupColor属性，实现了气泡箭头以及气泡本身的样式。
 
@@ -577,7 +614,10 @@ struct PopupExample {
 
 
 
-#### 示例4（设置气泡的动效）
+### 示例4（设置气泡的动效）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置[PopupOptions](#popupoptions类型说明)或[CustomPopupOptions](#custompopupoptions8类型说明)中的transition属性，实现了气泡显示以及退出的动效。
 
@@ -651,7 +691,10 @@ struct PopupExample {
 
 
 
-#### 示例5（为气泡添加事件）
+### 示例5（为气泡添加事件）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置[PopupOptions](#popupoptions类型说明)中的onWillDismiss属性，实现了当气泡退出时，拦截退出事件并执行回调函数。
 
@@ -710,7 +753,10 @@ struct PopupExample {
 
 
 
-#### 示例6（为气泡拦截退出事件）
+### 示例6（为气泡拦截退出事件）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例将[PopupOptions](#popupoptions类型说明)的onWillDismiss属性设为false，使气泡不响应退出事件。同时，配置[PopupOptions](#popupoptions类型说明)的followTransformOfTarget属性，设置气泡是否跟随宿主组件变换。
 
@@ -772,7 +818,10 @@ struct PopupExample {
 
 
 
-#### 示例7（为气泡内外描边设置线性渐变）
+### 示例7（为气泡内外描边设置线性渐变）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置[PopupOptions](#popupoptions类型说明)中的outlineWidth、borderWidth、outlineLinearGradient、borderLinearGradient属性，为气泡设置内外描边线性渐变的颜色和方向。
 
@@ -827,7 +876,10 @@ struct PopupExample {
 
 
 
-#### 示例8（设置气泡避让绑定的组件模式）
+### 示例8（设置气泡避让绑定的组件模式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置[PopupOptions](#popupoptions类型说明)的avoidTarget属性，实现气泡对其绑定组件的避让。
 
@@ -864,9 +916,14 @@ struct PopupExample {
 
 
 
-#### 示例9（设置Popup的系统材质视觉效果）
+### 示例9（设置Popup的沉浸光感视觉效果）
 
-该示例通过设置[PopupOptions](#popupoptions类型说明)中的systemMaterial属性，实现了Popup的系统材质视效。
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+该示例通过[PopupOptions](#popupoptions类型说明)中的systemMaterial属性设置组件的系统材质，实现了Popup的沉浸光感视效。
+
+组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
 
 从API版本26.0.0开始，在PopupOptions中新增了systemMaterial属性。
 
@@ -895,7 +952,7 @@ struct PopupExample {
         .bindPopup(this.handlePopup!!, {
           message: 'This is a popup with PopupOptions',
           placement: Placement.Top,
-          // 控制是否设置系统材质
+          // 控制是否设置系统材质接口
           systemMaterial: new uiMaterial.ImmersiveMaterial({
             style: uiMaterial.ImmersiveStyle.THIN
           })
@@ -923,7 +980,10 @@ struct PopupExample {
 
 
 
-#### 示例10（自定义气泡背景效果参数）
+### 示例10（自定义气泡背景效果参数）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置[PopupOptions](#popupoptions类型说明)的backgroundBlurStyleOptions和backgroundEffect属性，实现自定义气泡背景效果。
 
@@ -994,12 +1054,15 @@ struct PopupExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/n0y1-1jyRxe6XsYqYipnfQ/zh-cn_image_0000002704394467.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095447Z&HW-CC-Expire=86400&HW-CC-Sign=EE51298E80FC5650742792128FE300973DB0F7C13A22DF250070725E91E40479)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/9mP3Cu_GTfOZ_rShgrRHaQ/zh-cn_image_0000002747292501.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073127Z&HW-CC-Expire=86400&HW-CC-Sign=4E271317DB2A13C524B5D8E952B2F8526F15475E7575120C3F9C187F44102A1E)
 
 
 
 
-#### 示例11（设置气泡的显示层级模式）
+### 示例11（设置气泡的显示层级模式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置[PopupOptions](#popupoptions类型说明)的levelMode属性，实现气泡在页面内嵌入显示。点击按钮后页面级的气泡不会显示在下一个路由页面中。
 
@@ -1060,4 +1123,4 @@ struct PageTwo {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/td8MOn2KSbSHQJ58xby_Wg/zh-cn_image_0000002674634346.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095447Z&HW-CC-Expire=86400&HW-CC-Sign=8FCDCCE7C4186C4F17710160001E8A25F65F371D15FB182AE09F414C8DBF4931)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/nIWo6yeERC6f_nv8q1lHIw/zh-cn_image_0000002747212417.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073127Z&HW-CC-Expire=86400&HW-CC-Sign=6AC23574EF4FB34E9052E1368FDABFD3D79B1602A5696BA4DDB9ED717E8D0C9F)

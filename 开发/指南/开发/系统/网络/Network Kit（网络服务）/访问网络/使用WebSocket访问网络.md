@@ -1,10 +1,10 @@
 # 使用WebSocket访问网络
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/websocket-connection
 
-#### 场景介绍
+## 场景介绍
 
 WebSocket是一种网络通信协议，它允许客户端和服务器之间建立一个持久的连接，并在该连接上进行全双工通信，连接之后客户端和服务器端可以同时主动发送数据，这是WebSocket和传统的HTTP协议最大的区别，HTTP以单向通信为主，客户端发起请求，服务器端响应数据，一次传输之后，连接会断开。一般情况下，HTTP适用于一次性数据获取（如网页内容加载），WebSocket适用于实时性要求高的场景下（如在线聊天、实时游戏），以避免频繁建立连接提升用户体验。
 
@@ -22,7 +22,7 @@ WebSocket是一种网络通信协议，它允许客户端和服务器之间建�
 
 
 
-#### client端开发步骤
+## client端开发步骤
 1. 导入webSocket以及错误码模块。
 
   
@@ -110,7 +110,7 @@ ws.send('Hello, server!', (err: BusinessError, value: boolean) => {
 
 
 
-#### server端开发步骤
+## server端开发步骤
 1. 导入webSocket以及错误码模块。
 
   

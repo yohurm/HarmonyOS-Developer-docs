@@ -85,7 +85,7 @@ export function downloadFilePluginFunc(str?: string): HvigorPlugin {
     pluginId: 'DownloadFilePluginID01',
     apply(pluginContext): void {
       pluginContext.registerTask({
-        // 编写自定义任务
+        <em>// </em><em>编写自定义任务</em>
         name: 'customTask1',
         run: (taskContext) => {
           let command = '';
@@ -103,7 +103,7 @@ export function downloadFilePluginFunc(str?: string): HvigorPlugin {
             console.info(`文件下载失败，输出: ${e.toString()}`);
           }
         },
-        // 确认自定义任务插入位置
+        <em>// </em><em>确认自定义任务插入位置</em>
         dependencies: ['default@GenerateMetadata'],
         postDependencies: ['default@ProcessResource']
       })

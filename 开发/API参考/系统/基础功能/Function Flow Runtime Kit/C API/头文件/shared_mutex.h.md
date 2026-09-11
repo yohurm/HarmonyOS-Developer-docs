@@ -1,13 +1,14 @@
 # shared_mutex.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-shared-mutex-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明读写锁（rwlock）的C接口。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | FFRT_C_API int ffrt_rwlock_init(ffrt_rwlock_t* rwlock, const ffrt_rwlockattr_t* attr) | 初始化rwlock。该rwlock不再使用时，必须通过ffrt_rwlock_destroy销毁。 |
@@ -46,15 +50,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### ffrt_rwlock_init()
+### ffrt_rwlock_init()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API int ffrt_rwlock_init(ffrt_rwlock_t* rwlock, const ffrt_rwlockattr_t* attr)
@@ -68,6 +74,7 @@ FFRT_C_API int ffrt_rwlock_init(ffrt_rwlock_t* rwlock, const ffrt_rwlockattr_t* 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_rwlock_t* rwlock | 指向rwlock的指针。 |
@@ -76,6 +83,7 @@ FFRT_C_API int ffrt_rwlock_init(ffrt_rwlock_t* rwlock, const ffrt_rwlockattr_t* 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API int | rwlock初始化成功且attr为空指针时返回ffrt_success； 否则返回ffrt_error_inval。 |
@@ -83,9 +91,10 @@ FFRT_C_API int ffrt_rwlock_init(ffrt_rwlock_t* rwlock, const ffrt_rwlockattr_t* 
  
   
 
-#### ffrt_rwlock_wrlock()
+### ffrt_rwlock_wrlock()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API int ffrt_rwlock_wrlock(ffrt_rwlock_t* rwlock)
@@ -99,6 +108,7 @@ FFRT_C_API int ffrt_rwlock_wrlock(ffrt_rwlock_t* rwlock)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_rwlock_t* rwlock | 指向rwlock的指针。 |
@@ -106,6 +116,7 @@ FFRT_C_API int ffrt_rwlock_wrlock(ffrt_rwlock_t* rwlock)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API int | rwlock加锁成功时返回ffrt_success； rwlock为空指针时返回ffrt_error_inval。 |
@@ -119,9 +130,10 @@ FFRT_C_API int ffrt_rwlock_wrlock(ffrt_rwlock_t* rwlock)
  
   
 
-#### ffrt_rwlock_trywrlock()
+### ffrt_rwlock_trywrlock()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API int ffrt_rwlock_trywrlock(ffrt_rwlock_t* rwlock)
@@ -135,6 +147,7 @@ FFRT_C_API int ffrt_rwlock_trywrlock(ffrt_rwlock_t* rwlock)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_rwlock_t* rwlock | 指向rwlock的指针。 |
@@ -142,6 +155,7 @@ FFRT_C_API int ffrt_rwlock_trywrlock(ffrt_rwlock_t* rwlock)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API int | rwlock加锁成功时返回ffrt_success； 否则返回ffrt_error_inval或ffrt_error_busy。 |
@@ -153,9 +167,10 @@ FFRT_C_API int ffrt_rwlock_trywrlock(ffrt_rwlock_t* rwlock)
  
   
 
-#### ffrt_rwlock_rdlock()
+### ffrt_rwlock_rdlock()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API int ffrt_rwlock_rdlock(ffrt_rwlock_t* rwlock)
@@ -169,6 +184,7 @@ FFRT_C_API int ffrt_rwlock_rdlock(ffrt_rwlock_t* rwlock)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_rwlock_t* rwlock | 指向rwlock的指针。 |
@@ -176,6 +192,7 @@ FFRT_C_API int ffrt_rwlock_rdlock(ffrt_rwlock_t* rwlock)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API int | rwlock加锁成功时返回ffrt_success； rwlock为空指针时返回ffrt_error_inval。 |
@@ -189,9 +206,10 @@ FFRT_C_API int ffrt_rwlock_rdlock(ffrt_rwlock_t* rwlock)
  
   
 
-#### ffrt_rwlock_tryrdlock()
+### ffrt_rwlock_tryrdlock()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API int ffrt_rwlock_tryrdlock(ffrt_rwlock_t* rwlock)
@@ -205,6 +223,7 @@ FFRT_C_API int ffrt_rwlock_tryrdlock(ffrt_rwlock_t* rwlock)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_rwlock_t* rwlock | 指向rwlock的指针。 |
@@ -212,6 +231,7 @@ FFRT_C_API int ffrt_rwlock_tryrdlock(ffrt_rwlock_t* rwlock)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API int | rwlock加锁成功时返回ffrt_success； 否则返回ffrt_error_inval或ffrt_error_busy。 |
@@ -223,9 +243,10 @@ FFRT_C_API int ffrt_rwlock_tryrdlock(ffrt_rwlock_t* rwlock)
  
   
 
-#### ffrt_rwlock_unlock()
+### ffrt_rwlock_unlock()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API int ffrt_rwlock_unlock(ffrt_rwlock_t* rwlock)
@@ -239,6 +260,7 @@ FFRT_C_API int ffrt_rwlock_unlock(ffrt_rwlock_t* rwlock)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_rwlock_t* rwlock | 指向rwlock的指针。 |
@@ -246,6 +268,7 @@ FFRT_C_API int ffrt_rwlock_unlock(ffrt_rwlock_t* rwlock)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API int | rwlock解锁成功时返回ffrt_success； 否则返回ffrt_error_inval。 |
@@ -253,9 +276,10 @@ FFRT_C_API int ffrt_rwlock_unlock(ffrt_rwlock_t* rwlock)
  
   
 
-#### ffrt_rwlock_destroy()
+### ffrt_rwlock_destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API int ffrt_rwlock_destroy(ffrt_rwlock_t* rwlock)
@@ -269,6 +293,7 @@ FFRT_C_API int ffrt_rwlock_destroy(ffrt_rwlock_t* rwlock)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_rwlock_t* rwlock | 指向rwlock的指针。 |
@@ -276,6 +301,7 @@ FFRT_C_API int ffrt_rwlock_destroy(ffrt_rwlock_t* rwlock)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API int | rwlock销毁成功时返回ffrt_success； 否则返回ffrt_error_inval。 |

@@ -1,14 +1,12 @@
 # List展示不全
 
-更新时间：2026-06-26 09:07:13
+更新时间：2026-08-26 00:50:37
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1126
 
-#### 问题现象
+## 问题现象
 
-List组件与其他组件同级并且List子组件总尺寸超过List父组件尺寸时，会导致ListItem部分内容顶出父组件显示区域外，上滑至底部时其内容展示不全。
- 
-问题代码示例参考如下：
+List组件与其他组件同级并且List子组件总尺寸超过List父组件尺寸时，会导致ListItem部分内容顶出父组件显示区域外，上滑至底部时其内容展示不全。问题代码如下：
  
 ```text
 @Entry
@@ -44,23 +42,15 @@ struct ListDisplay {
 }
 ```
  
-问题效果预览：
+问题效果如下：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/uXIjtzoLTS-2SCHvBmBNdQ/zh-cn_image_0000002658928729.png?HW-CC-KV=V1&HW-CC-Date=20260811T005643Z&HW-CC-Expire=86400&HW-CC-Sign=BEB0E62A12B7BF8F86781E85F0CAA177CF87546E3EED520A8CC58CDC9151D102)
-
- 
- 
-
-#### 效果预览
-
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/ysl098hRRIiDxwr4HdWPfA/zh-cn_image_0000002658808783.gif?HW-CC-KV=V1&HW-CC-Date=20260811T005643Z&HW-CC-Expire=86400&HW-CC-Sign=C1D7BCA097563B0DBC26DF3BC181106D438DD072D126530C148F71D20461D873)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/_o0b_y14TEerWC07nWrGjw/zh-cn_image_0000002719103535.png?HW-CC-KV=V1&HW-CC-Date=20260911T072742Z&HW-CC-Expire=86400&HW-CC-Sign=184914AAC12BFB041BEC1632FE70143959DC9681B4A22AC005F95BA353A32890)
 
  
  
 
-#### 背景知识
+## 背景知识
 
 - [height](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size#height)：用于设置组件自身的高度，缺省时使用元素自身内容需要的高度。若子组件的高大于父组件的高，则会超出父组件的范围。
 - [margin](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size#margin)：用于设置组件的外边距属性。
@@ -72,27 +62,27 @@ struct ListDisplay {
  
  
 
-#### 问题定位
+## 问题定位
 1. 首先观察到List组件未设置高度，根据height属性说明：**height缺省时使用元素自身内容需要的高度**。所以List组件高度为子组件之和200vp*7。
 2. 之后根据官网List指南的[约束](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-create-list#约束)得知，当子组件主轴方向总尺寸超过List父组件尺寸时，List主轴方向尺寸适应List的父组件尺寸，而200vp*7>父组件高度100%，所以List组件高度为屏幕高度，示意图如下：
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/mT81xWBhRWSuDC6FCbRkXw/zh-cn_image_0000002628569420.png?HW-CC-KV=V1&HW-CC-Date=20260811T005643Z&HW-CC-Expire=86400&HW-CC-Sign=668395716AA3C55DD24A78C386A0B19F0DE6BEFD3BBEEA11072815DC71192FF1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/4yfb5grfR0Kl3FMB7fmqyA/zh-cn_image_0000002689385794.png?HW-CC-KV=V1&HW-CC-Date=20260911T072742Z&HW-CC-Expire=86400&HW-CC-Sign=10637EF54FAF933B97A20267B78993785D3563EBD5C0D016AACCB75D60CE6182)
 
 3. 再然后根据layoutWeight布局说明：**不设置layoutWeight属性或者layoutWeight属性生效值为0的元素优先占位**。所以List组件会在剩余空间内占位，导致List组件被下压，下压后List组件就有部分区域会超过当前屏幕高度，所以造成List展示不全现象。
 4. 最后可以利用ArkUI Inspector可以看到List组件超出屏幕范围，超出的距离刚好是上面Text组件占据高度200vp：
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/qmjwqXOMRjSuEg3dyrqABQ/zh-cn_image_0000002628409516.png?HW-CC-KV=V1&HW-CC-Date=20260811T005643Z&HW-CC-Expire=86400&HW-CC-Sign=F1A7EDDA7836B63964CAA4DDD709B761475EC1A49837B640B6DF066C25BD0DB3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/XlyWlf4hQlCt3L9YrCC0Dg/zh-cn_image_0000002719105259.png?HW-CC-KV=V1&HW-CC-Date=20260911T072742Z&HW-CC-Expire=86400&HW-CC-Sign=338FEA24679DD72AC541D3D276695C7A7815BE7EB18B91754F388E5FAAD3D032)
 
  
  
 
-#### 分析结论
+## 分析结论
 
 当List组件上面有其他元素并且List子组件高度之和超出屏幕范围时，会导致List组件被下压，造成List展示不全的问题。
  
  
 
-#### 修改建议
+## 修改建议
 
-- **方案一**：**给List组件设置高度。**设置固定高度以后List组件就会在限定的范围内滑动，比如设置300vp后List组件就在300vp内进行滑动：
+- **方案一：给List组件设置高度。**设置固定高度以后List组件就会在限定的范围内滑动，比如设置300vp后List组件就在300vp内进行滑动：
 
   
 ```text
@@ -173,6 +163,8 @@ struct ListDisplayTwo {
 > [!NOTE]
 > calc公式中200vp的高度为List上面Text组件的高度。
 
+
+ 
 - **方案二：给List组件设置layoutWeight属性。**在主轴剩余空间内，设置了layoutWeight属性的子元素与兄弟元素会在主轴方向按照权重分配尺寸。给List组件设置layoutWeight属性即可：
 
   
@@ -214,6 +206,8 @@ struct ListDisplayThree {
 > [!NOTE]
 > 以上场景Text组件后面只有List组件，故layoutWeight设置无论何值都行，不过一般都会设置成layoutWeight(1)。
 
+
+ 
 - **方案三：给List组件设置margin属性。**利用ArkUI Inspector可以看到List组件超出屏幕范围，超出的距离刚好是上面Text组件占据高度200vp。而margin属性就是用于设置组件的外边距，所以给List组件设置margin底部200vp即可：
 
   
@@ -252,6 +246,8 @@ struct ListDisplayFour {
 }
 ```
 
+
+ 
 - **方案四：使用Flex布局。**Flex组件提供更加有效的方式对容器中的子元素进行排列、对齐和分配剩余空间，设置FlexWrap.NoWrap即可让子元素尽可能约束在容器内：
 
   
@@ -289,7 +285,7 @@ struct ListDisplayFive {
 }
 ```
 
-- **方案五：给List组件设置contentEndOffset属性。**设置内容区域末尾偏移量：
+- **方案五：给List组件设置contentEndOffset属性。**设置内容区域末尾偏移量。
 
   
 ```text
@@ -327,16 +323,16 @@ struct ListDisplaySix {
 ```
 
 
+  以上方案均可修复List展示不全问题，修正效果如下：
+
+  
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/ULs_nYLyQ7GEKZW1dtCFjg/zh-cn_image_0000002689396764.png?HW-CC-KV=V1&HW-CC-Date=20260911T072742Z&HW-CC-Expire=86400&HW-CC-Sign=9AFC8E06255CCC90D6E862B007DC7B62A6B7E00213B3D7946BABB405C0C54AF1)
+
+
  
-以上方案均可修复List展示不全问题，修正效果如下：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/aID8jA6uRD6fOnrUA9J_8w/zh-cn_image_0000002658928733.png?HW-CC-KV=V1&HW-CC-Date=20260811T005643Z&HW-CC-Expire=86400&HW-CC-Sign=4A937889CAABEFA5AAB8A3F98436048C2EB7F9426D0498FFFC9AD60CE2F75856)
-
- 
- 
-
-#### 常见FAQ
+## 常见FAQ
 
 Q：List组件被父容器组件包裹，父容器组件有同级组件时，单纯给List设置layoutWeight不生效该如何解决？
  
@@ -348,16 +344,21 @@ A：calc中的参数需统一单位计算，其中的56未明确单位，会导�
  
 calc(100% - ${DefParam.topRectHeight + DefParam.bottomRectHeight}vp - 56vp)。
  
+Q：List组件高度被动态压缩时，如何保持最新的ListItem可见？
+ 
+A：可以使用[contentStartOffset](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list#contentstartoffset11)属性设置内容区域起始偏移量，将偏移值设置为新增组件的高度，使List滚动到对应位置，确保最新的ListItem保持可见。
+ 
  
 
-#### 总结
+## 总结
 
 List组件由于其滚动特性一般不会设置其高度，而当List在父容器内有其他兄弟节点处于上方并且List组件高度超出屏幕范围时，就会造成List展示不全问题，本文提供五种方案进行解决，五种方案对比如下，开发者可以自行根据对比进行选择：
   
+
 | 方案 | 原理 | 场景说明 |
 | --- | --- | --- |
-| 设置height | 约束List组件的高度。 | 固定高度会限制List只能在有限范围内展示，根据实际业务需要；利用calc计算设置动态高度等同于layoutWeight效果，但需要获悉上面节点的高度使用较为麻烦。 |
-| 设置layoutWeight | 在主轴剩余空间内分配List尺寸。 | 应用场景最多，使用最方便，推荐使用。 |
-| 设置margin | 设置List组件的外边距。 | 需要获悉上面节点的高度，有其他方向margin设置需求时可以搭配使用；若下方还有节点则会设置失败，局限性较大。 |
-| 使用Flex布局 | 利用弹性布局特性。 | FlexWrap.NoWrap不换行时List默认能展示完全；FlexWrap.Wrap换行时必须搭配height属性使用，否则List内容会向右溢出。 |
-| 设置contentEndOffset属性 | 设置内容区偏移量。 | 列表滚动到末尾位置时，列表内容与列表显示区域边界保留指定距离。 |
+| 设置height | 约束List组件的高度 | 固定高度会限制List只能在有限范围内展示，根据实际业务需要；利用calc计算设置动态高度等同于layoutWeight效果，但需要获悉上面节点的高度使用较为麻烦 |
+| 设置layoutWeight | 在主轴剩余空间内分配List尺寸 | 应用场景最多，使用最方便，推荐使用 |
+| 设置margin | 设置List组件的外边距 | 需要获悉上面节点的高度，有其他方向margin设置需求时可以搭配使用；若下方还有节点则会设置失败，局限性较大 |
+| 使用Flex布局 | 利用弹性布局特性 | FlexWrap.NoWrap不换行时List默认能展示完全；FlexWrap.Wrap换行时必须搭配height属性使用，否则List内容会向右溢出 |
+| 设置contentEndOffset属性 | 设置内容区偏移量 | 列表滚动到末尾位置时，列表内容与列表显示区域边界保留指定距离 |

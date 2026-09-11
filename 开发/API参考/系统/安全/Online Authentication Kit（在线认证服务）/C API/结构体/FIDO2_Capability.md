@@ -1,10 +1,14 @@
 # FIDO2_Capability
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_f_i_d_o2___capability
+**支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 通行密钥能力的结构体。
  
@@ -16,12 +20,19 @@
  
   
 
-#### 汇总
+## 汇总
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 成员变量
+### 成员变量
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | FIDO2_ClientCapability capability | 通行密钥的能力。 |
@@ -30,11 +41,17 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### capability
+### capability
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FIDO2_ClientCapability FIDO2_Capability::capability
@@ -46,7 +63,10 @@ FIDO2_ClientCapability FIDO2_Capability::capability
  
   
 
-#### isSupported
+### isSupported
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 bool FIDO2_Capability::isSupported

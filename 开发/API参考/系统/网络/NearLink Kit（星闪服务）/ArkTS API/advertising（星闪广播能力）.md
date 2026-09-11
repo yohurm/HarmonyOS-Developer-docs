@@ -1,18 +1,19 @@
 # advertising（星闪广播能力）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/nearlink-advertising
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供了发送星闪广播的相关功能，包括启动广播、停止广播、订阅广播状态等。
 
 **起始版本：** 5.0.1(13)
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { advertising } from '@kit.NearLinkKit';
@@ -20,9 +21,10 @@ import { advertising } from '@kit.NearLinkKit';
 
 
 
-#### AdvertisingParams
+## AdvertisingParams
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示发送广播携带的参数。
 
@@ -32,6 +34,7 @@ import { advertising } from '@kit.NearLinkKit';
 
 **起始版本：** 5.0.1(13)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | advertisingSettings | AdvertisingSettings | 否 | 否 | 广播配置参数。 |
@@ -40,9 +43,10 @@ import { advertising } from '@kit.NearLinkKit';
 
 
 
-#### AdvertisingSettings
+## AdvertisingSettings
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示广播配置参数。
 
@@ -52,18 +56,20 @@ import { advertising } from '@kit.NearLinkKit';
 
 **起始版本：** 5.0.1(13)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | interval | number | 否 | 是 | 广播间隔配置参数。单位slot，范围160-16777215，默认值为5000。1个slot对应的时间长度是0.125ms，例如：5000*0.125=625ms。 |
 | power | TxPowerMode | 否 | 是 | 广播发射功率配置参数。如果不配置，则默认值为ADV_TX_POWER_LOW。 |
-| isConnectable | boolean | 否 | 是 | true: 表示可连接的广播。false：表示不可连接的广播。默认值为true。 |
+| isConnectable | boolean | 否 | 是 | true表示可连接的广播。false表示不可连接的广播。默认值为true。 |
 
 
 
 
-#### AdvertisingData
+## AdvertisingData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示广播数据包。
 
@@ -73,19 +79,21 @@ import { advertising } from '@kit.NearLinkKit';
 
 **起始版本：** 5.0.1(13)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | serviceUuids | Array&lt;string&gt; | 否 | 是 | 服务UUID列表。若未配置则默认不携带该字段。UUID格式参考星闪标准服务UUID。 |
 | manufacturerData | Array&lt;ManufacturerData&gt; | 否 | 是 | 厂商数据。若未配置则默认不携带该字段。 |
 | serviceData | Array&lt;ServiceData&gt; | 否 | 是 | 服务数据。若未配置则默认不携带该字段。 |
-| includeDeviceName | boolean | 否 | 是 | 指示广播数据中是否携带本机设备名。true：表示包含设备名称。false：表示不包含设备名称。默认值为false。 |
+| includeDeviceName | boolean | 否 | 是 | 指示广播数据中是否携带本机设备名。true表示包含设备名称。false表示不包含设备名称。默认值为false。 |
 
 
 
 
-#### ManufacturerData
+## ManufacturerData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示厂商数据。
 
@@ -95,6 +103,7 @@ import { advertising } from '@kit.NearLinkKit';
 
 **起始版本：** 5.0.1(13)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | manufacturerId | number | 否 | 否 | 厂商ID。取值范围[1, 65535]。 |
@@ -103,9 +112,10 @@ import { advertising } from '@kit.NearLinkKit';
 
 
 
-#### ServiceData
+## ServiceData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示服务相关数据。
 
@@ -115,6 +125,7 @@ import { advertising } from '@kit.NearLinkKit';
 
 **起始版本：** 5.0.1(13)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | serviceUuid | string | 否 | 否 | 表示服务的UUID。UUID格式参考星闪标准服务UUID。 |
@@ -123,9 +134,10 @@ import { advertising } from '@kit.NearLinkKit';
 
 
 
-#### AdvertisingStateChangeInfo
+## AdvertisingStateChangeInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示广播启停状态变化信息。
 
@@ -135,6 +147,7 @@ import { advertising } from '@kit.NearLinkKit';
 
 **起始版本：** 5.0.1(13)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | advertisingId | number | 否 | 否 | 表示广播ID。取值范围[0, 255]。 |
@@ -143,17 +156,19 @@ import { advertising } from '@kit.NearLinkKit';
 
 
 
-#### TxPowerMode
+## TxPowerMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-表示广播发送模式，为枚举值。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+表示广播发送功率模式，为枚举值。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Communication.NearLink.Core
 
 **起始版本：** 5.0.1(13)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -164,9 +179,10 @@ import { advertising } from '@kit.NearLinkKit';
 
 
 
-#### AdvertisingState
+## AdvertisingState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示广播状态，为枚举值。
 
@@ -176,6 +192,7 @@ import { advertising } from '@kit.NearLinkKit';
 
 **起始版本：** 5.0.1(13)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | STARTED | 1 | 表示广播已启动。 |
@@ -184,9 +201,10 @@ import { advertising } from '@kit.NearLinkKit';
 
 
 
-#### startAdvertising
+## startAdvertising
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startAdvertising(advertisingParams: AdvertisingParams): Promise&lt;number&gt;
 
@@ -202,12 +220,14 @@ startAdvertising(advertisingParams: AdvertisingParams): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | advertisingParams | AdvertisingParams | 是 | 广播相关参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -217,6 +237,7 @@ startAdvertising(advertisingParams: AdvertisingParams): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -281,9 +302,10 @@ try {
 
 
 
-#### stopAdvertising
+## stopAdvertising
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stopAdvertising(advertisingId: number): Promise&lt;void&gt;
 
@@ -299,12 +321,14 @@ stopAdvertising(advertisingId: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | advertisingId | number | 是 | 广播ID，开启广播时获取。取值范围[0, 255]。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -314,6 +338,7 @@ stopAdvertising(advertisingId: number): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -344,9 +369,10 @@ try {
 
 
 
-#### on( 'advertisingStateChange')
+## on( 'advertisingStateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'advertisingStateChange', callback: Callback&lt;AdvertisingStateChangeInfo&gt;): void
 
@@ -362,6 +388,7 @@ on(type: 'advertisingStateChange', callback: Callback&lt;AdvertisingStateChangeI
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'advertisingStateChange'，表示星闪广播状态事件。 当调用advertising.startAdvertising、advertising.stopAdvertising时，均会触发该事件。 |
@@ -371,6 +398,7 @@ on(type: 'advertisingStateChange', callback: Callback&lt;AdvertisingStateChangeI
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -399,9 +427,10 @@ try {
 
 
 
-#### off( 'advertisingStateChange')
+## off( 'advertisingStateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'advertisingStateChange', callback?: Callback&lt;AdvertisingStateChangeInfo&gt;): void
 
@@ -417,6 +446,7 @@ off(type: 'advertisingStateChange', callback?: Callback&lt;AdvertisingStateChang
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'advertisingStateChange'，表示广播状态事件。 |
@@ -426,6 +456,7 @@ off(type: 'advertisingStateChange', callback?: Callback&lt;AdvertisingStateChang
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

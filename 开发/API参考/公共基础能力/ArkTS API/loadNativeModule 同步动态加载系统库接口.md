@@ -1,9 +1,9 @@
 # loadNativeModule (同步动态加载系统库接口)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-common-load-native-module
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供了同步动态加载系统库接口的能力。
 
@@ -12,9 +12,10 @@
 
 
 
-#### loadNativeModule
+## loadNativeModule
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 loadNativeModule(moduleName: string): Object
 
@@ -24,12 +25,14 @@ loadNativeModule接口用于同步动态加载native模块，目的是按需加�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | moduleName | string | 是 | 加载的模块名。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -40,6 +43,7 @@ loadNativeModule接口用于同步动态加载native模块，目的是按需加�
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. |
@@ -47,6 +51,7 @@ loadNativeModule接口用于同步动态加载native模块，目的是按需加�
 
 
 **loadNativeModule支持的场景**
+
 
 | 场景 | 示例 |
 | --- | --- |
@@ -56,7 +61,10 @@ loadNativeModule接口用于同步动态加载native模块，目的是按需加�
 
 
 
-#### 使用注意事项
+### 使用注意事项
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
  - loadNativeModule仅支持在Stage模型的UI主线程中加载native模块。
  - 使用该接口会增加so文件的加载时间，使用前需评估其对应用性能和功能的影响。

@@ -1,10 +1,10 @@
 # 打开APP Button
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusion-button-launchapp
 
-#### 场景介绍
+## 场景介绍
 
 打开APP功能可以帮助调用对应Button组件打开另一个应用。
 
@@ -16,17 +16,17 @@
 
 
 
-#### 约束与限制
+## 约束与限制
 
 打开APP Button支持Phone、Tablet和PC/2in1设备，并且从5.1.0(18)版本开始，新增支持TV设备。
 
 
 
-#### 开发步骤
+## 开发步骤
 1. 导入Scenario Fusion Kit模块以及相关公共模块。
 
   
-```text
+```ArkTS
 import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 ```
@@ -34,7 +34,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 2. 在容器中声明FunctionalButton，指定Button的openType，并设置对应的回调函数，代码如下：
 
   
-```text
+```ArkTS
 @Entry
 @Component
 struct Index {
@@ -47,7 +47,7 @@ struct Index {
             // OpenType.LAUNCH_APP表示该按钮用于启动应用。
             openType: functionalButtonComponentManager.OpenType.LAUNCH_APP,
             label: '打开APP',
-            // 当OpenType为functionButtonComponentManager.OpenType.LAUNCH_APP时，appParam为必填项。
+            // 当OpenType为functionalButtonComponentManager.OpenType.LAUNCH_APP时，appParam为必填项。
             appParam: {
               bundleName: 'xxx',
               abilityName: 'xxx'

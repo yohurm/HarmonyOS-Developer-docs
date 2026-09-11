@@ -1,6 +1,6 @@
 # @ohos.connectedTag (有源标签)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-connectedtag
 **支持设备：** PC/2in1
@@ -12,7 +12,8 @@
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** PC/2in1
 
@@ -22,7 +23,8 @@ import { connectedTag } from '@kit.ConnectivityKit';
 
 
 
-#### connectedTag.init(deprecated)
+## connectedTag.init(deprecated)
+
 
 **支持设备：** PC/2in1
 
@@ -40,6 +42,7 @@ init(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | true：初始化成功。 false：初始化失败。 |
@@ -47,7 +50,8 @@ init(): boolean
 
 
 
-#### connectedTag.initialize9+
+## connectedTag.initialize9+
+
 
 **支持设备：** PC/2in1
 
@@ -62,6 +66,7 @@ initialize(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -85,7 +90,8 @@ try {
 
 
 
-#### connectedTag.uninit(deprecated)
+## connectedTag.uninit(deprecated)
+
 
 **支持设备：** PC/2in1
 
@@ -103,6 +109,7 @@ uninit(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | true：卸载操作成功。 false：卸载操作失败。 |
@@ -110,7 +117,8 @@ uninit(): boolean
 
 
 
-#### connectedTag.uninitialize9+
+## connectedTag.uninitialize9+
+
 
 **支持设备：** PC/2in1
 
@@ -118,13 +126,14 @@ uninitialize(): void
 
 卸载有源标签芯片资源。
 
-**需要权限:** ohos.permission.NFC_TAG
+**需要权限：** ohos.permission.NFC_TAG
 
-**系统能力:** SystemCapability.Communication.ConnectedTag
+**系统能力：** SystemCapability.Communication.ConnectedTag
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -148,7 +157,8 @@ try {
 
 
 
-#### connectedTag.readNdefTag(deprecated)
+## connectedTag.readNdefTag(deprecated)
+
 
 **支持设备：** PC/2in1
 
@@ -165,6 +175,7 @@ readNdefTag(): Promise&lt;string&gt;
 **系统能力**：SystemCapability.Communication.ConnectedTag
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -186,7 +197,8 @@ connectedTag.readNdefTag().then((data) => {
 
 
 
-#### connectedTag.read9+
+## connectedTag.read9+
+
 
 **支持设备：** PC/2in1
 
@@ -200,6 +212,7 @@ read(): Promise<number[]>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<number[]> | Promise对象，返回读取有源标签内容的列表。 |
@@ -208,6 +221,7 @@ read(): Promise<number[]>
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -231,7 +245,8 @@ connectedTag.read().then((data) => {
 
 
 
-#### connectedTag.readNdefTag(deprecated)
+## connectedTag.readNdefTag(deprecated)
+
 
 **支持设备：** PC/2in1
 
@@ -248,6 +263,7 @@ readNdefTag(callback: AsyncCallback&lt;string&gt;): void
 **系统能力**：SystemCapability.Communication.ConnectedTag
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -270,7 +286,8 @@ connectedTag.readNdefTag((err, data)=> {
 
 
 
-#### connectedTag.read9+
+## connectedTag.read9+
+
 
 **支持设备：** PC/2in1
 
@@ -284,6 +301,7 @@ read(callback: AsyncCallback<number[]>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback<number[]> | 是 | 回调函数。当读取成功时data为读取到有源标签的内容；否则为err错误对象。 |
@@ -292,6 +310,7 @@ read(callback: AsyncCallback<number[]>): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -316,7 +335,8 @@ connectedTag.read((err, data)=> {
 
 
 
-#### connectedTag.writeNdefTag(deprecated)
+## connectedTag.writeNdefTag(deprecated)
+
 
 **支持设备：** PC/2in1
 
@@ -334,12 +354,14 @@ writeNdefTag(data: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| data | string | 是 | 有源标签内容, 最大长度为1024个字节。 |
+| data | string | 是 | 有源标签内容，最大长度为1024个字节。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -362,7 +384,8 @@ connectedTag.writeNdefTag(rawData).then(() => {
 
 
 
-#### connectedTag.write9+
+## connectedTag.write9+
+
 
 **支持设备：** PC/2in1
 
@@ -376,12 +399,14 @@ write(data: number[]): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| data | number[] | 是 | 有源标签内容, 由十六进制数字组成。范围：0x00至0xFF。 |
+| data | number[] | 是 | 有源标签内容，由十六进制数字组成。范围：0x00至0xFF。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -391,6 +416,7 @@ write(data: number[]): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -416,7 +442,8 @@ connectedTag.write(rawData).then(() => {
 
 
 
-#### connectedTag.writeNdefTag(deprecated)
+## connectedTag.writeNdefTag(deprecated)
+
 
 **支持设备：** PC/2in1
 
@@ -434,9 +461,10 @@ writeNdefTag(data: string, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| data | string | 是 | 有源标签内容, 最大长度为1024个字节。 |
+| data | string | 是 | 有源标签内容，最大长度为1024个字节。 |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当写入标签成功，err为undefined，否则为错误对象。 |
 
 
@@ -457,7 +485,8 @@ connectedTag.writeNdefTag(rawData, (err)=> {
 
 
 
-#### connectedTag.write9+
+## connectedTag.write9+
+
 
 **支持设备：** PC/2in1
 
@@ -471,15 +500,17 @@ write(data: number[], callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| data | number[] | 是 | 有源标签内容, 由十六进制数字组成。范围：0x00至0xFF。 |
+| data | number[] | 是 | 有源标签内容，由十六进制数字组成。范围：0x00至0xFF。 |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当写入标签成功，err为undefined，否则为错误对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -506,7 +537,8 @@ connectedTag.write(rawData, (err)=> {
 
 
 
-#### connectedTag.on('notify')
+## connectedTag.on('notify')
+
 
 **支持设备：** PC/2in1
 
@@ -520,6 +552,7 @@ on(type: "notify", callback: Callback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定填"notify"字符串。 |
@@ -528,7 +561,8 @@ on(type: "notify", callback: Callback&lt;number&gt;): void
 
 
 
-#### connectedTag.off('notify')
+## connectedTag.off('notify')
+
 
 **支持设备：** PC/2in1
 
@@ -541,6 +575,7 @@ off(type: "notify", callback?: Callback&lt;number&gt;): void
 **系统能力**：SystemCapability.Communication.ConnectedTag
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -557,7 +592,7 @@ function nfcStatusCb(rfState: connectedTag.NfcRfType) {
     console.info("connectedTag on Callback rfState: ", rfState);
 }
 
-// 有源nfc标签的使用流程
+// 有源NFC标签的使用流程
 async function nfcTagTestOn(): Promise<void> {
     try {
         console.info("connectedTag initialize");
@@ -593,13 +628,15 @@ async function nfcTagTestOff(): Promise<void> {
 
 
 
-#### NfcRfType
+## NfcRfType
+
 
 **支持设备：** PC/2in1
 
 表示NFC场强状态的枚举。
 
 **系统能力**：SystemCapability.Communication.ConnectedTag
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

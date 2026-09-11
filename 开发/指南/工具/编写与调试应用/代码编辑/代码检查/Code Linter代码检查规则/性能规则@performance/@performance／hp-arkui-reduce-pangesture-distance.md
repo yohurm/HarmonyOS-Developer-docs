@@ -1,6 +1,6 @@
 # @performance/hp-arkui-reduce-pangesture-distance
 
-更新时间：2026-08-05 02:47:01
+更新时间：2026-08-29 09:41:34
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hp-arkui-reduce-ges-distance
 
@@ -9,7 +9,7 @@
 应用内点击响应时延场景，建议优先修改。
  
 
-#### 规则配置
+## 规则配置
 
 ```json
 // code-linter.json5
@@ -22,13 +22,13 @@
  
  
 
-#### 选项
+## 选项
 
-该规则无需配置额外选项。
+该规则无需配置选项。
  
  
 
-#### 正例
+## 正例
 
 ```text
 import { hiTraceMeter } from '@kit.PerformanceAnalysisKit'
@@ -86,7 +86,7 @@ struct PanGestureExample {
  
  
 
-#### 反例
+## 反例
 
 ```text
 import { hiTraceMeter } from '@kit.PerformanceAnalysisKit'
@@ -144,7 +144,7 @@ struct PanGestureExample {
  
  
 
-#### 规则集
+## 规则集
 
 ```text
 plugin:@performance/all

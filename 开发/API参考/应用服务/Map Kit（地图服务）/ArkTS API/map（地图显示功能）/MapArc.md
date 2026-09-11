@@ -1,11 +1,12 @@
 # Interface (MapArc)
 
-更新时间：2026-06-27 10:02:54
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-maparc
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -15,7 +16,8 @@ import { map, mapCommon } from '@kit.MapKit';
  
   
 
-#### MapArc
+## MapArc
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -55,12 +57,13 @@ let mapArcParams: mapCommon.MapArcParams = {
   zIndex: 100
 };
 // 添加弧线
-let.mapArc: map.MapArc = await this.mapController.addArc(mapArcParams);
+let mapArc: map.MapArc = await this.mapController.addArc(mapArcParams);
 ```
  
   
 
-#### getColor
+### getColor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -78,6 +81,7 @@ getColor(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | ARGB格式颜色值。 |
@@ -91,7 +95,8 @@ let color: number = mapArc.getColor();
  
   
 
-#### getWidth
+### getWidth
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -109,6 +114,7 @@ getWidth(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 弧线的宽度。单位：px。 |
@@ -122,7 +128,8 @@ let width: number = mapArc.getWidth();
  
   
 
-#### setColor
+### setColor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -140,6 +147,7 @@ setColor(color: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | color | number | 是 | ARGB格式颜色值，异常值不处理。 |
@@ -153,7 +161,8 @@ mapArc.setColor(0xffff00ff);
  
   
 
-#### setWidth
+### setWidth
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -171,6 +180,7 @@ setWidth(width: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | width | number | 是 | 弧线的宽度，单位：px，取值范围：大于等于0，异常值不处理。 |

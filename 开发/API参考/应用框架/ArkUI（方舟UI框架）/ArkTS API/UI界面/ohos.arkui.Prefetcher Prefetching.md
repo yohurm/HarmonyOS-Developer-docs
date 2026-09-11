@@ -1,9 +1,9 @@
 # @ohos.arkui.Prefetcher (Prefetching)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-prefetcher
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 配合LazyForEach，为List、Grid、WaterFlow和Swiper等容器组件滑动浏览时提供内容预取能力，提升用户浏览体验。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { BasicPrefetcher, IDataSourcePrefetching, IPrefetcher } from '@kit.ArkUI';
@@ -22,9 +23,10 @@ import { BasicPrefetcher, IDataSourcePrefetching, IPrefetcher } from '@kit.ArkUI
  
   
 
-#### IPrefetcher
+## IPrefetcher
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 实现此接口以提供预取能力，配合LazyForEach在List、Grid等容器组件滑动浏览时预取数据项，提升用户浏览体验。
  
@@ -34,9 +36,10 @@ import { BasicPrefetcher, IDataSourcePrefetching, IPrefetcher } from '@kit.ArkUI
  
   
 
-#### setDataSource
+### setDataSource
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setDataSource(dataSource: IDataSourcePrefetching): void;
  
@@ -48,6 +51,7 @@ setDataSource(dataSource: IDataSourcePrefetching): void;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dataSource | IDataSourcePrefetching | 是 | 支持预取能力的数据源。 |
@@ -69,9 +73,10 @@ class MyPrefetcher implements IPrefetcher {
  
   
 
-#### visibleAreaChanged
+### visibleAreaChanged
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 visibleAreaChanged(minVisible: number, maxVisible: number): void;
  
@@ -83,6 +88,7 @@ visibleAreaChanged(minVisible: number, maxVisible: number): void;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | minVisible | number | 是 | 当前可见区域中第一项数据的索引值，取值范围为[0, totalCount()-1]。超出范围时计算错误。 |
@@ -105,9 +111,10 @@ class MyPrefetcher implements IPrefetcher {
  
   
 
-#### BasicPrefetcher
+## BasicPrefetcher
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 BasicPrefetcher是IPrefetcher的基础实现。它提供了一种智能数据预取算法，以根据屏幕上可见区域的实时变化和预取持续时间的变化来决定应预取哪些数据项。它还可以根据用户的滚动操作来确定哪些预取请求应该被取消。
  
@@ -119,9 +126,10 @@ BasicPrefetcher对象不支持使用JSON序列化。
  
   
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(dataSource?: IDataSourcePrefetching);
  
@@ -133,6 +141,7 @@ constructor(dataSource?: IDataSourcePrefetching);
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dataSource | IDataSourcePrefetching | 否 | 支持预取能力的数据源。不传入时默认为空，后续可通过setDataSource方法设置数据源。 |
@@ -140,9 +149,10 @@ constructor(dataSource?: IDataSourcePrefetching);
  
   
 
-#### setDataSource
+### setDataSource
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setDataSource(dataSource: IDataSourcePrefetching): void;
  
@@ -154,6 +164,7 @@ setDataSource(dataSource: IDataSourcePrefetching): void;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dataSource | IDataSourcePrefetching | 是 | 支持预取能力的数据源。 |
@@ -161,9 +172,10 @@ setDataSource(dataSource: IDataSourcePrefetching): void;
  
   
 
-#### visibleAreaChanged
+### visibleAreaChanged
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 visibleAreaChanged(minVisible: number, maxVisible: number): void;
  
@@ -175,6 +187,7 @@ visibleAreaChanged(minVisible: number, maxVisible: number): void;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | minVisible | number | 是 | 当前可见区域中第一项数据的索引值，取值范围为[0, totalCount()-1]。超出范围时计算错误。 |
@@ -183,9 +196,10 @@ visibleAreaChanged(minVisible: number, maxVisible: number): void;
  
   
 
-#### IDataSourcePrefetching
+## IDataSourcePrefetching
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 继承自[IDataSource](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-rendering-control-lazyforeach#idatasource)。实现该接口，提供具备预取能力的数据源。
  
@@ -195,9 +209,10 @@ visibleAreaChanged(minVisible: number, maxVisible: number): void;
  
   
 
-#### prefetch
+### prefetch
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 prefetch(index: number): Promise&lt;void&gt; | void;
  
@@ -209,6 +224,7 @@ prefetch(index: number): Promise&lt;void&gt; | void;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 预取数据项索引值，取值范围为[0, totalCount()-1]。 |
@@ -216,6 +232,7 @@ prefetch(index: number): Promise&lt;void&gt; | void;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; \| void | 异步执行时返回Promise对象，同步执行时无返回值。Promise仅表示操作完成，无实际返回内容。 |
@@ -223,9 +240,10 @@ prefetch(index: number): Promise&lt;void&gt; | void;
  
   
 
-#### cancel
+### cancel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancel?(index: number): Promise&lt;void&gt; | void;
  
@@ -237,6 +255,7 @@ cancel?(index: number): Promise&lt;void&gt; | void;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 取消预取数据项索引值，取值范围为[0, totalCount()-1]。 |
@@ -244,6 +263,7 @@ cancel?(index: number): Promise&lt;void&gt; | void;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; \| void | 异步执行时返回Promise对象，同步执行时无返回值。Promise仅表示操作完成，无实际返回内容。 |
@@ -253,9 +273,10 @@ cancel?(index: number): Promise&lt;void&gt; | void;
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 下面示例展示了Prefetcher的预取能力。该示例采用分页的方式，配合LazyForEach实现懒加载效果，并添加延时模拟加载过程。
  
@@ -476,13 +497,14 @@ function create10x10Bitmap(color: number): ArrayBuffer {
 演示效果如下：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/HCfZ6asjTw2ntgOoREEDjw/zh-cn_image_0000002685927849.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071443Z&HW-CC-Expire=86400&HW-CC-Sign=CD2802283FFDC2D9FAF0D335AC4E277034CFC6F1F755E5169BE9C98B65F0AF65)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/fLGAbOdMQtawWC0nB7m5ng/zh-cn_image_0000002717612370.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072837Z&HW-CC-Expire=86400&HW-CC-Sign=2D91ED87F02FA8B3BED241D47246B153C769408E8AB906A173E34960BEBD5AE7)
 
  
   
 
-#### 补充说明
+## 补充说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 开发者也可使用HarmonyOS三方库[@netteam/prefetcher](https://ohpm.openharmony.cn/#/cn/detail/@netteam%2Fprefetcher)开发预取功能。该三方库提供了更多的接口，可以更加便捷有效地实现数据预取。

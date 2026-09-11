@@ -105,22 +105,22 @@ this.context.fill(this.ratePath2Db, 'evenodd');
 struct RadarChartPage {
   private settings: RenderingContextSettings = new RenderingContextSettings(true);
   private context: CanvasRenderingContext2D = new CanvasRenderingContext2D(this.settings);
-  // 背景
+ <em> // 背景</em>
   private path2Db: Path2D = new Path2D();
-  // 能力值展示
+  <em>// 能力值展示</em>
   private ratePath2Db: Path2D = new Path2D();
-  // 计算正六边形的顶点坐标
+  <em>// 计算正六边形的顶点坐标</em>
   private baseRadius: number = 150;
-  // 画布半径
+ <em> // 画布半径</em>
   private canvasRadius: number = 200;
   private angleOffset: number = (Math.PI * 2) / 6;
-  // 圈数
+ <em> // 圈数</em>
   private count: number = 5;
-  // 各能力值
+  <em>// 各能力值</em>
   private rateArray: number[] = [0.5, 1.0, 0.15, 0.7, 0.4, 0.65];
-  // 各能力名称
+  <em>// 各能力名称</em>
   private nameList: string[] = ['推进', '战绩', '生存', '团战', '发育', '输出'];
-  // 各能力对应的坐标点
+  <em>// 各能力对应的坐标点</em>
   private positionList: PositionModel[] = [];
 
   build() {
@@ -130,7 +130,7 @@ struct RadarChartPage {
         .height('400')
         .backgroundColor(Color.White)
         .onReady(() => {
-          // 绘制背景
+        <em>  // 绘制背景</em>
           for (let index = 0; index < 6; index++) {
             this.baseRadius = 150 - (index * 30);
             const firstX = this.baseRadius * Math.sin(0) + this.canvasRadius;
@@ -153,7 +153,7 @@ struct RadarChartPage {
             this.path2Db.closePath();
             this.context.stroke(this.path2Db);
           }
-          // 绘制能力值对应的路径
+        <em>  // 绘制能力值对应的路径</em>
           for (let index = 0; index < this.rateArray.length; index++) {
             if (index === 0) {
               let tempRadius: number = this.rateArray[index] * 125 + 25;
@@ -172,7 +172,7 @@ struct RadarChartPage {
           this.context.fillStyle = '#00ff00';
           this.context.globalAlpha = 0.4;
           this.context.fill(this.ratePath2Db, 'evenodd');
-          // 绘制各坐标对应的名称
+        <em>  // 绘制各坐标对应的名称</em>
           this.context.font = '50px sans-serif';
           this.context.fillStyle = '#333333';
           for (let i = 0; i < this.positionList.length; i++) {

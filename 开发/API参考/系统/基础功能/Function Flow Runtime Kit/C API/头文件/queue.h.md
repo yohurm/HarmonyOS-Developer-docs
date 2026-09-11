@@ -1,13 +1,14 @@
 # queue.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-queue-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明队列的C接口。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | ffrt_queue_t | 队列句柄。 |
@@ -40,10 +44,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | ffrt_queue_type_t | ffrt_queue_type_t | 枚举队列类型。 |
@@ -51,10 +57,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | FFRT_C_API int ffrt_queue_attr_init(ffrt_queue_attr_t* attr) | 初始化队列属性。该队列属性不再使用时，必须通过ffrt_queue_attr_destroy销毁。 |
@@ -78,20 +86,22 @@
 | FFRT_C_API void ffrt_queue_wait(ffrt_task_handle_t handle) | 等待队列中的任务执行完成。 |
 | FFRT_C_API int ffrt_queue_cancel(ffrt_task_handle_t handle) | 取消队列中的任务。已开始执行的任务无法被取消。 |
 | FFRT_C_API ffrt_queue_t ffrt_get_main_queue(void) | 获取应用主线程队列。 |
-| FFRT_C_API ffrt_queue_t ffrt_get_current_queue(void) | 获取应用Worker（ArkTS）线程队列。(API18废弃) |
+| FFRT_C_API ffrt_queue_t ffrt_get_current_queue(void) | 获取应用Worker（ArkTS）线程队列。 |
  
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### ffrt_queue_type_t
+### ffrt_queue_type_t
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ffrt_queue_type_t
@@ -103,6 +113,7 @@ enum ffrt_queue_type_t
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ffrt_queue_serial | 串行队列。 |
@@ -112,15 +123,17 @@ enum ffrt_queue_type_t
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### ffrt_queue_attr_init()
+### ffrt_queue_attr_init()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API int ffrt_queue_attr_init(ffrt_queue_attr_t* attr)
@@ -134,6 +147,7 @@ FFRT_C_API int ffrt_queue_attr_init(ffrt_queue_attr_t* attr)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_queue_attr_t* attr | 指向队列属性的指针。 |
@@ -141,6 +155,7 @@ FFRT_C_API int ffrt_queue_attr_init(ffrt_queue_attr_t* attr)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API int | 队列属性初始化成功时返回0； 否则返回-1。 |
@@ -148,9 +163,10 @@ FFRT_C_API int ffrt_queue_attr_init(ffrt_queue_attr_t* attr)
  
   
 
-#### ffrt_queue_attr_destroy()
+### ffrt_queue_attr_destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API void ffrt_queue_attr_destroy(ffrt_queue_attr_t* attr)
@@ -164,6 +180,7 @@ FFRT_C_API void ffrt_queue_attr_destroy(ffrt_queue_attr_t* attr)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_queue_attr_t* attr | 指向队列属性的指针。 |
@@ -171,9 +188,10 @@ FFRT_C_API void ffrt_queue_attr_destroy(ffrt_queue_attr_t* attr)
  
   
 
-#### ffrt_queue_attr_set_qos()
+### ffrt_queue_attr_set_qos()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API void ffrt_queue_attr_set_qos(ffrt_queue_attr_t* attr, ffrt_qos_t qos)
@@ -187,6 +205,7 @@ FFRT_C_API void ffrt_queue_attr_set_qos(ffrt_queue_attr_t* attr, ffrt_qos_t qos)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_queue_attr_t* attr | 指向队列属性的指针。 |
@@ -195,9 +214,10 @@ FFRT_C_API void ffrt_queue_attr_set_qos(ffrt_queue_attr_t* attr, ffrt_qos_t qos)
  
   
 
-#### ffrt_queue_attr_get_qos()
+### ffrt_queue_attr_get_qos()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API ffrt_qos_t ffrt_queue_attr_get_qos(const ffrt_queue_attr_t* attr)
@@ -211,6 +231,7 @@ FFRT_C_API ffrt_qos_t ffrt_queue_attr_get_qos(const ffrt_queue_attr_t* attr)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ffrt_queue_attr_t* attr | 指向队列属性的指针。 |
@@ -218,6 +239,7 @@ FFRT_C_API ffrt_qos_t ffrt_queue_attr_get_qos(const ffrt_queue_attr_t* attr)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API ffrt_qos_t | QoS等级，取值范围参见ffrt_qos_t枚举定义。 |
@@ -225,9 +247,10 @@ FFRT_C_API ffrt_qos_t ffrt_queue_attr_get_qos(const ffrt_queue_attr_t* attr)
  
   
 
-#### ffrt_queue_attr_set_timeout()
+### ffrt_queue_attr_set_timeout()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API void ffrt_queue_attr_set_timeout(ffrt_queue_attr_t* attr, uint64_t timeout_us)
@@ -241,6 +264,7 @@ FFRT_C_API void ffrt_queue_attr_set_timeout(ffrt_queue_attr_t* attr, uint64_t ti
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_queue_attr_t* attr | 指向队列属性的指针。 |
@@ -249,9 +273,10 @@ FFRT_C_API void ffrt_queue_attr_set_timeout(ffrt_queue_attr_t* attr, uint64_t ti
  
   
 
-#### ffrt_queue_attr_get_timeout()
+### ffrt_queue_attr_get_timeout()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API uint64_t ffrt_queue_attr_get_timeout(const ffrt_queue_attr_t* attr)
@@ -265,6 +290,7 @@ FFRT_C_API uint64_t ffrt_queue_attr_get_timeout(const ffrt_queue_attr_t* attr)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ffrt_queue_attr_t* attr | 指向队列属性的指针。 |
@@ -272,6 +298,7 @@ FFRT_C_API uint64_t ffrt_queue_attr_get_timeout(const ffrt_queue_attr_t* attr)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API uint64_t | 队列任务执行超时时长，单位是微秒。 |
@@ -279,9 +306,10 @@ FFRT_C_API uint64_t ffrt_queue_attr_get_timeout(const ffrt_queue_attr_t* attr)
  
   
 
-#### ffrt_queue_attr_set_callback()
+### ffrt_queue_attr_set_callback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API void ffrt_queue_attr_set_callback(ffrt_queue_attr_t* attr, ffrt_function_header_t* f)
@@ -295,6 +323,7 @@ FFRT_C_API void ffrt_queue_attr_set_callback(ffrt_queue_attr_t* attr, ffrt_funct
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_queue_attr_t* attr | 指向队列属性的指针。 |
@@ -303,9 +332,10 @@ FFRT_C_API void ffrt_queue_attr_set_callback(ffrt_queue_attr_t* attr, ffrt_funct
  
   
 
-#### ffrt_queue_attr_get_callback()
+### ffrt_queue_attr_get_callback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API ffrt_function_header_t* ffrt_queue_attr_get_callback(const ffrt_queue_attr_t* attr)
@@ -319,6 +349,7 @@ FFRT_C_API ffrt_function_header_t* ffrt_queue_attr_get_callback(const ffrt_queue
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ffrt_queue_attr_t* attr | 指向队列属性的指针。 |
@@ -326,6 +357,7 @@ FFRT_C_API ffrt_function_header_t* ffrt_queue_attr_get_callback(const ffrt_queue
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API ffrt_function_header_t* | 队列任务超时回调函数。 |
@@ -333,9 +365,10 @@ FFRT_C_API ffrt_function_header_t* ffrt_queue_attr_get_callback(const ffrt_queue
  
   
 
-#### ffrt_queue_attr_set_max_concurrency()
+### ffrt_queue_attr_set_max_concurrency()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API void ffrt_queue_attr_set_max_concurrency(ffrt_queue_attr_t* attr, const int max_concurrency)
@@ -349,6 +382,7 @@ FFRT_C_API void ffrt_queue_attr_set_max_concurrency(ffrt_queue_attr_t* attr, con
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_queue_attr_t* attr | 指向队列属性的指针。 |
@@ -357,9 +391,10 @@ FFRT_C_API void ffrt_queue_attr_set_max_concurrency(ffrt_queue_attr_t* attr, con
  
   
 
-#### ffrt_queue_attr_get_max_concurrency()
+### ffrt_queue_attr_get_max_concurrency()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API int ffrt_queue_attr_get_max_concurrency(const ffrt_queue_attr_t* attr)
@@ -373,6 +408,7 @@ FFRT_C_API int ffrt_queue_attr_get_max_concurrency(const ffrt_queue_attr_t* attr
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ffrt_queue_attr_t* attr | 指向队列属性的指针。 |
@@ -380,6 +416,7 @@ FFRT_C_API int ffrt_queue_attr_get_max_concurrency(const ffrt_queue_attr_t* attr
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API int | 队列的最大并发度。 |
@@ -387,9 +424,10 @@ FFRT_C_API int ffrt_queue_attr_get_max_concurrency(const ffrt_queue_attr_t* attr
  
   
 
-#### ffrt_queue_attr_set_thread_mode()
+### ffrt_queue_attr_set_thread_mode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API void ffrt_queue_attr_set_thread_mode(ffrt_queue_attr_t* attr, bool mode)
@@ -403,6 +441,7 @@ FFRT_C_API void ffrt_queue_attr_set_thread_mode(ffrt_queue_attr_t* attr, bool mo
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_queue_attr_t* attr | 指向队列属性的指针。 |
@@ -411,9 +450,10 @@ FFRT_C_API void ffrt_queue_attr_set_thread_mode(ffrt_queue_attr_t* attr, bool mo
  
   
 
-#### ffrt_queue_attr_get_thread_mode()
+### ffrt_queue_attr_get_thread_mode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API bool ffrt_queue_attr_get_thread_mode(const ffrt_queue_attr_t* attr)
@@ -427,6 +467,7 @@ FFRT_C_API bool ffrt_queue_attr_get_thread_mode(const ffrt_queue_attr_t* attr)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ffrt_queue_attr_t* attr | 指向队列属性的指针。 |
@@ -434,6 +475,7 @@ FFRT_C_API bool ffrt_queue_attr_get_thread_mode(const ffrt_queue_attr_t* attr)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API bool | 任务以原生线程执行（线程模式）时返回true； 任务以协程执行（默认）时返回false。 |
@@ -441,9 +483,10 @@ FFRT_C_API bool ffrt_queue_attr_get_thread_mode(const ffrt_queue_attr_t* attr)
  
   
 
-#### ffrt_queue_create()
+### ffrt_queue_create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API ffrt_queue_t ffrt_queue_create(ffrt_queue_type_t type, const char* name, const ffrt_queue_attr_t* attr)
@@ -457,6 +500,7 @@ FFRT_C_API ffrt_queue_t ffrt_queue_create(ffrt_queue_type_t type, const char* na
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_queue_type_t type | 队列类型。ffrt_queue_serial适用于任务需按顺序执行的场景；ffrt_queue_concurrent适用于任务可并发执行以提高吞吐量的场景。 |
@@ -466,6 +510,7 @@ FFRT_C_API ffrt_queue_t ffrt_queue_create(ffrt_queue_type_t type, const char* na
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API ffrt_queue_t | 队列创建成功时返回非空的队列句柄； 否则返回空指针。 |
@@ -473,9 +518,10 @@ FFRT_C_API ffrt_queue_t ffrt_queue_create(ffrt_queue_type_t type, const char* na
  
   
 
-#### ffrt_queue_destroy()
+### ffrt_queue_destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API void ffrt_queue_destroy(ffrt_queue_t queue)
@@ -489,6 +535,7 @@ FFRT_C_API void ffrt_queue_destroy(ffrt_queue_t queue)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_queue_t queue | 队列句柄。 |
@@ -496,9 +543,10 @@ FFRT_C_API void ffrt_queue_destroy(ffrt_queue_t queue)
  
   
 
-#### ffrt_queue_submit()
+### ffrt_queue_submit()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API void ffrt_queue_submit(ffrt_queue_t queue, ffrt_function_header_t* f, const ffrt_task_attr_t* attr)
@@ -512,6 +560,7 @@ FFRT_C_API void ffrt_queue_submit(ffrt_queue_t queue, ffrt_function_header_t* f,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_queue_t queue | 队列句柄。 |
@@ -525,9 +574,10 @@ FFRT_C_API void ffrt_queue_submit(ffrt_queue_t queue, ffrt_function_header_t* f,
  
   
 
-#### ffrt_queue_submit_h()
+### ffrt_queue_submit_h()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API ffrt_task_handle_t ffrt_queue_submit_h(ffrt_queue_t queue, ffrt_function_header_t* f, const ffrt_task_attr_t* attr)
@@ -541,6 +591,7 @@ FFRT_C_API ffrt_task_handle_t ffrt_queue_submit_h(ffrt_queue_t queue, ffrt_funct
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_queue_t queue | 队列句柄。 |
@@ -550,6 +601,7 @@ FFRT_C_API ffrt_task_handle_t ffrt_queue_submit_h(ffrt_queue_t queue, ffrt_funct
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API ffrt_task_handle_t | 任务提交成功时返回非空的任务句柄； 否则返回空指针。 |
@@ -561,9 +613,10 @@ FFRT_C_API ffrt_task_handle_t ffrt_queue_submit_h(ffrt_queue_t queue, ffrt_funct
  
   
 
-#### ffrt_queue_submit_f()
+### ffrt_queue_submit_f()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API void ffrt_queue_submit_f(ffrt_queue_t queue, ffrt_function_t func, void* arg, const ffrt_task_attr_t* attr)
@@ -577,6 +630,7 @@ FFRT_C_API void ffrt_queue_submit_f(ffrt_queue_t queue, ffrt_function_t func, vo
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_queue_t queue | 队列句柄。 |
@@ -591,9 +645,10 @@ FFRT_C_API void ffrt_queue_submit_f(ffrt_queue_t queue, ffrt_function_t func, vo
  
   
 
-#### ffrt_queue_submit_h_f()
+### ffrt_queue_submit_h_f()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API ffrt_task_handle_t ffrt_queue_submit_h_f(ffrt_queue_t queue, ffrt_function_t func, void* arg, const ffrt_task_attr_t* attr)
@@ -607,6 +662,7 @@ FFRT_C_API ffrt_task_handle_t ffrt_queue_submit_h_f(ffrt_queue_t queue, ffrt_fun
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_queue_t queue | 队列句柄。 |
@@ -617,6 +673,7 @@ FFRT_C_API ffrt_task_handle_t ffrt_queue_submit_h_f(ffrt_queue_t queue, ffrt_fun
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API ffrt_task_handle_t | 任务提交成功时返回非空的任务句柄； 否则返回空指针。 |
@@ -628,9 +685,10 @@ FFRT_C_API ffrt_task_handle_t ffrt_queue_submit_h_f(ffrt_queue_t queue, ffrt_fun
  
   
 
-#### ffrt_queue_wait()
+### ffrt_queue_wait()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API void ffrt_queue_wait(ffrt_task_handle_t handle)
@@ -644,6 +702,7 @@ FFRT_C_API void ffrt_queue_wait(ffrt_task_handle_t handle)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_task_handle_t handle | 任务句柄。 |
@@ -651,9 +710,10 @@ FFRT_C_API void ffrt_queue_wait(ffrt_task_handle_t handle)
  
   
 
-#### ffrt_queue_cancel()
+### ffrt_queue_cancel()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API int ffrt_queue_cancel(ffrt_task_handle_t handle)
@@ -667,6 +727,7 @@ FFRT_C_API int ffrt_queue_cancel(ffrt_task_handle_t handle)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_task_handle_t handle | 任务句柄。 |
@@ -674,6 +735,7 @@ FFRT_C_API int ffrt_queue_cancel(ffrt_task_handle_t handle)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API int | 任务取消成功时返回0； 任务已执行完毕或已从队列中移除时返回1； handle为空时返回-1。 |
@@ -681,9 +743,10 @@ FFRT_C_API int ffrt_queue_cancel(ffrt_task_handle_t handle)
  
   
 
-#### ffrt_get_main_queue()
+### ffrt_get_main_queue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API ffrt_queue_t ffrt_get_main_queue(void)
@@ -697,6 +760,7 @@ FFRT_C_API ffrt_queue_t ffrt_get_main_queue(void)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API ffrt_queue_t | 应用主线程队列。 |
@@ -704,9 +768,10 @@ FFRT_C_API ffrt_queue_t ffrt_get_main_queue(void)
  
   
 
-#### ffrt_get_current_queue()
+### ffrt_get_current_queue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API ffrt_queue_t ffrt_get_current_queue(void)
@@ -722,6 +787,7 @@ FFRT_C_API ffrt_queue_t ffrt_get_current_queue(void)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API ffrt_queue_t | 应用Worker（ArkTS）线程队列。 |

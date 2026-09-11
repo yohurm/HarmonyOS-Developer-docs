@@ -1,16 +1,17 @@
 # OH_AudioDataArray
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohaudiosuite-oh-audiodataarray
 **支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
-typedef struct {...} OH_AudioDataArray
+typedef struct OH_AudioDataArray {...} OH_AudioDataArray
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -24,16 +25,19 @@ typedef struct {...} OH_AudioDataArray
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | void **audioDataArray | 输出的音频数据地址。 |

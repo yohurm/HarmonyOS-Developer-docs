@@ -1,10 +1,10 @@
 # Web和应用的跳转与拉起
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/navigating-between-web-and-apps
 
-#### 概述
+## 概述
 
 在使用ArkTS与ArkWeb进行混合开发时，应用内的部分页面使用了前端相关能力进行了开发，结合Web组件进行了页面加载，在这种场景下涉及到从ArkWeb加载的页面向其他页面跳转，以及从ArkWeb页面拉起应用。
  
@@ -18,11 +18,11 @@
  
   
 
-#### ArkWeb页面与ArkTS页面互相跳转
+## ArkWeb页面与ArkTS页面互相跳转
 
   
 
-#### ArkWeb页面跳转ArkWeb页面
+### ArkWeb页面跳转ArkWeb页面
 
 开发者在做Hybrid App混合开发时，Web页面的跳转可以直接在前端侧使用HTML提供的a标签来进行跳转，修改href为跳转后的地址即可。
  
@@ -32,11 +32,11 @@
  
   
 
-#### ArkTS页面跳转ArkWeb页面
+### ArkTS页面跳转ArkWeb页面
 
 在HarmonyOS应用开发中，会有Web页面和ArkTS页面互相之间进行跳转的场景，例如列表页用了ArkTS进行开发，而详情页设计上只有简单的内容展示并没有复杂的逻辑操作，于是使用了Web开发并使用了ArkTS中的Web组件进行了加载，在这种场景下，从列表页跳转到详情页就是从ArkTS页面跳转到Web页面，在这种场景下，开发者只需要在ArkTS页面对应的事件回调函数中使用路由栈提供的跳转功能即可实现。关于Navigation组件的使用开发者可以参考：[组件导航（Navigation）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-navigation-navigation)。
  
-```ArkTS
+```text
 NavDestination() {
   Column() {
     Button($r('app.string.back_to_web_page'))
@@ -52,7 +52,7 @@ NavDestination() {
  
   
 
-#### ArkWeb页面跳转ArkTS页面
+### ArkWeb页面跳转ArkTS页面
 
 同样开发者也会有从Web页面跳转到ArkTS页面的场景，例如刚刚的场景中希望返回到ArkTS页面，就是从Web页面跳转回ArkTS页面的场景，在这种场景下，实现步骤如下：
  1. 在HTML页面内使用a标签的href属性自定义跳转链接。
@@ -68,7 +68,7 @@ NavDestination() {
 2. 然后在Web页面中，需要在[onLoadIntercept()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-events#onloadintercept10)回调函数中进行跳转拦截，拦截后通过路由栈进行页面跳转。
 
   
-```ArkTS
+```text
 Navigation(this.navPathStack) {
   Column() {
     Web({
@@ -90,7 +90,7 @@ Navigation(this.navPathStack) {
  
   
 
-#### ArkWeb页面指定应用跳转
+## ArkWeb页面指定应用跳转
 
 开发者在HarmonyOS应用内使用了Web页面做了部分页面的实现，同时出于推广，或者需要在其他应用内处理一些逻辑等目的，需要拉起其他的指定应用，例如跳转到支付应用进行支付，在这些场景下，就需要用到指定应用跳转的相关知识，首先在实现方案上，指定应用跳转建议使用如下两种方案：
  1. 使用[Deep Linking](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/deep-linking-startup)实现应用拉起。
@@ -145,14 +145,14 @@ Navigation(this.navPathStack) {
 3. 根据目标方的uris配置拼凑出完整的link地址，拼接方式为：scheme://host:port/path，例如上述配置对应的拉起地址为：appScheme://www.test.com:80/path1。
 
   
-```ArkTS
+```text
 const link: string = 'appScheme://www.test.com:80/path1';
 ```
 
 4. 通过[canOpenLink()](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/canopenlink)接口判断link是否可以打开，如不能打开链接开发者可以自定义响应逻辑，此处直接返回。
 
   
-```ArkTS
+```text
 if (!bundleManager.canOpenLink(link)) {
   return true;
 }
@@ -161,7 +161,7 @@ if (!bundleManager.canOpenLink(link)) {
 5. 配置拉起时的启动参数[openLinkOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-openlinkoptions)，在该配置中可以进行参数传递以及配置appLinkingOnly属性。代码参考如下：
 
   
-```ArkTS
+```text
 Navigation(this.navPathStack) {
   Column() {
     Web({
@@ -213,14 +213,14 @@ Navigation(this.navPathStack) {
 **图 1** Web页面打开效果图
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/xEFEf8XLTBGAMgkjityocQ/zh-cn_image_0000002704391825.png?HW-CC-KV=V1&HW-CC-Date=20260813T095856Z&HW-CC-Expire=86400&HW-CC-Sign=6884C168025DDA50FF8A99381D95D9986B2BCC067A3B28EB8728F1204C4251A9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/ryRnWOOlSI6C2S7KRM318Q/zh-cn_image_0000002717609920.png?HW-CC-KV=V1&HW-CC-Date=20260911T073020Z&HW-CC-Expire=86400&HW-CC-Sign=BDF4706165961A3D4F89BDA97AE8CCF1769FA9C8E910C36F933899B94DF822DC)
 
  
 因此，Deep Linking适用于需要在已安装的应用之间进行跳转，实现相对简单，但当无应用匹配时用户体验不佳。而App Linking适用于社交分享、广告引流等需要外部链接访问应用的场景，以及对安全性和用户体验要求较高的场景。AppLinking在Deep Linking的基础上增加了域名校验，提高了链接的安全性和可靠性，且无论应用是否安装，用户都能访问内容。
  
   
 
-#### ArkWeb页面指定类型跳转
+## ArkWeb页面指定类型跳转
 
 在某些场景下，系统存在多个同类的应用，希望由用户按个人偏好自行选择在哪个应用中进行处理，例如用户收到了一个地址，而系统内有多个导航软件，希望让用户自行选择偏好的软件进行导航。实现上开发者可以参考：[拉起指定类型的应用](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/start-intent-panel)。以下参考代码以调用方拉起地图导航类应用为例。
  1. 在HTML页面中使用a标签规定拉起指定应用的字符串。
@@ -233,7 +233,7 @@ Navigation(this.navPathStack) {
 2. 在Web组件中，当匹配到对应的文本时，执行拉起指定类型的操作。
 
   
-```ArkTS
+```text
 Navigation(this.navPathStack) {
   Column() {
     Web({
@@ -283,7 +283,7 @@ Navigation(this.navPathStack) {
  
   
 
-#### ArkWeb页面跳转系统应用页面
+## ArkWeb页面跳转系统应用页面
 
 从ArkWeb页面拉起系统应用界面，也是一个常见的场景，例如开发者有发布图片的需求，而且图片上传的界面在前端界面已经有了实现并且做了多端适配，现在希望复用原有的界面，但是具体的图片选择的逻辑以及上传的逻辑希望修改成ArkTS侧的实现。实现步骤如下：
  1. 在Web页面内配置跳转的链接地址。此处使用a标签并不意味着上传的HTML元素就是a标签，而是以它为例，理论上开发者可以用任何HTML元素绑定点击事件，通过设置window.location.href属性进行页面跳转。
@@ -296,7 +296,7 @@ Navigation(this.navPathStack) {
 2. 使用系统提供的照片选择Picker进行图片的选择以及后续逻辑的开发。
 
   
-```ArkTS
+```text
 Navigation(this.navPathStack) {
   Column() {
     Web({
@@ -332,6 +332,6 @@ Navigation(this.navPathStack) {
  
   
 
-#### 示例代码
+## 示例代码
 
 - [基于应用拉起相关能力实现Web跳转功能](https://gitcode.com/harmonyos_samples/web-application-jump)

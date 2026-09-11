@@ -1,6 +1,6 @@
 # functionalButtonComponentManager(场景化融合Button组件管理)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/scenario-fusion-functionalbuttoncomponentmanager
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -10,7 +10,8 @@
 **起始版本：** 4.1.0(11)
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -20,7 +21,8 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 
 
-#### OpenType
+## OpenType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -31,6 +33,7 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -54,7 +57,8 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 
 
-#### SizeType
+## SizeType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -68,6 +72,7 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DEFAULT | 0 | 默认大小。 |
@@ -76,7 +81,8 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 
 
-#### HoverClassType
+## HoverClassType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -90,6 +96,7 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NONE | 0 | 无效果。 |
@@ -98,7 +105,8 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 
 
-#### ColorType
+## ColorType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -112,6 +120,7 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DEFAULT | 0 | 蓝色。 |
@@ -121,9 +130,10 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 
 
-#### CredentialType(deprecated)
+## CredentialType(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 该枚举定义了FunctionalButton的认证类型。
 
@@ -139,6 +149,7 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | IDCard | 0 | 身份证件类型。 |
@@ -146,9 +157,10 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 
 
-#### RealNameAuthenticationInfo(deprecated)
+## RealNameAuthenticationInfo(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 该接口定义了FunctionalButton组件的实名信息校验对象。
 
@@ -164,6 +176,7 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | openID | string | 否 | 否 | OpenID是华为账号用户在不同类型的产品的身份ID，同一个用户，不同应用，OpenID值不同。 |
@@ -174,7 +187,8 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 
 
-#### StyleOption
+## StyleOption
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -187,6 +201,7 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -203,7 +218,8 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 
 
-#### FunctionalButtonParams
+## FunctionalButtonParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -214,6 +230,7 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -233,7 +250,8 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 
 
-#### GetPhoneNumberResult
+## GetPhoneNumberResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -249,6 +267,7 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | code | string | 否 | 是 | 账号用户的临时登录凭证（Authorization Code）。 说明： 可通过临时登录凭证获取真实手机号，临时登录凭证时效5分钟，具体操作可参考“服务端开发”章节。 |
@@ -256,7 +275,8 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 
 
-#### GetRealtimePhoneNumberResult
+## GetRealtimePhoneNumberResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -272,6 +292,7 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | code | string | 否 | 是 | 账号用户的临时登录凭证（Authorization Code）。 说明： 可通过临时登录凭证获取真实手机号，临时登录凭证时效5分钟，具体操作可参考“服务端开发”章节。 |
@@ -279,7 +300,8 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 
 
-#### OpenSettingResult
+## OpenSettingResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -295,6 +317,7 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | permissions | Map<string, boolean> | 否 | 是 | 权限字典表。 key为权限名称，value为权限是否开启，true表示开启权限，false表示关闭权限。 |
@@ -302,9 +325,10 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 
 
-#### ChooseAvatarResult
+## ChooseAvatarResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 该接口定义了使用选择头像功能成功选择的响应。
 
@@ -318,6 +342,7 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | avatarUri | string | 否 | 是 | 所选头像图片的地址。 说明： 返回的地址为裁剪之后的图片对应的地址。 |
@@ -325,7 +350,8 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 
 
-#### AppParam
+## AppParam
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -341,6 +367,7 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | bundleName | ResourceStr | 否 | 否 | 包名。 |
@@ -349,7 +376,8 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 
 
-#### ChooseAddressResult
+## ChooseAddressResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -364,6 +392,7 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 **设备行为差异：** 该接口在Phone、Tablet、PC/2in1、TV中可正常调用，在其他设备类型中返回801错误码。
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -381,9 +410,10 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 
 
-#### ChooseInvoiceTitleResult
+## ChooseInvoiceTitleResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 该接口定义了FunctionalButton为选择发票抬头功能时，通过该参数指定选择发票抬头对应的返回体。
 
@@ -396,6 +426,7 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 **设备行为差异：** 该接口在Phone、Tablet、PC/2in1中可正常调用，在其他设备类型中返回801错误码。
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -410,9 +441,10 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 
 
-#### RealNameAuthenticationResult
+## RealNameAuthenticationResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 该接口定义了FunctionalButton为实名信息校验功能时，通过该参数指定实名信息校验对应的返回体。
 
@@ -426,6 +458,7 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | authCode | string | 否 | 是 | 临时凭据，有效时间5分钟，并且只能使用一次。 |
@@ -434,9 +467,10 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 
 
-#### FaceAuthenticationResult
+## FaceAuthenticationResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 该接口定义了FunctionalButton为人脸核身功能时，通过该参数指定人脸认证对应的返回体。
 
@@ -450,6 +484,7 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | authCode | string | 否 | 是 | 临时凭据，有效时间5分钟，并且只能使用一次。 |
@@ -458,9 +493,10 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 
 
-#### FaceVerificationResult
+## FaceVerificationResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 该接口定义了FunctionalButton为人脸核身功能时，通过该参数指定人脸核身对应的返回体。
 
@@ -474,6 +510,7 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | facialRecognitionVerificationToken | string | 否 | 是 | 验证成功后返回的token。 |
@@ -482,9 +519,10 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 
 
-#### ChooseLocationResult
+## ChooseLocationResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 该接口定义了FunctionalButton为地图选点功能时，通过该参数指定地图选点对应的返回体。
 
@@ -498,6 +536,7 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | name | string | 否 | 否 | 位置名称。 |
@@ -508,9 +547,10 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 
 
-#### SubscribeLiveViewParam
+## SubscribeLiveViewParam
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 该接口定义了FunctionalButton组件为实况窗订阅功能时，通过该参数指定实况窗订阅对应的订阅事件和计时器。
 
@@ -522,6 +562,7 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | event | string | 否 | 否 | 订阅事件。 固定值：SUBSCRIBE_TIMER。 |
@@ -531,9 +572,10 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 
 
-#### SubscribeLiveViewResult
+## SubscribeLiveViewResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 该接口定义了FunctionalButton组件为实况窗订阅功能时，通过该参数指定实况窗订阅对应的返回体。
 
@@ -545,6 +587,7 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | subscribeId | string | 否 | 否 | 订阅事件ID。 |
@@ -552,7 +595,8 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 
 
-#### PermissionSettingResult
+## PermissionSettingResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -574,6 +618,7 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 **起始版本：** 5.0.2(14)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | permissionResult | Array<abilityAccessCtrl.GrantStatus> | 否 | 否 | 权限设置结果。 |
@@ -581,9 +626,10 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 
 
-#### RequestSubscribeMessageResult
+## RequestSubscribeMessageResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 该接口定义请求订阅消息的返回体。
 
@@ -601,6 +647,7 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | code | string | 否 | 否 | 服务动态授权码 。用于校验服务是否合法，服务动态等 |
@@ -608,9 +655,10 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 
 
-#### ShareParam
+## ShareParam
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 该接口定义分享的参数。
 
@@ -626,6 +674,7 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | description | string | 否 | 是 | 元服务描述，支持开发者传入，默认是元服务描述。 元服务API： 从版本6.0.0(20)开始，该接口支持在元服务中使用。 |
@@ -637,7 +686,8 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 
 
-#### GetPhoneNumberAndRiskLevelResult
+## GetPhoneNumberAndRiskLevelResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -651,6 +701,7 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 **起始版本：** 6.0.2(22)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | code | string | 否 | 是 | 手机号和风险等级授权码。成功获取授权码时返回。 |
@@ -660,7 +711,8 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 
 
-#### 事件
+## 事件
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -668,7 +720,8 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 
 
-#### FunctionalButtonController
+## FunctionalButtonController
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -684,7 +737,8 @@ FunctionalButton组件控制器，用来回调组件内部的点击事件。
 
 
 
-#### onGetPhoneNumber
+### onGetPhoneNumber
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -706,12 +760,14 @@ onGetPhoneNumber(callback: AsyncCallback&lt;GetPhoneNumberResult&gt;): Functiona
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;GetPhoneNumberResult&gt; | 是 | 回调函数。当获取电话号码成功，err为undefined，data为获取到的账号用户的临时登录凭证（Authorization Code）；否则为错误对象。 说明： 可通过临时登录凭证获取真实手机号，临时登录凭证时效5分钟，具体操作可参考“服务端开发”章节。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -764,7 +820,8 @@ struct Index {
 
 
 
-#### onGetRealtimePhoneNumber
+### onGetRealtimePhoneNumber
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -786,12 +843,14 @@ onGetRealtimePhoneNumber(callback: AsyncCallback&lt;GetRealtimePhoneNumberResult
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;GetRealtimePhoneNumberResult&gt; | 是 | 回调函数。当获取实时电话号码成功，err为undefined，data为获取到的账号用户的临时登录凭证（Authorization Code）；否则为错误对象。 说明： 可通过临时登录凭证获取真实手机号，临时登录凭证时效5分钟，具体操作可参考“服务端开发”章节。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -846,7 +905,8 @@ struct Index {
 
 
 
-#### onLaunchApp
+### onLaunchApp
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -868,12 +928,14 @@ onLaunchApp(callback: AsyncCallback&lt;void&gt;): FunctionalButtonController
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当打开APP完成，err为undefined，否则返回错误对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -898,7 +960,7 @@ struct Index {
             // OpenType.LAUNCH_APP表示该按钮用于启动应用。
             openType: functionalButtonComponentManager.OpenType.LAUNCH_APP,
             label: '打开APP',
-            // 当OpenType为functionButtonComponentManager.OpenType.LAUNCH_APP时，appParam为必填项。
+            // 当OpenType为functionalButtonComponentManager.OpenType.LAUNCH_APP时，appParam为必填项。
             appParam: {
               bundleName: 'xxx',
               abilityName: 'xxx'
@@ -932,7 +994,8 @@ struct Index {
 
 
 
-#### onOpenSetting
+### onOpenSetting
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -954,12 +1017,14 @@ onOpenSetting(callback: AsyncCallback&lt;OpenSettingResult&gt;): FunctionalButto
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;OpenSettingResult&gt; | 是 | 回调函数。当打开授权设置页成功，err为undefined，data为打开设置成功时返回的响应；否则为错误对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1012,9 +1077,10 @@ struct Index {
 
 
 
-#### onChooseAvatar
+### onChooseAvatar
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 onChooseAvatar(callback: AsyncCallback&lt;ChooseAvatarResult&gt;): FunctionalButtonController
 
@@ -1032,12 +1098,14 @@ onChooseAvatar(callback: AsyncCallback&lt;ChooseAvatarResult&gt;): FunctionalBut
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;ChooseAvatarResult&gt; | 是 | 回调函数。当选择头像调用成功，err为undefined，data为选择头像成功时返回的所选头像图片的地址；否则为错误对象。 说明： 返回的地址为裁剪之后的图片对应的地址。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1097,7 +1165,8 @@ struct Index {
 
 
 
-#### onChooseAddress
+### onChooseAddress
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1119,12 +1188,14 @@ onChooseAddress(callback: AsyncCallback&lt;ChooseAddressResult&gt;): FunctionalB
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;ChooseAddressResult&gt; | 是 | 回调函数。当选择收货地址点击成功，err为undefined，data为选择收货地址的返回结果；否则为错误对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1192,9 +1263,10 @@ struct Index {
 
 
 
-#### onChooseInvoiceTitle
+### onChooseInvoiceTitle
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 onChooseInvoiceTitle(callback: AsyncCallback&lt;ChooseInvoiceTitleResult&gt;): FunctionalButtonController
 
@@ -1214,12 +1286,14 @@ onChooseInvoiceTitle(callback: AsyncCallback&lt;ChooseInvoiceTitleResult&gt;): F
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;ChooseInvoiceTitleResult&gt; | 是 | 回调函数。当选择发票抬头点击成功，err为undefined，data为选择发票抬头的返回结果；否则为错误对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1286,9 +1360,10 @@ struct Index {
 
 
 
-#### onRealNameAuthentication
+### onRealNameAuthentication
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 onRealNameAuthentication(callback: AsyncCallback&lt;RealNameAuthenticationResult&gt;): FunctionalButtonController
 
@@ -1308,12 +1383,14 @@ onRealNameAuthentication(callback: AsyncCallback&lt;RealNameAuthenticationResult
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;RealNameAuthenticationResult&gt; | 是 | 回调函数。当实名信息校验成功，err为undefined，data为获取到的实名信息校验鉴权对应的返回体：authCode、openID；否则为错误对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1436,9 +1513,10 @@ struct SecondPage {
 
 
 
-#### onFaceAuthentication
+### onFaceAuthentication
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 onFaceAuthentication(callback: AsyncCallback&lt;FaceAuthenticationResult&gt;): FunctionalButtonController
 
@@ -1458,12 +1536,14 @@ onFaceAuthentication(callback: AsyncCallback&lt;FaceAuthenticationResult&gt;): F
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;FaceAuthenticationResult&gt; | 是 | 回调函数。当人脸认证成功，err为undefined，data为获取到的人脸认证对应的返回体：authCode、openID；否则为错误对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1593,9 +1673,10 @@ struct SecondPage {
 
 
 
-#### onFaceVerification
+### onFaceVerification
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 onFaceVerification(verifyToken: string, callback: AsyncCallback&lt;FaceVerificationResult&gt;): void
 
@@ -1614,6 +1695,7 @@ onFaceVerification(verifyToken: string, callback: AsyncCallback&lt;FaceVerificat
 **起始版本：** 5.0.0(12)
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1744,9 +1826,10 @@ struct SecondPage {
 
 
 
-#### onChooseLocation
+### onChooseLocation
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 onChooseLocation(callback: AsyncCallback&lt;ChooseLocationResult&gt;): FunctionalButtonController
 
@@ -1766,12 +1849,14 @@ onChooseLocation(callback: AsyncCallback&lt;ChooseLocationResult&gt;): Functiona
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;ChooseLocationResult&gt; | 是 | 回调函数。当打开地图选点成功，err为undefined，data为地图选点的返回结果；否则为错误对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1834,9 +1919,10 @@ struct Index {
 
 
 
-#### onSubscribeLiveView
+### onSubscribeLiveView
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 onSubscribeLiveView(callback: AsyncCallback&lt;SubscribeLiveViewResult&gt;): FunctionalButtonController
 
@@ -1852,6 +1938,7 @@ onSubscribeLiveView(callback: AsyncCallback&lt;SubscribeLiveViewResult&gt;): Fun
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;SubscribeLiveViewResult&gt; | 是 | 回调函数。当实况窗订阅点击成功，err为undefined，data为实况订阅的返回结果；否则为错误对象。 |
@@ -1859,9 +1946,24 @@ onSubscribeLiveView(callback: AsyncCallback&lt;SubscribeLiveViewResult&gt;): Fun
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | FunctionalButtonController | FunctionalButton组件控制器。 |
+
+
+**错误码：**
+
+以下错误码的详细介绍请参见[ArkTS组件错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-scenario-fusion)。
+
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1003500012 | The number of subscription times exceeds the upper limit of 2000. |
+| 1003500013 | Invalid event type. |
+| 1003500014 | Time exceeds valid period. |
+| 1003500015 | Subscribe failed. |
+| 1003500016 | Request subscribe liveView exceed. |
 
 
 **示例：**
@@ -1916,7 +2018,8 @@ struct Index {
 
 
 
-#### onPermissionSetting
+### onPermissionSetting
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1938,12 +2041,14 @@ onPermissionSetting(callback: AsyncCallback&lt;PermissionSettingResult&gt;): Fun
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;PermissionSettingResult&gt; | 是 | 回调函数。当权限设置点击成功，err为undefined，data为获取到的权限设置返回结果；否则为错误对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2028,9 +2133,10 @@ struct Index {
 
 
 
-#### onRequestSubscribeMessage
+### onRequestSubscribeMessage
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 onRequestSubscribeMessage(callback: AsyncCallback&lt;RequestSubscribeMessageResult&gt;): FunctionalButtonController
 
@@ -2052,12 +2158,14 @@ onRequestSubscribeMessage(callback: AsyncCallback&lt;RequestSubscribeMessageResu
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;RequestSubscribeMessageResult&gt; | 是 | 回调函数。当服务动态授权码按钮点击成功，err为undefined，data为获取到的code返回结果；否则为错误对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2067,6 +2175,7 @@ onRequestSubscribeMessage(callback: AsyncCallback&lt;RequestSubscribeMessageResu
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS组件错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-scenario-fusion)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2121,9 +2230,10 @@ struct Index {
 
 
 
-#### onShare
+### onShare
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 onShare(callback: AsyncCallback&lt;void&gt;): FunctionalButtonController
 
@@ -2145,12 +2255,14 @@ onShare(callback: AsyncCallback&lt;void&gt;): FunctionalButtonController
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当分享按钮点击成功，err为undefined，否则为错误对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2160,6 +2272,7 @@ onShare(callback: AsyncCallback&lt;void&gt;): FunctionalButtonController
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS组件错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-scenario-fusion)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2217,9 +2330,10 @@ struct Index {
 
 
 
-#### onFeedback
+### onFeedback
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 onFeedback(callback: AsyncCallback&lt;void&gt;): FunctionalButtonController
 
@@ -2241,12 +2355,14 @@ onFeedback(callback: AsyncCallback&lt;void&gt;): FunctionalButtonController
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当反馈按钮点击成功，err为undefined，否则为错误对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2256,6 +2372,7 @@ onFeedback(callback: AsyncCallback&lt;void&gt;): FunctionalButtonController
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS组件错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-scenario-fusion)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2306,7 +2423,8 @@ struct Index {
 
 
 
-#### onGetPhoneNumberAndRiskLevel
+### onGetPhoneNumberAndRiskLevel
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2324,12 +2442,14 @@ onGetPhoneNumberAndRiskLevel(callback: Callback&lt;GetPhoneNumberAndRiskLevelRes
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;GetPhoneNumberAndRiskLevelResult&gt; | 是 | 回调函数。返回获取手机号和风险等级的授权码。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2384,7 +2504,8 @@ struct Index {
 
 
 
-#### ButtonConfig
+## ButtonConfig
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2400,7 +2521,8 @@ struct Index {
 
 
 
-#### type
+### type
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2418,12 +2540,14 @@ type(value: ButtonType): ButtonConfig
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ButtonType | 是 | 描述按钮显示样式。 默认值：ButtonType.Capsule |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2432,7 +2556,8 @@ type(value: ButtonType): ButtonConfig
 
 
 
-#### stateEffect
+### stateEffect
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2450,12 +2575,14 @@ stateEffect(value: boolean): ButtonConfig
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 按钮按下时是否开启按压态显示效果，当设置为false时，按压效果关闭；设置为true时，按压效果开启。 默认值：true |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2464,7 +2591,8 @@ stateEffect(value: boolean): ButtonConfig
 
 
 
-#### fontColor
+### fontColor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2482,12 +2610,14 @@ fontColor(value: ResourceColor): ButtonConfig
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 设置字体颜色。 默认值：#ffffff |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2496,7 +2626,8 @@ fontColor(value: ResourceColor): ButtonConfig
 
 
 
-#### fontSize
+### fontSize
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2514,12 +2645,14 @@ fontSize(value: Length): ButtonConfig
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Length | 是 | 设置字体大小，Length为number类型时，使用fp单位。 字体默认大小16fp。不支持设置百分比字符串。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2528,7 +2661,8 @@ fontSize(value: Length): ButtonConfig
 
 
 
-#### fontWeight
+### fontWeight
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2546,12 +2680,14 @@ fontWeight(value: string | number | FontWeight): ButtonConfig
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string \| number \| FontWeight | 是 | 设置文本的字体粗细，number类型取值[100, 900]，取值间隔为100，默认为400，取值越大，字体越粗。string类型仅支持number类型取值的字符串形式，例如"400"，以及"bold"，"bolder"，"lighter"，"regular"，"medium"，"normal"，分别对应FontWeight中相应的枚举值。 默认值：FontWeight.Normal |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2560,7 +2696,8 @@ fontWeight(value: string | number | FontWeight): ButtonConfig
 
 
 
-#### fontStyle
+### fontStyle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2578,12 +2715,14 @@ fontStyle(value: FontStyle): ButtonConfig
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | FontStyle | 是 | 设置字体样式。 默认值：FontStyle.Normal |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2592,7 +2731,8 @@ fontStyle(value: FontStyle): ButtonConfig
 
 
 
-#### fontFamily
+### fontFamily
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2610,12 +2750,14 @@ fontFamily(value: string | Resource): ButtonConfig
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string \| Resource | 是 | 设置字体列表。默认字体'HarmonyOS Sans'，当前支持'HarmonyOS Sans'字体和注册自定义字体。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2624,7 +2766,8 @@ fontFamily(value: string | Resource): ButtonConfig
 
 
 
-#### width
+### width
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2642,12 +2785,14 @@ width(value: Length): ButtonConfig
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Length | 是 | 设置组件自身的宽度，缺省时使用元素自身内容需要的宽度。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2656,7 +2801,8 @@ width(value: Length): ButtonConfig
 
 
 
-#### height
+### height
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2674,12 +2820,14 @@ height(value: Length): ButtonConfig
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Length | 是 | 设置组件自身的高度，缺省时使用元素自身内容需要的高度。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2688,7 +2836,8 @@ height(value: Length): ButtonConfig
 
 
 
-#### size
+### size
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2706,12 +2855,14 @@ size(value: SizeOptions): ButtonConfig
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | SizeOptions | 是 | 设置高宽尺寸。举例： { width: 20, height: 50 } 单位：vp。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2720,7 +2871,8 @@ size(value: SizeOptions): ButtonConfig
 
 
 
-#### constraintSize
+### constraintSize
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2738,12 +2890,14 @@ constraintSize(value: ConstraintSizeOptions): ButtonConfig
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ConstraintSizeOptions | 是 | 设置约束尺寸，组件布局时，进行尺寸范围限制。constraintSize的优先级高于width和height。取值结果参考constraintSize取值对width/height影响。 默认值： { minWidth: 0, maxWidth: Infinity, minHeight: 0, maxHeight: Infinity } 单位：vp。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2752,7 +2906,8 @@ constraintSize(value: ConstraintSizeOptions): ButtonConfig
 
 
 
-#### padding
+### padding
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2770,12 +2925,14 @@ padding(value: Length | Padding): ButtonConfig
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Length \| Padding | 是 | 设置内边距属性。 参数为Length类型时，四个方向内边距同时生效。 默认值：{left: 16, right: 16} 单位：vp。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2784,7 +2941,8 @@ padding(value: Length | Padding): ButtonConfig
 
 
 
-#### margin
+### margin
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2802,12 +2960,14 @@ margin(value: Length | Padding): ButtonConfig
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Length \| Padding | 是 | 设置外边距属性。 参数为Length类型时，四个方向外边距同时生效。 默认值：0 单位：vp。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2816,7 +2976,8 @@ margin(value: Length | Padding): ButtonConfig
 
 
 
-#### backgroundColor
+### backgroundColor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2834,12 +2995,14 @@ backgroundColor(value: ResourceColor): ButtonConfig
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 设置组件的背景色。 默认值：#ff007dff |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2848,7 +3011,8 @@ backgroundColor(value: ResourceColor): ButtonConfig
 
 
 
-#### backgroundImage
+### backgroundImage
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2866,6 +3030,7 @@ backgroundImage(src: ResourceStr, repeat?: ImageRepeat): ButtonConfig
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | src | ResourceStr | 是 | 图片地址，支持网络图片资源和本地图片资源地址，不支持svg类型的图片。 |
@@ -2874,6 +3039,7 @@ backgroundImage(src: ResourceStr, repeat?: ImageRepeat): ButtonConfig
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ButtonConfig | ButtonConfig对象。 |
@@ -2881,7 +3047,8 @@ backgroundImage(src: ResourceStr, repeat?: ImageRepeat): ButtonConfig
 
 
 
-#### backgroundImageSize
+### backgroundImageSize
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2899,12 +3066,14 @@ backgroundImageSize(value: SizeOptions | ImageSize): ButtonConfig
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | SizeOptions \| ImageSize | 是 | 设置背景图像的高度和宽度。当输入为{width: Length, height: Length}对象时，如果只设置一个属性，则第二个属性保持图片原始宽高比进行调整。默认保持原图的比例不变。 width和height取值范围： [0, +∞) 默认值：ImageSize.Auto 说明： 设置为小于0的值时，按值为0显示。当设置了height未设置width时，width根据图片原始宽高比进行调整。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2913,7 +3082,8 @@ backgroundImageSize(value: SizeOptions | ImageSize): ButtonConfig
 
 
 
-#### backgroundImagePosition
+### backgroundImagePosition
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2931,12 +3101,14 @@ backgroundImagePosition(value: Position | Alignment): ButtonConfig
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Position \| Alignment | 是 | 设置背景图像在组件中显示位置，即相对于组件左上角的坐标，单位：vp。 默认值： { x: 0, y: 0 } x和y值设置百分比时，偏移量是相对组件自身宽高计算的。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2945,7 +3117,8 @@ backgroundImagePosition(value: Position | Alignment): ButtonConfig
 
 
 
-#### opacity
+### opacity
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2963,12 +3136,14 @@ opacity(value: number | Resource): ButtonConfig
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| Resource | 是 | 元素的不透明度，取值范围为0到1，默认值：1，1表示不透明，0表示完全透明，达到隐藏组件效果，但是在布局中占位。 说明： 子组件可以继承父组件的此属性。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2977,7 +3152,8 @@ opacity(value: number | Resource): ButtonConfig
 
 
 
-#### border
+### border
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2995,12 +3171,14 @@ border(value: BorderOptions): ButtonConfig
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | BorderOptions | 是 | 统一边框样式设置接口。 - width：设置边框宽度。 - color：设置边框颜色。 - radius：设置边框圆角半径。 - style：设置边框样式。 说明： 边框宽度默认值为0，即不显示边框。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3009,7 +3187,8 @@ border(value: BorderOptions): ButtonConfig
 
 
 
-#### borderStyle
+### borderStyle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -3027,12 +3206,14 @@ borderStyle(value: BorderStyle | EdgeStyles): ButtonConfig
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | BorderStyle \| EdgeStyles | 是 | 设置元素的边框样式。 默认值：BorderStyle.Solid |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3041,7 +3222,8 @@ borderStyle(value: BorderStyle | EdgeStyles): ButtonConfig
 
 
 
-#### borderWidth
+### borderWidth
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -3059,12 +3241,14 @@ borderWidth(value: Length | EdgeWidths): ButtonConfig
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Length \| EdgeWidths | 是 | 设置元素的边框宽度，不支持百分比。 默认值：1，单位：vp。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3073,7 +3257,8 @@ borderWidth(value: Length | EdgeWidths): ButtonConfig
 
 
 
-#### borderColor
+### borderColor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -3091,12 +3276,14 @@ borderColor(value: ResourceColor | EdgeColors): ButtonConfig
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor \| EdgeColors | 是 | 设置元素的边框颜色。 默认值：#000000 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3105,7 +3292,8 @@ borderColor(value: ResourceColor | EdgeColors): ButtonConfig
 
 
 
-#### borderRadius
+### borderRadius
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -3123,12 +3311,14 @@ borderRadius(value: Length | BorderRadiuses): ButtonConfig
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Length \| BorderRadiuses | 是 | 设置元素的边框圆角半径，不支持百分比。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3137,7 +3327,8 @@ borderRadius(value: Length | BorderRadiuses): ButtonConfig
 
 
 
-#### borderImage
+### borderImage
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -3155,12 +3346,14 @@ borderImage(value: BorderImageOption): ButtonConfig
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | BorderImageOption | 是 | 图片边框或者渐变色边框设置接口。 该接口支持在ArkTS卡片中使用。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3169,7 +3362,8 @@ borderImage(value: BorderImageOption): ButtonConfig
 
 
 
-#### scale
+### scale
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -3187,12 +3381,14 @@ scale(value: ScaleOptions): ButtonConfig
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ScaleOptions | 是 | 可以分别设置X轴、Y轴、Z轴的缩放比例，默认值为1.0，同时可以通过centerX和centerY设置缩放的中心点。 默认值： { x: 1.0, y: 1.0, z: 1.0, centerX:'0.5', centerY:'0.5' } |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3201,7 +3397,8 @@ scale(value: ScaleOptions): ButtonConfig
 
 
 
-#### align
+### align
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -3219,12 +3416,14 @@ align(value: Alignment): ButtonConfig
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Alignment | 是 | 设置元素内容的对齐方式，只有当设置的width和height大小超过元素本身内容大小时生效。 默认值：Alignment.Center |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3233,7 +3432,8 @@ align(value: Alignment): ButtonConfig
 
 
 
-#### markAnchor
+### markAnchor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -3251,12 +3451,14 @@ markAnchor(value: Position): ButtonConfig
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Position | 是 | 设置元素在位置定位时的锚点，以元素顶部起点作为基准点进行偏移，单位：vp。 默认值： { x: 0, y: 1 } |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3265,7 +3467,8 @@ markAnchor(value: Position): ButtonConfig
 
 
 
-#### offset
+### offset
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -3283,12 +3486,14 @@ offset(value: Position): ButtonConfig
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Position | 是 | 设置元素在位置定位时的锚点，以元素顶部起点作为基准点进行偏移，单位：vp。 默认值： { x: 0, y: 1 } |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3297,7 +3502,8 @@ offset(value: Position): ButtonConfig
 
 
 
-#### enabled
+### enabled
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -3315,12 +3521,14 @@ enabled(value: boolean): ButtonConfig
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 值为true表示组件可交互，响应点击等操作。 值为false表示组件不可交互，不响应点击等操作。 默认值：true |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3329,7 +3537,8 @@ enabled(value: boolean): ButtonConfig
 
 
 
-#### loadingColor
+### loadingColor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -3347,12 +3556,14 @@ loadingColor(value: ResourceColor): ButtonConfig
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 设置图标颜色。默认值：#FFFFFF 说明： 设置为异常值时，按值为'#ff666666'显示。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3361,7 +3572,8 @@ loadingColor(value: ResourceColor): ButtonConfig
 
 
 
-#### loadingWidth
+### loadingWidth
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -3379,12 +3591,14 @@ loadingWidth(value: Length): ButtonConfig
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Length | 是 | 设置图标自身的宽度。默认值：20，单位：vp。 取值范围：(-∞, +∞) 填写为负数时，宽度不超过按钮大小；填写正数时，宽度不受限于按钮大小，请合理填写数值。 说明： LoadingProgress图标始终保持正方形，在显示时边长会取loadingWidth和loadingHeight中的最小值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3393,7 +3607,8 @@ loadingWidth(value: Length): ButtonConfig
 
 
 
-#### loadingHeight
+### loadingHeight
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -3411,12 +3626,14 @@ loadingHeight(value: Length): ButtonConfig
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Length | 是 | 设置图标自身的高度。默认值：20，单位：vp。 取值范围：(-∞, +∞) 填写为负数时，高度不超过按钮大小。填写正数时，高度不受限于按钮大小，请合理填写数值。 说明： LoadingProgress图标始终保持正方形，在显示时边长会取loadingWidth和loadingHeight中的最小值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3425,7 +3642,8 @@ loadingHeight(value: Length): ButtonConfig
 
 
 
-#### loadingPadding
+### loadingPadding
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -3443,12 +3661,14 @@ loadingPadding(value: Length | Padding): ButtonConfig
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Length \| Padding | 是 | 设置图标内边距属性。单位：vp。 默认值：0 取值范围：(-∞, +∞) |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3457,7 +3677,8 @@ loadingPadding(value: Length | Padding): ButtonConfig
 
 
 
-#### loadingMargin
+### loadingMargin
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -3475,12 +3696,14 @@ loadingMargin(value: Length | Padding): ButtonConfig
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Length \| Padding | 是 | 设置图标外边距属性。单位：vp。 默认值：{left: -2, right: 2} 取值范围：(-∞, +∞) |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3489,13 +3712,17 @@ loadingMargin(value: Length | Padding): ButtonConfig
 
 
 
-#### 示例
+## 示例
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 
 
-#### 示例一（场景化Button使用自定义Modifier设置按钮样式）
+### 示例一（场景化Button使用自定义Modifier设置按钮样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
@@ -3545,4 +3772,4 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/meA7bbo0TC2yTl8r_PceyA/zh-cn_image_0000002704275715.png?HW-CC-KV=V1&HW-CC-Date=20260813T095542Z&HW-CC-Expire=86400&HW-CC-Sign=AF9EEB22053FA0241336018EB580B6B8A7F93A005AE71277C3C2C9FFA2033627)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/svaaTe_CRfaf1_4511bsJg/zh-cn_image_0000002747293929.png?HW-CC-KV=V1&HW-CC-Date=20260911T073052Z&HW-CC-Expire=86400&HW-CC-Sign=B5003C0712C547CDDA7FA478AC2135982B85F4F895F131EFA27203B5E562E0D2)

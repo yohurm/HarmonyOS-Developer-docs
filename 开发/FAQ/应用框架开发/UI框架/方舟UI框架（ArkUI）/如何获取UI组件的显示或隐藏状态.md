@@ -14,12 +14,12 @@
 @Component
 struct ComponentA {
   aboutToAppear(): void {
-    // Perception components are visible and hidden
+   <em> // Perception components are visible and hidden</em>
     console.log('Component A display');
   }
 
   aboutToDisappear(): void {
-    // Perception components are visible and hidden
+ <em>   // Perception components are visible and hidden</em>
     console.log('Component A hidden');
   }
 
@@ -37,7 +37,7 @@ struct ComponentA {
 struct ComponentB {
   @State @Watch('onCompAShowStatusChange') isShowA: boolean = false;
   onCompAShowStatusChange() {
-    // Perception components are visible and hidden
+   <em> // Perception components are visible and hidden</em>
     console.log('Monitor component A：' + `${this.isShowA ? 'display' : 'hide'}`);
   }
 

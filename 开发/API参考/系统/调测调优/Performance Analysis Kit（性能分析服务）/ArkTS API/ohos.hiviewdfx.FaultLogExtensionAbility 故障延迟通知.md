@@ -1,9 +1,9 @@
 # @ohos.hiviewdfx.FaultLogExtensionAbility (故障延迟通知)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hiviewdfx-faultlogextensionability
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块实现故障的延迟通知功能。
 
@@ -18,17 +18,19 @@
 
 
 
-#### 约束限制
+## 约束限制
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 为保障系统安全性和稳定性，防止FaultLogExtensionAbility滥用系统资源，系统对其能力进行管控，不支持部分模块的引用，详情请参考[附录](#附录)。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { FaultLogExtensionAbility } from '@kit.PerformanceAnalysisKit';
@@ -36,14 +38,15 @@ import { FaultLogExtensionAbility } from '@kit.PerformanceAnalysisKit';
 
 
 
-#### FaultLogExtensionAbility
+## FaultLogExtensionAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 应用接入故障延迟通知需要通过FaultLogExtensionAbility实现，开发者可以在[onFaultReportReady](#onfaultreportready)中订阅并处理故障事件。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/oq1A7Lw4R6qppoFDAPGXCA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071646Z&HW-CC-Expire=86400&HW-CC-Sign=E8B11D158003476D24750F2C8F747766DF6A8FAB91179CFC3489447CA732EFEE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/K37Ns2EbRqegL7fUfE7Srw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072910Z&HW-CC-Expire=86400&HW-CC-Sign=9702AA59106B6F4606204C5844A9FBA5E135B4BC316ADCACC537E97329C7844A)
 
 
  - FaultLogExtensionAbility被拉起后只有很短的时间完成故障处理，建议处理时间不要超过10秒。超时没有处理完成可以在[onDisconnect](#ondisconnect)中保存状态。
@@ -55,11 +58,13 @@ import { FaultLogExtensionAbility } from '@kit.PerformanceAnalysisKit';
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力**：SystemCapability.HiviewDFX.Hiview.FaultLogger
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -68,13 +73,16 @@ import { FaultLogExtensionAbility } from '@kit.PerformanceAnalysisKit';
 
 
 
-#### onConnect
+### onConnect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onConnect(): void
 
 FaultLogExtensionAbility生命周期回调。当系统服务完成连接时调用此接口，用于执行初始化操作，该方法可选择性重写。
+
+**模型约束**：此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.HiviewDFX.Hiview.FaultLogger
 
@@ -90,13 +98,16 @@ export default class MyFaultLogExtension extends FaultLogExtensionAbility {
 
 
 
-#### onDisconnect
+### onDisconnect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDisconnect(): void
 
 FaultLogExtensionAbility生命周期回调。当系统服务完成断开连接时调用此接口，用于释放资源清理运行状态，该方法可选择性重写。
+
+**模型约束**：此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.HiviewDFX.Hiview.FaultLogger
 
@@ -112,13 +123,16 @@ export default class MyFaultLogExtension extends FaultLogExtensionAbility {
 
 
 
-#### onFaultReportReady
+### onFaultReportReady
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onFaultReportReady(): void
 
 FaultLogExtensionAbility回调。系统服务通知FaultLogExtensionAbility可以进行故障处理时，回调此接口，可以在该方法中订阅故障事件进行处理。
+
+**模型约束**：此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.HiviewDFX.Hiview.FaultLogger
 
@@ -147,35 +161,37 @@ export default class MyFaultLogExtension extends FaultLogExtensionAbility {
 
 
 
-#### 附录
+## 附录
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 FaultLogExtensionAbility不支持以下模块的引用。
 
+
 | Kit名称 | 模块名称 |
 | --- | --- |
-| AVSessionKit | @ohos.multimedia.avsession (媒体会话管理) |
-| AbilityKit | @ohos.UIAbilityContext |
+| AVSession Kit | @ohos.multimedia.avsession (媒体会话管理) |
+| Ability Kit | @ohos.UIAbilityContext |
 | ArkUI | @ohos.window (窗口) |
-| AudioKit | @ohos.multimedia.audio (音频管理) |
-| BackgroundTasksKit | @ohos.backgroundTaskManager (后台任务管理) |
-| BackgroundTasksKit | @ohos.reminderAgent (后台代理提醒) |
-| BackgroundTasksKit | @ohos.reminderAgentManager (后台代理提醒) |
-| BackgroundTasksKit | @ohos.resourceschedule.backgroundTaskManager (后台任务管理) |
-| BasicServicesKit | @ohos.power (系统电源管理) |
-| BasicServicesKit | @ohos.wallpaper (壁纸) |
-| CameraKit | @ohos.multimedia.camera (相机管理) |
-| CameraKit | @ohos.multimedia.cameraPicker (相机选择器) |
-| ConnectivityKit | @ohos.wifiManager (WLAN) |
-| ConnectivityKit | @ohos.wifiManagerExt (WLAN扩展接口) |
-| ConnectivityKit | @ohos.wifiext (WLAN扩展接口) |
-| IMEKit | @ohos.inputMethod (输入法框架) |
-| MediaLibraryKit | @ohos.multimedia.movingphotoview (动态照片) |
-| NotificationKit | @ohos.notification (Notification模块) |
-| NotificationKit | @ohos.notificationManager (NotificationManager模块) |
-| SensorServiceKit | @ohos.vibrator (振动) |
-| TelephonyKit | @ohos.telephony.call (拨打电话) |
-| TelephonyKit | @ohos.telephony.sim (SIM卡管理) |
-| TelephonyKit | @ohos.telephony.sms (短信服务) |
-| UserAuthenticationKit | @ohos.userIAM.userAuth (用户认证) |
+| Audio Kit | @ohos.multimedia.audio (音频管理) |
+| Background Tasks Kit | @ohos.backgroundTaskManager (后台任务管理) |
+| Background Tasks Kit | @ohos.reminderAgent (后台代理提醒) |
+| Background Tasks Kit | @ohos.reminderAgentManager (后台代理提醒) |
+| Background Tasks Kit | @ohos.resourceschedule.backgroundTaskManager (后台任务管理) |
+| Basic Services Kit | @ohos.power (系统电源管理) |
+| Basic Services Kit | @ohos.wallpaper (壁纸) |
+| Camera Kit | @ohos.multimedia.camera (相机管理) |
+| Camera Kit | @ohos.multimedia.cameraPicker (相机选择器) |
+| Connectivity Kit | @ohos.wifiManager (WLAN) |
+| Connectivity Kit | @ohos.wifiManagerExt (WLAN扩展接口) |
+| Connectivity Kit | @ohos.wifiext (WLAN扩展接口) |
+| IME Kit | @ohos.inputMethod (输入法框架) |
+| Media Library Kit | @ohos.multimedia.movingphotoview (动态照片) |
+| Notification Kit | @ohos.notification (Notification模块) |
+| Notification Kit | @ohos.notificationManager (NotificationManager模块) |
+| Sensor Service Kit | @ohos.vibrator (振动) |
+| Telephony Kit | @ohos.telephony.call (拨打电话) |
+| Telephony Kit | @ohos.telephony.sim (SIM卡管理) |
+| Telephony Kit | @ohos.telephony.sms (短信服务) |
+| User Authentication Kit | @ohos.userIAM.userAuth (用户认证) |

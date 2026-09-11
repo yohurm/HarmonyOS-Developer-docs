@@ -1,11 +1,12 @@
 # Interface (FlowFieldOverlay)
 
-更新时间：2026-05-18 03:44:20
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-flowfieldoverlay
 **支持设备：** Phone | PC/2in1 | Tablet
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -15,7 +16,8 @@ import { map, mapCommon } from '@kit.MapKit';
  
   
 
-#### FlowFieldOverlay
+## FlowFieldOverlay
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -41,7 +43,8 @@ let fieldOverlay = await mapController.addFlowFieldOverlay(params);
  
   
 
-#### setStyle
+### setStyle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -59,6 +62,7 @@ setStyle(style: mapCommon.ParticleStyle): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | style | mapCommon.ParticleStyle | 是 | 粒子样式。 |
@@ -78,7 +82,8 @@ fieldOverlay.setStyle(style);
  
   
 
-#### getStyle
+### getStyle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -96,6 +101,7 @@ getStyle(): mapCommon.ParticleStyle
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | mapCommon.ParticleStyle | 粒子样式。 |

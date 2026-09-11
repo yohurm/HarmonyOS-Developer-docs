@@ -1,11 +1,12 @@
 # ServiceCollaboration_CollaborationDeviceInfo
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/servicecollaboration-collaborationdeviceinfo
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -19,16 +20,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | uint32_t deviceType | 对端设备类型。 Phone设备类型的值为0x14，Tablet设备类型的值为0x17。 |
@@ -40,13 +44,15 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### deviceName
+### deviceName
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -60,7 +66,8 @@ char ServiceCollaboration_CollaborationDeviceInfo::deviceName[COLLABORATIONDEVIC
  
   
 
-#### deviceNetworkId
+### deviceNetworkId
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -74,7 +81,8 @@ char ServiceCollaboration_CollaborationDeviceInfo::deviceNetworkId[COLLABORATION
  
   
 
-#### deviceType
+### deviceType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -88,7 +96,8 @@ uint32_t ServiceCollaboration_CollaborationDeviceInfo::deviceType
  
   
 
-#### filterNum
+### filterNum
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -102,7 +111,8 @@ uint32_t ServiceCollaboration_CollaborationDeviceInfo::filterNum
  
   
 
-#### serviceFilterTypes
+### serviceFilterTypes
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 

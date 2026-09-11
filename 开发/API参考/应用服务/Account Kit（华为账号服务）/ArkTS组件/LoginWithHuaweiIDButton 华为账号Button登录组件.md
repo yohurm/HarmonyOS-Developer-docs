@@ -1,6 +1,6 @@
 # LoginWithHuaweiIDButton (华为账号Button登录组件)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-api-huawei-id-button
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -12,7 +12,8 @@ LoginWithHuaweiIDButton需要配合[loginComponentManager](https://developer.hua
 **起始版本：** 4.1.0(11)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -22,7 +23,8 @@ import { LoginWithHuaweiIDButton, loginComponentManager } from '@kit.AccountKit'
  
   
 
-#### LoginWithHuaweiIDButton
+## LoginWithHuaweiIDButton
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -41,6 +43,7 @@ import { LoginWithHuaweiIDButton, loginComponentManager } from '@kit.AccountKit'
  
 **参数：**
   
+
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | params | loginComponentManager.LoginWithHuaweiIDButtonParams | 是 | @Require 适用版本：26.0.0+ | LoginWithHuaweiIDButton组件参数。 |
@@ -49,7 +52,8 @@ import { LoginWithHuaweiIDButton, loginComponentManager } from '@kit.AccountKit'
  
   
 
-#### build
+### build
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 

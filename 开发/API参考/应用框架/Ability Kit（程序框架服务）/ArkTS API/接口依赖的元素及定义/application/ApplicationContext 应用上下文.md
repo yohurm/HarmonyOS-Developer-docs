@@ -1,9 +1,9 @@
 # ApplicationContext (应用上下文)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-applicationcontext
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ApplicationContext作为应用上下文，继承自[Context](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-context)，提供了应用生命周期监听、进程管理、应用环境设置等应用级别的管控能力。
 
@@ -12,9 +12,10 @@ ApplicationContext作为应用上下文，继承自[Context](https://developer.h
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { common } from '@kit.AbilityKit';
@@ -22,9 +23,10 @@ import { common } from '@kit.AbilityKit';
 
 
 
-#### ApplicationContext.on('abilityLifecycle')
+## ApplicationContext.on('abilityLifecycle')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'abilityLifecycle', callback: AbilityLifecycleCallback): number
 
@@ -36,6 +38,7 @@ on(type: 'abilityLifecycle', callback: AbilityLifecycleCallback): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 此类型表示应用内UIAbility的生命周期，固定为'abilityLifecycle'。 |
@@ -43,6 +46,7 @@ on(type: 'abilityLifecycle', callback: AbilityLifecycleCallback): number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -53,6 +57,7 @@ on(type: 'abilityLifecycle', callback: AbilityLifecycleCallback): number
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
@@ -60,7 +65,7 @@ on(type: 'abilityLifecycle', callback: AbilityLifecycleCallback): number
 
 **示例：**
 
-```text
+```json
 import { UIAbility, AbilityLifecycleCallback } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
@@ -102,25 +107,45 @@ export default class EntryAbility extends UIAbility {
         console.info(`AbilityLifecycleCallback onAbilityContinue ability: ${ability}`);
       }
     }
-    // 1.通过context属性获取applicationContext
+
+    // 通过context属性获取applicationContext
     // 获取应用上下文
     let applicationContext = this.context.getApplicationContext();
     try {
-      // 2.通过applicationContext注册监听应用内生命周期
+      // 通过applicationContext注册监听应用内生命周期
       lifecycleId = applicationContext.on('abilityLifecycle', abilityLifecycleCallback);
     } catch (paramError) {
       console.error(`error code: ${(paramError as BusinessError).code}, error msg: ${(paramError as BusinessError).message}`);
     }
     console.info(`registerAbilityLifecycleCallback lifecycleId: ${lifecycleId}`);
   }
+
+  // 不再需要或应用退出时取消监听应用内UIAbility生命周期
+  onDestroy() {
+    // 通过context属性获取applicationContext
+    // 获取应用上下文
+    let applicationContext = this.context.getApplicationContext();
+    try {
+      applicationContext.off('abilityLifecycle', lifecycleId, (error, data) => {
+        if (error) {
+          console.error(`Failed to unregister abilityLifecycle callback. Code: ${error.code}, message: ${error.message}`);
+        } else {
+          console.info(`unregisterAbilityLifecycleCallback success, data: ${JSON.stringify(data)}`);
+        }
+      });
+    } catch (paramError) {
+      console.error(`error code: ${(paramError as BusinessError).code}, error msg: ${(paramError as BusinessError).message}`);
+    }
+  }
 }
 ```
 
 
 
-#### ApplicationContext.off('abilityLifecycle')
+## ApplicationContext.off('abilityLifecycle')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'abilityLifecycle', callbackId: number, callback: AsyncCallback&lt;void&gt;): void
 
@@ -132,6 +157,7 @@ off(type: 'abilityLifecycle', callbackId: number, callback: AsyncCallback&lt;voi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 此类型表示应用内UIAbility的生命周期，固定为'abilityLifecycle'。 |
@@ -142,6 +168,7 @@ off(type: 'abilityLifecycle', callbackId: number, callback: AsyncCallback&lt;voi
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -171,7 +198,7 @@ export default class EntryAbility extends UIAbility {
         }
       });
     } catch (paramError) {
-      console.error(`error code: ${(paramError as BusinessError).code}, error code: ${(paramError as BusinessError).message}`);
+      console.error(`error code: ${(paramError as BusinessError).code}, error msg: ${(paramError as BusinessError).message}`);
     }
   }
 }
@@ -179,9 +206,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### ApplicationContext.off('abilityLifecycle')
+## ApplicationContext.off('abilityLifecycle')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'abilityLifecycle', callbackId: number): Promise&lt;void&gt;
 
@@ -193,6 +221,7 @@ off(type: 'abilityLifecycle', callbackId: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 此类型表示应用内UIAbility的生命周期，固定为'abilityLifecycle'。 |
@@ -200,6 +229,7 @@ off(type: 'abilityLifecycle', callbackId: number): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -209,6 +239,7 @@ off(type: 'abilityLifecycle', callbackId: number): Promise&lt;void&gt;
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -240,9 +271,10 @@ export default class MyAbility extends UIAbility {
 
 
 
-#### ApplicationContext.on('environment')
+## ApplicationContext.on('environment')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'environment', callback: EnvironmentCallback): number
 
@@ -258,6 +290,7 @@ on(type: 'environment', callback: EnvironmentCallback): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 此类型表示系统环境变化，如系统深浅色发生变化，固定为'environment'。 |
@@ -265,6 +298,7 @@ on(type: 'environment', callback: EnvironmentCallback): number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -274,6 +308,7 @@ on(type: 'environment', callback: EnvironmentCallback): number
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -299,25 +334,44 @@ export default class EntryAbility extends UIAbility {
         console.info(`onMemoryLevel level: ${level}`);
       }
     };
-    // 1.获取applicationContext
+    // 通过context属性获取applicationContext
     // 获取应用上下文
     let applicationContext = this.context.getApplicationContext();
     try {
-      // 2.通过applicationContext注册监听系统环境变化
+      // 通过applicationContext注册监听系统环境变化
       callbackId = applicationContext.on('environment', environmentCallback);
     } catch (paramError) {
       console.error(`error code: ${(paramError as BusinessError).code}, error msg: ${(paramError as BusinessError).message}`);
     }
     console.info(`registerEnvironmentCallback callbackId: ${callbackId}`);
   }
+
+  // 不再需要或应用退出时取消对系统环境变化的监听
+  onDestroy() {
+    // 通过context属性获取applicationContext
+    // 获取应用上下文
+    let applicationContext = this.context.getApplicationContext();
+    try {
+      applicationContext.off('environment', callbackId, (error, data) => {
+        if (error) {
+          console.error(`Failed to unregister environment callback. Code: ${error.code}, message: ${error.message}`);
+        } else {
+          console.info(`unregisterEnvironmentCallback success, data: ${JSON.stringify(data)}`);
+        }
+      });
+    } catch (paramError) {
+      console.error(`error code: ${(paramError as BusinessError).code}, error msg: ${(paramError as BusinessError).message}`);
+    }
+  }
 }
 ```
 
 
 
-#### ApplicationContext.off('environment')
+## ApplicationContext.off('environment')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'environment', callbackId: number, callback: AsyncCallback&lt;void&gt;): void
 
@@ -329,6 +383,7 @@ off(type: 'environment', callbackId: number, callback: AsyncCallback&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 此类型表示系统环境变化，如系统深浅色发生变化，固定为'environment'。 |
@@ -339,6 +394,7 @@ off(type: 'environment', callbackId: number, callback: AsyncCallback&lt;void&gt;
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -375,9 +431,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### ApplicationContext.off('environment')
+## ApplicationContext.off('environment')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'environment', callbackId: number): Promise&lt;void&gt;
 
@@ -389,6 +446,7 @@ off(type: 'environment', callbackId: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 此类型表示系统环境变化，如系统深浅色发生变化，固定为'environment'。 |
@@ -396,6 +454,7 @@ off(type: 'environment', callbackId: number): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -405,6 +464,7 @@ off(type: 'environment', callbackId: number): Promise&lt;void&gt;
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -435,9 +495,10 @@ export default class MyAbility extends UIAbility {
 
 
 
-#### ApplicationContext.on('applicationStateChange')10+
+## ApplicationContext.on('applicationStateChange')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'applicationStateChange', callback: ApplicationStateChangeCallback): void
 
@@ -449,6 +510,7 @@ on(type: 'applicationStateChange', callback: ApplicationStateChangeCallback): vo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 此类型表示当前应用进程状态变化，固定为'applicationStateChange'。 |
@@ -458,6 +520,7 @@ on(type: 'applicationStateChange', callback: ApplicationStateChangeCallback): vo
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -470,37 +533,50 @@ on(type: 'applicationStateChange', callback: ApplicationStateChangeCallback): vo
 import { UIAbility, ApplicationStateChangeCallback } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
+let applicationStateChangeCallback: ApplicationStateChangeCallback = {
+  onApplicationForeground() {
+    console.info('applicationStateChangeCallback onApplicationForeground');
+  },
+  onApplicationBackground() {
+    console.info('applicationStateChangeCallback onApplicationBackground');
+  }
+}
+
 export default class MyAbility extends UIAbility {
   onCreate() {
     console.info('MyAbility onCreate');
-    let applicationStateChangeCallback: ApplicationStateChangeCallback = {
-      onApplicationForeground() {
-        console.info('applicationStateChangeCallback onApplicationForeground');
-      },
-      onApplicationBackground() {
-        console.info('applicationStateChangeCallback onApplicationBackground');
-      }
-    }
-
-    // 1.获取applicationContext
+    // 通过context属性获取applicationContext
     // 获取应用上下文
     let applicationContext = this.context.getApplicationContext();
     try {
-      // 2.通过applicationContext注册当前应用进程状态监听
+      // 通过applicationContext注册当前应用进程状态监听
       applicationContext.on('applicationStateChange', applicationStateChangeCallback);
     } catch (paramError) {
       console.error(`error code: ${(paramError as BusinessError).code}, error msg: ${(paramError as BusinessError).message}`);
     }
     console.info('Register applicationStateChangeCallback');
   }
+
+  // 不再需要或应用退出时取消所有已注册的该类型事件的监听。
+  onDestroy() {
+    // 通过context属性获取applicationContext
+    // 获取应用上下文
+    let applicationContext = this.context.getApplicationContext();
+    try {
+      applicationContext.off('applicationStateChange', applicationStateChangeCallback);
+    } catch (paramError) {
+      console.error(`error: ${(paramError as BusinessError).code}, ${(paramError as BusinessError).message}`);
+    }
+  }
 }
 ```
 
 
 
-#### ApplicationContext.off('applicationStateChange')10+
+## ApplicationContext.off('applicationStateChange')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'applicationStateChange', callback?: ApplicationStateChangeCallback): void
 
@@ -512,6 +588,7 @@ off(type: 'applicationStateChange', callback?: ApplicationStateChangeCallback): 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 此类型表示当前应用进程状态变化，固定为'applicationStateChange'。 |
@@ -521,6 +598,7 @@ off(type: 'applicationStateChange', callback?: ApplicationStateChangeCallback): 
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -561,9 +639,10 @@ export default class MyAbility extends UIAbility {
 
 
 
-#### ApplicationContext.onSystemConfigurationUpdated24+
+## ApplicationContext.onSystemConfigurationUpdated24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onSystemConfigurationUpdated(callback: systemConfiguration.UpdatedCallback): void
 
@@ -579,6 +658,7 @@ onSystemConfigurationUpdated(callback: systemConfiguration.UpdatedCallback): voi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | systemConfiguration.UpdatedCallback | 是 | 系统环境变化时触发的回调方法。 |
@@ -590,56 +670,71 @@ onSystemConfigurationUpdated(callback: systemConfiguration.UpdatedCallback): voi
 import { UIAbility, systemConfiguration, ConfigurationConstant } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
+let callBack: systemConfiguration.UpdatedCallback = {
+  onColorModeUpdated(colorMode: ConfigurationConstant.ColorMode) {
+    console.info(`system configuration updated colormode:` + colorMode);
+  },
+  onFontSizeScaleUpdated(fontSizeScale: number) {
+    console.info(`system configuration updated ability:` + fontSizeScale);
+  },
+  onFontWeightScaleUpdated(fontWeightScale: number) {
+    console.info(`system configuration updated ability:` + fontWeightScale);
+  },
+  onLanguageUpdated(language: string) {
+    console.info(`system configuration updated ability:` + language);
+  },
+  onFontIdUpdated(fontId: string) {
+    console.info(`system configuration updated ability:` + fontId);
+  },
+  onMCCUpdated(mcc: string) {
+    console.info(`system configuration updated ability:` + mcc);
+  },
+  onMNCUpdated(mnc: string) {
+    console.info(`system configuration updated ability:` + mnc);
+  },
+  onHasPointerDeviceUpdated(hasPointerDevice: boolean) {
+    console.info(`system configuration updated ability:` + hasPointerDevice);
+  },
+  onLocaleUpdated(locale: string) {
+    console.info(`system configuration updated ability:` + locale);
+  }
+}
+
 export default class EntryAbility extends UIAbility {
   onForeground() {
-    let callBack: systemConfiguration.UpdatedCallback = {
-      onColorModeUpdated(colorMode: ConfigurationConstant.ColorMode) {
-        console.info(`system configuration updated colormode:` + colorMode);
-      },
-      onFontSizeScaleUpdated(fontSizeScale: number) {
-        console.info(`system configuration updated ability:` + fontSizeScale);
-      },
-      onFontWeightScaleUpdated(fontWeightScale: number) {
-        console.info(`system configuration updated ability:` + fontWeightScale);
-      },
-      onLanguageUpdated(language: string) {
-        console.info(`system configuration updated ability:` + language);
-      },
-      onFontIdUpdated(fontId: string) {
-        console.info(`system configuration updated ability:` + fontId);
-      },
-      onMCCUpdated(mcc: string) {
-        console.info(`system configuration updated ability:` + mcc);
-      },
-      onMNCUpdated(mnc: string) {
-        console.info(`system configuration updated ability:` + mnc);
-      },
-      onHasPointerDeviceUpdated(hasPointerDevice: boolean) {
-        console.info(`system configuration updated ability:` + hasPointerDevice);
-      },
-      onLocaleUpdated(locale: string) {
-        console.info(`system configuration updated ability:` + locale);
-      }
-    }
-    // 1.通过context属性获取applicationContext
+    // 通过context属性获取applicationContext
     // 获取应用上下文
     let applicationContext = this.context.getApplicationContext();
     try {
-      // 2.通过applicationContext注册监听
+      // 通过applicationContext注册监听
       applicationContext.onSystemConfigurationUpdated(callBack);
     } catch (paramError) {
       console.error(`error: ${(paramError as BusinessError).code}, ${(paramError as BusinessError).message}`);
     }
     console.info(`onSystemConfigurationUpdated finish`);
   }
+
+  // 不需要时或应用退出时可以取消监听
+  onDestroy() {
+    // 通过context属性获取applicationContext
+    // 获取应用上下文
+    let applicationContext = this.context.getApplicationContext();
+    try {
+      // 通过applicationContext取消监听
+      applicationContext.offSystemConfigurationUpdated(callBack);
+    } catch (paramError) {
+      console.error(`error: ${(paramError as BusinessError).code}, ${(paramError as BusinessError).message}`);
+    }
+  }
 }
 ```
 
 
 
-#### ApplicationContext.offSystemConfigurationUpdated24+
+## ApplicationContext.offSystemConfigurationUpdated24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offSystemConfigurationUpdated(callback?: systemConfiguration.UpdatedCallback): void
 
@@ -650,6 +745,7 @@ offSystemConfigurationUpdated(callback?: systemConfiguration.UpdatedCallback): v
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -698,7 +794,7 @@ export default class EntryAbility extends UIAbility {
     let applicationContext = this.context.getApplicationContext();
     try {
       // 2.通过applicationContext取消监听
-      applicationContext.offSystemConfigurationUpdated(CallBack);
+      applicationContext.offSystemConfigurationUpdated(callBack);
     } catch (paramError) {
       console.error(`error: ${(paramError as BusinessError).code}, ${(paramError as BusinessError).message}`);
     }
@@ -709,9 +805,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### ApplicationContext.getRunningProcessInformation
+## ApplicationContext.getRunningProcessInformation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRunningProcessInformation(): Promise<Array&lt;ProcessInformation&gt;>
 
@@ -723,6 +820,7 @@ getRunningProcessInformation(): Promise<Array&lt;ProcessInformation&gt;>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;ProcessInformation&gt;> | Promise对象，返回接口运行结果及有关运行进程的信息，可进行错误处理或其他自定义处理。 |
@@ -731,6 +829,7 @@ getRunningProcessInformation(): Promise<Array&lt;ProcessInformation&gt;>
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -761,9 +860,10 @@ export default class MyAbility extends UIAbility {
 
 
 
-#### ApplicationContext.getRunningProcessInformation
+## ApplicationContext.getRunningProcessInformation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRunningProcessInformation(callback: AsyncCallback<Array&lt;ProcessInformation&gt;>): void
 
@@ -775,6 +875,7 @@ getRunningProcessInformation(callback: AsyncCallback<Array&lt;ProcessInformation
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback<Array&lt;ProcessInformation&gt;> | 是 | 回调函数，用于获取运行进程信息。 |
@@ -783,6 +884,7 @@ getRunningProcessInformation(callback: AsyncCallback<Array&lt;ProcessInformation
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -814,9 +916,10 @@ export default class MyAbility extends UIAbility {
 
 
 
-#### ApplicationContext.killAllProcesses
+## ApplicationContext.killAllProcesses
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 killAllProcesses(): Promise&lt;void&gt;
 
@@ -832,6 +935,7 @@ killAllProcesses(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -840,6 +944,7 @@ killAllProcesses(): Promise&lt;void&gt;
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -864,9 +969,10 @@ export default class MyAbility extends UIAbility {
 
 
 
-#### ApplicationContext.killAllProcesses14+
+## ApplicationContext.killAllProcesses14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 killAllProcesses(clearPageStack: boolean): Promise&lt;void&gt;
 
@@ -882,12 +988,14 @@ killAllProcesses(clearPageStack: boolean): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | clearPageStack | boolean | 是 | 表示是否清除页面堆栈。true表示清除，false表示不清除。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -897,6 +1005,7 @@ killAllProcesses(clearPageStack: boolean): Promise&lt;void&gt;
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -915,7 +1024,7 @@ export default class MyAbility extends UIAbility {
   onBackground() {
     // 获取应用上下文
     let applicationContext = this.context.getApplicationContext();
-    // 终止应用的所有进程,并清除页面堆栈
+    // 终止应用的所有进程，并清除页面堆栈
     applicationContext.killAllProcesses(isClearPageStack);
   }
 }
@@ -923,9 +1032,10 @@ export default class MyAbility extends UIAbility {
 
 
 
-#### ApplicationContext.killAllProcesses
+## ApplicationContext.killAllProcesses
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 killAllProcesses(callback: AsyncCallback&lt;void&gt;): void
 
@@ -941,6 +1051,7 @@ killAllProcesses(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当终止应用的所有进程成功时，err为undefined，否则为错误对象。 |
@@ -949,6 +1060,7 @@ killAllProcesses(callback: AsyncCallback&lt;void&gt;): void
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -977,9 +1089,10 @@ export default class MyAbility extends UIAbility {
 
 
 
-#### ApplicationContext.setColorMode11+
+## ApplicationContext.setColorMode11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setColorMode(colorMode: ConfigurationConstant.ColorMode): void
 
@@ -995,6 +1108,7 @@ setColorMode(colorMode: ConfigurationConstant.ColorMode): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | colorMode | ConfigurationConstant.ColorMode | 是 | 深浅色模式，包括：深色模式、浅色模式、未设置颜色模式（默认）。 |
@@ -1003,6 +1117,7 @@ setColorMode(colorMode: ConfigurationConstant.ColorMode): void
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1036,9 +1151,10 @@ export default class MyAbility extends UIAbility {
 
 
 
-#### ApplicationContext.setLanguage11+
+## ApplicationContext.setLanguage11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setLanguage(language: string): void
 
@@ -1054,6 +1170,7 @@ setLanguage(language: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | language | string | 是 | 设置语言，当前支持的语言列表可以通过getSystemLanguages()获取。 |
@@ -1062,6 +1179,7 @@ setLanguage(language: string): void
 **错误码**：
 
 以下错误码详细介绍请参考[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1094,9 +1212,10 @@ export default class MyAbility extends UIAbility {
 
 
 
-#### ApplicationContext.clearUpApplicationData11+
+## ApplicationContext.clearUpApplicationData11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clearUpApplicationData(): Promise&lt;void&gt;
 
@@ -1110,6 +1229,7 @@ clearUpApplicationData(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1118,6 +1238,7 @@ clearUpApplicationData(): Promise&lt;void&gt;
 **错误码**：
 
 以下错误码详细介绍请参考[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1142,9 +1263,10 @@ export default class MyAbility extends UIAbility {
 
 
 
-#### ApplicationContext.clearUpApplicationData11+
+## ApplicationContext.clearUpApplicationData11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clearUpApplicationData(callback: AsyncCallback&lt;void&gt;): void
 
@@ -1158,6 +1280,7 @@ clearUpApplicationData(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调方法。当清理当前应用的应用文件路径下的所有数据，同时撤销应用向用户申请的权限成功时，error为undefined，否则返回错误对象。 |
@@ -1166,6 +1289,7 @@ clearUpApplicationData(callback: AsyncCallback&lt;void&gt;): void
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1195,9 +1319,10 @@ export default class MyAbility extends UIAbility {
 
 
 
-#### ApplicationContext.restartApp12+
+## ApplicationContext.restartApp12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 restartApp(want: Want): void
 
@@ -1213,6 +1338,7 @@ restartApp(want: Want): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | Want类型参数，传入需要启动的UIAbility信息。系统仅校验abilityName字段的有效性，不校验bundleName字段。 |
@@ -1221,6 +1347,7 @@ restartApp(want: Want): void
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1278,9 +1405,10 @@ struct Index {
 
 
 
-#### ApplicationContext.getCurrentAppCloneIndex12+
+## ApplicationContext.getCurrentAppCloneIndex12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCurrentAppCloneIndex(): number
 
@@ -1292,12 +1420,14 @@ getCurrentAppCloneIndex(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 当前应用的分身索引。 |
 
 
 **错误码**：
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1328,9 +1458,10 @@ export default class MyAbility extends UIAbility {
 
 
 
-#### ApplicationContext.setFont12+
+## ApplicationContext.setFont12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setFont(font: string): void
 
@@ -1344,6 +1475,7 @@ setFont(font: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | font | string | 是 | 设置字体类型，字体可以通过UIContext.registerFont方法进行注册使用。 |
@@ -1352,6 +1484,7 @@ setFont(font: string): void
 **错误码**：
 
 以下错误码详细介绍请参考[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1396,9 +1529,10 @@ struct Index {
 
 
 
-#### ApplicationContext.setSupportedProcessCache12+
+## ApplicationContext.setSupportedProcessCache12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1
 
 setSupportedProcessCache(isSupported : boolean): void
 
@@ -1418,6 +1552,7 @@ setSupportedProcessCache(isSupported : boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isSupported | boolean | 是 | 表示应用是否支持进程资源的缓存。true表示支持，false表示不支持。 |
@@ -1426,6 +1561,7 @@ setSupportedProcessCache(isSupported : boolean): void
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1459,9 +1595,10 @@ export default class MyAbilityStage extends AbilityStage {
 
 
 
-#### ApplicationContext.setFontSizeScale13+
+## ApplicationContext.setFontSizeScale13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setFontSizeScale(fontSizeScale: number): void
 
@@ -1472,6 +1609,7 @@ setFontSizeScale(fontSizeScale: number): void
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1501,9 +1639,10 @@ export default class MyAbility extends UIAbility {
 
 
 
-#### ApplicationContext.getCurrentInstanceKey14+
+## ApplicationContext.getCurrentInstanceKey14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 getCurrentInstanceKey(): string
 
@@ -1515,6 +1654,7 @@ getCurrentInstanceKey(): string
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 返回当前应用多实例的唯一实例标识。 |
@@ -1523,6 +1663,7 @@ getCurrentInstanceKey(): string
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1556,9 +1697,10 @@ export default class MyAbilityStage extends AbilityStage {
 
 
 
-#### ApplicationContext.getAllRunningInstanceKeys14+
+## ApplicationContext.getAllRunningInstanceKeys14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 getAllRunningInstanceKeys(): Promise<Array&lt;string&gt;>;
 
@@ -1570,6 +1712,7 @@ getAllRunningInstanceKeys(): Promise<Array&lt;string&gt;>;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;string&gt;> | Promise对象，返回应用的所有多实例的唯一实例标识。 |
@@ -1578,6 +1721,7 @@ getAllRunningInstanceKeys(): Promise<Array&lt;string&gt;>;
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1610,9 +1754,10 @@ export default class MyAbilityStage extends AbilityStage {
 
 
 
-#### ApplicationContext.getAllWindowStages23+
+## ApplicationContext.getAllWindowStages23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllWindowStages(): Promise<Array<window.WindowStage>>
 
@@ -1625,6 +1770,7 @@ getAllWindowStages(): Promise<Array<window.WindowStage>>
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1661,9 +1807,10 @@ export default class MyAbilityStage extends AbilityStage {
 
 
 
-#### ApplicationContext.enableDelayedProcessExit
+## ApplicationContext.enableDelayedProcessExit
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 enableDelayedProcessExit(): Promise&lt;void&gt;
 
@@ -1679,6 +1826,7 @@ enableDelayedProcessExit(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1687,6 +1835,7 @@ enableDelayedProcessExit(): Promise&lt;void&gt;
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1698,7 +1847,7 @@ enableDelayedProcessExit(): Promise&lt;void&gt;
 **示例：**
 
 ```text
-import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit'
+import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 export default class EntryAbility extends UIAbility {
@@ -1719,9 +1868,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### ApplicationContext.disableDelayedProcessExit
+## ApplicationContext.disableDelayedProcessExit
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 disableDelayedProcessExit(): Promise&lt;void&gt;
 
@@ -1737,6 +1887,7 @@ disableDelayedProcessExit(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1745,6 +1896,7 @@ disableDelayedProcessExit(): Promise&lt;void&gt;
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1756,7 +1908,7 @@ disableDelayedProcessExit(): Promise&lt;void&gt;
 **示例：**
 
 ```text
-import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit'
+import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 export default class EntryAbility extends UIAbility {
@@ -1777,9 +1929,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### ApplicationContext.startSelfUIAbility
+## ApplicationContext.startSelfUIAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 startSelfUIAbility(want: Want): Promise&lt;void&gt;
 
@@ -1793,12 +1946,14 @@ startSelfUIAbility(want: Want): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | Want类型参数，传入需要启动的UIAbility信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1808,6 +1963,7 @@ startSelfUIAbility(want: Want): Promise&lt;void&gt;
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1874,9 +2030,10 @@ struct Index {
 
 
 
-#### ApplicationContext.getUIAbilityByInstanceId
+## ApplicationContext.getUIAbilityByInstanceId
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getUIAbilityByInstanceId(instanceId: string): UIAbility
 
@@ -1888,12 +2045,14 @@ getUIAbilityByInstanceId(instanceId: string): UIAbility
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | instanceId | string | 是 | UIAbility的实例ID。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1903,6 +2062,7 @@ getUIAbilityByInstanceId(instanceId: string): UIAbility
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

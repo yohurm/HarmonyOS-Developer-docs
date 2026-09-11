@@ -1,11 +1,12 @@
 # ABR_CameraData
 
-更新时间：2026-04-29 07:35:50
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_a_b_r___camera_data
 **支持设备：** Phone | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -19,16 +20,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | Tablet | TV
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | ABR_Vector3 rotation | 相机变换的世界空间旋转欧拉角。取值范围：[0, 360]，（单位：deg），参数不在范围内会返回ABR_INVALID_PARAMETER错误码。 |
@@ -37,13 +41,15 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
 
 **支持设备：** Phone | Tablet | TV
 
   
 
-#### position
+### position
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -57,7 +63,8 @@ ABR_Vector3 ABR_CameraData::position
  
   
 
-#### rotation
+### rotation
+
 
 **支持设备：** Phone | Tablet | TV
 

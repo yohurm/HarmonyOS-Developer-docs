@@ -1,13 +1,14 @@
 # native_avplaybackstate.h
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avplaybackstate-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供播放状态的定义。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | AVSession_PlaybackPosition | AVSession_PlaybackPosition | 播放位置的定义。 |
@@ -41,29 +45,33 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | AVSession_ErrCode OH_AVSession_GetPlaybackState(OH_AVSession_AVPlaybackState* playbackState, AVSession_PlaybackState* state) | 获取播放的状态。 |
-| AVSession_ErrCode OH_AVSession_GetPlaybackPosition(OH_AVSession_AVPlaybackState* playbackState, AVSession_PlaybackPosition* position) | 获取播放状态的位置。 |
-| AVSession_ErrCode OH_AVSession_GetPlaybackSpeed(OH_AVSession_AVPlaybackState* playbackState, int32_t* speed) | 获取播放状态的倍速。 |
-| AVSession_ErrCode OH_AVSession_GetPlaybackVolume(OH_AVSession_AVPlaybackState* playbackState, int32_t* volume) | 获取播放状态的音量值。 |
+| AVSession_ErrCode OH_AVSession_GetPlaybackPosition(OH_AVSession_AVPlaybackState* playbackState, AVSession_PlaybackPosition* position) | 获取播放位置。 |
+| AVSession_ErrCode OH_AVSession_GetPlaybackSpeed(OH_AVSession_AVPlaybackState* playbackState, int32_t* speed) | 获取播放倍速。 |
+| AVSession_ErrCode OH_AVSession_GetPlaybackVolume(OH_AVSession_AVPlaybackState* playbackState, int32_t* volume) | 获取播放音量值。 |
  
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_AVSession_GetPlaybackState()
+### OH_AVSession_GetPlaybackState()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVSession_GetPlaybackState(OH_AVSession_AVPlaybackState* playbackState, AVSession_PlaybackState* state)
@@ -77,14 +85,16 @@ AVSession_ErrCode OH_AVSession_GetPlaybackState(OH_AVSession_AVPlaybackState* pl
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession_AVPlaybackState* playbackState | 表示播放状态实例对象。 |
-| AVSession_PlaybackState* state | 指针变量将返回播放状态值。 |
+| AVSession_PlaybackState* state | 用于返回播放状态值的指针变量。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_INVALID_PARAMETER 参数验证失败原因如下： 1. 参数playbackState为nullptr。 2. 参数state为nullptr。 |
@@ -92,9 +102,10 @@ AVSession_ErrCode OH_AVSession_GetPlaybackState(OH_AVSession_AVPlaybackState* pl
  
   
 
-#### OH_AVSession_GetPlaybackPosition()
+### OH_AVSession_GetPlaybackPosition()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVSession_GetPlaybackPosition(OH_AVSession_AVPlaybackState* playbackState, AVSession_PlaybackPosition* position)
@@ -102,20 +113,22 @@ AVSession_ErrCode OH_AVSession_GetPlaybackPosition(OH_AVSession_AVPlaybackState*
  
 **描述**
  
-获取播放状态的位置。
+获取播放位置。
  
 **起始版本：** 23
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession_AVPlaybackState* playbackState | 表示播放状态实例对象。 |
-| AVSession_PlaybackPosition* position | 指针变量将返回播放位置值。 |
+| AVSession_PlaybackPosition* position | 用于返回播放位置值的指针变量。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_INVALID_PARAMETER 参数验证失败原因如下： 1. 参数playbackState为nullptr。 2. 参数position为nullptr。 |
@@ -123,9 +136,10 @@ AVSession_ErrCode OH_AVSession_GetPlaybackPosition(OH_AVSession_AVPlaybackState*
  
   
 
-#### OH_AVSession_GetPlaybackSpeed()
+### OH_AVSession_GetPlaybackSpeed()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVSession_GetPlaybackSpeed(OH_AVSession_AVPlaybackState* playbackState, int32_t* speed)
@@ -133,20 +147,22 @@ AVSession_ErrCode OH_AVSession_GetPlaybackSpeed(OH_AVSession_AVPlaybackState* pl
  
 **描述**
  
-获取播放状态的倍速。
+获取播放倍速。
  
 **起始版本：** 23
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession_AVPlaybackState* playbackState | 表示播放状态实例对象。 |
-| int32_t* speed | 指针变量将返回播放倍速值。 |
+| int32_t* speed | 用于返回播放倍速值的指针变量。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_INVALID_PARAMETER 参数验证失败原因如下： 1. 参数playbackState为nullptr。 2. 参数speed为nullptr。 |
@@ -154,9 +170,10 @@ AVSession_ErrCode OH_AVSession_GetPlaybackSpeed(OH_AVSession_AVPlaybackState* pl
  
   
 
-#### OH_AVSession_GetPlaybackVolume()
+### OH_AVSession_GetPlaybackVolume()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVSession_GetPlaybackVolume(OH_AVSession_AVPlaybackState* playbackState, int32_t* volume)
@@ -164,20 +181,22 @@ AVSession_ErrCode OH_AVSession_GetPlaybackVolume(OH_AVSession_AVPlaybackState* p
  
 **描述**
  
-获取播放状态的音量值。
+获取播放音量值。
  
 **起始版本：** 23
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession_AVPlaybackState* playbackState | 表示播放状态实例对象。 |
-| int32_t* volume | 指针变量将返回播放音量值。 |
+| int32_t* volume | 用于返回播放音量值的指针变量。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_INVALID_PARAMETER 参数验证失败原因如下： 1. 参数playbackState为nullptr。 2. 参数volume为nullptr。 |

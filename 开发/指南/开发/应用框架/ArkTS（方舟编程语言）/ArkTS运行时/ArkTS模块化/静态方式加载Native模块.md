@@ -1,19 +1,19 @@
 # 静态方式加载Native模块
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-import-native-module
 
 在ES6(ECMAScript 6.0)模块设计中，使用import语法加载其他文件导出的内容是ECMA规范所定义的语法规则。为支持开发者使用该功能导入Native模块（so）导出的内容，ArkTS进行了相关适配，并提供了以下三类支持写法：直接导入、间接导入和动态导入。
   
 
-#### 直接导入
+## 直接导入
 
 在Native模块的Index.d.ts文件中导出，并在文件内直接导入。
  
   
 
-#### 具名导入
+### 具名导入
 
 ```ts
 // libentry.so对应的Index.d.ts
@@ -28,7 +28,7 @@ add(2, 3);
  
   
 
-#### 默认导入
+### 默认导入
 
 ```ts
 // libentry.so对应的Index.d.ts
@@ -43,7 +43,7 @@ entry.add(2, 3);
  
   
 
-#### 命名空间导入
+### 命名空间导入
 
 ```ts
 // libentry.so对应的Index.d.ts
@@ -58,11 +58,11 @@ entry.add(2, 3);
  
   
 
-#### 间接导入
+## 间接导入
 
   
 
-#### 转为具名变量导出再导入
+### 转为具名变量导出再导入
 
 ```ts
 // libentry.so对应的Index.d.ts
@@ -85,7 +85,7 @@ const result = add(2, 3);
  
   
 
-#### 转为命名空间导出再导入
+### 转为命名空间导出再导入
 
 ```ts
 // libentry.so对应的Index.d.ts
@@ -126,11 +126,11 @@ import * as lib from './test1'
  
   
 
-#### 动态导入
+## 动态导入
 
   
 
-#### 直接导入
+### 直接导入
 
 ```ts
 // libentry.so对应的Index.d.ts
@@ -146,7 +146,7 @@ import('libentry.so').then((entry:ESObject) => {
  
   
 
-#### 间接导入
+### 间接导入
 
 ```ArkTS
 // DynamicExport.ets

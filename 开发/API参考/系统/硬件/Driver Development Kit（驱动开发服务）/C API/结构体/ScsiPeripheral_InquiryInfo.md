@@ -1,6 +1,6 @@
 # ScsiPeripheral_InquiryInfo
 
-更新时间：2026-04-28 03:31:56
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-scsiperipheralddk-scsiperipheral-inquiryinfo
 **支持设备：** PC/2in1
@@ -10,11 +10,12 @@ typedef struct ScsiPeripheral_InquiryInfo {...} ScsiPeripheral_InquiryInfo
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** PC/2in1
 
-SCSI inquiry 数据。
+SCSI INQUIRY 数据，用于存储SCSI外设的INQUIRY命令查询结果。
  
 **起始版本：** 18
  
@@ -24,20 +25,23 @@ SCSI inquiry 数据。
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** PC/2in1
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** PC/2in1
  
+
 | 名称 | 描述 |
 | --- | --- |
-| uint8_t deviceType | 设备类型。 |
-| char idVendor[SCSIPERIPHERAL_VENDOR_ID_LEN + 1] | 制造商 id。 |
-| char idProduct[SCSIPERIPHERAL_PRODUCT_ID_LEN + 1] | 产品 id。 |
+| uint8_t deviceType | SCSI外设的设备类型，具体类型值定义参见SCSI标准协议。 |
+| char idVendor[SCSIPERIPHERAL_VENDOR_ID_LEN + 1] | 制造商 ID。 |
+| char idProduct[SCSIPERIPHERAL_PRODUCT_ID_LEN + 1] | 产品 ID。 |
 | char revProduct[SCSIPERIPHERAL_PRODUCT_REV_LEN + 1] | 产品版本。 |
-| ScsiPeripheral_DeviceMemMap* data | 所有的查询数据。 |
+| ScsiPeripheral_DeviceMemMap* data | 指向设备内存映射的指针，用于存储查询得到的数据。 |

@@ -1,28 +1,30 @@
 # Toggle
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-toggle
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 组件提供勾选框样式、状态按钮样式和开关样式，适用于需要快速切换状态或进行单选确认的场景，能够有效提升交互体验与界面的直观性。
 
 > [!TIP]
-> 该组件从API version 8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 从API版本26.0.0开始，Toggle组件支持系统材质效果。Toggle组件使用通用系统材质属性 systemMaterial 时，不同 ToggleType 类型的效果不同： ToggleType.Checkbox：当前未适配系统材质效果，设置系统材质不会出现系统材质相关的动效和视觉效果。 ToggleType.Switch：传入材质参数时，使用组件内部预设的视觉参数，传入的材质参数仅作为开启系统材质的开关标记，不影响实际视觉效果。主要影响Toggle的滑块大小、滑块样式、阴影等视觉属性。设置 switchPointColor 后会出现点光源效果，点光源颜色跟随switchPointColor的设置。传入undefined时，系统材质不生效，表现为原先的Toggle样式。 ToggleType.Button：设置系统材质的效果与 Button 组件设置系统材质的效果相同，主要影响背景颜色、边框、阴影等视觉属性。
+> 该组件从API version 8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 从API版本26.0.0开始，Toggle组件支持系统材质效果。Toggle组件使用通用系统材质属性 systemMaterial 时，不同 ToggleType 类型的效果不同： ToggleType.Checkbox：当前未适配系统材质效果，设置系统材质不会出现系统材质相关的动效和视觉效果。 ToggleType.Switch：传入材质参数时，使用组件内部预设的视觉参数，传入的材质参数仅作为开启系统材质的开关标记，不影响实际视觉效果。主要影响Toggle的滑块大小、滑块样式、阴影等视觉属性。开启系统材质后，滑块会出现默认白色的点光源效果；设置 switchPointColor 后，点光源颜色跟随switchPointColor的设置。传入undefined时，系统材质不生效，表现为原先的Toggle样式。 ToggleType.Button：设置系统材质的效果与 Button 组件设置系统材质的效果相同，主要影响背景颜色、边框、阴影等视觉属性。
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 仅当ToggleType设置为Button时，可包含子组件。
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Toggle(options: ToggleOptions)
 
@@ -34,6 +36,7 @@ Toggle(options: ToggleOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ToggleOptions | 是 | Toggle组件的配置选项，用于配置开关的样式类型和初始状态。 |
@@ -41,9 +44,10 @@ Toggle(options: ToggleOptions)
 
 
 
-#### ToggleOptions18+对象说明
+## ToggleOptions18+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Toggle组件的配置信息。
 
@@ -59,6 +63,7 @@ Toggle组件的配置信息。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type8+ | ToggleType | 否 | 否 | 开关的样式。 默认值：ToggleType.Switch 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
@@ -67,9 +72,10 @@ Toggle组件的配置信息。
 
 
 
-#### ToggleType枚举说明
+## ToggleType枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Toggle的样式。
 
@@ -83,6 +89,7 @@ Toggle的样式。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | Checkbox | 0 | 提供勾选框样式。 说明： API version 11开始，Checkbox默认样式由圆角方形变为圆形。 通用属性margin的默认值为： { top: '14px', right: '14px', bottom: '14px', left: '14px' }。 默认尺寸为： {width:'20vp', height:'20vp'}。 |
@@ -92,17 +99,19 @@ Toggle的样式。
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
 
 
 
-#### selectedColor
+### selectedColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectedColor(value: ResourceColor)
 
@@ -120,6 +129,7 @@ selectedColor(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 组件打开状态的背景颜色。 默认值： 当ToggleType为Switch时，默认值为\$r('sys.color.ohos_id_color_emphasize')。 当ToggleType为Checkbox时，默认值为\$r('sys.color.ohos_id_color_emphasize')。 当ToggleType为Button时，默认值为\$r('sys.color.ohos_id_color_emphasize')混合\$r('sys.float.ohos_id_alpha_highlight_bg')的透明度。 |
@@ -127,9 +137,10 @@ selectedColor(value: ResourceColor)
 
 
 
-#### switchPointColor
+### switchPointColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 switchPointColor(color: ResourceColor)
 
@@ -143,16 +154,18 @@ switchPointColor(color: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| color | ResourceColor | 是 | Switch类型的圆形滑块颜色。 默认值：\$r('sys.color.ohos_id_color_foreground_contrary') 说明： 同时设置了systemMaterial系统材质时，设置此属性后会出现点光源效果，点光源颜色跟随此属性的设置。 |
+| color | ResourceColor | 是 | Switch类型的圆形滑块颜色。 默认值：\$r('sys.color.ohos_id_color_foreground_contrary') 说明： 同时设置了systemMaterial系统材质时，滑块会出现默认白色的点光源效果，设置此属性后点光源颜色跟随此属性的设置。 |
 
 
 
 
-#### switchStyle12+
+### switchStyle12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 switchStyle(value: SwitchStyle)
 
@@ -170,6 +183,7 @@ switchStyle(value: SwitchStyle)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | SwitchStyle | 是 | Switch样式风格。 |
@@ -177,9 +191,10 @@ switchStyle(value: SwitchStyle)
 
 
 
-#### contentModifier12+
+### contentModifier12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 contentModifier(modifier: ContentModifier&lt;ToggleConfiguration&gt;)
 
@@ -193,6 +208,7 @@ contentModifier(modifier: ContentModifier&lt;ToggleConfiguration&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | modifier | ContentModifier&lt;ToggleConfiguration&gt; | 是 | 在Toggle组件上，定制内容区的方法。 modifier：内容修改器，开发者需要自定义class实现ContentModifier接口。 |
@@ -200,9 +216,10 @@ contentModifier(modifier: ContentModifier&lt;ToggleConfiguration&gt;)
 
 
 
-#### SwitchStyle12+对象说明
+## SwitchStyle12+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Switch类型的样式。
 
@@ -216,6 +233,7 @@ Switch类型的样式。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | pointRadius | number \| Resource | 否 | 是 | 设置Switch类型的圆形滑块半径，单位为vp。 说明： 不支持百分比，设定值小于0时按照默认算法设置，设定值大于等于0时按照设定值设置。 未设定此属性时，圆形滑块半径根据默认算法设置。 默认算法：（组件高度（单位：vp） / 2） - （2vp * 组件高度（单位：vp） / 20vp）。 |
@@ -226,17 +244,19 @@ Switch类型的样式。
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)外，还支持以下事件：
 
 
 
-#### onChange
+### onChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onChange(callback: (isOn: boolean) => void)
 
@@ -250,6 +270,7 @@ onChange(callback: (isOn: boolean) => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isOn | boolean | 是 | 开关的状态。 true：状态从关切换为开；false：状态从开切换为关。 |
@@ -257,9 +278,10 @@ onChange(callback: (isOn: boolean) => void)
 
 
 
-#### ToggleConfiguration12+对象说明
+## ToggleConfiguration12+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 开发者需要自定义class实现ContentModifier接口。继承自[CommonConfiguration](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-content-modifier#commonconfigurationt)。
 
@@ -268,6 +290,7 @@ onChange(callback: (isOn: boolean) => void)
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -278,13 +301,17 @@ onChange(callback: (isOn: boolean) => void)
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（设置开关的样式）
+
+
+### 示例1（设置开关的样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置ToggleType设置Toggle的勾选框样式、状态按钮样式及开关样式。
 
@@ -353,12 +380,15 @@ struct ToggleExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/A0QvWIFkQTirTy4gnEy6Yg/zh-cn_image_0000002656008496.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071503Z&HW-CC-Expire=86400&HW-CC-Sign=6BCA0AA8FE6F31DB2FC888608FF70E782A937B1CEA7C4EDA22899A984397E39B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/QoOW-wIcQRe3HfQdM4J6Lw/zh-cn_image_0000002717612712.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073109Z&HW-CC-Expire=86400&HW-CC-Sign=4071E30AD8DBB30EB8545AA0FB76887F98A28A0CD05D2483C35328C313B79C10)
 
 
 
 
-#### 示例2（自定义开关类型的样式）
+### 示例2（自定义开关类型的样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例实现了自定义设置Toggle组件Switch样式，包括圆形滑块半径、关闭状态的背景颜色、圆形滑块颜色、滑轨的圆角。
 
@@ -399,12 +429,15 @@ struct ToggleExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/RGOWz6TqQd6hc5IRcP8SXQ/zh-cn_image_0000002655848574.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071503Z&HW-CC-Expire=86400&HW-CC-Sign=82B10FBBF9CB66E811C7C6DD8B6D2CF24244D2E3E26884936A2C1FA727E95347)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/889WxXPwR_uWaj-9ctPdzQ/zh-cn_image_0000002747292665.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073109Z&HW-CC-Expire=86400&HW-CC-Sign=96748BC0A4CD1DBB54F89FAFEDD6FB6A0C333BA945911949439458679453BD85)
 
 
 
 
-#### 示例3（自定义Toggle样式）
+### 示例3（自定义Toggle样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例实现自定义Toggle样式，通过按钮切换圆形背景颜色：点击蓝圆按钮，背景变蓝色；点击黄圆按钮，背景变黄色。
 
@@ -463,16 +496,25 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/HaGn-T9NQoOz8TmOLT_BwA/zh-cn_image_0000002686088003.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071503Z&HW-CC-Expire=86400&HW-CC-Sign=BBEA946895B234FFBE3591561C71086D9757A1D30671BCA600DD0F6B7CAA2C02)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/FiaJEilkR1-o-iW3fdbhtA/zh-cn_image_0000002747212581.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073109Z&HW-CC-Expire=86400&HW-CC-Sign=AE2E225C559DCEE77EB9AA7EA0F2B4742601D17B5754E0BF519FC5B516DE1C64)
 
 
 
 
-#### 示例4（Toggle系统材质效果）
+### 示例4（Toggle沉浸光感效果）
 
-该示例展示了Toggle组件Switch类型在开启系统材质前后的效果对比，包括不设置系统材质、设置undefined、开启系统材质以及开启系统材质并配合[switchPointColor](#switchpointcolor)设置点光源的效果。示例使用通用属性[systemMaterial](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-image-effect#systemmaterial)接口来实现系统材质效果。
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+该示例展示了Toggle组件Switch类型在开启沉浸光感前后的效果对比，包括不设置系统材质、设置undefined、设置系统材质以及设置系统材质并配合[switchPointColor](#switchpointcolor)设置点光源颜色的效果。示例使用通用属性[systemMaterial](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-image-effect#systemmaterial)接口来实现沉浸光感效果。
+
+组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
 
 从API版本26.0.0开始，新增systemMaterial属性。
+
+> [!NOTE]
+> 系统材质的实际显示效果与设备的算力档位相关，相同的代码在不同算力档位的设备上显示效果存在差异，低算力设备上会显示简化后的材质效果。算力档位由系统根据设备硬件能力自动划分和管理，应用无需感知，也无需进行额外设置，系统会根据当前设备的算力档位自动适配材质的显示效果。
+
 
 ```ArkTS
 import { uiMaterial } from '@kit.ArkUI';
@@ -483,30 +525,34 @@ import { uiMaterial } from '@kit.ArkUI';
 struct ToggleMaterialTest {
   build() {
     Column({ space: 10 }) {
-      // 不设置系统材质接口，无系统材质效果
+      // 不设置系统材质接口，无沉浸光感效果
       Toggle({ type: ToggleType.Switch, isOn: true })
-        .size({ width: 80, height: 40 })
 
-      // systemMaterial设置undefined，恢复为无材质的效果
+      // systemMaterial设置undefined，恢复为无沉浸光感的效果
       Toggle({ type: ToggleType.Switch, isOn: true })
-        .size({ width: 80, height: 40 })
         .systemMaterial(undefined)
 
-      // 开启系统材质效果（systemMaterial参数任意仅作为系统材质开关，最终使用组件侧固定参数），无点光源效果
+      // 设置系统材质，开启沉浸光感效果（systemMaterial参数任意仅作为系统材质开关，最终使用组件侧固定参数），默认白色点光源（颜色为switchPointColor默认值）
       Toggle({ type: ToggleType.Switch, isOn: true })
-        .size({ width: 80, height: 40 })
         .systemMaterial(new uiMaterial.Material())
 
-      // 开启系统材质效果（systemMaterial参数任意仅作为系统材质开关，最终使用组件侧固定参数），有点光源效果
+      // 设置系统材质，开启沉浸光感效果（systemMaterial参数任意仅作为系统材质开关，最终使用组件侧固定参数），点光源颜色跟随switchPointColor设置
       Toggle({ type: ToggleType.Switch, isOn: true })
-        .size({ width: 80, height: 40 })
         .systemMaterial(new uiMaterial.Material())
-        .switchPointColor(Color.White)
+        .switchPointColor(Color.Red)
     }
     .width('100%')
   }
 }
 ```
 
+高算力设备场景示例图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/Iku-pwc7RpyrdlyX4sCjNA/zh-cn_image_0000002685928175.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071503Z&HW-CC-Expire=86400&HW-CC-Sign=040A7949CE4A5D2583F228F04623D6A39137AEB5900AA7A4A79C92E501E8F1E1)
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/b2YrzZNJR66mKXlF-ghxrw/zh-cn_image_0000002717772646.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073109Z&HW-CC-Expire=86400&HW-CC-Sign=1FCDC653E6AC8D02787F398D1B4A53365EA18CEE6BBB525CC025C9D76BF5A0A6)
+
+
+低算力设备场景示例图：
+
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/8OFtTFbLRjmtT9eNXTgXHA/zh-cn_image_0000002717612714.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073109Z&HW-CC-Expire=86400&HW-CC-Sign=EC11C4216C218C59EB81301E3768BC8196C4FCD2DCBBED2193999ACCF0659C03)

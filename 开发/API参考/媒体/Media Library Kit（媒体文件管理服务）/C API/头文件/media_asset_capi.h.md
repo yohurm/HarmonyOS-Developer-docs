@@ -1,13 +1,14 @@
 # media_asset_capi.h
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-media-asset-capi-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义与媒体资源相关的API。提供获取图像或视频信息的能力。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | MediaLibrary_ErrorCode OH_MediaAsset_GetUri(OH_MediaAsset* mediaAsset, const char** uri) | 获取媒体资产的uri。 |
@@ -56,15 +60,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_MediaAsset_GetUri()
+### OH_MediaAsset_GetUri()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 MediaLibrary_ErrorCode OH_MediaAsset_GetUri(OH_MediaAsset* mediaAsset, const char** uri)
@@ -78,6 +84,7 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetUri(OH_MediaAsset* mediaAsset, const cha
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_MediaAsset* mediaAsset | OH_MediaAsset实例。 |
@@ -86,6 +93,7 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetUri(OH_MediaAsset* mediaAsset, const cha
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | MediaLibrary_ErrorCode | MEDIA_LIBRARY_OK：方法调用成功。 MEDIA_LIBRARY_PARAMETER_ERROR：参数错误。可能的原因： 1. 未指定强制参数。 2. 参数类型不正确。 3. 参数验证失败。 MEDIA_LIBRARY_INTERNAL_SYSTEM_ERROR：内部系统错误。 |
@@ -93,9 +101,10 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetUri(OH_MediaAsset* mediaAsset, const cha
  
   
 
-#### OH_MediaAsset_GetMediaType()
+### OH_MediaAsset_GetMediaType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 MediaLibrary_ErrorCode OH_MediaAsset_GetMediaType(OH_MediaAsset* mediaAsset, MediaLibrary_MediaType* mediaType)
@@ -109,6 +118,7 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetMediaType(OH_MediaAsset* mediaAsset, Med
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_MediaAsset* mediaAsset | OH_MediaAsset实例。 |
@@ -117,6 +127,7 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetMediaType(OH_MediaAsset* mediaAsset, Med
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | MediaLibrary_ErrorCode | MEDIA_LIBRARY_OK：方法调用成功。 MEDIA_LIBRARY_PARAMETER_ERROR：参数错误。可能的原因： 1. 未指定强制参数。 2. 参数类型不正确。 3. 参数验证失败。 MEDIA_LIBRARY_INTERNAL_SYSTEM_ERROR：内部系统错误。 |
@@ -124,9 +135,10 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetMediaType(OH_MediaAsset* mediaAsset, Med
  
   
 
-#### OH_MediaAsset_GetMediaSubType()
+### OH_MediaAsset_GetMediaSubType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 MediaLibrary_ErrorCode OH_MediaAsset_GetMediaSubType(OH_MediaAsset* mediaAsset,MediaLibrary_MediaSubType* mediaSubType)
@@ -140,6 +152,7 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetMediaSubType(OH_MediaAsset* mediaAsset,M
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_MediaAsset* mediaAsset | OH_MediaAsset实例。 |
@@ -148,6 +161,7 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetMediaSubType(OH_MediaAsset* mediaAsset,M
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | MediaLibrary_ErrorCode | MEDIA_LIBRARY_OK：方法调用成功。 MEDIA_LIBRARY_PARAMETER_ERROR：参数错误。可能的原因： 1. 未指定强制参数。 2. 参数类型不正确。 3. 参数验证失败。 MEDIA_LIBRARY_INTERNAL_SYSTEM_ERROR：内部系统错误。 |
@@ -155,9 +169,10 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetMediaSubType(OH_MediaAsset* mediaAsset,M
  
   
 
-#### OH_MediaAsset_GetDisplayName()
+### OH_MediaAsset_GetDisplayName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 MediaLibrary_ErrorCode OH_MediaAsset_GetDisplayName(OH_MediaAsset* mediaAsset, const char** displayName)
@@ -171,6 +186,7 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetDisplayName(OH_MediaAsset* mediaAsset, c
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_MediaAsset* mediaAsset | OH_MediaAsset实例。 |
@@ -179,6 +195,7 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetDisplayName(OH_MediaAsset* mediaAsset, c
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | MediaLibrary_ErrorCode | MEDIA_LIBRARY_OK：方法调用成功。 MEDIA_LIBRARY_PARAMETER_ERROR：参数错误。可能的原因： 1. 未指定强制参数。 2. 参数类型不正确。 3. 参数验证失败。 MEDIA_LIBRARY_INTERNAL_SYSTEM_ERROR：内部系统错误。 |
@@ -186,9 +203,10 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetDisplayName(OH_MediaAsset* mediaAsset, c
  
   
 
-#### OH_MediaAsset_GetSize()
+### OH_MediaAsset_GetSize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 MediaLibrary_ErrorCode OH_MediaAsset_GetSize(OH_MediaAsset* mediaAsset, uint32_t* size)
@@ -202,6 +220,7 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetSize(OH_MediaAsset* mediaAsset, uint32_t
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_MediaAsset* mediaAsset | OH_MediaAsset实例。 |
@@ -210,6 +229,7 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetSize(OH_MediaAsset* mediaAsset, uint32_t
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | MediaLibrary_ErrorCode | MEDIA_LIBRARY_OK：方法调用成功。 MEDIA_LIBRARY_PARAMETER_ERROR：参数错误。可能的原因： 1. 未指定强制参数。 2. 参数类型不正确。 3. 参数验证失败。 MEDIA_LIBRARY_INTERNAL_SYSTEM_ERROR：内部系统错误。 |
@@ -217,9 +237,10 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetSize(OH_MediaAsset* mediaAsset, uint32_t
  
   
 
-#### OH_MediaAsset_GetDateAdded()
+### OH_MediaAsset_GetDateAdded()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 MediaLibrary_ErrorCode OH_MediaAsset_GetDateAdded(OH_MediaAsset* mediaAsset, uint32_t* dateAdded)
@@ -233,14 +254,16 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetDateAdded(OH_MediaAsset* mediaAsset, uin
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_MediaAsset* mediaAsset | OH_MediaAsset实例。 |
-| uint32_t* dateAdded | 资产添加日期。该值是添加文件时间距1970年1月1日的秒数值。 |
+| uint32_t* dateAdded | 资产添加日期。该值是添加文件时间距1970年1月1日的秒数值。单位：秒（s）。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | MediaLibrary_ErrorCode | MEDIA_LIBRARY_OK：方法调用成功。 MEDIA_LIBRARY_PARAMETER_ERROR：参数错误。可能的原因： 1. 未指定强制参数。 2. 参数类型不正确。 3. 参数验证失败。 MEDIA_LIBRARY_INTERNAL_SYSTEM_ERROR：内部系统错误。 |
@@ -248,9 +271,10 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetDateAdded(OH_MediaAsset* mediaAsset, uin
  
   
 
-#### OH_MediaAsset_GetDateModified()
+### OH_MediaAsset_GetDateModified()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 MediaLibrary_ErrorCode OH_MediaAsset_GetDateModified(OH_MediaAsset* mediaAsset, uint32_t* dateModified)
@@ -264,6 +288,7 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetDateModified(OH_MediaAsset* mediaAsset, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_MediaAsset* mediaAsset | OH_MediaAsset实例。 |
@@ -272,6 +297,7 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetDateModified(OH_MediaAsset* mediaAsset, 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | MediaLibrary_ErrorCode | MEDIA_LIBRARY_OK：方法调用成功。 MEDIA_LIBRARY_PARAMETER_ERROR：参数错误。可能的原因： 1. 未指定强制参数。 2. 参数类型不正确。 3. 参数验证失败。 MEDIA_LIBRARY_INTERNAL_SYSTEM_ERROR：内部系统错误。 |
@@ -279,9 +305,10 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetDateModified(OH_MediaAsset* mediaAsset, 
  
   
 
-#### OH_MediaAsset_GetDateTaken()
+### OH_MediaAsset_GetDateTaken()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 MediaLibrary_ErrorCode OH_MediaAsset_GetDateTaken(OH_MediaAsset* mediaAsset, uint32_t* dateTaken)
@@ -295,6 +322,7 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetDateTaken(OH_MediaAsset* mediaAsset, uin
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_MediaAsset* mediaAsset | OH_MediaAsset实例。 |
@@ -303,6 +331,7 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetDateTaken(OH_MediaAsset* mediaAsset, uin
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | MediaLibrary_ErrorCode | MEDIA_LIBRARY_OK：方法调用成功。 MEDIA_LIBRARY_PARAMETER_ERROR：参数错误。可能的原因： 1. 未指定强制参数。 2. 参数类型不正确。 3. 参数验证失败。 MEDIA_LIBRARY_INTERNAL_SYSTEM_ERROR：内部系统错误。 |
@@ -310,9 +339,10 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetDateTaken(OH_MediaAsset* mediaAsset, uin
  
   
 
-#### OH_MediaAsset_GetDateAddedMs()
+### OH_MediaAsset_GetDateAddedMs()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 MediaLibrary_ErrorCode OH_MediaAsset_GetDateAddedMs(OH_MediaAsset* mediaAsset, uint32_t* dateAddedMs)
@@ -326,6 +356,7 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetDateAddedMs(OH_MediaAsset* mediaAsset, u
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_MediaAsset* mediaAsset | OH_MediaAsset实例。 |
@@ -334,6 +365,7 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetDateAddedMs(OH_MediaAsset* mediaAsset, u
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | MediaLibrary_ErrorCode | MEDIA_LIBRARY_OK：方法调用成功。 MEDIA_LIBRARY_PARAMETER_ERROR：参数错误。可能的原因： 1. 未指定强制参数。 2. 参数类型不正确。 3. 参数验证失败。 MEDIA_LIBRARY_INTERNAL_SYSTEM_ERROR：内部系统错误。 |
@@ -341,9 +373,10 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetDateAddedMs(OH_MediaAsset* mediaAsset, u
  
   
 
-#### OH_MediaAsset_GetDateModifiedMs()
+### OH_MediaAsset_GetDateModifiedMs()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 MediaLibrary_ErrorCode OH_MediaAsset_GetDateModifiedMs(OH_MediaAsset* mediaAsset, uint32_t* dateModifiedMs)
@@ -357,6 +390,7 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetDateModifiedMs(OH_MediaAsset* mediaAsset
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_MediaAsset* mediaAsset | OH_MediaAsset实例。 |
@@ -365,6 +399,7 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetDateModifiedMs(OH_MediaAsset* mediaAsset
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | MediaLibrary_ErrorCode | MEDIA_LIBRARY_OK：方法调用成功。 MEDIA_LIBRARY_PARAMETER_ERROR：参数错误。可能的原因： 1. 未指定强制参数。 2. 参数类型不正确。 3. 参数验证失败。 MEDIA_LIBRARY_INTERNAL_SYSTEM_ERROR：内部系统错误。 |
@@ -372,9 +407,10 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetDateModifiedMs(OH_MediaAsset* mediaAsset
  
   
 
-#### OH_MediaAsset_GetDuration()
+### OH_MediaAsset_GetDuration()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 MediaLibrary_ErrorCode OH_MediaAsset_GetDuration(OH_MediaAsset* mediaAsset, uint32_t* duration)
@@ -388,6 +424,7 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetDuration(OH_MediaAsset* mediaAsset, uint
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_MediaAsset* mediaAsset | OH_MediaAsset实例。 |
@@ -396,6 +433,7 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetDuration(OH_MediaAsset* mediaAsset, uint
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | MediaLibrary_ErrorCode | MEDIA_LIBRARY_OK：方法调用成功。 MEDIA_LIBRARY_PARAMETER_ERROR：参数错误。可能的原因： 1. 未指定强制参数。 2. 参数类型不正确。 3. 参数验证失败。 MEDIA_LIBRARY_INTERNAL_SYSTEM_ERROR：内部系统错误。 |
@@ -403,9 +441,10 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetDuration(OH_MediaAsset* mediaAsset, uint
  
   
 
-#### OH_MediaAsset_GetWidth()
+### OH_MediaAsset_GetWidth()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 MediaLibrary_ErrorCode OH_MediaAsset_GetWidth(OH_MediaAsset* mediaAsset, uint32_t* width)
@@ -419,6 +458,7 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetWidth(OH_MediaAsset* mediaAsset, uint32_
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_MediaAsset* mediaAsset | OH_MediaAsset实例。 |
@@ -427,6 +467,7 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetWidth(OH_MediaAsset* mediaAsset, uint32_
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | MediaLibrary_ErrorCode | MEDIA_LIBRARY_OK：方法调用成功。 MEDIA_LIBRARY_PARAMETER_ERROR：参数错误。可能的原因： 1. 未指定强制参数。 2. 参数类型不正确。 3. 参数验证失败。 MEDIA_LIBRARY_INTERNAL_SYSTEM_ERROR：内部系统错误。 |
@@ -434,9 +475,10 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetWidth(OH_MediaAsset* mediaAsset, uint32_
  
   
 
-#### OH_MediaAsset_GetHeight()
+### OH_MediaAsset_GetHeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 MediaLibrary_ErrorCode OH_MediaAsset_GetHeight(OH_MediaAsset* mediaAsset, uint32_t* height)
@@ -450,6 +492,7 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetHeight(OH_MediaAsset* mediaAsset, uint32
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_MediaAsset* mediaAsset | OH_MediaAsset实例。 |
@@ -458,6 +501,7 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetHeight(OH_MediaAsset* mediaAsset, uint32
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | MediaLibrary_ErrorCode | MEDIA_LIBRARY_OK：方法调用成功。 MEDIA_LIBRARY_PARAMETER_ERROR：参数错误。可能的原因： 1. 未指定强制参数。 2. 参数类型不正确。 3. 参数验证失败。 MEDIA_LIBRARY_INTERNAL_SYSTEM_ERROR：内部系统错误。 |
@@ -465,9 +509,10 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetHeight(OH_MediaAsset* mediaAsset, uint32
  
   
 
-#### OH_MediaAsset_GetOrientation()
+### OH_MediaAsset_GetOrientation()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 MediaLibrary_ErrorCode OH_MediaAsset_GetOrientation(OH_MediaAsset* mediaAsset, uint32_t* orientation)
@@ -481,6 +526,7 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetOrientation(OH_MediaAsset* mediaAsset, u
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_MediaAsset* mediaAsset | OH_MediaAsset实例。 |
@@ -489,6 +535,7 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetOrientation(OH_MediaAsset* mediaAsset, u
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | MediaLibrary_ErrorCode | MEDIA_LIBRARY_OK：方法调用成功。 MEDIA_LIBRARY_PARAMETER_ERROR：参数错误。可能的原因： 1. 未指定强制参数。 2. 参数类型不正确。 3. 参数验证失败。 MEDIA_LIBRARY_INTERNAL_SYSTEM_ERROR：内部系统错误。 |
@@ -496,9 +543,10 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetOrientation(OH_MediaAsset* mediaAsset, u
  
   
 
-#### OH_MediaAsset_IsFavorite()
+### OH_MediaAsset_IsFavorite()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 MediaLibrary_ErrorCode OH_MediaAsset_IsFavorite(OH_MediaAsset* mediaAsset, uint32_t* favorite)
@@ -512,6 +560,7 @@ MediaLibrary_ErrorCode OH_MediaAsset_IsFavorite(OH_MediaAsset* mediaAsset, uint3
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_MediaAsset* mediaAsset | OH_MediaAsset实例。 |
@@ -520,6 +569,7 @@ MediaLibrary_ErrorCode OH_MediaAsset_IsFavorite(OH_MediaAsset* mediaAsset, uint3
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | MediaLibrary_ErrorCode | MEDIA_LIBRARY_OK：方法调用成功。 MEDIA_LIBRARY_PARAMETER_ERROR：参数错误。可能的原因： 1. 未指定强制参数。 2. 参数类型不正确。 3. 参数验证失败。 MEDIA_LIBRARY_INTERNAL_SYSTEM_ERROR：内部系统错误。 |
@@ -527,9 +577,10 @@ MediaLibrary_ErrorCode OH_MediaAsset_IsFavorite(OH_MediaAsset* mediaAsset, uint3
  
   
 
-#### OH_MediaAsset_GetTitle()
+### OH_MediaAsset_GetTitle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 MediaLibrary_ErrorCode OH_MediaAsset_GetTitle(OH_MediaAsset* mediaAsset, const char** title)
@@ -543,6 +594,7 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetTitle(OH_MediaAsset* mediaAsset, const c
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_MediaAsset* mediaAsset | OH_MediaAsset实例。 |
@@ -551,6 +603,7 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetTitle(OH_MediaAsset* mediaAsset, const c
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | MediaLibrary_ErrorCode | MEDIA_LIBRARY_OK：方法调用成功。 MEDIA_LIBRARY_PARAMETER_ERROR：参数错误。可能的原因： 1. 未指定强制参数。 2. 参数类型不正确。 3. 参数验证失败。 MEDIA_LIBRARY_INTERNAL_SYSTEM_ERROR：内部系统错误。 |
@@ -558,9 +611,10 @@ MediaLibrary_ErrorCode OH_MediaAsset_GetTitle(OH_MediaAsset* mediaAsset, const c
  
   
 
-#### OH_MediaAsset_Release()
+### OH_MediaAsset_Release()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 MediaLibrary_ErrorCode OH_MediaAsset_Release(OH_MediaAsset* mediaAsset)
@@ -574,6 +628,7 @@ MediaLibrary_ErrorCode OH_MediaAsset_Release(OH_MediaAsset* mediaAsset)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_MediaAsset* mediaAsset | OH_MediaAsset实例。 |
@@ -581,6 +636,7 @@ MediaLibrary_ErrorCode OH_MediaAsset_Release(OH_MediaAsset* mediaAsset)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | MediaLibrary_ErrorCode | MEDIA_LIBRARY_OK：方法调用成功。 MEDIA_LIBRARY_PARAMETER_ERROR：参数错误。可能的原因： 1. 未指定强制参数。 2. 参数类型不正确。 3. 参数验证失败。 |

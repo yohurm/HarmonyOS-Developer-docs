@@ -1,6 +1,6 @@
 # 使用DSP进行二阶IIR滤波
 
-更新时间：2026-05-28 03:37:50
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fast-dsp-iir-filter
 
@@ -9,9 +9,10 @@
 二阶IIR滤波器采用直接II型转置结构，支持多通道（如立体声）和多节级联（如高阶滤波器）配置。滤波器支持动态激活/旁路控制，允许运行时灵活调整滤波特性。
 
 
-#### 接口说明
+## 接口说明
 
 具体API说明详见[接口文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/fast-kit-fast)。
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -31,7 +32,7 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 1. 在CMake脚本中链接相关动态库。
 
   
@@ -58,11 +59,11 @@ target_link_libraries(entry PRIVATE ${lib_fast_dsp})
 
 
 
-#### 代码示例
+## 代码示例
 
 
 
-#### 单通道滤波器示例
+### 单通道滤波器示例
 
 ```text
 #include <cstdio>
@@ -133,7 +134,7 @@ FAST_ErrorCode single_channel_filter_demo() {
 
 
 
-#### 多通道滤波器示例
+### 多通道滤波器示例
 
 ```text
 #include <cstdio>
@@ -157,11 +158,15 @@ FAST_ErrorCode multi_channel_filter_demo() {
         return ret;
     }
 
-    // 设置2节滤波器系数
+    // 设置滤波器系数：每个通道各 2 节，按 [通道][节] 顺序排列
     float coefficients[] = {
-        // 第1节系数
+        // 通道0 第1节系数
         0.049922035f, 0.099844069f, 0.049922035f, -1.558153539f, 0.649003273f,
-        // 第2节系数
+        // 通道0 第2节系数
+        0.049922035f, 0.099844069f, 0.049922035f, -1.558153539f, 0.649003273f,
+        // 通道1 第1节系数
+        0.049922035f, 0.099844069f, 0.049922035f, -1.558153539f, 0.649003273f,
+        // 通道1 第2节系数
         0.049922035f, 0.099844069f, 0.049922035f, -1.558153539f, 0.649003273f
     };
 
@@ -207,7 +212,7 @@ FAST_ErrorCode multi_channel_filter_demo() {
 
 
 
-#### 动态激活滤波器节示例
+### 动态激活滤波器节示例
 
 ```text
 #include <cstdio>

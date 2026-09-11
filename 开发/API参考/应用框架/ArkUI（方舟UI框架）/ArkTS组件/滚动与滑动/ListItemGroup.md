@@ -1,9 +1,9 @@
 # ListItemGroup
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-listitemgroup
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该组件用来展示列表项分组，支持自定义分组头部和尾部区域、卡片样式、分割线、懒加载与预加载等能力，适用于需要对列表项进行逻辑分组展示的场景。宽度默认充满[List](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list)组件，必须配合List组件来使用。
 
@@ -26,17 +26,19 @@ ListItemGroup的预加载是指除了加载显示区域内的子组件外，还�
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 包含[ListItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-listitem)子组件。支持通过渲染控制类型（[if/else](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse)、[ForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-foreach)、[LazyForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-lazyforeach)和[Repeat](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-rendering-control-repeat)）动态生成子组件，更推荐使用LazyForEach或Repeat以优化性能。
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ListItemGroup(options?: ListItemGroupOptions)
 
@@ -48,6 +50,7 @@ ListItemGroup(options?: ListItemGroupOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ListItemGroupOptions | 否 | ListItemGroup组件参数，用于配置header、footer、间距和样式等。不传入时使用默认配置（无header、footer，间距为0，无卡片样式）。 |
@@ -55,13 +58,15 @@ ListItemGroup(options?: ListItemGroupOptions)
 
 
 
-#### ListItemGroupOptions对象说明
+## ListItemGroupOptions对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ListItemGroup组件参数。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -78,15 +83,17 @@ ListItemGroup组件参数。
 
 
 
-#### 属性
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 属性
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### divider
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### divider
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 divider(value: [ListDividerOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list#listdivideroptions18对象说明) | null)
 
@@ -102,6 +109,7 @@ ListItem设置[多态样式](https://developer.huawei.com/consumer/cn/doc/harmon
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ListDividerOptions \| null | 是 | ListItem分割线样式。 默认值：null |
@@ -109,9 +117,10 @@ ListItem设置[多态样式](https://developer.huawei.com/consumer/cn/doc/harmon
 
 
 
-#### childrenMainSize12+
+### childrenMainSize12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 childrenMainSize(value: ChildrenMainSize)
 
@@ -129,6 +138,7 @@ childrenMainSize(value: ChildrenMainSize)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ChildrenMainSize | 是 | 该对象用来维护子组件在主轴方向的大小信息。 |
@@ -136,9 +146,10 @@ childrenMainSize(value: ChildrenMainSize)
 
 
 
-#### ListItemGroupStyle10+枚举说明
+## ListItemGroupStyle10+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ListItemGroup组件卡片样式枚举。
 
@@ -148,6 +159,7 @@ ListItemGroup组件卡片样式枚举。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NONE | 0 | 无样式。 |
@@ -156,9 +168,10 @@ ListItemGroup组件卡片样式枚举。
 
 
 
-#### ListItemGroupHeaderFooterStyle
+## ListItemGroupHeaderFooterStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ListItemGroup头部和尾部样式枚举。
 
@@ -170,6 +183,7 @@ ListItemGroup头部和尾部样式枚举。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NONE | 0 | 无样式。 |
@@ -178,13 +192,17 @@ ListItemGroup头部和尾部样式枚举。
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（设置吸顶/吸底）
+
+
+### 示例1（设置吸顶/吸底）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[sticky](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list#sticky9)实现了Header吸顶和Footer吸底的效果。
 
@@ -344,7 +362,10 @@ struct ListItemGroupExample {
 
 
 
-#### 示例2（设置卡片样式）
+### 示例2（设置卡片样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例展示了ListItemGroup的卡片样式效果。
 
@@ -410,7 +431,10 @@ interface ArrObject {
 
 
 
-#### 示例3（设置Header/Footer）
+### 示例3（设置Header/Footer）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[ComponentContent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-componentcontent#componentcontent-1)设置Header/Footer。
 
@@ -552,7 +576,10 @@ struct ListItemGroupExample {
 
 
 
-#### 示例4（设置多列布局）
+### 示例4（设置多列布局）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例展示了ListItemGroup在多列布局中的使用，通过设置List组件的[lanes](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list#lanes9)属性实现多列布局。
 
@@ -720,7 +747,10 @@ struct ListItemGroupExample {
 
 
 
-#### 示例5（设置悬浮态）
+### 示例5（设置悬浮态）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过将ListItemGroup的[headerStyle](#listitemgroupoptions对象说明)设置为[ListItemGroupHeaderFooterStyle.FLOATING](#listitemgroupheaderfooterstyle)，实现分组头部在滚动时悬浮显示的效果。
 

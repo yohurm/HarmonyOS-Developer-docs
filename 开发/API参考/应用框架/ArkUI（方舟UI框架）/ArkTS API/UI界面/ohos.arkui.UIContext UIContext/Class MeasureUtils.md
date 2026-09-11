@@ -1,9 +1,9 @@
 # Class (MeasureUtils)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-measureutils
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 MeasureUtils提供文本宽度、高度等相关计算能力，适用于文本自适应布局、多行文本截断、动态UI适配等场景。通过该类可精确计算文本尺寸，帮助开发者在布局前预判文本显示效果，避免文本溢出或布局错乱等问题。
 
@@ -12,9 +12,10 @@ MeasureUtils提供文本宽度、高度等相关计算能力，适用于文本�
 
 
 
-#### measureText12+
+## measureText12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 measureText(options: MeasureOptions): number
 
@@ -32,6 +33,7 @@ measureText(options: MeasureOptions): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | MeasureOptions | 是 | 文本测量配置选项。包含文本内容（textContent）、字体大小（fontSize）等属性。constraintWidth、maxLines等布局约束属性对measureText的计算结果无影响，如需计算布局约束下的宽度，请使用measureTextSize方法。 |
@@ -39,9 +41,10 @@ measureText(options: MeasureOptions): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| number | 文本宽度。 说明： 浮点数会向上取整。 单位：px |
+| number | 文本宽度。 说明： 浮点数会向上取整。 单位：px 当参数异常或内部计算失败时，会返回undefined。 |
 
 
 **示例：**
@@ -64,7 +67,8 @@ struct Index {
   build() {
     Row() {
       Column() {
-        Text(`The width of 'Hello World': ${this.textWidth}`)
+        // measureText在参数异常或内部计算失败时会返回undefined，使用时需做判空处理
+        Text(`The width of 'Hello World': ${this.textWidth ?? 0}`)
       }
       .width('100%')
     }
@@ -75,9 +79,10 @@ struct Index {
 
 
 
-#### measureTextSize12+
+## measureTextSize12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 measureTextSize(options: MeasureOptions): SizeOptions
 
@@ -95,6 +100,7 @@ measureTextSize(options: MeasureOptions): SizeOptions
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | MeasureOptions | 是 | 文本测量配置选项。包含文本内容（textContent）、字体大小（fontSize）、约束宽度（constraintWidth）、最大行数（maxLines）等属性，用于配置被计算文本的测量参数。 |
@@ -102,9 +108,10 @@ measureTextSize(options: MeasureOptions): SizeOptions
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| SizeOptions | 返回文本所占布局宽度和高度。 说明： 未设置constraintWidth时，文本宽度返回值会向上取整；传参constraintWidth时，文本宽度返回值不被取整。 文本宽度以及高度返回值单位均为px。 |
+| SizeOptions | 返回文本所占布局宽度和高度。 说明： 未设置constraintWidth时，文本宽度返回值会向上取整；传参constraintWidth时，文本宽度返回值不被取整。 文本宽度以及高度返回值单位均为px。 当参数异常或内部计算失败时，会返回undefined。 |
 
 
 **示例1：**
@@ -126,8 +133,9 @@ struct Index {
   build() {
     Row() {
       Column() {
-        Text(`The width of 'Hello World': ${this.textSize.width}`)
-        Text(`The height of 'Hello World': ${this.textSize.height}`)
+        // measureTextSize在参数异常或内部计算失败时会返回undefined，使用时需做判空处理
+        Text(`The width of 'Hello World': ${this.textSize?.width ?? 0}`)
+        Text(`The height of 'Hello World': ${this.textSize?.height ?? 0}`)
       }
       .width('100%')
     }
@@ -198,6 +206,10 @@ struct TextDemo {
       constraintWidth: this.textWidth,
       maxLines: this.maxLines
     });
+    // measureTextSize在参数异常或内部计算失败时会返回undefined，使用时需做判空处理
+    if (!noMaxLinesSize || !hasMaxLinesSize) {
+      return;
+    }
 
     this.displayedText = this.fullText;
     if (Number(noMaxLinesSize.height) > Number(hasMaxLinesSize.height)) { // 存在截断
@@ -210,6 +222,9 @@ struct TextDemo {
           textContent: textAfterCut,
           constraintWidth: this.textWidth
         });
+        if (!sizeAfterCut) {
+          continue;
+        }
         if (Number(sizeAfterCut.height) <= Number(hasMaxLinesSize.height)) {
           break;
         } else {
@@ -251,9 +266,10 @@ struct TextDemo {
 
 
 
-#### getParagraphs20+
+## getParagraphs20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getParagraphs(styledString: StyledString, options?: TextLayoutOptions): Array&lt;Paragraph&gt;
 
@@ -265,6 +281,7 @@ getParagraphs(styledString: StyledString, options?: TextLayoutOptions): Array&lt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | styledString | StyledString | 是 | 待转换的属性字符串。 |
@@ -273,9 +290,10 @@ getParagraphs(styledString: StyledString, options?: TextLayoutOptions): Array&lt
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Array&lt;Paragraph&gt; | 根据文本布局选项转换后得到的Paragraph对象数组，用于后续的文本布局计算。 |
+| Array&lt;Paragraph&gt; | 根据文本布局选项转换后得到的Paragraph对象数组，用于后续的文本布局计算。 说明： 当参数异常或内部计算失败时，会返回undefined。 |
 
 
 **示例：**
@@ -362,6 +380,10 @@ struct Index {
   // 测算属性字符串在指定宽度下能显示的行数
   getLineNum(styledString: StyledString, width: LengthMetrics) {
     let paragraphArr = this.getUIContext().getMeasureUtils().getParagraphs(styledString, { constraintWidth: width });
+    // getParagraphs在参数异常或内部计算失败时会返回undefined，使用时需做判空处理
+    if (!paragraphArr) {
+      return 0;
+    }
     let lineCount = 0;
     for (let i = 0; i < paragraphArr.length; ++i) {
       lineCount += paragraphArr[i].getLineCount();
@@ -484,4 +506,4 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/JWEFqJXhRaSgZ8qJ_WV27g/zh-cn_image_0000002656008178.png?HW-CC-KV=V1&HW-CC-Date=20260730T071444Z&HW-CC-Expire=86400&HW-CC-Sign=3FC4E31639EBEC0FC20C2E1F708C258E2F5BBF1A647051CBDC7F882B2C0C7D93)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/XxGMzIrZSm2oXoMkJU1h3Q/zh-cn_image_0000002747292331.png?HW-CC-KV=V1&HW-CC-Date=20260911T072159Z&HW-CC-Expire=86400&HW-CC-Sign=68F6FF114DA9C97A00F849486EFC0E8D8BFDC7900C9E9E1AA680E87D1E1FA3E6)

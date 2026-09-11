@@ -1,13 +1,13 @@
 # ArkTS卡片使用自定义字体
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widget-load-custom-font
 
 API version 22开始新增了[ohos.graphics.text.FontCollection.getLocalInstance](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-graphics-text#getlocalinstance22)接口获取本地字体集实例，应用可以通过这个本地实例为卡片加载自定义字体。
 
 
-#### 开发步骤
+## 开发步骤
 1. 创建动态卡片：按照[创建ArkTS卡片](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widget-creation)里的描述创建动态卡片。
 2. 在项目entry\src\main\resources\rawfile目录下添加自定义字体文件xxx.ttf。
 3. 页面布局代码实现entry/src/main/ets/widget/pages/WidgetCard.ets。
@@ -53,7 +53,7 @@ struct loadFontSyncCard {
 
 
 
-#### 运行结果
+### 运行结果
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/Am2qLMpESImUDCwQI-iPKg/zh-cn_image_0000002674632816.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095741Z&HW-CC-Expire=86400&HW-CC-Sign=03EDCBC4B07635B6D65C2A743AC55933E311E3333FED6CAA97678B49D9ACE822)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/MYvwLRNeRxq1g5WBTIMiSg/zh-cn_image_0000002747290963.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072513Z&HW-CC-Expire=86400&HW-CC-Sign=4CE7DCBB7241C84D09E3F219052B26E9B8014882C72E6EF8542958AA47666929)

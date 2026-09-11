@@ -1,16 +1,17 @@
 # 自定义渲染 (XComponent)
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-xcomponent-guidelines
 
-#### 概述
+## 概述
 
 XComponent组件作为一种渲染组件，可用于EGL/OpenGLES和媒体数据写入，通过使用XComponent持有的“[NativeWindow](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-window-guidelines)”渲染画面，满足开发需要实现高级自定义渲染的需求，例如相机预览流的显示和游戏画面的渲染。开发者可通过指定XComponent组件的type字段来实现不同的渲染方式，分别为[XComponentType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#xcomponenttype10).SURFACE和XComponentType.TEXTURE。对于SURFACE类型，开发者将定制的绘制内容单独展示到屏幕上。对于TEXTURE类型，开发者将定制的绘制内容和XComponent组件的内容合成后展示到屏幕上。
 
 可以将XComponent类比为一个“画布”，在其上支持使用各种渲染技术（如OpenGL、Vulkan等）绘制复杂的图形，而XComponent组件则负责管理这个画布的位置、大小和各种交互事件。
 
 目前XComponent主要用于两类场景：
+
 
 | 场景类型 | 使用场景 |
 | --- | --- |
@@ -20,13 +21,13 @@ XComponent组件作为一种渲染组件，可用于EGL/OpenGLES和媒体数据�
 
 
 
-#### 约束与限制
+## 约束与限制
 
 当开发者传输的绘制内容包含透明元素时，Surface区域的显示效果会与下方内容进行合成展示。例如，若传输的内容完全透明，且XComponent的背景色被设置为黑色，同时Surface保持默认的大小与位置，则最终显示的将是一片黑色区域。
 
 
 
-#### XComponent渲染上屏原理
+## XComponent渲染上屏原理
 
 XComponent持有一个Surface，开发者能通过调用[NativeWindow](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-window-guidelines)等接口，申请并提交Buffer至图形队列，以此方式将自绘制内容传送至该Surface，其主体流程如下：
 
@@ -40,13 +41,13 @@ XComponent持有一个Surface，开发者能通过调用[NativeWindow](https://d
 
 
 
-#### 创建XComponent和管理Surface生命周期
+## 创建XComponent和管理Surface生命周期
 
 为满足开发者的各种需求，XComponent组件提供了多种创建方式以及多种Surface生命周期的管理方式，下面将进行介绍。
 
 
 
-#### 创建XComponent
+### 创建XComponent
 
 目前ArkUI提供了三种UI组件的创建方式，分别是使用[ArkTS声明式UI描述](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-declarative-ui-description)创建、使用[ArkTS自定义组件节点](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-arktsnode-framenode)创建以及使用[NDK接口](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-build-ui-overview)创建。
 
@@ -54,7 +55,7 @@ XComponent持有一个Surface，开发者能通过调用[NativeWindow](https://d
 
 
 
-#### 管理XComponent持有Surface的生命周期
+### 管理XComponent持有Surface的生命周期
 
 在[XComponent渲染上屏原理](#xcomponent渲染上屏原理)中提到，XComponent能够显示应用自绘制的内容依赖的是其持有的Surface，因此了解如何获取XComponent持有的Surface的生命周期也十分重要。
 
@@ -128,7 +129,7 @@ XComponent推荐使用两种方式获取XComponent持有Surface的生命周期�
 
 
 
-#### XComponent的开发范式
+### XComponent的开发范式
 
 将[创建XComponent](#创建xcomponent)和[管理XComponent持有Surface的生命周期](#管理xcomponent持有surface的生命周期)进行排列组合，除使用NDK接口创建的XComponent无法在ArkTS侧使用XComponentController来管理Surface生命周期外，目前共有以下五种XComponent开发范式：
 
@@ -502,7 +503,7 @@ ArkUI_NodeHandle CreateNodeHandleUsingSurfaceHolder(const std::string &tag)
 
 
 
-#### OH_NativeXComponent向OH_ArkUI_SurfaceHolder的迁移
+## OH_NativeXComponent向OH_ArkUI_SurfaceHolder的迁移
 
 从API version 8开始，开发者可以通过基于[OH_NativeXComponent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-nativexcomponent-native-xcomponent-oh-nativexcomponent)实例相关的接口进行XComponent组件Surface的生命周期监听、获取NativeWindow实例以及监听基础事件，实现渲染绘制和响应交互功能。但使用OH_NativeXComponent相关的接口存在以下问题：
 
@@ -514,7 +515,7 @@ ArkUI_NodeHandle CreateNodeHandleUsingSurfaceHolder(const std::string &tag)
 
 
 
-#### 组件创建
+### 组件创建
 
 组件创建过程中的主要差异在于使用OH_NativeXComponent需要传入id和libraryname属性以支持在Native侧获取对应的OH_NativeXComponent实例；而使用OH_ArkUI_SurfaceHolder管理Surface生命周期的XComponent不再需要在XComponent的构造参数中传入id和libraryname属性，而是直接将组件对应的FrameNode节点传递至Native侧进行生命周期绑定和其他设置。
 
@@ -563,7 +564,7 @@ XComponent({
 
 
 
-#### 绑定Surface生命周期
+### 绑定Surface生命周期
 
 绑定Surface生命周期中的主要差异在于注册生命周期回调的接口不同，具体回调内执行的逻辑基本保持不变。
 
@@ -661,7 +662,7 @@ napi_value PluginManager::BindNode(napi_env env, napi_callback_info info)
 
 
 
-#### 获取NativeWindow方式
+### 获取NativeWindow方式
 
 获取NativeWindow方式的差异如下：
 
@@ -706,7 +707,7 @@ void OnSurfaceCreatedNative(OH_ArkUI_SurfaceHolder *holder)
 
 
 
-#### 监听交互事件
+### 监听交互事件
 
 使用OH_NativeXComponent方式进行交互事件的监听，只能使用OH_NativeXComponent上相关的接口监听触摸、鼠标、按键等基础事件。而使用ArkUI NDK接口（通过ArkUI_NodeHandle），除监听基础事件外还能监听长按、拖拽等高级手势。
 
@@ -743,11 +744,11 @@ if (nodeAPI->registerNodeEvent(handle, NODE_TOUCH_EVENT, 0, nullptr)) { // 用C�
 
 
 
-#### 开发示例
+## 开发示例
 
 
 
-#### 在Native侧使用NativeWindow进行渲染绘制
+### 在Native侧使用NativeWindow进行渲染绘制
 
 以下展示完整使用NativeWindow和EGL接口进行自绘制的示例，主要开发场景如下：
 
@@ -759,6 +760,7 @@ if (nodeAPI->registerNodeEvent(handle, NODE_TOUCH_EVENT, 0, nullptr)) { // 用C�
 
 
 **接口说明**
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -1656,23 +1658,31 @@ void EGLRender::DestroySurface()
   
 ```cpp
 # the minimum version of CMake.
-cmake_minimum_required(VERSION 3.5.0)
-project(LCNXComponent2)
+cmake_minimum_required(VERSION 3.4.1)
+project(XComponent)
 
 set(NATIVERENDER_ROOT_PATH ${CMAKE_CURRENT_SOURCE_DIR})
+add_definitions(-DOHOS_PLATFORM)
 
 if(DEFINED PACKAGE_FIND_FILE)
     include(${PACKAGE_FIND_FILE})
 endif()
 
-include_directories(${NATIVERENDER_ROOT_PATH}
-                    ${NATIVERENDER_ROOT_PATH}/render
-                    ${NATIVERENDER_ROOT_PATH}/manager)
+include_directories(
+    ${NATIVERENDER_ROOT_PATH}
+    ${NATIVERENDER_ROOT_PATH}/include
+    ${NATIVERENDER_ROOT_PATH}/render
+    ${NATIVERENDER_ROOT_PATH}/manager
+)
 
 add_library(nativerender SHARED
-            render/EGLRender.cpp
-            manager/plugin_manager.cpp
-            napi_init.cpp)
+    render/EGLRender.cpp
+    render/egl_core.cpp
+    render/plugin_render.cpp
+    manager/plugin_manager.cpp
+    napi_init.cpp
+)
+
 find_library(
     # 设置路径变量的名称。
     EGL-lib
@@ -1715,17 +1725,18 @@ find_library(
     uv
 )
 
-target_link_libraries(nativerender PUBLIC ${EGL-lib} ${GLES-lib} ${hilog-lib} ${libace-lib} ${libnapi-lib} ${libuv-lib} libnative_window.so)
+target_link_libraries(nativerender PUBLIC
+    ${EGL-lib} ${GLES-lib} ${hilog-lib} ${libace-lib} ${libnapi-lib} ${libuv-lib} libnative_window.so)
 ```
 上述用例具体实现可参考[NativeXComponent](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/ArkUISample/NativeXComponentSample)。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/dpLaju8dTnOpm3C3wyvyvQ/zh-cn_image_0000002709644525.jpeg?HW-CC-KV=V1&HW-CC-Date=20260818T063542Z&HW-CC-Expire=86400&HW-CC-Sign=C5FD4E45907AEAFCFA6E113097D6EB1968C67860DDF24426E57FC285751EDA17)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/zawuGJ8eQ8iZtxZun7BUhw/zh-cn_image_0000002717610528.jpeg?HW-CC-KV=V1&HW-CC-Date=20260911T073018Z&HW-CC-Expire=86400&HW-CC-Sign=62FCE21D2055A39FFF7D000660A638582435A3E5B5C343A9A5AE94F743589CD3)
 
 
 
 
-#### 在ArkTS侧使用SurfaceId进行渲染绘制
+### 在ArkTS侧使用SurfaceId进行渲染绘制
 
 完整使用SurfaceId进行渲染绘制的示例及其主要开发场景如下：
 
@@ -1739,6 +1750,7 @@ target_link_libraries(nativerender PUBLIC ${EGL-lib} ${GLES-lib} ${hilog-lib} ${
 
 
 **接口说明**
+
 
 | 接口名 | 描述 |
 | --- | --- |

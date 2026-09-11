@@ -20,22 +20,22 @@ struct Index {
         .width('80%')
         .parallelGesture(GestureGroup(GestureMode.Exclusive,
           TapGesture({ count: 2, fingers: 1 })
-          // Double click
+        <em>  // Double click</em>
             .onAction(() => {
               console.log('TapGesture--double click');
             }),
           TapGesture({ count: 1, fingers: 1 })
-          // TapGesture single
+       <em>   // TapGesture single</em>
             .onAction(() => {
               console.log('TapGesture--single click');
             }),
           LongPressGesture({ repeat: true })
-          // LongPressGesture Long
+        <em>  // LongPressGesture Long</em>
             .onAction(() => {
               console.log('LongPressGesture--Long press');
             }),
           PanGesture()
-          // PanGesture drag
+        <em>  // PanGesture drag</em>
             .onActionStart((gestureEvent: GestureEvent | undefined) => {
               console.info('PanGesture--drag');
             })

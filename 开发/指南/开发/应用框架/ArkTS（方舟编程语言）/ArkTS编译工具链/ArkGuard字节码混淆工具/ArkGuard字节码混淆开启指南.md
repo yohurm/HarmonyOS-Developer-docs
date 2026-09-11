@@ -1,6 +1,6 @@
 # ArkGuard字节码混淆开启指南
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bytecode-obfuscation-guide
 
@@ -12,17 +12,17 @@
 
   
 
-#### 字节码混淆开启步骤
+## 字节码混淆开启步骤
 
   
 
-#### 约束与限制
+### 约束与限制
 
 字节码混淆与源码混淆功能无法同时启用，开启字节码混淆后，源码混淆功能将自动关闭。
  
   
 
-#### 开启混淆步骤
+### 开启混淆步骤
 
 从API version 20开始，字节码混淆能力已在系统中集成，可通过以下方式在DevEco Studio开启使用。
  
@@ -99,7 +99,7 @@
  
   
 
-#### 三种混淆配置文件
+### 三种混淆配置文件
 
 - obfuscation-rules.txt
 
@@ -133,6 +133,7 @@
  
 下表简要总结了三种配置文件的差异：
   
+
 | 配置文件（示例） | 配置类型 | 是否可修改配置 | 是否影响本模块的混淆 | 是否影响其他模块的混淆 |
 | --- | --- | --- | --- | --- |
 | obfuscation-rules.txt | 自定义 | 是 | 是 | 否 |
@@ -142,7 +143,7 @@
  
   
 
-#### 混淆选项配置指导
+### 混淆选项配置指导
 1. 开启-enable-toplevel-obfuscation选项，如果代码中有globalThis访问全局变量，会出现访问失败的情况，需要使用-keep-global-name来保留此全局变量名称。
 2. 待上述选项开启成功后，开启-enable-property-obfuscation
 
@@ -203,14 +204,14 @@ console.info(obj002.dynamicName + ''); // 使用点语法静态访问属性
  
   
 
-#### 说明
+## 说明
 
 - 目前不支持在Hvigor构建流程中插入自定义混淆插件。
 
  
   
 
-#### 查看混淆效果
+## 查看混淆效果
 
 在混淆结束后会生成中间产物，因此可以在编译产物build目录中找到混淆后的中间产物以查看混淆效果，同时可以找到混淆生成的名称映射表及系统API白名单文件。
  
@@ -223,16 +224,16 @@ console.info(obj002.dynamicName + ''); // 使用点语法静态访问属性
 
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/rik7SHv-TXGkLVzMQbVrxw/zh-cn_image_0000002704271707.png?HW-CC-KV=V1&HW-CC-Date=20260813T095655Z&HW-CC-Expire=86400&HW-CC-Sign=5FD4A3324C4AA934A55088684C06D08DC106B6B1BC60E70F3DF9C931868E0931)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/go0eruuZQuOAfsmQnj5pmg/zh-cn_image_0000002717769904.png?HW-CC-KV=V1&HW-CC-Date=20260911T072305Z&HW-CC-Expire=86400&HW-CC-Sign=511AA2BED61B282ED0CEA4F26BCEE767772901610A4DA90F4DF4EAF66B71BBF9)
 
  
   
 
-#### 报错栈还原
+## 报错栈还原
 
 经过混淆的应用程序中代码名称会发生更改，crash时打印的报错栈更难以理解，因为报错栈与源码不完全一致。开发人员可使用DevEco Studio命令工具Command Line Tools中的[hstack插件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-command-line-hstack)来还原源码堆栈，进而分析问题。
  
 反混淆工具需要使用应用编译过程中生成的sourceMaps.json文件以及混淆名称映射文件nameCache.json文件，因此请本地备份它们；为方便问题定位，建议备份release目录。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/50ye68TsQ-KVcDnQ5l9jWw/zh-cn_image_0000002674471906.png?HW-CC-KV=V1&HW-CC-Date=20260813T095655Z&HW-CC-Expire=86400&HW-CC-Sign=6F31B611F88B1474811B5D4B342B96CF77BDBF7E025F4BFBA35C13C502D9A118)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/YboPLoFhR6GhItQjcfnYTw/zh-cn_image_0000002717609970.png?HW-CC-KV=V1&HW-CC-Date=20260911T072305Z&HW-CC-Expire=86400&HW-CC-Sign=B6FD6FC4C954761A19DE671FD4B9C30C9B1237D53B72951767B2B2D562080FF6)

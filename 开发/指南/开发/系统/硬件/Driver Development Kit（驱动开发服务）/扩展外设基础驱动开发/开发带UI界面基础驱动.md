@@ -1,37 +1,38 @@
 # 开发带UI界面基础驱动
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/externaldevice-guidelines
 
-#### 场景介绍
+## 场景介绍
 
 开发者开发带UI界面的基础驱动，适用于各种复合设备，需要通过UI界面设置对应的独特驱动能力或者通过UI界面展示从设备侧获取的信息，例如带有侧键的鼠标，手写板，身份证读卡器等设备。
 
 
 
-#### 环境搭建
+## 环境搭建
 
 请参考[环境准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/environmental-preparation)完成开发前的准备工作。
 
 
 
-#### 接口说明
+## 接口说明
 
 扩展外设管理基本能力如下，更多详情请查阅[@ohos.driver.deviceManager](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-driver-devicemanager)。
 
 **表1** 扩展外设管理基本能力接口
 
+
 | 接口名 | 描述 |
 | --- | --- |
 | queryDevices(busType?: number): Array<Readonly&lt;Device&gt;> | 查询扩展外设列表。 |
-| bindDriverWithDeviceId(deviceId: number, onDisconnect: AsyncCallback&lt;number&gt;): Promise&lt;RemoteDeviceDriver&gt;; | 绑定设备的Promise形式，API18开始支持。 |
-| unbindDriverWithDeviceId(deviceId: number): Promise&lt;number&gt; | 解绑设备的Promise形式，API18开始支持。 |
+| bindDriverWithDeviceId(deviceId: number, onDisconnect: AsyncCallback&lt;number&gt;): Promise&lt;RemoteDeviceDriver&gt; | 绑定设备的Promise形式，API version 19开始支持。 |
+| unbindDriverWithDeviceId(deviceId: number): Promise&lt;number&gt; | 解绑设备的Promise形式，API version 19开始支持。 |
 
 
 
 
-#### 开发步骤
+## 开发步骤
 
 应用可通过查询绑定扩展外设，从而使用扩展外设的定制驱动能力。
 
@@ -88,11 +89,11 @@ private async queryTargetDeviceId(): Promise<number> {
       hilog.info(DOMAIN, 'testTag', `usbDevice.productId = ${usbDevice.productId}, usbDevice.vendorId = ${usbDevice.vendorId}`);
       return usbDevice.productId === productId && usbDevice.vendorId === vendorId;
     });
-    hilog.info(DOMAIN, 'testTag', `queryTargetDeviceId index = ${index}, deviceId = ${devices[index].deviceId}`);
     if (index < 0) {
       hilog.error(DOMAIN, 'testTag', 'can not find device');
       return -1;
     }
+    hilog.info(DOMAIN, 'testTag', `queryTargetDeviceId index = ${index}, deviceId = ${devices[index].deviceId}`);
     return devices[index].deviceId;
   } catch (error) {
     hilog.error(DOMAIN, 'testTag', `queryDevice failed, err: ${JSON.stringify(error)}`);
@@ -107,7 +108,7 @@ private async queryTargetDeviceId(): Promise<number> {
 ```ArkTS
 private async getDriverRemote(deviceId: number): Promise<rpc.IRemoteObject | null> {
   try {
-    let remoteDeviceDriver: deviceManager.RemoteDeviceDriver = await deviceManager.bindDeviceDriver(deviceId,
+    let remoteDeviceDriver: deviceManager.RemoteDeviceDriver = await deviceManager.bindDriverWithDeviceId(deviceId,
       (err: BusinessError, id: number) => {
         hilog.info(DOMAIN, 'testTag', `device[${id}] id disconnect, err: ${JSON.stringify(err)}`);
       });
@@ -180,9 +181,15 @@ build() {
 
 
 
-#### 应用签名
+## 应用签名
 
-**注意：** 先配置权限，再自动签名。
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/oYslSo21QqqoPPggrBrLHA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072741Z&HW-CC-Expire=86400&HW-CC-Sign=0D0B6C498FFC94A3492C7C7519FC382790EA6B890684C7F8CC7C0490423FBD7E)
+
+
+先配置权限，再自动签名。
+
+
 
 应用需要配置签名文件才能在设备上运行，并且扩展外设管理客户端开发，需要配置扩展外设的权限：ohos.permission.ACCESS_EXTENSIONAL_DEVICE_DRIVER及ohos.permission.ACCESS_DDK_DRIVERS。
 
@@ -198,4 +205,4 @@ build() {
 3. 在[AGC网站](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)菜单“证书、APP ID和Profile”->“Profile”中申请profile文件时，申请权限选择受限权限“ohos.permission.ACCESS_DDK_DRIVERS”，在该权限的输入框内填写你客户端需要连接的服务端的bundleName，多个服务端的bundleName以逗号分隔。
 
 
-完成权限配置后，可参考[自动签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing)对应用进行签名。
+完成权限配置后，可参考[自动签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing-auto)对应用进行签名。

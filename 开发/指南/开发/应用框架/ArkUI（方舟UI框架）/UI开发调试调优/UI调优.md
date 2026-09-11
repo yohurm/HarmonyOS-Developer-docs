@@ -1,19 +1,19 @@
 # UI调优
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-inspector-profiler
 
 本章节主要介绍UI的dump和调优能力，用于提高开发效率和优化开发者体验。
 
 
-#### 状态管理hidumper、调试与调优
+## 状态管理hidumper、调试与调优
 
 为提升开发者定位状态管理问题的效率，UI提供针对状态变量的hidumper、调试与调优功能，将状态变量的黑盒信息暴露给开发者，帮助开发者深入了解状态变量和UI组件的变化过程，提升开发高性能应用的效率。
 
 
 
-#### 状态管理hidumper能力
+### 状态管理hidumper能力
 
 状态管理接入[hidumper](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hidumper)，支持通过-jsdump获取状态变量关联的组件、自定义组件树等信息，方便开发者了解状态变量影响的UI范围，写出高性能应用代码。
 
@@ -164,7 +164,7 @@ Dirty Registered Element IDs:
       }[0]
 Total: 0
 ```
-      - 命令2：打印指定自定义组件的状态变量信息。例如，dump组件id为7的状态变量，可执行如下命令：
+            - 命令2：打印指定自定义组件的状态变量信息。例如，dump组件id为7的状态变量，可执行如下命令：
 
   
 ```bash
@@ -213,11 +213,12 @@ Dirty Registered Element IDs:
 
 
 
-#### 状态管理Profiler调优能力
+### 状态管理Profiler调优能力
 
 DevEco Studio的Profiler工具可抓取状态变量的变化打点。在Profiler工具中选择ArkUI，则抓取ArkUI State泳道。该泳道主要展示录制期间有哪些状态变量发生变化，和其会触发哪些关联组件刷新，以便开发者根据状态变量关联组件的数量分析当前场景内的更新负载。
 
 状态管理在Profiler工具中，会展示如下信息内容：
+
 
 | 名称 | 含义 |
 | --- | --- |
@@ -255,9 +256,10 @@ DevEco Studio的Profiler工具可抓取状态变量的变化打点。在Profiler
 
 
 
-#### 状态管理Inspector调试能力
+### 状态管理Inspector调试能力
 
 DevEco Studio的ArkUI Inspector可以显示当前页面自定义组件内的状态变量的详细信息，具体包括以下内容。
+
 
 | 名称 | 含义 |
 | --- | --- |
@@ -274,7 +276,7 @@ DevEco Studio的ArkUI Inspector可以显示当前页面自定义组件内的状�
 **图3** ArkUI Inspector显示状态变量相关信息
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/3_x4qTLhTPSZE2OT3GuJTA/zh-cn_image_0000002674632654.png?HW-CC-KV=V1&HW-CC-Date=20260813T095731Z&HW-CC-Expire=86400&HW-CC-Sign=78C312B063C1B5D566BDE2659772917C81C67D383028F7F9725DF76F24D1A392)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/7p1D6BkFSvy6AI_xLGpVAw/zh-cn_image_0000002717770786.png?HW-CC-KV=V1&HW-CC-Date=20260911T073133Z&HW-CC-Expire=86400&HW-CC-Sign=B7259DFF7D53B34018157A406B5496E7D0BA037F7E5660965E6BE7D6A84B9D25)
 
 
 > [!NOTE]
@@ -285,12 +287,12 @@ DevEco Studio的ArkUI Inspector可以显示当前页面自定义组件内的状�
 
 
 
-#### Trace调试能力
+## Trace调试能力
 
 ArkUI内部针对关键的UI处理流程添加了Trace信息，帮助开发者通过Trace工具观测应用的UI耗时，辅助定位问题。详细Trace说明及案例参考：[常用Trace使用指导](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-optimization-overview#section085643405116)。
 
 
 
-#### Inspector调试能力
+## Inspector调试能力
 
 ArkUI Inspector是DevEco Studio内置的页面布局检查工具，帮助开发者查看应用的UI层级结构、组件属性和布局效果。详细Inspector使用方法及案例参考：[页面布局检查器ArkUI Inspector使用指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-arkui-inspector)。

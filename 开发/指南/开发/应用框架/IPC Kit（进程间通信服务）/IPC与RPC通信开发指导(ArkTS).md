@@ -1,24 +1,24 @@
 # IPC与RPC通信开发指导(ArkTS)
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ipc-rpc-development-guideline
 
-#### 场景介绍
+## 场景介绍
 
 IPC/RPC的主要工作是跨进程建立对象通信的连接（客户端进程的Proxy和服务端进程的Stub建立一一对应关系），从而通过Proxy的接口可以和Stub进行IPC/RPC通信。
 
 
 
-#### 开发步骤
+## 开发步骤
 
 > [!NOTE]
-> 在进行IPC&RPC跨进程通信前需要通过Ability Kit获取服务端的代理对象。 不支持三方应用实现跨进程通信，三方应用仅可通过 connectServiceExtensionAbility 连接系统提供的ServiceExtensionAbility，通过返回的代理对 ServiceExtensionAbility 进行通信从而达到三方应用和系统服务通信的目的。 从API version 20开始，在2in1设备上，开发者可使用AppServiceExtensionAbility组件，为应用提供后台服务能力。三方应用可 connectAppServiceExtensionAbility 连接AppServiceExtensionAbility，通过返回的代理对象和 AppServiceExtensionAbility 进行通信从而达到三方和三方应用通信的目的。详细开发步骤参考 AppServiceExtensionAbility 。 三方应用之间也可通过 动态订阅公共事件 进行进程间通信。 完整的IPC&RPC通信开发流程涉及系统ServiceExtensionAbility的实现，故本篇指南仅提供客户端示例代码。
+> 在进行IPC&RPC跨进程通信前需要通过Ability Kit获取服务端的代理对象。 不支持三方应用实现跨进程通信，三方应用仅可通过 connectServiceExtensionAbility 连接系统提供的ServiceExtensionAbility，通过返回的代理对象 ServiceExtensionAbility 进行通信从而达到三方应用和系统服务通信的目的。 从API version 20开始，在2in1设备上，开发者可使用AppServiceExtensionAbility组件，为应用提供后台服务能力。三方应用可 connectAppServiceExtensionAbility 连接AppServiceExtensionAbility，通过返回的代理对象和 AppServiceExtensionAbility 进行通信从而达到三方和三方应用通信的目的。详细开发步骤参考 AppServiceExtensionAbility 。 三方应用之间也可通过 动态订阅公共事件 进行进程间通信。 完整的IPC&RPC通信开发流程涉及系统ServiceExtensionAbility的实现，故本篇指南仅提供客户端示例代码。
 
 
 
 
-#### 客户端实现
+### 客户端实现
 1. 创建变量want，指定要连接的Ability所在应用的包名、组件名。
 2. 创建变量connect，指定连接成功、连接失败和断开连接时的回调函数。
 3. 连接服务，获取服务代理对象Proxy，并注册死亡监听。
@@ -342,7 +342,7 @@ async function sendString(promptAction: PromptAction) : Promise <void> {
 
 
 
-#### 完整示例
+## 完整示例
 
 > [!NOTE]
 > 以下完整示例涉及到ServiceExtensionAbility，需要使用full-SDK。参考示例前，请先阅读对应示例的ReadMe进行相应的配置后，再进行编译。

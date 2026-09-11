@@ -1,6 +1,6 @@
 # SecurityAudit（安全审计）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesecurity-securityaudit-api
 **支持设备：** PC/2in1
@@ -10,7 +10,8 @@
 **起始版本：** 5.0.0(12)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** PC/2in1
 
@@ -20,7 +21,8 @@ import { securityAudit } from '@kit.DeviceSecurityKit';
  
   
 
-#### AuditEventInfo
+## AuditEventInfo
+
 
 **支持设备：** PC/2in1
 
@@ -32,6 +34,7 @@ import { securityAudit } from '@kit.DeviceSecurityKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | eventId | number | 否 | 否 | 审计事件ID，用于指定需要获取的安全审计数据。例如：0x810800800 审计事件ID的取值范围是[0, 0xFFFFFFFFF]。 |
@@ -39,7 +42,8 @@ import { securityAudit } from '@kit.DeviceSecurityKit';
  
   
 
-#### AuditEvent
+## AuditEvent
+
 
 **支持设备：** PC/2in1
 
@@ -51,6 +55,7 @@ import { securityAudit } from '@kit.DeviceSecurityKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | eventId | number | 否 | 否 | 审计事件ID，与请求参数中的审计事件ID相同。 |
@@ -64,7 +69,8 @@ import { securityAudit } from '@kit.DeviceSecurityKit';
  
   
 
-#### NotifyEvent
+## NotifyEvent
+
 
 **支持设备：** PC/2in1
 
@@ -76,6 +82,7 @@ import { securityAudit } from '@kit.DeviceSecurityKit';
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | PASTEBOARD | 0x27000000 | 剪贴板复制粘贴事件。 |
@@ -150,7 +157,8 @@ import { securityAudit } from '@kit.DeviceSecurityKit';
  
   
 
-#### FilterType
+## FilterType
+
 
 **支持设备：** PC/2in1
 
@@ -162,6 +170,7 @@ import { securityAudit } from '@kit.DeviceSecurityKit';
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | EVENT_TYPE_EQUAL | 0x00000100 | 事件类型的过滤器类型。 |
@@ -179,7 +188,8 @@ import { securityAudit } from '@kit.DeviceSecurityKit';
  
   
 
-#### AuthEvent
+## AuthEvent
+
 
 **支持设备：** PC/2in1
 
@@ -191,6 +201,7 @@ import { securityAudit } from '@kit.DeviceSecurityKit';
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | FILE_CREATE | 0x1C801100 | 文件创建阻断事件。 |
@@ -205,7 +216,8 @@ import { securityAudit } from '@kit.DeviceSecurityKit';
  
   
 
-#### AuthResult
+## AuthResult
+
 
 **支持设备：** PC/2in1
 
@@ -217,6 +229,7 @@ import { securityAudit } from '@kit.DeviceSecurityKit';
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ALLOW | 0 | 对阻断事件放行操作。 |
@@ -225,7 +238,8 @@ import { securityAudit } from '@kit.DeviceSecurityKit';
  
   
 
-#### on('auditEventOccur')
+## on('auditEventOccur')
+
 
 **支持设备：** PC/2in1
 
@@ -243,6 +257,7 @@ on(type: 'auditEventOccur', auditEventInfo: [AuditEventInfo](#auditeventinfo), c
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 订阅的事件类型名称，固定值 'auditEventOccur'，表示审计事件。 |
@@ -254,6 +269,7 @@ on(type: 'auditEventOccur', auditEventInfo: [AuditEventInfo](#auditeventinfo), c
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[安全审计错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-securityaudit)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | check permission fail. |
@@ -291,7 +307,8 @@ try {
  
   
 
-#### off('auditEventOccur')
+## off('auditEventOccur')
+
 
 **支持设备：** PC/2in1
 
@@ -309,6 +326,7 @@ off(type: 'auditEventOccur', auditEventInfo: [AuditEventInfo](#auditeventinfo), 
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 取消订阅的事件类型名称，固定值 ‘auditEventOccur’，表示审计事件。 |
@@ -320,6 +338,7 @@ off(type: 'auditEventOccur', auditEventInfo: [AuditEventInfo](#auditeventinfo), 
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[安全审计错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-securityaudit)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | check permission fail. |
@@ -349,7 +368,8 @@ try {
  
   
 
-#### Filter
+## Filter
+
 
 **支持设备：** PC/2in1
 
@@ -361,6 +381,7 @@ try {
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | isInclude | boolean | 否 | 否 | 过滤标签，决定符合条件的事件是否返回给订阅者。 true：设置反过滤，符合过滤条件的事件将返回给订阅者。 false：设置过滤，符合过滤条件的事件将不会返回给订阅者。 |
@@ -370,7 +391,8 @@ try {
  
   
 
-#### Client
+## Client
+
 
 **支持设备：** PC/2in1
 
@@ -388,7 +410,8 @@ try {
  
   
 
-#### subscribe
+### subscribe
+
 
 **支持设备：** PC/2in1
 
@@ -406,6 +429,7 @@ subscribe(events: NotifyEvent[]): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | events | NotifyEvent[] | 是 | 需要订阅的通知事件。 |
@@ -415,6 +439,7 @@ subscribe(events: NotifyEvent[]): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[安全审计错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-securityaudit)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | check permission fail. |
@@ -449,7 +474,8 @@ try {
  
   
 
-#### unsubscribe
+### unsubscribe
+
 
 **支持设备：** PC/2in1
 
@@ -467,6 +493,7 @@ unsubscribe(events: NotifyEvent[]): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | events | NotifyEvent[] | 是 | 已订阅的通知事件。 |
@@ -476,6 +503,7 @@ unsubscribe(events: NotifyEvent[]): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[安全审计错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-securityaudit)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | check permission fail. |
@@ -510,7 +538,8 @@ try {
  
   
 
-#### addFilter
+### addFilter
+
 
 **支持设备：** PC/2in1
 
@@ -528,6 +557,7 @@ addFilter(event: NotifyEvent, filter: Filter): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | NotifyEvent | 是 | 通知事件ID。 |
@@ -538,6 +568,7 @@ addFilter(event: NotifyEvent, filter: Filter): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[安全审计错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-securityaudit)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | check permission fail. |
@@ -579,7 +610,8 @@ try {
  
   
 
-#### removeFilter
+### removeFilter
+
 
 **支持设备：** PC/2in1
 
@@ -597,6 +629,7 @@ removeFilter(event: NotifyEvent, filter: Filter): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | NotifyEvent | 是 | 通知事件ID 。 |
@@ -607,6 +640,7 @@ removeFilter(event: NotifyEvent, filter: Filter): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[安全审计错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-securityaudit)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | check permission fail. |
@@ -647,7 +681,8 @@ try {
  
   
 
-#### newClient
+## newClient
+
 
 **支持设备：** PC/2in1
 
@@ -665,6 +700,7 @@ newClient(callback: Callback<[AuditEvent](#auditevent)>): Client
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;AuditEvent&gt; | 是 | 用于接收审计数据的回调函数。 |
@@ -672,6 +708,7 @@ newClient(callback: Callback<[AuditEvent](#auditevent)>): Client
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Client | 通知类客户端实例对象。 |
@@ -681,6 +718,7 @@ newClient(callback: Callback<[AuditEvent](#auditevent)>): Client
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[安全审计错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-securityaudit)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | check permission fail. |
@@ -716,7 +754,8 @@ try {
  
   
 
-#### deleteClient
+## deleteClient
+
 
 **支持设备：** PC/2in1
 
@@ -734,6 +773,7 @@ deleteClient(client: Client): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | client | Client | 是 | 通知客户端信息。 |
@@ -743,6 +783,7 @@ deleteClient(client: Client): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[安全审计错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-securityaudit)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | check permission fail. |
@@ -777,7 +818,8 @@ try {
  
   
 
-#### AuthClient
+## AuthClient
+
 
 **支持设备：** PC/2in1
 
@@ -795,7 +837,8 @@ try {
  
   
 
-#### subscribe
+### subscribe
+
 
 **支持设备：** PC/2in1
 
@@ -813,6 +856,7 @@ subscribe(events: AuthEvent[]): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | events | AuthEvent[] | 是 | 要订阅的阻断事件。 |
@@ -822,6 +866,7 @@ subscribe(events: AuthEvent[]): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[安全审计错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-securityaudit)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | check permission fail. |
@@ -858,7 +903,8 @@ try {
  
   
 
-#### unsubscribe
+### unsubscribe
+
 
 **支持设备：** PC/2in1
 
@@ -876,6 +922,7 @@ unsubscribe(events: AuthEvent[]): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | events | AuthEvent[] | 是 | 已订阅的阻断事件。 |
@@ -885,6 +932,7 @@ unsubscribe(events: AuthEvent[]): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[安全审计错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-securityaudit)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | check permission fail. |
@@ -927,7 +975,8 @@ try {
  
   
 
-#### addFilter
+### addFilter
+
 
 **支持设备：** PC/2in1
 
@@ -945,6 +994,7 @@ addFilter(event: AuthEvent, filter: Filter): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | AuthEvent | 是 | 阻断事件ID。 |
@@ -955,6 +1005,7 @@ addFilter(event: AuthEvent, filter: Filter): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[安全审计错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-securityaudit)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | check permission fail. |
@@ -998,7 +1049,8 @@ try {
  
   
 
-#### removeFilter
+### removeFilter
+
 
 **支持设备：** PC/2in1
 
@@ -1016,6 +1068,7 @@ removeFilter(event: AuthEvent, filter: Filter): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | AuthEvent | 是 | 阻断事件ID 。 |
@@ -1026,6 +1079,7 @@ removeFilter(event: AuthEvent, filter: Filter): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[安全审计错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-securityaudit)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | check permission fail. |
@@ -1074,7 +1128,8 @@ try {
  
   
 
-#### auth
+### auth
+
 
 **支持设备：** PC/2in1
 
@@ -1092,6 +1147,7 @@ auth(auditEvent: AuditEvent, authResult: AuthResult): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | auditEvent | AuditEvent | 是 | 阻断事件信息 。 |
@@ -1102,6 +1158,7 @@ auth(auditEvent: AuditEvent, authResult: AuthResult): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[安全审计错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-securityaudit)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | check permission fail. |
@@ -1139,7 +1196,8 @@ try {
  
   
 
-#### newAuthClient
+## newAuthClient
+
 
 **支持设备：** PC/2in1
 
@@ -1157,6 +1215,7 @@ newAuthClient(callback: Callback<[AuditEvent](#auditevent)>): AuthClient
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;AuditEvent&gt; | 是 | 用于接收审计数据的回调函数。 |
@@ -1164,6 +1223,7 @@ newAuthClient(callback: Callback<[AuditEvent](#auditevent)>): AuthClient
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AuthClient | 阻断类客户端实例对象，一个进程最大只允许创建2个客户端实例对象，当前设备最多只允许创建16个客户端实例对象。一个客户端实例最大只允许设置256条正过滤的过滤value和256条反过滤的过滤value。 |
@@ -1173,6 +1233,7 @@ newAuthClient(callback: Callback<[AuditEvent](#auditevent)>): AuthClient
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[安全审计错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-securityaudit)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | check permission fail. |
@@ -1205,7 +1266,8 @@ try {
  
   
 
-#### deleteAuthClient
+## deleteAuthClient
+
 
 **支持设备：** PC/2in1
 
@@ -1223,6 +1285,7 @@ deleteAuthClient(client: AuthClient): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | client | AuthClient | 是 | 阻断客户端信息。 |
@@ -1232,6 +1295,7 @@ deleteAuthClient(client: AuthClient): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[安全审计错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-securityaudit)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | check permission fail. |
@@ -1268,7 +1332,8 @@ try {
  
   
 
-#### AuthClientConfiguration
+## AuthClientConfiguration
+
 
 **支持设备：** PC/2in1
 
@@ -1280,6 +1345,7 @@ try {
  
 **起始版本：** 26.0.0
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | timeoutAuthResult | AuthResult | 否 | 否 | 设置授权事件响应超时时的默认授权结果。 - ALLOW：超时放行 - DENY：超时阻断 |
@@ -1287,7 +1353,8 @@ try {
  
   
 
-#### newAuthClient
+## newAuthClient
+
 
 **支持设备：** PC/2in1
 
@@ -1305,6 +1372,7 @@ newAuthClient(callback: Callback<[AuditEvent](#auditevent)>, configuration: [Aut
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;AuditEvent&gt; | 是 | 用于接收审计数据的回调函数。 |
@@ -1313,6 +1381,7 @@ newAuthClient(callback: Callback<[AuditEvent](#auditevent)>, configuration: [Aut
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AuthClient | 阻断类客户端实例对象。 |
@@ -1322,6 +1391,7 @@ newAuthClient(callback: Callback<[AuditEvent](#auditevent)>, configuration: [Aut
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[安全审计错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-securityaudit)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | check permission fail. |
@@ -1360,7 +1430,8 @@ try {
  
   
 
-#### queryAllProcesses
+## queryAllProcesses
+
 
 **支持设备：** PC/2in1
 
@@ -1378,6 +1449,7 @@ queryAllProcesses(): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 应用进程信息内容，内容为json格式字符串。例如：{"1": {}}。 |
@@ -1387,6 +1459,7 @@ queryAllProcesses(): string
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[安全审计错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-securityaudit)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | check permission fail. |
@@ -1413,7 +1486,8 @@ try {
  
   
 
-#### queryProcesses
+## queryProcesses
+
 
 **支持设备：** PC/2in1
 
@@ -1431,6 +1505,7 @@ queryProcesses(pids: number[]): string
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pids | number[] | 是 | 要查询的进程ID组。 |
@@ -1438,6 +1513,7 @@ queryProcesses(pids: number[]): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 应用进程信息内容，内容为json格式字符串。例如：{"1": {}}。 |
@@ -1447,6 +1523,7 @@ queryProcesses(pids: number[]): string
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[安全审计错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-securityaudit)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | check permission fail. |
@@ -1475,7 +1552,8 @@ try {
  
   
 
-#### acquireCodeSign
+## acquireCodeSign
+
 
 **支持设备：** PC/2in1
 
@@ -1493,6 +1571,7 @@ acquireCodeSign(path: string): string
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 待查询的应用文件路径。 |
@@ -1500,6 +1579,7 @@ acquireCodeSign(path: string): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 代码签名内容，内容为json格式字符串。例如：{"1": {}}。 |
@@ -1509,6 +1589,7 @@ acquireCodeSign(path: string): string
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[安全审计错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-securityaudit)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | check permission fail. |
@@ -1537,7 +1618,8 @@ try {
  
   
 
-#### acquireAllClientsInfo
+## acquireAllClientsInfo
+
 
 **支持设备：** PC/2in1
 
@@ -1555,6 +1637,7 @@ acquireAllClientsInfo(): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 安全审计通知类客户端信息，内容为json格式字符串。例如： [{"procName": vps, "uid": 1000, "pid": 1000}]。 |
@@ -1564,6 +1647,7 @@ acquireAllClientsInfo(): string
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[安全审计错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-securityaudit)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | check permission fail. |
@@ -1590,7 +1674,8 @@ try {
  
   
 
-#### acquireAllAuthClientsInfo
+## acquireAllAuthClientsInfo
+
 
 **支持设备：** PC/2in1
 
@@ -1608,6 +1693,7 @@ acquireAllAuthClientsInfo(): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 安全审计阻断类客户端信息，内容为json格式字符串。例如： [{"procName": vps, "uid": 1000, "pid": 1000}]。 |
@@ -1617,6 +1703,7 @@ acquireAllAuthClientsInfo(): string
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[安全审计错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-securityaudit)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | check permission fail. |

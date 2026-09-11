@@ -1,6 +1,6 @@
 # Print_StringList
 
-更新时间：2026-03-09 02:50:43
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-print-print-stringlist
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -10,11 +10,12 @@ typedef struct {...} Print_StringList
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
-表示字符串列表。
+表示字符串列表，用于在打印模块中传递多个字符串数据。该结构体通过count字段记录字符串数量、list字段指向字符串数组，适用于需要批量传递多个字符串数据的场景。相关接口请参见[OH_Print](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-print)。
  
 **起始版本：** 12
  
@@ -24,17 +25,20 @@ typedef struct {...} Print_StringList
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
-| uint32_t count | 字符串数量。 |
-| char **list | 字符串指针数组。 |
+| uint32_t count | 字符串数量，表示list数组中的元素数量。 |
+| char **list | 指向字符串数组的指针，数组元素数量须与count值一致。 |

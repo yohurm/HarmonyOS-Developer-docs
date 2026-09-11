@@ -1,13 +1,13 @@
 # slider开发指导
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-components-slider
 
 slider为滑动条组件，用来快速调节音量、亮度等。具体用法请参考[slider](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-basic-slider)。
 
 
-#### 创建slider组件
+## 创建slider组件
 
 在pages/index目录下的hml文件中创建一个slider组件。
 
@@ -36,7 +36,7 @@ slider为滑动条组件，用来快速调节音量、亮度等。具体用法�
 
 
 
-#### 设置样式和属性
+## 设置样式和属性
 
 slider组件通过color、scrollbar-color、background-color样式分别为滑动条设置背景颜色、滚动条颜色和背景颜色。
 
@@ -99,7 +99,7 @@ slider组件通过color、scrollbar-color、background-color样式分别为滑�
 
 
 
-#### 绑定事件
+## 绑定事件
 
 向slider组件添加change事件，添加时需要传入ChangeEvent参数。
 
@@ -155,7 +155,7 @@ export default {
 
 
 
-#### 场景示例
+## 场景示例
 
 开发者可以通过调整滑动条的值来改变图片大小，并且动态打印当前图片的宽和高。
 
@@ -209,4 +209,4 @@ export default{
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/5RALQoI_SLuQ3Y_m_Fgu4Q/zh-cn_image_0000002655846694.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071857Z&HW-CC-Expire=86400&HW-CC-Sign=1686D9AA95B76721635A38C507D740A739B5A5B3ECFE7501EC6C8EAA0478EA29)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/1_LWXaWOQxOn55fB2ceFdg/zh-cn_image_0000002717610806.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073134Z&HW-CC-Expire=86400&HW-CC-Sign=9C575271FCC943B638CA0931BF75A390B5BBFF60FDBA441384809029C4EE6349)

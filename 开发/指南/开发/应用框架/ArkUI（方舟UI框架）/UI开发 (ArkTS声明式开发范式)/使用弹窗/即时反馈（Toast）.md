@@ -1,6 +1,6 @@
 # 即时反馈（Toast）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-toast
 
@@ -13,7 +13,7 @@
 
 
 
-#### 使用建议
+## 使用建议
 
  - 合理使用弹出场景，避免过度提醒用户。
 
@@ -34,11 +34,12 @@
 
 
 
-#### 即时反馈模式对比
+## 即时反馈模式对比
 
 即时反馈提供了两种显示模式，分别为DEFAULT（显示在应用内）、TOP_MOST（显示在应用之上）。
 
 在TOP_MOST类型的Toast显示前，会创建一个全屏大小的子窗（手机上子窗大小和主窗大小一致），然后在该子窗上计算Toast的布局位置，最后显示在该子窗上。具体和DEFAULT模式Toast的差异如下：
+
 
 | 差异点 | DEFAULT | TOP_MOST |
 | --- | --- | --- |
@@ -110,7 +111,7 @@ export struct DefaultAndTopToastExample {
 
 
 
-#### 创建即时反馈
+## 创建即时反馈
 
 适用于短时间内提示框自动消失的场景。
 
@@ -155,7 +156,7 @@ export struct CreateToastExample {
 
 
 
-#### 显示和关闭即时反馈
+## 显示和关闭即时反馈
 
 适用于提示框停留时间较长，用户操作可以提前关闭提示框的场景。
 
@@ -214,4 +215,4 @@ export struct OpenCloseToastExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/La5OWehPTRGQTBnumXJsVw/zh-cn_image_0000002704272301.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095714Z&HW-CC-Expire=86400&HW-CC-Sign=F0068191D31A4208DCCFBD392DBD1211A6F0CFAB8BF846D26ADAA4ECAF25386D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/5tUiSaHtSF6_k1HzulZoKQ/zh-cn_image_0000002747210433.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072500Z&HW-CC-Expire=86400&HW-CC-Sign=86AB45E61BA75AC32A3B799A9B0222AF3355525565371528091CABD6F16A4685)

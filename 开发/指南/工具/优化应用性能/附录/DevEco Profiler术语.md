@@ -1,6 +1,6 @@
 # DevEco Profiler术语
 
-更新时间：2026-07-28 12:07:32
+更新时间：2026-07-28 12:07:32（官网已下线）
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-devecostudio-glossary
 

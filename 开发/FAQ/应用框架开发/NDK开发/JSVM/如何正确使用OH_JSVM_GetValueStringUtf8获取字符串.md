@@ -31,16 +31,16 @@ std::string GetValueString(JSVM_Env env, JSVM_Value value) {
 
     char *buff = preallocMemory;
     
-    // Obtain length
+ <em>   // Obtain length</em>
     size_t totalLen = 0;
     OH_JSVM_GetValueStringUtf8(env, value, nullptr, 0, &totalLen);
     size_t needed = totalLen + 1;
 
     if (needed > PREALLOC_SIZE) {
-        // Allocate space, size must include termination character
+     <em>   // Allocate space, size must include termination character</em>
         buff = new char[needed];
     }
-    // get string
+  <em>  // get string</em>
     OH_JSVM_GetValueStringUtf8(env, value, buff, needed, nullptr);
 
     std::string ret(buff, totalLen);

@@ -1,9 +1,9 @@
 # Interface (MovingPhoto)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-photoaccesshelper-movingphoto
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 动态照片对象。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { photoAccessHelper } from '@kit.MediaLibraryKit';
@@ -22,9 +23,10 @@ import { photoAccessHelper } from '@kit.MediaLibraryKit';
 
 
 
-#### getUri12+
+## getUri12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getUri(): string
 
@@ -36,6 +38,7 @@ getUri(): string
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 动态照片的uri。 |
@@ -44,6 +47,7 @@ getUri(): string
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -97,13 +101,14 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
 
 
 
-#### requestContent12+
+## requestContent12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 requestContent(imageFileUri: string, videoFileUri: string): Promise&lt;void&gt;
 
-同时请求动态照片的图片内容和视频内容，并写入参数指定的对应的uri中。使用Promise异步回调。
+同时请求动态照片的图片内容和视频内容，并写入参数指定的URI中。使用Promise异步回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -117,13 +122,15 @@ requestContent(imageFileUri: string, videoFileUri: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| imageFileUri | string | 是 | 待写入动态照片图片内容的uri。示例imageFileUri为："file://com.example.temptest/data/storage/el2/base/haps/ImageFile.jpg"。 |
-| videoFileUri | string | 是 | 待写入动态照片视频内容的uri。示例videoFileUri为："file://com.example.temptest/data/storage/el2/base/haps/VideoFile.mp4"。 |
+| imageFileUri | string | 是 | 待写入动态照片图片内容的URI。示例imageFileUri："file://com.example.temptest/data/storage/el2/base/haps/ImageFile.jpg"。 |
+| videoFileUri | string | 是 | 待写入动态照片视频内容的URI。需为应用沙箱内有效的、可写的文件路径。示例videoFileUri："file://com.example.temptest/data/storage/el2/base/haps/VideoFile.mp4"。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -133,6 +140,7 @@ requestContent(imageFileUri: string, videoFileUri: string): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -154,7 +162,7 @@ class MovingPhotoHandler implements photoAccessHelper.MediaAssetDataHandler<phot
       console.error('Error occurred when preparing data');
       return;
     }
-    // 应用需要确保待写入的uri是有效的。
+    // 应用应确保待写入的URI有效。
     let imageFileUri: string = "file://com.example.temptest/data/storage/el2/base/haps/ImageFile.jpg";
     let videoFileUri: string = "file://com.example.temptest/data/storage/el2/base/haps/VideoFile.mp4";
     try {
@@ -199,9 +207,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
 
 
 
-#### requestContent12+
+## requestContent12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 requestContent(resourceType: ResourceType, fileUri: string): Promise&lt;void&gt;
 
@@ -219,13 +228,15 @@ requestContent(resourceType: ResourceType, fileUri: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resourceType | ResourceType | 是 | 所请求动态照片内容的资源类型。 |
-| fileUri | string | 是 | 待写入动态照片内容的uri。 |
+| fileUri | string | 是 | 待写入动态照片内容的URI。需为应用沙箱内有效的、可写的文件路径。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -235,6 +246,7 @@ requestContent(resourceType: ResourceType, fileUri: string): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -296,9 +308,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
 
 
 
-#### requestContent12+
+## requestContent12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 requestContent(resourceType: ResourceType): Promise&lt;ArrayBuffer&gt;
 
@@ -316,12 +329,14 @@ requestContent(resourceType: ResourceType): Promise&lt;ArrayBuffer&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resourceType | ResourceType | 是 | 所请求动态照片内容的资源类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -331,6 +346,7 @@ requestContent(resourceType: ResourceType): Promise&lt;ArrayBuffer&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

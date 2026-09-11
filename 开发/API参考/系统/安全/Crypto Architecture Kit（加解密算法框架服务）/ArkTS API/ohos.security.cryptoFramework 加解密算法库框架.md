@@ -1,9 +1,9 @@
 # @ohos.security.cryptoFramework (加解密算法库框架)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 提供统一的密码算法库加解密接口，以屏蔽底层硬件和算法库。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ```text
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
@@ -22,13 +23,15 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### Result
+## Result
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 表示执行结果的枚举。
 
 **系统能力：** SystemCapability.Security.CryptoFramework
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -43,9 +46,10 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### DataBlob
+## DataBlob
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 二进制数据的封装接口，核心字段data为Uint8Array类型。
 
@@ -59,6 +63,7 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 **系统能力：** SystemCapability.Security.CryptoFramework
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | data | Uint8Array | 否 | 否 | 数据。 |
@@ -70,9 +75,10 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### ParamsSpec
+## ParamsSpec
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 加解密参数，在进行对称加解密时需要构造其子类对象，并将子类对象传入[init()](#init-1)方法。
 
@@ -90,6 +96,7 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
  - API版本9-11：SystemCapability.Security.CryptoFramework
 
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | algName | string | 否 | 否 | 指明对称加解密参数的算法模式。可选值如下： - "IvParamsSpec"：适用于CBC\|CTR\|OFB\|CFB模式。 - "GcmParamsSpec"：适用于GCM模式。 - "CcmParamsSpec"：适用于CCM模式。 - "AeadParamsSpec"：适用于AES-GCM，AES-CCM，SM4-GCM和ChaCha20-Poly1305算法。 |
@@ -101,9 +108,10 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### IvParamsSpec
+## IvParamsSpec
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 加解密参数[ParamsSpec](#paramsspec)的子类，用于在对称加解密时作为[init()](#init-1)方法的参数。
 
@@ -117,9 +125,10 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
  - API版本9-11：SystemCapability.Security.CryptoFramework
 
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| iv | DataBlob | 否 | 否 | 加密和解密参数iv。常见取值如下： - AES的CBC\|CTR\|OFB\|CFB模式：iv长度为16字节。 - 3DES的CBC\|OFB\|CFB模式：iv长度为8字节。 - SM410+的CBC\|CTR\|OFB\|CFB模式：iv长度为16字节。 |
+| iv | DataBlob | 否 | 否 | 加解密参数iv。常见长度如下： - AES的CBC\|CTR\|OFB\|CFB模式：iv长度为16字节。 - 3DES的CBC\|OFB\|CFB模式：iv长度为8字节。 - SM410+的CBC\|CTR\|OFB\|CFB模式：iv长度为16字节。 |
 
 
 > [!NOTE]
@@ -128,9 +137,10 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### GcmParamsSpec
+## GcmParamsSpec
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 加解密参数[ParamsSpec](#paramsspec)的子类，封装使用GCM AEAD模式进行加密或解密的参数，需要IV、AAD和认证标签。它是[ParamsSpec](#paramsspec)的子类，用于在对称加解密时作为[init()](#init-1)方法的参数。
 
@@ -142,6 +152,7 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
  - API版本12+：SystemCapability.Security.CryptoFramework.Cipher
  - API版本9-11：SystemCapability.Security.CryptoFramework
+
 
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
@@ -157,9 +168,10 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### CcmParamsSpec
+## CcmParamsSpec
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 加解密参数[ParamsSpec](#paramsspec)的子类，封装使用CCM AEAD模式进行加密或解密的参数，需要IV、AAD和认证标签。它是[ParamsSpec](#paramsspec)的子类，用于在对称加解密时作为[init()](#init-1)方法的参数。
 
@@ -171,6 +183,7 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
  - API版本12+：SystemCapability.Security.CryptoFramework.Cipher
  - API版本9-11：SystemCapability.Security.CryptoFramework
+
 
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
@@ -186,21 +199,23 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### Poly1305ParamsSpec22+
+## Poly1305ParamsSpec22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 加解密参数[ParamsSpec](#paramsspec)的子类，封装使用ChaCha20-Poly1305 AEAD模式进行加密或解密的参数，需要nonce、AAD和认证标签。它是[ParamsSpec](#paramsspec)的子类，用于在对称加解密时作为[init()](#init-1)方法的参数。
 
-适用于[ChaCha20算法](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-sym-encrypt-decrypt-spec#chacha20)Poly1305模式。
+适用于[ChaCha20算法](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-encryption-decryption#chacha20)Poly1305模式。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Cipher
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| iv | DataBlob | 否 | 否 | Nonce（通过iv字段传入），长度为12字节。 |
+| iv | DataBlob | 否 | 否 | nonce（通过iv字段传入），长度为12字节。 |
 | aad | DataBlob | 否 | 否 | 指明加解密参数aad。 |
 | authTag | DataBlob | 否 | 否 | 指定加解密参数authTag，长度为16字节。 |
 
@@ -211,13 +226,14 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### AeadParamsSpec
+## AeadParamsSpec
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于AEAD（带附加数据的认证加密）对称加解密的[init()](#init-1)方法参数，继承自[ParamsSpec](#paramsspec)。
 
-适用于[AES算法](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-sym-encrypt-decrypt-spec#aes)的CCM/GCM分组模式、SM4算法的GCM模式和ChaCha20算法的Poly1305模式。
+适用于[AES算法](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-encryption-decryption#aes)的CCM/GCM分组模式、SM4算法的GCM模式和ChaCha20算法的Poly1305模式。
 
 > [!NOTE]
 > 在使用AeadParamsSpec加密时： 若加密时指定了tagLen，解密时必须传入相同长度。 当前使用AeadParamsSpec参数，CCM模式下 update 与 doFinal 只能调用其中一个进行加密或者解密。且每个方法只能调用一次。 对于AES算法的GCM模式与SM4算法的GCM模式，tagLen仅支持4、8、12、13、14、15、16，若不填则默认为16。 对于AES算法的CCM模式，tagLen仅支持4、6、8、10、12、14、16，若不填则默认为12。 对于ChaCha20算法的Poly1305模式，tagLen仅支持16。
@@ -231,18 +247,20 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Cipher
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| nonce | Uint8Array | 否 | 否 | 指明加解密参数nonce。对于AES算法的CCM模式长度为7-13字节；对于AES算法的GCM模式、SM4算法的GCM模式长度为1-128字节，推荐使用12字节；对于ChaCha20算法的Poly1305模式长度为12字节。 |
+| nonce | Uint8Array | 否 | 否 | 指明加解密参数nonce。 说明： 对于AES-CCM，nonce长度的取值范围为7~13字节。 对于AES-GCM，nonce长度范围为1~128字节，推荐使用12字节。 对于SM4-GCM，nonce长度范围为1~128字节，推荐使用12字节。 对于ChaCha20-Poly1305，nonce长度必须为12字节。 |
 | authenticatedData | Uint8Array | 否 | 是 | 指定可选的附加认证数据。 |
-| tagLen | number | 否 | 是 | 指定加解密参数authTag长度，单位为字节。对于AES算法的CCM模式，tagLen仅支持4、6、8、10、12、14、16，若不填则默认为12；对于AES算法的GCM模式与SM4算法的GCM模式，tagLen仅支持4、8、12、13、14、15、16，若不填则默认为16；对于ChaCha20算法的Poly1305模式，tagLen仅支持16。 |
+| tagLen | number | 否 | 是 | 认证标签长度，单位为字节。 加密时，标签将被添加到密文末尾。 解密时，标签应位于密文末尾。 取值应为整数。 说明： 对于AES-CCM，默认值为12。支持的取值为4、6、8、10、12、14和16。 对于AES-GCM，默认值为16。支持的取值为4、8、12、13、14、15和16。 对于SM4-GCM，默认值为16。支持的取值为4、8、12、13、14、15和16。 对于ChaCha20-Poly1305，默认值为16。支持的取值为16。 |
 
 
 
 
-#### CryptoMode
+## CryptoMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举加密和解密的密码操作模式。
 
@@ -254,6 +272,7 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
  - API版本9-11：SystemCapability.Security.CryptoFramework
 
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ENCRYPT_MODE | 0 | 表示进行加密操作。 |
@@ -262,59 +281,56 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### AsyKeySpecItem10+
+## AsyKeySpecItem10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示密钥参数的枚举。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
-**系统能力：**
-
- - API版本12+：SystemCapability.Security.CryptoFramework.Key.AsymKey
- - API版本10-11：SystemCapability.Security.CryptoFramework
-
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| DSA_P_BN | 101 | DSA算法的素模数p。 |
-| DSA_Q_BN | 102 | DSA算法中密钥参数q（p-1的素因子）。 |
-| DSA_G_BN | 103 | DSA算法的参数g。 |
-| DSA_SK_BN | 104 | DSA算法的私钥sk。 |
-| DSA_PK_BN | 105 | DSA算法的公钥pk。 |
-| ECC_FP_P_BN | 201 | ECC算法中表示椭圆曲线Fp域的素数p。 |
-| ECC_A_BN | 202 | ECC算法中椭圆曲线的第一个系数a。 |
-| ECC_B_BN | 203 | ECC算法中椭圆曲线的第二个系数b。 |
-| ECC_G_X_BN | 204 | ECC算法中基点g的x坐标。 |
-| ECC_G_Y_BN | 205 | ECC算法中基点g的y坐标。 |
-| ECC_N_BN | 206 | ECC算法中基点g的阶n。 |
-| ECC_H_NUM | 207 | ECC算法中的余因子h。 |
-| ECC_SK_BN | 208 | ECC算法中的私钥sk。 |
-| ECC_PK_X_BN | 209 | ECC算法中，公钥pk（椭圆曲线上的一个点）的x坐标。 |
-| ECC_PK_Y_BN | 210 | ECC算法中，公钥pk（椭圆曲线上的一个点）的y坐标。 |
-| ECC_FIELD_TYPE_STR | 211 | ECC算法中，椭圆曲线的域类型（当前只支持Fp域）。 |
-| ECC_FIELD_SIZE_NUM | 212 | ECC算法中域的大小，单位为bits（注：对于Fp域，域的大小为素数p的bits长度）。 |
-| ECC_CURVE_NAME_STR | 213 | ECC算法中的SECG(Standards for Efficient Cryptography Group)曲线名称。 |
-| RSA_N_BN | 301 | RSA算法中的模数n。 |
-| RSA_SK_BN | 302 | RSA算法中的私钥sk（即私钥指数d）。 |
-| RSA_PK_BN | 303 | RSA算法中的公钥pk（即公钥指数e）。 |
-| DH_P_BN11+ | 401 | DH算法中的素数p。 |
-| DH_G_BN11+ | 402 | DH算法中的参数g。 |
-| DH_L_NUM11+ | 403 | DH算法中私钥长度，单位为bits。 |
-| DH_SK_BN11+ | 404 | DH算法中的私钥sk。 |
-| DH_PK_BN11+ | 405 | DH算法中的公钥pk。 |
-| ED25519_SK_BN11+ | 501 | Ed25519算法中的私钥sk。 |
-| ED25519_PK_BN11+ | 502 | Ed25519算法中的公钥pk。 |
-| X25519_SK_BN11+ | 601 | X25519算法中的私钥sk。 |
-| X25519_PK_BN11+ | 602 | X25519算法中的公钥pk。 |
+| DSA_P_BN | 101 | DSA算法的素模数p。 系统能力： API版本12+：SystemCapability.Security.CryptoFramework.Key.AsymKey API版本10-11：SystemCapability.Security.CryptoFramework |
+| DSA_Q_BN | 102 | DSA算法中密钥参数q（p-1的素因子）。 系统能力： API版本12+：SystemCapability.Security.CryptoFramework.Key.AsymKey API版本10-11：SystemCapability.Security.CryptoFramework |
+| DSA_G_BN | 103 | DSA算法的参数g。 系统能力： API版本12+：SystemCapability.Security.CryptoFramework.Key.AsymKey API版本10-11：SystemCapability.Security.CryptoFramework |
+| DSA_SK_BN | 104 | DSA算法的私钥sk。 系统能力： API版本12+：SystemCapability.Security.CryptoFramework.Key.AsymKey API版本10-11：SystemCapability.Security.CryptoFramework |
+| DSA_PK_BN | 105 | DSA算法的公钥pk。 系统能力： API版本12+：SystemCapability.Security.CryptoFramework.Key.AsymKey API版本10-11：SystemCapability.Security.CryptoFramework |
+| ECC_FP_P_BN | 201 | ECC算法中表示椭圆曲线Fp域的素数p。 系统能力： API版本12+：SystemCapability.Security.CryptoFramework.Key.AsymKey API版本10-11：SystemCapability.Security.CryptoFramework |
+| ECC_A_BN | 202 | ECC算法中椭圆曲线的第一个系数a。 系统能力： API版本12+：SystemCapability.Security.CryptoFramework.Key.AsymKey API版本10-11：SystemCapability.Security.CryptoFramework |
+| ECC_B_BN | 203 | ECC算法中椭圆曲线的第二个系数b。 系统能力： API版本12+：SystemCapability.Security.CryptoFramework.Key.AsymKey API版本10-11：SystemCapability.Security.CryptoFramework |
+| ECC_G_X_BN | 204 | ECC算法中基点g的x坐标。 系统能力： API版本12+：SystemCapability.Security.CryptoFramework.Key.AsymKey API版本10-11：SystemCapability.Security.CryptoFramework |
+| ECC_G_Y_BN | 205 | ECC算法中基点g的y坐标。 系统能力： API版本12+：SystemCapability.Security.CryptoFramework.Key.AsymKey API版本10-11：SystemCapability.Security.CryptoFramework |
+| ECC_N_BN | 206 | ECC算法中基点g的阶n。 系统能力： API版本12+：SystemCapability.Security.CryptoFramework.Key.AsymKey API版本10-11：SystemCapability.Security.CryptoFramework |
+| ECC_H_NUM | 207 | ECC算法中的余因子h。 系统能力： API版本12+：SystemCapability.Security.CryptoFramework.Key.AsymKey API版本10-11：SystemCapability.Security.CryptoFramework |
+| ECC_SK_BN | 208 | ECC算法中的私钥sk。 系统能力： API版本12+：SystemCapability.Security.CryptoFramework.Key.AsymKey API版本10-11：SystemCapability.Security.CryptoFramework |
+| ECC_PK_X_BN | 209 | ECC算法中，公钥pk（椭圆曲线上的一个点）的x坐标。 系统能力： API版本12+：SystemCapability.Security.CryptoFramework.Key.AsymKey API版本10-11：SystemCapability.Security.CryptoFramework |
+| ECC_PK_Y_BN | 210 | ECC算法中，公钥pk（椭圆曲线上的一个点）的y坐标。 系统能力： API版本12+：SystemCapability.Security.CryptoFramework.Key.AsymKey API版本10-11：SystemCapability.Security.CryptoFramework |
+| ECC_FIELD_TYPE_STR | 211 | ECC算法中，椭圆曲线的域类型（当前只支持Fp域）。 系统能力： API版本12+：SystemCapability.Security.CryptoFramework.Key.AsymKey API版本10-11：SystemCapability.Security.CryptoFramework |
+| ECC_FIELD_SIZE_NUM | 212 | ECC算法中域的大小，单位为bits（注：对于Fp域，域的大小为素数p的bits长度）。 系统能力： API版本12+：SystemCapability.Security.CryptoFramework.Key.AsymKey API版本10-11：SystemCapability.Security.CryptoFramework |
+| ECC_CURVE_NAME_STR | 213 | ECC算法中的SECG(Standards for Efficient Cryptography Group)曲线名称。 系统能力： API版本12+：SystemCapability.Security.CryptoFramework.Key.AsymKey API版本10-11：SystemCapability.Security.CryptoFramework |
+| RSA_N_BN | 301 | RSA算法中的模数n。 系统能力： API版本12+：SystemCapability.Security.CryptoFramework.Key.AsymKey API版本10-11：SystemCapability.Security.CryptoFramework |
+| RSA_SK_BN | 302 | RSA算法中的私钥sk（即私钥指数d）。 系统能力： API版本12+：SystemCapability.Security.CryptoFramework.Key.AsymKey API版本10-11：SystemCapability.Security.CryptoFramework |
+| RSA_PK_BN | 303 | RSA算法中的公钥pk（即公钥指数e）。 系统能力： API版本12+：SystemCapability.Security.CryptoFramework.Key.AsymKey API版本10-11：SystemCapability.Security.CryptoFramework |
+| DH_P_BN11+ | 401 | DH算法中的素数p。 系统能力： API版本12+：SystemCapability.Security.CryptoFramework.Key.AsymKey API版本11：SystemCapability.Security.CryptoFramework |
+| DH_G_BN11+ | 402 | DH算法中的参数g。 系统能力： API版本12+：SystemCapability.Security.CryptoFramework.Key.AsymKey API版本11：SystemCapability.Security.CryptoFramework |
+| DH_L_NUM11+ | 403 | DH算法中私钥长度，单位为bits。 系统能力： API版本12+：SystemCapability.Security.CryptoFramework.Key.AsymKey API版本11：SystemCapability.Security.CryptoFramework |
+| DH_SK_BN11+ | 404 | DH算法中的私钥sk。 系统能力： API版本12+：SystemCapability.Security.CryptoFramework.Key.AsymKey API版本11：SystemCapability.Security.CryptoFramework |
+| DH_PK_BN11+ | 405 | DH算法中的公钥pk。 系统能力： API版本12+：SystemCapability.Security.CryptoFramework.Key.AsymKey API版本11：SystemCapability.Security.CryptoFramework |
+| ED25519_SK_BN11+ | 501 | Ed25519算法中的私钥sk。 系统能力： API版本12+：SystemCapability.Security.CryptoFramework.Key.AsymKey API版本11：SystemCapability.Security.CryptoFramework |
+| ED25519_PK_BN11+ | 502 | Ed25519算法中的公钥pk。 系统能力： API版本12+：SystemCapability.Security.CryptoFramework.Key.AsymKey API版本11：SystemCapability.Security.CryptoFramework |
+| X25519_SK_BN11+ | 601 | X25519算法中的私钥sk。 系统能力： API版本12+：SystemCapability.Security.CryptoFramework.Key.AsymKey API版本11：SystemCapability.Security.CryptoFramework |
+| X25519_PK_BN11+ | 602 | X25519算法中的公钥pk。 系统能力： API版本12+：SystemCapability.Security.CryptoFramework.Key.AsymKey API版本11：SystemCapability.Security.CryptoFramework |
 
 
 
 
-#### AsyKeyDataItem
+## AsyKeyDataItem
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示非对称密钥数据项类型的枚举。
 
@@ -325,6 +341,7 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -343,9 +360,10 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### AsyKeySpecType10+
+## AsyKeySpecType10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示密钥参数类型的枚举。
 
@@ -355,6 +373,7 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
  - API版本12+：SystemCapability.Security.CryptoFramework.Key.AsymKey
  - API版本10-11：SystemCapability.Security.CryptoFramework
+
 
 
 | 名称 | 值 | 说明 |
@@ -367,65 +386,58 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### CipherSpecItem10+
+## CipherSpecItem10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示加解密参数的枚举。这些参数支持通过[setCipherSpec](#setcipherspec10)接口设置，通过[getCipherSpec](#getcipherspec10)接口获取。
 
-当前只支持RSA算法和SM2算法，从API version 11开始，增加对SM2_MD_NAME_STR参数的支持，详细规格请参考[加解密规格](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-asym-encrypt-decrypt-spec)。
+当前只支持RSA算法和SM2算法，详细规格请参考[加解密规格](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-encryption-decryption)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
-**系统能力：**
-
- - API版本12+：SystemCapability.Security.CryptoFramework.Cipher
- - API版本10-11：SystemCapability.Security.CryptoFramework
-
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| OAEP_MD_NAME_STR | 100 | 表示RSA算法中，使用PKCS1_OAEP模式时，消息摘要功能的算法名。 |
-| OAEP_MGF_NAME_STR | 101 | 表示RSA算法中，使用PKCS1_OAEP模式时，掩码生成算法（目前仅支持MGF1）。 |
-| OAEP_MGF1_MD_STR | 102 | 表示RSA算法中，使用PKCS1_OAEP模式时，MGF1掩码生成功能的消息摘要算法。 |
-| OAEP_MGF1_PSRC_UINT8ARR | 103 | 表示RSA算法中，使用PKCS1_OAEP模式时，pSource的字节流。 |
-| SM2_MD_NAME_STR11+ | 104 | 表示SM2算法中，使用的摘要算法名。 |
+| OAEP_MD_NAME_STR | 100 | 表示RSA算法中，使用PKCS1_OAEP模式时，消息摘要功能的算法名。 系统能力： API版本12+：SystemCapability.Security.CryptoFramework.Cipher API版本10-11：SystemCapability.Security.CryptoFramework |
+| OAEP_MGF_NAME_STR | 101 | 表示RSA算法中，使用PKCS1_OAEP模式时，掩码生成算法（目前仅支持MGF1）。 系统能力： API版本12+：SystemCapability.Security.CryptoFramework.Cipher API版本10-11：SystemCapability.Security.CryptoFramework |
+| OAEP_MGF1_MD_STR | 102 | 表示RSA算法中，使用PKCS1_OAEP模式时，MGF1掩码生成功能的消息摘要算法。 系统能力： API版本12+：SystemCapability.Security.CryptoFramework.Cipher API版本10-11：SystemCapability.Security.CryptoFramework |
+| OAEP_MGF1_PSRC_UINT8ARR | 103 | 表示RSA算法中，使用PKCS1_OAEP模式时，pSource的字节流。 系统能力： API版本12+：SystemCapability.Security.CryptoFramework.Cipher API版本10-11：SystemCapability.Security.CryptoFramework |
+| SM2_MD_NAME_STR11+ | 104 | 表示SM2算法中，使用的摘要算法名。 系统能力： API版本12+：SystemCapability.Security.CryptoFramework.Cipher API版本11：SystemCapability.Security.CryptoFramework |
 
 
 
 
-#### SignSpecItem10+
+## SignSpecItem10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示签名验签参数的枚举。这些参数支持通过[setSignSpec](#setsignspec10)、[setVerifySpec](#setverifyspec10)接口设置，通过[getSignSpec](#getsignspec10)、[getVerifySpec](#getverifyspec10)接口获取。
 
-当前只支持RSA算法和SM2算法，从API version 11开始，增加对SM2_USER_ID_UINT8ARR参数的支持。从API版本26.0.0开始，支持ML-DSA算法。详细规格请参考[签名验签规格](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-sign-sig-verify-overview)。
-
-**系统能力：**
-
- - API版本12+：SystemCapability.Security.CryptoFramework.Signature
- - API版本10-11：SystemCapability.Security.CryptoFramework
+当前只支持RSA算法和SM2算法，从API版本26.0.0开始，支持ML-DSA算法。详细规格请参考[签名验签规格](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-sign-sig-verify-overview)。
 
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| PSS_MD_NAME_STR | 100 | 表示RSA算法中，使用PSS模式时，消息摘要功能的算法名。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| PSS_MGF_NAME_STR | 101 | 表示RSA算法中，使用PSS模式时，掩码生成算法（目前仅支持MGF1）。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| PSS_MGF1_MD_STR | 102 | 表示RSA算法中，使用PSS模式时，MGF1掩码生成功能的消息摘要算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| PSS_SALT_LEN_NUM | 103 | 表示RSA算法中，使用PSS模式时，盐值的长度，长度以字节为单位。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| PSS_TRAILER_FIELD_NUM | 104 | 表示RSA算法中，使用PSS模式时，用于编码操作的整数。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| SM2_USER_ID_UINT8ARR11+ | 105 | 表示SM2算法中，用户身份标识字段。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| ML_DSA_DETERMINISTIC_BOOL | 106 | 表示ML-DSA签名和验证过程中是否使用确定性签名。不设置时默认值为false。 起始版本： 26.0.0 模型约束： 此接口仅可在Stage模型下使用。 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 |
-| ML_DSA_MU_BOOL | 107 | 表示ML-DSA签名和验证过程中的mu参数值。不设置时默认值为false，设置为true时，待签名数据需是64字节的哈希。 起始版本： 26.0.0 模型约束： 此接口仅可在Stage模型下使用。 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 |
-| ML_DSA_CONTEXT_UINT8ARR | 108 | 表示ML-DSA签名和验证过程中的上下文数据。最大长度为255字节，用于标识签名验签场景，该参数在设置ML_DSA_MU_BOOL为true时无效，不设置时默认值为空字符串。 起始版本： 26.0.0 模型约束： 此接口仅可在Stage模型下使用。 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| PSS_MD_NAME_STR | 100 | 表示RSA算法中，使用PSS模式时，消息摘要功能的算法名。 系统能力： API版本12+：SystemCapability.Security.CryptoFramework.Signature API版本10-11：SystemCapability.Security.CryptoFramework 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| PSS_MGF_NAME_STR | 101 | 表示RSA算法中，使用PSS模式时，掩码生成算法（目前仅支持MGF1）。 系统能力： API版本12+：SystemCapability.Security.CryptoFramework.Signature API版本10-11：SystemCapability.Security.CryptoFramework 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| PSS_MGF1_MD_STR | 102 | 表示RSA算法中，使用PSS模式时，MGF1掩码生成功能的消息摘要算法。 系统能力： API版本12+：SystemCapability.Security.CryptoFramework.Signature API版本10-11：SystemCapability.Security.CryptoFramework 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| PSS_SALT_LEN_NUM | 103 | 表示RSA算法中，使用PSS模式时，盐值的长度，长度以字节为单位。 系统能力： API版本12+：SystemCapability.Security.CryptoFramework.Signature API版本10-11：SystemCapability.Security.CryptoFramework 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| PSS_TRAILER_FIELD_NUM | 104 | 表示RSA算法中，使用PSS模式时，用于编码操作的整数。 系统能力： API版本12+：SystemCapability.Security.CryptoFramework.Signature API版本10-11：SystemCapability.Security.CryptoFramework 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| SM2_USER_ID_UINT8ARR11+ | 105 | 表示SM2算法中，用户身份标识字段。 系统能力： API版本12+：SystemCapability.Security.CryptoFramework.Signature API版本11：SystemCapability.Security.CryptoFramework 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| ML_DSA_DETERMINISTIC_BOOL | 106 | 表示ML-DSA签名和验证过程中是否使用确定性签名。不设置时默认值为false。 系统能力： SystemCapability.Security.CryptoFramework.Signature 起始版本： 26.0.0 模型约束： 此接口仅可在Stage模型下使用。 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| ML_DSA_MU_BOOL | 107 | 表示ML-DSA签名和验证过程中的mu参数值。不设置时默认值为false，设置为true时，待签名数据需是64字节的哈希。 系统能力： SystemCapability.Security.CryptoFramework.Signature 起始版本： 26.0.0 模型约束： 此接口仅可在Stage模型下使用。 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| ML_DSA_CONTEXT_UINT8ARR | 108 | 表示ML-DSA签名和验证过程中的上下文数据。最大长度为255字节，用于标识签名验签场景，该参数在设置ML_DSA_MU_BOOL为true时无效，不设置时默认值为空字符串。 系统能力： SystemCapability.Security.CryptoFramework.Signature 起始版本： 26.0.0 模型约束： 此接口仅可在Stage模型下使用。 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 |
 
 
 
 
-#### AsyKeySpec10+
+## AsyKeySpec10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 指定非对称密钥参数的基本接口，用于创建密钥生成器。在指定非对称密钥参数时需要构造其子类对象，并将子类对象传入[createAsyKeyGeneratorBySpec()](#cryptoframeworkcreateasykeygeneratorbyspec10)方法创建密钥生成器。构造子类对象时，除了RSA密钥采用小端写法外，其他bigint类型的密钥参数均采用大端写法，并使用正数。
 
@@ -437,6 +449,7 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
  - API版本10-11：SystemCapability.Security.CryptoFramework
 
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | algName | string | 否 | 否 | 指定非对称密钥的算法名称，比如"RSA"、"DSA"、"ECC"、"SM2"、"Ed25519"、"X25519"、"DH"。 |
@@ -445,9 +458,10 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### DSACommonParamsSpec10+
+## DSACommonParamsSpec10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 密钥参数[AsyKeySpec](#asykeyspec10)的子类，用于指定DSA算法中公私钥包含的公共参数，随机生成公/私钥。
 
@@ -461,6 +475,7 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
  - API版本10-11：SystemCapability.Security.CryptoFramework
 
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | p | bigint | 否 | 否 | 指定DSA算法的素模数p。 |
@@ -470,9 +485,10 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### DSAPubKeySpec10+
+## DSAPubKeySpec10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 密钥参数[AsyKeySpec](#asykeyspec10)的子类，用于指定DSA算法中公钥包含的参数。
 
@@ -486,6 +502,7 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
  - API版本10-11：SystemCapability.Security.CryptoFramework
 
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | params | DSACommonParamsSpec | 否 | 否 | 指定DSA算法中公私钥包含的公共参数。 |
@@ -494,9 +511,10 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### DSAKeyPairSpec10+
+## DSAKeyPairSpec10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 密钥参数[AsyKeySpec](#asykeyspec10)的子类，用于指定DSA算法中公私钥包含的全量参数。
 
@@ -510,6 +528,7 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
  - API版本10-11：SystemCapability.Security.CryptoFramework
 
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | params | DSACommonParamsSpec | 否 | 否 | 指定DSA算法中公私钥都包含的公共参数。 |
@@ -519,9 +538,10 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### ECField10+
+## ECField10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 指定椭圆曲线的域类型。当前只支持Fp域。
 
@@ -533,6 +553,7 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
  - API版本10-11：SystemCapability.Security.CryptoFramework
 
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | fieldType | string | 否 | 否 | 指定椭圆曲线域的类型，当前只支持"Fp"。 |
@@ -540,9 +561,10 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### ECFieldFp10+
+## ECFieldFp10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 指定椭圆曲线的素数域。是[ECField](#ecfield10)的子类。
 
@@ -554,6 +576,7 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
  - API版本10-11：SystemCapability.Security.CryptoFramework
 
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | p | bigint | 否 | 否 | 指定素数p的值。 |
@@ -561,9 +584,10 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### Point10+
+## Point10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 指定椭圆曲线上的一个点。
 
@@ -575,6 +599,7 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
  - API版本10-11：SystemCapability.Security.CryptoFramework
 
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | x | bigint | 否 | 否 | 指定椭圆曲线上点的x坐标。 |
@@ -583,9 +608,10 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### ECCCommonParamsSpec10+
+## ECCCommonParamsSpec10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 密钥参数[AsyKeySpec](#asykeyspec10)的子类，用于指定ECC算法中公私钥包含的公共参数，随机生成公/私钥。
 
@@ -597,6 +623,7 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
  - API版本12+：SystemCapability.Security.CryptoFramework.Key.AsymKey
  - API版本10-11：SystemCapability.Security.CryptoFramework
+
 
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
@@ -611,9 +638,10 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### ECCPriKeySpec10+
+## ECCPriKeySpec10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 密钥参数[AsyKeySpec](#asykeyspec10)的子类，用于指定ECC算法中私钥包含的参数。
 
@@ -627,6 +655,7 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
  - API版本10-11：SystemCapability.Security.CryptoFramework
 
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | params | ECCCommonParamsSpec | 否 | 否 | 指定ECC算法中公私钥都包含的公共参数。 |
@@ -635,9 +664,10 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### ECCPubKeySpec10+
+## ECCPubKeySpec10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 密钥参数[AsyKeySpec](#asykeyspec10)的子类，用于指定ECC算法中公钥包含的参数。
 
@@ -651,6 +681,7 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
  - API版本10-11：SystemCapability.Security.CryptoFramework
 
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | params | ECCCommonParamsSpec | 否 | 否 | 指定ECC算法中公私钥都包含的公共参数。 |
@@ -659,9 +690,10 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### ECCKeyPairSpec10+
+## ECCKeyPairSpec10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 密钥参数[AsyKeySpec](#asykeyspec10)的子类，用于指定ECC算法中公私钥包含的全量参数。
 
@@ -675,6 +707,7 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
  - API版本10-11：SystemCapability.Security.CryptoFramework
 
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | params | ECCCommonParamsSpec | 否 | 否 | 指定ECC算法中公私钥都包含的公共参数。 |
@@ -684,9 +717,10 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### RSACommonParamsSpec10+
+## RSACommonParamsSpec10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 密钥参数[AsyKeySpec](#asykeyspec10)的子类，用于指定RSA算法中公私钥包含的公共参数，随机生成公/私钥。
 
@@ -700,6 +734,7 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
  - API版本10-11：SystemCapability.Security.CryptoFramework
 
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | n | bigint | 否 | 否 | 指定模数n。 |
@@ -707,9 +742,10 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### RSAPubKeySpec10+
+## RSAPubKeySpec10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 密钥参数[AsyKeySpec](#asykeyspec10)的子类，用于指定RSA算法中公钥包含的参数。
 
@@ -723,6 +759,7 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
  - API版本10-11：SystemCapability.Security.CryptoFramework
 
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | params | RSACommonParamsSpec | 否 | 否 | 指定RSA算法中公私钥都包含的公共参数。 |
@@ -731,9 +768,10 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### RSAKeyPairSpec10+
+## RSAKeyPairSpec10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 密钥参数[AsyKeySpec](#asykeyspec10)的子类，用于指定RSA算法中公私钥包含的全量参数。
 
@@ -747,6 +785,7 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
  - API版本10-11：SystemCapability.Security.CryptoFramework
 
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | params | RSACommonParamsSpec | 否 | 否 | 指定RSA算法中公私钥都包含的公共参数。 |
@@ -756,9 +795,10 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### ED25519PriKeySpec11+
+## ED25519PriKeySpec11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 密钥参数[AsyKeySpec](#asykeyspec10)的子类，用于指定Ed25519算法中私钥包含的参数。
 
@@ -772,6 +812,7 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
  - API版本11：SystemCapability.Security.CryptoFramework
 
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | sk | bigint | 否 | 否 | 指定Ed25519算法的私钥sk。 |
@@ -779,9 +820,10 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### ED25519PubKeySpec11+
+## ED25519PubKeySpec11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 密钥参数[AsyKeySpec](#asykeyspec10)的子类，用于指定Ed25519算法中公钥包含的参数。
 
@@ -795,6 +837,7 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
  - API版本11：SystemCapability.Security.CryptoFramework
 
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | pk | bigint | 否 | 否 | 指定Ed25519算法的公钥pk。 |
@@ -802,9 +845,10 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### ED25519KeyPairSpec11+
+## ED25519KeyPairSpec11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 密钥参数[AsyKeySpec](#asykeyspec10)的子类，用于指定Ed25519算法中公私钥包含的全量参数。
 
@@ -818,6 +862,7 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
  - API版本11：SystemCapability.Security.CryptoFramework
 
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | sk | bigint | 否 | 否 | 指定Ed25519算法的私钥sk。 |
@@ -826,9 +871,10 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### X25519PriKeySpec11+
+## X25519PriKeySpec11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 密钥参数[AsyKeySpec](#asykeyspec10)的子类，用于指定X25519算法中私钥包含的参数。
 
@@ -842,6 +888,7 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
  - API版本11：SystemCapability.Security.CryptoFramework
 
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | sk | bigint | 否 | 否 | 指定X25519算法的私钥sk。 |
@@ -849,9 +896,10 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### X25519PubKeySpec11+
+## X25519PubKeySpec11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 密钥参数[AsyKeySpec](#asykeyspec10)的子类，用于指定X25519算法中公钥包含的参数。
 
@@ -865,6 +913,7 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
  - API版本11：SystemCapability.Security.CryptoFramework
 
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | pk | bigint | 否 | 否 | 指定X25519算法的公钥pk。 |
@@ -872,9 +921,10 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### X25519KeyPairSpec11+
+## X25519KeyPairSpec11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 密钥参数[AsyKeySpec](#asykeyspec10)的子类，用于指定X25519算法中公私钥包含的全量参数。
 
@@ -888,6 +938,7 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
  - API版本11：SystemCapability.Security.CryptoFramework
 
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | sk | bigint | 否 | 否 | 指定X25519算法的私钥sk。 |
@@ -896,9 +947,10 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### DHCommonParamsSpec11+
+## DHCommonParamsSpec11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 密钥参数[AsyKeySpec](#asykeyspec10)的子类，用于指定DH算法中公私钥包含的公共参数。
 
@@ -912,6 +964,7 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
  - API版本11：SystemCapability.Security.CryptoFramework
 
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | p | bigint | 否 | 否 | 指定DH算法中大素数p。 |
@@ -921,9 +974,10 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### DHPriKeySpec11+
+## DHPriKeySpec11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 密钥参数[AsyKeySpec](#asykeyspec10)的子类，用于指定DH算法中私钥包含的参数。
 
@@ -937,6 +991,7 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
  - API版本11：SystemCapability.Security.CryptoFramework
 
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | params | DHCommonParamsSpec | 否 | 否 | 指定DH算法中公私钥都包含的公共参数。 |
@@ -945,9 +1000,10 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### DHPubKeySpec11+
+## DHPubKeySpec11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 密钥参数[AsyKeySpec](#asykeyspec10)的子类，用于指定DH算法中公钥包含的参数。
 
@@ -961,6 +1017,7 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
  - API版本11：SystemCapability.Security.CryptoFramework
 
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | params | DHCommonParamsSpec | 否 | 否 | 指定DH算法中公私钥都包含的公共参数。 |
@@ -969,9 +1026,10 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### DHKeyPairSpec11+
+## DHKeyPairSpec11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 密钥参数[AsyKeySpec](#asykeyspec10)的子类，用于指定DH算法中公私钥包含的全量参数。
 
@@ -985,6 +1043,7 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
  - API版本11：SystemCapability.Security.CryptoFramework
 
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | params | DHCommonParamsSpec | 否 | 否 | 指定DH算法中公私钥都包含的公共参数。 |
@@ -994,9 +1053,10 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### KdfSpec11+
+## KdfSpec11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 密钥派生函数参数，使用密钥派生函数进行密钥派生时，需要构建其子类对象并作为输入。
 
@@ -1008,6 +1068,7 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
  - API版本11：SystemCapability.Security.CryptoFramework
 
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | algName | string | 否 | 否 | 指明密钥派生函数的算法名，如"PBKDF2"。 |
@@ -1015,9 +1076,10 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### PBKDF2Spec11+
+## PBKDF2Spec11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 密钥派生函数参数[KdfSpec](#kdfspec11)的子类，作为PBKDF2密钥派生函数进行密钥派生时的输入。
 
@@ -1029,12 +1091,13 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
  - API版本11：SystemCapability.Security.CryptoFramework
 
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | password | string \| Uint8Array | 否 | 否 | 用户输入的原始密码。 |
 | salt | Uint8Array | 否 | 否 | 盐值。 |
 | iterations | number | 否 | 否 | 迭代次数，需要为正整数。 |
-| keySize | number | 否 | 否 | 派生得到的密钥字节长度，单位为bytes。 |
+| keySize | number | 否 | 否 | 派生得到的密钥字节长度，需要为正整数，单位为bytes。 |
 
 
 > [!NOTE]
@@ -1043,9 +1106,10 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### HKDFSpec12+
+## HKDFSpec12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 密钥派生函数参数[KdfSpec](#kdfspec11)的子类，作为HKDF密钥派生函数进行密钥派生时的输入。
 
@@ -1053,12 +1117,13 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Kdf
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | key | string \| Uint8Array | 否 | 否 | 密钥材料。 |
 | salt | Uint8Array | 否 | 否 | 盐值。 |
-| info | Uint8Array | 否 | 否 | 拓展信息。 |
-| keySize | number | 否 | 否 | 派生得到的密钥字节长度，单位为bytes。 |
+| info | Uint8Array | 否 | 否 | 扩展信息。 |
+| keySize | number | 否 | 否 | 派生得到的密钥字节长度，需要为正整数，单位为bytes。 |
 
 
 > [!NOTE]
@@ -1067,15 +1132,17 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### ScryptSpec18+
+## ScryptSpec18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 密钥派生函数参数[KdfSpec](#kdfspec11)的子类，作为SCRYPT密钥派生函数进行密钥派生时的输入。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Kdf
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1094,15 +1161,17 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### X963KdfSpec22+
+## X963KdfSpec22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 密钥派生函数参数[KdfSpec](#kdfspec11)的子类，作为X963KDF密钥派生函数进行密钥派生时的输入。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Kdf
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1117,15 +1186,17 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### SM2CipherTextSpec12+
+## SM2CipherTextSpec12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 SM2密文参数，使用SM2密文格式转换函数进行格式转换时，需要用到此对象。可以通过指定此参数，生成符合国密标准的ASN.1格式的SM2密文，反之，也可以从ASN.1格式的SM2密文中获取具体参数。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Cipher
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1141,15 +1212,17 @@ SM2密文参数，使用SM2密文格式转换函数进行格式转换时，需�
 
 
 
-#### KeyEncodingConfig18+
+## KeyEncodingConfig18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 RSA私钥编码参数，使用获取私钥字符串时，可以添加此参数，生成指定算法、密码的编码后的私钥字符串。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1163,15 +1236,17 @@ RSA私钥编码参数，使用获取私钥字符串时，可以添加此参数�
 
 
 
-#### MacSpec18+
+## MacSpec18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 消息认证码参数，计算HMAC或CMAC时，需要构建子类对象并作为输入参数。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Mac
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1184,15 +1259,17 @@ RSA私钥编码参数，使用获取私钥字符串时，可以添加此参数�
 
 
 
-#### HmacSpec18+
+## HmacSpec18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 消息认证码参数[MacSpec](#macspec18)的子类，作为HMAC计算的输入。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Mac
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1205,15 +1282,17 @@ RSA私钥编码参数，使用获取私钥字符串时，可以添加此参数�
 
 
 
-#### CmacSpec18+
+## CmacSpec18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 消息认证码参数[MacSpec](#macspec18)的子类，作为CMAC计算的输入。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Mac
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1226,9 +1305,10 @@ RSA私钥编码参数，使用获取私钥字符串时，可以添加此参数�
 
 
 
-#### EccSignatureSpec20+
+## EccSignatureSpec20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 包含（r、s）的ECC/SM2签名数据的对象。
 
@@ -1240,6 +1320,7 @@ RSA私钥编码参数，使用获取私钥字符串时，可以添加此参数�
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Signature
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | r | bigint | 否 | 否 | r分量。 |
@@ -1248,9 +1329,10 @@ RSA私钥编码参数，使用获取私钥字符串时，可以添加此参数�
 
 
 
-#### Key
+## Key
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 密钥（父类），在运行密码算法（如加解密）时需要提前生成其子类对象，并传入[Cipher](#cipher)实例的[init()](#init-1)方法。
 
@@ -1258,7 +1340,10 @@ RSA私钥编码参数，使用获取私钥字符串时，可以添加此参数�
 
 
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1266,6 +1351,7 @@ RSA私钥编码参数，使用获取私钥字符串时，可以添加此参数�
 
  - API版本12+：SystemCapability.Security.CryptoFramework.Key
  - API版本9-11：SystemCapability.Security.CryptoFramework
+
 
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
@@ -1276,7 +1362,10 @@ RSA私钥编码参数，使用获取私钥字符串时，可以添加此参数�
 
 
 
-#### getEncoded
+### getEncoded
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEncoded(): DataBlob
 
@@ -1296,6 +1385,7 @@ getEncoded(): DataBlob
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | DataBlob | 用于查看密钥的具体内容。 |
@@ -1304,6 +1394,7 @@ getEncoded(): DataBlob
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1327,13 +1418,14 @@ async function testGenerateAesKey() {
 
 
 
-#### getKeySize
+### getKeySize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getKeySize(): number
 
-以同步方式获取密钥的比特长度。密钥可以是对称密钥、公钥或私钥。
+获取密钥大小，单位为bits。密钥可以是对称密钥、公钥或私钥。
 
 **起始版本：** 26.0.0
 
@@ -1345,14 +1437,16 @@ getKeySize(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| number | 获取密钥的比特长度。 |
+| number | 密钥大小，单位为bits。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1376,9 +1470,10 @@ async function testGenerateAesKey() {
 
 
 
-#### SymKey
+## SymKey
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 对称密钥，是[Key](#key)的子类，在对称加解密时需要将其对象传入[Cipher](#cipher)实例的[init()](#init-1)方法使用。
 
@@ -1386,7 +1481,10 @@ async function testGenerateAesKey() {
 
 
 
-#### clearMem
+### clearMem
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clearMem(): void
 
@@ -1418,9 +1516,10 @@ async function testGenerateAesKeyFun() {
 
 
 
-#### PubKey
+## PubKey
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 公钥，是[Key](#key)的子类，在非对称加密、签名验证、密钥协商时需要将其对象作为输入使用。
 
@@ -1428,7 +1527,10 @@ async function testGenerateAesKeyFun() {
 
 
 
-#### getAsyKeySpec10+
+### getAsyKeySpec10+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAsyKeySpec(itemType: AsyKeySpecItem): bigint | string | number
 
@@ -1444,12 +1546,14 @@ getAsyKeySpec(itemType: AsyKeySpecItem): bigint | string | number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | itemType | AsyKeySpecItem | 是 | 指定的密钥参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1459,6 +1563,7 @@ getAsyKeySpec(itemType: AsyKeySpecItem): bigint | string | number
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1501,17 +1606,18 @@ async function testgetAsyKeySpec() {
   let commKeySpec = genEccCommonSpec(); // 使用参数属性，构造ECC公私钥公共密钥参数对象。
   let generatorBySpec = cryptoFramework.createAsyKeyGeneratorBySpec(commKeySpec); // 使用密钥参数对象创建生成器。
   let keyPair = await generatorBySpec.generateKeyPair();
-  let key = keyPair.pubKey;
-  let p = key.getAsyKeySpec(cryptoFramework.AsyKeySpecItem.ECC_FP_P_BN);
-  console.info('ecc item --- p: ' + p.toString(16));
+  let pubKey = keyPair.pubKey;
+  let eccPrimeP = pubKey.getAsyKeySpec(cryptoFramework.AsyKeySpecItem.ECC_FP_P_BN);
+  console.info('ecc item --- p: ' + eccPrimeP.toString(16));
 }
 ```
 
 
 
-#### getEncodedDer12+
+### getEncodedDer12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEncodedDer(format: string): DataBlob
 
@@ -1527,12 +1633,14 @@ getEncodedDer(format: string): DataBlob
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | format | string | 是 | 用于指定当前密钥格式。支持EC密钥，format取值支持"X509\|COMPRESSED"和"X509\|UNCOMPRESSED"。 从API版本26.0.0开始，支持RSA密钥，format取值支持"PKCS1"和"X509"。 从API版本26.0.0开始，支持ML-DSA和ML-KEM密钥，format取值支持"X509"。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1542,6 +1650,7 @@ getEncodedDer(format: string): DataBlob
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1563,15 +1672,16 @@ async function testGetEncodedDer() {
   let keyPair = await generator.convertKey(pubKeyBlob, null);
   let key = keyPair.pubKey;
   let returnBlob = key.getEncodedDer('X509|UNCOMPRESSED');
-  console.info('returnBlob data：' + returnBlob.data);
+  console.info('returnBlob data: ' + returnBlob.data);
 }
 ```
 
 
 
-#### getEncodedPem12+
+### getEncodedPem12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEncodedPem(format: string): string
 
@@ -1583,21 +1693,24 @@ getEncodedPem(format: string): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| format | string | 是 | 指定的获取密钥字符串的编码格式。支持RSA密钥，format取值支持'X509'或'PKCS1'。 从API版本26.0.0起，支持EC、ML-DSA和ML-KEM密钥，format取值支持'X509'。 |
+| format | string | 是 | 指定的获取密钥字符串的编码格式。支持RSA密钥，format取值支持"X509"或"PKCS1"。 从API版本26.0.0起，支持EC、ML-DSA和ML-KEM密钥，format取值支持"X509"。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| string | 用于获取指定密钥格式的具体内容。 |
+| string | PEM编码的公钥数据。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1630,9 +1743,10 @@ function TestPubKeyPkcs1ToX509BySync1024() {
 
 
 
-#### getKeyData
+### getKeyData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getKeyData(itemType: AsyKeyDataItem): Promise&lt;Uint8Array&gt;
 
@@ -1648,12 +1762,14 @@ getKeyData(itemType: AsyKeyDataItem): Promise&lt;Uint8Array&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | itemType | AsyKeyDataItem | 是 | 指定密钥数据项类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1663,6 +1779,7 @@ getKeyData(itemType: AsyKeyDataItem): Promise&lt;Uint8Array&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1687,9 +1804,10 @@ async function eccGetKeyDataTest() {
 
 
 
-#### getKeyDataSync
+### getKeyDataSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getKeyDataSync(itemType: AsyKeyDataItem): Uint8Array
 
@@ -1705,12 +1823,14 @@ getKeyDataSync(itemType: AsyKeyDataItem): Uint8Array
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | itemType | AsyKeyDataItem | 是 | 指定密钥数据项类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1720,6 +1840,7 @@ getKeyDataSync(itemType: AsyKeyDataItem): Uint8Array
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1744,9 +1865,10 @@ function eccGetKeyDataTest() {
 
 
 
-#### PriKey
+## PriKey
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 私钥，是[Key](#key)的子类，在非对称解密、签名、密钥协商时需要将其作为输入使用。
 
@@ -1754,7 +1876,10 @@ function eccGetKeyDataTest() {
 
 
 
-#### clearMem
+### clearMem
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clearMem(): void
 
@@ -1780,7 +1905,7 @@ async function testClearMem() {
   keyGenPromise.then(keyPair => {
     let priKey = keyPair.priKey;
     let returnBlob = priKey.getEncodedDer('PKCS8');
-    console.info('returnBlob data：' + returnBlob.data);
+    console.info('returnBlob data: ' + returnBlob.data);
     priKey.clearMem(); // 对于非对称私钥，clearMem()释放内部密钥结构。执行clearMem后，不支持getEncoded()。
   });
 }
@@ -1788,7 +1913,10 @@ async function testClearMem() {
 
 
 
-#### getAsyKeySpec10+
+### getAsyKeySpec10+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAsyKeySpec(itemType: AsyKeySpecItem): bigint | string | number
 
@@ -1804,12 +1932,14 @@ getAsyKeySpec(itemType: AsyKeySpecItem): bigint | string | number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | itemType | AsyKeySpecItem | 是 | 指定的密钥参数类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1819,6 +1949,7 @@ getAsyKeySpec(itemType: AsyKeySpecItem): bigint | string | number
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1860,17 +1991,18 @@ async function testgetAsyKeySpec() {
   let commKeySpec = genEccCommonSpec(); // 使用参数属性，构造ECC公私钥公共密钥参数对象。
   let generatorBySpec = cryptoFramework.createAsyKeyGeneratorBySpec(commKeySpec); // 使用密钥参数对象创建生成器。
   let keyPair = await generatorBySpec.generateKeyPair();
-  let key = keyPair.priKey;
-  let p = key.getAsyKeySpec(cryptoFramework.AsyKeySpecItem.ECC_FP_P_BN);
-  console.info('ecc item --- p: ' + p.toString(16));
+  let pirKey = keyPair.priKey;
+  let eccPrimeP = pirKey.getAsyKeySpec(cryptoFramework.AsyKeySpecItem.ECC_FP_P_BN);
+  console.info('ecc item --- p: ' + eccPrimeP.toString(16));
 }
 ```
 
 
 
-#### getEncodedDer12+
+### getEncodedDer12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEncodedDer(format: string): DataBlob
 
@@ -1886,6 +2018,7 @@ getEncodedDer(format: string): DataBlob
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | format | string | 是 | 用于指定当前密钥格式。支持EC密钥，format取值支持"PKCS8"。 从API版本26.0.0开始，支持RSA密钥，format取值支持"PKCS1"和"PKCS8"。 从API版本26.0.0开始，支持ML-DSA和ML-KEM密钥，format取值支持"PKCS8"。 |
@@ -1893,14 +2026,16 @@ getEncodedDer(format: string): DataBlob
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| DataBlob | 返回满足ASN.1语法和DER编码的指定密钥格式的ECC私钥数据。 |
+| DataBlob | DER编码的私钥数据。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1922,16 +2057,17 @@ async function testGetEncodedDer() {
   keyGenPromise.then(keyPair => {
     let priKey = keyPair.priKey;
     let returnBlob = priKey.getEncodedDer('PKCS8');
-    console.info('returnBlob data：' + returnBlob.data);
+    console.info('returnBlob data: ' + returnBlob.data);
   });
 }
 ```
 
 
 
-#### getEncodedPem12+
+### getEncodedPem12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEncodedPem(format: string): string
 
@@ -1943,21 +2079,24 @@ getEncodedPem(format: string): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| format | string | 是 | 指定的获取密钥字符串的编码格式。支持RSA密钥，format取值支持'PKCS8'或'PKCS1'。 从API版本26.0.0起，支持EC密钥，format取值支持'PKCS8'或'EC'。 从API版本26.0.0起，支持ML-DSA和ML-KEM密钥，format取值支持'PKCS8'。 |
+| format | string | 是 | 指定的获取密钥字符串的编码格式。支持RSA密钥，format取值支持"PKCS8"或"PKCS1"。 从API版本26.0.0起，支持EC密钥，format取值支持"PKCS8"或"EC"。 从API版本26.0.0起，支持ML-DSA和ML-KEM密钥，format取值支持"PKCS8"。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| string | 用于获取指定密钥格式的具体内容。 |
+| string | PEM编码的私钥数据。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2000,9 +2139,10 @@ function TestPriKeyPkcs1ToPkcs8BySync1024() {
 
 
 
-#### getEncodedPem18+
+### getEncodedPem18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEncodedPem(format: string, config: KeyEncodingConfig): string
 
@@ -2014,22 +2154,25 @@ getEncodedPem(format: string, config: KeyEncodingConfig): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | format | string | 是 | 指定的获取密钥字符串的编码格式。其中，私钥可为'PKCS1' 或'PKCS8'格式。 |
-| config | KeyEncodingConfig | 是 | 指定编码的算法和口令，对私钥进行编码操作。 |
+| config | KeyEncodingConfig | 是 | 用于加密私钥的参数。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| string | 用于获取指定密钥格式的具体内容。如果填了config参数，则获取编码后的内容。 |
+| string | PEM编码的加密的私钥数据。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2076,9 +2219,10 @@ function TestPriKeyPkcs1Encoded() {
 
 
 
-#### getPubKey23+
+### getPubKey23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPubKey(): Promise&lt;PubKey&gt;
 
@@ -2090,6 +2234,7 @@ getPubKey(): Promise&lt;PubKey&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;PubKey&gt; | Promise对象，返回公钥对象PubKey。 |
@@ -2098,6 +2243,7 @@ getPubKey(): Promise&lt;PubKey&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2178,9 +2324,10 @@ async function generateAsyKey() {
 
 
 
-#### getPubKeySync23+
+### getPubKeySync23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPubKeySync(): PubKey
 
@@ -2192,6 +2339,7 @@ getPubKeySync(): PubKey
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | PubKey | 公钥对象。 |
@@ -2200,6 +2348,7 @@ getPubKeySync(): PubKey
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2280,9 +2429,10 @@ function generateAsyKey() {
 
 
 
-#### getKeyData
+### getKeyData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getKeyData(itemType: AsyKeyDataItem): Promise&lt;Uint8Array&gt;
 
@@ -2298,12 +2448,14 @@ getKeyData(itemType: AsyKeyDataItem): Promise&lt;Uint8Array&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | itemType | AsyKeyDataItem | 是 | 指定密钥数据项类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2313,6 +2465,7 @@ getKeyData(itemType: AsyKeyDataItem): Promise&lt;Uint8Array&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2337,9 +2490,10 @@ async function eccGetKeyDataTest() {
 
 
 
-#### getKeyDataSync
+### getKeyDataSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getKeyDataSync(itemType: AsyKeyDataItem): Uint8Array
 
@@ -2355,12 +2509,14 @@ getKeyDataSync(itemType: AsyKeyDataItem): Uint8Array
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | itemType | AsyKeyDataItem | 是 | 指定密钥数据项类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2370,6 +2526,7 @@ getKeyDataSync(itemType: AsyKeyDataItem): Uint8Array
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2394,9 +2551,10 @@ function eccGetKeyDataTest() {
 
 
 
-#### KeyPair
+## KeyPair
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 非对称密钥对包含公钥和私钥。
 
@@ -2408,7 +2566,10 @@ function eccGetKeyDataTest() {
 
 
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -2416,6 +2577,7 @@ function eccGetKeyDataTest() {
 
  - API版本12+：SystemCapability.Security.CryptoFramework.Key.AsymKey
  - API版本9-11：SystemCapability.Security.CryptoFramework
+
 
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
@@ -2426,25 +2588,27 @@ function eccGetKeyDataTest() {
 
 
 
-#### cryptoFramework.createSymKeyGenerator
+## cryptoFramework.createSymKeyGenerator
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createSymKeyGenerator(algName: string): SymKeyGenerator
 
-通过指定算法名称获取相应的对称密钥生成器实例。
+创建对应算法的对称密钥生成器实例。
 
-支持的规格详见[对称密钥生成和转换规格](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-sym-key-generation-conversion-spec)。
+支持的规格详见[对称密钥生成和转换规格](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-key-generation-conversion)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：**
 
- - API版本12+：SystemCapability.Security.CryptoFramework.Key.AsymKey
+ - API版本12+：SystemCapability.Security.CryptoFramework.Key.SymKey
  - API版本9-11：SystemCapability.Security.CryptoFramework
 
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2453,14 +2617,16 @@ createSymKeyGenerator(algName: string): SymKeyGenerator
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| SymKeyGenerator | 返回对称密钥生成器的对象。 |
+| SymKeyGenerator | 返回对称密钥生成器实例。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2478,17 +2644,19 @@ let symKeyGenerator = cryptoFramework.createSymKeyGenerator('3DES192');
 
 
 
-#### SymKeyGenerator
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
-
-对称密钥生成器。
-
-在使用该类的方法前，先使用[createSymKeyGenerator](#cryptoframeworkcreatesymkeygenerator)构建SymKeyGenerator实例。
+## SymKeyGenerator
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 属性
+对称密钥生成器接口，定义生成对称密钥的方法。调用前，需通过[createSymKeyGenerator](#cryptoframeworkcreatesymkeygenerator)方法创建一个SymKeyGenerator实例。
+
+
+
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -2498,6 +2666,7 @@ let symKeyGenerator = cryptoFramework.createSymKeyGenerator('3DES192');
  - API版本9-11：SystemCapability.Security.CryptoFramework
 
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | algName | string | 是 | 否 | 对称密钥生成器指定的算法名称。 |
@@ -2505,15 +2674,16 @@ let symKeyGenerator = cryptoFramework.createSymKeyGenerator('3DES192');
 
 
 
-#### generateSymKey
+### generateSymKey
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 generateSymKey(callback: AsyncCallback&lt;SymKey&gt;): void
 
 获取对称密钥生成器随机生成的密钥。使用callback异步回调。
 
-必须在使用[createSymKeyGenerator](#cryptoframeworkcreatesymkeygenerator)创建对称密钥生成器后，才能使用本函数。
-
-目前支持使用OpenSSL的RAND_priv_bytes()作为底层能力生成随机密钥。
+目前使用OpenSSL的RAND_priv_bytes()作为底层能力生成随机密钥。
 
 > [!NOTE]
 > 对于HMAC算法的对称密钥，如果在创建对称密钥生成器时指定了具体哈希算法（如"HMAC|SHA256"），则会随机生成与哈希长度一致的二进制密钥数据（如256位的密钥数据）。如果未指定具体哈希算法，如仅指定"HMAC"，则不支持随机生成对称密钥数据，可通过 convertKey 方式生成对称密钥数据。
@@ -2529,6 +2699,7 @@ generateSymKey(callback: AsyncCallback&lt;SymKey&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;SymKey&gt; | 是 | 回调函数。当生成对称密钥成功，err为undefined，data为获取到的SymKey；否则为错误对象。 |
@@ -2537,6 +2708,7 @@ generateSymKey(callback: AsyncCallback&lt;SymKey&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2551,21 +2723,22 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 let symKeyGenerator = cryptoFramework.createSymKeyGenerator('3DES192');
   symKeyGenerator.generateSymKey((err, symKey) => {
-    console.info('Generate symKey result: success, algName：' + symKey.algName);
+    console.info('Generate symKey result: success, algName: ' + symKey.algName);
   });
 ```
 
 
 
-#### generateSymKey
+### generateSymKey
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 generateSymKey(): Promise&lt;SymKey&gt;
 
 获取该对称密钥生成器随机生成的密钥。使用Promise异步回调。
 
-必须在使用[createSymKeyGenerator](#cryptoframeworkcreatesymkeygenerator)创建对称密钥生成器后，才能使用本函数。
-
-目前支持使用OpenSSL的RAND_priv_bytes()作为底层能力生成随机密钥。
+目前使用OpenSSL的RAND_priv_bytes()作为底层能力生成随机密钥。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -2577,6 +2750,7 @@ generateSymKey(): Promise&lt;SymKey&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;SymKey&gt; | Promise对象，返回对称密钥SymKey。 |
@@ -2585,6 +2759,7 @@ generateSymKey(): Promise&lt;SymKey&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2609,17 +2784,16 @@ let symKeyGenerator = cryptoFramework.createSymKeyGenerator('AES128');
 
 
 
-#### generateSymKeySync12+
+### generateSymKeySync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 generateSymKeySync(): SymKey
 
 同步获取对称密钥生成器随机生成的密钥。
 
-必须在使用[createSymKeyGenerator](#cryptoframeworkcreatesymkeygenerator)创建对称密钥生成器后，才能使用本函数。
-
-目前支持使用OpenSSL的RAND_priv_bytes()作为底层能力生成随机密钥。
+目前使用OpenSSL的RAND_priv_bytes()作为底层能力生成随机密钥。
 
 > [!NOTE]
 > 对于HMAC算法的对称密钥，如果已经在创建对称密钥生成器时指定了具体哈希算法（如指定"HMAC|SHA256"），则会随机生成与哈希长度一致的二进制密钥数据（如指定"HMAC|SHA256"会随机生成256位的密钥数据）。 如果在创建对称密钥生成器时没有指定具体哈希算法，如仅指定"HMAC"，则不支持随机生成对称密钥数据，可通过 convertKeySync 方式生成对称密钥数据。
@@ -2631,6 +2805,7 @@ generateSymKeySync(): SymKey
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | SymKey | 返回对称密钥SymKey。 |
@@ -2639,6 +2814,7 @@ generateSymKeySync(): SymKey
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2663,13 +2839,14 @@ function testGenerateSymKeySync() {
 
 
 
-#### convertKey
+### convertKey
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 convertKey(key: DataBlob, callback: AsyncCallback&lt;SymKey&gt;): void
 
 将指定数据转换为对称密钥。使用callback异步回调。
-
-必须在使用[createSymKeyGenerator](#cryptoframeworkcreatesymkeygenerator)创建对称密钥生成器后，才能使用本函数。
 
 > [!NOTE]
 > 对于HMAC算法的对称密钥，如果已经在创建对称密钥生成器时指定了具体哈希算法（如指定"HMAC|SHA256"），则需要传入与哈希长度一致的二进制密钥数据（如传入SHA256对应256位的密钥数据）。 如果在创建对称密钥生成器时没有指定具体哈希算法，如仅指定"HMAC"，则支持传入长度在[1,4096]范围内（单位为bytes）的任意二进制密钥数据。
@@ -2685,6 +2862,7 @@ convertKey(key: DataBlob, callback: AsyncCallback&lt;SymKey&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | DataBlob | 是 | 指定的对称密钥材料。 |
@@ -2694,6 +2872,7 @@ convertKey(key: DataBlob, callback: AsyncCallback&lt;SymKey&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2727,13 +2906,14 @@ function testConvertKey() {
 
 
 
-#### convertKey
+### convertKey
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 convertKey(key: DataBlob): Promise&lt;SymKey&gt;
 
 将指定数据转换为对称密钥。使用Promise异步回调。
-
-在使用本函数前，需先通过[createSymKeyGenerator](#cryptoframeworkcreatesymkeygenerator)创建对称密钥生成器。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -2745,12 +2925,14 @@ convertKey(key: DataBlob): Promise&lt;SymKey&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | DataBlob | 是 | 指定的密钥材料数据。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2760,6 +2942,7 @@ convertKey(key: DataBlob): Promise&lt;SymKey&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2788,7 +2971,7 @@ function testConvertKey() {
   let keyMaterialBlob = genKeyMaterialBlob();
   symKeyGenerator.convertKey(keyMaterialBlob)
     .then(symKey => {
-      console.info('Convert symKey result: success, algName：' + symKey.algName);
+      console.info('Convert symKey result: success, algName: ' + symKey.algName);
     }).catch((error: BusinessError) => {
       console.error(`Convert symKey failed, ${error.code}, ${error.message}`);
     });
@@ -2797,15 +2980,14 @@ function testConvertKey() {
 
 
 
-#### convertKeySync12+
+### convertKeySync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 convertKeySync(key: DataBlob): SymKey
 
 将指定数据转换为对称密钥。
-
-必须在使用[createSymKeyGenerator](#cryptoframeworkcreatesymkeygenerator)创建对称密钥生成器后，才能使用本函数。
 
 > [!NOTE]
 > 对于HMAC算法的对称密钥，如果在创建对称密钥生成器时指定了具体哈希算法（如"HMAC|SHA256"），则需要传入与哈希长度一致的二进制密钥数据（如SHA256对应的256位密钥数据）。如果在创建对称密钥生成器时未指定具体哈希算法，如仅指定"HMAC"，则支持传入长度在1到4096字节范围内的任意二进制密钥数据。
@@ -2817,12 +2999,14 @@ convertKeySync(key: DataBlob): SymKey
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | DataBlob | 是 | 指定的对称密钥材料。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2832,6 +3016,7 @@ convertKeySync(key: DataBlob): SymKey
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2861,15 +3046,16 @@ function testConvertKeySync() {
 
 
 
-#### cryptoFramework.createAsyKeyGenerator
+## cryptoFramework.createAsyKeyGenerator
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAsyKeyGenerator(algName: string): AsyKeyGenerator
 
-通过指定算法名称的字符串，获取相应的非对称密钥生成器实例。
+创建对应算法的非对称密钥生成器实例。
 
-支持的规格详见[非对称密钥生成和转换规格](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-asym-key-generation-conversion-spec)。
+支持的规格详见[非对称密钥生成和转换规格](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-key-generation-conversion)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -2881,12 +3067,14 @@ createAsyKeyGenerator(algName: string): AsyKeyGenerator
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | algName | string | 是 | 非对称密钥生成支持的算法名。详见非对称密钥生成和转换规格中的字符串参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2896,6 +3084,7 @@ createAsyKeyGenerator(algName: string): AsyKeyGenerator
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2914,15 +3103,19 @@ let asyKeyGenerator = cryptoFramework.createAsyKeyGenerator('ECC256');
 
 
 
-#### AsyKeyGenerator
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
-
-非对称密钥生成器。在使用该类的方法前，需要先使用[createAsyKeyGenerator](#cryptoframeworkcreateasykeygenerator)方法构建一个AsyKeyGenerator实例。
+## AsyKeyGenerator
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 属性
+非对称密钥生成器接口，定义生成非对称密钥的方法。调用前，需通过[createAsyKeyGenerator](#cryptoframeworkcreateasykeygenerator)方法创建一个AsyKeyGenerator实例。
+
+
+
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -2932,6 +3125,7 @@ let asyKeyGenerator = cryptoFramework.createAsyKeyGenerator('ECC256');
  - API版本9-11：SystemCapability.Security.CryptoFramework
 
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | algName | string | 是 | 否 | 非对称密钥生成器指定的算法名称。 |
@@ -2939,7 +3133,10 @@ let asyKeyGenerator = cryptoFramework.createAsyKeyGenerator('ECC256');
 
 
 
-#### generateKeyPair
+### generateKeyPair
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 generateKeyPair(callback: AsyncCallback&lt;KeyPair&gt;): void
 
@@ -2955,6 +3152,7 @@ generateKeyPair(callback: AsyncCallback&lt;KeyPair&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;KeyPair&gt; | 是 | 回调函数。当获取非对称密钥成功，err为undefined，data为获取到的KeyPair；否则为错误对象。 |
@@ -2963,6 +3161,7 @@ generateKeyPair(callback: AsyncCallback&lt;KeyPair&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2988,7 +3187,10 @@ asyKeyGenerator.generateKeyPair((err, keyPair) => {
 
 
 
-#### generateKeyPair
+### generateKeyPair
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 generateKeyPair(): Promise&lt;KeyPair&gt;
 
@@ -3004,6 +3206,7 @@ generateKeyPair(): Promise&lt;KeyPair&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;KeyPair&gt; | Promise对象，返回非对称密钥KeyPair。 |
@@ -3012,6 +3215,7 @@ generateKeyPair(): Promise&lt;KeyPair&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3037,9 +3241,10 @@ keyGenPromise.then(keyPair => {
 
 
 
-#### generateKeyPairSync12+
+### generateKeyPairSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 generateKeyPairSync(): KeyPair
 
@@ -3051,6 +3256,7 @@ generateKeyPairSync(): KeyPair
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | KeyPair | 非对称密钥。 |
@@ -3059,6 +3265,7 @@ generateKeyPairSync(): KeyPair
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3087,11 +3294,14 @@ try {
 
 
 
-#### convertKey
+### convertKey
 
-convertKey(pubKey: DataBlob | null, priKey: DataBlob | null, callback: AsyncCallback&lt;KeyPair&gt;): void
 
-解析密钥数据，生成非对称密钥对象。使用callback异步回调。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+convertKey(pubKey: DataBlob, priKey: DataBlob, callback: AsyncCallback&lt;KeyPair&gt;): void
+
+转换密钥数据为非对称密钥对对象。使用callback异步回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -3102,6 +3312,49 @@ convertKey(pubKey: DataBlob | null, priKey: DataBlob | null, callback: AsyncCall
 
 
 **参数：**
+
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| pubKey | DataBlob | 是 | 公钥数据。 |
+| priKey | DataBlob | 是 | 私钥数据。 |
+| callback | AsyncCallback&lt;KeyPair&gt; | 是 | 回调函数。转换成功时，err为undefined，data为转换后的密钥对；否则为错误对象。 |
+
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 17620001 | Memory operation failed. |
+| 17620003 | Parameter check failed. 适用版本：26.0.0+ |
+| 17630001 | Crypto operation error. |
+
+
+
+
+### convertKey10+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+convertKey(pubKey: DataBlob | null, priKey: DataBlob | null, callback: AsyncCallback&lt;KeyPair&gt;): void
+
+解析密钥数据，生成非对称密钥对象。使用callback异步回调。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：**
+
+ - API版本12+：SystemCapability.Security.CryptoFramework.Key.AsymKey
+ - API版本10-11：SystemCapability.Security.CryptoFramework
+
+
+**参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3114,11 +3367,13 @@ convertKey(pubKey: DataBlob | null, priKey: DataBlob | null, callback: AsyncCall
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
+| 17620003 | Parameter check failed. 适用版本：26.0.0+ |
 
 
 **示例：**
@@ -3148,11 +3403,14 @@ asyKeyGenerator.convertKey(pubKeyBlob, priKeyBlob, (err, keyPair) => {
 
 
 
-#### convertKey
+### convertKey
 
-convertKey(pubKey: DataBlob | null, priKey: DataBlob | null): Promise&lt;KeyPair&gt;
 
-解析密钥数据，生成非对称密钥对象。使用Promise异步回调。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+convertKey(pubKey: DataBlob, priKey: DataBlob): Promise&lt;KeyPair&gt;
+
+转换密钥数据为非对称密钥对对象。使用Promise异步回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -3164,6 +3422,56 @@ convertKey(pubKey: DataBlob | null, priKey: DataBlob | null): Promise&lt;KeyPair
 
 **参数：**
 
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| pubKey | DataBlob | 是 | 公钥数据。 |
+| priKey | DataBlob | 是 | 私钥数据。 |
+
+
+**返回值：**
+
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise&lt;KeyPair&gt; | Promise对象，返回获取到的非对称密钥对。 |
+
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 17620001 | Memory operation failed. |
+| 17620003 | Parameter check failed. 适用版本：26.0.0+ |
+| 17630001 | Crypto operation error. |
+
+
+
+
+### convertKey10+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+convertKey(pubKey: DataBlob | null, priKey: DataBlob | null): Promise&lt;KeyPair&gt;
+
+解析密钥数据，生成非对称密钥对象。使用Promise异步回调。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：**
+
+ - API版本12+：SystemCapability.Security.CryptoFramework.Key.AsymKey
+ - API版本10-11：SystemCapability.Security.CryptoFramework
+
+
+**参数：**
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pubKey | DataBlob \| null10+ | 是 | 指定的公钥材料。如果公钥不需要转换，请传入null。API 10之前只支持DataBlob， API 10之后增加支持null。 |
@@ -3171,6 +3479,7 @@ convertKey(pubKey: DataBlob | null, priKey: DataBlob | null): Promise&lt;KeyPair
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3181,11 +3490,13 @@ convertKey(pubKey: DataBlob | null, priKey: DataBlob | null): Promise&lt;KeyPair
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
+| 17620003 | Parameter check failed. 适用版本：26.0.0+ |
 
 
 **示例：**
@@ -3215,9 +3526,10 @@ keyGenPromise.then(keyPair => {
 
 
 
-#### convertKeySync12+
+### convertKeySync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 convertKeySync(pubKey: DataBlob | null, priKey: DataBlob | null): KeyPair
 
@@ -3229,6 +3541,7 @@ convertKeySync(pubKey: DataBlob | null, priKey: DataBlob | null): KeyPair
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pubKey | DataBlob \| null10+ | 是 | 指定公钥材料。如果公钥无需转换，请传入null。API 10前仅支持DataBlob，API 10起支持传入null。 |
@@ -3236,6 +3549,7 @@ convertKeySync(pubKey: DataBlob | null, priKey: DataBlob | null): KeyPair
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3246,11 +3560,13 @@ convertKeySync(pubKey: DataBlob | null, priKey: DataBlob | null): KeyPair
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
+| 17620003 | Parameter check failed. 适用版本：26.0.0+ |
 
 
 **示例：**
@@ -3283,9 +3599,10 @@ try {
 
 
 
-#### convertPemKey12+
+### convertPemKey12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 convertPemKey(pubKey: string | null, priKey: string | null): Promise&lt;KeyPair&gt;
 
@@ -3301,6 +3618,7 @@ convertPemKey(pubKey: string | null, priKey: string | null): Promise&lt;KeyPair&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pubKey | string \| null | 是 | 指定的公钥材料。如果公钥不需要转换，请传入null。 |
@@ -3308,6 +3626,7 @@ convertPemKey(pubKey: string | null, priKey: string | null): Promise&lt;KeyPair&
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3318,11 +3637,13 @@ convertPemKey(pubKey: string | null, priKey: string | null): Promise&lt;KeyPair&
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
+| 17620003 | Parameter check failed. 适用版本：26.0.0+ |
 
 
 **示例：**
@@ -3367,9 +3688,10 @@ async function TestConvertPemKeyByPromise() {
 
 
 
-#### convertPemKey18+
+### convertPemKey18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 convertPemKey(pubKey: string | null, priKey: string | null, password: string): Promise&lt;KeyPair&gt;
 
@@ -3385,6 +3707,7 @@ convertPemKey(pubKey: string | null, priKey: string | null, password: string): P
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pubKey | string \| null | 是 | 指定的公钥材料。如果公钥不需要转换，请传入null。 |
@@ -3394,6 +3717,7 @@ convertPemKey(pubKey: string | null, priKey: string | null, password: string): P
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;KeyPair&gt; | Promise对象，返回非对称密钥KeyPair。 |
@@ -3402,6 +3726,7 @@ convertPemKey(pubKey: string | null, priKey: string | null, password: string): P
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3448,15 +3773,16 @@ async function TestConvertPemKeyByPromise() {
 
 
 
-#### convertPemKeySync12+
+### convertPemKeySync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 convertPemKeySync(pubKey: string | null, priKey: string | null): KeyPair
 
 同步获取指定数据，生成非对称密钥。
 
-> [!TIP]
+> [!WARNING]
 > convertPemKeySync接口与convertPemKey接口注意事项相同，见 convertPemKey 接口说明。
 
 
@@ -3466,6 +3792,7 @@ convertPemKeySync(pubKey: string | null, priKey: string | null): KeyPair
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pubKey | string \| null | 是 | 指定的公钥材料。如果公钥不需要转换，请传入null。 |
@@ -3473,6 +3800,7 @@ convertPemKeySync(pubKey: string | null, priKey: string | null): KeyPair
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3483,11 +3811,13 @@ convertPemKeySync(pubKey: string | null, priKey: string | null): KeyPair
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
+| 17620003 | Parameter check failed. 适用版本：26.0.0+ |
 
 
 **示例：**
@@ -3535,15 +3865,16 @@ function TestConvertPemKeyBySync() {
 
 
 
-#### convertPemKeySync18+
+### convertPemKeySync18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 convertPemKeySync(pubKey: string | null, priKey: string | null, password: string): KeyPair
 
-解析密钥数据，生成非对称密钥对象。支持加密的私钥，同步传入私钥口令解密私钥。使用同步方法。
+解析密钥数据，生成非对称密钥对象。支持加密的私钥，同步传入私钥口令解密私钥。
 
-> [!TIP]
+> [!WARNING]
 > convertPemKeySync接口与convertPemKey接口注意事项相同，见 convertPemKey 接口说明。
 
 
@@ -3552,6 +3883,7 @@ convertPemKeySync(pubKey: string | null, priKey: string | null, password: string
 **系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3562,6 +3894,7 @@ convertPemKeySync(pubKey: string | null, priKey: string | null, password: string
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | KeyPair | 非对称密钥。 |
@@ -3570,6 +3903,7 @@ convertPemKeySync(pubKey: string | null, priKey: string | null, password: string
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3619,13 +3953,14 @@ function TestConvertPemKeyBySync() {
 
 
 
-#### cryptoFramework.createAsyKeyGeneratorBySpec10+
+## cryptoFramework.createAsyKeyGeneratorBySpec10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAsyKeyGeneratorBySpec(asyKeySpec: AsyKeySpec): AsyKeyGeneratorBySpec
 
-指定密钥参数，获取AsyKeyGeneratorBySpec非对称密钥生成器实例。
+创建指定密钥规格的非对称密钥生成器实例。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -3637,6 +3972,7 @@ createAsyKeyGeneratorBySpec(asyKeySpec: AsyKeySpec): AsyKeyGeneratorBySpec
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | asyKeySpec | AsyKeySpec | 是 | 密钥参数。非对称密钥生成器根据指定的这些参数生成公/私钥。 支持的规格详见非对称密钥生成和转换规格。 |
@@ -3644,14 +3980,16 @@ createAsyKeyGeneratorBySpec(asyKeySpec: AsyKeySpec): AsyKeyGeneratorBySpec
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| AsyKeyGeneratorBySpec | 返回AsyKeyGeneratorBySpec非对称密钥生成器实例。 |
+| AsyKeyGeneratorBySpec | 返回AsyKeyGeneratorBySpec实例。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3696,15 +4034,19 @@ let asyKeyGeneratorBySpec = cryptoFramework.createAsyKeyGeneratorBySpec(asyKeyPa
 
 
 
-#### AsyKeyGeneratorBySpec10+
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
-
-AsyKeyGeneratorBySpec非对称密钥生成器。在使用该类的方法前，需要先使用[createAsyKeyGeneratorBySpec()](#cryptoframeworkcreateasykeygeneratorbyspec10)方法构建一个AsyKeyGeneratorBySpec实例。
+## AsyKeyGeneratorBySpec10+
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 属性
+指定密钥规格的非对称密钥生成器接口，定义根据指定密钥规格生成非对称密钥的方法。调用前，需通过[createAsyKeyGeneratorBySpec()](#cryptoframeworkcreateasykeygeneratorbyspec10)方法构建一个AsyKeyGeneratorBySpec实例。
+
+
+
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -3714,6 +4056,7 @@ AsyKeyGeneratorBySpec非对称密钥生成器。在使用该类的方法前，�
  - API版本10-11：SystemCapability.Security.CryptoFramework
 
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | algName | string | 是 | 否 | 非对称密钥生成器的算法名。 |
@@ -3721,7 +4064,10 @@ AsyKeyGeneratorBySpec非对称密钥生成器。在使用该类的方法前，�
 
 
 
-#### generateKeyPair10+
+### generateKeyPair10+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 generateKeyPair(callback: AsyncCallback&lt;KeyPair&gt;): void
 
@@ -3739,6 +4085,7 @@ generateKeyPair(callback: AsyncCallback&lt;KeyPair&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;KeyPair&gt; | 是 | 回调函数。当获取非对称密钥成功，err为undefined，data为获取到的KeyPair；否则为错误对象。 |
@@ -3747,6 +4094,7 @@ generateKeyPair(callback: AsyncCallback&lt;KeyPair&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3800,7 +4148,10 @@ function testGenerateKeyPair() {
 
 
 
-#### generateKeyPair10+
+### generateKeyPair10+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 generateKeyPair(): Promise&lt;KeyPair&gt;
 
@@ -3818,6 +4169,7 @@ generateKeyPair(): Promise&lt;KeyPair&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;KeyPair&gt; | Promise对象，返回非对称密钥KeyPair。 |
@@ -3826,6 +4178,7 @@ generateKeyPair(): Promise&lt;KeyPair&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3879,9 +4232,10 @@ function testGenerateKeyPair() {
 
 
 
-#### generateKeyPairSync12+
+### generateKeyPairSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 generateKeyPairSync(): KeyPair
 
@@ -3895,6 +4249,7 @@ generateKeyPairSync(): KeyPair
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | KeyPair | 非对称密钥。 |
@@ -3903,6 +4258,7 @@ generateKeyPairSync(): KeyPair
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3961,7 +4317,10 @@ function testGenerateKeyPairSync() {
 
 
 
-#### generatePriKey10+
+### generatePriKey10+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 generatePriKey(callback: AsyncCallback&lt;PriKey&gt;): void
 
@@ -3979,6 +4338,7 @@ generatePriKey(callback: AsyncCallback&lt;PriKey&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;PriKey&gt; | 是 | 回调函数。当获取非对称密钥成功，err为undefined，data为获取到的PriKey；否则为错误对象。 |
@@ -3987,6 +4347,7 @@ generatePriKey(callback: AsyncCallback&lt;PriKey&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4040,11 +4401,14 @@ function testGeneratePriKey() {
 
 
 
-#### generatePriKey10+
+### generatePriKey10+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 generatePriKey(): Promise&lt;PriKey&gt;
 
-获取该非对称密钥生成器生成的密钥。使用Promise异步回调。
+获取该非对称密钥生成器生成的私钥。使用Promise异步回调。
 
 当使用[PRIVATE_KEY_SPEC](#asykeyspectype10)类型的密钥参数来创建密钥生成器时，可以得到指定的私钥；当使用[KEY_PAIR_SPEC](#asykeyspectype10)类型的密钥参数来创建密钥生成器时，可以从生成的密钥对中获取指定的私钥。
 
@@ -4058,6 +4422,7 @@ generatePriKey(): Promise&lt;PriKey&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;PriKey&gt; | Promise对象，返回非对称密钥的私钥PriKey。 |
@@ -4066,6 +4431,7 @@ generatePriKey(): Promise&lt;PriKey&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4119,13 +4485,14 @@ function testGeneratePriKey() {
 
 
 
-#### generatePriKeySync12+
+### generatePriKeySync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 generatePriKeySync(): PriKey
 
-同步获取该非对称密钥生成器生成的密钥。
+使用该非对称密钥生成器生成私钥。该接口以同步方式返回结果。
 
 当使用[PRIVATE_KEY_SPEC](#asykeyspectype10)类型的密钥参数来创建密钥生成器时，可以得到指定的私钥；当使用[KEY_PAIR_SPEC](#asykeyspectype10)类型的密钥参数来创建密钥生成器时，可以从生成的密钥对中获取指定的私钥。
 
@@ -4135,6 +4502,7 @@ generatePriKeySync(): PriKey
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | PriKey | 非对称密钥。 |
@@ -4143,6 +4511,7 @@ generatePriKeySync(): PriKey
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4199,7 +4568,10 @@ function testGeneratePriKeySync() {
 
 
 
-#### generatePubKey10+
+### generatePubKey10+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 generatePubKey(callback: AsyncCallback&lt;PubKey&gt;): void
 
@@ -4217,6 +4589,7 @@ generatePubKey(callback: AsyncCallback&lt;PubKey&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;PubKey&gt; | 是 | 回调函数。当获取非对称密钥成功，err为undefined，data为获取到的PubKey；否则为错误对象。 |
@@ -4225,6 +4598,7 @@ generatePubKey(callback: AsyncCallback&lt;PubKey&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4278,11 +4652,14 @@ function testGeneratePubKey() {
 
 
 
-#### generatePubKey10+
+### generatePubKey10+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 generatePubKey(): Promise&lt;PubKey&gt;
 
-获取该非对称密钥生成器生成的密钥。使用Promise异步回调。
+获取该非对称密钥生成器生成的公钥。使用Promise异步回调。
 
 当使用[PUBLIC_KEY_SPEC](#asykeyspectype10)类型的密钥参数来创建密钥生成器时，可以得到指定的公钥；当使用[KEY_PAIR_SPEC](#asykeyspectype10)类型的密钥参数来创建密钥生成器时，可以从生成的密钥对中获取指定的公钥。
 
@@ -4296,6 +4673,7 @@ generatePubKey(): Promise&lt;PubKey&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;PubKey&gt; | Promise对象，返回非对称密钥的公钥PubKey。 |
@@ -4304,6 +4682,7 @@ generatePubKey(): Promise&lt;PubKey&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4357,13 +4736,14 @@ function testGeneratePubKey() {
 
 
 
-#### generatePubKeySync12+
+### generatePubKeySync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 generatePubKeySync(): PubKey
 
-同步获取该非对称密钥生成器生成的密钥。
+同步获取该非对称密钥生成器生成的公钥。
 
 当使用[PUBLIC_KEY_SPEC](#asykeyspectype10)类型的密钥参数来创建密钥生成器时，可以得到指定的公钥；使用[KEY_PAIR_SPEC](#asykeyspectype10)类型的密钥参数时，可以从生成的密钥对中获取指定的公钥。
 
@@ -4373,6 +4753,7 @@ generatePubKeySync(): PubKey
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | PubKey | 非对称密钥。 |
@@ -4381,6 +4762,7 @@ generatePubKeySync(): PubKey
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4437,19 +4819,23 @@ function testGeneratePubKeySync() {
 
 
 
-#### ECCKeyUtil11+
+## ECCKeyUtil11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供ECC密钥参数生成和基于指定椭圆曲线的点转换工具。
 
 
 
-#### genECCCommonParamsSpec11+
+### genECCCommonParamsSpec11+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static genECCCommonParamsSpec(curveName: string): ECCCommonParamsSpec
 
-根据椭圆曲线相应的NID（Name Identifier）字符串名称生成相应的非对称公共密钥参数。详见[ECC密钥生成规格](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-asym-key-generation-conversion-spec#ecc)和[SM2密钥生成规格](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-asym-key-generation-conversion-spec#sm2)。
+根据椭圆曲线相应的NID（Name Identifier）字符串名称生成相应的非对称公共密钥参数。详见[ECC密钥生成规格](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-key-generation-conversion#ecc)和[SM2密钥生成规格](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-key-generation-conversion#sm2)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -4461,12 +4847,14 @@ static genECCCommonParamsSpec(curveName: string): ECCCommonParamsSpec
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | curveName | string | 是 | 椭圆曲线相应的NID（Name Identifier）字符串名称。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4476,6 +4864,7 @@ static genECCCommonParamsSpec(curveName: string): ECCCommonParamsSpec
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4500,16 +4889,17 @@ try {
 
 
 
-#### convertPoint12+
+### convertPoint12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static convertPoint(curveName: string, encodedPoint: Uint8Array): Point
 
 根据椭圆曲线的曲线名，即相应的NID（Name Identifier），将指定的点数据转换为Point对象。当前支持压缩/非压缩格式的点数据。
 
 > [!NOTE]
-> 根据RFC5480规范中第2.2节的描述： 非压缩的点数据，表示为：前缀0x04|x坐标|y坐标； 压缩的点数据，对于Fp素数域上的点（当前暂不支持F2m域），表示为：前缀0x03|x坐标 (坐标y是奇数时)，前缀0x02|x坐标 (坐标y是偶数时)。
+> 根据RFC5480规范中第2.2节的描述： 非压缩的点数据，表示为：前缀0x04|x坐标|y坐标； 压缩的点数据，对于Fp素数域上的点（当前暂不支持F2m域），表示为：前缀0x03|x坐标（坐标y是奇数时），前缀0x02|x坐标（坐标y是偶数时）。
 
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
@@ -4517,6 +4907,7 @@ static convertPoint(curveName: string, encodedPoint: Uint8Array): Point
 **系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4526,6 +4917,7 @@ static convertPoint(curveName: string, encodedPoint: Uint8Array): Point
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Point | 返回ECC的Point对象。 |
@@ -4534,6 +4926,7 @@ static convertPoint(curveName: string, encodedPoint: Uint8Array): Point
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4558,9 +4951,10 @@ console.info('returnPoint: ' + returnPoint.x.toString(16));
 
 
 
-#### getEncodedPoint12+
+### getEncodedPoint12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getEncodedPoint(curveName: string, point: Point, format: string): Uint8Array
 
@@ -4572,6 +4966,7 @@ static getEncodedPoint(curveName: string, point: Point, format: string): Uint8Ar
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | curveName | string | 是 | 椭圆曲线的曲线名，即相应的NID（Name Identifier）。 |
@@ -4581,6 +4976,7 @@ static getEncodedPoint(curveName: string, point: Point, format: string): Uint8Ar
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Uint8Array | 返回指定格式的点数据。 |
@@ -4589,6 +4985,7 @@ static getEncodedPoint(curveName: string, point: Point, format: string): Uint8Ar
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4621,19 +5018,23 @@ async function doTest() {
 
 
 
-#### DHKeyUtil11+
+## DHKeyUtil11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 根据素数P的长度和私钥长度（bit位数）生成DH公共密钥参数。
 
 
 
-#### genDHCommonParamsSpec11+
+### genDHCommonParamsSpec11+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static genDHCommonParamsSpec(pLen: number, skLen?: number): DHCommonParamsSpec
 
-根据素数P的长度和私钥长度（bit位数）生成DH公共密钥参数。详见[DH密钥生成规格](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-asym-key-generation-conversion-spec#dh)。
+根据素数P的长度和私钥长度（bit位数）生成DH公共密钥参数。详见[DH密钥生成规格](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-key-generation-conversion#dh)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -4645,6 +5046,7 @@ static genDHCommonParamsSpec(pLen: number, skLen?: number): DHCommonParamsSpec
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pLen | number | 是 | 用于指定DH公共密钥参数中素数P的长度，单位为bits。 |
@@ -4652,6 +5054,7 @@ static genDHCommonParamsSpec(pLen: number, skLen?: number): DHCommonParamsSpec
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4661,6 +5064,7 @@ static genDHCommonParamsSpec(pLen: number, skLen?: number): DHCommonParamsSpec
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4686,17 +5090,19 @@ try {
 
 
 
-#### SM2CryptoUtil12+
+## SM2CryptoUtil12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于SM2密码学运算的工具类。
 
 
 
-#### genCipherTextBySpec12+
+### genCipherTextBySpec12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static genCipherTextBySpec(spec: SM2CipherTextSpec, mode?: string): DataBlob
 
@@ -4708,6 +5114,7 @@ static genCipherTextBySpec(spec: SM2CipherTextSpec, mode?: string): DataBlob
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | spec | SM2CipherTextSpec | 是 | 指定的SM2密文参数。 |
@@ -4715,6 +5122,7 @@ static genCipherTextBySpec(spec: SM2CipherTextSpec, mode?: string): DataBlob
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4724,6 +5132,7 @@ static genCipherTextBySpec(spec: SM2CipherTextSpec, mode?: string): DataBlob
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4756,9 +5165,10 @@ try {
 
 
 
-#### getCipherTextSpec12+
+### getCipherTextSpec12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getCipherTextSpec(cipherText: DataBlob, mode?: string): SM2CipherTextSpec
 
@@ -4770,6 +5180,7 @@ static getCipherTextSpec(cipherText: DataBlob, mode?: string): SM2CipherTextSpec
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cipherText | DataBlob | 是 | 符合国密标准的ASN.1格式的SM2密文。 |
@@ -4777,6 +5188,7 @@ static getCipherTextSpec(cipherText: DataBlob, mode?: string): SM2CipherTextSpec
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4786,6 +5198,7 @@ static getCipherTextSpec(cipherText: DataBlob, mode?: string): SM2CipherTextSpec
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4816,13 +5229,14 @@ try {
 
 
 
-#### cryptoFramework.createCipher
+## cryptoFramework.createCipher
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createCipher(transformation: string): Cipher
 
-通过指定算法名称，获取相应的[Cipher](#cipher)实例。
+创建加解密实例。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -4833,6 +5247,7 @@ createCipher(transformation: string): Cipher
 
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4845,14 +5260,16 @@ createCipher(transformation: string): Cipher
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Cipher | 返回加解密生成器的对象。 |
+| Cipher | 返回对应算法的Cipher实例。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4879,13 +5296,14 @@ try {
 
 
 
-#### Cipher
+## Cipher
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-提供加解密的算法操作功能，按序调用本类中的[init()](#init-1)、[update()](#update)、[doFinal()](#dofinal)方法，可以实现对称加密/对称解密/非对称加密/非对称解密。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-完整的加解密流程示例可参考[开发指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-encryption-decryption-overview)。
+加解密接口，定义对称加解密和非对称加解密方法。调用前，需通过[createCipher(transformation: string): Cipher](#cryptoframeworkcreatecipher)方法创建一个Cipher实例。按序调用Cipher实例中的[init()](#init-1)、[update()](#update)、[doFinal()](#dofinal)方法，可以实现对称加密/对称解密/非对称加密/非对称解密。
+
+完整的加解密流程示例可参考[开发指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-encryption-decryption)。
 
 一次完整的加/解密流程在对称加密和非对称加密中略有不同：
 
@@ -4895,7 +5313,10 @@ try {
 
 
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -4905,6 +5326,7 @@ try {
  - API版本9-11：SystemCapability.Security.CryptoFramework
 
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | algName | string | 是 | 否 | 加解密生成器指定的算法名称。 |
@@ -4912,11 +5334,14 @@ try {
 
 
 
-#### init
+### init
 
-init(opMode: CryptoMode, key: Key, params: ParamsSpec | null, callback: AsyncCallback&lt;void&gt;): void
 
-初始化加解密的[cipher](#cipher)对象，使用callback异步回调获取结果。init、update、doFinal为三段式接口，需要成组使用。其中init和doFinal必选，update可选。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+init(opMode: CryptoMode, key: Key, params: ParamsSpec, callback: AsyncCallback&lt;void&gt;): void
+
+初始化加解密的[cipher](#cipher)对象。使用callback异步回调。init、update、doFinal为三段式接口，需要成组使用。其中init和doFinal必选，update可选。
 
 必须在使用[createCipher](#cryptoframeworkcreatecipher)创建[Cipher](#cipher)实例后，才能使用本函数。
 
@@ -4930,11 +5355,58 @@ init(opMode: CryptoMode, key: Key, params: ParamsSpec | null, callback: AsyncCal
 
 **参数：**
 
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| opMode | CryptoMode | 是 | 加密或者解密模式。 |
+| key | Key | 是 | 指定加密或解密的密钥。 |
+| params | ParamsSpec | 是 | 指定加密或解密的参数，例如IV。 |
+| callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当加解密初始化成功，err为undefined，否则为错误对象。 |
+
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 17620001 | Memory operation failed. |
+| 17620002 | Failed to obtain the native object or convert parameters. |
+| 17620003 | Parameter check failed. Possible causes: 1. Invalid opMode value; 2. Invalid iv length; 3. Invalid key length. 适用版本：22+ |
+| 17630001 | Crypto operation error. |
+
+
+
+
+### init10+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+init(opMode: CryptoMode, key: Key, params: ParamsSpec | null, callback: AsyncCallback&lt;void&gt;): void
+
+初始化加解密的[cipher](#cipher)对象，使用callback异步回调获取结果。init、update、doFinal为三段式接口，需要成组使用。其中init和doFinal必选，update可选。
+
+必须在使用[createCipher](#cryptoframeworkcreatecipher)创建[Cipher](#cipher)实例后，才能使用本函数。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：**
+
+ - API版本12+：SystemCapability.Security.CryptoFramework.Cipher
+ - API版本10-11：SystemCapability.Security.CryptoFramework
+
+
+**参数：**
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | opMode | CryptoMode | 是 | 要执行的操作（加密或解密）。 |
 | key | Key | 是 | 用于加密或解密的密钥。 |
-| params | ParamsSpec \| null10+ | 是 | 指定加密或解密的参数，对于ECB等没有参数的算法模式，请传入null。API 10之前只支持ParamsSpec， API 10之后增加支持null。 |
+| params | ParamsSpec \| null | 是 | 指定加密或解密的参数，对于ECB等没有参数的算法模式，请传入null。API 10之前只支持ParamsSpec， API 10之后增加支持null。 |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当加解密初始化成功，err为undefined，否则为错误对象。 |
 
 
@@ -4942,20 +5414,24 @@ init(opMode: CryptoMode, key: Key, params: ParamsSpec | null, callback: AsyncCal
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
-| 17620003 | Parameter check failed. Possible causes: 1. Invalid opMode value; 2. Invalid iv length; 3. Invalid key length. |
+| 17620003 | Parameter check failed. Possible causes: 1. Invalid opMode value; 2. Invalid iv length; 3. Invalid key length. 适用版本：22+ |
 | 17630001 | Crypto operation error. |
 
 
 
 
-#### init
+### init
 
-init(opMode: CryptoMode, key: Key, params: ParamsSpec | null): Promise&lt;void&gt;
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+init(opMode: CryptoMode, key: Key, params: ParamsSpec): Promise&lt;void&gt;
 
 初始化加解密的cipher对象。使用Promise异步回调。init、update、doFinal为三段式接口，需要成组使用。其中init和doFinal必选，update可选。
 
@@ -4971,14 +5447,69 @@ init(opMode: CryptoMode, key: Key, params: ParamsSpec | null): Promise&lt;void&g
 
 **参数：**
 
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| opMode | CryptoMode | 是 | 加密或者解密模式。 |
+| key | Key | 是 | 指定加密或解密的密钥。 |
+| params | ParamsSpec | 是 | 指定加密或解密的参数，例如IV。 |
+
+
+**返回值：**
+
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
+
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 17620001 | Memory operation failed. |
+| 17620002 | Failed to obtain the native object or convert parameters. |
+| 17620003 | Parameter check failed. Possible causes: 1. Invalid opMode value; 2. Invalid iv length; 3. Invalid key length. 适用版本：22+ |
+| 17630001 | Crypto operation error. |
+
+
+
+
+### init10+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+init(opMode: CryptoMode, key: Key, params: ParamsSpec | null): Promise&lt;void&gt;
+
+初始化加解密的cipher对象。使用Promise异步回调。init、update、doFinal为三段式接口，需要成组使用。其中init和doFinal必选，update可选。
+
+必须在使用[createCipher](#cryptoframeworkcreatecipher)创建[Cipher](#cipher)实例后，才能使用本函数。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：**
+
+ - API版本12+：SystemCapability.Security.CryptoFramework.Cipher
+ - API版本10-11：SystemCapability.Security.CryptoFramework
+
+
+**参数：**
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | opMode | CryptoMode | 是 | 要执行的操作（加密或解密）。 |
 | key | Key | 是 | 用于加密或解密的密钥。 |
-| params | ParamsSpec \| null10+ | 是 | 指定加密或解密的参数，对于ECB等没有参数的算法模式，请传入null。API 10之前仅支持ParamsSpec，从API 10开始增加对null的支持。 |
+| params | ParamsSpec \| null | 是 | 指定加密或解密的参数，对于ECB等没有参数的算法模式，请传入null。API 10之前只支持ParamsSpec，API 10之后增加支持null。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4989,20 +5520,22 @@ init(opMode: CryptoMode, key: Key, params: ParamsSpec | null): Promise&lt;void&g
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
-| 17620003 | Parameter check failed. Possible causes: 1. Invalid opMode value; 2. Invalid iv length; 3. Invalid key length. |
+| 17620003 | Parameter check failed. Possible causes: 1. Invalid opMode value; 2. Invalid iv length; 3. Invalid key length. 适用版本：22+ |
 | 17630001 | Crypto operation error. |
 
 
 
 
-#### initSync12+
+### initSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 initSync(opMode: CryptoMode, key: Key, params: ParamsSpec | null): void
 
@@ -5016,6 +5549,7 @@ initSync(opMode: CryptoMode, key: Key, params: ParamsSpec | null): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | opMode | CryptoMode | 是 | 加密或者解密模式。 |
@@ -5027,18 +5561,22 @@ initSync(opMode: CryptoMode, key: Key, params: ParamsSpec | null): void
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
-| 17620003 | Parameter check failed. Possible causes: 1. Invalid opMode value; 2. Invalid iv length; 3. Invalid key length. |
+| 17620003 | Parameter check failed. Possible causes: 1. Invalid opMode value; 2. Invalid iv length; 3. Invalid key length. 适用版本：22+ |
 | 17630001 | Crypto operation error. |
 
 
 
 
-#### update
+### update
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 update(data: DataBlob, callback: AsyncCallback&lt;DataBlob&gt;): void
 
@@ -5047,7 +5585,7 @@ update(data: DataBlob, callback: AsyncCallback&lt;DataBlob&gt;): void
 必须在对[Cipher](#cipher)实例使用[init()](#init-1)初始化后，才能使用本函数。
 
 > [!NOTE]
-> 在进行对称加解密操作时，如果开发者对各个分组模式不够熟悉，建议对每次update和doFinal的结果进行判断，确保其不为null，并在结果不为null时取出数据进行拼接，形成完整的密文或明文。这是因选择的分组模式等各项规格可能对update和doFinal的结果产生影响。 例如，对于ECB和CBC模式，不论update传入的数据是否为分组长度的整数倍，都会以分组为单位进行加解密，并输出本次update新产生的加解密分组结果。 可以理解为update只要凑满一个新的分组就会有输出，如果没有凑满则此次update输出为null，将当前未被加解密的数据留着，等下一次update或doFinal传入数据时，拼接起来继续凑分组。 最后doFinal时，会将剩下的未加解密的数据根据 createCipher 时设置的填充模式进行填充，补齐到分组的整数倍长度，再输出剩余的加解密结果。 对于可以将分组密码转化为流模式实现的模式，还可能出现密文长度与明文长度相同的情况。 根据数据量，可以不调用update（即init完成后直接调用doFinal）或多次调用update。 算法库未对单次或累计的update数据量设置限制。对于大数据量的对称加解密操作，建议分多次调用update方法传入数据。 AES使用多次update操作的示例代码详见 使用AES对称密钥分段加解密 。 RSA、SM2非对称加解密不支持update操作。 对于CCM模式的对称加解密算法，加密时只能调用1次update接口加密数据并调用doFinal接口获取tag，或直接调用doFinal接口加密数据并获取tag，解密时只能调用1次update接口或调用1次doFinal接口解密数据并验证tag。
+> 在进行对称加解密操作时，如果开发者对各个分组模式不够熟悉，建议对每次update和doFinal的结果进行判断，确保其不为null，并在结果不为null时取出数据进行拼接，形成完整的密文或明文。这是因选择的分组模式等各项规格可能对update和doFinal的结果产生影响。 例如，对于ECB和CBC模式，不论update传入的数据是否为分组长度的整数倍，都会以分组为单位进行加解密，并输出本次update新产生的加解密分组结果。 可以理解为update只要凑满一个新的分组就会有输出，如果没有凑满则此次update输出为null，将当前未被加解密的数据留着，等下一次update或doFinal传入数据时，拼接起来继续凑分组。 最后doFinal时，会将剩下的未加解密的数据根据 createCipher 时设置的填充模式进行填充，补齐到分组的整数倍长度，再输出剩余的加解密结果。 对于可以将分组密码转化为流模式实现的模式，还可能出现密文长度与明文长度相同的情况。 根据数据量，可以不调用update（即init完成后直接调用doFinal）或多次调用update。 算法库未对单次或累计的update数据量设置限制。对于大数据量的对称加解密操作，建议分多次调用update方法传入数据。 AES使用多次update操作的示例代码详见 使用aes对称密钥gcm模式分段加解密 。 RSA、SM2非对称加解密不支持update操作。 对于CCM模式的对称加解密算法，加密时只能调用1次update接口加密数据并调用doFinal接口获取tag，或直接调用doFinal接口加密数据并获取tag，解密时只能调用1次update接口或调用1次doFinal接口解密数据并验证tag。
 
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
@@ -5059,6 +5597,7 @@ update(data: DataBlob, callback: AsyncCallback&lt;DataBlob&gt;): void
 
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5070,18 +5609,22 @@ update(data: DataBlob, callback: AsyncCallback&lt;DataBlob&gt;): void
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
-| 17620003 | Parameter check failed. Possible causes: 1. The data is too long. |
+| 17620003 | Parameter check failed. Possible causes: 1. The data is too long. 适用版本：22+ |
 | 17630001 | Crypto operation error. |
 
 
 
 
-#### update
+### update
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 update(data: DataBlob): Promise&lt;DataBlob&gt;
 
@@ -5090,7 +5633,7 @@ update(data: DataBlob): Promise&lt;DataBlob&gt;
 必须在对[Cipher](#cipher)实例使用[init()](#init-1)初始化后，才能使用本函数。
 
 > [!NOTE]
-> 在进行对称加解密操作时，如果开发者对各分组模式不够熟悉，建议每次调用update和doFinal后，都判断结果是否为null。如果结果不为null，则取出其中的数据进行拼接，以形成完整的密文或明文。这是因为选择的分组模式等各项规格可能会影响update和doFinal的结果。 （例如对于ECB和CBC模式，不论update传入的数据是否为分组长度的整数倍，都会以分组作为基本单位进行加/解密，并输出本次update新产生的加/解密分组结果。 可以理解为，update只要凑满一个新的分组就会有输出，如果没有凑满则此次update输出为null，把当前还没被加/解密的数据留着，等下一次update/doFinal传入数据的时候，拼接起来继续凑分组。 最后doFinal的时候，会把剩下的还没加/解密的数据，根据 createCipher 时设置的padding模式进行填充，补齐到分组的整数倍长度，再输出剩余加解密结果。 而对于可以将分组密码转化为流模式实现的模式，还可能出现密文长度和明文长度相同的情况等。） 根据数据量，可以不调用update（即init完成后直接调用doFinal）或多次调用update。 算法库目前没有对update（单次或累计）的数据量设置大小限制，建议对于大数据量的对称加解密，可以采用多次update的方式传入数据。 AES使用多次update操作的示例代码详见 使用AES对称密钥分段加解密 。 RSA、SM2非对称加解密不支持update操作。 对于CCM模式的对称加解密算法，加密时只能调用1次update接口加密数据并调用doFinal接口获取tag，或直接调用doFinal接口加密数据并获取tag，解密时只能调用1次update接口或调用1次doFinal接口解密数据并验证tag。
+> 在进行对称加解密操作时，如果开发者对各分组模式不够熟悉，建议每次调用update和doFinal后，都判断结果是否为null。如果结果不为null，则取出其中的数据进行拼接，以形成完整的密文或明文。这是因为选择的分组模式等各项规格可能会影响update和doFinal的结果。 （例如对于ECB和CBC模式，不论update传入的数据是否为分组长度的整数倍，都会以分组作为基本单位进行加/解密，并输出本次update新产生的加/解密分组结果。 可以理解为，update只要凑满一个新的分组就会有输出，如果没有凑满则此次update输出为null，把当前还没被加/解密的数据留着，等下一次update/doFinal传入数据的时候，拼接起来继续凑分组。 最后doFinal的时候，会把剩下的还没加/解密的数据，根据 createCipher 时设置的padding模式进行填充，补齐到分组的整数倍长度，再输出剩余加解密结果。 而对于可以将分组密码转化为流模式实现的模式，还可能出现密文长度和明文长度相同的情况等。） 根据数据量，可以不调用update（即init完成后直接调用doFinal）或多次调用update。 算法库目前没有对update（单次或累计）的数据量设置大小限制，建议对于大数据量的对称加解密，可以采用多次update的方式传入数据。 AES使用多次update操作的示例代码详见 使用aes对称密钥gcm模式分段加解密 。 RSA、SM2非对称加解密不支持update操作。 对于CCM模式的对称加解密算法，加密时只能调用1次update接口加密数据并调用doFinal接口获取tag，或直接调用doFinal接口加密数据并获取tag，解密时只能调用1次update接口或调用1次doFinal接口解密数据并验证tag。
 
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
@@ -5103,12 +5646,14 @@ update(data: DataBlob): Promise&lt;DataBlob&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | DataBlob | 是 | 加密或者解密的数据。data不能为null。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5119,20 +5664,22 @@ update(data: DataBlob): Promise&lt;DataBlob&gt;
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
-| 17620003 | Parameter check failed. Possible causes: 1. The data is too long. |
+| 17620003 | Parameter check failed. Possible causes: 1. The data is too long. 适用版本：22+ |
 | 17630001 | Crypto operation error. |
 
 
 
 
-#### updateSync12+
+### updateSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateSync(data: DataBlob): DataBlob
 
@@ -5148,12 +5695,14 @@ updateSync(data: DataBlob): DataBlob
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | DataBlob | 是 | 加密或者解密的数据。data不能为null。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5164,18 +5713,64 @@ updateSync(data: DataBlob): DataBlob
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
-| 17620003 | Parameter check failed. Possible causes: 1. The data is too long. |
+| 17620003 | Parameter check failed. Possible causes: 1. The data is too long. 适用版本：22+ |
 | 17630001 | Crypto operation error. |
 
 
 
 
-#### doFinal
+### doFinal
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+doFinal(data: DataBlob, callback: AsyncCallback&lt;DataBlob&gt;): void
+
+完成加解密操作，对输入数据进行加密或解密，然后反馈输出数据。加解密操作完成后，数据无法更新。使用callback异步回调。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：**
+
+ - API版本12+：SystemCapability.Security.CryptoFramework.Cipher
+ - API版本9-11：SystemCapability.Security.CryptoFramework
+
+
+**参数：**
+
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| data | DataBlob | 是 | 加密或解密的数据。不可传入{data: Uint8Array(空) }。 |
+| callback | AsyncCallback&lt;DataBlob&gt; | 是 | 回调函数。最终加/解密成功时，err为undefined，data为加/解密结果DataBlob；否则为错误对象。 |
+
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 17620001 | Memory operation failed. |
+| 17620002 | Failed to obtain the native object or convert parameters. |
+| 17620003 | Parameter check failed. Possible causes: 1. The data is too long. 适用版本：22+ |
+| 17630001 | Crypto operation error. |
+
+
+
+
+### doFinal10+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 doFinal(data: DataBlob | null, callback: AsyncCallback&lt;DataBlob&gt;): void
 
@@ -5196,10 +5791,11 @@ doFinal(data: DataBlob | null, callback: AsyncCallback&lt;DataBlob&gt;): void
 **系统能力：**
 
  - API版本12+：SystemCapability.Security.CryptoFramework.Cipher
- - API版本9-11：SystemCapability.Security.CryptoFramework
+ - API版本10-11：SystemCapability.Security.CryptoFramework
 
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5210,6 +5806,7 @@ doFinal(data: DataBlob | null, callback: AsyncCallback&lt;DataBlob&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5222,7 +5819,7 @@ doFinal(data: DataBlob | null, callback: AsyncCallback&lt;DataBlob&gt;): void
 
 **示例：**
 
-更多加解密流程的完整示例请参考[加解密开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-aes-sym-encrypt-decrypt-gcm)。
+更多加解密流程的完整示例请参考[加解密开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-aes-sym-encrypt-decrypt#使用aes对称密钥gcm模式加解密)。
 
 ```text
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
@@ -5264,7 +5861,7 @@ function cipherByCallback() {
       cipher.update(plainText, (err, encryptUpdate) => {
         cipher.doFinal(null, (err, tag) => {
           gcmParams.authTag = tag;
-          console.info('encryptUpdate plainText：' + encryptUpdate.data);
+          console.info('encryptUpdate plainText: ' + encryptUpdate.data);
         });
       });
     });
@@ -5274,7 +5871,59 @@ function cipherByCallback() {
 
 
 
-#### doFinal
+### doFinal
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+doFinal(data: DataBlob): Promise&lt;DataBlob&gt;
+
+完成加解密操作，对输入数据进行加密或解密，然后反馈输出数据。加解密操作完成后，数据无法更新。使用Promise异步回调。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：**
+
+ - API版本12+：SystemCapability.Security.CryptoFramework.Cipher
+ - API版本9-11：SystemCapability.Security.CryptoFramework
+
+
+**参数：**
+
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| data | DataBlob | 是 | 加密或者解密的数据。不可传入{data: Uint8Array(空) }。 |
+
+
+**返回值：**
+
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise&lt;DataBlob&gt; | Promise对象，返回剩余数据的加/解密结果DataBlob。 |
+
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 17620001 | Memory operation failed. |
+| 17620002 | Failed to obtain the native object or convert parameters. |
+| 17620003 | Parameter check failed. Possible causes: 1. The data is too long. 适用版本：22+ |
+| 17630001 | Crypto operation error. |
+
+
+
+
+### doFinal10+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 doFinal(data: DataBlob | null): Promise&lt;DataBlob&gt;
 
@@ -5301,10 +5950,11 @@ doFinal(data: DataBlob | null): Promise&lt;DataBlob&gt;
 **系统能力：**
 
  - API版本12+：SystemCapability.Security.CryptoFramework.Cipher
- - API版本9-11：SystemCapability.Security.CryptoFramework
+ - API版本10-11：SystemCapability.Security.CryptoFramework
 
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5312,6 +5962,7 @@ doFinal(data: DataBlob | null): Promise&lt;DataBlob&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5322,18 +5973,19 @@ doFinal(data: DataBlob | null): Promise&lt;DataBlob&gt;
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
-| 17620003 | Parameter check failed. Possible causes: 1. The data is too long. |
+| 17620003 | Parameter check failed. Possible causes: 1. The data is too long. 适用版本：22+ |
 | 17630001 | Crypto operation error. |
 
 
 **示例：**
 
-此外，更多加解密流程的完整示例可参考[加解密开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-aes-sym-encrypt-decrypt-gcm)。
+此外，更多加解密流程的完整示例可参考[加解密开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-aes-sym-encrypt-decrypt#使用aes对称密钥gcm模式加解密)。
 
 ```text
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
@@ -5380,9 +6032,10 @@ async function cipherByPromise() {
 
 
 
-#### doFinalSync12+
+### doFinalSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 doFinalSync(data: DataBlob | null): DataBlob
 
@@ -5408,12 +6061,14 @@ doFinalSync(data: DataBlob | null): DataBlob
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | DataBlob \| null | 是 | 加密或者解密的数据。在对称加解密中允许为null，但不允许传入{data: Uint8Array(空) }。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5423,6 +6078,7 @@ doFinalSync(data: DataBlob | null): DataBlob
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5435,7 +6091,7 @@ doFinalSync(data: DataBlob | null): DataBlob
 
 **示例：**
 
-此外，更多加解密流程的完整示例可参考[加解密开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-aes-sym-encrypt-decrypt-gcm)。
+此外，更多加解密流程的完整示例可参考[加解密开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-aes-sym-encrypt-decrypt#使用aes对称密钥gcm模式加解密)。
 
 ```text
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
@@ -5482,7 +6138,10 @@ async function cipherBySync() {
 
 
 
-#### setCipherSpec10+
+### setCipherSpec10+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setCipherSpec(itemType: CipherSpecItem, itemValue: Uint8Array): void
 
@@ -5498,6 +6157,7 @@ setCipherSpec(itemType: CipherSpecItem, itemValue: Uint8Array): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | itemType | CipherSpecItem | 是 | 用于指定需要设置的加解密参数。 |
@@ -5507,6 +6167,7 @@ setCipherSpec(itemType: CipherSpecItem, itemValue: Uint8Array): void
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5531,7 +6192,10 @@ function testsetCipherSpec() {
 
 
 
-#### getCipherSpec10+
+### getCipherSpec10+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCipherSpec(itemType: CipherSpecItem): string | Uint8Array
 
@@ -5547,12 +6211,14 @@ getCipherSpec(itemType: CipherSpecItem): string | Uint8Array
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | itemType | CipherSpecItem | 是 | 用于指定需要获取的加解密参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5562,6 +6228,7 @@ getCipherSpec(itemType: CipherSpecItem): string | Uint8Array
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5586,13 +6253,14 @@ function testGetCipherSpec() {
 
 
 
-#### cryptoFramework.createSign
+## cryptoFramework.createSign
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createSign(algName: string): Sign
 
-生成Sign实例。
+创建签名实例。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -5604,6 +6272,7 @@ createSign(algName: string): Sign
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | algName | string | 是 | 指定签名算法：RSA、ECC、DSA、SM210+、Ed2551911+和ML-DSA26.0.0+。使用RSA PKCS #1模式时需设置摘要；使用RSA PSS模式时需设置摘要和掩码摘要。签名时，通过设置OnlySign参数可传入数据摘要仅作签名。 支持的规格详见签名验签规格。 |
@@ -5611,14 +6280,16 @@ createSign(algName: string): Sign
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Sign | 返回由输入算法指定生成的Sign对象。 |
+| Sign | 返回对应算法的Sign实例。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5645,13 +6316,14 @@ let signer5 = cryptoFramework.createSign('RSA1024|PKCS1|SHA256|OnlySign');
 
 
 
-#### Sign
+## Sign
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-Sign类，使用Sign方法之前需要创建该类的实例进行操作，通过[createSign(algName: string): Sign](#cryptoframeworkcreatesign)方法构造此实例。按序调用本类中的init、update、sign方法完成签名操作。签名操作的示例代码详见[签名验签开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-sign-sig-verify-pkcs1)。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-Sign类不支持重复初始化，当业务方需要使用新密钥签名时，需要重新创建新Sign对象并调用init初始化。
+签名接口，定义基于私钥对数据进行签名的方法。调用前，需通过[createSign(algName: string): Sign](#cryptoframeworkcreatesign)方法构造此实例。按序调用本类中的init、update、sign方法完成签名操作。签名操作的示例代码详见[签名验签开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-sign-sig-verify)。
+
+Sign实例不支持重复初始化，当业务方需要使用新密钥签名时，需要重新创建新Sign实例并调用init初始化。
 
 业务方使用时，调用createSign接口确定签名的模式，调用init接口设置密钥。
 
@@ -5665,7 +6337,10 @@ Sign类不支持重复初始化，当业务方需要使用新密钥签名时，�
 
 
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -5675,6 +6350,7 @@ Sign类不支持重复初始化，当业务方需要使用新密钥签名时，�
  - API版本9-11：SystemCapability.Security.CryptoFramework
 
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | algName | string | 是 | 否 | 签名指定的算法名称。 |
@@ -5682,13 +6358,16 @@ Sign类不支持重复初始化，当业务方需要使用新密钥签名时，�
 
 
 
-#### init
+### init
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 init(priKey: PriKey, callback: AsyncCallback&lt;void&gt;): void
 
-使用私钥初始化Sign对象。使用callback异步回调。init、update、sign为三段式接口，需要成组使用。其中init和sign必选，update可选。
+使用私钥初始化Sign实例。使用callback异步回调。init、update、sign为三段式接口，需要成组使用。其中init和sign必选，update可选。
 
-Sign类不支持重复初始化。
+Sign实例不支持重复初始化。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -5699,6 +6378,7 @@ Sign类不支持重复初始化。
 
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5710,23 +6390,28 @@ Sign类不支持重复初始化。
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17630001 | Crypto operation error. |
+| 17620003 | Parameter check failed. Possible causes: 1. Incorrect key type. 适用版本：26.0.0+ |
 
 
 
 
-#### init
+### init
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 init(priKey: PriKey): Promise&lt;void&gt;
 
-使用私钥初始化Sign对象。使用Promise异步回调。init、update、sign为三段式接口，需要成组使用。其中init和sign必选，update可选。
+使用私钥初始化Sign实例。使用Promise异步回调。init、update、sign为三段式接口，需要成组使用。其中init和sign必选，update可选。
 
-Sign类不支持重复初始化。
+Sign实例不支持重复初始化。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -5738,12 +6423,14 @@ Sign类不支持重复初始化。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | priKey | PriKey | 是 | 用于Sign的初始化。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5754,31 +6441,35 @@ Sign类不支持重复初始化。
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17630001 | Crypto operation error. |
+| 17620003 | Parameter check failed. Possible causes: 1. Incorrect key type. 适用版本：26.0.0+ |
 
 
 
 
-#### initSync12+
+### initSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 initSync(priKey: PriKey): void
 
 使用私钥初始化Sign对象，通过同步方式获取结果。initSync、updateSync、signSync为三段式接口，需要成组使用。其中initSync和signSync必选，updateSync可选。
 
-Sign类不支持重复调用initSync。
+Sign实例不支持重复调用initSync。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Signature
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5789,17 +6480,22 @@ Sign类不支持重复调用initSync。
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17630001 | Crypto operation error. |
+| 17620003 | Parameter check failed. Possible causes: 1. Incorrect key type. 适用版本：26.0.0+ |
 
 
 
 
-#### update
+### update
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 update(data: DataBlob, callback: AsyncCallback&lt;void&gt;): void
 
@@ -5821,6 +6517,7 @@ update(data: DataBlob, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | DataBlob | 是 | 传入的消息。 |
@@ -5831,18 +6528,22 @@ update(data: DataBlob, callback: AsyncCallback&lt;void&gt;): void
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
-| 17620004 | Invalid function call. |
+| 17620004 | Invalid function call. 适用版本：26.0.0+ |
 | 17630001 | Crypto operation error. |
 
 
 
 
-#### update
+### update
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 update(data: DataBlob): Promise&lt;void&gt;
 
@@ -5864,12 +6565,14 @@ update(data: DataBlob): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | DataBlob | 是 | 传入的消息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5880,20 +6583,22 @@ update(data: DataBlob): Promise&lt;void&gt;
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
-| 17620004 | Invalid function call. |
+| 17620004 | Invalid function call. 适用版本：26.0.0+ |
 | 17630001 | Crypto operation error. |
 
 
 
 
-#### updateSync12+
+### updateSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateSync(data: DataBlob): void
 
@@ -5911,6 +6616,7 @@ updateSync(data: DataBlob): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | DataBlob | 是 | 传入的消息。 |
@@ -5920,22 +6626,26 @@ updateSync(data: DataBlob): void
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
-| 17620004 | Invalid function call. |
+| 17620004 | Invalid function call. 适用版本：26.0.0+ |
 | 17630001 | Crypto operation error. |
 
 
 
 
-#### sign
+### sign
 
-sign(data: DataBlob | null, callback: AsyncCallback&lt;DataBlob&gt;): void
 
-对数据进行签名。使用callback异步回调。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+sign(data: DataBlob, callback: AsyncCallback&lt;DataBlob&gt;): void
+
+对数据进行签名，返回签名结果。使用callback异步回调。Sign类不支持重复调用sign。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -5946,6 +6656,49 @@ sign(data: DataBlob | null, callback: AsyncCallback&lt;DataBlob&gt;): void
 
 
 **参数：**
+
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| data | DataBlob | 是 | 待签名的数据。 |
+| callback | AsyncCallback&lt;DataBlob&gt; | 是 | 回调函数。签名成功时，err为undefined，data为签名结果；否则为错误对象。 |
+
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 17620001 | Memory operation failed. |
+| 17620002 | Failed to obtain the native object or convert parameters. |
+| 17620003 | Parameter check failed. 适用版本：26.0.0+ |
+| 17630001 | crypto operation error. |
+
+
+
+
+### sign10+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+sign(data: DataBlob | null, callback: AsyncCallback&lt;DataBlob&gt;): void
+
+对数据进行签名。使用callback异步回调。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：**
+
+ - API版本12+：SystemCapability.Security.CryptoFramework.Signature
+ - API版本10-11：SystemCapability.Security.CryptoFramework
+
+
+**参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5957,21 +6710,26 @@ sign(data: DataBlob | null, callback: AsyncCallback&lt;DataBlob&gt;): void
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
+| 17620003 | Parameter check failed. 适用版本：26.0.0+ |
 | 17630001 | Crypto operation error. |
 
 
 
 
-#### sign
+### sign
 
-sign(data: DataBlob | null): Promise&lt;DataBlob&gt;
 
-对数据进行签名。使用Promise异步回调。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+sign(data: DataBlob): Promise&lt;DataBlob&gt;
+
+对数据进行签名，返回签名结果。使用Promise异步回调。Sign类不支持重复调用sign。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -5983,12 +6741,63 @@ sign(data: DataBlob | null): Promise&lt;DataBlob&gt;
 
 **参数：**
 
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| data | DataBlob | 是 | 待签名的数据。 |
+
+
+**返回值：**
+
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise&lt;DataBlob&gt; | Promise对象，返回签名结果。 |
+
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 17620001 | Memory operation failed. |
+| 17620002 | Failed to obtain the native object or convert parameters. |
+| 17620003 | Parameter check failed. 适用版本：26.0.0+ |
+| 17630001 | crypto operation error. |
+
+
+
+
+### sign10+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+sign(data: DataBlob | null): Promise&lt;DataBlob&gt;
+
+对数据进行签名。使用Promise异步回调。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：**
+
+ - API版本12+：SystemCapability.Security.CryptoFramework.Signature
+ - API版本10-11：SystemCapability.Security.CryptoFramework
+
+
+**参数：**
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | DataBlob \| null10+ | 是 | 传入的消息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5999,19 +6808,22 @@ sign(data: DataBlob | null): Promise&lt;DataBlob&gt;
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17630001 | Crypto operation error. |
+| 17620003 | Parameter check failed. 适用版本：26.0.0+ |
 
 
 
 
-#### signSync12+
+### signSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 signSync(data: DataBlob | null): DataBlob
 
@@ -6023,12 +6835,14 @@ signSync(data: DataBlob | null): DataBlob
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | DataBlob \| null | 是 | 传入的消息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6039,17 +6853,19 @@ signSync(data: DataBlob | null): DataBlob
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17630001 | Crypto operation error. |
+| 17620003 | Parameter check failed. 适用版本：26.0.0+ |
 
 
 **示例：**
 
-此外，更多签名验签的完整示例可参考[签名验签开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-sign-sig-verify-pkcs1)。
+此外，更多签名验签的完整示例可参考[签名验签开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-sign-sig-verify)。
 
 ```text
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
@@ -6113,7 +6929,7 @@ function signByCallback() {
 
 **示例：**
 
-此外，更多签名验签的完整示例可参考[签名验签开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-sign-sig-verify-pkcs1)。
+此外，更多签名验签的完整示例可参考[签名验签开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-sign-sig-verify)。
 
 ```text
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
@@ -6179,7 +6995,7 @@ async function signByPromise() {
 
 **示例：**
 
-此外，更多签名验签的完整示例可参考[签名验签开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-sign-sig-verify-pkcs1)。
+此外，更多签名验签的完整示例可参考[签名验签开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-sign-sig-verify)。
 
 ```text
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
@@ -6245,11 +7061,12 @@ function signBySync() {
 
 
 
-#### setSignSpec10+
+### setSignSpec10+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setSignSpec(itemType: SignSpecItem, itemValue: number): void
-
-setSignSpec(itemType: SignSpecItem, itemValue: number | Uint8Array): void
 
 设置签名参数。常用签名参数可通过 [createSign](#cryptoframeworkcreatesign) 指定，其他参数则通过本接口设置。
 
@@ -6265,6 +7082,51 @@ setSignSpec(itemType: SignSpecItem, itemValue: number | Uint8Array): void
 
 **参数：**
 
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| itemType | SignSpecItem | 是 | 用于指定需要设置的签名参数。 |
+| itemValue | number | 是 | 用于指定签名参数的具体值。 |
+
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 801 | This operation is not supported. |
+| 17620001 | Memory operation failed. |
+| 17630001 | Crypto operation error. |
+| 17620003 | Parameter check failed. 适用版本：26.0.0+ |
+
+
+
+
+### setSignSpec11+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+setSignSpec(itemType: SignSpecItem, itemValue: number | Uint8Array): void
+
+设置签名参数。常用签名参数可通过 [createSign](#cryptoframeworkcreatesign) 指定，其他参数则通过本接口设置。
+
+当前仅支持RSA算法、SM2算法，从API version 11开始，支持SM2算法设置签名参数。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：**
+
+ - API版本12+：SystemCapability.Security.CryptoFramework.Signature
+ - API版本11：SystemCapability.Security.CryptoFramework
+
+
+**参数：**
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | itemType | SignSpecItem | 是 | 用于指定需要设置的签名参数。 |
@@ -6275,12 +7137,16 @@ setSignSpec(itemType: SignSpecItem, itemValue: number | Uint8Array): void
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 801 | This operation is not supported. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
+| 17620002 | Failed to obtain the native object or convert parameters. 适用版本：26.0.0+ |
+| 17620003 | Parameter check failed. 适用版本：26.0.0+ |
+| 17620004 | Invalid function call. 适用版本：26.0.0+ |
 
 
 **示例：**
@@ -6297,9 +7163,10 @@ function testSetSignSpec() {
 
 
 
-#### setSignSpec
+### setSignSpec
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setSignSpec(itemType: SignSpecItem, itemValue: number | Uint8Array | boolean): void
 
@@ -6315,6 +7182,7 @@ setSignSpec(itemType: SignSpecItem, itemValue: number | Uint8Array | boolean): v
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | itemType | SignSpecItem | 是 | 用于指定需要设置的签名参数。 |
@@ -6324,6 +7192,7 @@ setSignSpec(itemType: SignSpecItem, itemValue: number | Uint8Array | boolean): v
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6348,7 +7217,10 @@ function testSetSignSpec() {
 
 
 
-#### getSignSpec10+
+### getSignSpec10+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSignSpec(itemType: SignSpecItem): string | number
 
@@ -6364,12 +7236,14 @@ getSignSpec(itemType: SignSpecItem): string | number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | itemType | SignSpecItem | 是 | 用于指定需要获取的签名参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6380,12 +7254,14 @@ getSignSpec(itemType: SignSpecItem): string | number
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 801 | This operation is not supported. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
+| 17620003 | Parameter check failed. 适用版本：26.0.0+ |
 
 
 **示例：**
@@ -6403,13 +7279,14 @@ function testGetSignSpec() {
 
 
 
-#### cryptoFramework.createVerify
+## cryptoFramework.createVerify
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createVerify(algName: string): Verify
 
-生成Verify实例。
+创建验签实例。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -6421,6 +7298,7 @@ createVerify(algName: string): Verify
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | algName | string | 是 | 指定签名验证算法：RSA、ECC、DSA、SM210+、Ed2551911+和ML-DSA26.0.0+。使用RSA PKCS #1模式时需设置摘要；使用RSA PSS模式时需设置摘要和掩码摘要。使用RSA算法验签时，设置Recover参数可支持验签恢复。 支持的规格详见签名验签规格。 |
@@ -6428,14 +7306,16 @@ createVerify(algName: string): Verify
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Verify | 返回由输入算法指定生成的Verify对象。 |
+| Verify | 返回对应算法的Verify实例。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6458,13 +7338,14 @@ let verifier3 = cryptoFramework.createVerify('RSA1024|PKCS1|SHA256|Recover');
 
 
 
-#### Verify
+## Verify
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-Verify类，使用Verify方法之前需要创建该类的实例进行操作，通过[createVerify(algName: string): Verify](#cryptoframeworkcreateverify)方法构造此实例。按序调用本类中的init、update、verify方法完成签名操作。验签操作的示例代码详见[签名验签开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-sign-sig-verify-pkcs1)。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-Verify类不支持重复初始化，当业务方需要使用新密钥验签时，需要重新创建新Verify对象并调用init初始化。
+验签接口，定义基于公钥对签名数据进行验签的方法。调用前，需通过[createVerify(algName: string): Verify](#cryptoframeworkcreateverify)方法构造此实例。按序调用本类中的init、update、verify方法完成签名操作。验签操作的示例代码详见[签名验签开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-sign-sig-verify)。
+
+Verify实例不支持重复初始化，当业务方需要使用新密钥验签时，需要重新创建新Verify实例并调用init初始化。
 
 业务方使用时，在createVerify时确定验签的模式，调用init接口设置密钥。
 
@@ -6476,7 +7357,10 @@ Verify类不支持重复初始化，当业务方需要使用新密钥验签时�
 
 
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -6486,6 +7370,7 @@ Verify类不支持重复初始化，当业务方需要使用新密钥验签时�
  - API版本9-11：SystemCapability.Security.CryptoFramework
 
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | algName | string | 是 | 否 | 验签指定的算法名称。 |
@@ -6493,11 +7378,14 @@ Verify类不支持重复初始化，当业务方需要使用新密钥验签时�
 
 
 
-#### init
+### init
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 init(pubKey: PubKey, callback: AsyncCallback&lt;void&gt;): void
 
-传入公钥初始化Verify对象。使用callback异步回调。init、update、verify为三段式接口，需要成组使用。其中init和verify必选，update可选。
+传入公钥初始化Verify实例。使用callback异步回调。init、update、verify为三段式接口，需要成组使用。其中init和verify必选，update可选。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -6508,6 +7396,7 @@ init(pubKey: PubKey, callback: AsyncCallback&lt;void&gt;): void
 
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6519,21 +7408,26 @@ init(pubKey: PubKey, callback: AsyncCallback&lt;void&gt;): void
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
+| 17620003 | Parameter check failed. Possible causes: 1. Incorrect key type. 适用版本：26.0.0+ |
 | 17630001 | Crypto operation error. |
 
 
 
 
-#### init
+### init
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 init(pubKey: PubKey): Promise&lt;void&gt;
 
-传入公钥初始化Verify对象。使用Promise异步回调。init、update、verify为三段式接口，需要成组使用。其中init和verify必选，update可选。
+传入公钥初始化Verify实例。使用Promise异步回调。init、update、verify为三段式接口，需要成组使用。其中init和verify必选，update可选。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -6545,12 +7439,14 @@ init(pubKey: PubKey): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pubKey | PubKey | 是 | 公钥对象，用于Verify的初始化。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6561,19 +7457,22 @@ init(pubKey: PubKey): Promise&lt;void&gt;
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17630001 | Crypto operation error. |
+| 17620003 | Parameter check failed. Possible causes: 1. Incorrect key type. 适用版本：26.0.0+ |
 
 
 
 
-#### initSync12+
+### initSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 initSync(pubKey: PubKey): void
 
@@ -6585,6 +7484,7 @@ initSync(pubKey: PubKey): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pubKey | PubKey | 是 | 公钥对象，用于Verify的初始化。 |
@@ -6594,17 +7494,22 @@ initSync(pubKey: PubKey): void
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17630001 | Crypto operation error. |
+| 17620003 | Parameter check failed. Possible causes: 1. Incorrect key type. 适用版本：26.0.0+ |
 
 
 
 
-#### update
+### update
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 update(data: DataBlob, callback: AsyncCallback&lt;void&gt;): void
 
@@ -6626,6 +7531,7 @@ update(data: DataBlob, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | DataBlob | 是 | 传入的消息。 |
@@ -6636,18 +7542,22 @@ update(data: DataBlob, callback: AsyncCallback&lt;void&gt;): void
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
-| 17620004 | Invalid function call. |
+| 17620004 | Invalid function call. 适用版本：26.0.0+ |
 | 17630001 | Crypto operation error. |
 
 
 
 
-#### update
+### update
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 update(data: DataBlob): Promise&lt;void&gt;
 
@@ -6669,12 +7579,14 @@ update(data: DataBlob): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | DataBlob | 是 | 传入的消息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6685,20 +7597,22 @@ update(data: DataBlob): Promise&lt;void&gt;
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
-| 17620004 | Invalid function call. |
+| 17620004 | Invalid function call. 适用版本：26.0.0+ |
 | 17630001 | Crypto operation error. |
 
 
 
 
-#### updateSync12+
+### updateSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateSync(data: DataBlob): void
 
@@ -6716,6 +7630,7 @@ updateSync(data: DataBlob): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | DataBlob | 是 | 传入的消息。 |
@@ -6725,22 +7640,26 @@ updateSync(data: DataBlob): void
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
-| 17620004 | Invalid function call. |
+| 17620004 | Invalid function call. 适用版本：26.0.0+ |
 | 17630001 | Crypto operation error. |
 
 
 
 
-#### verify
+### verify
 
-verify(data: DataBlob | null, signatureData: DataBlob, callback: AsyncCallback&lt;boolean&gt;): void
 
-对数据进行验签。使用callback异步回调。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+verify(data: DataBlob, signatureData: DataBlob, callback: AsyncCallback&lt;boolean&gt;): void
+
+对数据进行验签，返回验签结果。使用callback异步回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -6751,6 +7670,50 @@ verify(data: DataBlob | null, signatureData: DataBlob, callback: AsyncCallback&l
 
 
 **参数：**
+
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| data | DataBlob | 是 | 待验签的数据。 |
+| signatureData | DataBlob | 是 | 签名数据。 |
+| callback | AsyncCallback&lt;boolean&gt; | 是 | 回调函数，用于获取以boolean值表示的验签结果。返回true表示验签通过；返回false表示验签不通过。 |
+
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 17620001 | Memory operation failed. |
+| 17620002 | Failed to obtain the native object or convert parameters. |
+| 17620003 | Parameter check failed. 适用版本：26.0.0+ |
+| 17630001 | crypto operation error. |
+
+
+
+
+### verify10+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+verify(data: DataBlob | null, signatureData: DataBlob, callback: AsyncCallback&lt;boolean&gt;): void
+
+对数据进行验签。使用callback异步回调。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：**
+
+ - API版本12+：SystemCapability.Security.CryptoFramework.Signature
+ - API版本10-11：SystemCapability.Security.CryptoFramework
+
+
+**参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6763,21 +7726,26 @@ verify(data: DataBlob | null, signatureData: DataBlob, callback: AsyncCallback&l
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
+| 17620003 | Parameter check failed. 适用版本：26.0.0+ |
 | 17630001 | Crypto operation error. |
 
 
 
 
-#### verify
+### verify
 
-verify(data: DataBlob | null, signatureData: DataBlob): Promise&lt;boolean&gt;
 
-对数据进行验签。使用Promise异步回调。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+verify(data: DataBlob, signatureData: DataBlob): Promise&lt;boolean&gt;
+
+对数据进行验签，返回验签结果。使用Promise异步回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -6789,6 +7757,57 @@ verify(data: DataBlob | null, signatureData: DataBlob): Promise&lt;boolean&gt;
 
 **参数：**
 
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| data | DataBlob | 是 | 待验签的数据。 |
+| signatureData | DataBlob | 是 | 签名数据。 |
+
+
+**返回值：**
+
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise&lt;boolean&gt; | Promise对象，返回验签结果。true表示验签成功，false表示验签失败。 |
+
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 17620001 | Memory operation failed. |
+| 17620002 | Failed to obtain the native object or convert parameters. |
+| 17620003 | Parameter check failed. 适用版本：26.0.0+ |
+| 17630001 | crypto operation error. |
+
+
+
+
+### verify10+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+verify(data: DataBlob | null, signatureData: DataBlob): Promise&lt;boolean&gt;
+
+对数据进行验签。使用Promise异步回调。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：**
+
+ - API版本12+：SystemCapability.Security.CryptoFramework.Signature
+ - API版本10-11：SystemCapability.Security.CryptoFramework
+
+
+**参数：**
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | DataBlob \| null10+ | 是 | 传入的消息。API 10之前只支持DataBlob， API 10之后增加支持null。 |
@@ -6796,6 +7815,7 @@ verify(data: DataBlob | null, signatureData: DataBlob): Promise&lt;boolean&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6806,19 +7826,22 @@ verify(data: DataBlob | null, signatureData: DataBlob): Promise&lt;boolean&gt;
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17630001 | Crypto operation error. |
+| 17620003 | Parameter check failed. 适用版本：26.0.0+ |
 
 
 
 
-#### verifySync12+
+### verifySync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 verifySync(data: DataBlob | null, signatureData: DataBlob): boolean
 
@@ -6830,6 +7853,7 @@ verifySync(data: DataBlob | null, signatureData: DataBlob): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | DataBlob \| null | 是 | 传入的消息。 |
@@ -6837,6 +7861,7 @@ verifySync(data: DataBlob | null, signatureData: DataBlob): boolean
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6847,17 +7872,19 @@ verifySync(data: DataBlob | null, signatureData: DataBlob): boolean
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17630001 | Crypto operation error. |
+| 17620003 | Parameter check failed. 适用版本：26.0.0+ |
 
 
 **示例：**
 
-此外，更多签名验签的完整示例可参考[签名验签开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-sign-sig-verify-pkcs1)。
+此外，更多签名验签的完整示例可参考[签名验签开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-sign-sig-verify)。
 
 ```text
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
@@ -6931,7 +7958,7 @@ function verifyByCallback() {
 
 **示例：**
 
-更多示例请参见[签名验签开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-sign-sig-verify-pkcs1)。
+更多示例请参见[签名验签开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-sign-sig-verify)。
 
 ```text
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
@@ -7007,7 +8034,7 @@ async function verifyByPromise() {
 
 **示例：**
 
-此外，更多签名验签的完整示例可参考[签名验签开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-sign-sig-verify-pkcs1)。
+此外，更多签名验签的完整示例可参考[签名验签开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-sign-sig-verify)。
 
 ```text
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
@@ -7083,9 +8110,10 @@ function verifyBySync() {
 
 
 
-#### recover12+
+### recover12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 recover(signatureData: DataBlob): Promise<DataBlob | null>
 
@@ -7101,12 +8129,14 @@ recover(signatureData: DataBlob): Promise<DataBlob | null>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | signatureData | DataBlob | 是 | 签名数据。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7117,12 +8147,13 @@ recover(signatureData: DataBlob): Promise<DataBlob | null>
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
-| 17620004 | Invalid function call. |
+| 17620004 | Invalid function call. 适用版本：26.0.0+ |
 | 17630001 | Crypto operation error. |
 
 
@@ -7206,9 +8237,10 @@ async function recoverByPromise() {
 
 
 
-#### recoverSync12+
+### recoverSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 recoverSync(signatureData: DataBlob): DataBlob | null
 
@@ -7224,12 +8256,14 @@ recoverSync(signatureData: DataBlob): DataBlob | null
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | signatureData | DataBlob | 是 | 签名数据。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7240,22 +8274,24 @@ recoverSync(signatureData: DataBlob): DataBlob | null
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
-| 17620004 | Invalid function call. |
+| 17620004 | Invalid function call. 适用版本：26.0.0+ |
 | 17630001 | Crypto operation error. |
 
 
 
 
-#### setVerifySpec10+
+### setVerifySpec10+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setVerifySpec(itemType: SignSpecItem, itemValue: number): void
-
-setVerifySpec(itemType: SignSpecItem, itemValue: number | Uint8Array): void
 
 设置验签参数。常用的验签参数直接通过[createVerify](#cryptoframeworkcreateverify) 来指定，剩余参数通过本接口指定。
 
@@ -7273,6 +8309,53 @@ setVerifySpec(itemType: SignSpecItem, itemValue: number | Uint8Array): void
 
 **参数：**
 
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| itemType | SignSpecItem | 是 | 用于指定需要设置的验签参数。 |
+| itemValue | number | 是 | 用于指定验签参数的具体值。 |
+
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 801 | This operation is not supported. |
+| 17620001 | Memory operation failed. |
+| 17620003 | Parameter check failed. 适用版本：26.0.0+ |
+| 17630001 | Crypto operation error. |
+
+
+
+
+### setVerifySpec11+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+setVerifySpec(itemType: SignSpecItem, itemValue: number | Uint8Array): void
+
+设置验签参数。常用的验签参数直接通过[createVerify](#cryptoframeworkcreateverify) 来指定，剩余参数通过本接口指定。
+
+支持RSA算法和SM2算法，从API version 11开始，支持SM2算法设置签名验证参数。
+
+验签的参数应当与签名的参数保持一致。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：**
+
+ - API版本12+：SystemCapability.Security.CryptoFramework.Signature
+ - API版本11：SystemCapability.Security.CryptoFramework
+
+
+**参数：**
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | itemType | SignSpecItem | 是 | 用于指定需要设置的验签参数。 |
@@ -7283,12 +8366,16 @@ setVerifySpec(itemType: SignSpecItem, itemValue: number | Uint8Array): void
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 801 | This operation is not supported. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
+| 17620002 | Failed to obtain the native object or convert parameters. 适用版本：26.0.0+ |
+| 17620003 | Parameter check failed. 适用版本：26.0.0+ |
+| 17620004 | Invalid function call. 适用版本：26.0.0+ |
 
 
 **示例：**
@@ -7305,9 +8392,10 @@ function testSetVerifySpec() {
 
 
 
-#### setVerifySpec
+### setVerifySpec
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setVerifySpec(itemType: SignSpecItem, itemValue: number | Uint8Array | boolean): void
 
@@ -7325,6 +8413,7 @@ setVerifySpec(itemType: SignSpecItem, itemValue: number | Uint8Array | boolean):
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | itemType | SignSpecItem | 是 | 用于指定需要设置的验签参数。 |
@@ -7334,6 +8423,7 @@ setVerifySpec(itemType: SignSpecItem, itemValue: number | Uint8Array | boolean):
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7358,7 +8448,10 @@ function testSetVerifySpec() {
 
 
 
-#### getVerifySpec10+
+### getVerifySpec10+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getVerifySpec(itemType: SignSpecItem): string | number
 
@@ -7374,12 +8467,14 @@ getVerifySpec(itemType: SignSpecItem): string | number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | itemType | SignSpecItem | 是 | 用于指定需要获取的验签参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7390,12 +8485,14 @@ getVerifySpec(itemType: SignSpecItem): string | number
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 801 | This operation is not supported. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
+| 17620003 | Parameter check failed. 适用版本：26.0.0+ |
 
 
 **示例：**
@@ -7413,13 +8510,14 @@ function testGetVerifySpec() {
 
 
 
-#### cryptoFramework.createKeyAgreement
+## cryptoFramework.createKeyAgreement
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createKeyAgreement(algName: string): KeyAgreement
 
-生成KeyAgreement实例。
+创建密钥协商实例。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -7431,6 +8529,7 @@ createKeyAgreement(algName: string): KeyAgreement
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | algName | string | 是 | 指定密钥协商算法：目前仅支持ECDH，从API version 11开始，增加支持X25519和DH。 支持的规格详见密钥协商规格。 |
@@ -7438,14 +8537,16 @@ createKeyAgreement(algName: string): KeyAgreement
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| KeyAgreement | 返回由输入算法指定生成的KeyAgreement对象。 |
+| KeyAgreement | 返回对应算法的KeyAgreement实例。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7464,15 +8565,19 @@ let keyAgreement = cryptoFramework.createKeyAgreement('ECC256');
 
 
 
-#### KeyAgreement
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
-
-KeyAgreement类，使用密钥协商方法之前需要创建该类的实例进行操作，通过[createKeyAgreement(algName: string): KeyAgreement](#cryptoframeworkcreatekeyagreement)方法构造此实例。
+## KeyAgreement
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 属性
+密钥协商接口，定义基于非对称密钥对生成共享密钥的方法。调用前，需通过[createKeyAgreement(algName: string): KeyAgreement](#cryptoframeworkcreatekeyagreement)方法构造此实例。
+
+
+
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -7482,14 +8587,18 @@ KeyAgreement类，使用密钥协商方法之前需要创建该类的实例进�
  - API版本9-11：SystemCapability.Security.CryptoFramework
 
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| algName | string | 是 | 否 | 密钥协商指定的算法名称。 |
+| algName | string | 是 | 否 | 密钥协商的算法名称。 |
 
 
 
 
-#### generateSecret
+### generateSecret
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 generateSecret(priKey: PriKey, pubKey: PubKey, callback: AsyncCallback&lt;DataBlob&gt;): void
 
@@ -7505,6 +8614,7 @@ generateSecret(priKey: PriKey, pubKey: PubKey, callback: AsyncCallback&lt;DataBl
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | priKey | PriKey | 是 | 设置密钥协商的私钥输入。 |
@@ -7516,6 +8626,7 @@ generateSecret(priKey: PriKey, pubKey: PubKey, callback: AsyncCallback&lt;DataBl
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
@@ -7526,7 +8637,10 @@ generateSecret(priKey: PriKey, pubKey: PubKey, callback: AsyncCallback&lt;DataBl
 
 
 
-#### generateSecret
+### generateSecret
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 generateSecret(priKey: PriKey, pubKey: PubKey): Promise&lt;DataBlob&gt;
 
@@ -7542,6 +8656,7 @@ generateSecret(priKey: PriKey, pubKey: PubKey): Promise&lt;DataBlob&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | priKey | PriKey | 是 | 设置密钥协商的私钥输入。 |
@@ -7549,6 +8664,7 @@ generateSecret(priKey: PriKey, pubKey: PubKey): Promise&lt;DataBlob&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7558,6 +8674,7 @@ generateSecret(priKey: PriKey, pubKey: PubKey): Promise&lt;DataBlob&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7569,9 +8686,10 @@ generateSecret(priKey: PriKey, pubKey: PubKey): Promise&lt;DataBlob&gt;
 
 
 
-#### generateSecretSync12+
+### generateSecretSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 generateSecretSync(priKey: PriKey, pubKey: PubKey): DataBlob
 
@@ -7583,6 +8701,7 @@ generateSecretSync(priKey: PriKey, pubKey: PubKey): DataBlob
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | priKey | PriKey | 是 | 设置密钥协商的私钥输入。 |
@@ -7590,6 +8709,7 @@ generateSecretSync(priKey: PriKey, pubKey: PubKey): DataBlob
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7599,6 +8719,7 @@ generateSecretSync(priKey: PriKey, pubKey: PubKey): DataBlob
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7662,13 +8783,14 @@ async function testGenerateSecretSync() {
 
 
 
-#### cryptoFramework.createMd
+## cryptoFramework.createMd
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 createMd(algName: string): Md
 
-生成Md实例，用于进行消息摘要的计算与操作。
+创建消息摘要实例。
 
 支持的规格详见[MD消息摘要算法规格](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-generate-message-digest-overview#支持的算法与规格)。
 
@@ -7688,6 +8810,7 @@ createMd(algName: string): Md
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | algName | string | 是 | 指定摘要算法，支持算法请参考MD消息摘要算法规格。 |
@@ -7695,14 +8818,16 @@ createMd(algName: string): Md
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Md | 返回由输入算法指定生成的Md对象。 |
+| Md | 返回对应算法的Md实例。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7726,15 +8851,19 @@ try {
 
 
 
-#### Md
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
-
-Md类，调用Md方法进行消息摘要（Message Digest）计算。调用前，需要通过[createMd](#cryptoframeworkcreatemd)构造Md实例。
+## Md
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
-#### 属性
+消息摘要接口，定义计算消息摘要的方法。调用前，需通过[createMd](#cryptoframeworkcreatemd)方法创建一个Md实例。
+
+
+
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -7746,6 +8875,7 @@ Md类，调用Md方法进行消息摘要（Message Digest）计算。调用前�
  - API版本9-11：SystemCapability.Security.CryptoFramework
 
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | algName | string | 是 | 否 | 代表指定的摘要算法名。 |
@@ -7753,7 +8883,10 @@ Md类，调用Md方法进行消息摘要（Message Digest）计算。调用前�
 
 
 
-#### update
+### update
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 update(input: DataBlob, callback: AsyncCallback&lt;void&gt;): void
 
@@ -7779,6 +8912,7 @@ update(input: DataBlob, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | input | DataBlob | 是 | 传入的消息。 |
@@ -7789,6 +8923,7 @@ update(input: DataBlob, callback: AsyncCallback&lt;void&gt;): void
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
@@ -7798,7 +8933,10 @@ update(input: DataBlob, callback: AsyncCallback&lt;void&gt;): void
 
 
 
-#### update
+### update
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 update(input: DataBlob): Promise&lt;void&gt;
 
@@ -7822,12 +8960,14 @@ update(input: DataBlob): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | input | DataBlob | 是 | 传入的消息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7838,6 +8978,7 @@ update(input: DataBlob): Promise&lt;void&gt;
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
@@ -7847,9 +8988,10 @@ update(input: DataBlob): Promise&lt;void&gt;
 
 
 
-#### updateSync12+
+### updateSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 updateSync(input: DataBlob): void
 
@@ -7867,6 +9009,7 @@ updateSync(input: DataBlob): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | input | DataBlob | 是 | 传入的消息。 |
@@ -7875,6 +9018,7 @@ updateSync(input: DataBlob): void
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7885,7 +9029,10 @@ updateSync(input: DataBlob): void
 
 
 
-#### digest
+### digest
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 digest(callback: AsyncCallback&lt;DataBlob&gt;): void
 
@@ -7907,6 +9054,7 @@ digest(callback: AsyncCallback&lt;DataBlob&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;DataBlob&gt; | 是 | 回调函数，用于获取摘要的计算结果。当摘要计算成功，err为undefined，data为获取到的摘要结果；否则为错误对象。 |
@@ -7915,6 +9063,7 @@ digest(callback: AsyncCallback&lt;DataBlob&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7941,7 +9090,10 @@ function mdByCallback() {
 
 
 
-#### digest
+### digest
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 digest(): Promise&lt;DataBlob&gt;
 
@@ -7961,6 +9113,7 @@ digest(): Promise&lt;DataBlob&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;DataBlob&gt; | Promise对象，返回摘要计算结果。 |
@@ -7969,6 +9122,7 @@ digest(): Promise&lt;DataBlob&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -8048,21 +9202,21 @@ let plainText = "123456";
 function mdTest() {
     let inData = StringToUint8Array(plainText);
     let md = cryptoFramework.createMd('SHA256');
-    console.info("createMd " + typeof md);
+    console.info('createMd ' + typeof md);
 
     md.update({data: inData}, function (finishErr) {
         if (finishErr) {
-            console.error("Digest update failed. Code:" + finishErr.code + " : " + finishErr.message);
+            console.error('Digest update failed. Code: ' + finishErr.code + " : " + finishErr.message);
         } else {
-            console.info("Digest update successfully.");
+            console.info('Digest update successfully.');
         }
     })
 
     md.digest(function (finishErr, digestOutput){
         if (finishErr) {
-            console.error("Digest failed. Code:" + finishErr.code + " : " + finishErr.message);
+            console.error('Digest failed. Code: ' + finishErr.code + " : " + finishErr.message);
         } else {
-            console.info("Digest successfully:" + digestOutput);
+            console.info('Digest successfully:' + digestOutput);
         }
     })
 }
@@ -8079,9 +9233,10 @@ export default {
 
 
 
-#### digestSync12+
+### digestSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 digestSync(): DataBlob
 
@@ -8095,6 +9250,7 @@ digestSync(): DataBlob
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | DataBlob | 表示生成的Md计算结果。 |
@@ -8103,6 +9259,7 @@ digestSync(): DataBlob
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -8187,7 +9344,7 @@ function mdTestSync() {
     let mdResult = md.digestSync();
     console.info('Digest successfully. result:' + mdResult.data);
     let mdLen = md.getMdLength();
-    console.info("Digest successfully. md len: " + mdLen);
+    console.info('Digest successfully. md len: ' + mdLen);
 }
 
 export default {
@@ -8202,7 +9359,10 @@ export default {
 
 
 
-#### getMdLength
+### getMdLength
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 getMdLength(): number
 
@@ -8224,6 +9384,7 @@ getMdLength(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回md计算结果的字节长度。 |
@@ -8232,6 +9393,7 @@ getMdLength(): number
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -8251,13 +9413,14 @@ function getLength() {
 
 
 
-#### cryptoFramework.createMac
+## cryptoFramework.createMac
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createMac(algName: string): Mac
 
-生成Mac实例，用于消息认证码的计算与操作。
+创建消息认证码实例。
 
 支持的规格详见[HMAC消息认证码算法规格](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-compute-mac-overview)。
 
@@ -8271,6 +9434,7 @@ createMac(algName: string): Mac
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | algName | string | 是 | 指定摘要算法，支持算法请参考HMAC消息认证码算法规格。 |
@@ -8278,14 +9442,16 @@ createMac(algName: string): Mac
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Mac | 返回由输入算法指定生成的Mac对象。 |
+| Mac | 返回对应算法的Mac实例。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -8310,13 +9476,14 @@ try {
 
 
 
-#### cryptoFramework.createMac18+
+## cryptoFramework.createMac18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createMac(macSpec: MacSpec): Mac
 
-生成Mac实例，用于进行消息认证码的计算与操作。
+创建消息认证码实例。
 
 支持的规格详见[MAC消息认证码算法规格](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-compute-mac-overview)。
 
@@ -8326,6 +9493,7 @@ createMac(macSpec: MacSpec): Mac
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | macSpec | MacSpec | 是 | 根据消息认证码的不同算法，指定入参参数，支持算法请参考MAC消息认证码算法规格。 |
@@ -8333,14 +9501,16 @@ createMac(macSpec: MacSpec): Mac
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Mac | 返回由指定入参参数生成的Mac对象。 |
+| Mac | 返回对应算法的Mac实例。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -8371,15 +9541,19 @@ try {
 
 
 
-#### Mac
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
-
-Mac类，调用Mac方法进行消息认证码（Message Authentication Code）计算。调用前，需要通过[createMac](#cryptoframeworkcreatemac)构造Mac实例。
+## Mac
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 属性
+消息认证码接口，定义基于对称密钥计算消息认证码的方法。调用前，需通过[createMac](#cryptoframeworkcreatemac)方法创建一个Mac实例。
+
+
+
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -8389,6 +9563,7 @@ Mac类，调用Mac方法进行消息认证码（Message Authentication Code）�
  - API版本9-11：SystemCapability.Security.CryptoFramework
 
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | algName | string | 是 | 否 | 代表指定的摘要算法名。 |
@@ -8396,7 +9571,10 @@ Mac类，调用Mac方法进行消息认证码（Message Authentication Code）�
 
 
 
-#### init
+### init
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 init(key: SymKey, callback: AsyncCallback&lt;void&gt;): void
 
@@ -8416,6 +9594,7 @@ init(key: SymKey, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | SymKey | 是 | 对称密钥。 |
@@ -8426,6 +9605,7 @@ init(key: SymKey, callback: AsyncCallback&lt;void&gt;): void
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
@@ -8435,7 +9615,10 @@ init(key: SymKey, callback: AsyncCallback&lt;void&gt;): void
 
 
 
-#### init
+### init
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 init(key: SymKey): Promise&lt;void&gt;
 
@@ -8451,12 +9634,14 @@ init(key: SymKey): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | SymKey | 是 | 对称密钥。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8467,6 +9652,7 @@ init(key: SymKey): Promise&lt;void&gt;
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
@@ -8476,9 +9662,10 @@ init(key: SymKey): Promise&lt;void&gt;
 
 
 
-#### initSync12+
+### initSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 initSync(key: SymKey): void
 
@@ -8490,6 +9677,7 @@ initSync(key: SymKey): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | SymKey | 是 | 对称密钥。 |
@@ -8498,6 +9686,7 @@ initSync(key: SymKey): void
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -8508,7 +9697,10 @@ initSync(key: SymKey): void
 
 
 
-#### update
+### update
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 update(input: DataBlob, callback: AsyncCallback&lt;void&gt;): void
 
@@ -8528,6 +9720,7 @@ update(input: DataBlob, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | input | DataBlob | 是 | 传入的消息。 |
@@ -8538,6 +9731,7 @@ update(input: DataBlob, callback: AsyncCallback&lt;void&gt;): void
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
@@ -8547,7 +9741,10 @@ update(input: DataBlob, callback: AsyncCallback&lt;void&gt;): void
 
 
 
-#### update
+### update
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 update(input: DataBlob): Promise&lt;void&gt;
 
@@ -8567,12 +9764,14 @@ update(input: DataBlob): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | input | DataBlob | 是 | 传入的消息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8583,6 +9782,7 @@ update(input: DataBlob): Promise&lt;void&gt;
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
@@ -8592,9 +9792,10 @@ update(input: DataBlob): Promise&lt;void&gt;
 
 
 
-#### updateSync12+
+### updateSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateSync(input: DataBlob): void
 
@@ -8610,6 +9811,7 @@ updateSync(input: DataBlob): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | input | DataBlob | 是 | 传入的消息。 |
@@ -8618,6 +9820,7 @@ updateSync(input: DataBlob): void
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -8628,7 +9831,10 @@ updateSync(input: DataBlob): void
 
 
 
-#### doFinal
+### doFinal
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 doFinal(callback: AsyncCallback&lt;DataBlob&gt;): void
 
@@ -8644,6 +9850,7 @@ doFinal(callback: AsyncCallback&lt;DataBlob&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;DataBlob&gt; | 是 | 回调函数，用于获取Mac的计算结果。当MAC计算成功，err为undefined，data为获取到的Mac计算结果；否则为错误对象。 |
@@ -8652,6 +9859,7 @@ doFinal(callback: AsyncCallback&lt;DataBlob&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -8686,7 +9894,10 @@ function hmacByCallback() {
 
 
 
-#### doFinal
+### doFinal
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 doFinal(): Promise&lt;DataBlob&gt;
 
@@ -8702,6 +9913,7 @@ doFinal(): Promise&lt;DataBlob&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;DataBlob&gt; | Promise对象，返回MAC计算结果。 |
@@ -8710,6 +9922,7 @@ doFinal(): Promise&lt;DataBlob&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -8740,9 +9953,10 @@ async function hmacByPromise() {
 
 
 
-#### doFinalSync12+
+### doFinalSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 doFinalSync(): DataBlob
 
@@ -8754,6 +9968,7 @@ doFinalSync(): DataBlob
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | DataBlob | 返回MAC计算结果。 |
@@ -8762,6 +9977,7 @@ doFinalSync(): DataBlob
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -8794,7 +10010,10 @@ function hmacBySync() {
 
 
 
-#### getMacLength
+### getMacLength
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMacLength(): number
 
@@ -8810,6 +10029,7 @@ getMacLength(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回Mac计算结果的字节长度。 |
@@ -8818,6 +10038,7 @@ getMacLength(): number
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -8863,13 +10084,14 @@ function testGetMacLength() {
 
 
 
-#### cryptoFramework.createRandom
+## cryptoFramework.createRandom
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 createRandom(): Random
 
-生成Random实例，用于进行随机数的计算与设置种子。
+创建随机数实例。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -8887,14 +10109,16 @@ createRandom(): Random
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Random | 返回由输入算法指定生成的Random对象。 支持的规格详见框架概述随机数算法规格。 |
+| Random | 返回Random实例。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -8917,15 +10141,19 @@ try {
 
 
 
-#### Random
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
-
-Random类，调用Random方法生成随机数。调用前，需要通过[createRandom](#cryptoframeworkcreaterandom)构造Random实例。
+## Random
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
-#### 属性
+随机数接口，定义随机数生成的方法。调用前，需通过[createRandom](#cryptoframeworkcreaterandom)创建一个Random实例。
+
+
+
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -8934,7 +10162,8 @@ Random类，调用Random方法生成随机数。调用前，需要通过[createR
 **系统能力：**
 
  - API版本12+：SystemCapability.Security.CryptoFramework.Rand
- - API版本9-11：SystemCapability.Security.CryptoFramework
+ - API版本10-11：SystemCapability.Security.CryptoFramework
+
 
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
@@ -8944,7 +10173,10 @@ Random类，调用Random方法生成随机数。调用前，需要通过[createR
 
 
 
-#### generateRandom
+### generateRandom
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 generateRandom(len: number, callback: AsyncCallback&lt;DataBlob&gt;): void
 
@@ -8966,6 +10198,7 @@ generateRandom(len: number, callback: AsyncCallback&lt;DataBlob&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | len | number | 是 | 表示生成随机数的长度，单位为bytes，范围在[1, INT_MAX]。 |
@@ -8975,6 +10208,7 @@ generateRandom(len: number, callback: AsyncCallback&lt;DataBlob&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -9000,7 +10234,10 @@ rand.generateRandom(12, (err, randData) => {
 
 
 
-#### generateRandom
+### generateRandom
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 generateRandom(len: number): Promise&lt;DataBlob&gt;
 
@@ -9020,12 +10257,14 @@ generateRandom(len: number): Promise&lt;DataBlob&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | len | number | 是 | 表示生成随机数的长度，单位为bytes，范围在[1, INT_MAX]。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -9035,6 +10274,7 @@ generateRandom(len: number): Promise&lt;DataBlob&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -9107,11 +10347,11 @@ function randTest() {
     let seed = new Uint8Array([1, 2, 3]);
     rand.setSeed({ data : seed });
 
-    rand.generateRandom(12, function (finishErr, randData){
+    rand.generateRandom(12, function (finishErr, randData) {
         if (finishErr) {
-            console.error("GenerateRandom failed. Code:" + finishErr.code + " : " + finishErr.message);
+            console.error('GenerateRandom failed. Code:' + finishErr.code + ' : ' + finishErr.message);
         } else {
-            console.info("GenerateRandom successfully:" + randData);
+            console.info('GenerateRandom successfully: ' + randData);
         }
     })
 }
@@ -9128,7 +10368,10 @@ export default {
 
 
 
-#### generateRandomSync10+
+### generateRandomSync10+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 generateRandomSync(len: number): DataBlob
 
@@ -9150,12 +10393,14 @@ generateRandomSync(len: number): DataBlob
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | len | number | 是 | 表示生成随机数的长度，单位为bytes，范围在[1, INT_MAX]。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -9165,6 +10410,7 @@ generateRandomSync(len: number): DataBlob
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -9243,9 +10489,9 @@ function randTestSync() {
     try {
         let randData = rand.generateRandomSync(randLen);
         if (randData != null) {
-            console.info("GenerateRandom successfully: " + randData.data);
+            console.info('GenerateRandom successfully: ' + randData.data);
         } else {
-            console.error("GenerateRandom failed!");
+            console.error('GenerateRandom failed!');
         }
     } catch (error) {
         console.error(`GenerateRandom random number failed. Code: ${error.code}, message: ${error.message}`);
@@ -9264,13 +10510,14 @@ export default {
 
 
 
-#### enableHardwareEntropy21+
+### enableHardwareEntropy21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableHardwareEntropy(): void
 
-开启硬件熵源。
+开启硬件熵源。将从TEE中获取安全随机数作为该随机数实例的熵源。
 
 **元服务API：** 从API version 21开始，该接口支持在元服务中使用。
 
@@ -9281,6 +10528,7 @@ enableHardwareEntropy(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -9315,7 +10563,10 @@ rand.generateRandom(12, (err, randData) => {
 
 
 
-#### setSeed
+### setSeed
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 setSeed(seed: DataBlob): void
 
@@ -9337,6 +10588,7 @@ setSeed(seed: DataBlob): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | seed | DataBlob | 是 | 设置的种子。 |
@@ -9345,6 +10597,7 @@ setSeed(seed: DataBlob): void
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -9375,13 +10628,14 @@ rand.generateRandom(12, (err, randData) => {
 
 
 
-#### cryptoFramework.createKdf11+
+## cryptoFramework.createKdf11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createKdf(algName: string): Kdf
 
-密钥派生函数（key derivation function）实例生成。
+创建密钥派生函数实例。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -9393,21 +10647,24 @@ createKdf(algName: string): Kdf
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| algName | string | 是 | 指定密钥派生算法（包含HMAC配套的散列函数）：目前支持PBKDF2、HKDF算法、SCRYPT算法，如"PBKDF2\|SHA256", "HKDF\|SHA256", "SCRYPT"。 支持的规格详见密钥派生函数规格。 |
+| algName | string | 是 | 指定密钥派生算法（包含HMAC配套的散列函数）：目前支持PBKDF2、HKDF算法、SCRYPT算法，如"PBKDF2\|SHA256"、 "HKDF\|SHA256"、 "SCRYPT"和"X963KDF\|SHA256"等。 支持的规格详见密钥派生函数规格。 |
 
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Kdf | 返回由输入算法指定生成的Kdf对象。 |
+| Kdf | 返回对应算法的Kdf实例。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -9429,15 +10686,19 @@ let kdf = cryptoFramework.createKdf('PBKDF2|SHA256');
 
 
 
-#### Kdf11+
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
-
-密钥派生函数（key derivation function）类，使用密钥派生方法之前需要创建该类的实例进行操作，通过createKdf(algName: string): Kdf方法构造此实例。
+## Kdf11+
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 属性
+密钥派生函数（KDF）接口，定义基于密钥派生参数派生密钥的方法。调用前，需通过[createKdf](#cryptoframeworkcreatekdf11)方法构造此实例。
+
+
+
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -9447,6 +10708,7 @@ let kdf = cryptoFramework.createKdf('PBKDF2|SHA256');
  - API版本11：SystemCapability.Security.CryptoFramework
 
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | algName | string | 是 | 否 | 密钥派生函数的算法名称。 |
@@ -9454,7 +10716,10 @@ let kdf = cryptoFramework.createKdf('PBKDF2|SHA256');
 
 
 
-#### generateSecret11+
+### generateSecret11+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 generateSecret(params: KdfSpec, callback: AsyncCallback&lt;DataBlob&gt;): void
 
@@ -9470,6 +10735,7 @@ generateSecret(params: KdfSpec, callback: AsyncCallback&lt;DataBlob&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | KdfSpec | 是 | 设置密钥派生函数的参数。 |
@@ -9479,6 +10745,7 @@ generateSecret(params: KdfSpec, callback: AsyncCallback&lt;DataBlob&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -9540,7 +10807,10 @@ kdf.generateSecret(spec, (err, secret) => {
 
 
 
-#### generateSecret11+
+### generateSecret11+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 generateSecret(params: KdfSpec): Promise&lt;DataBlob&gt;
 
@@ -9556,12 +10826,14 @@ generateSecret(params: KdfSpec): Promise&lt;DataBlob&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | KdfSpec | 是 | 设置密钥派生函数的参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -9571,6 +10843,7 @@ generateSecret(params: KdfSpec): Promise&lt;DataBlob&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -9632,9 +10905,10 @@ kdfPromise.then(secret => {
 
 
 
-#### generateSecretSync12+
+### generateSecretSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 generateSecretSync(params: KdfSpec): DataBlob
 
@@ -9646,12 +10920,14 @@ generateSecretSync(params: KdfSpec): DataBlob
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | KdfSpec | 是 | 设置密钥派生函数的参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -9661,6 +10937,7 @@ generateSecretSync(params: KdfSpec): DataBlob
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -9713,21 +10990,23 @@ console.info('[Sync]key derivation output = ' + secret.data);
 
 
 
-#### SignatureUtils20+
+## SignatureUtils20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于SM2数据转换的工具类。
 
 
 
-#### genEccSignatureSpec20+
+### genEccSignatureSpec20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static genEccSignatureSpec(data: Uint8Array): EccSignatureSpec
 
-从ASN1 DER格式的sm2签名数据获取r和s。
+从ASN.1 DER编码的ECC/SM2签名数据获取r和s。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
@@ -9735,12 +11014,14 @@ static genEccSignatureSpec(data: Uint8Array): EccSignatureSpec
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| data | Uint8Array | 是 | ASN1 DER格式的签名数据。 |
+| data | Uint8Array | 是 | ASN.1 DER编码的签名数据。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -9750,6 +11031,7 @@ static genEccSignatureSpec(data: Uint8Array): EccSignatureSpec
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -9782,19 +11064,21 @@ function testGenEccSignatureSpec() {
 
 
 
-#### genEccSignature20+
+### genEccSignature20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static genEccSignature(spec: EccSignatureSpec): Uint8Array;
 
-将（r、s）的ECC/SM2签名数据转换为ASN1 DER格式。
+将（r、s）的ECC/SM2签名数据转换为ASN.1 DER编码。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Signature
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -9803,14 +11087,16 @@ static genEccSignature(spec: EccSignatureSpec): Uint8Array;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Uint8Array | ASN1 DER格式的签名数据。 |
+| Uint8Array | ASN.1 DER编码的签名数据。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -9845,9 +11131,10 @@ function testGenEccSignature() {
 
 
 
-#### KemAlgNameId
+## KemAlgNameId
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示密钥封装（Kem）算法名称的枚举。
 
@@ -9859,6 +11146,7 @@ function testGenEccSignature() {
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Cipher
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ML_KEM_512 | 0 | 表示ML-KEM-512算法名称ID。 |
@@ -9868,9 +11156,10 @@ function testGenEccSignature() {
 
 
 
-#### KemEncapResult
+## KemEncapResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示密钥封装的结果。
 
@@ -9882,6 +11171,7 @@ function testGenEccSignature() {
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Cipher
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | sharedSecret | Uint8Array | 否 | 否 | 密钥封装生成的共享密钥。 |
@@ -9890,13 +11180,14 @@ function testGenEccSignature() {
 
 
 
-#### cryptoFramework.createKem
+## cryptoFramework.createKem
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createKem(algNameId: KemAlgNameId): Kem
 
-生成Kem实例，用于密钥封装和解封装操作。
+创建一个用于密钥封装和解封装操作的Kem实例。
 
 **起始版本：** 26.0.0
 
@@ -9908,6 +11199,7 @@ createKem(algNameId: KemAlgNameId): Kem
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | algNameId | KemAlgNameId | 是 | 指定密钥封装算法的名称ID。 |
@@ -9915,14 +11207,16 @@ createKem(algNameId: KemAlgNameId): Kem
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Kem | 返回根据输入算法生成的Kem对象。 |
+| Kem | 返回对应算法的Kem实例。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -9951,11 +11245,12 @@ function createKem() {
 
 
 
-#### Kem
+## Kem
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-Kem类，使用密钥封装方法之前需要创建该类的实例进行操作，通过[createKem](#cryptoframeworkcreatekem)方法构造此实例。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+密钥封装机制（KEM）接口，定义基于密钥封装机制进行密钥封装和解封装的方法。调用前，需通过[createKem(algNameId: KemAlgNameId): Kem](#cryptoframeworkcreatekem)方法创建一个Kem实例。
 
 **起始版本：** 26.0.0
 
@@ -9965,9 +11260,10 @@ Kem类，使用密钥封装方法之前需要创建该类的实例进行操作�
 
 
 
-#### encapsulate
+### encapsulate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 encapsulate(pubKey: PubKey, ikme: Uint8Array | null): Promise&lt;KemEncapResult&gt;
 
@@ -9983,6 +11279,7 @@ encapsulate(pubKey: PubKey, ikme: Uint8Array | null): Promise&lt;KemEncapResult&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pubKey | PubKey | 是 | 用于密钥封装的公钥。 |
@@ -9990,6 +11287,7 @@ encapsulate(pubKey: PubKey, ikme: Uint8Array | null): Promise&lt;KemEncapResult&
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -9999,6 +11297,7 @@ encapsulate(pubKey: PubKey, ikme: Uint8Array | null): Promise&lt;KemEncapResult&
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -10032,9 +11331,10 @@ async function kemEncapsulate() {
 
 
 
-#### encapsulateSync
+### encapsulateSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 encapsulateSync(pubKey: PubKey, ikme: Uint8Array | null): KemEncapResult
 
@@ -10054,6 +11354,7 @@ encapsulateSync(pubKey: PubKey, ikme: Uint8Array | null): KemEncapResult
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pubKey | PubKey | 是 | 用于密钥封装的公钥。 |
@@ -10061,6 +11362,7 @@ encapsulateSync(pubKey: PubKey, ikme: Uint8Array | null): KemEncapResult
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -10070,6 +11372,7 @@ encapsulateSync(pubKey: PubKey, ikme: Uint8Array | null): KemEncapResult
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -10103,9 +11406,10 @@ function kemEncapsulateSync() {
 
 
 
-#### decapsulate
+### decapsulate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 decapsulate(priKey: PriKey, wrappedKey: Uint8Array): Promise&lt;Uint8Array&gt;
 
@@ -10121,6 +11425,7 @@ decapsulate(priKey: PriKey, wrappedKey: Uint8Array): Promise&lt;Uint8Array&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | priKey | PriKey | 是 | 用于密钥解封装的私钥。 |
@@ -10128,6 +11433,7 @@ decapsulate(priKey: PriKey, wrappedKey: Uint8Array): Promise&lt;Uint8Array&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -10137,6 +11443,7 @@ decapsulate(priKey: PriKey, wrappedKey: Uint8Array): Promise&lt;Uint8Array&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -10170,9 +11477,10 @@ async function kemDecapsulate() {
 
 
 
-#### decapsulateSync
+### decapsulateSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 decapsulateSync(priKey: PriKey, wrappedKey: Uint8Array): Uint8Array
 
@@ -10192,6 +11500,7 @@ decapsulateSync(priKey: PriKey, wrappedKey: Uint8Array): Uint8Array
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | priKey | PriKey | 是 | 用于密钥解封装的私钥。 |
@@ -10199,6 +11508,7 @@ decapsulateSync(priKey: PriKey, wrappedKey: Uint8Array): Uint8Array
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -10208,6 +11518,7 @@ decapsulateSync(priKey: PriKey, wrappedKey: Uint8Array): Uint8Array
 **错误码：**
 
 以下错误码的详细介绍请参见[cryptoFramework错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

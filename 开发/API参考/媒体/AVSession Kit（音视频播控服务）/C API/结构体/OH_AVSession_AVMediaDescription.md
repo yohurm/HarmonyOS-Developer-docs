@@ -1,20 +1,21 @@
 # OH_AVSession_AVMediaDescription
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohavsession-oh-avsession-avmediadescription
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct OH_AVSession_AVMediaDescription OH_AVSession_AVMediaDescription
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-定义OH_AVSession_AVMediaDescription结构体，用于描述应用为当前资源设置的音视频媒体信息。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+定义OH_AVSession_AVMediaDescription类型别名，用于表示应用为当前资源设置的音视频媒体描述信息。
  
 **起始版本：** 23
  

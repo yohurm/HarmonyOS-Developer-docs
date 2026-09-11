@@ -1,6 +1,6 @@
 # CollaborationDevicePicker (流转控件)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/servicecollaboration-collaborationdevicepicker
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -12,7 +12,8 @@
 **起始版本：** 4.0.0(10)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -22,7 +23,8 @@ import { CollaborationDevicePicker } from '@kit.ServiceCollaborationKit';
  
   
 
-#### CollaborationDevicePicker
+## CollaborationDevicePicker
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -36,6 +38,7 @@ import { CollaborationDevicePicker } from '@kit.ServiceCollaborationKit';
  
 **起始版本：** 4.0.0(10)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | controller | devicePicker.DevicePickerController | 否 | 否 | 设备选择控制器，通过该控制器与设备选择界面进行交互。 |
@@ -44,7 +47,8 @@ import { CollaborationDevicePicker } from '@kit.ServiceCollaborationKit';
  
   
 
-#### build
+### build
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -84,6 +88,7 @@ struct Index {
 }
 ```
   
+
 | 图1 设备选择界面的应用描述信息效果图 | 图2 点击流转入口组件后，拉起设备选择面板效果图 | 图3 设备流转成功后效果图 | 图4 流转失败效果图 |
 | --- | --- | --- | --- |
 | 设备选择界面最上方为应用描述部分，包括应用图标、应用名称、应用描述信息 | 页面右上角为流转图标，点击后会从设备底部弹出设备选择面板 | 流转图标和设备信息会变蓝色 | 流转失败效果图 |

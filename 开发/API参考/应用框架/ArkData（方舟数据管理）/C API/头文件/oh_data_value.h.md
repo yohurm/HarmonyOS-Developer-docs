@@ -1,13 +1,14 @@
 # oh_data_value.h
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-data-value-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供与单条数据值相关的函数和枚举。
  
@@ -25,16 +26,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_Data_Value | OH_Data_Value | 定义OH_Data_Value结构类型。 |
@@ -42,10 +46,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_ColumnType | OH_ColumnType | 表示列的类型。 |
@@ -53,10 +59,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_Data_Value *OH_Value_Create(void) | 创建OH_Data_Value实例，用于存储单条键值对数据。 |
@@ -87,15 +95,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_ColumnType
+### OH_ColumnType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_ColumnType
@@ -107,6 +117,7 @@ enum OH_ColumnType
  
 **起始版本：** 10
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | TYPE_NULL = 0 | 表示NULL类型。 |
@@ -122,15 +133,17 @@ enum OH_ColumnType
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_Value_Create()
+### OH_Value_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Data_Value *OH_Value_Create(void)
@@ -144,16 +157,18 @@ OH_Data_Value *OH_Value_Create(void)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| OH_Data_Value | 执行成功时返回指向OH_Data_Value实例的指针。否则返回nullptr。 使用完成后，必须通过OH_Value_Destroy接口释放内存。 |
+| OH_Data_Value * | 执行成功时返回指向OH_Data_Value实例的指针。否则返回nullptr。 使用完成后，必须通过OH_Value_Destroy接口释放内存。 |
  
  
   
 
-#### OH_Value_Destroy()
+### OH_Value_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Value_Destroy(OH_Data_Value *value)
@@ -167,6 +182,7 @@ int OH_Value_Destroy(OH_Data_Value *value)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Data_Value *value | 表示指向OH_Data_Value实例的指针。 |
@@ -174,6 +190,7 @@ int OH_Value_Destroy(OH_Data_Value *value)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回错误码。 返回RDB_OK表示成功。 返回RDB_E_INVALID_ARGS表示无效参数。 |
@@ -181,9 +198,10 @@ int OH_Value_Destroy(OH_Data_Value *value)
  
   
 
-#### OH_Value_PutNull()
+### OH_Value_PutNull()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Value_PutNull(OH_Data_Value *value)
@@ -197,6 +215,7 @@ int OH_Value_PutNull(OH_Data_Value *value)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Data_Value *value | 表示指向OH_Data_Value实例的指针。 |
@@ -204,6 +223,7 @@ int OH_Value_PutNull(OH_Data_Value *value)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回错误码。 返回RDB_OK表示成功。 返回RDB_E_INVALID_ARGS表示无效参数。 |
@@ -211,9 +231,10 @@ int OH_Value_PutNull(OH_Data_Value *value)
  
   
 
-#### OH_Value_PutInt()
+### OH_Value_PutInt()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Value_PutInt(OH_Data_Value *value, int64_t val)
@@ -227,6 +248,7 @@ int OH_Value_PutInt(OH_Data_Value *value, int64_t val)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Data_Value *value | 表示指向OH_Data_Value实例的指针。 |
@@ -235,6 +257,7 @@ int OH_Value_PutInt(OH_Data_Value *value, int64_t val)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回错误码。 返回RDB_OK表示成功。 返回RDB_E_INVALID_ARGS表示无效参数。 |
@@ -242,9 +265,10 @@ int OH_Value_PutInt(OH_Data_Value *value, int64_t val)
  
   
 
-#### OH_Value_PutReal()
+### OH_Value_PutReal()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Value_PutReal(OH_Data_Value *value, double val)
@@ -258,6 +282,7 @@ int OH_Value_PutReal(OH_Data_Value *value, double val)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Data_Value *value | 表示指向OH_Data_Value实例的指针。 |
@@ -266,6 +291,7 @@ int OH_Value_PutReal(OH_Data_Value *value, double val)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回错误码。 返回RDB_OK表示成功。 返回RDB_E_INVALID_ARGS表示无效参数。 |
@@ -273,9 +299,10 @@ int OH_Value_PutReal(OH_Data_Value *value, double val)
  
   
 
-#### OH_Value_PutText()
+### OH_Value_PutText()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Value_PutText(OH_Data_Value *value, const char *val)
@@ -289,6 +316,7 @@ int OH_Value_PutText(OH_Data_Value *value, const char *val)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Data_Value *value | 表示指向OH_Data_Value实例的指针。 |
@@ -297,6 +325,7 @@ int OH_Value_PutText(OH_Data_Value *value, const char *val)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回错误码。 返回RDB_OK表示成功。 返回RDB_E_INVALID_ARGS表示无效参数。 |
@@ -304,9 +333,10 @@ int OH_Value_PutText(OH_Data_Value *value, const char *val)
  
   
 
-#### OH_Value_PutBlob()
+### OH_Value_PutBlob()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Value_PutBlob(OH_Data_Value *value, const unsigned char *val, size_t length)
@@ -320,6 +350,7 @@ int OH_Value_PutBlob(OH_Data_Value *value, const unsigned char *val, size_t leng
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Data_Value *value | 表示指向OH_Data_Value实例的指针。 |
@@ -329,6 +360,7 @@ int OH_Value_PutBlob(OH_Data_Value *value, const unsigned char *val, size_t leng
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回错误码。 返回RDB_OK表示成功。 返回RDB_E_INVALID_ARGS表示无效参数。 |
@@ -336,9 +368,10 @@ int OH_Value_PutBlob(OH_Data_Value *value, const unsigned char *val, size_t leng
  
   
 
-#### OH_Value_PutAsset()
+### OH_Value_PutAsset()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Value_PutAsset(OH_Data_Value *value, const Data_Asset *val)
@@ -352,6 +385,7 @@ int OH_Value_PutAsset(OH_Data_Value *value, const Data_Asset *val)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Data_Value *value | 表示指向OH_Data_Value实例的指针。 |
@@ -360,6 +394,7 @@ int OH_Value_PutAsset(OH_Data_Value *value, const Data_Asset *val)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回错误码。 返回RDB_OK表示成功。 返回RDB_E_INVALID_ARGS表示无效参数。 |
@@ -367,9 +402,10 @@ int OH_Value_PutAsset(OH_Data_Value *value, const Data_Asset *val)
  
   
 
-#### OH_Value_PutAssets()
+### OH_Value_PutAssets()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Value_PutAssets(OH_Data_Value *value, const Data_Asset * const * val, size_t length)
@@ -383,6 +419,7 @@ int OH_Value_PutAssets(OH_Data_Value *value, const Data_Asset * const * val, siz
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Data_Value *value | 表示指向OH_Data_Value实例的指针。 |
@@ -392,6 +429,7 @@ int OH_Value_PutAssets(OH_Data_Value *value, const Data_Asset * const * val, siz
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回错误码。 返回RDB_OK表示成功。 返回RDB_E_INVALID_ARGS表示无效参数。 |
@@ -399,9 +437,10 @@ int OH_Value_PutAssets(OH_Data_Value *value, const Data_Asset * const * val, siz
  
   
 
-#### OH_Value_PutFloatVector()
+### OH_Value_PutFloatVector()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Value_PutFloatVector(OH_Data_Value *value, const float *val, size_t length)
@@ -415,6 +454,7 @@ int OH_Value_PutFloatVector(OH_Data_Value *value, const float *val, size_t lengt
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Data_Value *value | 表示指向OH_Data_Value实例的指针。 |
@@ -424,6 +464,7 @@ int OH_Value_PutFloatVector(OH_Data_Value *value, const float *val, size_t lengt
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回错误码。 返回RDB_OK表示成功。 返回RDB_E_INVALID_ARGS表示无效参数。 |
@@ -431,9 +472,10 @@ int OH_Value_PutFloatVector(OH_Data_Value *value, const float *val, size_t lengt
  
   
 
-#### OH_Value_PutUnlimitedInt()
+### OH_Value_PutUnlimitedInt()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Value_PutUnlimitedInt(OH_Data_Value *value, int sign, const uint64_t *trueForm, size_t length)
@@ -447,6 +489,7 @@ int OH_Value_PutUnlimitedInt(OH_Data_Value *value, int sign, const uint64_t *tru
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Data_Value *value | 表示指向OH_Data_Value实例的指针。 |
@@ -457,6 +500,7 @@ int OH_Value_PutUnlimitedInt(OH_Data_Value *value, int sign, const uint64_t *tru
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回错误码。 返回RDB_OK表示成功。 返回RDB_E_INVALID_ARGS表示无效参数。 |
@@ -464,9 +508,10 @@ int OH_Value_PutUnlimitedInt(OH_Data_Value *value, int sign, const uint64_t *tru
  
   
 
-#### OH_Value_GetType()
+### OH_Value_GetType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Value_GetType(OH_Data_Value *value, OH_ColumnType *type)
@@ -480,6 +525,7 @@ int OH_Value_GetType(OH_Data_Value *value, OH_ColumnType *type)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Data_Value *value | 表示指向OH_Data_Value实例的指针。 |
@@ -488,6 +534,7 @@ int OH_Value_GetType(OH_Data_Value *value, OH_ColumnType *type)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回错误码。 返回RDB_OK表示成功。 返回RDB_E_INVALID_ARGS表示无效参数。 |
@@ -495,9 +542,10 @@ int OH_Value_GetType(OH_Data_Value *value, OH_ColumnType *type)
  
   
 
-#### OH_Value_IsNull()
+### OH_Value_IsNull()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Value_IsNull(OH_Data_Value *value, bool *val)
@@ -511,6 +559,7 @@ int OH_Value_IsNull(OH_Data_Value *value, bool *val)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Data_Value *value | 表示指向OH_Data_Value实例的指针。 |
@@ -519,6 +568,7 @@ int OH_Value_IsNull(OH_Data_Value *value, bool *val)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回错误码。 返回RDB_OK表示成功。 返回RDB_E_INVALID_ARGS表示无效参数。 |
@@ -526,9 +576,10 @@ int OH_Value_IsNull(OH_Data_Value *value, bool *val)
  
   
 
-#### OH_Value_GetInt()
+### OH_Value_GetInt()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Value_GetInt(OH_Data_Value *value, int64_t *val)
@@ -542,6 +593,7 @@ int OH_Value_GetInt(OH_Data_Value *value, int64_t *val)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Data_Value *value | 表示指向OH_Data_Value实例的指针。 |
@@ -550,6 +602,7 @@ int OH_Value_GetInt(OH_Data_Value *value, int64_t *val)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回错误码。 返回RDB_OK表示成功。 返回RDB_E_INVALID_ARGS表示无效参数。 返回RDB_E_DATA_TYPE_NULL表示存储数据为空。 返回RDB_E_TYPE_MISMATCH表示数据类型不匹配。 |
@@ -557,9 +610,10 @@ int OH_Value_GetInt(OH_Data_Value *value, int64_t *val)
  
   
 
-#### OH_Value_GetReal()
+### OH_Value_GetReal()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Value_GetReal(OH_Data_Value *value, double *val)
@@ -573,6 +627,7 @@ int OH_Value_GetReal(OH_Data_Value *value, double *val)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Data_Value *value | 表示指向OH_Data_Value实例的指针。 |
@@ -581,6 +636,7 @@ int OH_Value_GetReal(OH_Data_Value *value, double *val)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回错误码。 返回RDB_OK表示成功。 返回RDB_E_INVALID_ARGS表示无效参数。 返回RDB_E_DATA_TYPE_NULL表示存储数据为空。 返回RDB_E_TYPE_MISMATCH表示数据类型不匹配。 |
@@ -588,9 +644,10 @@ int OH_Value_GetReal(OH_Data_Value *value, double *val)
  
   
 
-#### OH_Value_GetText()
+### OH_Value_GetText()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Value_GetText(OH_Data_Value *value, const char **val)
@@ -604,6 +661,7 @@ int OH_Value_GetText(OH_Data_Value *value, const char **val)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Data_Value *value | 表示指向OH_Data_Value实例的指针。 |
@@ -612,6 +670,7 @@ int OH_Value_GetText(OH_Data_Value *value, const char **val)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回错误码。 返回RDB_OK表示成功。 返回RDB_E_INVALID_ARGS表示无效参数。 返回RDB_E_DATA_TYPE_NULL表示存储数据为空。 返回RDB_E_TYPE_MISMATCH表示数据类型不匹配。 |
@@ -619,9 +678,10 @@ int OH_Value_GetText(OH_Data_Value *value, const char **val)
  
   
 
-#### OH_Value_GetBlob()
+### OH_Value_GetBlob()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Value_GetBlob(OH_Data_Value *value, const uint8_t **val, size_t *length)
@@ -635,6 +695,7 @@ int OH_Value_GetBlob(OH_Data_Value *value, const uint8_t **val, size_t *length)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Data_Value *value | 表示指向OH_Data_Value实例的指针。 |
@@ -644,6 +705,7 @@ int OH_Value_GetBlob(OH_Data_Value *value, const uint8_t **val, size_t *length)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回错误码。 返回RDB_OK表示成功。 返回RDB_E_INVALID_ARGS表示无效参数。 返回RDB_E_DATA_TYPE_NULL表示存储数据为空。 返回RDB_E_TYPE_MISMATCH表示数据类型不匹配。 |
@@ -651,9 +713,10 @@ int OH_Value_GetBlob(OH_Data_Value *value, const uint8_t **val, size_t *length)
  
   
 
-#### OH_Value_GetAsset()
+### OH_Value_GetAsset()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Value_GetAsset(OH_Data_Value *value, Data_Asset *val)
@@ -667,6 +730,7 @@ int OH_Value_GetAsset(OH_Data_Value *value, Data_Asset *val)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Data_Value *value | 表示指向OH_Data_Value实例的指针。 |
@@ -675,6 +739,7 @@ int OH_Value_GetAsset(OH_Data_Value *value, Data_Asset *val)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回错误码。 返回RDB_OK表示成功。 返回RDB_E_INVALID_ARGS表示无效参数。 返回RDB_E_DATA_TYPE_NULL表示存储数据为空。 返回RDB_E_TYPE_MISMATCH表示数据类型不匹配。 |
@@ -682,9 +747,10 @@ int OH_Value_GetAsset(OH_Data_Value *value, Data_Asset *val)
  
   
 
-#### OH_Value_GetAssetsCount()
+### OH_Value_GetAssetsCount()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Value_GetAssetsCount(OH_Data_Value *value, size_t *length)
@@ -698,6 +764,7 @@ int OH_Value_GetAssetsCount(OH_Data_Value *value, size_t *length)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Data_Value *value | 表示指向OH_Data_Value实例的指针。 |
@@ -706,6 +773,7 @@ int OH_Value_GetAssetsCount(OH_Data_Value *value, size_t *length)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回错误码。 返回RDB_OK表示成功。 返回RDB_E_INVALID_ARGS表示无效参数。 返回RDB_E_DATA_TYPE_NULL表示存储数据为空。 返回RDB_E_TYPE_MISMATCH表示数据类型不匹配。 |
@@ -713,9 +781,10 @@ int OH_Value_GetAssetsCount(OH_Data_Value *value, size_t *length)
  
   
 
-#### OH_Value_GetAssets()
+### OH_Value_GetAssets()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Value_GetAssets(OH_Data_Value *value, Data_Asset **val, size_t inLen, size_t *outLen)
@@ -729,16 +798,18 @@ int OH_Value_GetAssets(OH_Data_Value *value, Data_Asset **val, size_t inLen, siz
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Data_Value *value | 表示指向OH_Data_Value实例的指针。 |
 | Data_Asset **val | 表示指向Data_Asset对象的指针。 需要申请数据内存。 此函数仅填充数据。否则执行失败。 |
-| size_t inLen | 表示val的大小。可以通过OH_Values_GetAssetsCount获取。 |
+| size_t inLen | 表示val的大小。可以通过OH_Value_GetAssetsCount获取。 |
 | size_t *outLen | 一个输出参数，表示实际获取的数据大小。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回错误码。 返回RDB_OK表示成功。 返回RDB_E_INVALID_ARGS表示无效参数。 返回RDB_E_DATA_TYPE_NULL表示存储数据为空。 返回RDB_E_TYPE_MISMATCH表示数据类型不匹配。 |
@@ -746,9 +817,10 @@ int OH_Value_GetAssets(OH_Data_Value *value, Data_Asset **val, size_t inLen, siz
  
   
 
-#### OH_Value_GetFloatVectorCount()
+### OH_Value_GetFloatVectorCount()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Value_GetFloatVectorCount(OH_Data_Value *value, size_t *length)
@@ -762,6 +834,7 @@ int OH_Value_GetFloatVectorCount(OH_Data_Value *value, size_t *length)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Data_Value *value | 表示指向OH_Data_Value实例的指针。 |
@@ -770,16 +843,18 @@ int OH_Value_GetFloatVectorCount(OH_Data_Value *value, size_t *length)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回错误码。 返回RDB_OK表示成功。 返回RDB_E_INVALID_ARGS表示参数无效。 返回RDB_E_DATA_TYPE_NULL表示存储数据为空。 返回RDB_E_TYPE_MISMATCH表示数据类型不匹配。 |
+| int | 返回错误码。 返回RDB_OK表示成功。 返回RDB_E_INVALID_ARGS表示无效参数。 返回RDB_E_DATA_TYPE_NULL表示存储数据为空。 返回RDB_E_TYPE_MISMATCH表示数据类型不匹配。 |
  
  
   
 
-#### OH_Value_GetFloatVector()
+### OH_Value_GetFloatVector()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Value_GetFloatVector(OH_Data_Value *value, float *val, size_t inLen, size_t *outLen)
@@ -793,16 +868,18 @@ int OH_Value_GetFloatVector(OH_Data_Value *value, float *val, size_t inLen, size
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Data_Value *value | 表示指向OH_Data_Value实例的指针。 |
 | float *val | 表示指向float数组的指针。 需要申请数据内存。 此函数仅填充数据。否则执行失败。 |
-| size_t inLen | 表示val的大小。可以通过OH_Values_GetFloatVectorCount获取。 |
+| size_t inLen | 表示val的大小。可以通过OH_Value_GetFloatVectorCount获取。 |
 | size_t *outLen | 一个输出参数，表示实际获取的数据大小。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回错误码。 返回RDB_OK表示成功。 返回RDB_E_INVALID_ARGS表示无效参数。 返回RDB_E_DATA_TYPE_NULL表示存储数据为空。 返回RDB_E_TYPE_MISMATCH表示数据类型不匹配。 |
@@ -810,9 +887,10 @@ int OH_Value_GetFloatVector(OH_Data_Value *value, float *val, size_t inLen, size
  
   
 
-#### OH_Value_GetUnlimitedIntBand()
+### OH_Value_GetUnlimitedIntBand()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Value_GetUnlimitedIntBand(OH_Data_Value *value, size_t *length)
@@ -826,6 +904,7 @@ int OH_Value_GetUnlimitedIntBand(OH_Data_Value *value, size_t *length)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Data_Value *value | 表示指向OH_Data_Value实例的指针。 |
@@ -834,6 +913,7 @@ int OH_Value_GetUnlimitedIntBand(OH_Data_Value *value, size_t *length)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回错误码。 返回RDB_OK表示成功。 返回RDB_E_INVALID_ARGS表示无效参数。 返回RDB_E_DATA_TYPE_NULL表示存储数据为空。 返回RDB_E_TYPE_MISMATCH表示数据类型不匹配。 |
@@ -841,9 +921,10 @@ int OH_Value_GetUnlimitedIntBand(OH_Data_Value *value, size_t *length)
  
   
 
-#### OH_Value_GetUnlimitedInt()
+### OH_Value_GetUnlimitedInt()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Value_GetUnlimitedInt(OH_Data_Value *value, int *sign, uint64_t *trueForm, size_t inLen, size_t *outLen)
@@ -857,17 +938,19 @@ int OH_Value_GetUnlimitedInt(OH_Data_Value *value, int *sign, uint64_t *trueForm
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Data_Value *value | 表示指向OH_Data_Value实例的指针。 |
 | int *sign | 一个输出参数，表示正负数，0表示正整数，1表示负整数。 |
 | uint64_t *trueForm | 表示指向整型数组的指针。 需要申请数据内存。 此函数仅填充数据。否则执行失败。 |
-| size_t inLen | 表示trueForm的大小。可以通过OH_Values_GetUnlimitedIntBand获取。 |
+| size_t inLen | 表示trueForm的大小。可以通过OH_Value_GetUnlimitedIntBand获取。 |
 | size_t *outLen | 一个输出参数，表示实际获取的数据大小。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回错误码。 返回RDB_OK表示成功。 返回RDB_E_INVALID_ARGS表示无效参数。 返回RDB_E_DATA_TYPE_NULL表示存储数据为空。 返回RDB_E_TYPE_MISMATCH表示数据类型不匹配。 |

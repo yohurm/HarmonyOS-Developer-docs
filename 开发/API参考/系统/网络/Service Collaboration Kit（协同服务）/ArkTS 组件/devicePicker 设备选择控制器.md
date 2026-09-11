@@ -1,6 +1,6 @@
 # devicePicker (设备选择控制器)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/servicecollaboration-devicepicker
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -12,7 +12,8 @@
 **起始版本：** 4.0.0(10)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -22,7 +23,8 @@ import { devicePicker } from '@kit.ServiceCollaborationKit';
  
   
 
-#### DeviceEvent
+## DeviceEvent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -36,6 +38,7 @@ type DeviceEvent = 'deviceSelected' | 'deviceUnselected' | 'selectedDeviceOfflin
  
 **起始版本：** 4.0.0(10)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | 'deviceSelected' | 设备选择事件。 当设备处于空闲状态时，点击设备会触发该事件。 |
@@ -45,7 +48,8 @@ type DeviceEvent = 'deviceSelected' | 'deviceUnselected' | 'selectedDeviceOfflin
  
   
 
-#### createDevicePickerController
+## createDevicePickerController
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -61,6 +65,7 @@ createDevicePickerController(): DevicePickerController
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DevicePickerController | 返回设备选择控制器实例，可以与流转控件CollaborationDevicePicker (流转控件)配合使用。 |
@@ -94,7 +99,8 @@ struct Index {
  
   
 
-#### DevicePickerController
+## DevicePickerController
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -108,7 +114,8 @@ DevicePickerController类提供了与设备选择面板交互的接口。
  
   
 
-#### on('deviceSelected' | 'deviceUnselected' | 'selectedDeviceOffline')
+### on('deviceSelected' | 'deviceUnselected' | 'selectedDeviceOffline')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -124,6 +131,7 @@ on(event: DeviceEvent, callback: Callback<distributedDeviceManager.DeviceBasicIn
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | DeviceEvent | 是 | 设备相关的事件，目前支持：设备选择、设备取消选择、已选择设备的下线事件。 |
@@ -190,6 +198,7 @@ struct CustomControls {
 }
 ```
   
+
 | 图1 设备空闲状态效果图 | 图2 设备成功状态效果图 |
 | --- | --- |
 | 下图中my phone处于空闲状态，点击该设备后会触发deviceSelected事件 | 下图中my phone处于成功状态，点击该设备后会触发deviceUnselected事件 |
@@ -197,7 +206,8 @@ struct CustomControls {
  
   
 
-#### off('deviceSelected' | 'deviceUnselected' | 'selectedDeviceOffline')
+### off('deviceSelected' | 'deviceUnselected' | 'selectedDeviceOffline')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -213,6 +223,7 @@ off(event: DeviceEvent, callback?: Callback<distributedDeviceManager.DeviceBasic
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | DeviceEvent | 是 | 设备相关的事件，目前支持：设备选择、设备取消选择、已选择设备的下线事件。 |
@@ -262,7 +273,8 @@ struct CustomControls {
  
   
 
-#### updateState
+### updateState
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -278,6 +290,7 @@ updateState(networkId: string, state: BusinessState, desc?: ResourceStr): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | networkId | string | 是 | 设备的networkId信息。 |
@@ -345,6 +358,7 @@ struct CustomControls {
 }
 ```
   
+
 | 图3 设备流转过程效果图 | 图4 设备流转成功效果图 | 图5 设备流转失败效果图 | 图6 应用描述信息效果图 |
 | --- | --- | --- | --- |
 | 下图中my phone处于流转中，设备名称右侧会有流转过程动画 | 下图中my phone流转成功 | 下图中my phone流转失败，失败原因是对端设备忙 | 在设备选择面板的最上方显示应用的相关信息，包括应用图标、应用名称、应用描述信息 |
@@ -352,7 +366,8 @@ struct CustomControls {
  
   
 
-#### release
+### release
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -393,7 +408,8 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### DevicePickerAttribute
+## DevicePickerAttribute
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -405,6 +421,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 4.0.0(10)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | abilityIcon | ResourceStr | 否 | 是 | ability对用户显示的图标，在设备选择面板的应用描述部分显示；如果不设置该属性，默认使用module.json5中的icon标签配置。 |
@@ -415,7 +432,8 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### BusinessState
+## BusinessState
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -427,6 +445,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 4.0.0(10)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | IDLE | 0 | 业务空闲状态。 |

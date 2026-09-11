@@ -1,16 +1,16 @@
 # USB串口配置管理
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/usbserial-configuration
 
-#### 简介
+## 简介
 
 USB串口配置管理中，波特率、数据位、校验位和停止位是串口通信协议的核心参数，它们共同定义了数据传输的格式和规则。通过合理配置这些参数，可以显著提升串口通信的可靠性和效率。
  
   
 
-#### 基本概念
+### 基本概念
 
 在进行USB串口开发时，开发者应了解以下基本概念：
  
@@ -30,18 +30,19 @@ USB串口配置管理中，波特率、数据位、校验位和停止位是串�
  
   
 
-#### 环境准备
+## 环境准备
 
 请参考USB串口通信服务开发概述[环境准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/usbserial-overview#环境准备)。
  
   
 
-#### 开发指导
+## 开发指导
 
   
 
-#### 接口说明
+### 接口说明
  
+
 | 接口名 | 描述 |
 | --- | --- |
 | getAttribute(portId: number): Readonly&lt;SerialAttribute&gt; | 获取串口设备配置。 |
@@ -50,7 +51,7 @@ USB串口配置管理中，波特率、数据位、校验位和停止位是串�
  
   
 
-#### 开发步骤
+### 开发步骤
 
 开发者可以通过上述接口获取和设置串口的配置：
  
@@ -168,7 +169,7 @@ try {
  
   
 
-#### 调测验证
+### 调测验证
 1. 准备一根USB转串口线缆，线缆的USB接口连接到HarmonyOS设备USB端口（该端口需支持USB转串口），线缆的串口接口连接到目标设备的串口上。
 2. 在HarmonyOS设备上执行上述示例。
 3. 返回getAttribute usbSerial success和setAttribute usbSerial success表示相关接口调用成功，可以查看当前串口的配置。

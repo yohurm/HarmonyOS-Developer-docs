@@ -1,13 +1,13 @@
 # Web组件渲染模式
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-render-mode
 
 Web组件提供了两种可配置的渲染模式，能够根据不同的容器大小进行适配，从而满足使用场景中对容器尺寸的需求。
 
 
-#### 异步渲染模式（默认）
+## 异步渲染模式（默认）
 
 异步渲染模式下（renderMode: [RenderMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-e#rendermode12).ASYNC_RENDER），Web组件作为图形surface节点，独立送显。建议在仅由Web组件构成的应用页面中使用此模式，以提高性能并降低功耗。
 
@@ -25,7 +25,7 @@ Web组件提供了两种可配置的渲染模式，能够根据不同的容器�
 
 
 
-#### 同步渲染模式
+## 同步渲染模式
 
 同步渲染模式下（renderMode: [RenderMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-e#rendermode12).SYNC_RENDER），Web组件作为图形canvas节点，Web渲染跟随系统组件一起送显，可以渲染更长Web组件内容，但会增加性能消耗。
 
@@ -44,7 +44,7 @@ Web组件提供了两种可配置的渲染模式，能够根据不同的容器�
 
 
 
-#### 示例代码
+## 示例代码
 
 ```ArkTS
 import { webview } from '@kit.ArkWeb';

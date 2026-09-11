@@ -1,9 +1,9 @@
-# mutableBuilder
+# mutableBuilder: 实现全局@Builder动态更新
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-mutablebuilder
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 使用mutableBuilder封装全局[@Builder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-builder-dynamic)，实现全局@Builder的动态切换。该功能适用于需要在运行时根据不同条件替换全局@Builder内容的场景（如根据状态切换不同的UI构建逻辑），提升了UI构建的灵活性。开发指南见[mutableBuilder：实现全局@Builder动态更新](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-mutablebuilder)。
 
@@ -12,15 +12,16 @@
 
 
 
-#### mutableBuilder
+## mutableBuilder
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 mutableBuilder<Args extends Object[]>(builder: BuilderCallback): MutableBuilder&lt;Args&gt;
 
 mutableBuilder是一个泛型函数，它返回一个MutableBuilder对象，只接受一个全局的@Builder函数作为其参数。
 
-该函数返回的[MutableBuilder](#mutablebuilder-2)对象中，builder属性方法只能在自定义组件内部使用。
+该函数返回的[MutableBuilder](#mutablebuilder-1)对象中，builder属性方法只能在自定义组件内部使用。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
@@ -28,12 +29,14 @@ mutableBuilder是一个泛型函数，它返回一个MutableBuilder对象，只�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | builder | BuilderCallback | 是 | @Builder装饰的全局函数，作为mutableBuilder封装的目标构建函数，用于实现全局@Builder的动态切换。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -87,9 +90,10 @@ struct MyApp {
 
 
 
-#### MutableBuilder
+## MutableBuilder
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 class MutableBuilder<Args extends Object[]> extends WrappedBuilder&lt;Args&gt; { }
 
@@ -101,11 +105,12 @@ class MutableBuilder<Args extends Object[]> extends WrappedBuilder&lt;Args&gt; {
 
 
 
-#### BuilderCallback
+## BuilderCallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-type BuilderCallback = (...args: Args) => void
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+type BuilderCallback<Args extends Object[] = any[]> = (...args: Args) => void
 
 BuilderCallback是全局@Builder函数的类型别名，作为mutableBuilder函数的入参类型，用于指定待封装的全局@Builder函数。
 
@@ -114,6 +119,7 @@ BuilderCallback是全局@Builder函数的类型别名，作为mutableBuilder函�
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |

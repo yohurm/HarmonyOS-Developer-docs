@@ -1,9 +1,9 @@
 # @ohos.data.rdb (关系型数据库)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-data-rdb
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 关系型数据库（Relational Database，RDB）是一种基于关系模型来管理数据的数据库。关系型数据库基于SQLite组件提供了一套完整的对本地数据库进行管理的机制，对外提供了一系列的增、删、改、查等接口，也可以直接运行用户输入的SQL语句来满足复杂的场景需要。不支持Worker线程。
 
@@ -18,9 +18,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import data_rdb from '@ohos.data.rdb';
@@ -28,9 +29,10 @@ import data_rdb from '@ohos.data.rdb';
 
 
 
-#### data_rdb.getRdbStore
+## data_rdb.getRdbStore
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRdbStore(context: Context, config: StoreConfig, version: number, callback: AsyncCallback&lt;RdbStore&gt;): void
 
@@ -39,6 +41,7 @@ getRdbStore(context: Context, config: StoreConfig, version: number, callback: As
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -91,9 +94,10 @@ class EntryAbility extends UIAbility {
 
 
 
-#### data_rdb.getRdbStore
+## data_rdb.getRdbStore
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRdbStore(context: Context, config: StoreConfig, version: number): Promise&lt;RdbStore&gt;
 
@@ -103,6 +107,7 @@ getRdbStore(context: Context, config: StoreConfig, version: number): Promise&lt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 |
@@ -111,6 +116,7 @@ getRdbStore(context: Context, config: StoreConfig, version: number): Promise&lt;
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -158,9 +164,10 @@ promise.then(async (rdbStore: data_rdb.RdbStore) => {
 
 
 
-#### data_rdb.deleteRdbStore
+## data_rdb.deleteRdbStore
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteRdbStore(context: Context, name: string, callback: AsyncCallback&lt;void&gt;): void
 
@@ -169,6 +176,7 @@ deleteRdbStore(context: Context, name: string, callback: AsyncCallback&lt;void&g
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -217,9 +225,10 @@ data_rdb.deleteRdbStore(this.context, "RdbTest.db", (err) => {
 
 
 
-#### data_rdb.deleteRdbStore
+## data_rdb.deleteRdbStore
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteRdbStore(context: Context, name: string): Promise&lt;void&gt;
 
@@ -229,6 +238,7 @@ deleteRdbStore(context: Context, name: string): Promise&lt;void&gt;
 
 **参数**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 |
@@ -236,6 +246,7 @@ deleteRdbStore(context: Context, name: string): Promise&lt;void&gt;
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -281,15 +292,17 @@ promise.then(()=>{
 
 
 
-#### ValueType
+## ValueType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ValueType = number | string | boolean
 
 用于表示允许的数据字段类型。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -300,15 +313,17 @@ type ValueType = number | string | boolean
 
 
 
-#### ValuesBucket
+## ValuesBucket
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ValuesBucket = { [key: string]: ValueType | Uint8Array | null }
 
 用于存储键值对的类型。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 键类型 | 值类型 |
 | --- | --- |
@@ -317,13 +332,15 @@ type ValuesBucket = { [key: string]: ValueType | Uint8Array | null }
 
 
 
-#### SyncMode8+
+## SyncMode8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 指数据库同步模式。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -333,15 +350,17 @@ type ValuesBucket = { [key: string]: ValueType | Uint8Array | null }
 
 
 
-#### SubscribeType8+
+## SubscribeType8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述订阅类型。
 
 **需要权限：** ohos.permission.DISTRIBUTED_DATASYNC
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -350,13 +369,15 @@ type ValuesBucket = { [key: string]: ValueType | Uint8Array | null }
 
 
 
-#### StoreConfig
+## StoreConfig
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 管理关系数据库配置。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -365,17 +386,19 @@ type ValuesBucket = { [key: string]: ValueType | Uint8Array | null }
 
 
 
-#### RdbPredicates
+## RdbPredicates
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示关系型数据库（RDB）的谓词。该类确定RDB中条件表达式的值是true还是false。
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(name: string)
 
@@ -384,6 +407,7 @@ constructor(name: string)
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -398,9 +422,10 @@ let predicates = new data_rdb.RdbPredicates("EMPLOYEE")
 
 
 
-#### inDevices8+
+### inDevices8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 inDevices(devices: Array&lt;string&gt;): RdbPredicates
 
@@ -414,12 +439,14 @@ inDevices(devices: Array&lt;string&gt;): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | devices | Array&lt;string&gt; | 是 | 指定的组网内的远程设备ID，不能为空字符串。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -453,9 +480,10 @@ predicates.inDevices(deviceIds);
 
 
 
-#### inAllDevices8+
+### inAllDevices8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 inAllDevices(): RdbPredicates
 
@@ -464,6 +492,7 @@ inAllDevices(): RdbPredicates
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -479,9 +508,10 @@ predicates.inAllDevices()
 
 
 
-#### equalTo
+### equalTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 equalTo(field: string, value: ValueType): RdbPredicates
 
@@ -491,6 +521,7 @@ equalTo(field: string, value: ValueType): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -498,6 +529,7 @@ equalTo(field: string, value: ValueType): RdbPredicates
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -513,9 +545,10 @@ predicates.equalTo("NAME", "lisi")
 
 
 
-#### notEqualTo
+### notEqualTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 notEqualTo(field: string, value: ValueType): RdbPredicates
 
@@ -525,6 +558,7 @@ notEqualTo(field: string, value: ValueType): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -532,6 +566,7 @@ notEqualTo(field: string, value: ValueType): RdbPredicates
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -547,9 +582,10 @@ predicates.notEqualTo("NAME", "lisi")
 
 
 
-#### beginWrap
+### beginWrap
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 beginWrap(): RdbPredicates
 
@@ -558,6 +594,7 @@ beginWrap(): RdbPredicates
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -578,9 +615,10 @@ predicates.equalTo("NAME", "lisi")
 
 
 
-#### endWrap
+### endWrap
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 endWrap(): RdbPredicates
 
@@ -589,6 +627,7 @@ endWrap(): RdbPredicates
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -609,9 +648,10 @@ predicates.equalTo("NAME", "lisi")
 
 
 
-#### or
+### or
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 or(): RdbPredicates
 
@@ -620,6 +660,7 @@ or(): RdbPredicates
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -637,9 +678,10 @@ predicates.equalTo("NAME", "Lisa")
 
 
 
-#### and
+### and
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 and(): RdbPredicates
 
@@ -648,6 +690,7 @@ and(): RdbPredicates
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -665,17 +708,19 @@ predicates.equalTo("NAME", "Lisa")
 
 
 
-#### contains
+### contains
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 contains(field: string, value: string): RdbPredicates
 
-配置谓词以匹配数据字段为string且value包含指定值的字段。该方法等同于SQL语句中的"LIKE '%xxx%'"。
+配置谓词以匹配数据字段为string且值包含指定值的字段。该方法等同于SQL语句中的"LIKE '%xxx%'"。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -684,6 +729,7 @@ contains(field: string, value: string): RdbPredicates
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -699,9 +745,10 @@ predicates.contains("NAME", "os")
 
 
 
-#### beginsWith
+### beginsWith
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 beginsWith(field: string, value: string): RdbPredicates
 
@@ -711,6 +758,7 @@ beginsWith(field: string, value: string): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -718,6 +766,7 @@ beginsWith(field: string, value: string): RdbPredicates
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -733,9 +782,10 @@ predicates.beginsWith("NAME", "os")
 
 
 
-#### endsWith
+### endsWith
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 endsWith(field: string, value: string): RdbPredicates
 
@@ -745,6 +795,7 @@ endsWith(field: string, value: string): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -752,6 +803,7 @@ endsWith(field: string, value: string): RdbPredicates
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -767,9 +819,10 @@ predicates.endsWith("NAME", "se")
 
 
 
-#### isNull
+### isNull
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isNull(field: string): RdbPredicates
 
@@ -779,12 +832,14 @@ isNull(field: string): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -800,9 +855,10 @@ predicates.isNull("NAME")
 
 
 
-#### isNotNull
+### isNotNull
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isNotNull(field: string): RdbPredicates
 
@@ -812,12 +868,14 @@ isNotNull(field: string): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -827,6 +885,7 @@ isNotNull(field: string): RdbPredicates
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -842,9 +901,10 @@ predicates.isNotNull("NAME")
 
 
 
-#### like
+### like
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 like(field: string, value: string): RdbPredicates
 
@@ -854,6 +914,7 @@ like(field: string, value: string): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -861,6 +922,7 @@ like(field: string, value: string): RdbPredicates
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -876,9 +938,10 @@ predicates.like("NAME", "%os%")
 
 
 
-#### glob
+### glob
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 glob(field: string, value: string): RdbPredicates
 
@@ -888,6 +951,7 @@ glob(field: string, value: string): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -895,6 +959,7 @@ glob(field: string, value: string): RdbPredicates
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -910,17 +975,19 @@ predicates.glob("NAME", "?h*g")
 
 
 
-#### between
+### between
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 between(field: string, low: ValueType, high: ValueType): RdbPredicates
 
-将谓词配置为匹配数据字段为ValueType且value在给定范围内的指定字段。该方法等同于SQL语句中的"BETWEEN"。
+将谓词配置为匹配数据字段为ValueType且值在给定范围内的指定字段。该方法等同于SQL语句中的"BETWEEN"。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -930,6 +997,7 @@ between(field: string, low: ValueType, high: ValueType): RdbPredicates
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -945,17 +1013,19 @@ predicates.between("AGE", 10, 50)
 
 
 
-#### notBetween
+### notBetween
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 notBetween(field: string, low: ValueType, high: ValueType): RdbPredicates
 
-配置RdbPredicates以匹配数据字段为ValueType且value超出给定范围的指定字段。该方法等同于SQL语句中的"NOT BETWEEN"。
+配置RdbPredicates以匹配数据字段为ValueType值超出给定范围的指定字段。该方法等同于SQL语句中的"NOT BETWEEN"。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -965,6 +1035,7 @@ notBetween(field: string, low: ValueType, high: ValueType): RdbPredicates
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -980,9 +1051,10 @@ predicates.notBetween("AGE", 10, 50)
 
 
 
-#### greaterThan
+### greaterThan
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 greaterThan(field: string, value: ValueType): RdbPredicates
 
@@ -992,6 +1064,7 @@ greaterThan(field: string, value: ValueType): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -999,6 +1072,7 @@ greaterThan(field: string, value: ValueType): RdbPredicates
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1014,17 +1088,19 @@ predicates.greaterThan("AGE", 18)
 
 
 
-#### lessThan
+### lessThan
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 lessThan(field: string, value: ValueType): RdbPredicates
 
-配置谓词以匹配数据字段为valueType且value小于指定值的字段。该方法等同于SQL语句中的"<"。
+配置谓词以匹配数据字段为ValueType且值小于指定值的字段。该方法等同于SQL语句中的"<"。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1033,6 +1109,7 @@ lessThan(field: string, value: ValueType): RdbPredicates
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1048,17 +1125,19 @@ predicates.lessThan("AGE", 20)
 
 
 
-#### greaterThanOrEqualTo
+### greaterThanOrEqualTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 greaterThanOrEqualTo(field: string, value: ValueType): RdbPredicates
 
-配置谓词以匹配数据字段为ValueType且value大于或等于指定值的字段。该方法等同于SQL语句中的">="。
+配置谓词以匹配数据字段为ValueType且值大于或等于指定值的字段。该方法等同于SQL语句中的">="。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1067,6 +1146,7 @@ greaterThanOrEqualTo(field: string, value: ValueType): RdbPredicates
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1082,17 +1162,19 @@ predicates.greaterThanOrEqualTo("AGE", 18)
 
 
 
-#### lessThanOrEqualTo
+### lessThanOrEqualTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 lessThanOrEqualTo(field: string, value: ValueType): RdbPredicates
 
-配置谓词以匹配数据字段为ValueType且value小于或等于指定值的字段。该方法等同于SQL语句中的"<="。
+配置谓词以匹配数据字段为ValueType且值小于或等于指定值的字段。该方法等同于SQL语句中的"<="。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1101,6 +1183,7 @@ lessThanOrEqualTo(field: string, value: ValueType): RdbPredicates
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1116,9 +1199,10 @@ predicates.lessThanOrEqualTo("AGE", 20)
 
 
 
-#### orderByAsc
+### orderByAsc
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 orderByAsc(field: string): RdbPredicates
 
@@ -1128,12 +1212,14 @@ orderByAsc(field: string): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1149,9 +1235,10 @@ predicates.orderByAsc("NAME")
 
 
 
-#### orderByDesc
+### orderByDesc
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 orderByDesc(field: string): RdbPredicates
 
@@ -1161,12 +1248,14 @@ orderByDesc(field: string): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1182,9 +1271,10 @@ predicates.orderByDesc("AGE")
 
 
 
-#### distinct
+### distinct
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 distinct(): RdbPredicates
 
@@ -1193,6 +1283,7 @@ distinct(): RdbPredicates
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1208,9 +1299,10 @@ predicates.equalTo("NAME", "Rose").distinct()
 
 
 
-#### limitAs
+### limitAs
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 limitAs(value: number): RdbPredicates
 
@@ -1220,12 +1312,14 @@ limitAs(value: number): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 最大数据记录数。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1241,9 +1335,10 @@ predicates.equalTo("NAME", "Rose").limitAs(3)
 
 
 
-#### offsetAs
+### offsetAs
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offsetAs(rowOffset: number): RdbPredicates
 
@@ -1253,12 +1348,14 @@ offsetAs(rowOffset: number): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | rowOffset | number | 是 | 返回结果的起始位置，取值为正整数。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1274,9 +1371,10 @@ predicates.equalTo("NAME", "Rose").limitAs(-1).offsetAs(3)
 
 
 
-#### groupBy
+### groupBy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 groupBy(fields: Array&lt;string&gt;): RdbPredicates
 
@@ -1286,12 +1384,14 @@ groupBy(fields: Array&lt;string&gt;): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fields | Array&lt;string&gt; | 是 | 指定分组依赖的列名，不能为空字符串。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1307,9 +1407,10 @@ predicates.groupBy(["AGE", "NAME"])
 
 
 
-#### indexedBy
+### indexedBy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 indexedBy(field: string): RdbPredicates
 
@@ -1319,12 +1420,14 @@ indexedBy(field: string): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 索引列的名称，不能为空字符串。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1340,9 +1443,10 @@ predicates.indexedBy("SALARY_INDEX")
 
 
 
-#### in
+### in
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 in(field: string, value: Array&lt;ValueType&gt;): RdbPredicates
 
@@ -1352,6 +1456,7 @@ in(field: string, value: Array&lt;ValueType&gt;): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -1359,6 +1464,7 @@ in(field: string, value: Array&lt;ValueType&gt;): RdbPredicates
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1374,9 +1480,10 @@ predicates.in("AGE", [18, 20])
 
 
 
-#### notIn
+### notIn
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 notIn(field: string, value: Array&lt;ValueType&gt;): RdbPredicates
 
@@ -1386,6 +1493,7 @@ notIn(field: string, value: Array&lt;ValueType&gt;): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -1393,6 +1501,7 @@ notIn(field: string, value: Array&lt;ValueType&gt;): RdbPredicates
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1408,9 +1517,10 @@ predicates.notIn("NAME", ["Lisa", "Rose"])
 
 
 
-#### RdbStore
+## RdbStore
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供管理关系数据库（RDB）方法的接口。
 
@@ -1418,9 +1528,10 @@ predicates.notIn("NAME", ["Lisa", "Rose"])
 
 
 
-#### insert
+### insert
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 insert(table: string, values: ValuesBucket, callback: AsyncCallback&lt;number&gt;):void
 
@@ -1429,6 +1540,7 @@ insert(table: string, values: ValuesBucket, callback: AsyncCallback&lt;number&gt
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1468,9 +1580,10 @@ rdbStore.insert("EMPLOYEE", valueBucket, (status: number, rowId: number) => {
 
 
 
-#### insert
+### insert
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 insert(table: string, values: ValuesBucket):Promise&lt;number&gt;
 
@@ -1480,6 +1593,7 @@ insert(table: string, values: ValuesBucket):Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | table | string | 是 | 指定的目标表名，不能为空字符串。 |
@@ -1487,6 +1601,7 @@ insert(table: string, values: ValuesBucket):Promise&lt;number&gt;
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1523,9 +1638,10 @@ promise.then((rowId: BusinessError) => {
 
 
 
-#### batchInsert
+### batchInsert
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 batchInsert(table: string, values: Array&lt;ValuesBucket&gt;, callback: AsyncCallback&lt;number&gt;):void
 
@@ -1534,6 +1650,7 @@ batchInsert(table: string, values: Array&lt;ValuesBucket&gt;, callback: AsyncCal
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1594,9 +1711,10 @@ rdbStore.batchInsert("EMPLOYEE", valueBuckets, (status: number, insertNum: numbe
 
 
 
-#### batchInsert
+### batchInsert
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 batchInsert(table: string, values: Array&lt;ValuesBucket&gt;):Promise&lt;number&gt;
 
@@ -1606,6 +1724,7 @@ batchInsert(table: string, values: Array&lt;ValuesBucket&gt;):Promise&lt;number&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | table | string | 是 | 指定的目标表名，不能为空字符串。 |
@@ -1613,6 +1732,7 @@ batchInsert(table: string, values: Array&lt;ValuesBucket&gt;):Promise&lt;number&
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1670,9 +1790,10 @@ promise.then((insertNum: number) => {
 
 
 
-#### update
+### update
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 update(values: ValuesBucket, predicates: RdbPredicates, callback: AsyncCallback&lt;number&gt;):void
 
@@ -1681,6 +1802,7 @@ update(values: ValuesBucket, predicates: RdbPredicates, callback: AsyncCallback&
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1722,9 +1844,10 @@ rdbStore.update(valueBucket, predicates, (err: BusinessError, rows: number) => {
 
 
 
-#### update
+### update
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 update(values: ValuesBucket, predicates: RdbPredicates):Promise&lt;number&gt;
 
@@ -1734,6 +1857,7 @@ update(values: ValuesBucket, predicates: RdbPredicates):Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | values | ValuesBucket | 是 | values指示数据库中要更新的数据行。键值对与数据库表的列名相关联。 |
@@ -1741,6 +1865,7 @@ update(values: ValuesBucket, predicates: RdbPredicates):Promise&lt;number&gt;
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1779,9 +1904,10 @@ promise.then(async (rows: number) => {
 
 
 
-#### delete
+### delete
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 delete(predicates: RdbPredicates, callback: AsyncCallback&lt;number&gt;):void
 
@@ -1790,6 +1916,7 @@ delete(predicates: RdbPredicates, callback: AsyncCallback&lt;number&gt;):void
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1813,9 +1940,10 @@ rdbStore.delete(predicates, (err: BusinessError, rows: number) => {
 
 
 
-#### delete
+### delete
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 delete(predicates: RdbPredicates):Promise&lt;number&gt;
 
@@ -1825,12 +1953,14 @@ delete(predicates: RdbPredicates):Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | predicates | RdbPredicates | 是 | RdbPredicates的实例对象指定的删除条件。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1852,9 +1982,10 @@ promise.then((rows: number) => {
 
 
 
-#### query
+### query
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 query(predicates: RdbPredicates, columns: Array&lt;string&gt;, callback: AsyncCallback&lt;ResultSet&gt;):void
 
@@ -1863,6 +1994,7 @@ query(predicates: RdbPredicates, columns: Array&lt;string&gt;, callback: AsyncCa
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1889,9 +2021,10 @@ rdbStore.query(predicates, ["ID", "NAME", "AGE", "SALARY", "CODES"], (err: Busin
 
 
 
-#### query
+### query
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 query(predicates: RdbPredicates, columns?: Array&lt;string&gt;):Promise&lt;ResultSet&gt;
 
@@ -1901,6 +2034,7 @@ query(predicates: RdbPredicates, columns?: Array&lt;string&gt;):Promise&lt;Resul
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | predicates | RdbPredicates | 是 | RdbPredicates的实例对象指定的查询条件。 |
@@ -1908,6 +2042,7 @@ query(predicates: RdbPredicates, columns?: Array&lt;string&gt;):Promise&lt;Resul
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1930,9 +2065,10 @@ promise.then((resultSet: void) => {
 
 
 
-#### querySql8+
+### querySql8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 querySql(sql: string, bindArgs: Array&lt;ValueType&gt;, callback: AsyncCallback&lt;ResultSet&gt;):void
 
@@ -1941,6 +2077,7 @@ querySql(sql: string, bindArgs: Array&lt;ValueType&gt;, callback: AsyncCallback&
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1965,9 +2102,10 @@ rdbStore.querySql("SELECT * FROM EMPLOYEE CROSS JOIN BOOK WHERE BOOK.NAME = ?", 
 
 
 
-#### querySql8+
+### querySql8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 querySql(sql: string, bindArgs?: Array&lt;ValueType&gt;):Promise&lt;ResultSet&gt;
 
@@ -1977,6 +2115,7 @@ querySql(sql: string, bindArgs?: Array&lt;ValueType&gt;):Promise&lt;ResultSet&gt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sql | string | 是 | 指定要执行的SQL语句，不能为空字符串。 |
@@ -1984,6 +2123,7 @@ querySql(sql: string, bindArgs?: Array&lt;ValueType&gt;):Promise&lt;ResultSet&gt
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2004,9 +2144,10 @@ promise.then((resultSet: void) => {
 
 
 
-#### executeSql8+
+### executeSql8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 executeSql(sql: string, bindArgs: Array&lt;ValueType&gt;, callback: AsyncCallback&lt;void&gt;):void
 
@@ -2015,6 +2156,7 @@ executeSql(sql: string, bindArgs: Array&lt;ValueType&gt;, callback: AsyncCallbac
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2038,9 +2180,10 @@ rdbStore.executeSql(SQL_DELETE_TABLE, ['zhangsan'], (err: BusinessError) => {
 
 
 
-#### executeSql8+
+### executeSql8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 executeSql(sql: string, bindArgs?: Array&lt;ValueType&gt;):Promise&lt;void&gt;
 
@@ -2050,6 +2193,7 @@ executeSql(sql: string, bindArgs?: Array&lt;ValueType&gt;):Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sql | string | 是 | 指定要执行的SQL语句，不能为空字符串。 |
@@ -2057,6 +2201,7 @@ executeSql(sql: string, bindArgs?: Array&lt;ValueType&gt;):Promise&lt;void&gt;
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2077,9 +2222,10 @@ promise.then(() => {
 
 
 
-#### beginTransaction8+
+### beginTransaction8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 beginTransaction():void
 
@@ -2118,9 +2264,10 @@ data_rdb.getRdbStore(this.context, "RdbTest.db", 1, async (err: BusinessError, r
 
 
 
-#### commit8+
+### commit8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 commit():void
 
@@ -2159,9 +2306,10 @@ data_rdb.getRdbStore(this.context, "RdbTest.db", 1, async (err: BusinessError, r
 
 
 
-#### rollBack8+
+### rollBack8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 rollBack():void
 
@@ -2205,9 +2353,10 @@ data_rdb.getRdbStore(this,context, "RdbTest.db", 1, async (err: BusinessError, r
 
 
 
-#### setDistributedTables8+
+### setDistributedTables8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setDistributedTables(tables: Array&lt;string&gt;, callback: AsyncCallback&lt;void&gt;): void
 
@@ -2218,6 +2367,7 @@ setDistributedTables(tables: Array&lt;string&gt;, callback: AsyncCallback&lt;voi
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2239,9 +2389,10 @@ rdbStore.setDistributedTables(["EMPLOYEE"], (err: BusinessError) => {
 
 
 
-#### setDistributedTables8+
+### setDistributedTables8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setDistributedTables(tables: Array&lt;string&gt;): Promise&lt;void&gt;
 
@@ -2253,12 +2404,14 @@ setDistributedTables(tables: Array&lt;string&gt;): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | tables | Array&lt;string&gt; | 是 | 要设置的分布式列表表名。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2278,9 +2431,10 @@ promise.then(() => {
 
 
 
-#### obtainDistributedTableName8+
+### obtainDistributedTableName8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 obtainDistributedTableName(device: string, table: string, callback: AsyncCallback&lt;string&gt;): void
 
@@ -2295,6 +2449,7 @@ obtainDistributedTableName(device: string, table: string, callback: AsyncCallbac
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2331,9 +2486,10 @@ rdbStore.obtainDistributedTableName(deviceId, "EMPLOYEE", (err: BusinessError, t
 
 
 
-#### obtainDistributedTableName8+
+### obtainDistributedTableName8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 obtainDistributedTableName(device: string, table: string): Promise&lt;string&gt;
 
@@ -2349,6 +2505,7 @@ obtainDistributedTableName(device: string, table: string): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | device | string | 是 | 远程设备ID。 |
@@ -2356,6 +2513,7 @@ obtainDistributedTableName(device: string, table: string): Promise&lt;string&gt;
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2389,9 +2547,10 @@ promise.then((tableName: String) => {
 
 
 
-#### sync8+
+### sync8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sync(mode: SyncMode, predicates: RdbPredicates, callback: AsyncCallback<Array<[string, number]>>): void
 
@@ -2402,6 +2561,7 @@ sync(mode: SyncMode, predicates: RdbPredicates, callback: AsyncCallback<Array<[s
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2445,9 +2605,10 @@ rdbStore.sync(data_rdb.SyncMode.SYNC_MODE_PUSH, predicates, (err: BusinessError,
 
 
 
-#### sync8+
+### sync8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sync(mode: SyncMode, predicates: RdbPredicates): Promise<Array<[string, number]>>
 
@@ -2459,6 +2620,7 @@ sync(mode: SyncMode, predicates: RdbPredicates): Promise<Array<[string, number]>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mode | SyncMode | 是 | 指同步模式。该值可以是推、拉。 |
@@ -2466,6 +2628,7 @@ sync(mode: SyncMode, predicates: RdbPredicates): Promise<Array<[string, number]>
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2506,9 +2669,10 @@ promise.then((result: void) =>{
 
 
 
-#### on('dataChange')8+
+### on('dataChange')8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(event: 'dataChange', type: SubscribeType, observer: Callback<Array&lt;string&gt;>): void
 
@@ -2517,6 +2681,7 @@ on(event: 'dataChange', type: SubscribeType, observer: Callback<Array&lt;string&
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2543,9 +2708,10 @@ try {
 
 
 
-#### off('dataChange')8+
+### off('dataChange')8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(event:'dataChange', type: SubscribeType, observer: Callback<Array&lt;string&gt;>): void
 
@@ -2554,6 +2720,7 @@ off(event:'dataChange', type: SubscribeType, observer: Callback<Array&lt;string&
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |

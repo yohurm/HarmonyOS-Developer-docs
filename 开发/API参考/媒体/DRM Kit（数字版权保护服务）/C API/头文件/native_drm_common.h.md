@@ -1,13 +1,14 @@
 # native_drm_common.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-drm-common-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义DRM数据类型。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | DRM_MediaKeyRequestInfo | DRM_MediaKeyRequestInfo | 媒体密钥请求信息。 |
@@ -44,16 +48,18 @@
 | DRM_PsshInfo | DRM_PsshInfo | DRM内容保护系统专用头（Protection System Specific Header）信息。 |
 | DRM_MediaKeySystemInfo | DRM_MediaKeySystemInfo | 加密媒体内容的DRM信息。 |
 | DRM_MediaKeySystemDescription | DRM_MediaKeySystemDescription | DRM解决方案名称及其UUID的列表。 |
-| MediaKeySystem | MediaKeySystem | MediaKeySystem结构。 |
-| MediaKeySession | MediaKeySession | MediaKeySession结构。 |
+| MediaKeySystem | MediaKeySystem | MediaKeySystem结构，用于表示一个媒体密钥系统实例。MediaKeySystem提供数字版权保护能力，负责DRM插件配置管理、设备证书管理、统计信息获取、内容保护级别查询以及创建MediaKeySession等功能。通过OH_MediaKeySystem_Create接口创建实例，通过OH_MediaKeySystem_Destroy接口销毁实例。 |
+| MediaKeySession | MediaKeySession | MediaKeySession结构，用于表示一个媒体密钥会话实例。MediaKeySession是DRM解密流程的核心组件，负责生成许可证请求、处理许可证响应、管理密钥状态等功能。每个MediaKeySession实例对应一个播放会话的密钥解密过程。通过OH_MediaKeySystem_CreateMediaKeySession接口创建实例，通过OH_MediaKeySession_Destroy接口销毁实例。每个MediaKeySystem可创建多个MediaKeySession实例，用于处理不同的播放会话。 |
  
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | DRM_EventType | DRM_EventType | 监听事件类型。 |
@@ -66,10 +72,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | typedef void (*DRM_MediaKeySystemInfoCallback)(DRM_MediaKeySystemInfo *mediaKeySystemInfo) | DRM_MediaKeySystemInfoCallback | 应用为从媒体源获取DRM信息而设置的回调函数。 |
@@ -77,10 +85,12 @@
  
   
 
-#### 宏定义
+### 宏定义
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | MAX_MEDIA_KEY_REQUEST_OPTION_COUNT 16 | 媒体密钥请求可选数据的最大数量。 起始版本： 11 |
@@ -110,15 +120,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### DRM_EventType
+### DRM_EventType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum DRM_EventType
@@ -132,6 +144,7 @@ enum DRM_EventType
  
 **起始版本：** 11
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | EVENT_DRM_BASE = 200 | DRM基础事件。 |
@@ -144,9 +157,10 @@ enum DRM_EventType
  
   
 
-#### DRM_ContentProtectionLevel
+### DRM_ContentProtectionLevel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum DRM_ContentProtectionLevel
@@ -160,6 +174,7 @@ enum DRM_ContentProtectionLevel
  
 **起始版本：** 11
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | CONTENT_PROTECTION_LEVEL_UNKNOWN = 0 | 未知级别。 |
@@ -171,9 +186,10 @@ enum DRM_ContentProtectionLevel
  
   
 
-#### DRM_MediaKeyType
+### DRM_MediaKeyType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum DRM_MediaKeyType
@@ -187,6 +203,7 @@ enum DRM_MediaKeyType
  
 **起始版本：** 11
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | MEDIA_KEY_TYPE_OFFLINE = 0 | 离线。 |
@@ -195,9 +212,10 @@ enum DRM_MediaKeyType
  
   
 
-#### DRM_MediaKeyRequestType
+### DRM_MediaKeyRequestType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum DRM_MediaKeyRequestType
@@ -211,6 +229,7 @@ enum DRM_MediaKeyRequestType
  
 **起始版本：** 11
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | MEDIA_KEY_REQUEST_TYPE_UNKNOWN = 0 | 未知请求类型。 |
@@ -223,9 +242,10 @@ enum DRM_MediaKeyRequestType
  
   
 
-#### DRM_OfflineMediaKeyStatus
+### DRM_OfflineMediaKeyStatus
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum DRM_OfflineMediaKeyStatus
@@ -239,6 +259,7 @@ enum DRM_OfflineMediaKeyStatus
  
 **起始版本：** 11
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OFFLINE_MEDIA_KEY_STATUS_UNKNOWN = 0 | 未知状态。 |
@@ -248,9 +269,10 @@ enum DRM_OfflineMediaKeyStatus
  
   
 
-#### DRM_CertificateStatus
+### DRM_CertificateStatus
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum DRM_CertificateStatus
@@ -264,6 +286,7 @@ enum DRM_CertificateStatus
  
 **起始版本：** 11
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | CERT_STATUS_PROVISIONED = 0 | 设备已安装设备DRM证书。 |
@@ -275,15 +298,17 @@ enum DRM_CertificateStatus
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### DRM_MediaKeySystemInfoCallback()
+### DRM_MediaKeySystemInfoCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*DRM_MediaKeySystemInfoCallback)(DRM_MediaKeySystemInfo *mediaKeySystemInfo)
@@ -297,6 +322,7 @@ typedef void (*DRM_MediaKeySystemInfoCallback)(DRM_MediaKeySystemInfo *mediaKeyS
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | DRM_MediaKeySystemInfo *mediaKeySystemInfo | 输出参数，从媒体源获取的DRM信息，包含DRM内容保护系统的唯一标识和PSSH数据。 |

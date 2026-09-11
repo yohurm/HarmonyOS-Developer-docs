@@ -1,9 +1,9 @@
 # @ohos.app.ability.Want (Want)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-want
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Want是对象间信息传递的载体，可以用于应用组件间的信息传递。
 
@@ -14,9 +14,10 @@ Want是对象间信息传递的载体，可以用于应用组件间的信息传�
 
 
 
-#### 约束限制
+## 约束限制
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 受IPC通信的限制，启动Ability时传入的Want字段需满足如下要求。
 
@@ -26,9 +27,10 @@ Want是对象间信息传递的载体，可以用于应用组件间的信息传�
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { Want } from '@kit.AbilityKit';
@@ -36,13 +38,15 @@ import { Want } from '@kit.AbilityKit';
 
 
 
-#### Want
+## Want
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Ability.AbilityBase
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

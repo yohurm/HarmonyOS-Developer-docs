@@ -1,13 +1,14 @@
 # tensor.h
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-tensor-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供了张量相关的接口，可用于创建和修改张量信息，该接口是非线程安全的。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | void * | OH_AI_TensorHandle | 指向张量对象句柄。 |
@@ -41,10 +45,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_AI_API OH_AI_TensorHandle OH_AI_TensorCreate(const char *name, OH_AI_DataType type, const int64_t *shape,size_t shape_num, const void *data, size_t data_len) | 创建一个张量对象。 |
@@ -70,15 +76,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_AI_TensorCreate()
+### OH_AI_TensorCreate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API OH_AI_TensorHandle OH_AI_TensorCreate(const char *name, OH_AI_DataType type, const int64_t *shape,size_t shape_num, const void *data, size_t data_len)
@@ -92,6 +100,7 @@ OH_AI_API OH_AI_TensorHandle OH_AI_TensorCreate(const char *name, OH_AI_DataType
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char *name | 张量名称。字符串长度跟随系统限制。 |
@@ -104,6 +113,7 @@ OH_AI_API OH_AI_TensorHandle OH_AI_TensorCreate(const char *name, OH_AI_DataType
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API OH_AI_TensorHandle | 指向张量对象句柄。 |
@@ -111,9 +121,10 @@ OH_AI_API OH_AI_TensorHandle OH_AI_TensorCreate(const char *name, OH_AI_DataType
  
   
 
-#### OH_AI_TensorDestroy()
+### OH_AI_TensorDestroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API void OH_AI_TensorDestroy(OH_AI_TensorHandle *tensor)
@@ -127,6 +138,7 @@ OH_AI_API void OH_AI_TensorDestroy(OH_AI_TensorHandle *tensor)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_TensorHandle *tensor | 指向张量句柄的二级指针。 |
@@ -134,9 +146,10 @@ OH_AI_API void OH_AI_TensorDestroy(OH_AI_TensorHandle *tensor)
  
   
 
-#### OH_AI_TensorClone()
+### OH_AI_TensorClone()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API OH_AI_TensorHandle OH_AI_TensorClone(OH_AI_TensorHandle tensor)
@@ -150,6 +163,7 @@ OH_AI_API OH_AI_TensorHandle OH_AI_TensorClone(OH_AI_TensorHandle tensor)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_TensorHandle tensor | 张量对象句柄。 |
@@ -157,6 +171,7 @@ OH_AI_API OH_AI_TensorHandle OH_AI_TensorClone(OH_AI_TensorHandle tensor)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API OH_AI_TensorHandle | 指向新张量对象句柄。 |
@@ -164,9 +179,10 @@ OH_AI_API OH_AI_TensorHandle OH_AI_TensorClone(OH_AI_TensorHandle tensor)
  
   
 
-#### OH_AI_TensorSetName()
+### OH_AI_TensorSetName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API void OH_AI_TensorSetName(OH_AI_TensorHandle tensor, const char *name)
@@ -180,6 +196,7 @@ OH_AI_API void OH_AI_TensorSetName(OH_AI_TensorHandle tensor, const char *name)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_TensorHandle tensor | 张量对象句柄。 |
@@ -188,9 +205,10 @@ OH_AI_API void OH_AI_TensorSetName(OH_AI_TensorHandle tensor, const char *name)
  
   
 
-#### OH_AI_TensorGetName()
+### OH_AI_TensorGetName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API const char *OH_AI_TensorGetName(const OH_AI_TensorHandle tensor)
@@ -204,6 +222,7 @@ OH_AI_API const char *OH_AI_TensorGetName(const OH_AI_TensorHandle tensor)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_AI_TensorHandle tensor | 张量对象句柄。 |
@@ -211,6 +230,7 @@ OH_AI_API const char *OH_AI_TensorGetName(const OH_AI_TensorHandle tensor)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API const char * | 张量的名称。 |
@@ -218,9 +238,10 @@ OH_AI_API const char *OH_AI_TensorGetName(const OH_AI_TensorHandle tensor)
  
   
 
-#### OH_AI_TensorSetDataType()
+### OH_AI_TensorSetDataType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API void OH_AI_TensorSetDataType(OH_AI_TensorHandle tensor, OH_AI_DataType type)
@@ -234,6 +255,7 @@ OH_AI_API void OH_AI_TensorSetDataType(OH_AI_TensorHandle tensor, OH_AI_DataType
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_TensorHandle tensor | 张量对象句柄。 |
@@ -242,9 +264,10 @@ OH_AI_API void OH_AI_TensorSetDataType(OH_AI_TensorHandle tensor, OH_AI_DataType
  
   
 
-#### OH_AI_TensorGetDataType()
+### OH_AI_TensorGetDataType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API OH_AI_DataType OH_AI_TensorGetDataType(const OH_AI_TensorHandle tensor)
@@ -258,6 +281,7 @@ OH_AI_API OH_AI_DataType OH_AI_TensorGetDataType(const OH_AI_TensorHandle tensor
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_AI_TensorHandle tensor | 张量对象句柄。 |
@@ -265,6 +289,7 @@ OH_AI_API OH_AI_DataType OH_AI_TensorGetDataType(const OH_AI_TensorHandle tensor
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API OH_AI_DataType | 张量的数据类型。 |
@@ -272,9 +297,10 @@ OH_AI_API OH_AI_DataType OH_AI_TensorGetDataType(const OH_AI_TensorHandle tensor
  
   
 
-#### OH_AI_TensorSetShape()
+### OH_AI_TensorSetShape()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API void OH_AI_TensorSetShape(OH_AI_TensorHandle tensor, const int64_t *shape, size_t shape_num)
@@ -288,6 +314,7 @@ OH_AI_API void OH_AI_TensorSetShape(OH_AI_TensorHandle tensor, const int64_t *sh
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_TensorHandle tensor | 张量对象句柄。 |
@@ -297,9 +324,10 @@ OH_AI_API void OH_AI_TensorSetShape(OH_AI_TensorHandle tensor, const int64_t *sh
  
   
 
-#### OH_AI_TensorGetShape()
+### OH_AI_TensorGetShape()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API const int64_t *OH_AI_TensorGetShape(const OH_AI_TensorHandle tensor, size_t *shape_num)
@@ -313,6 +341,7 @@ OH_AI_API const int64_t *OH_AI_TensorGetShape(const OH_AI_TensorHandle tensor, s
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_AI_TensorHandle tensor | 张量对象句柄。 |
@@ -321,6 +350,7 @@ OH_AI_API const int64_t *OH_AI_TensorGetShape(const OH_AI_TensorHandle tensor, s
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API const int64_t * | 形状数组。 |
@@ -328,9 +358,10 @@ OH_AI_API const int64_t *OH_AI_TensorGetShape(const OH_AI_TensorHandle tensor, s
  
   
 
-#### OH_AI_TensorSetFormat()
+### OH_AI_TensorSetFormat()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API void OH_AI_TensorSetFormat(OH_AI_TensorHandle tensor, OH_AI_Format format)
@@ -344,6 +375,7 @@ OH_AI_API void OH_AI_TensorSetFormat(OH_AI_TensorHandle tensor, OH_AI_Format for
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_TensorHandle tensor | 张量对象句柄。 |
@@ -352,9 +384,10 @@ OH_AI_API void OH_AI_TensorSetFormat(OH_AI_TensorHandle tensor, OH_AI_Format for
  
   
 
-#### OH_AI_TensorGetFormat()
+### OH_AI_TensorGetFormat()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API OH_AI_Format OH_AI_TensorGetFormat(const OH_AI_TensorHandle tensor)
@@ -368,6 +401,7 @@ OH_AI_API OH_AI_Format OH_AI_TensorGetFormat(const OH_AI_TensorHandle tensor)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_AI_TensorHandle tensor | 张量对象句柄。 |
@@ -375,6 +409,7 @@ OH_AI_API OH_AI_Format OH_AI_TensorGetFormat(const OH_AI_TensorHandle tensor)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API OH_AI_Format | 张量数据的排列方式。 |
@@ -382,9 +417,10 @@ OH_AI_API OH_AI_Format OH_AI_TensorGetFormat(const OH_AI_TensorHandle tensor)
  
   
 
-#### OH_AI_TensorSetData()
+### OH_AI_TensorSetData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API void OH_AI_TensorSetData(OH_AI_TensorHandle tensor, void *data)
@@ -398,6 +434,7 @@ OH_AI_API void OH_AI_TensorSetData(OH_AI_TensorHandle tensor, void *data)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_TensorHandle tensor | 张量对象句柄。 |
@@ -406,9 +443,10 @@ OH_AI_API void OH_AI_TensorSetData(OH_AI_TensorHandle tensor, void *data)
  
   
 
-#### OH_AI_TensorGetData()
+### OH_AI_TensorGetData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API const void *OH_AI_TensorGetData(const OH_AI_TensorHandle tensor)
@@ -422,6 +460,7 @@ OH_AI_API const void *OH_AI_TensorGetData(const OH_AI_TensorHandle tensor)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_AI_TensorHandle tensor | 张量对象句柄。 |
@@ -429,6 +468,7 @@ OH_AI_API const void *OH_AI_TensorGetData(const OH_AI_TensorHandle tensor)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API const void * | 张量数据的指针。 |
@@ -436,9 +476,10 @@ OH_AI_API const void *OH_AI_TensorGetData(const OH_AI_TensorHandle tensor)
  
   
 
-#### OH_AI_TensorGetMutableData()
+### OH_AI_TensorGetMutableData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API void *OH_AI_TensorGetMutableData(const OH_AI_TensorHandle tensor)
@@ -452,6 +493,7 @@ OH_AI_API void *OH_AI_TensorGetMutableData(const OH_AI_TensorHandle tensor)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_AI_TensorHandle tensor | 张量对象句柄。 |
@@ -459,6 +501,7 @@ OH_AI_API void *OH_AI_TensorGetMutableData(const OH_AI_TensorHandle tensor)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API void * | 张量数据的指针。 |
@@ -466,9 +509,10 @@ OH_AI_API void *OH_AI_TensorGetMutableData(const OH_AI_TensorHandle tensor)
  
   
 
-#### OH_AI_TensorGetElementNum()
+### OH_AI_TensorGetElementNum()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API int64_t OH_AI_TensorGetElementNum(const OH_AI_TensorHandle tensor)
@@ -482,6 +526,7 @@ OH_AI_API int64_t OH_AI_TensorGetElementNum(const OH_AI_TensorHandle tensor)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_AI_TensorHandle tensor | 张量对象句柄。 |
@@ -489,6 +534,7 @@ OH_AI_API int64_t OH_AI_TensorGetElementNum(const OH_AI_TensorHandle tensor)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API int64_t | 张量的元素数量。 |
@@ -496,9 +542,10 @@ OH_AI_API int64_t OH_AI_TensorGetElementNum(const OH_AI_TensorHandle tensor)
  
   
 
-#### OH_AI_TensorGetDataSize()
+### OH_AI_TensorGetDataSize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API size_t OH_AI_TensorGetDataSize(const OH_AI_TensorHandle tensor)
@@ -512,6 +559,7 @@ OH_AI_API size_t OH_AI_TensorGetDataSize(const OH_AI_TensorHandle tensor)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_AI_TensorHandle tensor | 张量对象句柄。 |
@@ -519,6 +567,7 @@ OH_AI_API size_t OH_AI_TensorGetDataSize(const OH_AI_TensorHandle tensor)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API size_t | 张量数据的字节数大小。 |
@@ -526,9 +575,10 @@ OH_AI_API size_t OH_AI_TensorGetDataSize(const OH_AI_TensorHandle tensor)
  
   
 
-#### OH_AI_TensorSetUserData()
+### OH_AI_TensorSetUserData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API OH_AI_Status OH_AI_TensorSetUserData(OH_AI_TensorHandle tensor, void *data, size_t data_size)
@@ -544,6 +594,7 @@ OH_AI_API OH_AI_Status OH_AI_TensorSetUserData(OH_AI_TensorHandle tensor, void *
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_TensorHandle tensor | 张量对象句柄。 |
@@ -553,6 +604,7 @@ OH_AI_API OH_AI_Status OH_AI_TensorSetUserData(OH_AI_TensorHandle tensor, void *
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API OH_AI_Status | 执行状态码。若成功返回OH_AI_STATUS_SUCCESS，否则返回具体错误码。 |
@@ -560,9 +612,10 @@ OH_AI_API OH_AI_Status OH_AI_TensorSetUserData(OH_AI_TensorHandle tensor, void *
  
   
 
-#### OH_AI_TensorGetAllocator()
+### OH_AI_TensorGetAllocator()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API OH_AI_AllocatorHandle OH_AI_TensorGetAllocator(OH_AI_TensorHandle tensor)
@@ -576,6 +629,7 @@ OH_AI_API OH_AI_AllocatorHandle OH_AI_TensorGetAllocator(OH_AI_TensorHandle tens
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_TensorHandle tensor | 张量对象句柄。 |
@@ -583,6 +637,7 @@ OH_AI_API OH_AI_AllocatorHandle OH_AI_TensorGetAllocator(OH_AI_TensorHandle tens
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API OH_AI_AllocatorHandle | 内存分配器的句柄。 |
@@ -590,9 +645,10 @@ OH_AI_API OH_AI_AllocatorHandle OH_AI_TensorGetAllocator(OH_AI_TensorHandle tens
  
   
 
-#### OH_AI_TensorSetAllocator()
+### OH_AI_TensorSetAllocator()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API OH_AI_Status OH_AI_TensorSetAllocator(OH_AI_TensorHandle tensor, OH_AI_AllocatorHandle allocator)
@@ -606,6 +662,7 @@ OH_AI_API OH_AI_Status OH_AI_TensorSetAllocator(OH_AI_TensorHandle tensor, OH_AI
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_TensorHandle tensor | 张量对象句柄。 |
@@ -614,6 +671,7 @@ OH_AI_API OH_AI_Status OH_AI_TensorSetAllocator(OH_AI_TensorHandle tensor, OH_AI
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API OH_AI_Status | 执行状态码。若成功返回OH_AI_STATUS_SUCCESS，否则返回具体错误码。 |

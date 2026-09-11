@@ -1,9 +1,9 @@
 # @ohos.data.intelligence (智慧数据平台)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-data-intelligence
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 智慧数据平台（ArkData Intelligence Platform，AIP）提供端侧数据智慧化构建，使应用数据向量化，通过嵌入模型将非结构化的文本、图像等多模态数据，转换成具有语义的向量。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { intelligence } from '@kit.ArkData';
@@ -22,7 +23,8 @@ import { intelligence } from '@kit.ArkData';
 
 
 
-#### intelligence.getTextEmbeddingModel
+## intelligence.getTextEmbeddingModel
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -36,12 +38,14 @@ getTextEmbeddingModel(config: ModelConfig): Promise&lt;TextEmbedding&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | config | ModelConfig | 是 | 嵌入模型的配置信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -51,6 +55,7 @@ getTextEmbeddingModel(config: ModelConfig): Promise&lt;TextEmbedding&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[智慧数据平台错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-intelligence)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -83,7 +88,8 @@ intelligence.getTextEmbeddingModel(textConfig)
 
 
 
-#### intelligence.getSupportedCloudModel
+## intelligence.getSupportedCloudModel
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -101,6 +107,7 @@ getSupportedCloudModel(): Promise<Array&lt;CloudModelInfo&gt;>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;CloudModelInfo&gt;> | Promise对象，返回支持的云侧模型信息。 |
@@ -117,9 +124,10 @@ intelligence.getSupportedCloudModel()
 
 
 
-#### intelligence.getImageEmbeddingModel
+## intelligence.getImageEmbeddingModel
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** PC/2in1
 
 getImageEmbeddingModel(config: ModelConfig): Promise&lt;ImageEmbedding&gt;
 
@@ -131,12 +139,14 @@ getImageEmbeddingModel(config: ModelConfig): Promise&lt;ImageEmbedding&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | config | ModelConfig | 是 | 嵌入模型的配置信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -146,6 +156,7 @@ getImageEmbeddingModel(config: ModelConfig): Promise&lt;ImageEmbedding&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[智慧数据平台错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-intelligence)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -178,9 +189,10 @@ intelligence.getImageEmbeddingModel(imageConfig)
 
 
 
-#### intelligence.splitText
+## intelligence.splitText
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** PC/2in1
 
 splitText(text: string, config: SplitConfig): Promise<Array&lt;string&gt;>
 
@@ -192,6 +204,7 @@ splitText(text: string, config: SplitConfig): Promise<Array&lt;string&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | text | string | 是 | 用于分块的文本，可取任意值。 |
@@ -199,6 +212,7 @@ splitText(text: string, config: SplitConfig): Promise<Array&lt;string&gt;>
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -208,6 +222,7 @@ splitText(text: string, config: SplitConfig): Promise<Array&lt;string&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[智慧数据平台错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-intelligence)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -238,13 +253,15 @@ intelligence.splitText(splitText, splitConfig)
 
 
 
-#### ModelConfig
+## ModelConfig
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 管理嵌入模型的配置信息。
 
 **系统能力：** SystemCapability.DistributedDataManager.DataIntelligence.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -257,13 +274,15 @@ intelligence.splitText(splitText, splitConfig)
 
 
 
-#### ModelVersion
+## ModelVersion
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 模型版本枚举。
 
 **系统能力：** SystemCapability.DistributedDataManager.DataIntelligence.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -272,7 +291,8 @@ intelligence.splitText(splitText, splitConfig)
 
 
 
-#### CloudModelInfo
+## CloudModelInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -284,6 +304,7 @@ intelligence.splitText(splitText, splitConfig)
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | modelType | string | 否 | 否 | 模型类型名称。如： “arkdata_text_embedding”：云侧文本向量模型。 |
@@ -292,7 +313,8 @@ intelligence.splitText(splitText, splitConfig)
 
 
 
-#### NetworkPolicy
+## NetworkPolicy
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -304,6 +326,7 @@ intelligence.splitText(splitText, splitConfig)
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | WIFI_ONLY | 0 | 仅在wifi状态下下载模型。 |
@@ -312,15 +335,17 @@ intelligence.splitText(splitText, splitConfig)
 
 
 
-#### Image
+## Image
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Image = string
 
 表示图片的URI地址，对应为string类型。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -329,13 +354,15 @@ type Image = string
 
 
 
-#### SplitConfig
+## SplitConfig
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 管理文本分块的配置信息。
 
 **系统能力：** SystemCapability.DistributedDataManager.DataIntelligence.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -345,7 +372,8 @@ type Image = string
 
 
 
-#### TextEmbedding
+## TextEmbedding
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -359,7 +387,8 @@ type Image = string
 
 
 
-#### loadModel
+### loadModel
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -373,6 +402,7 @@ loadModel(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -381,6 +411,7 @@ loadModel(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[智慧数据平台错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-intelligence)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -404,7 +435,8 @@ textEmbedding.loadModel()
 
 
 
-#### releaseModel
+### releaseModel
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -418,6 +450,7 @@ releaseModel(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -426,6 +459,7 @@ releaseModel(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[智慧数据平台错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-intelligence)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -449,7 +483,8 @@ textEmbedding.releaseModel()
 
 
 
-#### getEmbedding
+### getEmbedding
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -465,12 +500,14 @@ getEmbedding(text: string): Promise<Array&lt;number&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | text | string | 是 | 嵌入模型的输入文本。长度上限为512个字符。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -480,6 +517,7 @@ getEmbedding(text: string): Promise<Array&lt;number&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[智慧数据平台错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-intelligence)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -506,7 +544,8 @@ textEmbedding.getEmbedding(text)
 
 
 
-#### getEmbedding
+### getEmbedding
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -522,12 +561,14 @@ getEmbedding(batchTexts: Array&lt;string&gt;): Promise<Array<Array&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | batchTexts | Array&lt;string&gt; | 是 | 嵌入模型的文本输入批次。单个文本长度上限为512个字符。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -537,6 +578,7 @@ getEmbedding(batchTexts: Array&lt;string&gt;): Promise<Array<Array&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[智慧数据平台错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-intelligence)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -563,9 +605,10 @@ textEmbedding.getEmbedding(batchTexts)
 
 
 
-#### ImageEmbedding
+## ImageEmbedding
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** PC/2in1
 
 描述多模态嵌入模型的图像嵌入函数。
 
@@ -575,9 +618,10 @@ textEmbedding.getEmbedding(batchTexts)
 
 
 
-#### loadModel
+### loadModel
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** PC/2in1
 
 loadModel(): Promise&lt;void&gt;
 
@@ -589,6 +633,7 @@ loadModel(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -597,6 +642,7 @@ loadModel(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[智慧数据平台错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-intelligence)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -620,9 +666,10 @@ imageEmbedding.loadModel()
 
 
 
-#### releaseModel
+### releaseModel
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** PC/2in1
 
 releaseModel(): Promise&lt;void&gt;
 
@@ -634,6 +681,7 @@ releaseModel(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -642,6 +690,7 @@ releaseModel(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[智慧数据平台错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-intelligence)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -665,9 +714,10 @@ imageEmbedding.releaseModel()
 
 
 
-#### getEmbedding
+### getEmbedding
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** PC/2in1
 
 getEmbedding(image: Image): Promise<Array&lt;number&gt;>
 
@@ -681,12 +731,14 @@ getEmbedding(image: Image): Promise<Array&lt;number&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| image | Image | 是 | 嵌入模型的输入图像类型的URI地址。 |
+| image | Image | 是 | 嵌入模型输入图像的URI地址。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -696,6 +748,7 @@ getEmbedding(image: Image): Promise<Array&lt;number&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[智慧数据平台错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-intelligence)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

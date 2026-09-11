@@ -1,6 +1,6 @@
 # 指定PEM格式字符串数据转换非对称密钥对(ArkTS)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-convert-string-data-to-asym-key-pair
 
@@ -11,9 +11,9 @@
 
 
 
-#### 指定PEM格式字符串数据转换密钥对
+## 指定PEM格式字符串数据转换密钥对
 
-对应的算法规格请查看[非对称密钥生成和转换规格](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-asym-key-generation-conversion-spec)。
+对应的算法规格请查看[非对称密钥生成和转换规格](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-key-generation-conversion)。
 1. 调用[cryptoFramework.createAsyKeyGenerator](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#cryptoframeworkcreateasykeygenerator)，指定字符串参数'RSA1024'，创建RSA密钥类型为RSA1024、素数个数为2的非对称密钥生成器（AsyKeyGenerator）。
 
   生成RSA非对称密钥时，默认素数为2，此处省略了参数PRIMES_2。
@@ -25,6 +25,7 @@
   
 ```ArkTS
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 let priKeyPkcs1Str1024: string =
   '-----BEGIN RSA PRIVATE KEY-----\n' +
@@ -50,14 +51,19 @@ let publicPkcs1Str1024: string =
     '-----END RSA PUBLIC KEY-----\n';
 
 async function testPkcs1ToPkcs8ByPromise() {
-  let asyKeyGenerator = cryptoFramework.createAsyKeyGenerator('RSA1024');
-  let keyPair = await asyKeyGenerator.convertPemKey(publicPkcs1Str1024, priKeyPkcs1Str1024);
-  let priPemKey = keyPair.priKey;
-  let pubPemKey = keyPair.pubKey;
-  let priString = priPemKey.getEncodedPem('PKCS8');
-  let pubString = pubPemKey.getEncodedPem('X509');
-  console.info('[promise]TestPkcs1ToPkcs8ByPromise priString output: ' + priString);
-  console.info('[promise]TestPkcs1ToPkcs8ByPromise pubString output: ' + pubString);
+  try {
+    let asyKeyGenerator = cryptoFramework.createAsyKeyGenerator('RSA1024');
+    let keyPair = await asyKeyGenerator.convertPemKey(publicPkcs1Str1024, priKeyPkcs1Str1024);
+    let priPemKey = keyPair.priKey;
+    let pubPemKey = keyPair.pubKey;
+    let priString = priPemKey.getEncodedPem('PKCS8');
+    let pubString = pubPemKey.getEncodedPem('X509');
+    console.info('[promise]TestPkcs1ToPkcs8ByPromise priString output: ' + priString);
+    console.info('[promise]TestPkcs1ToPkcs8ByPromise pubString output: ' + pubString);
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`testPkcs1ToPkcs8ByPromise failed: errCode: ${e.code}, errMsg: ${e.message}`);
+  }
 }
 ```
 

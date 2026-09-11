@@ -69,7 +69,7 @@ struct LineBreakStrategyExample {
               let commObj = (jsonObj as Record<string, Object>);
               let commRecord = (commObj['size'] as Record<string, Object>);
               let arrayJson = JSON.stringify(commRecord);
-              // sArray即为缩进的值
+           <em>   // sArray即为缩进的值</em>
               let sArray = JSON.parse(arrayJson) as Array<string>;
               this.left = Number(sArray[0].split('.')[0]);
               this.right = Number(sArray[1].split('.')[0]);
@@ -78,10 +78,10 @@ struct LineBreakStrategyExample {
         });
         Button('段落对齐').onClick(() => {
           this.controller.updateParagraphStyle({
-            // 以字符串为单位选择要更新的段落。
+       <em>     // 以字符串为单位选择要更新的段落。</em>
             start: -1, end: -1,
             style: {
-              // leadingMargin的值根据上面获取到的值，进行计算后赋予新值。
+             <em> // leadingMargin的值根据上面获取到的值，进行计算后赋予新值。</em>
               leadingMargin: { pixelMap: null, size: [this.left + 10, this.right + 20] }
             }
           });

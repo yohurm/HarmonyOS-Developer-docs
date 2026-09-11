@@ -1,6 +1,6 @@
 # 使用Image_NativeModule完成图片解码
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-source-c
 
@@ -9,11 +9,11 @@
 从API version 22开始支持对部分专业相机格式图片的预览图解码，具体格式包括：CR2、CR3、ARW、NEF、RAF、NRW、ORF、RW2、PEF、SRW。
 
 
-#### 开发步骤
+## 开发步骤
 
 
 
-#### 添加链接库
+### 添加链接库
 
 在进行应用开发之前，开发者需要打开native工程的src/main/cpp/CMakeLists.txt，在target_link_libraries依赖中添加libimage_source.so、libpixelmap.so以及日志功能依赖的libhilog_ndk.z.so。
 
@@ -23,7 +23,7 @@ target_link_libraries(entry PUBLIC libhilog_ndk.z.so libimage_source.so libpixel
 
 
 
-#### Native接口调用
+### Native接口调用
 
 具体接口说明请参考[Image_NativeModule](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-nativemodule)。
 
@@ -407,7 +407,7 @@ napi_value ReleaseImageSource(napi_env env, napi_callback_info info)
 
   
 
-  #### 进阶主题
+  ## 进阶主题
 
   
 **内存优化解码**：使用DMA内存和YUV像素格式降低内存占用、提升解码性能，参见[图片解码内存优化](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-allocator-type-c)。

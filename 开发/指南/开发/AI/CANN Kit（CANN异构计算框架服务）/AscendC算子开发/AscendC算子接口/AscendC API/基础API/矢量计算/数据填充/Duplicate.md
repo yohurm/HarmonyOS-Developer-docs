@@ -1,10 +1,10 @@
 # Duplicate
 
-更新时间：2026-06-27 10:02:54
+更新时间：2026-08-18 12:49:55
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-data-duplicate
 
-#### 功能说明
+## 功能说明
 
 将一个变量或一个立即数，复制多次并填充到向量，其中PAR表示矢量计算单元一个迭代能够处理的元素个数：
  
@@ -14,7 +14,7 @@
  
   
 
-#### 函数原型
+## 函数原型
 
 tensor前n个数据计算：
  
@@ -25,28 +25,31 @@ void Duplicate(const LocalTensor<T>& dstLocal, const T& scalarValue, const int32
  
   
 
-#### 参数说明
+## 参数说明
 
 **表1** 参数说明
   
+
 | 参数名称 | 输入/输出 | 含义 |
 | --- | --- | --- |
-| dstLocal | 输出 | 目的操作数。 类型为LocalTensor，支持的TPosition为VECIN、VECCALC、VECOUT。 LocalTensor的起始地址需要32字节对齐。 Kirin9020系列处理器，支持的数据类型为：uint8、int8、uint16_t、int16_t、half、uint32_t、int32_t、float16、float KirinX90系列处理器，支持的数据类型为：uint8、int8、uint16_t、int16_t、half、uint32_t、int32_t、float16、float |
+| dstLocal | 输出 | 目的操作数。 类型为LocalTensor，支持的TPosition为VECIN、VECCALC、VECOUT。 LocalTensor的起始地址需要32字节对齐。 Kirin9020系列处理器、Kirin9030系列处理器、KirinX90系列处理器，支持的数据类型为：uint8、int8、uint16_t、int16_t、half、uint32_t、int32_t、float16、float。 |
 | scalarValue | 输入 | 被复制的源操作数，支持输入变量和立即数，数据类型需与dstLocal中元素的数据类型保持一致。 |
 | calCount | 输入 | 输入数据元素个数。 |
  
  
   
 
-#### 支持的型号
+## 支持的型号
 
 Kirin9020系列处理器
+ 
+Kirin9030系列处理器
  
 KirinX90系列处理器
  
   
 
-#### 注意事项
+## 注意事项
 
 - 操作数地址偏移对齐要求请参见[通用约束](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-general-constraints)。
 - 开发者输入立即数需自行保证不超出dstLocal中元素数据类型对应的大小范围。
@@ -54,13 +57,13 @@ KirinX90系列处理器
  
   
 
-#### 返回值
+## 返回值
 
 无
  
   
 
-#### 调用示例
+## 调用示例
 
 本样例中只展示Compute流程中的部分代码。如果开发者需要运行样例代码，请将该代码段拷贝并替换[样例模板](#样例模板)中的Compute函数粗体部分即可。
  
@@ -80,7 +83,7 @@ AscendC::Duplicate<half>(dstLocal, inputVal, srcDataSize);
  
   
 
-#### 样例模板
+## 样例模板
 
 ```text
 #include "kernel_operator.h"

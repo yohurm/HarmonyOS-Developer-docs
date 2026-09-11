@@ -12,7 +12,7 @@
 import { request } from '@kit.BasicServicesKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
-// Using AppStore to store UIContext in ExitAbility
+<em>// Using AppStore to store UIContext in ExitAbility</em>
 const context = AppStorage.get("context") as UIContext;
 let downloadTask: request.DownloadTask;
 try {

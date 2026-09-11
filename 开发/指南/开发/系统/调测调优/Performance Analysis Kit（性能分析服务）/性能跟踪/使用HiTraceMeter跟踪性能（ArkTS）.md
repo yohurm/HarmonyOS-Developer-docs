@@ -1,18 +1,19 @@
 # 使用HiTraceMeter跟踪性能（ArkTS）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hitracemeter-guidelines-arkts
 
-#### 简介
+## 简介
 
 HiTraceMeter提供系统性能打点接口。开发者在关键代码位置调用这些API，能够有效跟踪进程轨迹，查看系统和应用性能。
 
 
 
-#### 接口说明
+## 接口说明
 
 性能打点跟踪接口由HiTraceMeter模块提供，详细API请参考[@ohos.hiTraceMeter (性能打点)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hitracemeter)。
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -36,13 +37,13 @@ HiTraceMeter提供系统性能打点接口。开发者在关键代码位置调�
 
 
 
-#### 接口分类
+### 接口分类
 
 HiTraceMeter打点接口分为三类：同步时间片跟踪、异步时间片跟踪和整数跟踪。HiTraceMeter接口实现均为同步，同步和异步针对的是被跟踪的业务。同步业务使用同步时间片跟踪接口，异步业务使用异步时间片跟踪接口。HiTraceMeter打点接口可与[HiTraceChain](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hitracechain-guidelines-arkts)一起使用，进行跨设备、跨进程或跨线程的打点关联与分析。
 
 
 
-#### 接口使用场景
+### 接口使用场景
 
  - 同步时间片跟踪接口
 
@@ -63,7 +64,8 @@ HiTraceMeter打点接口分为三类：同步时间片跟踪、异步时间片�
 
 
 
-#### 参数解析
+### 参数解析
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -83,13 +85,13 @@ HiTraceMeter打点接口分为三类：同步时间片跟踪、异步时间片�
 
 
 
-#### 开发步骤
+## 开发步骤
 
 以下为一个使用HiTraceMeter打点接口的ArkTS应用示例。
 
 
 
-#### 步骤一：创建项目
+### 步骤一：创建项目
 1. 在DevEco Studio中新建工程，选择“Empty Ability”，工程的目录结构如下：
 
   
@@ -174,7 +176,7 @@ Button("testHiTraceMeter").backgroundColor('#FFFF00FF')
 
 
 
-#### 步骤二：采集trace信息并查看
+### 步骤二：采集trace信息并查看
 1. 在DevEco Studio Terminal窗口中执行以下命令，开启应用的trace捕获。
 
   
@@ -205,7 +207,7 @@ $ hitrace --trace_dump | grep myTest
 
 
 
-#### 步骤三：停止采集trace
+### 步骤三：停止采集trace
 1. 执行以下命令，停止应用的trace捕获。
 
   

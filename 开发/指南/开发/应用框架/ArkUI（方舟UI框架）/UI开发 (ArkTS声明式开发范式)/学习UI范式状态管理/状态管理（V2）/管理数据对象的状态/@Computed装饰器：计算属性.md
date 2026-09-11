@@ -1,6 +1,6 @@
 # @Computed装饰器：计算属性
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-computed
 
@@ -27,7 +27,7 @@ Text(`${this.sum}`) // 读取@Computed sum的缓存值，节省上述重复计�
 
 
 
-#### 概述
+## 概述
 
 @Computed为方法装饰器，装饰getter方法。@Computed会检测被计算的属性变化，当被计算的属性变化时，@Computed只会被求解一次。不建议在@Computed中修改变量，错误的使用会导致数据无法被追踪或appfreeze等问题，详情见[使用限制](#使用限制)。
 
@@ -35,7 +35,7 @@ Text(`${this.sum}`) // 读取@Computed sum的缓存值，节省上述重复计�
 
 
 
-#### 装饰器说明
+## 装饰器说明
 
 @Computed语法：
 
@@ -46,18 +46,19 @@ get varName(): T {
 }
 ```
 
+
 | @Computed方法装饰器 | 说明 |
 | --- | --- |
 | 支持类型 | getter访问器。 |
 | 从父组件初始化 | 禁止。 |
 | 可初始化子组件 | @Param。 |
-| 被执行的时机 | @ComponentV2中的@Computed会在自定义组件创建的时候初始化，触发@Computed计算。 @ObservedV2装饰的类中的@Computed，会在@ObservedV2装饰的类实例创建后，异步初始化，触发@Computed计算。 在@Computed中计算的状态变量被改变时，计算属性会重新计算。 |
+| 被执行的时机 | @ComponentV2中的@Computed会在自定义组件创建的时候初始化，触发@Computed计算。 @ObservedV2装饰的类中的@Computed，会在@ObservedV2装饰的类实例创建后，异步初始化，触发@Computed计算。 参与@Computed计算的状态变量被改变时，计算属性会重新计算。 |
 | 是否允许赋值 | @Computed装饰的属性是只读的，不允许赋值，详情见使用限制。 |
 
 
 
 
-#### 使用限制
+## 使用限制
 
  - @Computed为方法装饰器，仅能装饰getter方法。
 
@@ -119,7 +120,7 @@ struct Page {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/ESHq6H8CTQuGmseQC4viBA/zh-cn_image_0000002704271879.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095706Z&HW-CC-Expire=86400&HW-CC-Sign=28AEC63169B0443D22F464A117E75EA7AFE981DD672A52AC1ED4ECF00EFDC974)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/QUjXPZ7ORc-jbIWlDgaQ4Q/zh-cn_image_0000002717610142.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072508Z&HW-CC-Expire=86400&HW-CC-Sign=F36C9C6E0E5B5F2316130750E0F275A9279F00BED5C225733551A0840B20CEF9)
 
  - 在@Computed装饰的getter方法中，不能改变参与计算的属性，以防止重复执行计算属性导致的appfreeze。
 
@@ -227,11 +228,11 @@ get c() {
 
 
 
-#### 使用场景
+## 使用场景
 
 
 
-#### 当被计算的属性变化时，@Computed装饰的getter访问器只会被求解一次
+### 当被计算的属性变化时，@Computed装饰的getter访问器只会被求解一次
 1. 在自定义组件中使用计算属性。
 
   
@@ -301,14 +302,14 @@ struct ObservedV2ClassUser {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/AQzs2PCDTG68-P_34s5VCg/zh-cn_image_0000002704392049.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095706Z&HW-CC-Expire=86400&HW-CC-Sign=0BBB6ED5D4C702FC186B1B2213DCB42DC3C39E85CA9BCDF02DA0A54597D094B3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/BOt_Ton9Ruqdo25Dz1xYJw/zh-cn_image_0000002747210011.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072508Z&HW-CC-Expire=86400&HW-CC-Sign=E6C01BFD4D3D75C72949EAFC0F01055830C2264EDBE16906E782CD289A835F32)
 
 
   
 
-  #### @Computed装饰的属性可以被@Monitor监听变化
+  ### @Computed装饰的属性可以被@Monitor监听变化
 
-  如何使用计算属性求解fahrenheit和kelvin。示例如下：
+  下面示例展示如何使用计算属性求解fahrenheit和kelvin，并使用@Monitor监听计算属性的变化：
 
   
 点击“-”，celsius-- -> fahrenheit -> kelvin --> kelvin变化时调用onKelvinMonitor。
@@ -370,13 +371,13 @@ struct ComputedPropertyResolution {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/-yExW6yrTuK_SU2NfiZuYw/zh-cn_image_0000002674631926.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095706Z&HW-CC-Expire=86400&HW-CC-Sign=3AB695BCD97ECDF1883D418D95CD07D5C467D22600D382377FB537EED0BA52EA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/UzU4PG1fSzSrHfmv_qMNcQ/zh-cn_image_0000002717770078.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072508Z&HW-CC-Expire=86400&HW-CC-Sign=1BFF18D68E1CDC0CE14118E743BC808FE410416F1607D995C02551479F824D59)
 
 
 
 
 
-#### @Computed装饰的属性可以初始化@Param
+### @Computed装饰的属性可以初始化@Param
 
 下面的例子使用@Computed初始化@Param。
 
@@ -466,4 +467,4 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/cGuViLcTQHOWQHrjuhj2Pg/zh-cn_image_0000002704271881.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095706Z&HW-CC-Expire=86400&HW-CC-Sign=98140C435957963CF80DD06884632B760F88217A387C2F2720DDA74393AFDC42)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/zzxruH0UTIyoBQM4Sc9vsg/zh-cn_image_0000002717610144.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072508Z&HW-CC-Expire=86400&HW-CC-Sign=ED596AB027A0424455E7A8E8EDAED7CE43FA1328D819AD9897A7B87DAC34F1E6)

@@ -24,14 +24,14 @@ struct TextInputDemo {
           size: 16,
           weight: 400
         })
-        .showPasswordIcon(false)// You need to disable the native password icon (showPasswordIcon(false)) for it to take effect.
+        .showPasswordIcon(false)<em>// You need to disable the native password icon (showPasswordIcon(false)) for it to take effect.</em>
         .width(336)
         .height(56)
         .padding({ right: 50 })
         .onChange((value: string) => {
           this.text = value;
         })
-      //Image overlay passwordIcon implementation
+<em>      //Image overlay passwordIcon implementation</em>
       Image($r(this.isVisible ? 'app.media.startIcon' : 'app.media.invisible'))
         .margin({ left: 280 })
         .backgroundColor('#E7E8EA')

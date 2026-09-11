@@ -1,6 +1,6 @@
 # AssetAccelerationExtensionContext（资源加速ExtensionContext）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/graphics-accelerate-extensioncontext
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -14,7 +14,8 @@ AssetAccelerationExtensionContext是AssetAccelerationExtensionAbility的上下�
 **起始版本：** 5.1.0(18)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -24,7 +25,8 @@ import { AssetAccelerationExtensionContext } from '@kit.GraphicsAccelerateKit';
  
   
 
-#### AssetAccelerationExtensionContext
+## AssetAccelerationExtensionContext
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 

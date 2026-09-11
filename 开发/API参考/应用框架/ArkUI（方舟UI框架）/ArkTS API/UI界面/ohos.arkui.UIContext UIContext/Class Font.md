@@ -1,9 +1,9 @@
 # Class (Font)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-font
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Font用于管理自定义字体和系统字体信息，支持注册自定义字体、获取系统字体列表、查询字体详细信息等功能，适用于需要在应用中使用自定义字体或查询系统字体资源的场景。
 
@@ -12,9 +12,10 @@ Font用于管理自定义字体和系统字体信息，支持注册自定义字�
 
 
 
-#### registerFont
+## registerFont
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 registerFont(options: font.FontOptions): void
 
@@ -22,7 +23,7 @@ registerFont(options: font.FontOptions): void
 
 推荐使用字体引擎的[loadFontSync](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-graphics-text#loadfontsync)接口注册自定义字体。
 
-该接口为异步接口，字体注册为异步过程，不支持并发调用。由于注册是异步完成的，建议在页面初始化阶段（如aboutToAppear）提前调用，以确保字体在使用前已注册完成。
+该接口的字体注册过程为异步，不支持并发调用。由于注册是异步完成的，建议在页面初始化阶段（如aboutToAppear）提前调用，以确保字体在使用前已注册完成。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -31,6 +32,7 @@ registerFont(options: font.FontOptions): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -70,9 +72,10 @@ struct Index {
 
 
 
-#### getSystemFontList
+## getSystemFontList
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSystemFontList(): Array&lt;string&gt;
 
@@ -89,6 +92,7 @@ getSystemFontList(): Array&lt;string&gt;
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -124,9 +128,10 @@ struct Index {
 
 
 
-#### getFontByName
+## getFontByName
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFontByName(fontName: string): font.FontInfo
 
@@ -140,12 +145,14 @@ getFontByName(fontName: string): font.FontInfo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fontName | string | 是 | 系统的字体名，可通过getSystemFontList()方法获取支持的字体名称列表。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |

@@ -1,11 +1,11 @@
 # Interface (AudioVolumeGroupManager)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiovolumegroupmanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-管理音频组音量。
+AudioVolumeGroupManager是音频系统中的音频组音量管理模块。本模块提供音频组音量管理能力，包括获取和设置不同音量类型的音量等级、静音状态管理、铃声模式监听和获取、麦克风状态管理和监听、固定音量模式控制、音量增益分贝值查询、输入/输出设备电平值获取等。当需要精细化控制音量时，使用本模块接口完成相关操作，适用于多媒体播放、音视频通话、游戏、音频录制等场景。
 
 在使用AudioVolumeGroupManager的接口之前，需先通过[getVolumeGroupManager](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiovolumemanager#getvolumegroupmanager9)获取AudioVolumeGroupManager实例。
 
@@ -14,9 +14,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { audio } from '@kit.AudioKit';
@@ -24,9 +25,10 @@ import { audio } from '@kit.AudioKit';
 
 
 
-#### getVolume(deprecated)
+## getVolume(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getVolume(volumeType: AudioVolumeType, callback: AsyncCallback&lt;number&gt;): void
 
@@ -40,6 +42,7 @@ getVolume(volumeType: AudioVolumeType, callback: AsyncCallback&lt;number&gt;): v
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | volumeType | AudioVolumeType | 是 | 音频音量类型。 |
@@ -51,20 +54,21 @@ getVolume(volumeType: AudioVolumeType, callback: AsyncCallback&lt;number&gt;): v
 ```text
 import { BusinessError } from '@kit.BasicServicesKit';
 
-audioVolumeGroupManager.getVolume(audio.AudioVolumeType.MEDIA, (err: BusinessError, value: number) => {
+audioVolumeGroupManager.getVolume(audio.AudioVolumeType.MEDIA, (err: BusinessError, volume: number) => {
   if (err) {
-    console.error(`Failed to get volume. Code: ${err.code}, message: ${err.message}`);
+    console.error(`Failed to obtain the volume. Code: ${err.code}, message: ${err.message}`);
     return;
   }
-  console.info(`Succeeded in getting volume. Volume: ${value}.`);
+  console.info(`Succeeded in obtaining the volume, volume: ${volume}.`);
 });
 ```
 
 
 
-#### getVolume(deprecated)
+## getVolume(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getVolume(volumeType: AudioVolumeType): Promise&lt;number&gt;
 
@@ -78,6 +82,7 @@ getVolume(volumeType: AudioVolumeType): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | volumeType | AudioVolumeType | 是 | 音频音量类型。 |
@@ -85,24 +90,30 @@ getVolume(volumeType: AudioVolumeType): Promise&lt;number&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;number&gt; | Promise对象，返回指定流的音量等级。指定流的音量等级范围可通过getMinVolume和getMaxVolume获取。 |
+| Promise&lt;number&gt; | Promise对象，返回指定流的音量等级。音量等级范围可通过getMinVolume和getMaxVolume获取。 |
 
 
 **示例：**
 
 ```text
-audioVolumeGroupManager.getVolume(audio.AudioVolumeType.MEDIA).then((value: number) => {
-  console.info(`Succeeded in getting volume. Volume: ${value}.`);
+import { BusinessError } from '@kit.BasicServicesKit';
+
+audioVolumeGroupManager.getVolume(audio.AudioVolumeType.MEDIA).then((volume: number) => {
+  console.info(`Succeeded in obtaining the volume, volume: ${volume}.`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to obtain the volume. Code: ${err.code}, message: ${err.message}`);
 });
 ```
 
 
 
-#### getVolumeSync(deprecated)
+## getVolumeSync(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getVolumeSync(volumeType: AudioVolumeType): number
 
@@ -116,12 +127,14 @@ getVolumeSync(volumeType: AudioVolumeType): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | volumeType | AudioVolumeType | 是 | 音频音量类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -131,6 +144,7 @@ getVolumeSync(volumeType: AudioVolumeType): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -144,19 +158,20 @@ getVolumeSync(volumeType: AudioVolumeType): number
 import { BusinessError } from '@kit.BasicServicesKit';
 
 try {
-  let value: number = audioVolumeGroupManager.getVolumeSync(audio.AudioVolumeType.MEDIA);
-  console.info(`Succeeded in getting volume. Volume: ${value}.`);
+  let volume: number = audioVolumeGroupManager.getVolumeSync(audio.AudioVolumeType.MEDIA);
+  console.info(`Succeeded in obtaining the volume, volume: ${volume}.`);
 } catch (err) {
   let error = err as BusinessError;
-  console.error(`Failed to get volume. Code: ${error.code}, message: ${error.message}`);
+  console.error(`Failed to obtain the volume. Code: ${error.code}, message: ${error.message}`);
 }
 ```
 
 
 
-#### getMinVolume(deprecated)
+## getMinVolume(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMinVolume(volumeType: AudioVolumeType, callback: AsyncCallback&lt;number&gt;): void
 
@@ -170,10 +185,11 @@ getMinVolume(volumeType: AudioVolumeType, callback: AsyncCallback&lt;number&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | volumeType | AudioVolumeType | 是 | 音频音量类型。 |
-| callback | AsyncCallback&lt;number&gt; | 是 | 回调函数。当获取指定流的最小音量成功，err为undefined，data为获取到的指定流的最小音量等级；否则为错误对象。 |
+| callback | AsyncCallback&lt;number&gt; | 是 | 回调函数。当获取指定流的最小音量成功，err为undefined，data为指定流的最小音量等级；否则为错误对象。 |
 
 
 **示例：**
@@ -181,20 +197,21 @@ getMinVolume(volumeType: AudioVolumeType, callback: AsyncCallback&lt;number&gt;)
 ```text
 import { BusinessError } from '@kit.BasicServicesKit';
 
-audioVolumeGroupManager.getMinVolume(audio.AudioVolumeType.MEDIA, (err: BusinessError, value: number) => {
+audioVolumeGroupManager.getMinVolume(audio.AudioVolumeType.MEDIA, (err: BusinessError, minVolume: number) => {
   if (err) {
-    console.error(`Failed to get minVolume. Code: ${err.code}, message: ${err.message}`);
+    console.error(`Failed to obtain the minimum volume. Code: ${err.code}, message: ${err.message}`);
     return;
   }
-  console.info(`Succeeded in getting minVolume. Volume: ${value}.`);
+  console.info(`Succeeded in obtaining the minimum volume, minVolume: ${minVolume}.`);
 });
 ```
 
 
 
-#### getMinVolume(deprecated)
+## getMinVolume(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMinVolume(volumeType: AudioVolumeType): Promise&lt;number&gt;
 
@@ -208,12 +225,14 @@ getMinVolume(volumeType: AudioVolumeType): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | volumeType | AudioVolumeType | 是 | 音频音量类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -223,16 +242,21 @@ getMinVolume(volumeType: AudioVolumeType): Promise&lt;number&gt;
 **示例：**
 
 ```text
-audioVolumeGroupManager.getMinVolume(audio.AudioVolumeType.MEDIA).then((value: number) => {
-  console.info(`Succeeded in getting minVolume. Volume: ${value}.`);
+import { BusinessError } from '@kit.BasicServicesKit';
+
+audioVolumeGroupManager.getMinVolume(audio.AudioVolumeType.MEDIA).then((minVolume: number) => {
+  console.info(`Succeeded in obtaining the minimum volume, minVolume: ${minVolume}.`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to obtain the minimum volume. Code: ${err.code}, message: ${err.message}`);
 });
 ```
 
 
 
-#### getMinVolumeSync(deprecated)
+## getMinVolumeSync(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMinVolumeSync(volumeType: AudioVolumeType): number
 
@@ -246,12 +270,14 @@ getMinVolumeSync(volumeType: AudioVolumeType): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | volumeType | AudioVolumeType | 是 | 音频音量类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -261,6 +287,7 @@ getMinVolumeSync(volumeType: AudioVolumeType): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -274,19 +301,20 @@ getMinVolumeSync(volumeType: AudioVolumeType): number
 import { BusinessError } from '@kit.BasicServicesKit';
 
 try {
-  let value: number = audioVolumeGroupManager.getMinVolumeSync(audio.AudioVolumeType.MEDIA);
-  console.info(`Succeeded in getting minVolume. Volume: ${value}.`);
+  let minVolume: number = audioVolumeGroupManager.getMinVolumeSync(audio.AudioVolumeType.MEDIA);
+  console.info(`Succeeded in obtaining the minimum volume, minVolume: ${minVolume}.`);
 } catch (err) {
   let error = err as BusinessError;
-  console.error(`Failed to get minVolume. Code: ${error.code}, message: ${error.message}`);
+  console.error(`Failed to obtain the minimum volume. Code: ${error.code}, message: ${error.message}`);
 }
 ```
 
 
 
-#### getMaxVolume(deprecated)
+## getMaxVolume(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMaxVolume(volumeType: AudioVolumeType, callback: AsyncCallback&lt;number&gt;): void
 
@@ -300,10 +328,11 @@ getMaxVolume(volumeType: AudioVolumeType, callback: AsyncCallback&lt;number&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | volumeType | AudioVolumeType | 是 | 音频音量类型。 |
-| callback | AsyncCallback&lt;number&gt; | 是 | 回调函数。当获取指定流的最大音量成功，err为undefined，data为获取到的指定流的最大音量等级；否则为错误对象。 |
+| callback | AsyncCallback&lt;number&gt; | 是 | 回调函数。当获取指定流的最大音量成功，err为undefined，data为指定流的最大音量等级；否则为错误对象。 |
 
 
 **示例：**
@@ -311,20 +340,21 @@ getMaxVolume(volumeType: AudioVolumeType, callback: AsyncCallback&lt;number&gt;)
 ```text
 import { BusinessError } from '@kit.BasicServicesKit';
 
-audioVolumeGroupManager.getMaxVolume(audio.AudioVolumeType.MEDIA, (err: BusinessError, value: number) => {
+audioVolumeGroupManager.getMaxVolume(audio.AudioVolumeType.MEDIA, (err: BusinessError, maxVolume: number) => {
   if (err) {
-    console.error(`Failed to get maxVolume. Code: ${err.code}, message: ${err.message}`);
+    console.error(`Failed to obtain the maximum volume. Code: ${err.code}, message: ${err.message}`);
     return;
   }
-  console.info(`Succeeded in getting maxVolume. Volume: ${value}.`);
+  console.info(`Succeeded in obtaining the maximum volume, maxVolume: ${maxVolume}.`);
 });
 ```
 
 
 
-#### getMaxVolume(deprecated)
+## getMaxVolume(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMaxVolume(volumeType: AudioVolumeType): Promise&lt;number&gt;
 
@@ -338,12 +368,14 @@ getMaxVolume(volumeType: AudioVolumeType): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | volumeType | AudioVolumeType | 是 | 音频音量类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -353,16 +385,21 @@ getMaxVolume(volumeType: AudioVolumeType): Promise&lt;number&gt;
 **示例：**
 
 ```text
-audioVolumeGroupManager.getMaxVolume(audio.AudioVolumeType.MEDIA).then((value: number) => {
-  console.info(`Succeeded in getting maxVolume. Volume: ${value}.`);
+import { BusinessError } from '@kit.BasicServicesKit';
+
+audioVolumeGroupManager.getMaxVolume(audio.AudioVolumeType.MEDIA).then((maxVolume: number) => {
+  console.info(`Succeeded in obtaining the maximum volume, maxVolume: ${maxVolume}.`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to obtain the maximum volume. Code: ${err.code}, message: ${err.message}`);
 });
 ```
 
 
 
-#### getMaxVolumeSync(deprecated)
+## getMaxVolumeSync(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMaxVolumeSync(volumeType: AudioVolumeType): number
 
@@ -376,12 +413,14 @@ getMaxVolumeSync(volumeType: AudioVolumeType): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | volumeType | AudioVolumeType | 是 | 音频音量类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -392,6 +431,7 @@ getMaxVolumeSync(volumeType: AudioVolumeType): number
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
@@ -404,23 +444,24 @@ getMaxVolumeSync(volumeType: AudioVolumeType): number
 import { BusinessError } from '@kit.BasicServicesKit';
 
 try {
-  let value: number = audioVolumeGroupManager.getMaxVolumeSync(audio.AudioVolumeType.MEDIA);
-  console.info(`Succeeded in getting maxVolume. Volume: ${value}.`);
+  let maxVolume: number = audioVolumeGroupManager.getMaxVolumeSync(audio.AudioVolumeType.MEDIA);
+  console.info(`Succeeded in obtaining the maximum volume, maxVolume: ${maxVolume}.`);
 } catch (err) {
   let error = err as BusinessError;
-  console.error(`Failed to get maxVolume. Code: ${error.code}, message: ${error.message}`);
+  console.error(`Failed to obtain the maximum volume. Code: ${error.code}, message: ${error.message}`);
 }
 ```
 
 
 
-#### isMute(deprecated)
+## isMute(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isMute(volumeType: AudioVolumeType, callback: AsyncCallback&lt;boolean&gt;): void
 
-获取指定音量流静音状态。使用callback异步回调。
+获取指定音量类型静音状态。使用callback异步回调。
 
 > [!NOTE]
 > 从API version 9开始支持，从API version 20开始废弃，建议使用 isSystemMutedForStream 替代。
@@ -430,10 +471,11 @@ isMute(volumeType: AudioVolumeType, callback: AsyncCallback&lt;boolean&gt;): voi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | volumeType | AudioVolumeType | 是 | 音频音量类型。 |
-| callback | AsyncCallback&lt;boolean&gt; | 是 | 回调函数。当获取指定音量流静音状态成功，err为undefined，data为true表示静音，false表示非静音；否则为错误对象。 |
+| callback | AsyncCallback&lt;boolean&gt; | 是 | 回调函数。当获取音量静音状态成功，err为undefined，data为true表示静音，false表示非静音；否则为错误对象。 |
 
 
 **示例：**
@@ -441,24 +483,25 @@ isMute(volumeType: AudioVolumeType, callback: AsyncCallback&lt;boolean&gt;): voi
 ```text
 import { BusinessError } from '@kit.BasicServicesKit';
 
-audioVolumeGroupManager.isMute(audio.AudioVolumeType.MEDIA, (err: BusinessError, value: boolean) => {
+audioVolumeGroupManager.isMute(audio.AudioVolumeType.MEDIA, (err: BusinessError, isMute: boolean) => {
   if (err) {
-    console.error(`Failed to use isMute function. Code: ${err.code}, message: ${err.message}`);
+    console.error(`Failed to check whether the stream is muted. Code: ${err.code}, message: ${err.message}`);
     return;
   }
-  console.info(`Succeeded in using isMute function. MuteState: ${value}.`);
+  console.info(`Succeeded in checking whether the stream is muted, isMuted: ${isMute}.`);
 });
 ```
 
 
 
-#### isMute(deprecated)
+## isMute(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isMute(volumeType: AudioVolumeType): Promise&lt;boolean&gt;
 
-获取指定音量流是否被静音。使用Promise异步回调。
+获取指定音量类型静音状态。使用Promise异步回调。
 
 > [!NOTE]
 > 从API version 9开始支持，从API version 20开始废弃，建议使用 isSystemMutedForStream 替代。
@@ -468,12 +511,14 @@ isMute(volumeType: AudioVolumeType): Promise&lt;boolean&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | volumeType | AudioVolumeType | 是 | 音频音量类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -483,20 +528,25 @@ isMute(volumeType: AudioVolumeType): Promise&lt;boolean&gt;
 **示例：**
 
 ```text
-audioVolumeGroupManager.isMute(audio.AudioVolumeType.MEDIA).then((value: boolean) => {
-  console.info(`Succeeded in using isMute function. MuteState: ${value}.`);
+import { BusinessError } from '@kit.BasicServicesKit';
+
+audioVolumeGroupManager.isMute(audio.AudioVolumeType.MEDIA).then((isMute: boolean) => {
+  console.info(`Succeeded in checking whether the stream is muted, isMuted: ${isMute}.`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to check whether the stream is muted. Code: ${err.code}, message: ${err.message}`);
 });
 ```
 
 
 
-#### isMuteSync(deprecated)
+## isMuteSync(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isMuteSync(volumeType: AudioVolumeType): boolean
 
-获取指定音量流是否被静音。同步返回结果。
+获取指定音量类型静音状态。同步返回结果。
 
 > [!NOTE]
 > 从API version 10开始支持，从API version 20开始废弃，建议使用 isSystemMutedForStream 替代。
@@ -506,6 +556,7 @@ isMuteSync(volumeType: AudioVolumeType): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | volumeType | AudioVolumeType | 是 | 音频音量类型。 |
@@ -513,14 +564,16 @@ isMuteSync(volumeType: AudioVolumeType): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 流静音状态。返回true表示静音，返回false表示非静音。 |
+| boolean | 音量是否为静音状态。返回true表示静音，返回false表示非静音。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -534,19 +587,20 @@ isMuteSync(volumeType: AudioVolumeType): boolean
 import { BusinessError } from '@kit.BasicServicesKit';
 
 try {
-  let value: boolean = audioVolumeGroupManager.isMuteSync(audio.AudioVolumeType.MEDIA);
-  console.info(`Succeeded in using isMuteSync function. MuteState: ${value}.`);
+  let isMute: boolean = audioVolumeGroupManager.isMuteSync(audio.AudioVolumeType.MEDIA);
+  console.info(`Succeeded in checking whether the stream is muted, isMuted: ${isMute}.`);
 } catch (err) {
   let error = err as BusinessError;
-  console.error(`Failed to use isMuteSync function. Code: ${error.code}, message: ${error.message}`);
+  console.error(`Failed to check whether the stream is muted. Code: ${error.code}, message: ${error.message}`);
 }
 ```
 
 
 
-#### getRingerMode9+
+## getRingerMode9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRingerMode(callback: AsyncCallback&lt;AudioRingMode&gt;): void
 
@@ -555,6 +609,7 @@ getRingerMode(callback: AsyncCallback&lt;AudioRingMode&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Volume
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -566,20 +621,21 @@ getRingerMode(callback: AsyncCallback&lt;AudioRingMode&gt;): void
 ```text
 import { BusinessError } from '@kit.BasicServicesKit';
 
-audioVolumeGroupManager.getRingerMode((err: BusinessError, value: audio.AudioRingMode) => {
+audioVolumeGroupManager.getRingerMode((err: BusinessError, ringerMode: audio.AudioRingMode) => {
   if (err) {
-    console.error(`Failed to get ringerMode. Code: ${err.code}, message: ${err.message}`);
+    console.error(`Failed to obtain the ringer mode. Code: ${err.code}, message: ${err.message}`);
     return;
   }
-  console.info(`Succeeded in getting ringerMode. AudioRingMode: ${value}.`);
+  console.info(`Succeeded in obtaining the ringer mode, ringerMode: ${ringerMode}.`);
 });
 ```
 
 
 
-#### getRingerMode9+
+## getRingerMode9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRingerMode(): Promise&lt;AudioRingMode&gt;
 
@@ -588,6 +644,7 @@ getRingerMode(): Promise&lt;AudioRingMode&gt;
 **系统能力：** SystemCapability.Multimedia.Audio.Volume
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -599,18 +656,19 @@ getRingerMode(): Promise&lt;AudioRingMode&gt;
 ```text
 import { BusinessError } from '@kit.BasicServicesKit';
 
-audioVolumeGroupManager.getRingerMode().then((value: audio.AudioRingMode) => {
-  console.info(`Succeeded in getting ringerMode. AudioRingMode: ${value}.`);
+audioVolumeGroupManager.getRingerMode().then((ringerMode: audio.AudioRingMode) => {
+  console.info(`Succeeded in obtaining the ringer mode, ringerMode: ${ringerMode}.`);
 }).catch((err: BusinessError) => {
-  console.error(`Failed to get ringerMode. Code: ${err.code}, message: ${err.message}`);
+  console.error(`Failed to obtain the ringer mode. Code: ${err.code}, message: ${err.message}`);
 });
 ```
 
 
 
-#### getRingerModeSync10+
+## getRingerModeSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRingerModeSync(): AudioRingMode
 
@@ -619,6 +677,7 @@ getRingerModeSync(): AudioRingMode
 **系统能力：** SystemCapability.Multimedia.Audio.Volume
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -631,19 +690,20 @@ getRingerModeSync(): AudioRingMode
 import { BusinessError } from '@kit.BasicServicesKit';
 
 try {
-  let value: audio.AudioRingMode = audioVolumeGroupManager.getRingerModeSync();
-  console.info(`Succeeded in getting ringerMode. AudioRingMode: ${value}.`);
+  let ringerMode: audio.AudioRingMode = audioVolumeGroupManager.getRingerModeSync();
+  console.info(`Succeeded in obtaining the ringer mode, ringerMode: ${ringerMode}.`);
 } catch (err) {
   let error = err as BusinessError;
-  console.error(`Failed to get ringerMode. Code: ${error.code}, message: ${error.message}`);
+  console.error(`Failed to obtain the ringer mode. Code: ${error.code}, message: ${error.message}`);
 }
 ```
 
 
 
-#### on('ringerModeChange')9+
+## on('ringerModeChange')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'ringerModeChange', callback: Callback&lt;AudioRingMode&gt;): void
 
@@ -652,6 +712,7 @@ on(type: 'ringerModeChange', callback: Callback&lt;AudioRingMode&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Volume
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -663,6 +724,7 @@ on(type: 'ringerModeChange', callback: Callback&lt;AudioRingMode&gt;): void
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
@@ -673,33 +735,36 @@ on(type: 'ringerModeChange', callback: Callback&lt;AudioRingMode&gt;): void
 
 ```text
 audioVolumeGroupManager.on('ringerModeChange', (ringerMode: audio.AudioRingMode) => {
-  console.info(`Succeeded in using on function. AudioRingMode: ${ringerMode}.`);
+  console.info(`Ringer mode changed, ringerMode: ${ringerMode}.`);
 });
 ```
 
 
 
-#### off('ringerModeChange')18+
+## off('ringerModeChange')18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'ringerModeChange', callback?: Callback&lt;AudioRingMode&gt;): void
 
-取消监听铃声模式变化事件。使用callback异步回调。
+取消监听铃声模式变化事件。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Volume
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型，支持的事件为'ringerModeChange'，当取消监听铃声模式变化事件时，触发该事件。 |
-| callback | Callback&lt;AudioRingMode&gt; | 否 | 回调函数，返回变化后的铃音模式。 |
+| type | string | 是 | 事件回调类型，支持的事件为'ringerModeChange'。 |
+| callback | Callback&lt;AudioRingMode&gt; | 否 | 回调函数。传入回调函数时，仅取消该回调对应的监听事件，需与on('ringerModeChange')绑定同一回调函数；不传参数时，取消此事件类型下所有已订阅的监听事件。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -714,7 +779,7 @@ audioVolumeGroupManager.off('ringerModeChange');
 
 // 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
 let ringerModeChangeCallback = (ringerMode: audio.AudioRingMode) => {
-  console.info(`Succeeded in using on or off function. AudioRingMode: ${ringerMode}.`);
+  console.info(`Ringer mode changed, ringerMode: ${ringerMode}.`);
 };
 
 audioVolumeGroupManager.on('ringerModeChange', ringerModeChangeCallback);
@@ -724,9 +789,10 @@ audioVolumeGroupManager.off('ringerModeChange', ringerModeChangeCallback);
 
 
 
-#### isMicrophoneMute9+
+## isMicrophoneMute9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isMicrophoneMute(callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -735,6 +801,7 @@ isMicrophoneMute(callback: AsyncCallback&lt;boolean&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Volume
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -746,20 +813,21 @@ isMicrophoneMute(callback: AsyncCallback&lt;boolean&gt;): void
 ```text
 import { BusinessError } from '@kit.BasicServicesKit';
 
-audioVolumeGroupManager.isMicrophoneMute((err: BusinessError, value: boolean) => {
+audioVolumeGroupManager.isMicrophoneMute((err: BusinessError, isMute: boolean) => {
   if (err) {
-    console.error(`Failed to use isMicrophoneMute function. Code: ${err.code}, message: ${err.message}`);
+    console.error(`Failed to check whether the microphone is muted. Code: ${err.code}, message: ${err.message}`);
     return;
   }
-  console.info(`Succeeded in using isMicrophoneMute function. MuteState: ${value}.`);
+  console.info(`Succeeded in checking whether the microphone is muted, isMuted: ${isMute}.`);
 });
 ```
 
 
 
-#### isMicrophoneMute9+
+## isMicrophoneMute9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isMicrophoneMute(): Promise&lt;boolean&gt;
 
@@ -768,6 +836,7 @@ isMicrophoneMute(): Promise&lt;boolean&gt;
 **系统能力：** SystemCapability.Multimedia.Audio.Volume
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -779,18 +848,19 @@ isMicrophoneMute(): Promise&lt;boolean&gt;
 ```text
 import { BusinessError } from '@kit.BasicServicesKit';
 
-audioVolumeGroupManager.isMicrophoneMute().then((value: boolean) => {
-  console.info(`Succeeded in using isMicrophoneMute function. MuteState: ${value}.`);
+audioVolumeGroupManager.isMicrophoneMute().then((isMute: boolean) => {
+  console.info(`Succeeded in checking whether the microphone is muted, isMuted: ${isMute}.`);
 }).catch((err: BusinessError) => {
-  console.error(`Failed to use isMicrophoneMute function. Code: ${err.code}, message: ${err.message}`);
+  console.error(`Failed to check whether the microphone is muted. Code: ${err.code}, message: ${err.message}`);
 });
 ```
 
 
 
-#### isMicrophoneMuteSync10+
+## isMicrophoneMuteSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isMicrophoneMuteSync(): boolean
 
@@ -799,6 +869,7 @@ isMicrophoneMuteSync(): boolean
 **系统能力：** SystemCapability.Multimedia.Audio.Volume
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -811,19 +882,20 @@ isMicrophoneMuteSync(): boolean
 import { BusinessError } from '@kit.BasicServicesKit';
 
 try {
-  let value: boolean = audioVolumeGroupManager.isMicrophoneMuteSync();
-  console.info(`Succeeded in using isMicrophoneMuteSync function. MuteState: ${value}.`);
+  let isMute: boolean = audioVolumeGroupManager.isMicrophoneMuteSync();
+  console.info(`Succeeded in checking whether the microphone is muted, isMuted: ${isMute}.`);
 } catch (err) {
   let error = err as BusinessError;
-  console.error(`Failed to use isMicrophoneMuteSync function. Code: ${error.code}, message: ${error.message}`);
+  console.error(`Failed to check whether the microphone is muted. Code: ${error.code}, message: ${error.message}`);
 }
 ```
 
 
 
-#### on('micStateChange')9+
+## on('micStateChange')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'micStateChange', callback: Callback&lt;MicStateChangeEvent&gt;): void
 
@@ -835,6 +907,7 @@ on(type: 'micStateChange', callback: Callback&lt;MicStateChangeEvent&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'micStateChange'，当检测到系统麦克风状态发生改变时，触发该事件。 |
@@ -844,6 +917,7 @@ on(type: 'micStateChange', callback: Callback&lt;MicStateChangeEvent&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -855,33 +929,36 @@ on(type: 'micStateChange', callback: Callback&lt;MicStateChangeEvent&gt;): void
 
 ```json
 audioVolumeGroupManager.on('micStateChange', (micStateChange: audio.MicStateChangeEvent) => {
-  console.info(`Succeeded in using on function. MicStateChangeEvent: ${JSON.stringify(micStateChange)}.`);
+  console.info(`Mic state changed, micStateChangeEvent: ${JSON.stringify(micStateChange)}.`);
 });
 ```
 
 
 
-#### off('micStateChange')12+
+## off('micStateChange')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'micStateChange', callback?: Callback&lt;MicStateChangeEvent&gt;): void
 
-取消监听系统麦克风状态更改事件。使用callback异步回调。
+取消监听系统麦克风状态更改事件。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Volume
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型，支持的事件为'micStateChange'，当取消监听系统麦克风状态更改事件时，触发该事件。 |
-| callback | Callback&lt;MicStateChangeEvent&gt; | 否 | 回调函数，返回变更后的麦克风状态。 |
+| type | string | 是 | 事件回调类型，支持的事件为'micStateChange'。 |
+| callback | Callback&lt;MicStateChangeEvent&gt; | 否 | 回调函数。传入回调函数时，仅取消该回调对应的监听事件，需与on('micStateChange')绑定同一回调函数；不传参数时，取消此事件类型下所有已订阅的监听事件。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -897,7 +974,7 @@ audioVolumeGroupManager.off('micStateChange');
 
 // 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
 let micStateChangeCallback = (micStateChange: audio.MicStateChangeEvent) => {
-  console.info(`Succeeded in using on or off function. MicStateChangeEvent: ${JSON.stringify(micStateChange)}.`);
+  console.info(`Mic state changed, micStateChangeEvent: ${JSON.stringify(micStateChange)}.`);
 };
 
 audioVolumeGroupManager.on('micStateChange', micStateChangeCallback);
@@ -907,9 +984,10 @@ audioVolumeGroupManager.off('micStateChange', micStateChangeCallback);
 
 
 
-#### isVolumeUnadjustable10+
+## isVolumeUnadjustable10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isVolumeUnadjustable(): boolean
 
@@ -919,6 +997,7 @@ isVolumeUnadjustable(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 固定音量模式开关状态。返回true表示固定音量模式，返回false表示非固定音量模式。 |
@@ -927,15 +1006,16 @@ isVolumeUnadjustable(): boolean
 **示例：**
 
 ```text
-let volumeAdjustSwitch: boolean = audioVolumeGroupManager.isVolumeUnadjustable();
-console.info(`Succeeded in using isVolumeUnadjustable function. VolumeUnadjustable: ${volumeAdjustSwitch}.`);
+let isVolumeUnadjustable: boolean = audioVolumeGroupManager.isVolumeUnadjustable();
+console.info(`Succeeded in checking whether the volume is unadjustable, isVolumeUnadjustable: ${isVolumeUnadjustable}.`);
 ```
 
 
 
-#### getSystemVolumeInDb(deprecated)
+## getSystemVolumeInDb(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSystemVolumeInDb(volumeType: AudioVolumeType, volumeLevel: number, device: DeviceType, callback: AsyncCallback&lt;number&gt;): void
 
@@ -949,6 +1029,7 @@ getSystemVolumeInDb(volumeType: AudioVolumeType, volumeLevel: number, device: De
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | volumeType | AudioVolumeType | 是 | 音频音量类型。 |
@@ -960,6 +1041,7 @@ getSystemVolumeInDb(volumeType: AudioVolumeType, volumeLevel: number, device: De
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -973,20 +1055,21 @@ getSystemVolumeInDb(volumeType: AudioVolumeType, volumeLevel: number, device: De
 ```text
 import { BusinessError } from '@kit.BasicServicesKit';
 
-audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, 3, audio.DeviceType.SPEAKER, (err: BusinessError, value: number) => {
+audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, 3, audio.DeviceType.SPEAKER, (err: BusinessError, volumeDb: number) => {
   if (err) {
-    console.error(`Failed to get system volume in db. Code: ${err.code}, message: ${err.message}`);
-  } else {
-    console.info(`Succeeded in getting system volume in db. DB: ${value}.`);
+    console.error(`Failed to obtain the system volume in dB. Code: ${err.code}, message: ${err.message}`);
+    return;
   }
+  console.info(`Succeeded in obtaining the system volume in dB, volumeDb: ${volumeDb}.`);
 });
 ```
 
 
 
-#### getSystemVolumeInDb(deprecated)
+## getSystemVolumeInDb(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSystemVolumeInDb(volumeType: AudioVolumeType, volumeLevel: number, device: DeviceType): Promise&lt;number&gt;
 
@@ -1000,6 +1083,7 @@ getSystemVolumeInDb(volumeType: AudioVolumeType, volumeLevel: number, device: De
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | volumeType | AudioVolumeType | 是 | 音频音量类型。 |
@@ -1009,6 +1093,7 @@ getSystemVolumeInDb(volumeType: AudioVolumeType, volumeLevel: number, device: De
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象，返回对应的音量增益dB值。 |
@@ -1017,6 +1102,7 @@ getSystemVolumeInDb(volumeType: AudioVolumeType, volumeLevel: number, device: De
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1030,18 +1116,19 @@ getSystemVolumeInDb(volumeType: AudioVolumeType, volumeLevel: number, device: De
 ```text
 import { BusinessError } from '@kit.BasicServicesKit';
 
-audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, 3, audio.DeviceType.SPEAKER).then((value: number) => {
-  console.info(`Succeeded in getting system volume in db. DB: ${value}.`);
+audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, 3, audio.DeviceType.SPEAKER).then((volumeDb: number) => {
+  console.info(`Succeeded in obtaining the system volume in dB, volumeDb: ${volumeDb}.`);
 }).catch((err: BusinessError) => {
-  console.error(`Failed to get system volume in db. Code: ${err.code}, message: ${err.message}`);
+  console.error(`Failed to obtain the system volume in dB. Code: ${err.code}, message: ${err.message}`);
 });
 ```
 
 
 
-#### getSystemVolumeInDbSync(deprecated)
+## getSystemVolumeInDbSync(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSystemVolumeInDbSync(volumeType: AudioVolumeType, volumeLevel: number, device: DeviceType): number
 
@@ -1055,6 +1142,7 @@ getSystemVolumeInDbSync(volumeType: AudioVolumeType, volumeLevel: number, device
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | volumeType | AudioVolumeType | 是 | 音频音量类型。 |
@@ -1064,6 +1152,7 @@ getSystemVolumeInDbSync(volumeType: AudioVolumeType, volumeLevel: number, device
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回对应的音量增益dB值。 |
@@ -1072,6 +1161,7 @@ getSystemVolumeInDbSync(volumeType: AudioVolumeType, volumeLevel: number, device
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1085,19 +1175,20 @@ getSystemVolumeInDbSync(volumeType: AudioVolumeType, volumeLevel: number, device
 import { BusinessError } from '@kit.BasicServicesKit';
 
 try {
-  let value: number = audioVolumeGroupManager.getSystemVolumeInDbSync(audio.AudioVolumeType.MEDIA, 3, audio.DeviceType.SPEAKER);
-  console.info(`Succeeded in getting system volume in db. DB: ${value}.`);
+  let volumeDb: number = audioVolumeGroupManager.getSystemVolumeInDbSync(audio.AudioVolumeType.MEDIA, 3, audio.DeviceType.SPEAKER);
+  console.info(`Succeeded in obtaining the system volume in dB, volumeDb: ${volumeDb}.`);
 } catch (err) {
   let error = err as BusinessError;
-  console.error(`Failed to get system volume in db. Code: ${error.code}, message: ${error.message}`);
+  console.error(`Failed to obtain the system volume in dB. Code: ${error.code}, message: ${error.message}`);
 }
 ```
 
 
 
-#### getMaxAmplitudeForInputDevice12+
+## getMaxAmplitudeForInputDevice12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMaxAmplitudeForInputDevice(inputDevice: AudioDeviceDescriptor): Promise&lt;number&gt;
 
@@ -1107,12 +1198,14 @@ getMaxAmplitudeForInputDevice(inputDevice: AudioDeviceDescriptor): Promise&lt;nu
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | inputDevice | AudioDeviceDescriptor | 是 | 获取最大电平值的设备信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1122,6 +1215,7 @@ getMaxAmplitudeForInputDevice(inputDevice: AudioDeviceDescriptor): Promise&lt;nu
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1141,21 +1235,22 @@ let capturerInfo: audio.AudioCapturerInfo = {
 };
 
 audio.getAudioManager().getRoutingManager().getPreferredInputDeviceForCapturerInfo(capturerInfo).then((data) => {
-  audioVolumeGroupManager.getMaxAmplitudeForInputDevice(data[0]).then((value) => {
-    console.info(`Succeeded in getting maxAmplitude for input device. Amplitude: ${value}.`);
+  audioVolumeGroupManager.getMaxAmplitudeForInputDevice(data[0]).then((maxAmplitude) => {
+    console.info(`Succeeded in obtaining the maximum amplitude for input device, maxAmplitude: ${maxAmplitude}.`);
   }).catch((err: BusinessError) => {
-    console.error(`Failed to get maxAmplitude for input device. Code: ${err.code}, message: ${err.message}`);
-  })
+    console.error(`Failed to obtain the maximum amplitude for input device. Code: ${err.code}, message: ${err.message}`);
+  });
 }).catch((err: BusinessError) => {
-  console.error(`Failed to get preferred input device for capturer info. Code: ${err.code}, message: ${err.message}`);
-})
+  console.error(`Failed to obtain the preferred input device for capturer info. Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 
 
-#### getMaxAmplitudeForOutputDevice12+
+## getMaxAmplitudeForOutputDevice12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMaxAmplitudeForOutputDevice(outputDevice: AudioDeviceDescriptor): Promise&lt;number&gt;
 
@@ -1165,12 +1260,14 @@ getMaxAmplitudeForOutputDevice(outputDevice: AudioDeviceDescriptor): Promise&lt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | outputDevice | AudioDeviceDescriptor | 是 | 获取最大电平值的设备信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1180,6 +1277,7 @@ getMaxAmplitudeForOutputDevice(outputDevice: AudioDeviceDescriptor): Promise&lt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1199,21 +1297,22 @@ let rendererInfo: audio.AudioRendererInfo = {
 };
 
 audio.getAudioManager().getRoutingManager().getPreferOutputDeviceForRendererInfo(rendererInfo).then((data) => {
-  audioVolumeGroupManager.getMaxAmplitudeForOutputDevice(data[0]).then((value) => {
-    console.info(`Succeeded in getting maxAmplitude for output device. Amplitude: ${value}.`);
+  audioVolumeGroupManager.getMaxAmplitudeForOutputDevice(data[0]).then((maxAmplitude) => {
+    console.info(`Succeeded in obtaining the maximum amplitude for output device, maxAmplitude: ${maxAmplitude}.`);
   }).catch((err: BusinessError) => {
-    console.error(`Failed to get maxAmplitude for output device. Code: ${err.code}, message: ${err.message}`);
-  })
+    console.error(`Failed to obtain the maximum amplitude for output device. Code: ${err.code}, message: ${err.message}`);
+  });
 }).catch((err: BusinessError) => {
-  console.error(`Failed to get prefer output device for renderer info. Code: ${err.code}, message: ${err.message}`);
-})
+  console.error(`Failed to obtain the preferred output device for renderer info. Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 
 
-#### setMicrophoneMute(deprecated)
+## setMicrophoneMute(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setMicrophoneMute(mute: boolean, callback: AsyncCallback&lt;void&gt;): void
 
@@ -1229,6 +1328,7 @@ setMicrophoneMute(mute: boolean, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mute | boolean | 是 | 是否设置麦克风为静音状态。true表示静音，false表示非静音。 |
@@ -1242,18 +1342,19 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 audioVolumeGroupManager.setMicrophoneMute(true, (err: BusinessError) => {
   if (err) {
-    console.error(`Failed to set microphone mute. Code: ${err.code}, message: ${err.message}`);
+    console.error(`Failed to mute the microphone. Code: ${err.code}, message: ${err.message}`);
     return;
   }
-  console.info('Succeeded in setting microphone mute.');
+  console.info('Succeeded in muting the microphone.');
 });
 ```
 
 
 
-#### setMicrophoneMute(deprecated)
+## setMicrophoneMute(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setMicrophoneMute(mute: boolean): Promise&lt;void&gt;
 
@@ -1269,6 +1370,7 @@ setMicrophoneMute(mute: boolean): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mute | boolean | 是 | 是否设置麦克风为静音状态。true表示静音，false表示非静音。 |
@@ -1276,15 +1378,20 @@ setMicrophoneMute(mute: boolean): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **示例：**
 
 ```text
+import { BusinessError } from '@kit.BasicServicesKit';
+
 audioVolumeGroupManager.setMicrophoneMute(true).then(() => {
-  console.info('Succeeded in setting microphone mute.');
+  console.info('Succeeded in muting the microphone.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to mute the microphone. Code: ${err.code}, message: ${err.message}`);
 });
 ```

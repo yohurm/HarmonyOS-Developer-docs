@@ -1,20 +1,21 @@
 # Class (WebCookie)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-webcookie
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过WebCookie可以控制Web组件中的cookie的各种行为，其中每个应用中的所有Web组件共享一个WebCookie。通过controller方法中的getCookieManager方法可以获取WebCookie对象，进行后续的cookie管理操作。
  
 > [!NOTE]
-> 该组件首批接口从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。 本Class首批接口从API version 8开始支持。 从API version 8开始支持，从API version 23开始不再维护，建议使用 WebCookieManager 代替。 示例效果请以真机运行为准。
+> 该组件从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。 本Class从API version 8开始支持。 从API version 8开始支持，从API version 23开始不再维护，建议使用 WebCookieManager 代替。 示例效果请以真机运行为准。
 
   
 
-#### constructor(deprecated)
+## constructor(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
  
@@ -28,25 +29,27 @@ WebCookie的构造函数。
  
   
 
-#### setCookie(deprecated)
+## setCookie(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setCookie()
  
 设置cookie，该方法为同步方法。设置成功返回true，否则返回false。
  
 > [!NOTE]
-> 从API version 8开始支持，从API version 9开始废弃，建议使用 setCookie 9+ 代替。
+> 从API version 8开始支持，从API version 9开始废弃，建议使用 setCookie 代替。
 
  
 **系统能力：** SystemCapability.Web.Webview.Core
  
   
 
-#### saveCookie(deprecated)
+## saveCookie(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 saveCookie()
  

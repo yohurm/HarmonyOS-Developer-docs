@@ -1,11 +1,12 @@
 # ar_engine_core.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arengine-header-file
 **支持设备：** Phone | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -23,10 +24,12 @@
  
   
 
-#### 结构体
+### 结构体
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | struct AREngine_ARAugmentedImageSource | 图像数据。 |
@@ -37,10 +40,12 @@
  
   
 
-#### 宏定义
+### 宏定义
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | ARENGINE_AABB_POINT_SIZE = 6 | 包围盒坐标集数组大小。 |
@@ -51,10 +56,12 @@
  
   
 
-#### 类型定义
+### 类型定义
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | typedef struct AREngine_ARAnchor AREngine_ARAnchor | 锚点对象。 |
@@ -89,10 +96,12 @@
  
   
 
-#### 枚举
+### 枚举
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | AREngine_FeatureType { ARENGINE_FEATURE_TYPE_SLAM = 0, ARENGINE_FEATURE_TYPE_DEPTH = 1, ARENGINE_FEATURE_TYPE_MESH = 2, ARENGINE_FEATURE_TYPE_IMAGE = 3, ARENGINE_FEATURE_TYPE_SEMANTIC_DENSE = 4, ARENGINE_FEATURE_TYPE_SEMANTIC = 5, ARENGINE_FEATURE_TYPE_FACE = 6, ARENGINE_FEATURE_TYPE_BODY = 7 } | AR特性类别。 |
@@ -131,10 +140,12 @@
  
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | AREngine_ARStatus HMS_AREngine_CheckSupported(AREngine_FeatureType type) | 判断当前设备是否支持AR特性的使用。 说明： 在进行正式开发前，可通过此接口来判断AR特性是否能够正常运行在当前设备。 |

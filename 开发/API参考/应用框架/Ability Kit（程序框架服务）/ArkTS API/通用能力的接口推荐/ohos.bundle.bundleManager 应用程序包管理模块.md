@@ -1,9 +1,9 @@
 # @ohos.bundle.bundleManager (应用程序包管理模块)
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bundlemanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供应用信息的查询能力，支持应用包信息[BundleInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bundlemanager-bundleinfo)、应用程序信息[ApplicationInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bundlemanager-applicationinfo)、UIAbility组件信息[AbilityInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bundlemanager-abilityinfo)、ExtensionAbility组件信息[ExtensionAbilityInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bundlemanager-extensionabilityinfo)等信息的查询。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { bundleManager } from '@kit.AbilityKit';
@@ -22,13 +23,15 @@ import { bundleManager } from '@kit.AbilityKit';
 
 
 
-#### BundleFlag
+## BundleFlag
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 包信息标志，指示需要获取的包信息的内容。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -49,13 +52,15 @@ import { bundleManager } from '@kit.AbilityKit';
 
 
 
-#### ExtensionAbilityType
+## ExtensionAbilityType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 扩展组件的类型。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -91,15 +96,17 @@ import { bundleManager } from '@kit.AbilityKit';
 
 
 
-#### PermissionGrantState
+## PermissionGrantState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 权限授予状态。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -109,15 +116,17 @@ import { bundleManager } from '@kit.AbilityKit';
 
 
 
-#### SupportWindowMode
+## SupportWindowMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 标识该组件所支持的窗口模式。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -128,15 +137,17 @@ import { bundleManager } from '@kit.AbilityKit';
 
 
 
-#### LaunchType
+## LaunchType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 标识组件的[启动模式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-launch-type)。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -147,15 +158,17 @@ import { bundleManager } from '@kit.AbilityKit';
 
 
 
-#### AbilityType
+## AbilityType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 标识Ability组件的类型。
 
 **模型约束：** 仅可在FA模型下使用。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -166,13 +179,15 @@ import { bundleManager } from '@kit.AbilityKit';
 
 
 
-#### DisplayOrientation
+## DisplayOrientation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 标识该Ability的显示模式。仅适用于FA模型的[PageAbility](https://developer.huawei.com/consumer/cn/doc/lite-wearable-guides/pageability-overview)。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -195,15 +210,17 @@ import { bundleManager } from '@kit.AbilityKit';
 
 
 
-#### CompatiblePolicy10+
+## CompatiblePolicy10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 标识动态共享库的版本兼容类型。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -212,15 +229,17 @@ import { bundleManager } from '@kit.AbilityKit';
 
 
 
-#### ModuleType
+## ModuleType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 标识模块类型。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -231,15 +250,17 @@ import { bundleManager } from '@kit.AbilityKit';
 
 
 
-#### BundleType
+## BundleType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 标识应用的类型。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -249,13 +270,15 @@ import { bundleManager } from '@kit.AbilityKit';
 
 
 
-#### MultiAppModeType12+
+## MultiAppModeType12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 标识应用多开的模式类型。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -266,15 +289,17 @@ import { bundleManager } from '@kit.AbilityKit';
 
 
 
-#### AbilityFlag20+
+## AbilityFlag20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Ability组件信息标志，指示需要获取的Ability组件信息的内容。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -290,9 +315,10 @@ Ability组件信息标志，指示需要获取的Ability组件信息的内容。
 
 
 
-#### bundleManager.getBundleInfoForSelf
+## bundleManager.getBundleInfoForSelf
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBundleInfoForSelf(bundleFlags: number): Promise&lt;BundleInfo&gt;
 
@@ -304,12 +330,14 @@ getBundleInfoForSelf(bundleFlags: number): Promise&lt;BundleInfo&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bundleFlags | number | 是 | 指定返回的BundleInfo所包含的信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -319,6 +347,7 @@ getBundleInfoForSelf(bundleFlags: number): Promise&lt;BundleInfo&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -350,9 +379,10 @@ try {
 
 
 
-#### bundleManager.getBundleInfoForSelf
+## bundleManager.getBundleInfoForSelf
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBundleInfoForSelf(bundleFlags: number, callback: AsyncCallback&lt;BundleInfo&gt;): void
 
@@ -364,6 +394,7 @@ getBundleInfoForSelf(bundleFlags: number, callback: AsyncCallback&lt;BundleInfo&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bundleFlags | number | 是 | 指定返回的BundleInfo所包含的信息。 |
@@ -373,6 +404,7 @@ getBundleInfoForSelf(bundleFlags: number, callback: AsyncCallback&lt;BundleInfo&
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -407,9 +439,10 @@ try {
 
 
 
-#### bundleManager.getProfileByAbility
+## bundleManager.getProfileByAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getProfileByAbility(moduleName: string, abilityName: string, metadataName: string, callback: AsyncCallback<Array&lt;string&gt;>): void
 
@@ -425,6 +458,7 @@ getProfileByAbility(moduleName: string, abilityName: string, metadataName: strin
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | moduleName | string | 是 | 表示Module名称。 |
@@ -436,6 +470,7 @@ getProfileByAbility(moduleName: string, abilityName: string, metadataName: strin
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[包管理子系统通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bundle)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -473,9 +508,10 @@ try {
 
 
 
-#### bundleManager.getProfileByAbility
+## bundleManager.getProfileByAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getProfileByAbility(moduleName: string, abilityName: string, metadataName?: string): Promise<Array&lt;string&gt;>
 
@@ -491,6 +527,7 @@ getProfileByAbility(moduleName: string, abilityName: string, metadataName?: stri
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | moduleName | string | 是 | 表示Module名称。 |
@@ -500,6 +537,7 @@ getProfileByAbility(moduleName: string, abilityName: string, metadataName?: stri
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;string&gt;> | Promise对象，返回Array&lt;string&gt;。 |
@@ -508,6 +546,7 @@ getProfileByAbility(moduleName: string, abilityName: string, metadataName?: stri
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[包管理子系统通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bundle)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -565,9 +604,10 @@ try {
 
 
 
-#### bundleManager.getProfileByAbilitySync10+
+## bundleManager.getProfileByAbilitySync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getProfileByAbilitySync(moduleName: string, abilityName: string, metadataName?: string): Array&lt;string&gt;
 
@@ -581,6 +621,7 @@ getProfileByAbilitySync(moduleName: string, abilityName: string, metadataName?: 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | moduleName | string | 是 | 表示Module名称。 |
@@ -590,6 +631,7 @@ getProfileByAbilitySync(moduleName: string, abilityName: string, metadataName?: 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;string&gt; | 数组对象，返回Array&lt;string&gt;。 |
@@ -598,6 +640,7 @@ getProfileByAbilitySync(moduleName: string, abilityName: string, metadataName?: 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[包管理子系统通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bundle)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -649,9 +692,10 @@ try {
 
 
 
-#### bundleManager.getProfileByExtensionAbility
+## bundleManager.getProfileByExtensionAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getProfileByExtensionAbility(moduleName: string, extensionAbilityName: string, metadataName: string, callback: AsyncCallback<Array&lt;string&gt;>): void
 
@@ -665,6 +709,7 @@ getProfileByExtensionAbility(moduleName: string, extensionAbilityName: string, m
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | moduleName | string | 是 | 表示Module名称。 |
@@ -676,6 +721,7 @@ getProfileByExtensionAbility(moduleName: string, extensionAbilityName: string, m
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[包管理子系统通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bundle)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -712,9 +758,10 @@ try {
 
 
 
-#### bundleManager.getProfileByExtensionAbility
+## bundleManager.getProfileByExtensionAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getProfileByExtensionAbility(moduleName: string, extensionAbilityName: string, metadataName?: string): Promise<Array&lt;string&gt;>
 
@@ -728,6 +775,7 @@ getProfileByExtensionAbility(moduleName: string, extensionAbilityName: string, m
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | moduleName | string | 是 | 表示Module名称。 |
@@ -737,6 +785,7 @@ getProfileByExtensionAbility(moduleName: string, extensionAbilityName: string, m
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;string&gt;> | Promise对象，返回Array&lt;string&gt;对象。 |
@@ -745,6 +794,7 @@ getProfileByExtensionAbility(moduleName: string, extensionAbilityName: string, m
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[包管理子系统通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bundle)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -790,9 +840,10 @@ try {
 
 
 
-#### bundleManager.getProfileByExtensionAbilitySync10+
+## bundleManager.getProfileByExtensionAbilitySync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getProfileByExtensionAbilitySync(moduleName: string, extensionAbilityName: string, metadataName?: string): Array&lt;string&gt;
 
@@ -806,6 +857,7 @@ getProfileByExtensionAbilitySync(moduleName: string, extensionAbilityName: strin
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | moduleName | string | 是 | 表示Module名称。 |
@@ -815,6 +867,7 @@ getProfileByExtensionAbilitySync(moduleName: string, extensionAbilityName: strin
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;string&gt; | 返回Array&lt;string&gt;对象。 |
@@ -823,6 +876,7 @@ getProfileByExtensionAbilitySync(moduleName: string, extensionAbilityName: strin
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[包管理子系统通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bundle)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -864,9 +918,10 @@ try {
 
 
 
-#### bundleManager.getBundleInfoForSelfSync10+
+## bundleManager.getBundleInfoForSelfSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBundleInfoForSelfSync(bundleFlags: number): BundleInfo
 
@@ -878,12 +933,14 @@ getBundleInfoForSelfSync(bundleFlags: number): BundleInfo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bundleFlags | number | 是 | 指定返回的BundleInfo所包含的信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -893,6 +950,7 @@ getBundleInfoForSelfSync(bundleFlags: number): BundleInfo
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -919,9 +977,10 @@ try {
 
 
 
-#### bundleManager.canOpenLink12+
+## bundleManager.canOpenLink12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 canOpenLink(link: string): boolean
 
@@ -933,12 +992,14 @@ canOpenLink(link: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | link | string | 是 | 表示需要查询的链接。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -948,6 +1009,7 @@ canOpenLink(link: string): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[包管理子系统通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bundle)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -975,9 +1037,10 @@ try {
 
 
 
-#### bundleManager.getLaunchWant13+
+## bundleManager.getLaunchWant13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLaunchWant(): Want
 
@@ -989,6 +1052,7 @@ getLaunchWant(): Want
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Want | 返回仅包含bundleName和abilityName的Want对象。 |
@@ -997,6 +1061,7 @@ getLaunchWant(): Want
 **错误码：**
 
 以下错误码的详细介绍请参见[包管理子系统通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bundle)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1022,9 +1087,10 @@ try {
 
 
 
-#### bundleManager.getBundleInfo14+
+## bundleManager.getBundleInfo14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBundleInfo(bundleName: string, bundleFlags: number, userId: number, callback: AsyncCallback&lt;BundleInfo&gt;): void
 
@@ -1042,6 +1108,7 @@ getBundleInfo(bundleName: string, bundleFlags: number, userId: number, callback:
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bundleName | string | 是 | 表示要查询的应用Bundle名称。 |
@@ -1053,6 +1120,7 @@ getBundleInfo(bundleName: string, bundleFlags: number, userId: number, callback:
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[包管理子系统通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bundle)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1117,9 +1185,10 @@ try {
 
 
 
-#### bundleManager.getBundleInfo14+
+## bundleManager.getBundleInfo14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBundleInfo(bundleName: string, bundleFlags: number, callback: AsyncCallback&lt;BundleInfo&gt;): void
 
@@ -1137,6 +1206,7 @@ getBundleInfo(bundleName: string, bundleFlags: number, callback: AsyncCallback&l
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bundleName | string | 是 | 表示要查询的应用Bundle名称。 |
@@ -1147,6 +1217,7 @@ getBundleInfo(bundleName: string, bundleFlags: number, callback: AsyncCallback&l
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[包管理子系统通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bundle)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1184,9 +1255,10 @@ try {
 
 
 
-#### bundleManager.getBundleInfo14+
+## bundleManager.getBundleInfo14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBundleInfo(bundleName: string, bundleFlags: number, userId?: number): Promise&lt;BundleInfo&gt;
 
@@ -1204,6 +1276,7 @@ getBundleInfo(bundleName: string, bundleFlags: number, userId?: number): Promise
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bundleName | string | 是 | 表示要查询的应用Bundle名称。 |
@@ -1213,6 +1286,7 @@ getBundleInfo(bundleName: string, bundleFlags: number, userId?: number): Promise
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;BundleInfo&gt; | Promise对象，返回BundleInfo。 |
@@ -1221,6 +1295,7 @@ getBundleInfo(bundleName: string, bundleFlags: number, userId?: number): Promise
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[包管理子系统通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bundle)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1278,9 +1353,10 @@ try {
 
 
 
-#### bundleManager.getBundleInfoSync14+
+## bundleManager.getBundleInfoSync14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBundleInfoSync(bundleName: string, bundleFlags: number, userId: number): BundleInfo
 
@@ -1298,6 +1374,7 @@ getBundleInfoSync(bundleName: string, bundleFlags: number, userId: number): Bund
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bundleName | string | 是 | 表示要查询的应用Bundle名称。 |
@@ -1307,6 +1384,7 @@ getBundleInfoSync(bundleName: string, bundleFlags: number, userId: number): Bund
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | BundleInfo | 返回BundleInfo对象。 |
@@ -1315,6 +1393,7 @@ getBundleInfoSync(bundleName: string, bundleFlags: number, userId: number): Bund
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[包管理子系统通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bundle)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1347,9 +1426,10 @@ try {
 
 
 
-#### bundleManager.getBundleInfoSync14+
+## bundleManager.getBundleInfoSync14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBundleInfoSync(bundleName: string, bundleFlags: number): BundleInfo
 
@@ -1367,6 +1447,7 @@ getBundleInfoSync(bundleName: string, bundleFlags: number): BundleInfo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bundleName | string | 是 | 表示要查询的应用Bundle名称。 |
@@ -1374,6 +1455,7 @@ getBundleInfoSync(bundleName: string, bundleFlags: number): BundleInfo
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1383,6 +1465,7 @@ getBundleInfoSync(bundleName: string, bundleFlags: number): BundleInfo
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[包管理子系统通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bundle)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1412,9 +1495,10 @@ try {
 
 
 
-#### bundleManager.getBundleNameByUid14+
+## bundleManager.getBundleNameByUid14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBundleNameByUid(uid: number, callback: AsyncCallback&lt;string&gt;): void
 
@@ -1430,6 +1514,7 @@ getBundleNameByUid(uid: number, callback: AsyncCallback&lt;string&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uid | number | 是 | 表示应用程序的UID。 |
@@ -1439,6 +1524,7 @@ getBundleNameByUid(uid: number, callback: AsyncCallback&lt;string&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[包管理子系统通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bundle)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1471,9 +1557,10 @@ try {
 
 
 
-#### bundleManager.getBundleNameByUid14+
+## bundleManager.getBundleNameByUid14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBundleNameByUid(uid: number): Promise&lt;string&gt;
 
@@ -1489,12 +1576,14 @@ getBundleNameByUid(uid: number): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uid | number | 是 | 表示应用程序的UID。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1504,6 +1593,7 @@ getBundleNameByUid(uid: number): Promise&lt;string&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[包管理子系统通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bundle)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1534,9 +1624,10 @@ try {
 
 
 
-#### bundleManager.getBundleNameByUidSync14+
+## bundleManager.getBundleNameByUidSync14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBundleNameByUidSync(uid: number): string
 
@@ -1552,12 +1643,14 @@ getBundleNameByUidSync(uid: number): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uid | number | 是 | 表示应用程序的UID。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1567,6 +1660,7 @@ getBundleNameByUidSync(uid: number): string
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[包管理子系统通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bundle)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1594,9 +1688,10 @@ try {
 
 
 
-#### bundleManager.getAppCloneIdentity14+
+## bundleManager.getAppCloneIdentity14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAppCloneIdentity(uid: number): Promise&lt;AppCloneIdentity&gt;;
 
@@ -1612,12 +1707,14 @@ getAppCloneIdentity(uid: number): Promise&lt;AppCloneIdentity&gt;;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uid | number | 是 | 表示应用程序的UID。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1627,6 +1724,7 @@ getAppCloneIdentity(uid: number): Promise&lt;AppCloneIdentity&gt;;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[包管理子系统通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bundle)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1658,9 +1756,10 @@ try {
 
 
 
-#### bundleManager.getSignatureInfo18+
+## bundleManager.getSignatureInfo18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSignatureInfo(uid: number): SignatureInfo
 
@@ -1672,12 +1771,14 @@ getSignatureInfo(uid: number): SignatureInfo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uid | number | 是 | 表示应用程序的UID。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1687,6 +1788,7 @@ getSignatureInfo(uid: number): SignatureInfo
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[包管理子系统通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bundle)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1713,9 +1815,10 @@ try {
 
 
 
-#### bundleManager.getAbilityInfo20+
+## bundleManager.getAbilityInfo20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 getAbilityInfo(uri: string, abilityFlags: number): Promise<Array&lt;AbilityInfo&gt;>
 
@@ -1731,6 +1834,7 @@ getAbilityInfo(uri: string, abilityFlags: number): Promise<Array&lt;AbilityInfo&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uri | string | 是 | 表示统一资源标识符URI，取值与module.json5配置文件中skills下的uris字段相对应。 |
@@ -1738,6 +1842,7 @@ getAbilityInfo(uri: string, abilityFlags: number): Promise<Array&lt;AbilityInfo&
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1747,6 +1852,7 @@ getAbilityInfo(uri: string, abilityFlags: number): Promise<Array&lt;AbilityInfo&
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[包管理子系统通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bundle)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1779,9 +1885,10 @@ try {
 
 
 
-#### bundleManager.cleanBundleCacheFilesForSelf21+
+## bundleManager.cleanBundleCacheFilesForSelf21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cleanBundleCacheFilesForSelf(): Promise&lt;void&gt;
 
@@ -1792,6 +1899,7 @@ cleanBundleCacheFilesForSelf(): Promise&lt;void&gt;
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1811,9 +1919,10 @@ bundleManager.cleanBundleCacheFilesForSelf().then(() => {
 
 
 
-#### bundleManager.getPluginBundlePathForSelf22+
+## bundleManager.getPluginBundlePathForSelf22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPluginBundlePathForSelf(pluginBundleName: string): string
 
@@ -1823,12 +1932,14 @@ getPluginBundlePathForSelf(pluginBundleName: string): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pluginBundleName | string | 是 | 目标插件的包名。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1838,6 +1949,7 @@ getPluginBundlePathForSelf(pluginBundleName: string): string
 **错误码：**
 
 错误码请参见[包管理子系统通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bundle)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1864,9 +1976,10 @@ try {
 
 
 
-#### bundleManager.getLaunchWantForBundleSync24+
+## bundleManager.getLaunchWantForBundleSync24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLaunchWantForBundleSync(bundleName: string, userId?: number): Want
 
@@ -1882,6 +1995,7 @@ getLaunchWantForBundleSync(bundleName: string, userId?: number): Want
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bundleName | string | 是 | 表示应用的包名。 |
@@ -1889,6 +2003,7 @@ getLaunchWantForBundleSync(bundleName: string, userId?: number): Want
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1898,6 +2013,7 @@ getLaunchWantForBundleSync(bundleName: string, userId?: number): Want
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[包管理子系统通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bundle)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1949,9 +2065,10 @@ try {
 
 
 
-#### bundleManager.getApplicationLabel
+## bundleManager.getApplicationLabel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getApplicationLabel(bundleName: string, appIndex: number): Promise&lt;string&gt;
 
@@ -1967,6 +2084,7 @@ getApplicationLabel(bundleName: string, appIndex: number): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bundleName | string | 是 | 应用的包名。 |
@@ -1974,6 +2092,7 @@ getApplicationLabel(bundleName: string, appIndex: number): Promise&lt;string&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1983,6 +2102,7 @@ getApplicationLabel(bundleName: string, appIndex: number): Promise&lt;string&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[包管理子系统通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bundle)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2011,9 +2131,10 @@ try {
 
 
 
-#### bundleManager.getInstalledBundleList
+## bundleManager.getInstalledBundleList
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getInstalledBundleList(bundleFlags: number): Promise<Array&lt;BundleInfo&gt;>
 
@@ -2031,12 +2152,14 @@ getInstalledBundleList(bundleFlags: number): Promise<Array&lt;BundleInfo&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bundleFlags | number | 是 | 指定返回的BundleInfo所包含的信息，详情请参考BundleFlag。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2046,6 +2169,7 @@ getInstalledBundleList(bundleFlags: number): Promise<Array&lt;BundleInfo&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2075,9 +2199,10 @@ try {
 
 
 
-#### bundleManager.setAlternateIcon
+## bundleManager.setAlternateIcon
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAlternateIcon(alternateIconName: string): Promise&lt;void&gt;;
 
@@ -2091,12 +2216,14 @@ setAlternateIcon(alternateIconName: string): Promise&lt;void&gt;;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | alternateIconName | string | 是 | 要设置的备用图标名称。备用图标名称须在app.json5中alternateIcons标签的name字段内。 alternateIconName为空时表示取消备用图标。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2106,6 +2233,7 @@ setAlternateIcon(alternateIconName: string): Promise&lt;void&gt;;
 **错误码：**
 
 以下错误码的详细介绍请参见[包管理子系统通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bundle)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2138,9 +2266,10 @@ try {
 
 
 
-#### bundleManager.getAlternateIcons
+## bundleManager.getAlternateIcons
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAlternateIcons(): Promise<Array&lt;AlternateIconInfo&gt;>
 
@@ -2154,6 +2283,7 @@ getAlternateIcons(): Promise<Array&lt;AlternateIconInfo&gt;>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;AlternateIconInfo&gt;> | Promise对象，返回当前应用的备用图标信息列表。 |
@@ -2162,6 +2292,7 @@ getAlternateIcons(): Promise<Array&lt;AlternateIconInfo&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[包管理子系统通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bundle)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2189,9 +2320,10 @@ try {
 
 
 
-#### ApplicationInfo
+## ApplicationInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ApplicationInfo = _ApplicationInfo
 
@@ -2201,6 +2333,7 @@ type ApplicationInfo = _ApplicationInfo
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _ApplicationInfo | 应用程序信息。 |
@@ -2208,9 +2341,10 @@ type ApplicationInfo = _ApplicationInfo
 
 
 
-#### ModuleMetadata10+
+## ModuleMetadata10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ModuleMetadata = _ModuleMetadata
 
@@ -2220,6 +2354,7 @@ type ModuleMetadata = _ModuleMetadata
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _ModuleMetadata | 模块的元数据信息。 |
@@ -2227,9 +2362,10 @@ type ModuleMetadata = _ModuleMetadata
 
 
 
-#### Metadata
+## Metadata
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Metadata = _Metadata
 
@@ -2239,6 +2375,7 @@ type Metadata = _Metadata
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _Metadata | 元数据信息。 |
@@ -2246,9 +2383,10 @@ type Metadata = _Metadata
 
 
 
-#### BundleInfo
+## BundleInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type BundleInfo = _BundleInfo.BundleInfo
 
@@ -2258,6 +2396,7 @@ type BundleInfo = _BundleInfo.BundleInfo
 
 **系统能力**: SystemCapability.BundleManager.BundleFramework.Core
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _BundleInfo.BundleInfo | 应用包信息。 |
@@ -2265,9 +2404,10 @@ type BundleInfo = _BundleInfo.BundleInfo
 
 
 
-#### UsedScene
+## UsedScene
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type UsedScene = _BundleInfo.UsedScene
 
@@ -2277,6 +2417,7 @@ type UsedScene = _BundleInfo.UsedScene
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _BundleInfo.UsedScene | 权限使用的场景和时机。 |
@@ -2284,9 +2425,10 @@ type UsedScene = _BundleInfo.UsedScene
 
 
 
-#### ReqPermissionDetail
+## ReqPermissionDetail
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ReqPermissionDetail = _BundleInfo.ReqPermissionDetail
 
@@ -2296,6 +2438,7 @@ type ReqPermissionDetail = _BundleInfo.ReqPermissionDetail
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _BundleInfo.ReqPermissionDetail | 应用运行时需向系统申请的权限集合的详细信息。 |
@@ -2303,9 +2446,10 @@ type ReqPermissionDetail = _BundleInfo.ReqPermissionDetail
 
 
 
-#### SignatureInfo
+## SignatureInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type SignatureInfo = _BundleInfo.SignatureInfo
 
@@ -2315,6 +2459,7 @@ type SignatureInfo = _BundleInfo.SignatureInfo
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _BundleInfo.SignatureInfo | 应用包的签名信息。 |
@@ -2322,9 +2467,10 @@ type SignatureInfo = _BundleInfo.SignatureInfo
 
 
 
-#### HapModuleInfo
+## HapModuleInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type HapModuleInfo = _HapModuleInfo.HapModuleInfo
 
@@ -2334,6 +2480,7 @@ type HapModuleInfo = _HapModuleInfo.HapModuleInfo
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _HapModuleInfo.HapModuleInfo | 模块信息。 |
@@ -2341,9 +2488,10 @@ type HapModuleInfo = _HapModuleInfo.HapModuleInfo
 
 
 
-#### PreloadItem
+## PreloadItem
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type PreloadItem = _HapModuleInfo.PreloadItem
 
@@ -2353,6 +2501,7 @@ type PreloadItem = _HapModuleInfo.PreloadItem
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _HapModuleInfo.PreloadItem | 元服务中模块的预加载模块信息。 |
@@ -2360,9 +2509,10 @@ type PreloadItem = _HapModuleInfo.PreloadItem
 
 
 
-#### Dependency
+## Dependency
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Dependency = _HapModuleInfo.Dependency
 
@@ -2372,6 +2522,7 @@ type Dependency = _HapModuleInfo.Dependency
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _HapModuleInfo.Dependency | 模块所依赖的动态共享库信息。 |
@@ -2379,9 +2530,10 @@ type Dependency = _HapModuleInfo.Dependency
 
 
 
-#### RouterItem12+
+## RouterItem12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type RouterItem = _HapModuleInfo.RouterItem
 
@@ -2391,6 +2543,7 @@ type RouterItem = _HapModuleInfo.RouterItem
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _HapModuleInfo.RouterItem | 模块配置的路由表信息。 |
@@ -2398,9 +2551,10 @@ type RouterItem = _HapModuleInfo.RouterItem
 
 
 
-#### DataItem12+
+## DataItem12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type DataItem = _HapModuleInfo.DataItem
 
@@ -2410,6 +2564,7 @@ type DataItem = _HapModuleInfo.DataItem
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _HapModuleInfo.DataItem | 模块配置的路由表中的自定义数据。 |
@@ -2417,9 +2572,10 @@ type DataItem = _HapModuleInfo.DataItem
 
 
 
-#### AbilityInfo
+## AbilityInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AbilityInfo = _AbilityInfo.AbilityInfo
 
@@ -2429,6 +2585,7 @@ Ability信息。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _AbilityInfo.AbilityInfo | Ability信息。 |
@@ -2436,9 +2593,10 @@ Ability信息。
 
 
 
-#### WindowSize
+## WindowSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type WindowSize = _AbilityInfo.WindowSize
 
@@ -2448,6 +2606,7 @@ type WindowSize = _AbilityInfo.WindowSize
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _AbilityInfo.WindowSize | 窗口尺寸。 |
@@ -2455,9 +2614,10 @@ type WindowSize = _AbilityInfo.WindowSize
 
 
 
-#### ExtensionAbilityInfo
+## ExtensionAbilityInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ExtensionAbilityInfo = _ExtensionAbilityInfo.ExtensionAbilityInfo
 
@@ -2467,6 +2627,7 @@ ExtensionAbility信息。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _ExtensionAbilityInfo.ExtensionAbilityInfo | ExtensionAbility信息。 |
@@ -2474,9 +2635,10 @@ ExtensionAbility信息。
 
 
 
-#### ElementName
+## ElementName
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ElementName = _ElementName
 
@@ -2486,6 +2648,7 @@ ElementName信息。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _ElementName | ElementName信息。 |
@@ -2493,9 +2656,10 @@ ElementName信息。
 
 
 
-#### Skill12+
+## Skill12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Skill = _Skill.Skill
 
@@ -2505,6 +2669,7 @@ Skill信息。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _Skill.Skill | Skill信息。 |
@@ -2512,9 +2677,10 @@ Skill信息。
 
 
 
-#### SkillUrl12+
+## SkillUrl12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type SkillUrl = _Skill.SkillUri
 
@@ -2524,6 +2690,7 @@ SkillUri信息。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _Skill.SkillUri | SkillUri信息。 |
@@ -2531,15 +2698,17 @@ SkillUri信息。
 
 
 
-#### AppCloneIdentity15+
+## AppCloneIdentity15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AppCloneIdentity = _BundleInfo.AppCloneIdentity
 
 描述应用包的身份信息。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2548,9 +2717,10 @@ type AppCloneIdentity = _BundleInfo.AppCloneIdentity
 
 
 
-#### AlternateIconInfo
+## AlternateIconInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AlternateIconInfo = _BundleInfo.AlternateIconInfo
 
@@ -2561,6 +2731,7 @@ type AlternateIconInfo = _BundleInfo.AlternateIconInfo
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
+
 
 | 类型 | 说明 |
 | --- | --- |

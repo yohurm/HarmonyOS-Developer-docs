@@ -11,7 +11,7 @@
 问题代码如下：
  
 ```text
-// 华为一键登录按钮组件
+<em>// </em><em>华为一键登录按钮组件</em>
 LoginWithHuaweiIDButton({
   params: {
     textAndIconStyle: true,
@@ -19,7 +19,7 @@ LoginWithHuaweiIDButton({
     extraStyle: {
       buttonStyle: new loginComponentManager.ButtonStyle()
     },
-    // 存在匿名手机号则使用手机号一键登录，不存在则使用华为账号登录
+<em>    // 存在匿名手机号则使用手机号一键登录，不存在则使用华为账号登录</em>
     loginType: this.loginType,
   },
   controller: this.controller,
@@ -50,17 +50,17 @@ LoginWithHuaweiIDButton({
  
 ```text
 aboutToAppear(): void {
-  // 页面初始化时，获取匿名手机号
+<em>  // 页面初始化时，获取匿名手机号</em>
   this.getQuickLoginAnonymousPhone();
 }
 
 build() {
   Column() {
-    // 获取到匿名手机号，走一键登录
+   <em> // 获取到匿名手机号，走一键登录</em>
     if (this.quickLoginAnonymousPhone) {
       QuickLoginButtonComponent({ quickLoginAnonymousPhone: this.quickLoginAnonymousPhone });
     } else {
-      // 未获取匿名手机号，走华为账号登录
+     <em> // 未获取匿名手机号，走华为账号登录</em>
       LoginButtonComponent();
     }
   }
@@ -86,19 +86,19 @@ struct Index {
   @State quickLoginAnonymousPhone: string = '';
 
   getQuickLoginAnonymousPhone() {
-    // 创建授权请求，并设置参数
+ <em>   // 创建授权请求，并设置参数</em>
     const authRequest = new authentication.HuaweiIDProvider().createAuthorizationWithHuaweiIDRequest();
-    // 获取匿名手机号需传quickLoginAnonymousPhone这个scope，传参之前需要先申请“华为账号一键登录”权限
-    //(权限名称为：quickLoginMobilePhone),后续才能获取匿名手机号数据
+  <em>  // 获取匿名手机号需传quickLoginAnonymousPhone这个scope，传参之前需要先申请“华为账号一键登录”权限</em>
+<em>    //(权限名称为：quickLoginMobilePhone),后续才能获取匿名手机号数据</em>
     authRequest.scopes = ['quickLoginAnonymousPhone'];
-    // 用于防跨站点请求伪造
+  <em>  // 用于防跨站点请求伪造</em>
     authRequest.state = util.generateRandomUUID();
-    // 一键登录场景该参数只能设置为false
+ <em>   // 一键登录场景该参数只能设置为false</em>
     authRequest.forceAuthorization = false;
     const controller = new authentication.AuthenticationController();
     try {
       controller.executeRequest(authRequest).then((response: authentication.AuthorizationWithHuaweiIDResponse) => {
-        // 获取到UnionID、OpenID、匿名手机号
+       <em> // 获取到UnionID、OpenID、匿名手机号</em>
         const unionID = response.data?.unionID;
         const openID = response.data?.openID;
         const anonymousPhone = response.data?.extraInfo?.quickLoginAnonymousPhone as string;
@@ -108,7 +108,7 @@ struct Index {
           return;
         }
         hilog.info(DOMAIN_ID, LOG_TAG, 'Succeeded in authentication. AnonymousPhone is empty.');
-        // 未获取到匿名手机号需要跳转到应用自定义的登录页面
+       <em> // 未获取到匿名手机号需要跳转到应用自定义的登录页面</em>
       }).catch((error: BusinessError) => {
         hilog.error(DOMAIN_ID, LOG_TAG,
           `Failed to login, errorCode is ${error.code}, errorMessage is ${error.message}`);
@@ -120,17 +120,17 @@ struct Index {
   }
 
   aboutToAppear(): void {
-    // 页面初始化时，获取匿名手机号
+   <em> // 页面初始化时，获取匿名手机号</em>
     this.getQuickLoginAnonymousPhone();
   }
 
   build() {
     Column() {
-      // 获取到匿名手机号，走一键登录
+      <em>// 获取到匿名手机号，走一键登录</em>
       if (this.quickLoginAnonymousPhone) {
         QuickLoginButtonComponent({ quickLoginAnonymousPhone: this.quickLoginAnonymousPhone });
       } else {
-        // 未获取匿名手机号，走华为账号登录
+      <em>  // 未获取匿名手机号，走华为账号登录</em>
         LoginButtonComponent();
       }
     }
@@ -143,9 +143,9 @@ struct Index {
 struct LoginButtonComponent {
   logTag: string = 'LoginButtonComponent';
   domainId: number = 0x0000;
-  /**
-   * Defines the controller to interact with the button for login with a HUAWEI ID.
-   */
+ <em> /**</em>
+<em>   * Defines the controller to interact with the button for login with a HUAWEI ID.</em>
+<em>   */</em>
   controller: loginComponentManager.LoginWithHuaweiIDButtonController =
     new loginComponentManager.LoginWithHuaweiIDButtonController()
       .onClickLoginWithHuaweiIDButton((error: BusinessError, response: loginComponentManager.HuaweiIDCredential) => {
@@ -161,7 +161,7 @@ struct LoginButtonComponent {
           let openID = response.openID;
           let unionID = response.unionID;
           let idToken = response.idToken;
-          // to do something after getting the response.
+          <em>// to do something after getting the response.</em>
           return;
         }
       });
@@ -169,9 +169,9 @@ struct LoginButtonComponent {
   build() {
     Column() {
       Column() {
-        /**
-         * Invoke the LoginWithHuaweiIDButton component.
-         */
+     <em>   /**</em>
+<em>         * Invoke the LoginWithHuaweiIDButton component.</em>
+<em>         */</em>
         LoginWithHuaweiIDButton({
           params: {
             style: loginComponentManager.Style.BUTTON_RED,
@@ -196,17 +196,17 @@ struct LoginButtonComponent {
 
 @Component
 struct QuickLoginButtonComponent {
-  // 匿名化手机号
+ <em> // 匿名化手机号</em>
   @Prop quickLoginAnonymousPhone: string;
-  // 是否勾选协议
+<em>  // 是否勾选协议</em>
   @State isSelected: boolean = false;
-  // 华为账号用户认证协议链接，此处仅为示例，实际开发过程中，出于可维护性、安全性等方面考虑，域名不建议硬编码在本地
+  <em>// 华为账号用户认证协议链接，此处仅为示例，实际开发过程中，出于可维护性、安全性等方面考虑，域名不建议硬编码在本地</em>
   private static USER_AUTHENTICATION_PROTOCOL: string =
     'https://*********/legal/id/authentication-terms.htm?code=CN&language=zh-CN';
   private static USER_SERVICE_TAG = '用户服务协议';
   private static PRIVACY_TAG = '隐私协议';
   private static USER_AUTHENTICATION_TAG = '华为账号用户认证协议';
-  // 定义LoginWithHuaweiIDButton展示的隐私文本，展示应用的用户服务协议、隐私协议和华为账号用户认证协议
+ <em> // 定义LoginWithHuaweiIDButton展示的隐私文本，展示应用的用户服务协议、隐私协议和华为账号用户认证协议</em>
   privacyText: loginComponentManager.PrivacyText[] = [{
     text: '已阅读并同意',
     type: loginComponentManager.TextType.PLAIN_TEXT
@@ -229,13 +229,13 @@ struct QuickLoginButtonComponent {
     text: '。',
     type: loginComponentManager.TextType.PLAIN_TEXT
   }];
-  // 构造LoginWithHuaweiIDButton组件的控制器
+<em>  // 构造LoginWithHuaweiIDButton组件的控制器</em>
   controller: loginComponentManager.LoginWithHuaweiIDButtonController =
     new loginComponentManager.LoginWithHuaweiIDButtonController()
-      /**
-       * 当应用使用自定义的登录页时，如果用户未同意协议，需要设置协议状态为NOT_ACCEPTED，当用户同意协议后再设置
-       * 协议状态为ACCEPTED，才可以使用华为账号一键登录功能
-       */
+  <em>    /**</em>
+<em>       * 当应用使用自定义的登录页时，如果用户未同意协议，需要设置协议状态为NOT_ACCEPTED，当用户同意协议后再设置</em>
+<em>       * 协议状态为ACCEPTED，才可以使用华为账号一键登录功能</em>
+<em>       */</em>
       .setAgreementStatus(loginComponentManager.AgreementStatus.NOT_ACCEPTED)
       .onClickLoginWithHuaweiIDButton((error: BusinessError | undefined,
         response: loginComponentManager.HuaweiIDCredential) => {
@@ -259,7 +259,7 @@ struct QuickLoginButtonComponent {
         this.agreementDialog.close();
         this.isSelected = true;
         this.controller.setAgreementStatus(loginComponentManager.AgreementStatus.ACCEPTED);
-        // 调用此方法，同意协议与登录一并完成，无需再次点击登录按钮
+       <em> // 调用此方法，同意协议与登录一并完成，无需再次点击登录按钮</em>
         this.controller.continueLogin((error: BusinessError) => {
           if (error) {
             hilog.error(DOMAIN_ID, LOG_TAG,
@@ -279,7 +279,7 @@ struct QuickLoginButtonComponent {
     alignment: DialogAlignment.Center,
   });
 
-  // Toast提示
+ <em> // Toast提示</em>
   showToast(resource: string) {
     try {
       this.getUIContext().getPromptAction().showToast({
@@ -293,10 +293,10 @@ struct QuickLoginButtonComponent {
     }
   }
 
-  // 跳转华为账号用户认证协议页,该页面需在工程main_pages.json文件配置
+ <em> // 跳转华为账号用户认证协议页,该页面需在工程main_pages.json文件配置</em>
   jumpToPrivacyWebView() {
     this.getUIContext().getRouter().pushUrl({
-      // 在工程main_pages.json文件配置跳转页，具体可参考AccountKit开发指南使用华为账号一键登录WebPage示例代码
+     <em> // 在工程main_pages.json文件配置跳转页，具体可参考AccountKit开发指南使用华为账号一键登录WebPage示例代码</em>
       url: 'pages/WebPage',
       params: {
         isFromDialog: true,
@@ -330,18 +330,18 @@ struct QuickLoginButtonComponent {
           }
         );
       } else if (error.code === ErrorCode.ERROR_CODE_AGREEMENT_STATUS_NOT_ACCEPTED) {
-        // 未同意协议，弹出协议弹框，推荐使用该回调方式
+       <em> // 未同意协议，弹出协议弹框，推荐使用该回调方式</em>
         this.agreementDialog.open();
       } else if (error.code === ErrorCode.ERROR_CODE_LOGIN_OUT) {
-        // 华为账号未登录提示
+      <em>  // 华为账号未登录提示</em>
         this.showToast('华为账号未登录，请重试');
       } else if (error.code === ErrorCode.ERROR_CODE_NOT_SUPPORTED) {
-        // 不支持该scopes或permissions提示
+     <em>   // 不支持该scopes或permissions提示</em>
         this.showToast('该scopes或permissions不支持');
       } else {
-        // 其他提示系统或服务异常
+       <em> // 其他提示系统或服务异常</em>
         this.showToast('服务或网络异常，请稍后重试');
-        // TODO: 其他错误码处理，请参考API中的错误码查看详细错误原因
+    <em>    // TODO: 其他错误码处理，请参考API中的错误码查看详细错误原因</em>
       }
       return;
     }
@@ -349,7 +349,7 @@ struct QuickLoginButtonComponent {
       if (this.isSelected) {
         if (response) {
           hilog.info(DOMAIN_ID, LOG_TAG, 'Succeed in clicking LoginWithHuaweiIDButton.');
-          // 开发者根据实际业务情况使用以下信息
+         <em> // 开发者根据实际业务情况使用以下信息</em>
           const authCode = response.authorizationCode;
           const openID = response.openID;
           const unionID = response.unionID;
@@ -377,11 +377,11 @@ struct QuickLoginButtonComponent {
     }
   }
 
-  // 错误处理
+ <em> // 错误处理</em>
   dealAllError(error: BusinessError): void {
     hilog.error(DOMAIN_ID, LOG_TAG,
       `Failed to login, errorCode is ${error.code}, errorMessage is ${error.message}`);
-    // TODO: 错误码处理，请参考API中的错误码根据实际情况处理
+   <em> // TODO: 错误码处理，请参考API中的错误码根据实际情况处理</em>
   }
 
   build() {
@@ -457,21 +457,21 @@ struct QuickLoginButtonComponent {
           Column() {
             LoginWithHuaweiIDButton({
               params: {
-                // LoginWithHuaweiIDButton支持的样式
+               <em> // LoginWithHuaweiIDButton支持的样式</em>
                 style: loginComponentManager.Style.BUTTON_RED,
-                // 账号登录按钮在登录过程中展示加载态
+             <em>   // 账号登录按钮在登录过程中展示加载态</em>
                 extraStyle: {
                   buttonStyle: new loginComponentManager.ButtonStyle().loadingStyle({
                     show: true
                   })
                 },
-                // LoginWithHuaweiIDButton的边框圆角半径
+               <em> // LoginWithHuaweiIDButton的边框圆角半径</em>
                 borderRadius: 24,
-                // LoginWithHuaweiIDButton支持的登录类型
+              <em>  // LoginWithHuaweiIDButton支持的登录类型</em>
                 loginType: loginComponentManager.LoginType.QUICK_LOGIN,
-                // LoginWithHuaweiIDButton支持按钮的样式跟随系统深浅色模式切换
+              <em>  // LoginWithHuaweiIDButton支持按钮的样式跟随系统深浅色模式切换</em>
                 supportDarkMode: true,
-                // verifyPhoneNumber：如果华为账号用户在过去90天内未进行短信验证，是否拉起Account Kit提供的短信验证码页面
+              <em>  // verifyPhoneNumber：如果华为账号用户在过去90天内未进行短信验证，是否拉起Account Kit提供的短信验证码页面</em>
                 verifyPhoneNumber: true
               },
               controller: this.controller
@@ -551,9 +551,9 @@ struct QuickLoginButtonComponent {
                     .focusable(true)
                     .focusOnTouch(true)
                     .onClick(() => {
-                      // 应用需要根据item.tag实现协议页面的跳转逻辑
+                      <em>// 应用需要根据item.tag实现协议页面的跳转逻辑</em>
                       hilog.info(DOMAIN_ID, LOG_TAG, `click privacy text tag: ${item.tag}`);
-                      // 华为账号用户认证协议
+                     <em> // 华为账号用户认证协议</em>
                       if (item.tag === QuickLoginButtonComponent.USER_AUTHENTICATION_TAG) {
                         this.jumpToPrivacyWebView();
                       }
@@ -640,9 +640,9 @@ export struct AgreementDialog {
                 .focusable(true)
                 .focusOnTouch(true)
                 .onClick(() => {
-                  // 应用需要根据item.tag实现协议页面的跳转逻辑
+                <em>  // 应用需要根据item.tag实现协议页面的跳转逻辑</em>
                   hilog.info(this.domainId, this.logTag, `click privacy text tag: ${item.tag}`);
-                  // 华为账号用户认证协议
+                 <em> // 华为账号用户认证协议</em>
                   if (item.tag === AgreementDialog.USER_AUTHENTICATION_TAG) {
                     hilog.info(this.domainId, this.logTag, 'AgreementDialog click.');
                     this.clickHyperlinkText();
@@ -714,13 +714,13 @@ export struct AgreementDialog {
 }
 
 export enum ErrorCode {
-  // 账号未登录
+ <em> // 账号未登录</em>
   ERROR_CODE_LOGIN_OUT = 1001502001,
-  // 该账号不支持一键登录，如儿童账号、海外账号
+<em>  // 该账号不支持一键登录，如儿童账号、海外账号</em>
   ERROR_CODE_NOT_SUPPORTED = 1001500003,
-  // 网络错误
+<em>  // 网络错误</em>
   ERROR_CODE_NETWORK_ERROR = 1001502005,
-  // 用户未同意用户协议
+ <em> // 用户未同意用户协议</em>
   ERROR_CODE_AGREEMENT_STATUS_NOT_ACCEPTED = 1005300001
 }
 ```

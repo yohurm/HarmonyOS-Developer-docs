@@ -56,7 +56,7 @@ export default class EntryAbility extends UIAbility {
       display.getDefaultDisplaySync().height / 2 - 250, (err) => {
         console.info(`want: ${err}`);
       });
-    // Main window is created, set main page for this ability
+  <em>  // Main window is created, set main page for this ability</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
     windowStage.loadContent('pages/Index', (err) => {
@@ -71,17 +71,17 @@ export default class EntryAbility extends UIAbility {
   }
 
   onWindowStageDestroy(): void {
-    // Main window is destroyed, release UI related resources
+   <em> // Main window is destroyed, release UI related resources</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
   }
 
   onForeground(): void {
-    // Ability has brought to foreground
+  <em>  // Ability has brought to foreground</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onForeground');
   }
 
   onBackground(): void {
-    // Ability has back to background
+ <em>   // Ability has back to background</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onBackground');
   }
 };
@@ -108,7 +108,7 @@ struct Index {
         })
         .onClick(() => {
           let windowStage = AppStorage.get('windowStage') as window.WindowStage;
-          let windowClass: window.Window = windowStage.getMainWindowSync(); // 获取应用主窗口
+          let windowClass: window.Window = windowStage.getMainWindowSync(); <em>// 获取应用主窗口</em>
           windowClass.setWindowDecorVisible(true);
           windowClass.setWindowTitleButtonVisible(true, true, true);
           windowClass.maximize(window.MaximizePresentation.FOLLOW_APP_IMMERSIVE_SETTING);

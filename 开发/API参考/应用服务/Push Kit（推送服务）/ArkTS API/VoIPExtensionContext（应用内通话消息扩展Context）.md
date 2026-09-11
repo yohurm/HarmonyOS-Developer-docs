@@ -1,9 +1,9 @@
 # VoIPExtensionContext（应用内通话消息扩展Context）（废弃）
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-voip-context
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet
 
 VoIPExtensionContext是VoIPExtensionAbility的上下文环境，继承自[UIExtensionContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiextensioncontext)。
  
@@ -16,9 +16,10 @@ VoIPExtensionContext是VoIPExtensionAbility的上下文环境，继承自[UIExte
 **废弃版本：** 26.0.0
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 import { VoIPExtensionContext } from '@kit.PushKit';
@@ -26,9 +27,10 @@ import { VoIPExtensionContext } from '@kit.PushKit';
  
   
 
-#### VoIPExtensionContext(deprecated)
+## VoIPExtensionContext(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 **模型约束：** 属性仅可在Stage模型下使用。
  

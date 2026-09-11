@@ -1,9 +1,9 @@
 # advanced.Counter
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-counter
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Counter组件用于精确调节数值，支持列表型、紧凑型、数值内联型和日期内联型四种样式，适用于购物数量调节、参数设置、日期选择等场景，具有灵活的样式配置和事件回调能力。
  
@@ -12,9 +12,10 @@ Counter组件用于精确调节数值，支持列表型、紧凑型、数值内�
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { CounterType, CounterComponent, CounterOptions, DateData } from '@kit.ArkUI';
@@ -22,17 +23,19 @@ import { CounterType, CounterComponent, CounterOptions, DateData } from '@kit.Ar
  
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
  
   
 
-#### CounterComponent
+## CounterComponent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 CounterComponent({ options: CounterOptions })
  
@@ -46,16 +49,18 @@ CounterComponent({ options: CounterOptions })
  
 **参数：**
   
+
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
-| options | CounterOptions | 是 | @Prop | 定义Counter组件的类型及样式选项。 |
+| options | CounterOptions | 是 | @Prop | 配置选项，用于配置Counter组件的类型和样式。包含type（Counter类型）、direction（布局方向）、numberOptions（列表型和紧凑型样式）、inlineOptions（数值内联样式）、dateOptions（日期内联样式）等配置项。 |
  
  
   
 
-#### CounterOptions
+## CounterOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 CounterOptions定义了Counter类型及样式。
  
@@ -63,6 +68,7 @@ CounterOptions定义了Counter类型及样式。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | CounterType | 否 | 否 | 指定当前Counter的类型。需配合对应的样式参数使用，具体对应关系参见Counter类型与样式对照表。 |
@@ -74,6 +80,7 @@ CounterOptions定义了Counter类型及样式。
  
 选择不同的Counter类型时，需选择对应的Counter样式。若样式参数与类型不匹配，将使用该类型对应的默认样式。
   
+
 | Counter类型 | Counter样式 |
 | --- | --- |
 | CounterType.LIST | NumberStyleOptions |
@@ -84,9 +91,10 @@ CounterOptions定义了Counter类型及样式。
  
   
 
-#### CounterType
+## CounterType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 CounterType指定Counter类型。
  
@@ -94,6 +102,7 @@ CounterType指定Counter类型。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | LIST | 0 | 列表型Counter。 |
@@ -104,9 +113,10 @@ CounterType指定Counter类型。
  
   
 
-#### CommonOptions
+## CommonOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 CommonOptions定义了Counter的通用属性和事件。
  
@@ -114,6 +124,7 @@ CommonOptions定义了Counter的通用属性和事件。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | focusable | boolean | 否 | 是 | 设置Counter是否可获焦。 说明： 该属性对列表型和紧凑型Counter生效，对数值内联型和日期内联型Counter不生效。 默认值：true true：Counter可获焦（当需要通过键盘或焦点导航操作Counter时选择）；false：Counter不可获焦（当不需要焦点交互时选择）。 值为undefined时，按默认值处理。 |
@@ -124,9 +135,10 @@ CommonOptions定义了Counter的通用属性和事件。
  
   
 
-#### InlineStyleOptions
+## InlineStyleOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 InlineStyleOptions定义了数值内联型Counter的属性和事件。
  
@@ -136,13 +148,14 @@ InlineStyleOptions定义了数值内联型Counter的属性和事件。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | value | number | 否 | 是 | 设置Counter的初始值。 默认值：0 取值范围：[min, max]，其中min和max分别对应下述Counter的最小值和最大值（min默认为0，max默认为999）。 超出取值范围时，如果值小于min，按min处理；如果值大于max，按max处理。 |
 | min | number | 否 | 是 | 设置Counter的最小值。 默认值：0 取值范围：(-∞, max] 超出取值范围时（即设置值大于max），按max处理。 值为undefined时，按默认值处理。 |
 | max | number | 否 | 是 | 设置Counter的最大值。 默认值：999 取值范围：[min, +∞) 超出取值范围时（即设置值小于min），按min处理。 值为undefined时，按默认值处理。 |
 | textWidth | number | 否 | 是 | 设置数值文本的宽度。 默认值：自适应文本宽度。 取值范围：[0, +∞) 单位：vp 超出取值范围时（即设置值小于0），按0处理。 值为undefined时，按默认值处理。 |
-| onChange | (value: number) => void | 否 | 是 | 数值改变时，返回当前值。使用场景：当需要在数值变化时执行自定义操作（如更新关联UI、记录日志、保存状态等）时传入此回调。 value：当前显示的数值。 默认值：数值改变时，不返回值。 值为undefined时，按默认值处理。 |
+| onChange | (value: number) => void | 否 | 是 | 数值改变时，返回当前值。使用场景：当需要在数值变化时执行自定义操作（如更新关联UI、记录日志、保存状态等）时传入此回调。 value：当前显示的数值。 默认值：不触发数值改变时的回调。 值为undefined时，按默认值处理。 |
  
  
 > [!NOTE]
@@ -151,9 +164,10 @@ InlineStyleOptions定义了数值内联型Counter的属性和事件。
  
   
 
-#### NumberStyleOptions
+## NumberStyleOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 NumberStyleOptions定义了列表型和紧凑型Counter的属性和事件。
  
@@ -163,6 +177,7 @@ NumberStyleOptions定义了列表型和紧凑型Counter的属性和事件。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | label | ResourceStr | 否 | 是 | 设置Counter的说明文本。 使用场景：当需要在Counter旁边显示说明文字（如'价格'、'数量'等）时传入此参数。 默认值：'' 值为undefined时，按默认值处理。 |
@@ -174,9 +189,10 @@ NumberStyleOptions定义了列表型和紧凑型Counter的属性和事件。
  
   
 
-#### DateStyleOptions
+## DateStyleOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 DateStyleOptions定义了日期内联型Counter的属性和事件。
  
@@ -186,6 +202,7 @@ DateStyleOptions定义了日期内联型Counter的属性和事件。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | year | number | 否 | 是 | 设置日期内联型初始年份。 默认值：1 取值范围：[1, 5000] 超出取值范围按默认值处理。 值为undefined时，按默认值处理。 |
@@ -196,9 +213,10 @@ DateStyleOptions定义了日期内联型Counter的属性和事件。
  
   
 
-#### DateData
+## DateData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 DateData定义了日期通用属性和方法，包括年、月、日。
  
@@ -206,6 +224,7 @@ DateData定义了日期通用属性和方法，包括年、月、日。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | year | number | 否 | 否 | 表示日期内联型的年份。取值范围：[1, 5000]。 |
@@ -215,9 +234,10 @@ DateData定义了日期通用属性和方法，包括年、月、日。
  
   
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(year: number, month: number, day: number)
  
@@ -229,6 +249,7 @@ DateData的构造函数用于初始化日期对象。
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | year | number | 是 | 日期内联型的年份。取值范围：[1, 5000]。 |
@@ -238,9 +259,10 @@ DateData的构造函数用于初始化日期对象。
  
   
 
-#### toString
+### toString
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toString(): string
  
@@ -252,6 +274,7 @@ toString(): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 当前日期值。 |
@@ -259,13 +282,17 @@ toString(): string
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 示例1（列表型Counter）
+### 示例1（列表型Counter）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过设置type为CounterType.LIST和配置numberOptions，实现了列表型Counter。
  
@@ -300,7 +327,10 @@ struct ListCounterExample {
  
   
 
-#### 示例2（紧凑型Counter）
+### 示例2（紧凑型Counter）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过设置type为CounterType.COMPACT和numberOptions，实现了紧凑型Counter。
  
@@ -336,7 +366,10 @@ struct CompactCounterExample {
  
   
 
-#### 示例3（数值内联型Counter）
+### 示例3（数值内联型Counter）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过设置type为CounterType.INLINE和inlineOptions，实现了数值内联型Counter。
  
@@ -375,7 +408,10 @@ struct NumberStyleExample {
  
   
 
-#### 示例4（日期内联型Counter）
+### 示例4（日期内联型Counter）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过设置type为CounterType.INLINE_DATE和dateOptions，实现了日期内联型Counter。
  
@@ -410,9 +446,12 @@ struct DateStyleExample {
  
   
 
-#### 示例5（镜像布局展示）
+### 示例5（镜像布局展示）
 
-设置direction属性，实现列表型、紧凑型、数值内联型、日期内联型Counter的镜像布局。
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+该示例通过设置direction属性，实现了列表型、紧凑型、数值内联型、日期内联型Counter的镜像布局。
  
 ```text
 import { CounterType, CounterComponent, DateData } from '@kit.ArkUI';
@@ -495,4 +534,4 @@ struct CounterPage {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/e9nU62jgR1W5aIf_CmCDDQ/zh-cn_image_0000002686088477.png?HW-CC-KV=V1&HW-CC-Date=20260730T071521Z&HW-CC-Expire=86400&HW-CC-Sign=89AB44E086D99BB2A9194BCD1B0243FD99E987E5F1B5089ADAC3B8698FFF7B0A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/sVqQiANqQbuS8pmgSxXPNg/zh-cn_image_0000002747213057.png?HW-CC-KV=V1&HW-CC-Date=20260911T073027Z&HW-CC-Expire=86400&HW-CC-Sign=3C5C9BDA0F2A3E9E3055D75554F82D18315C0EE758E3549BA510ACBD7AB04910)

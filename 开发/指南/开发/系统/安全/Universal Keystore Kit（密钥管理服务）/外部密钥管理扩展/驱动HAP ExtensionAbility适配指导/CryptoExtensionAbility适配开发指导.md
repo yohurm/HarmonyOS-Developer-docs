@@ -1,16 +1,16 @@
 # CryptoExtensionAbility适配开发指导
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-extension-ability-support-dev
 
-#### 约束限制
+## 约束限制
 
 针对CryptoExtensionAbility接口调用限制，详细请参考API中的[约束限制](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoextensionability#约束限制)。
 
 
 
-#### 适配指导
+## 适配指导
 
 本文档旨在指导驱动厂商如何继承实现[CryptoExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoextensionability)需要的接口能力，此处给出实现参考，其他实现依照业务需要依次调用driver封装的底层驱动函数。
 
@@ -653,11 +653,11 @@ onImportWrappedKeyItem(handle: string, wrappedHandle: string, params: huks.HuksP
 
 
 
-#### 驱动应用注册、解注册CryptoExtensionAbility适配
+## 驱动应用注册、解注册CryptoExtensionAbility适配
 
 
 
-#### 注册CryptoExtensionAbility
+### 注册CryptoExtensionAbility
 
 驱动HAP检测到UKey存在时，向系统注册CryptoExtensionAbility。例如：UKey插入等。
 
@@ -682,7 +682,7 @@ huksExternalCrypto.registerProvider(provider, ExtPropertiesTemp);
 
 
 
-#### 解注册CryptoExtensionAbility
+### 解注册CryptoExtensionAbility
 
 驱动HAP检测到UKey不存在时，向系统解注册CryptoExtensionAbility。例如：UKey拔出等。
 

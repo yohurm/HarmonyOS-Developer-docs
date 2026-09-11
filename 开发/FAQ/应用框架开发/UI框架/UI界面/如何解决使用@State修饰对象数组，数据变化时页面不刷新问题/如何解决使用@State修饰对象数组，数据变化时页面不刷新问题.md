@@ -1,63 +1,60 @@
 # 如何解决使用@State修饰对象数组，数据变化时页面不刷新问题
 
-更新时间：2026-06-26 09:07:13
+更新时间：2026-08-26 00:50:37
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1071
 
-#### 问题现象
+## 问题现象
 
 - 场景一：使用@State修饰对象数组，未使用@Observed/@ObjectLink装饰器进行深度观测，所以修改深层属性时，页面不刷新。问题代码如下：
 ```json
 class SceneOnePerson {
-  name: string;
-  age: number;
+name: string;
+age: number;
 
-
-  constructor(name: string, age: number) {
-    this.name = name;
-    this.age = age;
-  }
+constructor(name: string, age: number) {
+this.name = name;
+this.age = age;
 }
-
+}
 
 @Entry
 @Component
 struct SceneOne {
-  @State persons: SceneOnePerson[] = [
-    new SceneOnePerson('小张', 12),
-    new SceneOnePerson('小赵', 13),
-    new SceneOnePerson('小李', 14),
-    new SceneOnePerson('小王', 15),
-  ];
+@State persons: SceneOnePerson[] = [
+new SceneOnePerson('小张', 12),
+new SceneOnePerson('小赵', 13),
+new SceneOnePerson('小李', 14),
+new SceneOnePerson('小王', 15),
+];
 
-
-  build() {
-    Column({ space: 10 }) {
-      ForEach(this.persons, (curPerson: SceneOnePerson) => {
-        Column() {
-          Text(`姓名${curPerson.name}`)
-            .fontSize(20)
-            .fontWeight(FontWeight.Bold);
-          Text(`年龄${curPerson.age}`)
-            .fontSize(15)
-            .fontWeight(FontWeight.Regular);
-        };
-      });
-      Button('修改对象数组属性-修改小张年龄+1')
-        .onClick(() => {
-          this.persons[0].age++;
-          console.info(`当前小张的年龄为${JSON.stringify(this.persons[0])}`);
-        });
-      Button('修改对象数组属性-修改小赵年龄+1')
-        .onClick(() => {
-          this.persons[1].age++;
-          console.info(`当前小赵的年龄为${JSON.stringify(this.persons[1])}`);
-        });
-    }
-    .height('100%')
-    .width('100%')
-    .justifyContent(FlexAlign.Center);
-  }
+build() {
+Column({ space: 10 }) {
+ForEach(this.persons, (curPerson: SceneOnePerson) => {
+Column() {
+Text(`姓名${curPerson.name}`)
+.fontSize(20)
+.fontWeight(FontWeight.Bold);
+Text(`年龄${curPerson.age}`)
+.fontSize(15)
+.fontWeight(FontWeight.Regular);
+};
+});
+Button('修改对象数组属性-修改小张年龄+1')
+.onClick(() => {
+this.persons[0].age++;
+console.info(`当前小张的年龄为${JSON.stringify(this.persons[0])}`);
+});
+Button('修改对象数组属性-修改小赵年龄+1')
+.onClick(() => {
+this.persons[1].age++;
+console.info(`当前小赵的年龄为${JSON.stringify(this.persons[1])}`);
+});
+}
+.height('100%')
+.width('100%')
+.justifyContent(FlexAlign.Center);
+}
 }
 ```
 
@@ -68,92 +65,86 @@ struct SceneOne {
 ```text
 @Observed
 class PerInfo {
-  name: string;
-  age: number;
-  friends: PerInfo[];
+name: string;
+age: number;
+friends: PerInfo[];
 
-
-  constructor(model: PerInfoModel) {
-    this.name = model.name;
-    this.age = model.age;
-    this.friends = model.friends.map(friend => new PerInfo(friend));
-  }
+constructor(model: PerInfoModel) {
+this.name = model.name;
+this.age = model.age;
+this.friends = model.friends.map(friend => new PerInfo(friend));
 }
-
+}
 
 interface PerInfoModel {
-  name: string;
-  age: number;
-  friends: PerInfoModel[];
+name: string;
+age: number;
+friends: PerInfoModel[];
 }
-
 
 @Component
 struct SceneTwoFirstChild {
-  @ObjectLink info: PerInfo; // 必须创建子组件，并用@ObjectLink接收数据。
+@ObjectLink info: PerInfo; <em>// 必须创建子组件，并用@ObjectLink接收数据。</em>
 
-
-  build() {
-    Column({ space: 10 }) {
-      Text('这是一个页面')
-        .fontSize(20);
-      Text(this.info.name)
-        .fontSize(16)
-        .onClick(() => {
-          this.info.name += '!';
-        });
-      Text(this.info.age.toString())
-        .fontSize(16)
-        .onClick(() => {
-          this.info.age++;
-        });
-      ForEach(this.info.friends, (item: PerInfo) => {
-        Column({ space: 10 }) {
-          Button(`${item.name}`)
-            .onClick(() => {
-              item.name += '!';
-              console.info(item.name);
-            });
-          Button(`${item.age}`)
-            .onClick(() => {
-              item.age++;
-              console.info(item.age.toString());
-            });
-        };
-      });
-    };
-  }
+build() {
+Column({ space: 10 }) {
+Text('这是一个页面')
+.fontSize(20);
+Text(this.info.name)
+.fontSize(16)
+.onClick(() => {
+this.info.name += '!';
+});
+Text(this.info.age.toString())
+.fontSize(16)
+.onClick(() => {
+this.info.age++;
+});
+ForEach(this.info.friends, (item: PerInfo) => {
+Column({ space: 10 }) {
+Button(`${item.name}`)
+.onClick(() => {
+item.name += '!';
+console.info(item.name);
+});
+Button(`${item.age}`)
+.onClick(() => {
+item.age++;
+console.info(item.age.toString());
+});
+};
+});
+};
 }
-
+}
 
 @Entry
 @Component
 struct SceneTwo {
-  @State infos: PerInfo = new PerInfo({
-    name: 'Tom',
-    age: 18,
-    friends: [
-      {
-        name: 'Jerry',
-        age: 18,
-        friends: [{ name: 'Tom', age: 20, friends: [] }]
-      },
-      {
-        name: 'Mike',
-        age: 18,
-        friends: [{ name: 'Nancy', age: 20, friends: [] }]
-      }
-    ]
-  });
+@State infos: PerInfo = new PerInfo({
+name: 'Tom',
+age: 18,
+friends: [
+{
+name: 'Jerry',
+age: 18,
+friends: [{ name: 'Tom', age: 20, friends: [] }]
+},
+{
+name: 'Mike',
+age: 18,
+friends: [{ name: 'Nancy', age: 20, friends: [] }]
+}
+]
+});
 
-
-  build() {
-    Column({ space: 15 }) {
-      SceneTwoFirstChild({ info: this.infos });
-    }
-    .width('100%')
-    .height('100%');
-  }
+build() {
+Column({ space: 15 }) {
+SceneTwoFirstChild({ info: this.infos });
+}
+.width('100%')
+.height('100%');
+}
 }
 ```
 
@@ -161,89 +152,85 @@ struct SceneTwo {
 ```json
 @Observed
 class SceneThreePerson {
-  name: string;
-  age: number;
+name: string;
+age: number;
 
-
-  constructor(name: string, age: number) {
-    this.name = name;
-    this.age = age;
-  }
+constructor(name: string, age: number) {
+this.name = name;
+this.age = age;
 }
-
+}
 
 @Component
 struct SceneThreeChild {
-  @ObjectLink person: SceneThreePerson;
+@ObjectLink person: SceneThreePerson;
 
-
-  build() {
-    Column() {
-      Text(`姓名${this.person.name}`)
-        .fontSize(20)
-        .fontWeight(FontWeight.Bold);
-      Text(`年龄${this.person.age}`)
-        .fontSize(15)
-        .fontWeight(FontWeight.Regular);
-    };
-  }
+build() {
+Column() {
+Text(`姓名${this.person.name}`)
+.fontSize(20)
+.fontWeight(FontWeight.Bold);
+Text(`年龄${this.person.age}`)
+.fontSize(15)
+.fontWeight(FontWeight.Regular);
+};
 }
-
+}
 
 @Entry
 @Component
 struct SceneThree {
-  @State persons: SceneThreePerson[] = [
-    new SceneThreePerson('小张', 12),
-    new SceneThreePerson('小赵', 13),
-    new SceneThreePerson('小李', 14),
-    new SceneThreePerson('小王', 15),
-  ];
+@State persons: SceneThreePerson[] = [
+new SceneThreePerson('小张', 12),
+new SceneThreePerson('小赵', 13),
+new SceneThreePerson('小李', 14),
+new SceneThreePerson('小王', 15),
+];
 
-
-  build() {
-    Column({ space: 10 }) {
-      ForEach(this.persons, (curPerson: SceneThreePerson) => {
-        SceneThreeChild({ person: curPerson });
-      });
-      Button('修改对象数组属性-修改小张年龄+1')
-        .onClick(() => {
-          this.persons[0].age++;
-          console.info(`当前小张的年龄为${JSON.stringify(this.persons[0])}`);
-        });
-      Button('替换对象数组元素-修改小张年龄为88')
-        .onClick(() => {
-          this.persons.splice(0, 1, new SceneThreePerson('小张', 88));
-          console.info(`当前小张的年龄为${JSON.stringify(this.persons[0])}`);
-        });
-    }
-    .height('100%')
-    .width('100%')
-    .justifyContent(FlexAlign.Center);
-  }
+build() {
+Column({ space: 10 }) {
+ForEach(this.persons, (curPerson: SceneThreePerson) => {
+SceneThreeChild({ person: curPerson });
+});
+Button('修改对象数组属性-修改小张年龄+1')
+.onClick(() => {
+this.persons[0].age++;
+console.info(`当前小张的年龄为${JSON.stringify(this.persons[0])}`);
+});
+Button('替换对象数组元素-修改小张年龄为88')
+.onClick(() => {
+this.persons.splice(0, 1, new SceneThreePerson('小张', 88));
+console.info(`当前小张的年龄为${JSON.stringify(this.persons[0])}`);
+});
+}
+.height('100%')
+.width('100%')
+.justifyContent(FlexAlign.Center);
+}
 }
 ```
  场景三问题现象如下，当想要将小张的年龄第二次修改为88时（89修改为88）UI不刷新：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/YZlwmk1mS7K1LVBhbqfe3g/zh-cn_image_0000002628407230.png?HW-CC-KV=V1&HW-CC-Date=20260811T005714Z&HW-CC-Expire=86400&HW-CC-Sign=BFAA0FA7E0349DA8A113BF642E524A61F8EB316DFA2CE751947D0E25B401F383)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/LxMbcraTQp2dgFlbkDDvyg/zh-cn_image_0000002689362454.png?HW-CC-KV=V1&HW-CC-Date=20260911T072742Z&HW-CC-Expire=86400&HW-CC-Sign=BCC34DD592552C03C3D718C247DFAB3E334541E032279B7AB606E67F7C178427)
 
 
  
 
-#### 背景知识
+## 背景知识
 
 - [@State装饰的变量](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state)，或称为状态变量，一旦变量拥有了状态属性，就可以触发其直接绑定UI组件的刷新。当状态改变时，UI会发生对应的渲染改变。@State装饰器仅能观察到第一层的变化，但是在实际应用开发中，应用会根据开发需要，封装自己的数据模型。对于多层嵌套的情况，比如二维数组、对象数组，或者对象内嵌套对象，他们的第二层的属性变化是无法观察到的。例如：当装饰对象为对象数组时，可以观察到数组本身的赋值和添加、删除、更新数组的变化，但是数组项中属性的赋值观察不到。
-- [@Observed/@ObjectLink](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-observed-and-objectlink)、[@ObsevedV2/@Trace](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-observedv2-and-trace)等，可用于嵌套场景的观察，可以用来观察二维数组、数组项Class、Class的属性是Class，这些深层的属性变化。@Observed/@ObjectLink修饰的对象，没有通过new的方式实例化时，不会具备深度观测的能力。比如通过JSON.parse()的方式反序列化的对象，即使被@Observed/@ObjectLink装饰器修饰，也不会具备深度观测的能力。
+- [@Observed/@ObjectLink](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-observed-and-objectlink)、[@ObservedV2/@Trace](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-observedv2-and-trace)等，可用于嵌套场景的观察，可以用来观察二维数组、数组项Class、Class的属性是Class，这些深层的属性变化。@Observed/@ObjectLink修饰的对象，没有通过new的方式实例化时，不会具备深度观测的能力。比如通过JSON.parse()的方式反序列化的对象，即使被@Observed/@ObjectLink装饰器修饰，也不会具备深度观测的能力。
 - [ForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-rendering-control-foreach)接口基于数组类型数据来进行循环渲染，需要与容器组件配合使用，且接口返回的组件应当是允许包含在ForEach父容器组件中的子组件。当ForEach组件进行非首次渲染时，ForEach会根据传入的键值进行匹配，如果没有匹配到相同的键值则会创建一个新的组件，而当键值已存在则不会创建新的组件，前后的keyGenerator参数一致会导致无法刷新UI，ForEach参数介绍详见：[ForEach参数介绍](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-rendering-control-foreach#接口)。
 
  
  
 
-#### 解决方案
+## 解决方案
 
 @State装饰的变量可以观察到简单类型的变量值变化，在状态管理V1中要想观察到Class中对象类型的某个属性的变化，可以使用@Observed/@ObjectLink装饰器。同时，需要注意是否违背装饰器的限制条件，以及是否违背其它组件原则，常见问题现象总结及解决方案如下：
   
+
 | 场景 | 场景描述 | 解决方案 |
 | --- | --- | --- |
 | 场景一 | 使用@State修饰对象数组，未使用@Observed/@ObjectLink装饰器进行深度观测，所以修改深层属性时，页面不刷新。 | 使用@Observed修饰类，使用@ObjectLink在子组件中接收需要深层观测的对象，且该对象若想要被深度观测必须使用new操作符实例化。 |
@@ -262,18 +249,15 @@ class SceneOnePerson {
   name: string;
   age: number;
 
-
   constructor(name: string, age: number) {
     this.name = name;
     this.age = age;
   }
 }
 
-
 @Component
 struct SceneOneChild {
   @ObjectLink person: SceneOnePerson;
-
 
   build() {
     Column() {
@@ -287,7 +271,6 @@ struct SceneOneChild {
   }
 }
 
-
 @Entry
 @Component
 struct SceneOne {
@@ -297,7 +280,6 @@ struct SceneOne {
     new SceneOnePerson('小李', 14),
     new SceneOnePerson('小王', 15),
   ];
-
 
   build() {
     Column({ space: 10 }) {
@@ -321,31 +303,31 @@ struct SceneOne {
   }
 }
 ```
-
-
-  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/6ILoIri9RwaCwqmeF5urVA/notice_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260811T005714Z&HW-CC-Expire=86400&HW-CC-Sign=93A238CD568500106D55ACE20795E4107D09A36AC255F22DF1BB8993B55C7F23)
  
+> [!NOTE]
+> 如果存在@Observed装饰的类没有使用new操作符实例化的情况、或者存在无法使用@Observed装饰器装饰类的情况时，也无法刷新页面。可以通过 makeV1observed 、 makeObserved 方法将对象转化为可深度观测的对象，再进行刷新。适用的场景详见官网链接： 概述 。
 
-  如果存在@Observed装饰的类没有使用new操作符实例化的情况、或者存在无法使用@Observed装饰器装饰类的情况时，也无法刷新页面。可以通过[makeV1observed](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-statemanagement#makev1observed19)、[makeObserved](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-statemanagement#makeobserved)方法将对象转化为可深度观测的对象，再进行刷新。适用的场景详见官网链接：[概述](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-makeobserved#概述)。
 
   场景一实现效果如下：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/d6cqQHTlQ1GWVL7R2YW5lA/zh-cn_image_0000002658806489.png?HW-CC-KV=V1&HW-CC-Date=20260811T005714Z&HW-CC-Expire=86400&HW-CC-Sign=DCD1D25350A7F9D1648AF2023306A3E135A9B49D8602FE78DB9279E9BCFECA0A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/IUn9mv3hTQeHMsQoICZwhw/zh-cn_image_0000002689210526.png?HW-CC-KV=V1&HW-CC-Date=20260911T072742Z&HW-CC-Expire=86400&HW-CC-Sign=B93ED77A3AE8A47C8BF7B67CBD9B0A736D302690AC32C946A5E68E9BFB534FDE)
 
 
  
-- 场景二：使用了@Observed/@ObjectLink装饰器进行深度观测，由于@ObjectLink只能观察一层属性导致的页面不刷新。当@ObjectLink修饰的变量含有嵌套类对象时，组件修改嵌套对象的属性，无法刷新UI。因为@ObjectLink仅能观察其代理的属性，无法观察到代理属性的嵌套对象属性。参考：[复杂嵌套对象属性更改失效](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-observed-and-objectlink#复杂嵌套对象属性更改失效)。每一层被嵌套的对象都需要封装一个子组件并用@ObjectLink接收，才能实现页面刷新。1. 使用@Observed分别修饰双层嵌套的类。
+- 场景二：使用了@Observed/@ObjectLink装饰器进行深度观测，由于@ObjectLink只能观察一层属性导致的页面不刷新。当@ObjectLink修饰的变量含有嵌套类对象时，组件修改嵌套对象的属性，无法刷新UI。因为@ObjectLink仅能观察其代理的属性，无法观察到代理属性的嵌套对象属性。参考：[复杂嵌套对象属性更改失效](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-observed-and-objectlink#复杂嵌套对象属性更改失效)。每一层被嵌套的对象都需要封装一个子组件并用@ObjectLink接收，才能实现页面刷新。
 
-2. 自定义子组件SceneThreeFirstChild和SceneThreeSecondChild分别接收对应层级的对象，注意@ObjectLink装饰器不能在@Entry装饰的自定义组件中使用。示例代码如下：
+1. 使用@Observed分别修饰双层嵌套的类。
+
+2. 自定义子组件SceneThreeFirstChild和SceneThreeSecondChild分别接收对应层级的对象，注意@ObjectLink装饰器不能在@Entry装饰的自定义组件中使用。
+
+  示例代码如下：
 ```text
 @Observed
 class PerInfo {
   name: string;
   age: number;
   friends: PerInfo[];
-
 
   constructor(model: PerInfoModel) {
     this.name = model.name;
@@ -354,18 +336,15 @@ class PerInfo {
   }
 }
 
-
 interface PerInfoModel {
   name: string;
   age: number;
   friends: PerInfoModel[];
 }
 
-
 @Component
 struct SceneTwoFirstChild {
-  @ObjectLink info: PerInfo; // 必须创建子组件，并用@ObjectLink接收数据。
-
+  @ObjectLink info: PerInfo; <em>// 必须创建子组件，并用@ObjectLink接收数据。</em>
 
   build() {
     Column({ space: 10 }) {
@@ -388,11 +367,9 @@ struct SceneTwoFirstChild {
   }
 }
 
-
 @Component
 struct SceneTwoSecondChild {
-  @ObjectLink info: PerInfo; // 必须创建子组件，并用@ObjectLink接收数据。
-
+  @ObjectLink info: PerInfo; <em>// 必须创建子组件，并用@ObjectLink接收数据。</em>
 
   build() {
     Column({ space: 10 }) {
@@ -409,7 +386,6 @@ struct SceneTwoSecondChild {
     };
   }
 }
-
 
 @Entry
 @Component
@@ -431,7 +407,6 @@ struct SceneTwo {
     ]
   });
 
-
   build() {
     Column({ space: 15 }) {
       SceneTwoFirstChild({ info: this.infos });
@@ -441,10 +416,12 @@ struct SceneTwo {
   }
 }
 ```
- 场景二实现效果如下，嵌套对象的每个层级的属性都可以实现UI刷新：
+
+
+  场景二实现效果如下，嵌套对象的每个层级的属性都可以实现UI刷新：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/Oy8uaNKhRxK2tBL93N5tKg/zh-cn_image_0000002628567138.png?HW-CC-KV=V1&HW-CC-Date=20260811T005714Z&HW-CC-Expire=86400&HW-CC-Sign=C84A96F60B6F084DAD1F3A9C07EC5D91907EAC49420AA10E9D738F15019547B3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/iH6rmNpLS0SwPQls9cr65g/zh-cn_image_0000002689535616.png?HW-CC-KV=V1&HW-CC-Date=20260911T072742Z&HW-CC-Expire=86400&HW-CC-Sign=8EAA7F29E8C93F5DC2F9BB4B1CBCCA3872E14657994D1009207FD5A43B43B680)
 
 
  
@@ -455,61 +432,87 @@ struct SceneTwo {
 1. 初次创建时ListItem对应的，keyGenerator如下：
 
 | ListItem显示内容 | keyGenerator |
+
 | --- | --- |
+
 | 姓名小张 年龄12 | 0__{"name":"小张","age":12} |
+
 | 姓名小赵 年龄13 | 1__{"name":"小赵","age":13} |
+
 | 姓名小李 年龄14 | 2__{"name":"小李","age":14} |
+
 | 姓名小王 年龄15 | 3__{"name":"小王","age":15} |
 
 2. 修改小张年龄属性为13，keyGenerator如下：
 
 | ListItem显示内容 | keyGenerator |
+
 | --- | --- |
+
 | 姓名小张 年龄13 | 0__{"name":"小张","age":12} |
+
 | 姓名小赵 年龄13 | 1__{"name":"小赵","age":13} |
+
 | 姓名小李 年龄14 | 2__{"name":"小李","age":14} |
+
 | 姓名小王 年龄15 | 3__{"name":"小王","age":15} |
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/2s7FSuiGRBqKol69gNBecQ/notice_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260811T005714Z&HW-CC-Expire=86400&HW-CC-Sign=21BAB0EE02802DA1735E6227F107259AD46E8D884B99B72B64CF9B0AC85FA45F)
- 
+> [!NOTE]
+> 对象数组中对象属性的修改不会刷新keyGenerator，只有修改数组会触发ForEach重新刷新，从而刷新keyGenerator。此时刷新不依靠组件重建，而是依靠状态管理刷新。
 
-  对象数组中对象属性的修改不会刷新keyGenerator，只有修改数组会触发ForEach重新刷新，从而刷新keyGenerator。此时刷新不依靠组件重建，而是依靠状态管理刷新。
 
 3. 通过修改数组项，修改小张年龄属性为88，keyGenerator如下：
 
 | ListItem显示内容 | keyGenerator |
+
 | --- | --- |
+
 | 姓名小张 年龄88 | 0__{"name":"小张","age":88} |
+
 | 姓名小赵 年龄13 | 1__{"name":"小赵","age":13} |
+
 | 姓名小李 年龄14 | 2__{"name":"小李","age":14} |
+
 | 姓名小王 年龄15 | 3__{"name":"小王","age":15} |
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/96npjnjHQ1O_j3oz20dDGA/notice_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260811T005714Z&HW-CC-Expire=86400&HW-CC-Sign=F0F7185087346E7620F6307D34331ED400E5E3023CB869F9708B85530EDFF22C)
- 
+> [!NOTE]
+> 修改的数组项，会触发keyGenerator刷新，使得ForEach重建小张所在的组件，并将小张的年龄刷新为88。
 
-  修改的数组项，会触发keyGenerator刷新，使得ForEach重建小张所在的组件，并将小张的年龄刷新为88。
 
 4. 修改小张年龄属性为89，keyGenerator如下：（实现原理与第2步一致，都是状态管理深层嵌套对象属性的刷新，没有直接修改数组属于ForEach的非首次渲染。）
 
 | ListItem显示内容 | keyGenerator |
+
 | --- | --- |
+
 | 姓名小张 年龄89 | 0__{"name":"小张","age":88} |
+
 | 姓名小赵 年龄13 | 1__{"name":"小赵","age":13} |
+
 | 姓名小李 年龄14 | 2__{"name":"小李","age":14} |
+
 | 姓名小王 年龄15 | 3__{"name":"小王","age":15} |
 
 5. 重置小张年龄属性为88，keyGenerator如下：
 
 | ListItem显示内容 | keyGenerator |
+
 | --- | --- |
+
 | 姓名小张 年龄89 | 0__{"name":"小张","age":88} |
+
 | 姓名小赵 年龄13 | 1__{"name":"小赵","age":13} |
+
 | 姓名小李 年龄14 | 2__{"name":"小李","age":14} |
+
 | 姓名小王 年龄15 | 3__{"name":"小王","age":15} |
 
-  发现第5步中无论是ListItem显示内容与keyGenerator都未发生变化。原因是通过替换数组项或数组是是触发的ForEach刷新，刷新的规则是刷新前后的keyGenerator不一致才会刷新，但是通过对比上述表格中的keyGenerator发现：第3步、第4步、第5步小张所在的组件对应的keyGenerator都没有变化，所以不会触发ForEach重建刷新。
+  
+> [!NOTE]
+> 发现第5步中无论是ListItem显示内容与keyGenerator都未发生变化。原因是通过替换数组项或数组触发的ForEach刷新，刷新的规则是刷新前后的keyGenerator不一致才会刷新，但是通过对比上述表格中的keyGenerator发现：第3步、第4步、第5步小张所在的组件对应的keyGenerator都没有变化，所以不会触发ForEach重建刷新。
+
 
   **综上所述**：当数据是对象数组时，若同时存在状态管理的对象深层嵌套的属性刷新与ForEach针对数组变化的首次渲染刷新时，应尽量避免使用两种方式交替刷新UI。若无法避免可参考以下解决方案：
 
@@ -521,18 +524,15 @@ class SceneThreeOptionOnePerson {
   name: string;
   age: number;
 
-
   constructor(name: string, age: number) {
     this.name = name;
     this.age = age;
   }
 }
 
-
 @Component
 struct SceneThreeOptionOneChild {
   @ObjectLink person: SceneThreeOptionOnePerson;
-
 
   build() {
     Column() {
@@ -546,7 +546,6 @@ struct SceneThreeOptionOneChild {
   }
 }
 
-
 @Entry
 @Component
 struct SceneThreeOptionOne {
@@ -557,14 +556,13 @@ struct SceneThreeOptionOne {
     new SceneThreeOptionOnePerson('小王', 15),
   ];
 
-
   build() {
     Column({ space: 10 }) {
       ForEach(this.persons, (curPerson: SceneThreeOptionOnePerson) => {
         SceneThreeOptionOneChild({ person: curPerson });
       }, (item: SceneThreeOptionOnePerson, index: number) => {
-        console.info(`${index}'__'${JSON.stringify(item)}${JSON.stringify(Date.now())}`); // 打印keyGenerator
-        return index + '__' + JSON.stringify(item) + JSON.stringify(Date.now()); // 加入Date.now()避免重复
+        console.info(`${index}'__'${JSON.stringify(item)}${JSON.stringify(Date.now())}`); <em>// 打印keyGenerator</em>
+        return index + '__' + JSON.stringify(item) + JSON.stringify(Date.now()); <em>// 加入Date.now()避免重复</em>
       });
       Button('修改对象数组属性-修改小张年龄为+1')
         .onClick(() => {
@@ -591,8 +589,7 @@ struct SceneThreeOptionOne {
 class SceneThreeOptionTwoPerson {
   name: string;
   age: number;
-  id: string; // 给每个对象设置一个id
-
+  id: string; <em>// 给每个对象设置一个id</em>
 
   constructor(name: string, age: number, id: string) {
     this.name = name;
@@ -601,11 +598,9 @@ class SceneThreeOptionTwoPerson {
   }
 }
 
-
 @Component
 struct SceneThreeOptionTwoChild {
   @ObjectLink person: SceneThreeOptionTwoPerson;
-
 
   build() {
     Column() {
@@ -619,7 +614,6 @@ struct SceneThreeOptionTwoChild {
   }
 }
 
-
 @Entry
 @Component
 struct SceneThreeOptionTwo {
@@ -630,12 +624,11 @@ struct SceneThreeOptionTwo {
     new SceneThreeOptionTwoPerson('小王', 15, Date.now().toString()),
   ];
 
-
   build() {
     Column({ space: 10 }) {
       ForEach(this.persons, (curPerson: SceneThreeOptionTwoPerson) => {
         SceneThreeOptionTwoChild({ person: curPerson });
-      }); // 使用默认的keyGenerator创建规则
+      }); <em>// 使用默认的keyGenerator创建规则</em>
       Button('修改对象数组属性-修改小张年龄为+1')
         .onClick(() => {
           this.persons[0].age++;
@@ -643,7 +636,7 @@ struct SceneThreeOptionTwo {
         });
       Button('替换对象数组元素-修改小张年龄为88')
         .onClick(() => {
-          // 此处以当前时间作为对象的id
+          <em>// 此处以当前时间作为对象的id</em>
           this.persons.splice(0, 1, new SceneThreeOptionTwoPerson('小张', 88, Date.now().toString()));
           console.info(`当前小张的年龄为${JSON.stringify(this.persons[0])}`);
         });
@@ -657,13 +650,13 @@ struct SceneThreeOptionTwo {
  场景三修复效果如下，重复上述第5步时，发现可以重建刷新UI将小张的年龄从89重置为88：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/NusJZJ6ZSmWVGK4_FJfstQ/zh-cn_image_0000002658926439.png?HW-CC-KV=V1&HW-CC-Date=20260811T005714Z&HW-CC-Expire=86400&HW-CC-Sign=58256BD78AD372052397FA952CF6711888FF2941CD3B9048D5925AA352FD9567)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/QyvsUjz7QPWt553HPlSGgw/zh-cn_image_0000002689399358.png?HW-CC-KV=V1&HW-CC-Date=20260911T072742Z&HW-CC-Expire=86400&HW-CC-Sign=900E576748CB80F7047454F37F542E7D8441DECC4DB2A33F113D29F34BF5B91A)
 
 
  
  
 
-#### 常见FAQ
+## 常见FAQ
 
 Q：@ObjectLink装饰器是否能在@Entry装饰的自定义组件中使用？
  
@@ -691,6 +684,6 @@ A：@State可以监听数组的增删，实现UI刷新。
  
  
 
-#### 总结
-1. @State装饰器仅能观察到第一层的变化。对于多层嵌套的情况，比如对象数组等，他们的第二层的属性变化是无法观察到的。@Observed装饰的类，可以观察到属性的变化；@ObjectLink装饰器装饰的状态变量用于接收@Observed装饰的类的实例，和父组件中对应的状态变量建立双向数据绑定。使用时应遵循对应装饰器在官方指南的使用限制。
+## 总结
+1. @State装饰器仅能观察到**第一层**的变化。对于多层嵌套的情况，比如对象数组等，他们的第二层的属性变化是无法观察到的。@Observed装饰的类，可以观察到**属性**的变化；@ObjectLink装饰器装饰的状态变量用于接收@Observed装饰的类的实例，和父组件中对应的状态变量建立**双向数据绑定**。使用时应遵循对应装饰器在官方指南的使用限制。
 2. 当数据是对象数组时，若存在状态管理的对象深层嵌套的属性刷新与ForEach针对数组变化的首次渲染刷新时，应尽量避免使用两种方式交替刷新UI。若无法避免可重写系统默认的keyGenerator参数，加入每次修改的当前时间等唯一性的参数，保证前后两次依靠ForEach首次渲染刷新时，keyGenerator不会重复。

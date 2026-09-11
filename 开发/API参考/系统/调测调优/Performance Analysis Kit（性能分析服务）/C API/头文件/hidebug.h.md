@@ -1,13 +1,14 @@
 # hidebug.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hidebug-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义HiDebug模块的调试功能，提供CPU使用率监控、内存信息查询、trace采集、栈回溯、性能采样、内存导出监听、维测信息记录等能力，帮助开发者进行应用性能分析、资源管理和问题诊断。
 
@@ -23,15 +24,18 @@
 
 
 
-#### 汇总
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 汇总
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 函数
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -73,15 +77,17 @@
 
 
 
-#### 函数说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 函数说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### OH_HiDebug_GetSystemCpuUsage()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### OH_HiDebug_GetSystemCpuUsage()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 double OH_HiDebug_GetSystemCpuUsage()
@@ -95,6 +101,7 @@ double OH_HiDebug_GetSystemCpuUsage()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | double | 返回系统CPU资源占用情况百分比。如果返回结果为0，可能的原因是获取失败。 |
@@ -102,9 +109,10 @@ double OH_HiDebug_GetSystemCpuUsage()
 
 
 
-#### OH_HiDebug_GetAppCpuUsage()
+### OH_HiDebug_GetAppCpuUsage()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 double OH_HiDebug_GetAppCpuUsage()
@@ -118,6 +126,7 @@ double OH_HiDebug_GetAppCpuUsage()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | double | 返回进程的CPU使用率百分比。如果返回结果为0，可能因当前应用的CPU使用率过低导致。 |
@@ -125,9 +134,10 @@ double OH_HiDebug_GetAppCpuUsage()
 
 
 
-#### OH_HiDebug_GetAppThreadCpuUsage()
+### OH_HiDebug_GetAppThreadCpuUsage()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 HiDebug_ThreadCpuUsagePtr OH_HiDebug_GetAppThreadCpuUsage()
@@ -141,6 +151,7 @@ HiDebug_ThreadCpuUsagePtr OH_HiDebug_GetAppThreadCpuUsage()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | HiDebug_ThreadCpuUsagePtr | 返回所有线程CPU使用情况，见HiDebug_ThreadCpuUsagePtr。 若返回结果为null，可能因未获取到线程相关数据所致。 |
@@ -148,9 +159,10 @@ HiDebug_ThreadCpuUsagePtr OH_HiDebug_GetAppThreadCpuUsage()
 
 
 
-#### OH_HiDebug_FreeThreadCpuUsage()
+### OH_HiDebug_FreeThreadCpuUsage()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_HiDebug_FreeThreadCpuUsage(HiDebug_ThreadCpuUsagePtr *threadCpuUsage)
@@ -164,6 +176,7 @@ void OH_HiDebug_FreeThreadCpuUsage(HiDebug_ThreadCpuUsagePtr *threadCpuUsage)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | HiDebug_ThreadCpuUsagePtr *threadCpuUsage | 应用的所有线程可用CPU使用缓冲区指针，见HiDebug_ThreadCpuUsagePtr。传入的参数是要由OH_HiDebug_GetAppThreadCpuUsage()得到的。传入后该函数将释放指向的线程CPU使用数据结构，释放后该指针不可再被使用。 |
@@ -171,9 +184,10 @@ void OH_HiDebug_FreeThreadCpuUsage(HiDebug_ThreadCpuUsagePtr *threadCpuUsage)
 
 
 
-#### OH_HiDebug_GetSystemMemInfo()
+### OH_HiDebug_GetSystemMemInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_HiDebug_GetSystemMemInfo(HiDebug_SystemMemInfo *systemMemInfo)
@@ -187,6 +201,7 @@ void OH_HiDebug_GetSystemMemInfo(HiDebug_SystemMemInfo *systemMemInfo)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | HiDebug_SystemMemInfo *systemMemInfo | 表示指向HiDebug_SystemMemInfo。函数调用后，若结构体数据为空，则表明调用失败。 |
@@ -194,9 +209,10 @@ void OH_HiDebug_GetSystemMemInfo(HiDebug_SystemMemInfo *systemMemInfo)
 
 
 
-#### OH_HiDebug_GetAppNativeMemInfo()
+### OH_HiDebug_GetAppNativeMemInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_HiDebug_GetAppNativeMemInfo(HiDebug_NativeMemInfo *nativeMemInfo)
@@ -210,6 +226,7 @@ void OH_HiDebug_GetAppNativeMemInfo(HiDebug_NativeMemInfo *nativeMemInfo)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | HiDebug_NativeMemInfo *nativeMemInfo | 表示指向HiDebug_NativeMemInfo。函数调用后，若结构体数据为空，则表明调用失败。 |
@@ -217,9 +234,10 @@ void OH_HiDebug_GetAppNativeMemInfo(HiDebug_NativeMemInfo *nativeMemInfo)
 
 
 
-#### OH_HiDebug_GetAppNativeMemInfoWithCache()
+### OH_HiDebug_GetAppNativeMemInfoWithCache()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_HiDebug_GetAppNativeMemInfoWithCache(HiDebug_NativeMemInfo *nativeMemInfo, bool forceRefresh)
@@ -233,6 +251,7 @@ void OH_HiDebug_GetAppNativeMemInfoWithCache(HiDebug_NativeMemInfo *nativeMemInf
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | HiDebug_NativeMemInfo *nativeMemInfo | 表示指向HiDebug_NativeMemInfo。函数调用后，若结构体数据为空，则表明调用失败。 |
@@ -241,9 +260,10 @@ void OH_HiDebug_GetAppNativeMemInfoWithCache(HiDebug_NativeMemInfo *nativeMemInf
 
 
 
-#### OH_HiDebug_GetAppMemoryLimit()
+### OH_HiDebug_GetAppMemoryLimit()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_HiDebug_GetAppMemoryLimit(HiDebug_MemoryLimit *memoryLimit)
@@ -257,6 +277,7 @@ void OH_HiDebug_GetAppMemoryLimit(HiDebug_MemoryLimit *memoryLimit)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | HiDebug_MemoryLimit *memoryLimit | 表示指向HiDebug_MemoryLimit。函数调用后，若结构体数据为空，则表明调用失败。 |
@@ -264,9 +285,10 @@ void OH_HiDebug_GetAppMemoryLimit(HiDebug_MemoryLimit *memoryLimit)
 
 
 
-#### OH_HiDebug_StartAppTraceCapture()
+### OH_HiDebug_StartAppTraceCapture()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 HiDebug_ErrorCode OH_HiDebug_StartAppTraceCapture(HiDebug_TraceFlag flag, uint64_t tags, uint32_t limitSize, char* fileName, uint32_t length)
@@ -280,6 +302,7 @@ HiDebug_ErrorCode OH_HiDebug_StartAppTraceCapture(HiDebug_TraceFlag flag, uint64
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | HiDebug_TraceFlag flag | 采集线程trace方式。 |
@@ -291,6 +314,7 @@ HiDebug_ErrorCode OH_HiDebug_StartAppTraceCapture(HiDebug_TraceFlag flag, uint64
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | HiDebug_ErrorCode | 0 - 成功。 HIDEBUG_INVALID_ARGUMENT 401 - fileName参数为空指针或者传入的length参数过小或者limitSize参数小于等于0。 11400102 - 已经开启了一个trace。 11400103 - 没有权限去开启trace。 11400104 - 系统内部错误。 |
@@ -298,9 +322,10 @@ HiDebug_ErrorCode OH_HiDebug_StartAppTraceCapture(HiDebug_TraceFlag flag, uint64
 
 
 
-#### OH_HiDebug_StopAppTraceCapture()
+### OH_HiDebug_StopAppTraceCapture()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 HiDebug_ErrorCode OH_HiDebug_StopAppTraceCapture()
@@ -314,6 +339,7 @@ HiDebug_ErrorCode OH_HiDebug_StopAppTraceCapture()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | HiDebug_ErrorCode | 0 - 成功。 11400104 - 系统内部错误。 11400105 - 当前没有trace正在运行。 |
@@ -321,9 +347,10 @@ HiDebug_ErrorCode OH_HiDebug_StopAppTraceCapture()
 
 
 
-#### OH_HiDebug_RequestTrace()
+### OH_HiDebug_RequestTrace()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 HiDebug_ErrorCode OH_HiDebug_RequestTrace(OH_HiDebug_RequestTraceConfig *config, OH_HiDebug_RequestTraceCallback callback)
@@ -337,6 +364,7 @@ HiDebug_ErrorCode OH_HiDebug_RequestTrace(OH_HiDebug_RequestTraceConfig *config,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_HiDebug_RequestTraceConfig *config | trace采集的采集配置参数，参考OH_HiDebug_RequestTraceConfig。 |
@@ -345,6 +373,7 @@ HiDebug_ErrorCode OH_HiDebug_RequestTrace(OH_HiDebug_RequestTraceConfig *config,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | HiDebug_ErrorCode | 返回结果码： HIDEBUG_SUCCESS：采集成功。 HIDEBUG_TRACE_ABNORMAL：远程服务异常或状态异常。 OH_HIDEBUG_TRACE_STORAGE_LIMIT：trace存储达到限制。目录下存储的trace文件大于等于3份时，返回失败。 HIDEBUG_RESOURCE_UNAVAILABLE：采集资源限制。 |
@@ -352,9 +381,10 @@ HiDebug_ErrorCode OH_HiDebug_RequestTrace(OH_HiDebug_RequestTraceConfig *config,
 
 
 
-#### OH_HiDebug_GetGraphicsMemory()
+### OH_HiDebug_GetGraphicsMemory()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 HiDebug_ErrorCode OH_HiDebug_GetGraphicsMemory(uint32_t *value)
@@ -368,12 +398,14 @@ HiDebug_ErrorCode OH_HiDebug_GetGraphicsMemory(uint32_t *value)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t *value | 指向用来保存接口获取到的应用显存大小（单位KB）的变量的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -382,9 +414,10 @@ HiDebug_ErrorCode OH_HiDebug_GetGraphicsMemory(uint32_t *value)
 
 
 
-#### OH_HiDebug_BacktraceFromFp()
+### OH_HiDebug_BacktraceFromFp()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_HiDebug_BacktraceFromFp(HiDebug_Backtrace_Object object, void* startFp, void** pcArray, int size)
@@ -398,6 +431,7 @@ int OH_HiDebug_BacktraceFromFp(HiDebug_Backtrace_Object object, void* startFp, v
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | HiDebug_Backtrace_Object object | 由OH_HiDebug_CreateBacktraceObject接口获取到的用来栈回溯的对象。 |
@@ -408,6 +442,7 @@ int OH_HiDebug_BacktraceFromFp(HiDebug_Backtrace_Object object, void* startFp, v
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 成功回溯并写入到pcArray中的栈帧数量。如果返回结果为0，原因可能是栈回溯失败。 |
@@ -415,9 +450,10 @@ int OH_HiDebug_BacktraceFromFp(HiDebug_Backtrace_Object object, void* startFp, v
 
 
 
-#### OH_HiDebug_SymbolicAddressCallback()
+### OH_HiDebug_SymbolicAddressCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_HiDebug_SymbolicAddressCallback)(void* pc, void* arg, const HiDebug_StackFrame* frame)
@@ -431,6 +467,7 @@ typedef void (*OH_HiDebug_SymbolicAddressCallback)(void* pc, void* arg, const Hi
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | void* pc | 传入OH_HiDebug_SymbolicAddress接口的需要解析的pc地址。 |
@@ -440,9 +477,10 @@ typedef void (*OH_HiDebug_SymbolicAddressCallback)(void* pc, void* arg, const Hi
 
 
 
-#### OH_HiDebug_SymbolicAddress()
+### OH_HiDebug_SymbolicAddress()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 HiDebug_ErrorCode OH_HiDebug_SymbolicAddress(HiDebug_Backtrace_Object object, void* pc, void* arg, OH_HiDebug_SymbolicAddressCallback callback)
@@ -453,7 +491,7 @@ HiDebug_ErrorCode OH_HiDebug_SymbolicAddress(HiDebug_Backtrace_Object object, vo
 通过给定的pc地址获取详细的符号信息，该函数非异步信号安全。不能在异步信号处理函数中使用。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/SZfmZasDSlSpFqod2ydweQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071647Z&HW-CC-Expire=86400&HW-CC-Sign=56DAAF7412AB7ABA1DF533BF9FD4804D5B5CCB9EB3FFF62116ACB6E729DABA2C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/ozqRynqeRLuy6ZFz7ooYTA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072606Z&HW-CC-Expire=86400&HW-CC-Sign=3709210CEDE5882021FBA9506F4B4B9EA80CE1A7374AE9FA2679F13E0CCEA008)
 
 
 由于该接口涉及多次IO操作，耗时较长，建议不要在主线程中直接调用。
@@ -463,6 +501,7 @@ HiDebug_ErrorCode OH_HiDebug_SymbolicAddress(HiDebug_Backtrace_Object object, vo
 **起始版本：** 20
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |
@@ -474,6 +513,7 @@ HiDebug_ErrorCode OH_HiDebug_SymbolicAddress(HiDebug_Backtrace_Object object, vo
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | HiDebug_ErrorCode | 返回结果具体可参考HiDebug_ErrorCode： HIDEBUG_SUCCESS 成功获取到详细的栈信息，且该函数传入的callback被调用。 HIDEBUG_INVALID_ARGUMENT 无效参数。 HIDEBUG_INVALID_SYMBOLIC_PC_ADDRESS 无法根据传入的pc地址找到对应的符号。 |
@@ -481,9 +521,10 @@ HiDebug_ErrorCode OH_HiDebug_SymbolicAddress(HiDebug_Backtrace_Object object, vo
 
 
 
-#### OH_HiDebug_CreateBacktraceObject()
+### OH_HiDebug_CreateBacktraceObject()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 HiDebug_Backtrace_Object OH_HiDebug_CreateBacktraceObject(void)
@@ -494,7 +535,7 @@ HiDebug_Backtrace_Object OH_HiDebug_CreateBacktraceObject(void)
 创建一个用于栈回溯及栈解析的对象，该函数非异步信号安全。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/-Mh4T99hQ1i66tnzmM4tCQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071647Z&HW-CC-Expire=86400&HW-CC-Sign=242005794488105196D50CD781075E86D7A4731CF3F4CCF603D8BF076294CE21)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/u_ueXc9SThCzTGYxouTZFw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072606Z&HW-CC-Expire=86400&HW-CC-Sign=AFA2CF34257B91F27836848601CBFD942303BCACD8DE0737F2BF43D5273E1999)
 
 
 由于该接口涉及多次IO操作，耗时较长，建议不要在主线程中直接调用。
@@ -505,6 +546,7 @@ HiDebug_Backtrace_Object OH_HiDebug_CreateBacktraceObject(void)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | HiDebug_Backtrace_Object | 返回创建的对象的指针，当创建失败时返回NULL。 |
@@ -512,9 +554,10 @@ HiDebug_Backtrace_Object OH_HiDebug_CreateBacktraceObject(void)
 
 
 
-#### OH_HiDebug_DestroyBacktraceObject()
+### OH_HiDebug_DestroyBacktraceObject()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_HiDebug_DestroyBacktraceObject(HiDebug_Backtrace_Object object)
@@ -528,6 +571,7 @@ void OH_HiDebug_DestroyBacktraceObject(HiDebug_Backtrace_Object object)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | HiDebug_Backtrace_Object object | 需要被销毁的对象。 |
@@ -535,9 +579,10 @@ void OH_HiDebug_DestroyBacktraceObject(HiDebug_Backtrace_Object object)
 
 
 
-#### OH_HiDebug_SetMallocDispatchTable()
+### OH_HiDebug_SetMallocDispatchTable()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 HiDebug_ErrorCode OH_HiDebug_SetMallocDispatchTable(struct HiDebug_MallocDispatch *dispatchTable)
@@ -548,7 +593,7 @@ HiDebug_ErrorCode OH_HiDebug_SetMallocDispatchTable(struct HiDebug_MallocDispatc
 通过设置基础库C库中的MallocDispatch表，将原始内存操作函数（例如：malloc/free/calloc/realloc/mmap/munmap）临时替换为开发者自定义的内存操作函数。MallocDispatch表是基础库C库中封装malloc/calloc/realloc/free等内存操作函数的结构体，HiDebug_MallocDispatch只是MallocDispatch结构体的一部分。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/9923FCBYQgKT4athtp3C5Q/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071647Z&HW-CC-Expire=86400&HW-CC-Sign=4A08BCE65C96EE4F660CCF502187C7FB63FD1481F8F9E50B5D51455399A78366)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/naubU9rdR5mrXk0WQXjOPA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072606Z&HW-CC-Expire=86400&HW-CC-Sign=369D24D77DDFD320C2F804368003949B1ACFF98004F964BBA3A3074384CF1D7A)
 
 
 禁止在自定义内存操作函数中直接调用libc标准库中的malloc/free/calloc/realloc/mmap/munmap等内存操作函数，否则会导致死锁。
@@ -561,12 +606,14 @@ HiDebug_ErrorCode OH_HiDebug_SetMallocDispatchTable(struct HiDebug_MallocDispatc
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct HiDebug_MallocDispatch *dispatchTable | 指向开发者自定义内存操作函数HiDebug_MallocDispatch结构体指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -575,9 +622,10 @@ HiDebug_ErrorCode OH_HiDebug_SetMallocDispatchTable(struct HiDebug_MallocDispatc
 
 
 
-#### OH_HiDebug_GetDefaultMallocDispatchTable()
+### OH_HiDebug_GetDefaultMallocDispatchTable()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 HiDebug_MallocDispatch* OH_HiDebug_GetDefaultMallocDispatchTable(void)
@@ -591,6 +639,7 @@ HiDebug_MallocDispatch* OH_HiDebug_GetDefaultMallocDispatchTable(void)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | HiDebug_MallocDispatch* | 当前C库默认的HiDebug_MallocDispatch结构体指针。 |
@@ -598,9 +647,10 @@ HiDebug_MallocDispatch* OH_HiDebug_GetDefaultMallocDispatchTable(void)
 
 
 
-#### OH_HiDebug_RestoreMallocDispatchTable()
+### OH_HiDebug_RestoreMallocDispatchTable()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_HiDebug_RestoreMallocDispatchTable(void)
@@ -614,9 +664,10 @@ void OH_HiDebug_RestoreMallocDispatchTable(void)
 
 
 
-#### OH_HiDebug_GetGraphicsMemorySummary()
+### OH_HiDebug_GetGraphicsMemorySummary()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 HiDebug_ErrorCode OH_HiDebug_GetGraphicsMemorySummary(uint32_t interval, HiDebug_GraphicsMemorySummary *summary)
@@ -630,6 +681,7 @@ HiDebug_ErrorCode OH_HiDebug_GetGraphicsMemorySummary(uint32_t interval, HiDebug
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t interval | 当显存数据缓存值存在时间超过设定间隔interval（单位：秒）时，接口会获取最新的显存数据并更新缓存；否则，接口将直接返回缓存值。 interval的取值范围为[2, 3600]，若传入的interval超出取值范围时，将使用300作为默认值。 |
@@ -638,6 +690,7 @@ HiDebug_ErrorCode OH_HiDebug_GetGraphicsMemorySummary(uint32_t interval, HiDebug
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | HiDebug_ErrorCode | 返回结果具体可参考HiDebug_ErrorCode： HIDEBUG_SUCCESS 成功获取到应用显存数据。 HIDEBUG_INVALID_ARGUMENT 无效参数。 HIDEBUG_TRACE_ABNORMAL 系统内部错误。 |
@@ -645,9 +698,10 @@ HiDebug_ErrorCode OH_HiDebug_GetGraphicsMemorySummary(uint32_t interval, HiDebug
 
 
 
-#### OH_HiDebug_ThreadLiteSamplingCallback()
+### OH_HiDebug_ThreadLiteSamplingCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_HiDebug_ThreadLiteSamplingCallback)(const char* stacks)
@@ -661,6 +715,7 @@ typedef void (*OH_HiDebug_ThreadLiteSamplingCallback)(const char* stacks)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char* stacks | 采样得到的调用栈内容。 |
@@ -668,9 +723,10 @@ typedef void (*OH_HiDebug_ThreadLiteSamplingCallback)(const char* stacks)
 
 
 
-#### OH_HiDebug_RequestThreadLiteSampling()
+### OH_HiDebug_RequestThreadLiteSampling()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 HiDebug_ErrorCode OH_HiDebug_RequestThreadLiteSampling(HiDebug_ProcessSamplerConfig* config, OH_HiDebug_ThreadLiteSamplingCallback stacksCallback)
@@ -684,6 +740,7 @@ HiDebug_ErrorCode OH_HiDebug_RequestThreadLiteSampling(HiDebug_ProcessSamplerCon
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | HiDebug_ProcessSamplerConfig* config | 指向Perf采样配置结构体HiDebug_ProcessSamplerConfig的指针。配置参数决定了采样的具体行为，如采样频率、目标线程等。 |
@@ -692,6 +749,7 @@ HiDebug_ErrorCode OH_HiDebug_RequestThreadLiteSampling(HiDebug_ProcessSamplerCon
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | HiDebug_ErrorCode | 返回结果码： HIDEBUG_SUCCESS：采样成功完成。 HIDEBUG_INVALID_ARGUMENT：无效参数。 HIDEBUG_NOT_SUPPORTED：当前设备不支持Perf采样。 HIDEBUG_UNDER_SAMPLING：已有采样任务正在执行中。 HIDEBUG_RESOURCE_UNAVAILABLE：采样资源不足或已达调用上限。 |
@@ -699,9 +757,10 @@ HiDebug_ErrorCode OH_HiDebug_RequestThreadLiteSampling(HiDebug_ProcessSamplerCon
 
 
 
-#### OH_HiDebug_SetCrashObj()
+### OH_HiDebug_SetCrashObj()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 uint64_t OH_HiDebug_SetCrashObj(HiDebug_CrashObjType type, void* addr)
@@ -715,6 +774,7 @@ uint64_t OH_HiDebug_SetCrashObj(HiDebug_CrashObjType type, void* addr)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | HiDebug_CrashObjType type | 维测信息的数据类型HiDebug_CrashObjType。 |
@@ -723,6 +783,7 @@ uint64_t OH_HiDebug_SetCrashObj(HiDebug_CrashObjType type, void* addr)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | uint64_t | 上次设置的维测信息的对象，如果上次没有设置则为0。 |
@@ -730,9 +791,10 @@ uint64_t OH_HiDebug_SetCrashObj(HiDebug_CrashObjType type, void* addr)
 
 
 
-#### OH_HiDebug_ResetCrashObj()
+### OH_HiDebug_ResetCrashObj()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_HiDebug_ResetCrashObj(uint64_t crashObj)
@@ -746,6 +808,7 @@ void OH_HiDebug_ResetCrashObj(uint64_t crashObj)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint64_t crashObj | 函数OH_HiDebug_SetCrashObj的返回值。 |
@@ -753,9 +816,10 @@ void OH_HiDebug_ResetCrashObj(uint64_t crashObj)
 
 
 
-#### OH_HiDebug_StartProfiler()
+### OH_HiDebug_StartProfiler()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 HiDebug_ErrorCode OH_HiDebug_StartProfiler(OH_HiDebug_ResourceType type, OH_HiDebug_ResProfilerConfig* config, OH_HiDebug_ProfilingCallback callback)
@@ -770,7 +834,7 @@ HiDebug_ErrorCode OH_HiDebug_StartProfiler(OH_HiDebug_ResourceType type, OH_HiDe
 若采集异常，则文件路径为NULL。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/98hAUh5KSIOtPOjy8oXtRg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071647Z&HW-CC-Expire=86400&HW-CC-Sign=A9BBB63A2309B19480C7C1B2B9A43EF5DF761D9E2BFFCFA5B4D1844672F5742A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/eZcHrEmuQTOVJPwpbRewWA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072606Z&HW-CC-Expire=86400&HW-CC-Sign=9951B4EBAE9FD9DC24D817238599278D07F41AD3F0203AC1BD8F8C408DAF0B40)
 
 1. 当前接口每24小时可调用10次；
 2. 采集资源的目标进程仅支持调用接口进程本身；
@@ -778,12 +842,14 @@ HiDebug_ErrorCode OH_HiDebug_StartProfiler(OH_HiDebug_ResourceType type, OH_HiDe
 4. 当接口与命令行工具或系统采集任务发生冲突时，将调用失败，并返回相应的错误码；
 5. 同一个应用如存在多个进程，此接口最多可同时启动4个；
 6. 采集结果将保存在应用沙箱/data/storage/el2/base/files/目录下，文件名为“资源采集类型-进程名-进程号-时间戳.htrace”。
+7. 从API版本26.0.0开始，该接口将尽量丢弃已释放内存调用栈数据，减少采集文件大小，进一步降低采集过程中的性能开销。
 
 
 
 **起始版本：** 24
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |
@@ -794,6 +860,7 @@ HiDebug_ErrorCode OH_HiDebug_StartProfiler(OH_HiDebug_ResourceType type, OH_HiDe
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | HiDebug_ErrorCode | 返回结果码： HIDEBUG_RES_PROF_SUCCESS：启动资源采集成功。 HIDEBUG_RES_PROF_INVALID_ARG：资源采集参数无效。 HIDEBUG_RES_PROF_INVALID_MAX_DURATION：资源采集最大持续时间参数无效。 HIDEBUG_RES_PROF_INVALID_FILTER_SIZE：资源采集过滤大小参数无效。 HIDEBUG_RES_PROF_INVALID_MAX_STACK_DEPTH：资源采集最大回栈深度参数无效。 HIDEBUG_RES_PROF_INVALID_STATISTICS_INTERVAL：资源采集统计间隔参数无效。 HIDEBUG_RES_PROF_INVALID_SAMPLE_INTERVAL：资源采集采样大小参数无效。 HIDEBUG_RES_PROF_INVALID_RESOURCE_TYPE：资源采集类型参数无效。 HIDEBUG_RES_PROF_PERMISSION_DENIED：资源采集权限不足，采集资源的目标进程仅支持调用接口进程本身。 HIDEBUG_RES_PROF_ALREADY_STARTED：资源采集重复启动。 HIDEBUG_RES_PROF_PROCESS_OVERLIMIT：资源采集进程数超出 4 个限制。 HIDEBUG_RES_PROF_CONFLICT：资源采集与命令行工具或系统采集任务冲突。 HIDEBUG_RES_PROF_DAILY_QUOTA_EXCEEDED：资源采集每日配额超出 10 次限制。 HIDEBUG_RES_PROF_CPU_OVERLOADED：系统 CPU 处于高负载状态，CPU 占用率超过 70%。 HIDEBUG_RES_PROF_MEM_PRESSURE_CRITICAL：内存可用空间紧张，可用空间少于 15%。 HIDEBUG_RES_PROF_STORAGE_PRESSURE_CRITICAL：存储可用空间紧张，可用空间少于 15%。 HIDEBUG_RES_PROF_FAILURE：启动资源采集失败。 |
@@ -801,9 +868,10 @@ HiDebug_ErrorCode OH_HiDebug_StartProfiler(OH_HiDebug_ResourceType type, OH_HiDe
 
 
 
-#### OH_HiDebug_StopProfiler()
+### OH_HiDebug_StopProfiler()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 HiDebug_ErrorCode OH_HiDebug_StopProfiler(void)
@@ -817,6 +885,7 @@ HiDebug_ErrorCode OH_HiDebug_StopProfiler(void)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | HiDebug_ErrorCode | 返回结果码： HIDEBUG_RES_PROF_SUCCESS：已成功停止资源采集。 HIDEBUG_RES_PROF_NOT_STARTED：资源采集未启动，停止失败。 HIDEBUG_RES_PROF_FAILURE：停止资源采集失败。 |
@@ -824,9 +893,10 @@ HiDebug_ErrorCode OH_HiDebug_StopProfiler(void)
 
 
 
-#### OH_HiDebug_MemDumpListener()
+### OH_HiDebug_MemDumpListener()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef bool (*OH_HiDebug_MemDumpListener)(int32_t fd, OH_HiDebug_MemListenerType tag, bool mayReportToOEM, const char* arg)
@@ -840,6 +910,7 @@ typedef bool (*OH_HiDebug_MemDumpListener)(int32_t fd, OH_HiDebug_MemListenerTyp
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | int32_t fd | 写入内存数据的应用程序文件描述符。 |
@@ -850,6 +921,7 @@ typedef bool (*OH_HiDebug_MemDumpListener)(int32_t fd, OH_HiDebug_MemListenerTyp
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 操作结果： true：内存数据写入成功。 false：写入失败。 |
@@ -857,9 +929,10 @@ typedef bool (*OH_HiDebug_MemDumpListener)(int32_t fd, OH_HiDebug_MemListenerTyp
 
 
 
-#### OH_HiDebug_RegisterMemDumpListener()
+### OH_HiDebug_RegisterMemDumpListener()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 HiDebug_ErrorCode OH_HiDebug_RegisterMemDumpListener(const char* name, OH_HiDebug_MemDumpListener listener)
@@ -877,6 +950,7 @@ HiDebug_ErrorCode OH_HiDebug_RegisterMemDumpListener(const char* name, OH_HiDebu
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char* name | 监听器的唯一标识。用于标识本次注册的监听，注销时需传入相同的name。 相同name只能注册一次，重复注册将返回HIDEBUG_INVALID_ARGUMENT；如需更新，请先注销原监听器。 |
@@ -885,6 +959,7 @@ HiDebug_ErrorCode OH_HiDebug_RegisterMemDumpListener(const char* name, OH_HiDebu
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | HiDebug_ErrorCode | 返回结果码： HIDEBUG_SUCCESS：操作成功。 HIDEBUG_INVALID_ARGUMENT：无效参数。 |
@@ -892,9 +967,10 @@ HiDebug_ErrorCode OH_HiDebug_RegisterMemDumpListener(const char* name, OH_HiDebu
 
 
 
-#### OH_HiDebug_UnregisterMemDumpListener()
+### OH_HiDebug_UnregisterMemDumpListener()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 HiDebug_ErrorCode OH_HiDebug_UnregisterMemDumpListener(const char* name)
@@ -908,12 +984,14 @@ HiDebug_ErrorCode OH_HiDebug_UnregisterMemDumpListener(const char* name)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char* name | 监听器的唯一标识。需要与注册时传入的name保持一致。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -922,9 +1000,10 @@ HiDebug_ErrorCode OH_HiDebug_UnregisterMemDumpListener(const char* name)
 
 
 
-#### OH_HiDebug_AcquireAsyncContext()
+### OH_HiDebug_AcquireAsyncContext()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 uint64_t OH_HiDebug_AcquireAsyncContext()
@@ -935,7 +1014,7 @@ uint64_t OH_HiDebug_AcquireAsyncContext()
 Profiler辅助接口，获取一个AsyncContext供后续使用。对应的释放函数为：[OH_HiDebug_ReleaseAsyncContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hidebug-h#oh_hidebug_releaseasynccontext)。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/7YHdTYckSXuoHtKUMCmhNw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071647Z&HW-CC-Expire=86400&HW-CC-Sign=56A4F3547B87895DC08D00ECBDF51AA46F69D4D61D4147439553CC92A34C69F7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/Nk2yLDOXQaGewH7PUrNsSw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072606Z&HW-CC-Expire=86400&HW-CC-Sign=CE8E584EC4543748AA3D74FC51A4873E8F98D940999242F7C6C7878012A4E77D)
 
 
 该接口仅支持ARM64架构，且仅可在debug版本应用中使用。
@@ -946,6 +1025,7 @@ Profiler辅助接口，获取一个AsyncContext供后续使用。对应的释放
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | uint64_t | AsyncContext，异步线程上下文信息。 |
@@ -953,9 +1033,10 @@ Profiler辅助接口，获取一个AsyncContext供后续使用。对应的释放
 
 
 
-#### OH_HiDebug_PushAsyncContext()
+### OH_HiDebug_PushAsyncContext()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_HiDebug_PushAsyncContext(uint64_t ctx)
@@ -969,6 +1050,7 @@ Profiler辅助接口，将AsyncContext压入运行上下文栈表。
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint64_t ctx | 由OH_HiDebug_AcquireAsyncContext()获取的异步线程上下文。 |
@@ -976,9 +1058,10 @@ Profiler辅助接口，将AsyncContext压入运行上下文栈表。
 
 
 
-#### OH_HiDebug_PopAsyncContext()
+### OH_HiDebug_PopAsyncContext()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_HiDebug_PopAsyncContext(uint64_t ctx)
@@ -992,6 +1075,7 @@ Profiler辅助接口，将AsyncContext从运行上下文栈表中弹出。
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint64_t ctx | 由OH_HiDebug_AcquireAsyncContext()获取的异步线程上下文。 |
@@ -999,9 +1083,10 @@ Profiler辅助接口，将AsyncContext从运行上下文栈表中弹出。
 
 
 
-#### OH_HiDebug_ReleaseAsyncContext()
+### OH_HiDebug_ReleaseAsyncContext()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_HiDebug_ReleaseAsyncContext(uint64_t ctx)
@@ -1014,6 +1099,7 @@ Profiler辅助接口，将AsyncContext释放给系统。
 **起始版本：** 26.0.0
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |

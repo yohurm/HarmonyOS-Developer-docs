@@ -1,9 +1,9 @@
 # @ohos.telephony.vcard (VCard模块)
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-vcard
-**支持设备：** Phone | Tablet | Wearable
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 VCard是电子名片的文件格式标准，它可包含的信息有：姓名、地址资讯、电话号码、URL、logo、相片等。VCard模块提供了VCard能力，包括将VCard文件导入联系人数据库和将联系人数据导出为VCard文件等。
 
@@ -12,9 +12,10 @@ VCard是电子名片的文件格式标准，它可包含的信息有：姓名、
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ```text
 import { vcard } from '@kit.TelephonyKit';
@@ -22,13 +23,14 @@ import { vcard } from '@kit.TelephonyKit';
 
 
 
-#### vcard.importVCard
+## vcard.importVCard
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 importVCard(context: Context, filePath: string, accountId: number, callback: AsyncCallback&lt;void&gt;): void
 
-将VCard文件导入联系人数据库。使用callback异步回调。
+将VCard文件导入联系人数据库。适用于从其他设备或应用接收VCard文件后批量导入联系人、联系人数据恢复等场景。使用callback异步回调。
 
 **需要权限**：ohos.permission.WRITE_CONTACTS 和 ohos.permission.READ_CONTACTS
 
@@ -36,10 +38,11 @@ importVCard(context: Context, filePath: string, accountId: number, callback: Asy
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文。 |
-| filePath | string | 是 | VCF(vcard file)文件地址。 |
+| filePath | string | 是 | VCF(VCard file)文件地址。 |
 | accountId | number | 是 | 联系人账户ID。 |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数，返回导入成功或失败的状态码。 |
 
@@ -47,6 +50,7 @@ importVCard(context: Context, filePath: string, accountId: number, callback: Asy
 **错误码：**
 
 以下错误码的详细介绍请参见[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -67,7 +71,7 @@ import { vcard } from '@kit.TelephonyKit';
 
 class EntryAbility extends UIAbility {
     onWindowStageCreate(windowStage: window.WindowStage) {
-        let filePath: string = "/data/storage/vcf/contacts.vcf";
+        let filePath: string = '/data/storage/vcf/contacts.vcf';
         let accountId: number = 0;
         vcard.importVCard(this.context, filePath, accountId, (err: BusinessError) => {
             console.error(`callback: err->${JSON.stringify(err)}`);
@@ -78,13 +82,14 @@ class EntryAbility extends UIAbility {
 
 
 
-#### vcard.importVCard
+## vcard.importVCard
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 importVCard(context: Context, filePath: string, accountId?: number): Promise&lt;void&gt;
 
-将VCard文件导入联系人数据库。使用Promise异步回调。
+将VCard文件导入联系人数据库。适用于从其他设备或应用接收VCard文件后批量导入联系人、联系人数据恢复等场景。使用Promise异步回调。
 
 **需要权限**：ohos.permission.WRITE_CONTACTS 和 ohos.permission.READ_CONTACTS
 
@@ -92,23 +97,26 @@ importVCard(context: Context, filePath: string, accountId?: number): Promise&lt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文。 |
-| filePath | string | 是 | VCF(vcard file)文件地址。 |
-| accountId | number | 否 | 联系人账户ID。 |
+| filePath | string | 是 | VCF(VCard file)文件地址。 |
+| accountId | number | 否 | 联系人账户ID。不传入时使用默认账户。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | Promise对象，返回重置的结果码。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -129,7 +137,7 @@ import { vcard } from '@kit.TelephonyKit';
 
 class EntryAbility extends UIAbility {
     onWindowStageCreate(windowStage: window.WindowStage) {
-        let filePath: string = "/data/storage/vcf/contacts.vcf";
+        let filePath: string = '/data/storage/vcf/contacts.vcf';
         let accountId: number = 0;
         vcard.importVCard(this.context, filePath, accountId).then(() => {
             console.info(`importVCard success.`);
@@ -142,13 +150,14 @@ class EntryAbility extends UIAbility {
 
 
 
-#### vcard.importVCard
+## vcard.importVCard
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 importVCard(context: Context, filePath: string, callback: AsyncCallback&lt;void&gt;): void
 
-将VCard文件导入联系人数据库。使用callback异步回调。
+将VCard文件导入联系人数据库。适用于从其他设备或应用接收VCard文件后批量导入联系人、联系人数据恢复等场景。使用callback异步回调。
 
 **需要权限**：ohos.permission.WRITE_CONTACTS 和 ohos.permission.READ_CONTACTS
 
@@ -156,16 +165,18 @@ importVCard(context: Context, filePath: string, callback: AsyncCallback&lt;void&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文。 |
-| filePath | string | 是 | VCF(vcard file)文件地址。 |
+| filePath | string | 是 | VCF(VCard file)文件地址。 |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数，返回导入成功或失败的状态码。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -196,13 +207,14 @@ class EntryAbility extends UIAbility {
 
 
 
-#### vcard.exportVCard
+## vcard.exportVCard
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 exportVCard(context: Context, predicates: dataSharePredicates.DataSharePredicates, options: VCardBuilderOptions, callback: AsyncCallback&lt;string&gt;): void
 
-将联系人导出为 VCF(vcard file)文件。使用callback异步回调。
+将联系人导出为 VCF(VCard file)文件。适用于联系人数据备份、跨设备迁移联系人、通过文件分享联系人等场景。使用callback异步回调。
 
 **需要权限**：ohos.permission.WRITE_CONTACTS 和 ohos.permission.READ_CONTACTS
 
@@ -210,17 +222,19 @@ exportVCard(context: Context, predicates: dataSharePredicates.DataSharePredicate
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文。 |
-| predicates | dataSharePredicates.DataSharePredicates | 是 | 查询语句。 |
+| predicates | dataSharePredicates.DataSharePredicates | 是 | 查询语句。用于筛选要导出的联系人数据。 |
 | options | VCardBuilderOptions | 是 | VCard版本与编码类型。 |
-| callback | AsyncCallback&lt;string&gt; | 是 | 回调函数。生成的 VCF(vcard file)文件地址。 |
+| callback | AsyncCallback&lt;string&gt; | 是 | 回调函数。生成的 VCF(VCard file)文件地址。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -243,10 +257,10 @@ import { dataSharePredicates } from '@kit.ArkData';
 class EntryAbility extends UIAbility {
     onWindowStageCreate(windowStage: window.WindowStage) {
         let predicates = new dataSharePredicates.DataSharePredicates();
-        predicates.equalTo("NAME", "Rose");
+        predicates.equalTo('NAME', 'Rose');
         let options: vcard.VCardBuilderOptions = {
             cardType: vcard.VCardType.VERSION_21,
-            charset: "UTF-8"
+            charset: 'UTF-8'
         };
         vcard.exportVCard(this.context, predicates, options, (err: BusinessError, data: string) => {
             console.error(`callback: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
@@ -257,13 +271,14 @@ class EntryAbility extends UIAbility {
 
 
 
-#### vcard.exportVCard
+## vcard.exportVCard
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 exportVCard(context: Context, predicates: dataSharePredicates.DataSharePredicates, options?: VCardBuilderOptions): Promise&lt;string&gt;
 
-将联系人导出为 VCF(vcard file)文件。使用Promise异步回调。
+将联系人导出为 VCF(VCard file)文件。适用于联系人数据备份、跨设备迁移联系人、通过文件分享联系人等场景。使用Promise异步回调。
 
 **需要权限**：ohos.permission.WRITE_CONTACTS 和 ohos.permission.READ_CONTACTS
 
@@ -271,23 +286,26 @@ exportVCard(context: Context, predicates: dataSharePredicates.DataSharePredicate
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文。 |
-| predicates | dataSharePredicates.DataSharePredicates | 是 | 查询语句。 |
+| predicates | dataSharePredicates.DataSharePredicates | 是 | 查询语句。用于筛选要导出的联系人数据。 |
 | options | VCardBuilderOptions | 否 | VCard版本与编码类型。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;string&gt; | Promise对象，返回重置的结果码。 |
+| Promise&lt;string&gt; | Promise对象，返回生成的VCF(VCard file)文件地址。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -326,13 +344,14 @@ class EntryAbility extends UIAbility {
 
 
 
-#### vcard.exportVCard
+## vcard.exportVCard
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 exportVCard(context: Context, predicates: dataSharePredicates.DataSharePredicates, callback: AsyncCallback&lt;string&gt;): void
 
-将联系人导出为 VCF(vcard file)文件。使用callback异步回调。
+将联系人导出为 VCF(VCard file)文件。适用于联系人数据备份、跨设备迁移联系人、通过文件分享联系人等场景。使用callback异步回调。
 
 **需要权限**：ohos.permission.WRITE_CONTACTS 和 ohos.permission.READ_CONTACTS
 
@@ -340,16 +359,18 @@ exportVCard(context: Context, predicates: dataSharePredicates.DataSharePredicate
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文。 |
-| predicates | dataSharePredicates.DataSharePredicates | 是 | 查询语句。 |
-| callback | AsyncCallback&lt;string&gt; | 是 | 回调函数。生成的 VCF(vcard file)文件地址。 |
+| predicates | dataSharePredicates.DataSharePredicates | 是 | 查询语句。用于筛选要导出的联系人。 |
+| callback | AsyncCallback&lt;string&gt; | 是 | 回调函数。生成的 VCF(VCard file)文件地址。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -383,29 +404,33 @@ class EntryAbility extends UIAbility {
 
 
 
-#### VCardBuilderOptions
+## VCardBuilderOptions
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 VCard版本和编码信息。
 
 **系统能力**：SystemCapability.Telephony.CoreService
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| cardType | VCardType | 否 | 是 | VCard版本类型 (默认值为VERSION_21)。 |
+| cardType | VCardType | 否 | 是 | VCard版本类型（默认值为VERSION_21）。 |
 | charset | string | 否 | 是 | VCard编码类型（默认值为'UTF-8'）。 |
 
 
 
 
-#### VCardType
+## VCardType
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 VCard版本类型。
 
 **系统能力**：SystemCapability.Telephony.CoreService
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

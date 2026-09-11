@@ -1,9 +1,9 @@
 # @ohos.resourceschedule.backgroundProcessManager (后台子进程管控)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-backgroundprocessmanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供了后台子进程管控接口。开发者可以通过本模块接口对子进程进行压制、解压制，避免子进程过多占用系统资源，导致系统使用卡顿。本模块接口仅对通过[OH_Ability_StartNativeChildProcess](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-child-process-h#oh_ability_startnativechildprocess)接口创建的子进程生效。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { backgroundProcessManager } from '@kit.BackgroundTasksKit';
@@ -22,9 +23,10 @@ import { backgroundProcessManager } from '@kit.BackgroundTasksKit';
 
 
 
-#### backgroundProcessManager.setProcessPriority
+## backgroundProcessManager.setProcessPriority
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setProcessPriority(pid: number, priority: ProcessPriority): Promise&lt;void&gt;
 
@@ -34,6 +36,7 @@ setProcessPriority(pid: number, priority: ProcessPriority): Promise&lt;void&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pid | number | 是 | 需要被压制子进程的进程号，OH_Ability_StartNativeChildProcess接口创建子进程后的pid参数，即为子进程进程号。 |
@@ -41,6 +44,7 @@ setProcessPriority(pid: number, priority: ProcessPriority): Promise&lt;void&gt;
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -50,6 +54,7 @@ setProcessPriority(pid: number, priority: ProcessPriority): Promise&lt;void&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -73,9 +78,10 @@ try {
 
 
 
-#### backgroundProcessManager.resetProcessPriority
+## backgroundProcessManager.resetProcessPriority
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 resetProcessPriority(pid: number): Promise&lt;void&gt;
 
@@ -85,12 +91,14 @@ resetProcessPriority(pid: number): Promise&lt;void&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pid | number | 是 | 子进程的进程号，OH_Ability_StartNativeChildProcess接口创建子进程后的pid参数，即为子进程进程号。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -113,9 +121,10 @@ try {
 
 
 
-#### backgroundProcessManager.setPowerSaveMode20+
+## backgroundProcessManager.setPowerSaveMode20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 setPowerSaveMode(pid: number, powerSaveMode: PowerSaveMode): Promise&lt;void&gt;
 
@@ -136,13 +145,15 @@ setPowerSaveMode(pid: number, powerSaveMode: PowerSaveMode): Promise&lt;void&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| pid | number | 是 | 进程号。 |
+| pid | number | 是 | 进程号。 取值为正整数。 |
 | powerSaveMode | PowerSaveMode | 是 | 能效模式。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -152,6 +163,7 @@ setPowerSaveMode(pid: number, powerSaveMode: PowerSaveMode): Promise&lt;void&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[backgroundProcessManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-backgroundprocessmanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -168,19 +180,24 @@ setPowerSaveMode(pid: number, powerSaveMode: PowerSaveMode): Promise&lt;void&gt;
 import { BusinessError } from '@kit.BasicServicesKit';
 import { backgroundProcessManager } from '@kit.BackgroundTasksKit';
 
-let pid = 33333;
+let pid = 33333;  // 请开发者替换为实际的进程号
 try {
-    backgroundProcessManager.setPowerSaveMode(pid, backgroundProcessManager.PowerSaveMode.EFFICIENCY_MODE);
+  backgroundProcessManager.setPowerSaveMode(pid, backgroundProcessManager.PowerSaveMode.EFFICIENCY_MODE).then(() => {
+    console.info('setPowerSaveMode promise');
+  }).catch((err: BusinessError) => {
+    console.error(`setPowerSaveMode failed, promise errCode: ${err.code}, message: ${err.message}`);
+  });
 } catch (error) {
-    console.error(`setPowerSaveMode failed, errCode: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`);
+  console.error(`setPowerSaveMode failed, errCode: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`);
 }
 ```
 
 
 
-#### backgroundProcessManager.isPowerSaveMode20+
+## backgroundProcessManager.isPowerSaveMode20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 isPowerSaveMode(pid: number): Promise&lt;boolean&gt;
 
@@ -194,12 +211,14 @@ isPowerSaveMode(pid: number): Promise&lt;boolean&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| pid | number | 是 | 进程号。 |
+| pid | number | 是 | 进程号。 取值为正整数。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -209,6 +228,7 @@ isPowerSaveMode(pid: number): Promise&lt;boolean&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[backgroundProcessManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-backgroundprocessmanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -223,21 +243,24 @@ isPowerSaveMode(pid: number): Promise&lt;boolean&gt;
 import { BusinessError } from '@kit.BasicServicesKit';
 import { backgroundProcessManager } from '@kit.BackgroundTasksKit';
 
-let pid = 33333;
+let pid = 33333;  // 请开发者替换为实际的进程号
 try {
-    backgroundProcessManager.isPowerSaveMode(pid).then((result: boolean) => {
-        console.info("isPowerSaveMode: " + result.toString());
-    });
+  backgroundProcessManager.isPowerSaveMode(pid).then((result: boolean) => {
+    console.info(`isPowerSaveMode: ${result}`);
+  }).catch((err: BusinessError) => {
+    console.error(`isPowerSaveMode failed, promise errCode: ${err.code}, message: ${err.message}`);
+  });
 } catch (error) {
-    console.error(`isPowerSaveMode failed, errCode: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`);
+  console.error(`isPowerSaveMode failed, errCode: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`);
 }
 ```
 
 
 
-#### backgroundProcessManager.getPowerSaveMode23+
+## backgroundProcessManager.getPowerSaveMode23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 getPowerSaveMode(pid: number): Promise&lt;PowerSaveMode&gt;
 
@@ -251,12 +274,14 @@ getPowerSaveMode(pid: number): Promise&lt;PowerSaveMode&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| pid | number | 是 | 进程号。 取值范围：大于0的整数。 |
+| pid | number | 是 | 进程号。 取值为正整数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -266,6 +291,7 @@ getPowerSaveMode(pid: number): Promise&lt;PowerSaveMode&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[backgroundProcessManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-backgroundprocessmanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -279,26 +305,30 @@ getPowerSaveMode(pid: number): Promise&lt;PowerSaveMode&gt;
 ```text
 import { BusinessError } from '@kit.BasicServicesKit';
 import { backgroundProcessManager } from '@kit.BackgroundTasksKit';
-// 请开发者替换为实际的进程号
-let pid = 33333;
+
+let pid = 33333;  // 请开发者替换为实际的进程号
 try {
-    backgroundProcessManager.getPowerSaveMode(pid).then((result: backgroundProcessManager.PowerSaveMode) => {
-        console.info("getPowerSaveMode: " + result.toString());
-    });
+  backgroundProcessManager.getPowerSaveMode(pid).then((result: backgroundProcessManager.PowerSaveMode) => {
+    console.info(`getPowerSaveMode: ${result}`);
+  }).catch((err: BusinessError) => {
+    console.error(`getPowerSaveMode failed, promise errCode: ${err.code}, message: ${err.message}`);
+  });
 } catch (error) {
-    console.error(`getPowerSaveMode failed, errCode: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`);
+  console.error(`getPowerSaveMode failed, errCode: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`);
 }
 ```
 
 
 
-#### ProcessPriority
+## ProcessPriority
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 子进程压制档位。
 
 **系统能力**： SystemCapability.Resourceschedule.BackgroundProcessManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -308,13 +338,15 @@ try {
 
 
 
-#### PowerSaveMode20+
+## PowerSaveMode20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 能效模式。
 
 **系统能力**： SystemCapability.Resourceschedule.BackgroundProcessManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

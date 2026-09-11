@@ -1,20 +1,21 @@
 # @ohos.bluetooth.pan (蓝牙pan模块)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bluetooth-pan
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-本模块提供基于蓝牙个人局域网协议（Personal Area Networking，[PAN](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#pan)）的蓝牙共享网络能力，支持获取连接状态等方法。
+本模块提供基于蓝牙个人局域网协议（Personal Area Networking，[PAN](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#pan)）的蓝牙共享网络能力，支持本端作为[NAP](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#nap)设备和[PANU](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#panu)设备查询PAN支持状态、网络共享状态及获取连接状态等，适用于需要通过蓝牙实现个人局域网共享网络的场景。
 
 > [!NOTE]
 > 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { pan } from '@kit.ConnectivityKit';
@@ -22,9 +23,10 @@ import { pan } from '@kit.ConnectivityKit';
 
 
 
-#### BaseProfile
+## BaseProfile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type BaseProfile = baseProfile.BaseProfile
 
@@ -34,6 +36,7 @@ type BaseProfile = baseProfile.BaseProfile
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | baseProfile.BaseProfile | 基础Profile接口定义。 |
@@ -41,9 +44,10 @@ type BaseProfile = baseProfile.BaseProfile
 
 
 
-#### pan.createPanProfile
+## pan.createPanProfile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPanProfile(): PanProfile
 
@@ -55,6 +59,7 @@ createPanProfile(): PanProfile
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | PanProfile | 返回PAN实例。该类继承于BaseProfile，因此可以使用其父类中的方法。 |
@@ -63,6 +68,7 @@ createPanProfile(): PanProfile
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -83,11 +89,12 @@ try {
 
 
 
-#### PanProfile
+## PanProfile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-表示蓝牙PAN通信的实例。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+表示蓝牙PAN通信的实例，提供查询本端PAN支持状态、网络共享状态等能力，适用于蓝牙个人局域网共享网络场景。
 
  - 使用PanProfile方法之前需要创建该类的实例进行操作，通过[createPanProfile](#pancreatepanprofile)方法构造此实例。
  - 该类继承于[BaseProfile](#baseprofile)，因此可以使用其父类中的方法。
@@ -95,13 +102,14 @@ try {
 
 
 
-#### isPanSupported
+### isPanSupported
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isPanSupported(): boolean
 
-本端作为NAP角色时使用，获取本端网络共享状态。
+本端作为NAP角色时使用，查询本端设备是否支持PAN能力。
 
 **起始版本**：26.0.0
 
@@ -111,6 +119,7 @@ isPanSupported(): boolean
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 当前设备支持PAN时返回true，不支持时返回false。 |
@@ -119,6 +128,7 @@ isPanSupported(): boolean
 **错误码**：
 
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -138,9 +148,10 @@ try {
 
 
 
-#### isTetheringOn
+### isTetheringOn
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 isTetheringOn(): boolean
 
@@ -156,6 +167,7 @@ isTetheringOn(): boolean
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 网络共享开启返回true，网络共享关闭返回false。 |
@@ -164,6 +176,7 @@ isTetheringOn(): boolean
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

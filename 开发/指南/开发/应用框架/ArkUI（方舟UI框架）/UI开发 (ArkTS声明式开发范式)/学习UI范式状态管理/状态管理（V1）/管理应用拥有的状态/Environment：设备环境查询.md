@@ -1,6 +1,6 @@
 # Environment：设备环境查询
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-environment
 
@@ -13,21 +13,22 @@ Environment提供了读取系统环境变量并将其值写入AppStorage的功�
 在阅读本文档前，建议提前阅读：[AppStorage](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-appstorage)。
 
 
-#### Environment内置参数
+## Environment内置参数
+
 
 | 键 | 数据类型 | 描述 |
 | --- | --- | --- |
-| accessibilityEnabled | string | 是否启用获取无障碍屏幕阅读。'true'表示启用，'false'表示不启用。 |
-| colorMode | ColorMode | 色彩模型类型。 - ColorMode.LIGHT：浅色。 - ColorMode.DARK：深色。 |
+| accessibilityEnabled | string | 是否启用无障碍屏幕阅读。'true'表示启用，'false'表示不启用。 |
+| colorMode | ColorMode | 色彩模式类型。 - ColorMode.LIGHT：浅色。 - ColorMode.DARK：深色。 |
 | fontScale | number | 字体大小比例。开发者需要配置configuration，设置fontSizeScale为"followSystem"，具体配置步骤可参考configuration使fontScale跟随系统变化。 默认值跟随系统默认参数。 |
-| fontWeightScale | number | 字体粗细程度。在不同的系统或者机型中，fontWeightScale的取值范围可能会有所不同。 默认值跟随系统默认参数。 |
+| fontWeightScale | number | 字体粗细缩放比例。在不同的系统或者机型中，fontWeightScale的取值范围可能会有所不同。 默认值跟随系统默认参数。 |
 | layoutDirection | LayoutDirection | 布局方向类型： - LayoutDirection.LTR：从左到右。 - LayoutDirection.RTL：从右到左。 |
 | languageCode | string | 当前系统语言值，取值必须为小写字母（例如：zh）。 默认值跟随系统默认参数。 |
 
 
 
 
-#### 限制条件
+## 限制条件
 
 Environment和[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)相关联，需要在UIContext明确的时候才可以调用Environment的接口，可以通过在[runScopedTask](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#runscopedtask)里调用明确上下文。如果不是在UIContext明确的地方调用，将导致无法查询到设备环境数据。
 
@@ -54,11 +55,11 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### 使用场景
+## 使用场景
 
 
 
-#### 从UI中访问Environment参数
+### 从UI中访问Environment参数
 
  - 使用Environment.[envProp](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-state-management#envprop10)将设备运行的环境变量存入AppStorage中。
 
@@ -108,12 +109,12 @@ struct UiEnvironment {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/gaMb-8s_ROSW6vRfmoNQ5A/zh-cn_image_0000002704392007.png?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=BFA1C0C8F91BA48A7B04E0DC06B590FE1B2435BDC4F3F827D8A243AD74F8890F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/pb6OEJa6S5-sajVMgNQ7KQ/zh-cn_image_0000002747290051.png?HW-CC-KV=V1&HW-CC-Date=20260911T072216Z&HW-CC-Expire=86400&HW-CC-Sign=D75AB8AA395CBFE3BFDBBA0F942C454A729B3144F406577449A56BCCDC567DD3)
 
 
 
 
-#### 应用逻辑使用Environment
+### 应用逻辑使用Environment
 
 ```ArkTS
 import { hilog } from '@kit.PerformanceAnalysisKit';

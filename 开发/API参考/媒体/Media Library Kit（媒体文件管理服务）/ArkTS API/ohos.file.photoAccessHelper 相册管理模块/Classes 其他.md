@@ -1,22 +1,24 @@
 # Classes (其他)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-photoaccesshelper-class
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 
 
-#### RecommendationOptions11+
+## RecommendationOptions11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 图片推荐选项（基于图片数据分析结果，依赖设备适配）。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -26,13 +28,15 @@
 
 
 
-#### BaseSelectOptions
+## BaseSelectOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 图库选择选项基类。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -61,15 +65,17 @@
 
 
 
-#### PhotoSelectOptions
+## PhotoSelectOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 PhotoSelectOptions extends BaseSelectOptions
 
 图库选择选项子类，继承自[BaseSelectOptions](#baseselectoptions)。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -88,13 +94,15 @@ PhotoSelectOptions extends BaseSelectOptions
 
 
 
-#### PhotoSelectResult
+## PhotoSelectResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 返回图库选择后的结果集。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -106,15 +114,17 @@ PhotoSelectOptions extends BaseSelectOptions
 
 
 
-#### AutoPlayScene23+
+## AutoPlayScene23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 动态照片在不同场景中的播放模式。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -124,15 +134,17 @@ PhotoSelectOptions extends BaseSelectOptions
 
 
 
-#### MimeTypeFilter19+
+## MimeTypeFilter19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文件类型的过滤配置。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -141,15 +153,17 @@ PhotoSelectOptions extends BaseSelectOptions
 
 
 
-#### FileSizeFilter19+
+## FileSizeFilter19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 可选择媒体文件大小的过滤配置。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -160,15 +174,17 @@ PhotoSelectOptions extends BaseSelectOptions
 
 
 
-#### VideoDurationFilter19+
+## VideoDurationFilter19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 可选择媒体文件视频时长的过滤配置。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -179,13 +195,15 @@ PhotoSelectOptions extends BaseSelectOptions
 
 
 
-#### RecentPhotoOptions20+
+## RecentPhotoOptions20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 最近图片配置选项。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -196,13 +214,15 @@ PhotoSelectOptions extends BaseSelectOptions
 
 
 
-#### RecentPhotoInfo20+
+## RecentPhotoInfo20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 最近图片相关信息。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -212,15 +232,17 @@ PhotoSelectOptions extends BaseSelectOptions
 
 
 
-#### PhotoViewMimeTypeFileSizeFilter20+
+## PhotoViewMimeTypeFileSizeFilter20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 指定媒体文件类型和文件大小进行过滤。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -230,13 +252,15 @@ PhotoSelectOptions extends BaseSelectOptions
 
 
 
-#### ContextRecoveryInfo21+
+## ContextRecoveryInfo21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 PhotoPicker退出界面的上下文信息，可以用于下次使用PhotoPicker时恢复上次退出时的现场。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -253,9 +277,10 @@ PhotoPicker退出界面的上下文信息，可以用于下次使用PhotoPicker�
 
 
 
-#### OperationItem22+
+## OperationItem22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 选择媒体文件的过滤配置。
 
@@ -264,6 +289,7 @@ PhotoPicker退出界面的上下文信息，可以用于下次使用PhotoPicker�
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -274,9 +300,10 @@ PhotoPicker退出界面的上下文信息，可以用于下次使用PhotoPicker�
 
 
 
-#### RequestReadPermissionResult23+
+## RequestReadPermissionResult23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 包含已授权的uri列表和无效的uri列表。
 
@@ -285,6 +312,7 @@ PhotoPicker退出界面的上下文信息，可以用于下次使用PhotoPicker�
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

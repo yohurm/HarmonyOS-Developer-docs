@@ -1,13 +1,13 @@
 # 密钥协商(C/C++)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-key-agreement-ndk
 
 以X25519、DH和ECDH协商密钥类型为例，在密钥由HUKS管理的情况下，完成密钥协商。具体的场景介绍及支持的算法规格，请参考[密钥协商支持的算法](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-key-agreement-overview#支持的算法)。
   
 
-#### 在CMake脚本中链接相关动态库
+## 在CMake脚本中链接相关动态库
 
 ```text
 target_link_libraries(entry PUBLIC libhuks_ndk.z.so)
@@ -15,7 +15,7 @@ target_link_libraries(entry PUBLIC libhuks_ndk.z.so)
  
   
 
-#### 开发步骤
+## 开发步骤
 
 **生成密钥**
  
@@ -38,6 +38,7 @@ target_link_libraries(entry PUBLIC libhuks_ndk.z.so)
 - 若业务未设置TAG的具体值，表示基于该密钥协商出的密钥，既可由HUKS管理，也可返回给调用方管理，业务可在后续协商时再选择使用何种方式保护密钥。
 
   
+
 | 生成 | 协商 | 规格 |
 | --- | --- | --- |
 | OH_HUKS_STORAGE_ONLY_USED_IN_HUKS | OH_HUKS_STORAGE_ONLY_USED_IN_HUKS | 密钥由HUKS管理 |
@@ -55,13 +56,13 @@ target_link_libraries(entry PUBLIC libhuks_ndk.z.so)
  
   
 
-#### 开发案例
+## 开发案例
 
 下面分别以X25519、DH和ECDH密钥为例，进行协商。
  
   
 
-#### X25519非对称密钥协商用例
+### X25519非对称密钥协商用例
 
 准备X25519密钥协商材料：
  
@@ -320,7 +321,7 @@ napi_value X25519AgreeKey(napi_env env, napi_callback_info info)
  
   
 
-#### DH密钥协商用例
+### DH密钥协商用例
 
 准备DH密钥协商材料：
  
@@ -609,7 +610,7 @@ napi_value DhAgreeKey(napi_env env, napi_callback_info info)
  
   
 
-#### ECDH密钥协商用例
+### ECDH密钥协商用例
 
 准备ECDH密钥协商材料：
  

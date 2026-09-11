@@ -1,6 +1,6 @@
 # walletTransitCard（交通卡能力）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/wallet-wallettransitcard
 **支持设备：** Phone
@@ -10,7 +10,8 @@
 **起始版本：** 5.0.0(12)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone
 
@@ -20,7 +21,8 @@ import { walletTransitCard } from '@kit.WalletKit';
  
   
 
-#### TransitCardClient
+## TransitCardClient
+
 
 **支持设备：** Phone
 
@@ -36,7 +38,8 @@ import { walletTransitCard } from '@kit.WalletKit';
  
   
 
-#### constructor
+### constructor
+
 
 **支持设备：** Phone
 
@@ -54,6 +57,7 @@ constructor(context: common.UIAbilityContext, callerId: string)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | UIAbility上下文。 |
@@ -79,7 +83,8 @@ struct Index {
  
   
 
-#### getCardMetadataInDevice
+### getCardMetadataInDevice
+
 
 **支持设备：** Phone
 
@@ -101,6 +106,7 @@ getCardMetadataInDevice(specifiedDeviceType: DeviceType, callerToken?: string): 
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | specifiedDeviceType | DeviceType | 是 | 指定设备的枚举值。 |
@@ -109,6 +115,7 @@ getCardMetadataInDevice(specifiedDeviceType: DeviceType, callerToken?: string): 
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<CardMetadataInDevice[]> | Promise对象，返回一个CardMetadataInDevice元数据数组，包含设备信息和卡的元数据。 |
@@ -118,6 +125,7 @@ getCardMetadataInDevice(specifiedDeviceType: DeviceType, callerToken?: string): 
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wallet)
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: Parameter verification failed. |
@@ -164,7 +172,8 @@ struct Index {
  
   
 
-#### getTransitCardInfo
+### getTransitCardInfo
+
 
 **支持设备：** Phone
 
@@ -186,6 +195,7 @@ getTransitCardInfo(logicalCardNumber: string, specifiedDeviceId: string, callerT
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | logicalCardNumber | string | 是 | 指定卡的卡号，要求使用getCardMetadataInDevice 返回的 CardMetadataInDevice 中的CardMetadata 对应的logicalCardNumber。 |
@@ -195,6 +205,7 @@ getTransitCardInfo(logicalCardNumber: string, specifiedDeviceId: string, callerT
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;TransitCardInfo&gt; | Promise对象，返回cardNumber指定卡的详细信息。 |
@@ -204,6 +215,7 @@ getTransitCardInfo(logicalCardNumber: string, specifiedDeviceId: string, callerT
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wallet)
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: Parameter verification failed. |
@@ -255,7 +267,8 @@ struct Index {
  
   
 
-#### canAddTransitCard
+### canAddTransitCard
+
 
 **支持设备：** Phone
 
@@ -277,6 +290,7 @@ canAddTransitCard(issuerId: string, specifiedDeviceId: string): Promise&lt;strin
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | issuerId | string | 是 | 城市的一种交通卡产品的ID，要求使用 getCardMetadataInDevice 返回的 CardMetadataInDevice中的 CardMetadata 对应的issuerId。 |
@@ -285,6 +299,7 @@ canAddTransitCard(issuerId: string, specifiedDeviceId: string): Promise&lt;strin
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回一个用于添加卡片的token令牌。 |
@@ -294,6 +309,7 @@ canAddTransitCard(issuerId: string, specifiedDeviceId: string): Promise&lt;strin
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wallet)
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: Parameter verification failed. |
@@ -347,7 +363,8 @@ struct Index {
  
   
 
-#### setupWalletEnvironment
+### setupWalletEnvironment
+
 
 **支持设备：** Phone
 
@@ -369,6 +386,7 @@ setupWalletEnvironment(): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -378,6 +396,7 @@ setupWalletEnvironment(): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wallet)
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1010200002 | Wallet app not found. |
@@ -417,7 +436,8 @@ struct Index {
  
   
 
-#### addTransitCard
+### addTransitCard
+
 
 **支持设备：** Phone
 
@@ -439,6 +459,7 @@ addTransitCard(addCardOpaqueData: string, serverOrderId: string): Promise&lt;Car
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | addCardOpaqueData | string | 是 | 开卡令牌，要求使用canAddTransitCard接口返回的字符串。 |
@@ -447,6 +468,7 @@ addTransitCard(addCardOpaqueData: string, serverOrderId: string): Promise&lt;Car
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;CardMetadata&gt; | Promise对象，返回添加的卡片数据。 |
@@ -456,6 +478,7 @@ addTransitCard(addCardOpaqueData: string, serverOrderId: string): Promise&lt;Car
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wallet)
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: Parameter verification failed. |
@@ -504,7 +527,8 @@ struct Index {
  
   
 
-#### rechargeTransitCard
+### rechargeTransitCard
+
 
 **支持设备：** Phone
 
@@ -526,6 +550,7 @@ rechargeTransitCard(logicalCardNumber: string, specifiedDeviceId: string, server
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | logicalCardNumber | string | 是 | 卡的序列号，要求使用getCardMetadataInDevice返回的CardMetadataInDevice中的CardMetadata对应的logicalCardNumber。 |
@@ -535,6 +560,7 @@ rechargeTransitCard(logicalCardNumber: string, specifiedDeviceId: string, server
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象，返回新的交通卡余额，单位：分。 |
@@ -544,6 +570,7 @@ rechargeTransitCard(logicalCardNumber: string, specifiedDeviceId: string, server
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wallet)
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: Parameter verification failed. |
@@ -596,7 +623,8 @@ struct Index {
  
   
 
-#### updateTransitCard
+### updateTransitCard
+
 
 **支持设备：** Phone
 
@@ -618,6 +646,7 @@ updateTransitCard(logicalCardNumber: string, specifiedDeviceId: string, serverOr
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | logicalCardNumber | string | 是 | 指定卡的卡号，要求使用getCardMetadataInDevice返回的CardMetadataInDevice中的CardMetadata对应的logicalCardNumber。 |
@@ -627,6 +656,7 @@ updateTransitCard(logicalCardNumber: string, specifiedDeviceId: string, serverOr
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -636,6 +666,7 @@ updateTransitCard(logicalCardNumber: string, specifiedDeviceId: string, serverOr
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wallet)
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: Parameter verification failed. |
@@ -688,7 +719,8 @@ struct Index {
  
   
 
-#### deleteTransitCard
+### deleteTransitCard
+
 
 **支持设备：** Phone
 
@@ -710,6 +742,7 @@ deleteTransitCard(logicalCardNumber: string, specifiedDeviceId: string, serverOr
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | logicalCardNumber | string | 是 | 指定卡的卡号，要求使用getCardMetadataInDevice返回的CardMetadataInDevice中的CardMetadata对应的logicalCardNumber。 |
@@ -719,6 +752,7 @@ deleteTransitCard(logicalCardNumber: string, specifiedDeviceId: string, serverOr
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -728,6 +762,7 @@ deleteTransitCard(logicalCardNumber: string, specifiedDeviceId: string, serverOr
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wallet)
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: Parameter verification failed. |
@@ -778,7 +813,8 @@ struct Index {
  
   
 
-#### CardMetadata
+## CardMetadata
+
 
 **支持设备：** Phone
 
@@ -792,6 +828,7 @@ struct Index {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | issuerId | string | 否 | 否 | 交通卡产品的ID。 |
@@ -803,7 +840,8 @@ struct Index {
  
   
 
-#### CardMetadataInDevice
+## CardMetadataInDevice
+
 
 **支持设备：** Phone
 
@@ -817,6 +855,7 @@ struct Index {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | deviceId | string | 否 | 否 | 设备ID，开发者使用。 |
@@ -827,7 +866,8 @@ struct Index {
  
   
 
-#### TransitCardInfo
+## TransitCardInfo
+
 
 **支持设备：** Phone
 
@@ -841,6 +881,7 @@ struct Index {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | cardNumber | string | 否 | 否 | 显示卡号。 |
@@ -849,7 +890,8 @@ struct Index {
  
   
 
-#### DeviceType
+## DeviceType
+
 
 **支持设备：** Phone
 
@@ -863,6 +905,7 @@ struct Index {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DEVICE_PHONE | 0 | 手机设备类型 |

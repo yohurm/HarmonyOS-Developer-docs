@@ -1,6 +1,6 @@
 # ContentSlot：混合开发
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-contentslot
 
@@ -13,11 +13,12 @@
 
 
 
-#### 接口
+## 接口
 
 
 
-#### ArkTS侧接口
+### ArkTS侧接口
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -31,7 +32,8 @@ abstract class Content {
 
 
 
-#### Native侧接口
+### Native侧接口
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -49,11 +51,11 @@ abstract class Content {
 
 
 
-#### 开发实现
+## 开发实现
 
 
 
-#### ArkTS侧代码实现
+### ArkTS侧代码实现
 
 ```ArkTS
 import nativeNode from 'libentry.so'; // 开发者自己实现的so
@@ -83,7 +85,7 @@ struct Parent {
 
 
 
-#### Native侧代码实现
+### Native侧代码实现
 
 Napi的基础开发知识请查看以下文档：[开发导读](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-development-overview)。
 
@@ -154,7 +156,7 @@ napi_value NodeManager::CreateNativeNode(napi_env env, napi_callback_info info)
 
 
 
-#### Native侧主要接口使用说明
+### Native侧主要接口使用说明
 
  - 注册上下树事件，并通过事件获取对应的Content对象。
 
@@ -224,7 +226,7 @@ void *userData = OH_ArkUI_NodeContent_GetUserData(nodeContentHandle_);
 
 
 
-#### 绑定规则说明
+## 绑定规则说明
 
 如果将同一个Content对象绑定到多个ContentSlot组件，最终该Content的内容仅在最后一个绑定的ContentSlot中显示，其他ContentSlot将不显示任何内容。
 
@@ -241,12 +243,12 @@ import { NodeContent } from '@kit.ArkUI';
 @Entry
 @Component
 struct Parent {
-  // ···
+  // ...
   private nodeContent_1: Content = new NodeContent();
   private nodeContent_2: Content = new NodeContent();
 
   aboutToAppear() {
-    // ···
+    // ...
     // 通过C-API创建节点，并添加到管理器nodeContent_1和nodeContent_2上
     nativeNode.createNativeNode(this.nodeContent_1);
     nativeNode.createNativeNode(this.nodeContent_2);
@@ -254,8 +256,8 @@ struct Parent {
 
   build() {
     Column() {
-      // ···
-      ContentSlot(this.nodeContent_1);// nodeContent_1将被挂载到下一个Contentslot节点，此处无法显示
+      // ...
+      ContentSlot(this.nodeContent_1);// nodeContent_1将被挂载到下一个ContentSlot节点，此处无法显示
       ContentSlot(this.nodeContent_1); // 正常显示
       ContentSlot(this.nodeContent_2); // 正常显示
     }

@@ -1,10 +1,14 @@
 # FIDO2_TokenBinding
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_f_i_d_o2___token_binding
+**支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 Token binding协议，用于客户端与依赖方通信。
  
@@ -16,12 +20,19 @@ Token binding协议，用于客户端与依赖方通信。
  
   
 
-#### 汇总
+## 汇总
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 成员变量
+### 成员变量
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | FIDO2_TokenBindingStatus status | 客户端的绑定状态。 |
@@ -30,11 +41,17 @@ Token binding协议，用于客户端与依赖方通信。
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### id
+### id
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 char* FIDO2_TokenBinding::id
@@ -46,7 +63,10 @@ char* FIDO2_TokenBinding::id
  
   
 
-#### status
+### status
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FIDO2_TokenBindingStatus FIDO2_TokenBinding::status

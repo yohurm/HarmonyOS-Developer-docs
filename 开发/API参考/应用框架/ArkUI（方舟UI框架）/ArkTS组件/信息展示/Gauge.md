@@ -1,20 +1,21 @@
 # Gauge
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-gauge
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 数据量规图表组件，用于将数据展示为环形图表。适用于展示任务完成进度、性能指标、数据占比等场景，支持自定义颜色、起止角度、指针样式、阴影效果等多种视觉配置，能够直观地呈现数据状态，提升用户对数据的理解和交互体验。
 
 > [!NOTE]
-> 该组件从API version 8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 该组件从API版本26.0.0开始支持 WithTheme 。
+> 该组件从API version 8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 该组件从API版本26.0.0开始支持 WithTheme 。 startAngle 和 endAngle 仅决定圆弧路径范围，不影响组件大小。角度差值越小，圆弧在组件内占比越小，min/max标记与圆弧间留白越大。
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 可以包含单个子组件。
 
@@ -24,9 +25,10 @@
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Gauge(options: GaugeOptions)
 
@@ -40,6 +42,7 @@ Gauge(options: GaugeOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | GaugeOptions | 是 | 数据量规图表组件参数。 |
@@ -47,9 +50,10 @@ Gauge(options: GaugeOptions)
 
 
 
-#### GaugeOptions18+对象说明
+## GaugeOptions18+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 数据量规图表选项。
 
@@ -61,26 +65,29 @@ Gauge(options: GaugeOptions)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| value8+ | number | 否 | 否 | 量规图的当前数据值，即图中指针指向位置。用于组件创建时量规图初始值的预置。 默认值：0 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 说明： value不在min和max范围内时使用min作为默认值。 |
-| min8+ | number | 否 | 是 | 当前数据段最小值。 默认值：0 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 说明： 不传入时默认最小值为0。 min大于max时使用默认值0和100。 max和min支持负数。 |
-| max8+ | number | 否 | 是 | 当前数据段最大值。 默认值：100 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 说明： 不传入时默认最大值为100。 min大于max时使用默认值0和100。 max和min支持负数。 |
+| value8+ | number | 否 | 否 | 量规图的当前数据值，即图中指针指向位置。用于组件创建时量规图初始值的预置。 默认值：0 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 说明： value不在min和max范围内时，取min作为实际值。 |
+| min8+ | number | 否 | 是 | 当前数据段最小值。 默认值：0 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 说明： 不传入时默认值为0。 min大于max时，min取0，max取100。 max和min支持负数。 |
+| max8+ | number | 否 | 是 | 当前数据段最大值。 默认值：100 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 说明： 不传入时默认值为100。 min大于max时，min取0，max取100。 max和min支持负数。 |
 
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
 
 
 
-#### value
+### value
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 value(value: number)
 
@@ -94,16 +101,18 @@ value(value: number)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | 是 | 量规图的数据值，可用于动态修改量规图的数据值。 说明： value不在min和max范围内时使用min作为默认值。 默认值：0 |
+| value | number | 是 | 量规图的数据值，可用于动态修改量规图的数据值。 说明： value不在min和max范围内时，取min作为实际值。 默认值：0 |
 
 
 
 
-#### startAngle
+### startAngle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startAngle(angle: number)
 
@@ -117,6 +126,7 @@ startAngle(angle: number)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | angle | number | 是 | 起始角度位置，时钟0点为0度，顺时针方向为正角度，逆时针方向为负角度，超过360度等价于对360度取余后的角度。 默认值：0 单位：deg（度） 从起始位置到终止位置的绘制只有顺时针方向。 起始角度和终止角度的差值过小时，会绘制出异常图像，请取合理的起始角度和终止角度。 |
@@ -124,9 +134,10 @@ startAngle(angle: number)
 
 
 
-#### endAngle
+### endAngle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 endAngle(angle: number)
 
@@ -140,6 +151,7 @@ endAngle(angle: number)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | angle | number | 是 | 终止角度位置，时钟0点为0度，顺时针方向为正角度，逆时针方向为负角度，超过360度等价于对360度取余后的角度。 默认值：360 单位：deg（度） 从起始位置到终止位置的绘制只有顺时针方向。 起始角度和终止角度的差值过小时，会绘制出异常图像，请取合理的起始角度和终止角度。 |
@@ -147,9 +159,10 @@ endAngle(angle: number)
 
 
 
-#### colors
+### colors
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 colors(colors: ResourceColor | LinearGradient | Array<[ResourceColor | LinearGradient, number]>)
 
@@ -173,6 +186,7 @@ colors(colors: ResourceColor | LinearGradient | Array<[ResourceColor | LinearGra
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | colors | ResourceColor \| LinearGradient \| Array<[ResourceColor \| LinearGradient , number]> | 是 | 量规图的颜色，支持分段颜色设置。 API version 9 默认值：Color.Black API version 11默认值： 若不传颜色，或者数组为空，无法确定圆环类型及颜色，则圆环颜色为"0xFF64BB5C"、"0xFFF7CE00"、"0xFFE84026"的渐变环。 若传入颜色，但颜色值有误，则该颜色为"0xFFE84026"。 若对应颜色的比重为0，则该颜色在圆环中不显示。若所有颜色比重均为0，圆环不显示。 从API version 10开始，支持Array<ResourceColor, number>类型。 从API version 11开始，新增支持LinearGradient和Array<LinearGradient, number>类型。 |
@@ -180,9 +194,10 @@ colors(colors: ResourceColor | LinearGradient | Array<[ResourceColor | LinearGra
 
 
 
-#### strokeWidth
+### strokeWidth
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 strokeWidth(length: Length)
 
@@ -196,6 +211,7 @@ strokeWidth(length: Length)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | length | Length | 是 | 环形量规图的环形厚度。 默认值：4 单位：vp 说明： 设置小于等于0的值时，按默认值显示。 环形厚度的最大值为圆环的半径，超过最大值按最大值处理。 不支持百分比。 |
@@ -203,9 +219,10 @@ strokeWidth(length: Length)
 
 
 
-#### description11+
+### description11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 description(value: CustomBuilder)
 
@@ -221,6 +238,7 @@ description(value: CustomBuilder)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | CustomBuilder | 是 | 说明内容。 说明： @Builder中的内容由开发者自定义，建议使用文本或者图片。 若自定义部分的宽高为百分比形式，则基准范围为圆环直径的44.4%*25.4%的矩形（图片为28.6%*28.6%），距离圆环底部0vp，左右居中。 设置null则不显示内容。 不设置则依赖是否设置数据最大最小值。 若设置最大最小值或者只设置其中一个，则显示最大最小值。 若未设置最大最小值，则不显示内容。 最大最小值显示在圆环底部，位置不可移动，若圆环开口角度设置不恰当，存在圆环遮挡文字的情况。 |
@@ -228,9 +246,10 @@ description(value: CustomBuilder)
 
 
 
-#### trackShadow11+
+### trackShadow11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 trackShadow(value: GaugeShadowOptions)
 
@@ -246,6 +265,7 @@ trackShadow(value: GaugeShadowOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | GaugeShadowOptions | 是 | 添加阴影效果，可以指定模糊半径、X轴和Y轴的偏移量。 说明： 阴影颜色与圆环颜色一致。 设置null为不开启投影。 |
@@ -253,9 +273,10 @@ trackShadow(value: GaugeShadowOptions)
 
 
 
-#### indicator11+
+### indicator11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 indicator(value: GaugeIndicatorOptions)
 
@@ -271,6 +292,7 @@ indicator(value: GaugeIndicatorOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | GaugeIndicatorOptions | 是 | 指针样式。 说明： 设置null则不显示指针。 |
@@ -278,9 +300,10 @@ indicator(value: GaugeIndicatorOptions)
 
 
 
-#### privacySensitive12+
+### privacySensitive12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 privacySensitive(isPrivacySensitiveMode: Optional&lt;boolean&gt;)
 
@@ -300,6 +323,7 @@ privacySensitive(isPrivacySensitiveMode: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isPrivacySensitiveMode | Optional&lt;boolean&gt; | 是 | 设置隐私敏感。在隐私模式下，Gauge指针指向0位置，最大值最小值文本将被遮罩，量程显示灰色或底色。true表示打开隐私敏感，false表示关闭隐私敏感。 说明： 设置null则不敏感。 |
@@ -307,9 +331,10 @@ privacySensitive(isPrivacySensitiveMode: Optional&lt;boolean&gt;)
 
 
 
-#### contentModifier12+
+### contentModifier12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 contentModifier(modifier: ContentModifier&lt;GaugeConfiguration&gt;)
 
@@ -323,6 +348,7 @@ contentModifier(modifier: ContentModifier&lt;GaugeConfiguration&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | modifier | ContentModifier&lt;GaugeConfiguration&gt; | 是 | 在Gauge组件上定制内容区的方法。 modifier：内容修改器，开发者需要自定义class实现ContentModifier接口。 |
@@ -330,9 +356,10 @@ contentModifier(modifier: ContentModifier&lt;GaugeConfiguration&gt;)
 
 
 
-#### GaugeShadowOptions11+对象说明
+## GaugeShadowOptions11+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 GaugeShadowOptions继承自[MultiShadowOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-information-display-common#multishadowoptions)，具有MultiShadowOptions的全部属性。
 
@@ -346,9 +373,10 @@ GaugeShadowOptions继承自[MultiShadowOptions](https://developer.huawei.com/con
 
 
 
-#### GaugeIndicatorOptions11+对象说明
+## GaugeIndicatorOptions11+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 数据量规图表指针选项。
 
@@ -360,6 +388,7 @@ GaugeShadowOptions继承自[MultiShadowOptions](https://developer.huawei.com/con
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | icon | ResourceStr | 否 | 是 | 图标资源路径。 说明： 不配置则使用系统默认样式，系统默认样式为三角形指针。 仅支持使用svg格式的图标，若使用其他格式，则使用默认的三角形样式指针。 |
@@ -368,9 +397,10 @@ GaugeShadowOptions继承自[MultiShadowOptions](https://developer.huawei.com/con
 
 
 
-#### GaugeConfiguration12+对象说明
+## GaugeConfiguration12+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 开发者需要自定义class实现ContentModifier接口。继承自[CommonConfiguration](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-content-modifier#commonconfigurationt)。
 
@@ -379,6 +409,7 @@ GaugeShadowOptions继承自[MultiShadowOptions](https://developer.huawei.com/con
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -389,13 +420,17 @@ GaugeShadowOptions继承自[MultiShadowOptions](https://developer.huawei.com/con
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（设置多色量规图）
+
+
+### 示例1（设置多色量规图）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[colors](#colors)接口，实现了多色量规图效果。
 
@@ -468,7 +503,10 @@ struct Gauge1 {
 
 
 
-#### 示例2（设置单色量规图）
+### 示例2（设置单色量规图）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[colors](#colors)接口，实现了单色量规图效果。
 
@@ -516,7 +554,10 @@ struct Gauge2 {
 
 
 
-#### 示例3（设置定制说明区）
+### 示例3（设置定制说明区）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[description](#description11)接口，实现了说明区的设置功能。
 
@@ -582,7 +623,10 @@ struct Gauge2 {
 
 
 
-#### 示例4（设置辅助区）
+### 示例4（设置辅助区）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过设置子组件，实现了辅助区的设置功能。
 
@@ -641,7 +685,10 @@ struct Gauge4 {
 
 
 
-#### 示例5（设置最大最小值）
+### 示例5（设置最大最小值）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过设置[GaugeOptions](#gaugeoptions18对象说明)的min、max属性，实现了量规图的最大最小值设置的功能。
 
@@ -687,7 +734,10 @@ struct Gauge5 {
 
 
 
-#### 示例6（设置指针）
+### 示例6（设置指针）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[indicator](#indicator11)接口，实现了设置量规图的指针的功能。
 
@@ -739,7 +789,10 @@ struct Gauge6 {
 
 
 
-#### 示例7（设置起止角度）
+### 示例7（设置起止角度）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[startAngle](#startangle)和[endAngle](#endangle)接口，实现了量规图起止角度设置的功能。
 
@@ -783,13 +836,16 @@ struct Gauge7 {
 
 
 
-#### 示例8（设置定制内容区）
+### 示例8（设置定制内容区）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[contentModifier](#contentmodifier12)接口，实现了定制量规图内容区的功能。
 
 ```ArkTS
 // xxx.ets
-// 该示例实现了Gauge组件使用Builder定制内容区，使用了环形图表组件，按钮和文本框。点击增加按钮，环形图表指针位置会向右偏移，反之点减少按钮环形图表指针位置会向左偏移。
+// 该示例实现了Gauge组件使用Builder定制内容区，使用了环形图表组件，按钮和文本组件。点击增加按钮，环形图表指针位置会向右偏移，反之点减少按钮环形图表指针位置会向左偏移。
 @Builder
 function buildGauge(config: GaugeConfiguration) {
   Column({ space: 30 }) {
@@ -870,7 +926,10 @@ struct RefreshExample {
 
 
 
-#### 示例9（设置隐私隐藏）
+### 示例9（设置隐私隐藏）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例展示了[privacySensitive](#privacysensitive12)接口的调用方式。实际隐私隐藏效果需要卡片框架支持。
 
@@ -905,7 +964,10 @@ struct GaugeExample {
 
 
 
-#### 示例10（设置自定义指针）
+### 示例10（设置自定义指针）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[indicator](#indicator11)接口，实现了自定义指针功能，开发者导入svg类型的图片以替换默认指针。
 

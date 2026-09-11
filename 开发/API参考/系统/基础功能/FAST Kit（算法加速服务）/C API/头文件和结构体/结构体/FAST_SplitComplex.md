@@ -1,11 +1,12 @@
 # FAST_SplitComplex
 
-更新时间：2026-04-30 02:41:24
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/fast-kit--fast-splitcomplex
 **支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -21,16 +22,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | float* real | 实部数组指针。 |
@@ -39,13 +43,15 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### imag
+### imag
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -59,7 +65,8 @@ float* FAST_SplitComplex::imag
  
   
 
-#### real
+### real
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 

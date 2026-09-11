@@ -1,18 +1,19 @@
 # scan（星闪扫描能力）
 
-更新时间：2026-08-04 06:06:24
+更新时间：2026-09-04 10:41:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/nearlink-scan
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供了星闪扫描相关功能。
  
 **起始版本：** 5.0.1(13)
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { scan } from '@kit.NearLinkKit';
@@ -20,9 +21,10 @@ import { scan } from '@kit.NearLinkKit';
  
   
 
-#### startScan
+## startScan
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startScan(filters: Array&lt;ScanFilters&gt;, options?: ScanOptions): Promise&lt;void&gt;
  
@@ -38,6 +40,7 @@ startScan(filters: Array&lt;ScanFilters&gt;, options?: ScanOptions): Promise&lt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | filters | Array&lt;ScanFilters&gt; | 是 | 表示扫描过滤器，配置期望扫描的设备名称、地址等信息。 其中表示过滤条件的ScanFilters中全部字段均为可选字段，所有字段都未配置的ScanFilters代表一组空过滤器，视为无效过滤器而忽略。 不允许filters中的所有ScanFilters都配置为空过滤器，否则返回错误码401。 |
@@ -46,6 +49,7 @@ startScan(filters: Array&lt;ScanFilters&gt;, options?: ScanOptions): Promise&lt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -55,6 +59,7 @@ startScan(filters: Array&lt;ScanFilters&gt;, options?: ScanOptions): Promise&lt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -90,9 +95,10 @@ try {
  
   
 
-#### startScan
+## startScan
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startScan(filters: Array&lt;ScanFilters&gt; | null, options?: ScanOptions): Promise&lt;void&gt;
  
@@ -108,6 +114,7 @@ startScan(filters: Array&lt;ScanFilters&gt; | null, options?: ScanOptions): Prom
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | filters | Array&lt;ScanFilters&gt; \| null | 是 | 扫描星闪广播的过滤条件集合，符合过滤条件的设备会被上报。若不使能过滤器则传入null。 若该参数设置为null，将扫描所有可发现的周边星闪设备，但是不建议使用此方式，可能扫描到非预期设备，并增加功耗。 |
@@ -116,6 +123,7 @@ startScan(filters: Array&lt;ScanFilters&gt; | null, options?: ScanOptions): Prom
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -125,6 +133,7 @@ startScan(filters: Array&lt;ScanFilters&gt; | null, options?: ScanOptions): Prom
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -168,9 +177,10 @@ try {
  
   
 
-#### stopScan
+## stopScan
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stopScan(): Promise&lt;void&gt;
  
@@ -186,6 +196,7 @@ stopScan(): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -195,6 +206,7 @@ stopScan(): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -222,9 +234,10 @@ try {
  
   
 
-#### on( 'deviceFound')
+## on( 'deviceFound')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'deviceFound', callback: Callback<Array&lt;ScanResults&gt;>): void
  
@@ -240,16 +253,18 @@ on(type: 'deviceFound', callback: Callback<Array&lt;ScanResults&gt;>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'deviceFound'，表示星闪设备扫描结果上报事件。 当scan.startScan调用完成，发起星闪扫描，若扫描到星闪设备，触发该事件。 |
-| callback | Callback‌<‌Array‌<‌ScanResults‌>‌> | 是 | 回调函数，返回星闪扫描结果数组对象。扫描结果携带远端设备的随机地址。 |
+| callback | Callback‌<‌Array‌&lt;‌ScanResults‌&gt;‌> | 是 | 回调函数，返回星闪扫描结果数组对象。扫描结果携带远端设备的随机地址。 |
  
  
 **错误码：**
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -275,9 +290,10 @@ try {
  
   
 
-#### off( 'deviceFound')
+## off( 'deviceFound')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'deviceFound', callback?: Callback<Array&lt;ScanResults&gt;>): void
  
@@ -293,16 +309,18 @@ off(type: 'deviceFound', callback?: Callback<Array&lt;ScanResults&gt;>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'deviceFound'，表示星闪设备扫描结果上报事件。 |
-| callback | Callback<Array<‌ScanResults‌>> | 否 | 回调函数，返回星闪扫描结果数组对象。 填写该参数则取消当前callback订阅。不填写该参数则取消该type对应的所有回调。 |
+| callback | Callback<Array&lt;‌ScanResults‌&gt;> | 否 | 回调函数，返回星闪扫描结果数组对象。 填写该参数则取消当前callback订阅。不填写该参数则取消该type对应的所有回调。 |
  
  
 **错误码：**
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -325,9 +343,10 @@ try {
  
   
 
-#### ScanResults
+## ScanResults
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示扫描结果。
  
@@ -337,21 +356,23 @@ try {
  
 **起始版本：** 5.0.1(13)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | address | string | 否 | 否 | 表示扫描到设备地址。地址格式参考：11:22:33:AA:BB:FF。 |
 | rssi | number | 否 | 否 | 表示扫描到的设备rssi值，取值范围[-128, 127]，单位dBm，其中127表示无效值。 |
 | data | ArrayBuffer | 否 | 否 | 表示广播包数据。 |
 | deviceName | string | 否 | 否 | 表示扫描到的设备名称。字符串长度范围[0, 30]。 |
-| isConnectable | boolean | 否 | 否 | 表示扫描到的广播是否可连接。true：可连接，false：不可连接 |
-| deviceClass | constant.DeviceClass | 否 | 是 | 表示扫描到的设备类型 起始版本： 5.1.0(18) |
+| isConnectable | boolean | 否 | 否 | 表示扫描到的广播是否可连接。true表示可连接，false表示不可连接。 |
+| deviceClass | constant.DeviceClass | 否 | 是 | 表示扫描到的设备类型。 起始版本： 5.1.0(18) |
  
  
   
 
-#### ScanFilters
+## ScanFilters
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示扫描过滤条件。
  
@@ -361,6 +382,7 @@ try {
  
 **起始版本：** 5.0.1(13)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | address | string | 否 | 是 | 表示设备地址，若未配置则默认不过滤该字段。地址格式参考：11:22:33:AA:BB:FF。 |
@@ -373,9 +395,10 @@ try {
  
   
 
-#### ScanOptions
+## ScanOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示扫描选项。
  
@@ -385,17 +408,19 @@ try {
  
 **起始版本：** 5.0.1(13)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | scanMode | ScanMode | 否 | 是 | 表示扫描模式。默认值为'SCAN_MODE_LOW_POWER'。 |
-| duration | number | 否 | 是 | 表示扫描持续时间。单位second，取值范围[10, 60]，默认值为全时段扫描。 |
+| duration | number | 否 | 是 | 表示扫描持续时间。单位：s，取值范围[10, 60]，默认值为全时段扫描。 |
  
  
   
 
-#### ScanMode
+## ScanMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示扫描模式，为枚举值。
  
@@ -405,6 +430,7 @@ try {
  
 **起始版本：** 5.0.1(13)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SCAN_MODE_LOW_POWER | 0 | 表示低功耗扫描模式，扫描频率低，功耗低。默认值。 |

@@ -36,13 +36,13 @@ import { media } from '@kit.MediaKit';
 import { Context } from '@kit.AbilityKit';
 
 class AVPlayerManager {
-  private surfaceId: string = ''; // 视频surfaceId
-  private readOffset: number = 0; // 读取字节偏移量
-  private videoBuffer?: Uint8Array; // 保存视频数据Buffer
-  private avPlayer?: media.AVPlayer; // AVPlayer
+  private surfaceId: string = '';<em> // 视频surfaceId</em>
+  private readOffset: number = 0;<em> // 读取字节偏移量</em>
+  private videoBuffer?: Uint8Array;<em> // 保存视频数据Buffer</em>
+  private avPlayer?: media.AVPlayer; <em>// AVPlayer</em>
 
   async initPlayer(context: Context, rawPath: string) {
-    // 创建AVPlayer
+   <em> // 创建AVPlayer</em>
     try {
       this.avPlayer = await media.createAVPlayer();
       this.setEventListening();
@@ -53,25 +53,25 @@ class AVPlayerManager {
 
     try {
       this.readOffset = 0;
-      // 获取视频文件长度和数据Buffer，实际应该从网络获取，这里使用Rawfile模拟
+     <em> // 获取视频文件长度和数据Buffer，实际应该从网络获取，这里使用Rawfile模拟</em>
       let rawFd = await context.resourceManager.getRawFd(rawPath);
       this.videoBuffer = await context.resourceManager.getRawFileContent(rawPath);
-      // 数据写入回调，实际从网络读取视频数据，写入buffer用于AVPlayer播放。这里使用Rawfile模拟
+     <em> // 数据写入回调，实际从网络读取视频数据，写入buffer用于AVPlayer播放。这里使用Rawfile模拟</em>
       let callback = (buffer: ArrayBuffer, length: number): number => {
         if (this.videoBuffer === undefined) {
           return 0;
         }
-        // 计算读取数据字节数
+      <em>  // 计算读取数据字节数</em>
         let remainSize = this.videoBuffer.length - this.readOffset;
         let readSize = Math.min(length, remainSize);
-        // 写入buffer
+      <em>  // 写入buffer</em>
         let bufferView = new Uint8Array(buffer);
         bufferView.set(this.videoBuffer.slice(this.readOffset, this.readOffset + readSize));
-        // 更新写入偏移量
+      <em>  // 更新写入偏移量</em>
         this.readOffset += readSize;
         return readSize;
       };
-      // 设置AVPlayer流式媒体资源描述
+   <em>   // 设置AVPlayer流式媒体资源描述</em>
       this.avPlayer.dataSrc = { fileSize: rawFd.length, callback: callback };
     } catch (err) {
       console.error(`Failed to set avPlayer.dataSrc, Cause: ${JSON.stringify(err)}`);
@@ -141,7 +141,7 @@ struct Index {
           let context = this.getUIContext().getHostContext() as Context;
           let surfaceId = this.xComponentCtl.getXComponentSurfaceId();
           this.avPlayerMgr.setSurfaceId(surfaceId);
-          // 播放AVPlayer视频
+        <em>  // 播放AVPlayer视频</em>
           this.avPlayerMgr.initPlayer(context, 'input.mp4');
         });
     }

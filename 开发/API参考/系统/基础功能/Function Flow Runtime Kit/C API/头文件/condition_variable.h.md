@@ -1,13 +1,14 @@
 # condition_variable.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-condition-variable-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明条件变量的C接口。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | FFRT_C_API int ffrt_cond_init(ffrt_cond_t* cond, const ffrt_condattr_t* attr) | 初始化条件变量。该条件变量不再使用时，必须通过ffrt_cond_destroy销毁。 |
@@ -45,15 +49,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### ffrt_cond_init()
+### ffrt_cond_init()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API int ffrt_cond_init(ffrt_cond_t* cond, const ffrt_condattr_t* attr)
@@ -67,6 +73,7 @@ FFRT_C_API int ffrt_cond_init(ffrt_cond_t* cond, const ffrt_condattr_t* attr)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_cond_t* cond | 指向条件变量的指针。 |
@@ -75,6 +82,7 @@ FFRT_C_API int ffrt_cond_init(ffrt_cond_t* cond, const ffrt_condattr_t* attr)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API int | 条件变量初始化成功时返回ffrt_success； 否则返回ffrt_error_inval。 |
@@ -82,9 +90,10 @@ FFRT_C_API int ffrt_cond_init(ffrt_cond_t* cond, const ffrt_condattr_t* attr)
  
   
 
-#### ffrt_cond_signal()
+### ffrt_cond_signal()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API int ffrt_cond_signal(ffrt_cond_t* cond)
@@ -98,6 +107,7 @@ FFRT_C_API int ffrt_cond_signal(ffrt_cond_t* cond)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_cond_t* cond | 指向条件变量的指针。 |
@@ -105,6 +115,7 @@ FFRT_C_API int ffrt_cond_signal(ffrt_cond_t* cond)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API int | 线程被唤醒时返回ffrt_success； 否则返回ffrt_error_inval。 |
@@ -116,9 +127,10 @@ FFRT_C_API int ffrt_cond_signal(ffrt_cond_t* cond)
  
   
 
-#### ffrt_cond_broadcast()
+### ffrt_cond_broadcast()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API int ffrt_cond_broadcast(ffrt_cond_t* cond)
@@ -132,6 +144,7 @@ FFRT_C_API int ffrt_cond_broadcast(ffrt_cond_t* cond)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_cond_t* cond | 指向条件变量的指针。 |
@@ -139,6 +152,7 @@ FFRT_C_API int ffrt_cond_broadcast(ffrt_cond_t* cond)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API int | 线程被唤醒时返回ffrt_success； 否则返回ffrt_error_inval。 |
@@ -150,9 +164,10 @@ FFRT_C_API int ffrt_cond_broadcast(ffrt_cond_t* cond)
  
   
 
-#### ffrt_cond_wait()
+### ffrt_cond_wait()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API int ffrt_cond_wait(ffrt_cond_t* cond, ffrt_mutex_t* mutex)
@@ -166,6 +181,7 @@ FFRT_C_API int ffrt_cond_wait(ffrt_cond_t* cond, ffrt_mutex_t* mutex)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_cond_t* cond | 指向条件变量的指针。 |
@@ -174,6 +190,7 @@ FFRT_C_API int ffrt_cond_wait(ffrt_cond_t* cond, ffrt_mutex_t* mutex)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API int | 阻塞后被成功唤醒时返回ffrt_success； 否则返回ffrt_error_inval。 |
@@ -189,9 +206,10 @@ FFRT_C_API int ffrt_cond_wait(ffrt_cond_t* cond, ffrt_mutex_t* mutex)
  
   
 
-#### ffrt_cond_timedwait()
+### ffrt_cond_timedwait()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API int ffrt_cond_timedwait(ffrt_cond_t* cond, ffrt_mutex_t* mutex, const struct timespec* time_point)
@@ -205,6 +223,7 @@ FFRT_C_API int ffrt_cond_timedwait(ffrt_cond_t* cond, ffrt_mutex_t* mutex, const
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_cond_t* cond | 指向条件变量的指针。 |
@@ -214,6 +233,7 @@ FFRT_C_API int ffrt_cond_timedwait(ffrt_cond_t* cond, ffrt_mutex_t* mutex, const
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API int | 阻塞后被成功唤醒时返回ffrt_success； 未被唤醒且到达time_point时返回ffrt_error_timedout； cond、mutex或time_point任一为null时返回ffrt_error_inval。 |
@@ -229,9 +249,10 @@ FFRT_C_API int ffrt_cond_timedwait(ffrt_cond_t* cond, ffrt_mutex_t* mutex, const
  
   
 
-#### ffrt_cond_destroy()
+### ffrt_cond_destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API int ffrt_cond_destroy(ffrt_cond_t* cond)
@@ -245,6 +266,7 @@ FFRT_C_API int ffrt_cond_destroy(ffrt_cond_t* cond)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_cond_t* cond | 指向条件变量的指针。 |
@@ -252,6 +274,7 @@ FFRT_C_API int ffrt_cond_destroy(ffrt_cond_t* cond)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API int | 条件变量销毁成功时返回ffrt_success； 否则返回ffrt_error_inval。 |

@@ -1,18 +1,19 @@
 # @system.configuration (应用配置)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-system-configuration
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 > [!NOTE]
 > 从API Version 7 开始，该接口不再维护，推荐使用新接口 @ohos.i18n 和 @ohos.intl 。 本模块首批接口从API version 3开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ```text
 import Configuration from '@system.configuration';
@@ -20,9 +21,10 @@ import Configuration from '@system.configuration';
  
   
 
-#### configuration.getLocale
+## configuration.getLocale
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 static getLocale(): LocaleResponse
  
@@ -34,6 +36,7 @@ static getLocale(): LocaleResponse
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | LocaleResponse | 应用当前Locale相关信息。 |
@@ -205,9 +208,10 @@ export default {
  
   
 
-#### LocaleResponse
+## LocaleResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 表示应用当前Locale的属性。
  
@@ -215,6 +219,7 @@ export default {
  
 **系统能力**：以下各项对应的系统能力均为SystemCapability.ArkUI.ArkUI.Lite
   
+
 | 名称 | 类型 | 可读 | 可写 | 说明 |
 | --- | --- | --- | --- | --- |
 | language | string | 是 | 否 | 语言。例如：zh。 |

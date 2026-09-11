@@ -1,11 +1,12 @@
 # FG_PerFrameExtendedCameraInfo
 
-更新时间：2026-04-24 08:10:21
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_f_g___per_frame_extended_camera_info
 **支持设备：** Phone | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -19,16 +20,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | Tablet | TV
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | FG_Mat4x4 proj | 相机投影矩阵，即从视图空间到裁剪空间坐标系的转换矩阵。 |
@@ -40,13 +44,15 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
 
 **支持设备：** Phone | Tablet | TV
 
   
 
-#### proj
+### proj
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -60,7 +66,8 @@ FG_Mat4x4 FG_PerFrameExtendedCameraInfo::proj
  
   
 
-#### translatedInvViewProj
+### translatedInvViewProj
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -74,7 +81,8 @@ FG_Mat4x4 FG_PerFrameExtendedCameraInfo::translatedInvViewProj
  
   
 
-#### translatedView
+### translatedView
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -88,7 +96,8 @@ FG_Mat4x4 FG_PerFrameExtendedCameraInfo::translatedView
  
   
 
-#### translatedViewProj
+### translatedViewProj
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -102,7 +111,8 @@ FG_Mat4x4 FG_PerFrameExtendedCameraInfo::translatedViewProj
  
   
 
-#### worldPosition
+### worldPosition
+
 
 **支持设备：** Phone | Tablet | TV
 

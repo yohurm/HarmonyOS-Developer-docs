@@ -51,7 +51,7 @@ export struct ExList {
   build() {
     List({ scroller: this.scroller, space: this.space, initialIndex: this.initialIndex }) {
       this.bindView();
-    }.attributeModifier(this.attribute); // AttributeModifier方法调用封装好的修饰类ExListModify
+    }.attributeModifier(this.attribute); <em>// AttributeModifier方法调用封装好的修饰类ExListModify</em>
   }
 }
 ```
@@ -74,7 +74,7 @@ ExList({ attribute: this.modify }) {
 import { AttributeUpdater, ListModifier } from '@kit.ArkUI';
 
 
-// 初始化并配置列表属性对象
+<em>// 初始化并配置列表属性对象</em>
 export class ExListModify extends AttributeUpdater<ListModifier> {
   private exScrollBar: BarState = BarState.Off;
   private exConstrainSize: ConstraintSizeOptions = { maxHeight: '100%' };
@@ -89,7 +89,7 @@ export class ExListModify extends AttributeUpdater<ListModifier> {
 };
 
 
-// 自定义列表组件ExList
+<em>// 自定义列表组件ExList</em>
 @Component
 export struct ExList {
   @BuilderParam bindView: () => void;
@@ -102,7 +102,7 @@ export struct ExList {
   build() {
     List({ scroller: this.scroller, space: this.space, initialIndex: this.initialIndex }) {
       this.bindView();
-    }.attributeModifier(this.attribute); // AttributeModifier方法调用封装好的修饰类ExListModify
+    }.attributeModifier(this.attribute); <em>// AttributeModifier方法调用封装好的修饰类ExListModify</em>
   }
 }
 
@@ -137,7 +137,7 @@ export struct CustomUiDemo {
 
 
       Blank().height(10);
-      // 组件ExList展示相关数据
+  <em>    // 组件ExList展示相关数据</em>
       ExList({ attribute: this.modify }) {
         ForEach(this.dataList1, (item: number) => {
           ListItem() {

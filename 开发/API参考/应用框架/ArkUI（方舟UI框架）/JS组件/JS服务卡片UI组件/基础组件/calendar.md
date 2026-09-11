@@ -1,9 +1,9 @@
 # calendar
 
-更新时间：2026-07-09 02:26:55
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-service-widget-basic-calendar
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 日历组件，用于呈现日历界面。
  
@@ -12,20 +12,23 @@
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 不支持。
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-service-widget-common-attributes)外，还支持如下属性：
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | date | string | 当前日期 | 否 | 当前页面选中的日期，默认是当前日期，格式为年-月-日，如"2019-11-22"。 |
@@ -38,6 +41,7 @@
  
  **表1** calendardata的日属性
   
+
 | 名称 | 类型 | 描述 |
 | --- | --- | --- |
 | index | int | 数据的索引，表示第几个日期。 |
@@ -103,10 +107,12 @@ calendardata示例：
  
   
 
-#### 样式
+## 样式
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
  
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | background-color | &lt;color&gt; | - | 否 | 设置背景颜色。 |
@@ -114,10 +120,12 @@ calendardata示例：
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
  
+
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | selectedchange | changeEvent | 在点击日期和上下月跳转时触发。 |
@@ -126,6 +134,7 @@ calendardata示例：
  
  **表2** changeEvent
   
+
 | 名称 | 类型 | 描述 |
 | --- | --- | --- |
 | $event.day | string | 选择的日期。 |
@@ -135,6 +144,7 @@ calendardata示例：
  
  **表3** requestEvent
   
+
 | 名称 | 类型 | 描述 |
 | --- | --- | --- |
 | $event.month | string | 请求的月份。 |
@@ -145,9 +155,10 @@ calendardata示例：
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 当前数据仅为示例数据，实际使用时请补充完整的日期数据。
  
@@ -219,4 +230,4 @@ calendardata示例：
 **4*4卡片**
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/t9QfnmwMQI-fAgrwWXo2Yg/zh-cn_image_0000002647588756.png?HW-CC-KV=V1&HW-CC-Date=20260723T012003Z&HW-CC-Expire=86400&HW-CC-Sign=A19B2A88059738CB2DAD14B9E3405DA2F942B801E3AE3DA4EB1ABA0A52611FD6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/osr_RNlcRmy-twUGEudnqA/zh-cn_image_0000002717773412.png?HW-CC-KV=V1&HW-CC-Date=20260911T073001Z&HW-CC-Expire=86400&HW-CC-Sign=7E40D34E2DA5775C46BC36FF07916CB47D1E99E4B9087D8B661588D62AE53A52)

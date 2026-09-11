@@ -1,11 +1,12 @@
 # native_avscreen_capture_base.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avscreen-capture-base-h
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 结构体
+### 结构体
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_AudioCaptureInfo | OH_AudioCaptureInfo | 音频采样信息。 当audioSampleRate和audioChannels同时为0时，忽略该类型音频相关参数，不录制该类型音频数据。 同时采集音频麦克风和音频内录数据时，两路音频的audioSampleRate和audioChannels采样参数需要相同。 |
@@ -58,10 +62,12 @@
  
   
 
-#### 枚举
+### 枚举
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_CaptureMode | OH_CaptureMode | 枚举，表示屏幕录制的不同模式。 |
@@ -82,10 +88,12 @@
  
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | typedef void (*OH_AVScreenCaptureOnError)(OH_AVScreenCapture *capture, int32_t errorCode) | OH_AVScreenCaptureOnError | 当OH_AVScreenCapture实例运行出错时，系统将调用该函数指针通知应用程序。 从API版本12开始，推荐使用接口OH_AVScreenCapture_OnError替代。 |
@@ -102,10 +110,12 @@
  
   
 
-#### 变量
+### 变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | const char * OH_SCREEN_CAPTURE_CONTENT_RECT | 获取录屏图像帧中有效内容区域信息的key。 通过此key获取到的返回值是一个int32_t数组，单位为像素（px）。数组长度为4。数组元素定义为[top, left, width, height]，其中top表示矩形窗口左上角纵坐标，left表示矩形窗口左上角横坐标，width表示矩形窗口的宽度，height表示矩形窗口的高度。数组元素可以从OH_AVFormat_GetIntBuffer中获取。 起始版本： 26.0.0 |
@@ -113,13 +123,15 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### OH_CaptureMode
+### OH_CaptureMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -137,6 +149,7 @@ enum OH_CaptureMode
  
 **起始版本：** 10
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_CAPTURE_HOME_SCREEN = 0 | 录制主屏幕。 |
@@ -147,7 +160,8 @@ enum OH_CaptureMode
  
   
 
-#### OH_AudioCaptureSourceType
+### OH_AudioCaptureSourceType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -165,6 +179,7 @@ enum OH_AudioCaptureSourceType
  
 **起始版本：** 10
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_SOURCE_INVALID = -1 | 无效音频源。 |
@@ -176,7 +191,8 @@ enum OH_AudioCaptureSourceType
  
   
 
-#### OH_AudioCodecFormat
+### OH_AudioCodecFormat
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -194,6 +210,7 @@ OH_AUDIO_DEFAULT为默认编码，适用于大多数音视频录制场景；OH_A
  
 **起始版本：** 10
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_AUDIO_DEFAULT = 0 | 默认音频编码，默认为AAC_LC。 |
@@ -203,7 +220,8 @@ OH_AUDIO_DEFAULT为默认编码，适用于大多数音视频录制场景；OH_A
  
   
 
-#### OH_VideoCodecFormat
+### OH_VideoCodecFormat
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -219,6 +237,7 @@ enum OH_VideoCodecFormat
  
 **起始版本：** 10
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_VIDEO_DEFAULT = 0 | 默认视频编码，默认为H.264。 |
@@ -232,7 +251,8 @@ enum OH_VideoCodecFormat
  
   
 
-#### OH_DataType
+### OH_DataType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -252,6 +272,7 @@ enum OH_DataType
  
 **起始版本：** 10
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_ORIGINAL_STREAM = 0 | 原始流格式，如YUV/RGBA/PCM等。 |
@@ -262,7 +283,8 @@ enum OH_DataType
  
   
 
-#### OH_VideoSourceType
+### OH_VideoSourceType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -278,6 +300,7 @@ enum OH_VideoSourceType
  
 **起始版本：** 10
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_VIDEO_SOURCE_SURFACE_YUV = 0 | YUV格式。当前版本暂不支持。 |
@@ -288,7 +311,8 @@ enum OH_VideoSourceType
  
   
 
-#### OH_ContainerFormatType
+### OH_ContainerFormatType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -306,6 +330,7 @@ enum OH_ContainerFormatType
  
 **起始版本：** 10
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | CFT_MPEG_4A = 0 | 音频格式 m4a。 |
@@ -314,7 +339,8 @@ enum OH_ContainerFormatType
  
   
 
-#### OH_AVScreenCaptureStateCode
+### OH_AVScreenCaptureStateCode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -332,6 +358,7 @@ enum OH_AVScreenCaptureStateCode
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_SCREEN_CAPTURE_STATE_STARTED = 0 | 已开始录屏。 |
@@ -353,7 +380,8 @@ enum OH_AVScreenCaptureStateCode
  
   
 
-#### OH_AVScreenCaptureBufferType
+### OH_AVScreenCaptureBufferType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -369,6 +397,7 @@ enum OH_AVScreenCaptureBufferType
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_SCREEN_CAPTURE_BUFFERTYPE_VIDEO = 0 | 视频数据。 |
@@ -378,7 +407,8 @@ enum OH_AVScreenCaptureBufferType
  
   
 
-#### OH_AVScreenCaptureFilterableAudioContent
+### OH_AVScreenCaptureFilterableAudioContent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -396,6 +426,7 @@ enum OH_AVScreenCaptureFilterableAudioContent
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_SCREEN_CAPTURE_NOTIFICATION_AUDIO = 0 | 通知音。 |
@@ -404,7 +435,8 @@ enum OH_AVScreenCaptureFilterableAudioContent
  
   
 
-#### OH_AVScreenCaptureContentChangedEvent
+### OH_AVScreenCaptureContentChangedEvent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -420,6 +452,7 @@ enum OH_AVScreenCaptureContentChangedEvent
  
 **起始版本：** 20
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_SCREEN_CAPTURE_CONTENT_HIDE = 0 | 录屏内容变为隐藏。 |
@@ -429,7 +462,8 @@ enum OH_AVScreenCaptureContentChangedEvent
  
   
 
-#### OH_AVScreenCapture_FillMode
+### OH_AVScreenCapture_FillMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -447,6 +481,7 @@ OH_SCREENCAPTURE_FILLMODE_ASPECT_SCALE_FIT适用于需要保持图像原始宽�
  
 **起始版本：** 20
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_SCREENCAPTURE_FILLMODE_ASPECT_SCALE_FIT = 0 | 保持图像原始宽高比匹配目标图像大小，若比例不一致可能存在黑边。 |
@@ -455,7 +490,8 @@ OH_SCREENCAPTURE_FILLMODE_ASPECT_SCALE_FIT适用于需要保持图像原始宽�
  
   
 
-#### OH_ScreenCaptureHighlightMode
+### OH_ScreenCaptureHighlightMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -469,6 +505,7 @@ enum OH_ScreenCaptureHighlightMode
  
 **起始版本：** 22
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_HIGHLIGHT_MODE_CLOSED = 0 | 默认模式，用方形全包边框高亮显示录制区域。 |
@@ -477,7 +514,8 @@ enum OH_ScreenCaptureHighlightMode
  
   
 
-#### OH_CapturePickerMode
+### OH_CapturePickerMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -493,6 +531,7 @@ enum OH_CapturePickerMode
  
 **起始版本：** 22
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_CAPTURE_PICKER_MODE_WINDOW_ONLY = 0 | 仅显示窗口模式。 |
@@ -506,13 +545,15 @@ enum OH_CapturePickerMode
  
   
 
-#### 函数说明
+## 函数说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### OH_AVScreenCaptureOnError()
+### OH_AVScreenCaptureOnError()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -532,6 +573,7 @@ typedef void (*OH_AVScreenCaptureOnError)(OH_AVScreenCapture *capture, int32_t e
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVScreenCapture *capture | 指向OH_AVScreenCapture实例的指针。 |
@@ -540,7 +582,8 @@ typedef void (*OH_AVScreenCaptureOnError)(OH_AVScreenCapture *capture, int32_t e
  
   
 
-#### OH_AVScreenCaptureOnAudioBufferAvailable()
+### OH_AVScreenCaptureOnAudioBufferAvailable()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -560,6 +603,7 @@ typedef void (*OH_AVScreenCaptureOnAudioBufferAvailable)(OH_AVScreenCapture *cap
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVScreenCapture *capture | 指向OH_AVScreenCapture实例的指针。 |
@@ -569,7 +613,8 @@ typedef void (*OH_AVScreenCaptureOnAudioBufferAvailable)(OH_AVScreenCapture *cap
  
   
 
-#### OH_AVScreenCaptureOnVideoBufferAvailable()
+### OH_AVScreenCaptureOnVideoBufferAvailable()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -589,6 +634,7 @@ typedef void (*OH_AVScreenCaptureOnVideoBufferAvailable)(OH_AVScreenCapture *cap
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVScreenCapture *capture | 指向OH_AVScreenCapture实例的指针。 |
@@ -597,7 +643,8 @@ typedef void (*OH_AVScreenCaptureOnVideoBufferAvailable)(OH_AVScreenCapture *cap
  
   
 
-#### OH_AVScreenCapture_OnStateChange()
+### OH_AVScreenCapture_OnStateChange()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -619,6 +666,7 @@ typedef void (*OH_AVScreenCapture_OnStateChange)(struct OH_AVScreenCapture *capt
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVScreenCapture *capture | 指向OH_AVScreenCapture实例的指针。 |
@@ -628,7 +676,8 @@ typedef void (*OH_AVScreenCapture_OnStateChange)(struct OH_AVScreenCapture *capt
  
   
 
-#### OH_AVScreenCapture_OnError()
+### OH_AVScreenCapture_OnError()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -646,6 +695,7 @@ typedef void (*OH_AVScreenCapture_OnError)(OH_AVScreenCapture *capture, int32_t 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVScreenCapture *capture | 指向OH_AVScreenCapture实例的指针。 |
@@ -655,7 +705,8 @@ typedef void (*OH_AVScreenCapture_OnError)(OH_AVScreenCapture *capture, int32_t 
  
   
 
-#### OH_AVScreenCapture_OnBufferAvailable()
+### OH_AVScreenCapture_OnBufferAvailable()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -675,6 +726,7 @@ typedef void (*OH_AVScreenCapture_OnBufferAvailable)(OH_AVScreenCapture *capture
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVScreenCapture *capture | 指向OH_AVScreenCapture实例的指针。 |
@@ -686,7 +738,8 @@ typedef void (*OH_AVScreenCapture_OnBufferAvailable)(OH_AVScreenCapture *capture
  
   
 
-#### OH_AVScreenCapture_OnDisplaySelected()
+### OH_AVScreenCapture_OnDisplaySelected()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -704,6 +757,7 @@ typedef void (*OH_AVScreenCapture_OnDisplaySelected)(OH_AVScreenCapture *capture
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVScreenCapture *capture | 指向OH_AVScreenCapture实例的指针。 |
@@ -713,7 +767,8 @@ typedef void (*OH_AVScreenCapture_OnDisplaySelected)(OH_AVScreenCapture *capture
  
   
 
-#### OH_AVScreenCapture_OnCaptureContentChanged()
+### OH_AVScreenCapture_OnCaptureContentChanged()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -733,6 +788,7 @@ typedef void (*OH_AVScreenCapture_OnCaptureContentChanged)(OH_AVScreenCapture* c
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVScreenCapture* capture | 指向OH_AVScreenCapture实例的指针。 |
@@ -743,7 +799,8 @@ typedef void (*OH_AVScreenCapture_OnCaptureContentChanged)(OH_AVScreenCapture* c
  
   
 
-#### OH_AVScreenCapture_OnUserSelected()
+### OH_AVScreenCapture_OnUserSelected()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -761,6 +818,7 @@ typedef void (*OH_AVScreenCapture_OnUserSelected)(OH_AVScreenCapture* capture, O
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVScreenCapture* capture | 指向OH_AVScreenCapture实例的指针。 |
@@ -770,7 +828,8 @@ typedef void (*OH_AVScreenCapture_OnUserSelected)(OH_AVScreenCapture* capture, O
  
   
 
-#### OH_AVScreenCapture_OnPrivacyProtect()
+### OH_AVScreenCapture_OnPrivacyProtect()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -786,6 +845,7 @@ typedef void (*OH_AVScreenCapture_OnPrivacyProtect)(OH_AVScreenCapture* capture,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVScreenCapture* capture | 指向OH_AVScreenCapture实例的指针。 |

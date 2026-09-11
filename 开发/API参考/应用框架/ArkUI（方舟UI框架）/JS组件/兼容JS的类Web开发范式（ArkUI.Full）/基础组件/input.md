@@ -1,9 +1,9 @@
 # input
 
-更新时间：2026-07-09 02:26:55
+更新时间：2026-09-01 03:59:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-basic-input
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 > [!NOTE]
 > 从API version 4开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
@@ -12,28 +12,32 @@
 交互式组件，包括单选框，多选框，按钮和单行文本输入框。
   
 
-#### 权限列表
+## 权限列表
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 无
  
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 不支持。
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-attributes)外，还支持如下属性：
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | type | string | text | 否 | input组件类型，可选值为text，email，date，time，number，password，button，checkbox，radio。 其中text，email，date，time，number，password这六种类型之间支持动态切换修改。 button，checkbox，radio不支持动态修改。可选值定义如下： - button：定义可点击的按钮； - checkbox：定义多选框； - radio：定义单选按钮，允许在多个拥有相同name值的选项中选中其中一个； - text：定义一个单行的文本字段； - email：定义用于e-mail地址的字段； - date：定义 date 控件（包括年、月、日，不包括时间）； - time：定义用于输入时间的控件（不带时区）； - number：定义用于输入数字的字段； - password：定义密码字段（字段中的字符会被遮蔽）。 |
@@ -55,6 +59,7 @@
  
 **表1** MenuOption5+
   
+
 | 名称 | 类型 | 描述 |
 | --- | --- | --- |
 | icon | string | 菜单选项中的图标路径。 |
@@ -63,12 +68,14 @@
  
   
 
-#### 样式
+## 样式
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 除支持[通用样式](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-styles)外，还支持如下样式：
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | color | &lt;color&gt; | #e6000000 | 否 | 单行输入框或者按钮的文本颜色。 |
@@ -81,38 +88,51 @@
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-events)外，还支持如下事件：
  
 - 当input类型为text、email、date、time、number、password时，支持如下事件：
 
 | 名称 | 参数 | 描述 |
+
 | --- | --- | --- |
+
 | change | { value: inputValue } | 输入框输入内容发生变化时触发该事件，返回用户当前输入值。 改变value属性值不会触发该回调。 |
-| enterkeyclick | { value: enterKey } | 软键盘enter键点击后触发该事件，返回enter按钮的类型，enterKey类型为number，可选值为： - 2：设置enterkeytype属性为go时生效。 - 3：设置enterkeytype属性为search时生效。 - 4：设置enterkeytype属性为send时生效。 - 5：设置enterkeytype属性为next时生效。 - 6：不设置enterkeytype或者设置enterkeytype属性为default、done时生效。 |
+
+| enterkeyclick | { value: enterKey } | 软键盘Enter键点击后触发该事件，返回Enter按钮的类型，enterKey类型为number，可选值为： - 2：设置enterkeytype属性为go时生效。 - 3：设置enterkeytype属性为search时生效。 - 4：设置enterkeytype属性为send时生效。 - 5：设置enterkeytype属性为next时生效。 - 6：不设置enterkeytype或者设置enterkeytype属性为default、done时生效。 |
+
 | translate5+ | { value: selectedText } | 设置此事件后，进行文本选择操作后文本选择弹窗会出现翻译按钮，点击翻译按钮之后，触发该回调，返回选中的文本内容。 |
+
 | share5+ | { value: selectedText } | 设置此事件后，进行文本选择操作后文本选择弹窗会出现分享按钮，点击分享按钮之后，触发该回调，返回选中的文本内容。 |
+
 | search5+ | { value: selectedText } | 设置此事件后，进行文本选择操作后文本选择弹窗会出现搜索按钮，点击搜索按钮之后，触发该回调，返回选中的文本内容。 |
+
 | optionselect5+ | { index: optionIndex, value: selectedText } | 文本选择弹窗中设置menuoptions属性后，用户在文本选择操作后，点击菜单项后触发该回调，返回点击的菜单项序号和选中的文本内容。 |
+
 | selectchange6+ | { start: number, end: number } | 文本选择变化时触发该事件，返回文本选择的起始和结束位置。 |
 - 当input类型为checkbox、radio时，支持如下事件：
 
 | 名称 | 参数 | 描述 |
+
 | --- | --- | --- |
+
 | change | { checked:true \| false } | checkbox多选框或radio单选框的checked状态发生变化时触发该事件。 |
 
  
   
 
-#### 方法
+## 方法
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 除支持[通用方法](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-methods)外，还支持如下方法：
   
+
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | focus | { focus: true\|false }， focus不传值时默认为true。 | 使组件获得或者失去焦点，type为text \| email \| date \| time \| number \| password时，可弹出或收起软键盘。 |
@@ -122,9 +142,10 @@
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 1. type为text
 
   
@@ -279,4 +300,4 @@ export default {
 }
 ```
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/rG_20VAZQYi7blFsd8WfxQ/zh-cn_image_0000002677828159.png?HW-CC-KV=V1&HW-CC-Date=20260723T012001Z&HW-CC-Expire=86400&HW-CC-Sign=6586D69B25D43FBC3CE275FB251F86B2A5D4581B2FE02DF98D6F18257EFB007E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/ECJ6vGtATLygXdSd1gnKgA/zh-cn_image_0000002747293195.png?HW-CC-KV=V1&HW-CC-Date=20260911T072955Z&HW-CC-Expire=86400&HW-CC-Sign=C60203CE3909CED0752EFB0998542FD72C335BF74DF5C81031A8FECCD9AE35E2)

@@ -1,24 +1,24 @@
 # Matmul模板参数
 
-更新时间：2026-05-12 09:31:20
+更新时间：2026-08-18 12:49:55
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-template-parameters
 
-#### 功能说明
+## 功能说明
 
 创建Matmul对象时需要传入：
  
 - A、B、C、Bias的参数类型信息，类型信息通过MatmulType来定义，包括：内存逻辑位置、数据格式、数据类型、是否转置、数据排布和是否使能L1复用。
 - MatmulConfig信息（可选），用于配置Matmul模板信息以及相关的配置参数。不配置默认使能Norm模板。
 
-  针对Kirin9020系列处理器，当前只支持使能默认的MDL模板。
+  针对Kirin9020系列处理器、Kirin9030系列处理器，当前只支持使能默认的MDL模板。
 - MatmulCallBack回调函数信息（可选），用于配置左右矩阵从GM拷贝到L1、计算结果从CO1拷贝到GM的自定义函数。
 - MatmulPolicy信息（可选），预留参数。
 
  
   
 
-#### 实现原理
+## 实现原理
 
 以输入矩阵A (GM, ND, half)、矩阵B(GM, ND, half)，输出矩阵C (GM, ND, float)，无Bias场景为例，其中(GM, ND, half)表示数据存放在GM上，数据格式为ND，数据类型为half，描述Matmul高阶API典型场景的内部算法框图，如下图所示。
  
@@ -39,7 +39,7 @@
  
   
 
-#### 函数原型
+## 函数原型
 
 ```text
 template <class A_TYPE, class B_TYPE, class C_TYPE, class BIAS_TYPE = C_TYPE, const MatmulConfig& MM_CFG = CFG_NORM, class MM_CB = MatmulCallBackFunc<nullptr, nullptr, nullptr>, MATMUL_POLICY_DEFAULT_OF(MatmulPolicy)> 
@@ -67,21 +67,23 @@ template <const auto& = MM_CFG, typename ...> class MATMUL_POLICY = DEFAULT
  
   
 
-#### 参数说明
+## 参数说明
 
 **表1** MatmulType参数说明
   
+
 | 参数 | 说明 |
 | --- | --- |
-| POSITION | 内存逻辑位置 Kirin9020系列处理器： - A矩阵可设置为TPosition::GM，TPosition::TSCM。 - B矩阵可设置为TPosition::GM，TPosition::TSCM。 - C矩阵可设置为TPosition::GM。 |
-| CubeFormat | Kirin9020系列处理器： - A矩阵在GM时，支持CubeFormat::ND。 - A矩阵在TSCM时，支持CubeFormat::NZ/CubeFormat::VECTOR。 - B矩阵在GM时，支持CubeFormat::ND/CubeFormat::NZ。 - B矩阵在TSCM时支持CubeFormat::NZ。 - C矩阵在GM时，支持CubeFormat::ND。 |
-| TYPE | Kirin9020系列处理器： - A矩阵可设置为half。 - B矩阵可设置为half。 - C矩阵可设置为half。 |
+| POSITION | 内存逻辑位置 Kirin9020系列处理器、Kirin9030系列处理器： - A矩阵可设置为TPosition::GM，TPosition::TSCM。 - B矩阵可设置为TPosition::GM，TPosition::TSCM。 - C矩阵可设置为TPosition::GM。 |
+| CubeFormat | Kirin9020系列处理器、Kirin9030系列处理器： - A矩阵在GM时，支持CubeFormat::ND。 - A矩阵在TSCM时，支持CubeFormat::NZ/CubeFormat::VECTOR。 - B矩阵在GM时，支持CubeFormat::ND/CubeFormat::NZ。 - B矩阵在TSCM时支持CubeFormat::NZ。 - C矩阵在GM时，支持CubeFormat::ND。 |
+| TYPE | Kirin9020系列处理器、Kirin9030系列处理器： - A矩阵可设置为half。 - B矩阵可设置为half。 - C矩阵可设置为half。 |
 | ISTRANS | 是否开启使能矩阵转置的功能。当前不支持转置，只支持设为false。 false为不开启使能矩阵转置的功能，通过SetTensorA和SetTensorB不能设置A、B矩阵是否转置。Matmul会认为A矩阵形状为[M, K]，B矩阵形状为[K, N]。 默认为false不使能转置。 |
 | LAYOUT | 表征数据的排布。 NONE：默认值，表示不使用BatchMatmul，其他选项表示使用BatchMatmul。 |
  
  
 **表2** MatmulConfig参数说明
   
+
 | 参数 | 说明 | 支持模板：Norm, MDL, SpecialMDL, IBShare, BasicBlock |
 | --- | --- | --- |
 | doNorm | 使能Norm模板。参数取值如下。 - true：使能Norm模板 - false：不使能Norm模板 不指定模板的情况默认使能Norm模板。 | Norm |
@@ -120,6 +122,7 @@ template <const auto& = MM_CFG, typename ...> class MATMUL_POLICY = DEFAULT
  
 **表3** 模板特性
   
+
 | 模板 | 实现 | 优点 | 推荐使用场景 |
 | --- | --- | --- | --- |
 | Norm | 支持L1缓存多个基本块，MTE2分多次从GM搬运基本块到L1，每次搬运一份基本块，已搬的基本块不清空。（举例说明：depthA1=6，代表搬入6份A矩阵基本块到L1，1次搬运一份基本块，MTE2进行6次搬运） | 可以提前启动MTE1流水（因为搬1份基本块就可以做MTE1后面的运算） | 默认使能Norm模板 |
@@ -130,6 +133,7 @@ template <const auto& = MM_CFG, typename ...> class MATMUL_POLICY = DEFAULT
  
 **表4** MatmulConfigMode参数说明
   
+
 | 参数 | 说明 |
 | --- | --- |
 | CONFIG_NORM | 表示设置MatmulConfig默认值为Norm模板。 |
@@ -140,6 +144,7 @@ template <const auto& = MM_CFG, typename ...> class MATMUL_POLICY = DEFAULT
  
 **表5** MatmulShapeParams参数说明
   
+
 | 参数 | 数据类型 | 说明 |
 | --- | --- | --- |
 | singleCoreM | uint32_t | 单核内M轴shape大小，以元素为单位。 |
@@ -152,6 +157,7 @@ template <const auto& = MM_CFG, typename ...> class MATMUL_POLICY = DEFAULT
  
 **表6** MatmulQuantParams参数说明
   
+
 | 参数 | 数据类型 | 说明 |
 | --- | --- | --- |
 | isPerTensor | bool | A矩阵half类型输入且B矩阵int8类型输入场景，使能B矩阵量化时是否为per tensor，true为per tensor，false为per channel。 |
@@ -160,6 +166,7 @@ template <const auto& = MM_CFG, typename ...> class MATMUL_POLICY = DEFAULT
  
 **表7** MatmulBatchParams参数说明
   
+
 | 参数 | 数据类型 | 说明 |
 | --- | --- | --- |
 | batchLoop | bool | 是否多Batch输入多Batch输出。参数取值如下。 - false：不使能多Batch（默认值） - true：使能多Batch 仅对BatchMatmul有效。 |
@@ -169,6 +176,7 @@ template <const auto& = MM_CFG, typename ...> class MATMUL_POLICY = DEFAULT
  
 **表8** MatmulFuncParams参数说明
   
+
 | 参数 | 数据类型 | 说明 |
 | --- | --- | --- |
 | intrinsicsLimit | bool | 进行芯片指令搬运地址偏移量校验，影响性能。参数取值如下。 - false：不进行芯片指令搬运地址偏移量校验（默认值） - true：进行芯片指令搬运地址偏移量校验 |
@@ -184,6 +192,7 @@ template <const auto& = MM_CFG, typename ...> class MATMUL_POLICY = DEFAULT
  
 **表9** MatmulCallBackFunc回调函数接口及参数说明
   
+
 | 回调函数功能 | 回调函数接口 | 参数说明 |
 | --- | --- | --- |
 | 可自定义设置不同的搬出数据片段数目等参数，实现将Matmul计算结果从CO1搬出到GM的功能 | void DataCopyOut(const gm void *gm, const LocalTensor&lt;int8_t&gt; &co1Local, const void *dataCopyOutParams, const uint64_t tilingPtr, const uint64_t dataPtr) | gm：输出的GM地址。 co1Local：CO1上的计算结果。 dataCopyOutParams： Matmul定义的DataCopyOutParams结构体指针，供开发者参考使用。 - uint16_t cBurstNum：传输数据片段数目 - uint16_t burstLen：连续传输数据片段长度 - int16_t srcStride：源tensor相邻连续数据片段间隔 - uint32_t dstStride：目的tensor相邻连续数据片段间隔 - uint16_t oriNSize：NZ转ND时，源tensorN方向大小 - bool enUnitFlag：是否使能UnitFlag - uint64_t quantScalar：量化场景下量化Scalar的值 - uint64_t cbufWorkspaceAddr：量化场景下量化Tensor地址 tilingPtr：开发者使用SetUserDefInfo设置的tiling参数地址。 dataPtr：开发者使用SetSelfDefineData设置的计算数据地址。 |
@@ -193,6 +202,7 @@ template <const auto& = MM_CFG, typename ...> class MATMUL_POLICY = DEFAULT
  
 **表10** MatmulApiStaticTiling常量化Tiling参数说明
   
+
 | 参数 | 数据类型 | 说明 |
 | --- | --- | --- |
 | M, N, Ka, Kb, singleCoreM, singleCoreN, singleCoreK, baseM, baseN, baseK, depthA1, depthB1, stepM,stepN,stepKa,stepKb, isBias, transLength, iterateOrder, dbL0A, dbL0B, dbL0C, shareMode, shareL1Size, shareL0CSize, shareUbSize, batchM, batchN, singleBatchM, singleBatchN | int | 与TCubeTiling结构体结构体中各同名参数含义一致。本结构体中的参数是常量化后的常数值。 |
@@ -201,27 +211,29 @@ template <const auto& = MM_CFG, typename ...> class MATMUL_POLICY = DEFAULT
  
   
 
-#### 返回值
+## 返回值
 
 无
  
   
 
-#### 支持的型号
+## 支持的型号
 
 Kirin9020系列处理器
+ 
+Kirin9030系列处理器
  
 KirinX90系列处理器
  
   
 
-#### 注意事项
+## 注意事项
 
 无
  
   
 
-#### 调用示例
+## 调用示例
 
 ```text
 // 开发者自定义回调函数

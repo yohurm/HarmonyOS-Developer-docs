@@ -1,9 +1,9 @@
 # @ohos.resourceschedule.workScheduler (延迟任务调度)
 
-更新时间：2026-07-09 02:26:55
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-resourceschedule-workscheduler
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供延迟任务注册、取消、查询的能力。在开发过程中，对于实时性要求不高的任务，可以调用本模块接口注册延迟任务，在系统空闲时根据性能、功耗、热等情况进行调度执行。开发指导请参考[延迟任务开发指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/work-scheduler)。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { workScheduler } from '@kit.BackgroundTasksKit';
@@ -22,9 +23,10 @@ import { workScheduler } from '@kit.BackgroundTasksKit';
 
 
 
-#### workScheduler.startWork
+## workScheduler.startWork
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startWork(work: WorkInfo): void
 
@@ -34,6 +36,7 @@ startWork(work: WorkInfo): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | work | WorkInfo | 是 | 指定延迟任务具体信息，比如延迟任务ID、触发条件等。 |
@@ -42,6 +45,7 @@ startWork(work: WorkInfo): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[workScheduler错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-workscheduler)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -83,9 +87,10 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 
 
-#### workScheduler.stopWork
+## workScheduler.stopWork
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stopWork(work: WorkInfo, needCancel?: boolean): void
 
@@ -94,6 +99,7 @@ stopWork(work: WorkInfo, needCancel?: boolean): void
 **系统能力：** SystemCapability.ResourceSchedule.WorkScheduler
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -104,6 +110,7 @@ stopWork(work: WorkInfo, needCancel?: boolean): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[workScheduler错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-workscheduler)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -144,9 +151,10 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 
 
-#### workScheduler.getWorkStatus
+## workScheduler.getWorkStatus
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getWorkStatus(workId: number, callback : AsyncCallback&lt;WorkInfo&gt;): void
 
@@ -155,6 +163,7 @@ getWorkStatus(workId: number, callback : AsyncCallback&lt;WorkInfo&gt;): void
 **系统能力：** SystemCapability.ResourceSchedule.WorkScheduler
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -165,6 +174,7 @@ getWorkStatus(workId: number, callback : AsyncCallback&lt;WorkInfo&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[workScheduler错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-workscheduler)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -192,9 +202,10 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 
 
-#### workScheduler.getWorkStatus
+## workScheduler.getWorkStatus
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getWorkStatus(workId: number): Promise&lt;WorkInfo&gt;
 
@@ -204,12 +215,14 @@ getWorkStatus(workId: number): Promise&lt;WorkInfo&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | workId | number | 是 | 延迟任务Id。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -219,6 +232,7 @@ getWorkStatus(workId: number): Promise&lt;WorkInfo&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[workScheduler错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-workscheduler)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -244,9 +258,10 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 
 
-#### workScheduler.obtainAllWorks(deprecated)
+## workScheduler.obtainAllWorks(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 obtainAllWorks(callback: AsyncCallback&lt;void&gt;) : Array&lt;WorkInfo&gt;
 
@@ -260,12 +275,14 @@ obtainAllWorks(callback: AsyncCallback&lt;void&gt;) : Array&lt;WorkInfo&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数，获取成功时，err为undefined，否则为错误对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -275,6 +292,7 @@ obtainAllWorks(callback: AsyncCallback&lt;void&gt;) : Array&lt;WorkInfo&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[workScheduler错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-workscheduler)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -286,9 +304,10 @@ obtainAllWorks(callback: AsyncCallback&lt;void&gt;) : Array&lt;WorkInfo&gt;
 
 
 
-#### workScheduler.obtainAllWorks10+
+## workScheduler.obtainAllWorks10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 obtainAllWorks(callback: AsyncCallback<Array&lt;WorkInfo&gt;>): void
 
@@ -298,6 +317,7 @@ obtainAllWorks(callback: AsyncCallback<Array&lt;WorkInfo&gt;>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback<Array&lt;WorkInfo&gt;> | 是 | 回调函数，获取成功时，返回当前应用所有的延迟任务列表，否则抛出异常。 |
@@ -306,6 +326,7 @@ obtainAllWorks(callback: AsyncCallback<Array&lt;WorkInfo&gt;>): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[workScheduler错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-workscheduler)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -332,9 +353,10 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 
 
-#### workScheduler.obtainAllWorks
+## workScheduler.obtainAllWorks
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 obtainAllWorks(): Promise<Array&lt;WorkInfo&gt;>
 
@@ -344,6 +366,7 @@ obtainAllWorks(): Promise<Array&lt;WorkInfo&gt;>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;WorkInfo&gt;> | Promise对象，返回当前应用所有的延迟任务。 |
@@ -352,6 +375,7 @@ obtainAllWorks(): Promise<Array&lt;WorkInfo&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[workScheduler错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-workscheduler)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -376,19 +400,21 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 
 
-#### workScheduler.stopAndClearWorks
+## workScheduler.stopAndClearWorks
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stopAndClearWorks(): void
 
-停止和取消当前应用所有的延迟任务。
+停止和取消当前应用所有的延迟任务。适用于应用退出或卸载时清理所有延迟任务的场景。
 
 **系统能力：** SystemCapability.ResourceSchedule.WorkScheduler
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[workScheduler错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-workscheduler)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -414,9 +440,10 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 
 
-#### workScheduler.isLastWorkTimeOut(deprecated)
+## workScheduler.isLastWorkTimeOut(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isLastWorkTimeOut(workId: number, callback : AsyncCallback&lt;void&gt;): boolean
 
@@ -428,6 +455,7 @@ isLastWorkTimeOut(workId: number, callback : AsyncCallback&lt;void&gt;): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | workId | number | 是 | 指定延迟任务的Id。 |
@@ -435,6 +463,7 @@ isLastWorkTimeOut(workId: number, callback : AsyncCallback&lt;void&gt;): boolean
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -444,6 +473,7 @@ isLastWorkTimeOut(workId: number, callback : AsyncCallback&lt;void&gt;): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[workScheduler错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-workscheduler)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -456,9 +486,10 @@ isLastWorkTimeOut(workId: number, callback : AsyncCallback&lt;void&gt;): boolean
 
 
 
-#### workScheduler.isLastWorkTimeOut10+
+## workScheduler.isLastWorkTimeOut10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isLastWorkTimeOut(workId: number, callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -467,6 +498,7 @@ isLastWorkTimeOut(workId: number, callback: AsyncCallback&lt;boolean&gt;): void
 **系统能力：** SystemCapability.ResourceSchedule.WorkScheduler
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -477,6 +509,7 @@ isLastWorkTimeOut(workId: number, callback: AsyncCallback&lt;boolean&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[workScheduler错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-workscheduler)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -504,9 +537,10 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 
 
-#### workScheduler.isLastWorkTimeOut
+## workScheduler.isLastWorkTimeOut
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isLastWorkTimeOut(workId: number): Promise&lt;boolean&gt;
 
@@ -516,12 +550,14 @@ isLastWorkTimeOut(workId: number): Promise&lt;boolean&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | workId | number | 是 | 指定延迟任务的Id。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -531,6 +567,7 @@ isLastWorkTimeOut(workId: number): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[workScheduler错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-workscheduler)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -558,9 +595,10 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 
 
-#### WorkInfo
+## WorkInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 延迟任务的具体信息，用于设置延迟任务的触发条件等。
 
@@ -569,6 +607,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 
 **系统能力：** SystemCapability.ResourceSchedule.WorkScheduler
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -593,13 +632,15 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 
 
-#### NetworkType
+## NetworkType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 触发延迟任务回调的网络类型。
 
 **系统能力：** SystemCapability.ResourceSchedule.WorkScheduler
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -613,13 +654,15 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 
 
-#### ChargingType
+## ChargingType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 触发延迟任务回调的充电类型。
 
 **系统能力：** SystemCapability.ResourceSchedule.WorkScheduler
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -631,13 +674,15 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 
 
-#### BatteryStatus
+## BatteryStatus
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 触发延迟任务回调的电池状态。
 
 **系统能力：** SystemCapability.ResourceSchedule.WorkScheduler
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -648,13 +693,15 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 
 
-#### StorageRequest
+## StorageRequest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 触发延迟任务回调的存储状态。
 
 **系统能力：** SystemCapability.ResourceSchedule.WorkScheduler
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

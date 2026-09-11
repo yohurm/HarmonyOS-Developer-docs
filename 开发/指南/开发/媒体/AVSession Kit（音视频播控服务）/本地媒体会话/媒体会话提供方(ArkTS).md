@@ -1,25 +1,26 @@
 # 媒体会话提供方(ArkTS)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-avsession-developer
 
 音视频应用在实现音视频功能的同时，需要作为媒体会话提供方接入媒体会话，在媒体会话控制方（例如播控中心）中展示媒体相关信息，并响应媒体会话控制方下发的播控命令。
 
 
-#### 基本概念
+## 基本概念
 
- - 媒体会话元数据（AVMetadata）：用于描述媒体数据相关属性，包含标识当前媒体的ID（assetId），上一首媒体的ID（previousAssetId），下一首媒体的ID（nextAssetId），标题（title），专辑作者（author），专辑名称（album），词作者（writer），媒体时长（duration）等属性。
- - 媒体播放状态（AVPlaybackState）：用于描述媒体播放状态的相关属性，包含当前媒体的播放状态（state）、播放位置（position）、播放倍速（speed）、缓冲时间（bufferedTime）、循环模式（loopMode）、是否收藏（isFavorite）、正在播放的媒体ID（activeItemId）、自定义媒体数据（extras）等属性。
-
-
+ - 媒体会话元数据（AVMetadata）：用于描述媒体数据相关属性，包含标识当前媒体的ID（assetId）、上一首媒体的ID（previousAssetId）、下一首媒体的ID（nextAssetId）、标题（title）、艺术家（artist）、专辑作者（author）、专辑名称（album）、词作者（writer）和媒体时长（duration）等属性。
+ - 媒体播放状态（AVPlaybackState）：用于描述媒体播放状态的相关属性，包含当前媒体的播放状态（state）、播放位置（position）、播放倍速（speed）、缓冲时间（bufferedTime）、循环模式（loopMode）、是否收藏（isFavorite）、正在播放的媒体ID（activeItemId）和自定义媒体数据（extras）等属性。
 
 
-#### 接口说明
+
+
+## 接口说明
 
 媒体会话提供方使用的关键接口如下表所示。接口返回值有两种返回形式：callback和promise，下表中为callback形式接口，promise和callback只是返回值方式不一样，功能相同。
 
 更多API说明请参考文档：[模块描述](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-avsession)。
+
 
 | 接口名 | 说明 |
 | --- | --- |
@@ -28,7 +29,7 @@
 | setAVPlaybackState(state: AVPlaybackState, callback: AsyncCallback&lt;void&gt;): void10+ | 设置媒体会话播放状态。 |
 | setLaunchAbility(ability: WantAgent, callback: AsyncCallback&lt;void&gt;): void10+ | 设置启动UIAbility。 |
 | getController(callback: AsyncCallback&lt;AVSessionController&gt;): void10+ | 获取当前会话自身控制器。 |
-| getOutputDevice(callback: AsyncCallback&lt;OutputDeviceInfo&gt;): void10+ | 获取播放设备相关信息。 |
+| getOutputDevice(callback: AsyncCallback&lt;OutputDeviceInfo&gt;): void10+ | 获取输出设备相关信息。 |
 | activate(callback: AsyncCallback&lt;void&gt;): void10+ | 激活媒体会话。 |
 | deactivate(callback: AsyncCallback&lt;void&gt;): void10+ | 禁用当前会话。 |
 | destroy(callback: AsyncCallback&lt;void&gt;): void10+ | 销毁媒体会话。 |
@@ -41,7 +42,7 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 
 音视频应用作为媒体会话提供方接入媒体会话的基本步骤如下所示：
 1. 通过AVSessionManager的方法创建并激活媒体会话。
@@ -144,11 +145,11 @@ struct Index {
 }
 ```
 
-5. 设置一个即时的自定义会话事件，以供媒体控制方接收到事件后进行相应的操作。
+5. 发送一个即时的自定义会话事件，以供媒体控制方接收到事件后进行相应的操作。
 
   
 > [!NOTE]
-> 通过dispatchSessionEvent方法设置的数据不会保存在会话对象或AVSession服务中。
+> 通过dispatchSessionEvent方法发送的数据不会保存在会话对象或AVSession服务中。
 
 
   
@@ -245,6 +246,8 @@ struct Index {
 
 
   Session侧的固定播控命令主要包括播放、暂停、上一首、下一首等基础操作命令，详细介绍请参见[AVControlCommand](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-avsession-i#avcontrolcommand10)。
+
+  控制场景包括：播控中心点击、播控中心通知栏移除、蓝牙耳机佩戴、蓝牙耳机/有线耳机按键、语音助手控制等。
 
   
 ```ArkTS
@@ -349,7 +352,7 @@ struct Index {
   
 skipToQueueItem: 播放列表其中某项被选中的事件。
 8. handleKeyEvent: 按键事件。
-9. outputDeviceChange: 播放设备变化的事件。
+9. outputDeviceChange: 输出设备变化的事件。
 10. commonCommand: 自定义控制命令变化的事件。
 11. 获取当前媒体会话自身的控制器，与媒体会话对应进行通信交互。
 

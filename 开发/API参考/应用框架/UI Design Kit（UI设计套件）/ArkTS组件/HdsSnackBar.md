@@ -1,6 +1,6 @@
-# HdsSnackBar
+# HdsSnackBar (即时操作)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdssnackbar
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -10,17 +10,19 @@
 **起始版本：** 6.0.0(20)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
-import { HdsSnackBar } from '@kit.UIDesignKit';
+import { HdsSnackBar, SnackBarIconOptions, SnackBarMessageOptions, SnackBarOperationOptions, SnackBarStyleOptions, SnackBarOperationType } from '@kit.UIDesignKit';
 ```
  
   
 
-#### HdsSnackBar
+## HdsSnackBar
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -34,7 +36,8 @@ import { HdsSnackBar } from '@kit.UIDesignKit';
  
   
 
-#### constructor
+### constructor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -48,6 +51,7 @@ constructor(uiContext: UIContext)
  
 **起始版本：** 6.0.0(20)
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uiContext | UIContext | 是 | 应用的UIContext。 |
@@ -55,7 +59,8 @@ constructor(uiContext: UIContext)
  
   
 
-#### show
+### show
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -69,6 +74,7 @@ show(icon: SnackBarIconOptions, message: SnackBarMessageOptions, operation: Snac
  
 **起始版本：** 6.0.0(20)
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | icon | SnackBarIconOptions | 是 | HdsSnackBar图标区的配置信息。 |
@@ -79,7 +85,8 @@ show(icon: SnackBarIconOptions, message: SnackBarMessageOptions, operation: Snac
  
   
 
-#### dismiss
+### dismiss
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -95,7 +102,8 @@ dismiss(): void
  
   
 
-#### SnackBarIconOptions
+## SnackBarIconOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -107,6 +115,7 @@ dismiss(): void
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | icon | ResourceStr | 否 | 是 | HdsSnackBar的图标，支持SymbolGlyph和Image。 |
@@ -119,7 +128,8 @@ dismiss(): void
  
   
 
-#### SnackBarMessageOptions
+## SnackBarMessageOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -131,6 +141,7 @@ dismiss(): void
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | title | ResourceStr | 否 | 是 | HdsSnackBar的中间文本的标题。 |
@@ -143,7 +154,8 @@ dismiss(): void
  
   
 
-#### SnackBarOperationOptions
+## SnackBarOperationOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -155,6 +167,7 @@ dismiss(): void
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | operationType | SnackBarOperationType | 否 | 是 | HdsSnackBar的右侧操作区域元素样式。 |
@@ -181,7 +194,8 @@ dismiss(): void
  
   
 
-#### SnackBarStyleOptions
+## SnackBarStyleOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -193,6 +207,7 @@ dismiss(): void
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | width | LengthMetrics | 否 | 是 | HdsSnackBar的宽度。 |
@@ -211,7 +226,8 @@ dismiss(): void
  
   
 
-#### SnackBarOperationType
+## SnackBarOperationType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -223,6 +239,7 @@ dismiss(): void
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | TEXT_ONLY | 0 | 文本按钮。 |
@@ -234,7 +251,8 @@ dismiss(): void
  
   
 
-#### SnackBarIconType
+## SnackBarIconType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -246,6 +264,7 @@ dismiss(): void
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SMALL | 0 | 小图标。 |
@@ -254,7 +273,8 @@ dismiss(): void
  
   
 
-#### 示例
+## 示例
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -318,4 +338,4 @@ struct TestSnackBar {
 效果图：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/b0nh-zUeREOrDET1lOQrnA/zh-cn_image_0000002686088867.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071607Z&HW-CC-Expire=86400&HW-CC-Sign=364C55AE0A6EB5DA06897F1E935A50DBBB62957525A975228C6DAB40EB617123)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/Edpu4kPGRgafex1Wsp3m3A/zh-cn_image_0000002747213445.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073131Z&HW-CC-Expire=86400&HW-CC-Sign=4CE6D93B847FAA6FDD4F5A52DDCF4352831CA3DDE1C1C9EEE156541AF3E9F6F7)

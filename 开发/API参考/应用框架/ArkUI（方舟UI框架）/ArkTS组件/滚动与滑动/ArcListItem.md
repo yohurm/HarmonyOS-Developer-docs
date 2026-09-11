@@ -1,9 +1,9 @@
 # ArcListItem
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arclistitem
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于展示弧形列表的子组件，必须配合[ArcList](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arclist)使用。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > ArcListItemAttribute是用于配置ArcListItem组件属性的关键接口。API version 21及之前版本，导入ArcListItem组件后需要开发者手动导入ArcListItemAttribute，否则会编译报错。从API version 22开始，编译工具链识别到导入ArcListItem组件后，会自动导入ArcListItemAttribute，无需开发者手动导入ArcListItemAttribute。 如果开发者手动导入ArcListItemAttribute，DevEco Studio中该导入语句会显示为置灰状态。在API version 21及之前版本，删除该导入语句会导致编译报错；从API version 22开始，删除该导入语句对功能无影响。
@@ -34,17 +35,19 @@ import { ArcListItem } from '@kit.ArkUI';
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 可以包含单个子组件。
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ArcListItem()
 
@@ -56,17 +59,19 @@ ArcListItem()
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
 
 
 
-#### autoScale
+### autoScale
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 autoScale(enable: Optional&lt;boolean&gt;)
 
@@ -78,6 +83,7 @@ autoScale(enable: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enable | Optional&lt;boolean&gt; | 是 | ArcListItem是否支持自动缩放显示，true表示支持，false表示不支持。 默认值：true，支持自动缩放显示。 |
@@ -85,9 +91,10 @@ autoScale(enable: Optional&lt;boolean&gt;)
 
 
 
-#### swipeAction
+### swipeAction
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 swipeAction(options: Optional&lt;SwipeActionOptions&gt;)
 
@@ -99,6 +106,7 @@ swipeAction(options: Optional&lt;SwipeActionOptions&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | Optional&lt;SwipeActionOptions&gt; | 是 | ArcListItem划出操作的配置选项，具体配置请参考SwipeActionOptions对象说明。未设置时，不配置划出操作。 |
@@ -106,9 +114,10 @@ swipeAction(options: Optional&lt;SwipeActionOptions&gt;)
 
 
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例展示了子项关闭自动缩放和开启自动缩放后的对比效果。
 
@@ -167,4 +176,4 @@ struct ArcListItemExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/WooGiwFjRIijckGPRrVLWA/zh-cn_image_0000002656008410.png?HW-CC-KV=V1&HW-CC-Date=20260730T071500Z&HW-CC-Expire=86400&HW-CC-Sign=3480428466CACC89B416D5EF681D2DBE7338D239E04B2320762C2A6C65A109C6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/uBiYgc-QSre6hL6p_z8Wrw/zh-cn_image_0000002747212495.png?HW-CC-KV=V1&HW-CC-Date=20260911T073111Z&HW-CC-Expire=86400&HW-CC-Sign=027831CE72674DF3B2D982C9B9ECEBE4BD087DDE6AF89240B8FCD485C6339A0F)

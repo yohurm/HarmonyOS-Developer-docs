@@ -201,7 +201,7 @@ struct Index {
 
   private async takePhotoAndSaveAsHEIF() {
     try {
-      // 1. 拉起相机选择器
+      <em>// 1. 拉起相机选择器</em>
       const pickerProfile: cameraPicker.PickerProfile = {
         cameraPosition: camera.CameraPosition.CAMERA_POSITION_BACK,
       };
@@ -222,16 +222,16 @@ struct Index {
       const imageBaseName = this.getImageBaseName(imageName);
       const sandboxPath = this.context.filesDir + '/' + imageName;
 
-      // 2. 复制原始图片到沙盒
+      <em>// 2. 复制原始图片到沙盒</em>
       this.copyFile(originalUri, sandboxPath);
 
-      // 3. 转换为 HEIF 格式
+      <em>// 3. 转换为 HEIF 格式</em>
       const imageSource = this.imageToImageSource(sandboxPath);
       const targetPath = this.context.filesDir + '/' + imageBaseName + '.heic';
 
       await this.imageFormatTrans(imageSource, targetPath);
 
-      // 4. 保存到本地
+      <em>// 4. 保存到本地</em>
       this.saveToLocalFile(this.context, this.getUIContext(), imageBaseName + '.heic', targetPath);
 
       console.log('拍照并成功保存为 HEIF 格式：', targetPath);

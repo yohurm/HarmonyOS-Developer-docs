@@ -1,18 +1,19 @@
 # Functions
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-f
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { audio } from '@kit.AudioKit';
@@ -20,9 +21,10 @@ import { audio } from '@kit.AudioKit';
 
 
 
-#### audio.getAudioManager
+## audio.getAudioManager
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAudioManager(): AudioManager
 
@@ -33,6 +35,7 @@ getAudioManager(): AudioManager
 **系统能力：** SystemCapability.Multimedia.Audio.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -49,9 +52,10 @@ let audioManager = audio.getAudioManager();
 
 
 
-#### audio.createAudioRenderer8+
+## audio.createAudioRenderer8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAudioRenderer(options: AudioRendererOptions, callback: AsyncCallback&lt;AudioRenderer&gt;): void
 
@@ -60,6 +64,7 @@ createAudioRenderer(options: AudioRendererOptions, callback: AsyncCallback&lt;Au
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -103,9 +108,10 @@ audio.createAudioRenderer(audioRendererOptions,(err, data) => {
 
 
 
-#### audio.createAudioRenderer8+
+## audio.createAudioRenderer8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAudioRenderer(options: AudioRendererOptions): Promise&lt;AudioRenderer&gt;
 
@@ -115,12 +121,14 @@ createAudioRenderer(options: AudioRendererOptions): Promise&lt;AudioRenderer&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | AudioRendererOptions | 是 | 配置渲染器。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -162,9 +170,10 @@ audio.createAudioRenderer(audioRendererOptions).then((data) => {
 
 
 
-#### audio.createAudioCapturer8+
+## audio.createAudioCapturer8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAudioCapturer(options: AudioCapturerOptions, callback: AsyncCallback&lt;AudioCapturer&gt;): void
 
@@ -177,6 +186,7 @@ createAudioCapturer(options: AudioCapturerOptions, callback: AsyncCallback&lt;Au
 当设置Mic音频源（即[SourceType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-e#sourcetype8)为SOURCE_TYPE_MIC、SOURCE_TYPE_VOICE_RECOGNITION、SOURCE_TYPE_VOICE_COMMUNICATION、SOURCE_TYPE_VOICE_MESSAGE、SOURCE_TYPE_CAMCORDER）时需要该权限。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -220,9 +230,10 @@ audio.createAudioCapturer(audioCapturerOptions, (err, data) => {
 
 
 
-#### audio.createAudioCapturer8+
+## audio.createAudioCapturer8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAudioCapturer(options: AudioCapturerOptions): Promise&lt;AudioCapturer&gt;
 
@@ -236,12 +247,14 @@ createAudioCapturer(options: AudioCapturerOptions): Promise&lt;AudioCapturer&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | AudioCapturerOptions | 是 | 配置音频采集器。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -283,9 +296,10 @@ audio.createAudioCapturer(audioCapturerOptions).then((data) => {
 
 
 
-#### audio.createAudioLoopback20+
+## audio.createAudioLoopback20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAudioLoopback(mode: AudioLoopbackMode): Promise&lt;AudioLoopback&gt;
 
@@ -303,12 +317,14 @@ createAudioLoopback(mode: AudioLoopbackMode): Promise&lt;AudioLoopback&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mode | AudioLoopbackMode | 是 | 音频返听模式。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -318,6 +334,7 @@ createAudioLoopback(mode: AudioLoopbackMode): Promise&lt;AudioLoopback&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

@@ -1,13 +1,14 @@
 # Rcp_InfoToCollect
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_rcp___info_to_collect
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 指定要收集的请求处理事件。可以通过响应对象检查收集的事件。
  
@@ -19,16 +20,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 成员变量
+### 成员变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | bool textual | 是否收集文本信息事件。true表示收集文本信息事件，false表示不收集文本信息事件。默认值为false。 |
@@ -42,15 +46,17 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### incomingData
+### incomingData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool Rcp_InfoToCollect::incomingData
@@ -62,9 +68,10 @@ bool Rcp_InfoToCollect::incomingData
  
   
 
-#### incomingHeader
+### incomingHeader
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool Rcp_InfoToCollect::incomingHeader
@@ -76,9 +83,10 @@ bool Rcp_InfoToCollect::incomingHeader
  
   
 
-#### incomingSslData
+### incomingSslData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool Rcp_InfoToCollect::incomingSslData
@@ -90,9 +98,10 @@ bool Rcp_InfoToCollect::incomingSslData
  
   
 
-#### outgoingData
+### outgoingData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool Rcp_InfoToCollect::outgoingData
@@ -104,9 +113,10 @@ bool Rcp_InfoToCollect::outgoingData
  
   
 
-#### outgoingHeader
+### outgoingHeader
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool Rcp_InfoToCollect::outgoingHeader
@@ -118,9 +128,10 @@ bool Rcp_InfoToCollect::outgoingHeader
  
   
 
-#### outgoingSslData
+### outgoingSslData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool Rcp_InfoToCollect::outgoingSslData
@@ -132,9 +143,10 @@ bool Rcp_InfoToCollect::outgoingSslData
  
   
 
-#### textual
+### textual
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool Rcp_InfoToCollect::textual

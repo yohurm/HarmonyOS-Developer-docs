@@ -1,9 +1,9 @@
 # Interface (Zoom)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-zoom
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Zoom继承自[ZoomQuery](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-zoomquery)。
  
@@ -14,9 +14,10 @@ Zoom继承自[ZoomQuery](https://developer.huawei.com/consumer/cn/doc/harmonyos-
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { camera } from '@kit.CameraKit';
@@ -24,9 +25,10 @@ import { camera } from '@kit.CameraKit';
  
   
 
-#### setZoomRatio11+
+## setZoomRatio11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setZoomRatio(zoomRatio: number): void
  
@@ -38,6 +40,7 @@ setZoomRatio(zoomRatio: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | zoomRatio | number | 是 | 可变焦距比，通过getZoomRatioRange获取支持的变焦范围，如果设置超过支持范围的值，则只保留精度范围内数值。 设置可变焦距比到底层生效需要一定时间，获取正确设置的可变焦距比需要等待1~2帧的时间。 |
@@ -47,6 +50,7 @@ setZoomRatio(zoomRatio: number): void
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400103 | Session not config. |
@@ -74,9 +78,10 @@ function setZoomRatio(photoSession: camera.PhotoSession, zoomRatioRange: Array<n
  
   
 
-#### getZoomRatio11+
+## getZoomRatio11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getZoomRatio(): number
  
@@ -88,6 +93,7 @@ getZoomRatio(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 获取当前的变焦比结果。接口调用失败会返回相应错误码，错误码类型CameraErrorCode。 |
@@ -97,6 +103,7 @@ getZoomRatio(): number
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400103 | Session not config. |
@@ -124,9 +131,10 @@ function getZoomRatio(photoSession: camera.PhotoSession): number {
  
   
 
-#### setSmoothZoom11+
+## setSmoothZoom11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setSmoothZoom(targetRatio: number, mode?: SmoothZoomMode): void
  
@@ -138,6 +146,7 @@ setSmoothZoom(targetRatio: number, mode?: SmoothZoomMode): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | targetRatio | number | 是 | 目标值。通过getZoomRatioRange获取支持的变焦范围，如果设置超过支持范围的值，则只保留精度范围内数值。 |
@@ -148,6 +157,7 @@ setSmoothZoom(targetRatio: number, mode?: SmoothZoomMode): void
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400103 | Session not config. 适用版本：11-17 |

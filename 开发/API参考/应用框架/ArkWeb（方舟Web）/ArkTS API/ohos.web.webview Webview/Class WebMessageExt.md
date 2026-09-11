@@ -1,9 +1,9 @@
 # Class (WebMessageExt)
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webmessageext
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 WebMessageExt是[WebMessagePort](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webmessageport)接口中用于接收和发送的拓展数据对象，支持多种数据类型：字符串（STRING）、数值（NUMBER）、布尔值（BOOLEAN）、二进制数据（ARRAY_BUFFER）、数组（ARRAY）和错误对象（ERROR）。该类为ArkTS侧与HTML5侧之间的跨语言消息通信提供了结构化的数据载体，通过setType/getType设置和获取数据类型，再通过对应的setter/getter方法读写具体数据。
 
@@ -14,9 +14,10 @@ WebMessageExt与WebMessagePort配合使用：WebMessagePort负责消息通道的
 
 
 
-#### getType10+
+## getType10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getType(): WebMessageType
 
@@ -26,6 +27,7 @@ getType(): WebMessageType
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | WebMessageType | WebMessagePort接口所支持的数据类型。 |
@@ -33,9 +35,10 @@ getType(): WebMessageType
 
 
 
-#### getString10+
+## getString10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getString(): string
 
@@ -44,6 +47,7 @@ getString(): string
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -54,6 +58,7 @@ getString(): string
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 17100014 | The type and value of the message do not match. |
@@ -61,9 +66,10 @@ getString(): string
 
 
 
-#### getNumber10+
+## getNumber10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getNumber(): number
 
@@ -72,6 +78,7 @@ getNumber(): number
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -82,6 +89,7 @@ getNumber(): number
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 17100014 | The type and value of the message do not match. |
@@ -89,9 +97,10 @@ getNumber(): number
 
 
 
-#### getBoolean10+
+## getBoolean10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBoolean(): boolean
 
@@ -100,6 +109,7 @@ getBoolean(): boolean
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -110,6 +120,7 @@ getBoolean(): boolean
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 17100014 | The type and value of the message do not match. |
@@ -117,9 +128,10 @@ getBoolean(): boolean
 
 
 
-#### getArrayBuffer10+
+## getArrayBuffer10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getArrayBuffer(): ArrayBuffer
 
@@ -128,6 +140,7 @@ getArrayBuffer(): ArrayBuffer
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -138,6 +151,7 @@ getArrayBuffer(): ArrayBuffer
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 17100014 | The type and value of the message do not match. |
@@ -145,9 +159,10 @@ getArrayBuffer(): ArrayBuffer
 
 
 
-#### getArray10+
+## getArray10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getArray(): Array<string | number | boolean>
 
@@ -156,6 +171,7 @@ getArray(): Array<string | number | boolean>
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -166,6 +182,7 @@ getArray(): Array<string | number | boolean>
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 17100014 | The type and value of the message do not match. |
@@ -173,9 +190,10 @@ getArray(): Array<string | number | boolean>
 
 
 
-#### getError10+
+## getError10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getError(): Error
 
@@ -184,6 +202,7 @@ getError(): Error
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -194,6 +213,7 @@ getError(): Error
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 17100014 | The type and value of the message do not match. |
@@ -201,9 +221,10 @@ getError(): Error
 
 
 
-#### setType10+
+## setType10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setType(type: WebMessageType): void
 
@@ -212,6 +233,7 @@ setType(type: WebMessageType): void
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -222,6 +244,7 @@ setType(type: WebMessageType): void
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 17100014 | The type and value of the message do not match. |
@@ -230,9 +253,10 @@ setType(type: WebMessageType): void
 
 
 
-#### setString10+
+## setString10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setString(message: string): void
 
@@ -241,6 +265,7 @@ setString(message: string): void
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -251,6 +276,7 @@ setString(message: string): void
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 17100014 | The type and value of the message do not match. |
@@ -259,9 +285,10 @@ setString(message: string): void
 
 
 
-#### setNumber10+
+## setNumber10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setNumber(message: number): void
 
@@ -270,6 +297,7 @@ setNumber(message: number): void
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -280,6 +308,7 @@ setNumber(message: number): void
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 17100014 | The type and value of the message do not match. |
@@ -288,9 +317,10 @@ setNumber(message: number): void
 
 
 
-#### setBoolean10+
+## setBoolean10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setBoolean(message: boolean): void
 
@@ -299,6 +329,7 @@ setBoolean(message: boolean): void
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -309,6 +340,7 @@ setBoolean(message: boolean): void
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 17100014 | The type and value of the message do not match. |
@@ -317,9 +349,10 @@ setBoolean(message: boolean): void
 
 
 
-#### setArrayBuffer10+
+## setArrayBuffer10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setArrayBuffer(message: ArrayBuffer): void
 
@@ -328,6 +361,7 @@ setArrayBuffer(message: ArrayBuffer): void
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -338,6 +372,7 @@ setArrayBuffer(message: ArrayBuffer): void
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 17100014 | The type and value of the message do not match. |
@@ -346,9 +381,10 @@ setArrayBuffer(message: ArrayBuffer): void
 
 
 
-#### setArray10+
+## setArray10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setArray(message: Array<string | number | boolean>): void
 
@@ -357,6 +393,7 @@ setArray(message: Array<string | number | boolean>): void
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -367,6 +404,7 @@ setArray(message: Array<string | number | boolean>): void
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 17100014 | The type and value of the message do not match. |
@@ -375,9 +413,10 @@ setArray(message: Array<string | number | boolean>): void
 
 
 
-#### setError10+
+## setError10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setError(message: Error): void
 
@@ -387,6 +426,7 @@ setError(message: Error): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | message | Error | 是 | 错误对象类型数据。 |
@@ -395,6 +435,7 @@ setError(message: Error): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

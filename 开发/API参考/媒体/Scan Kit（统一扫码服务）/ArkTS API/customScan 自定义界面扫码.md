@@ -1,11 +1,12 @@
 # customScan (自定义界面扫码)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/scan-customscan-api
 **支持设备：** Phone | Tablet | Wearable
 
-#### 模块概述
+## 模块概述
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -13,7 +14,10 @@ customScan模块提供自定义界面扫码能力，允许开发者根据自身�
  
   
 
-#### 基础扫码流程
+### 基础扫码流程
+
+
+**支持设备：** Phone | Tablet | Wearable
 
 使用customScan模块进行扫码，需要按以下顺序调用API：
  1. **初始化**：调用[init](#init)配置扫码参数。
@@ -56,16 +60,20 @@ await customScan.release();
  
   
 
-#### 生命周期和状态机
+### 生命周期和状态机
+
+
+**支持设备：** Phone | Tablet | Wearable
 
 customScan模块的扫码全流程包含：初始化（init）、启动相机流扫码（start）、暂停相机流（stop）、释放资源（release），状态图如下：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/YwWolhw2T0OyuNQJ0enCvA/zh-cn_image_0000002656009688.png?HW-CC-KV=V1&HW-CC-Date=20260730T071716Z&HW-CC-Expire=86400&HW-CC-Sign=A14E76DF3219E90161F068441347B500D7AB82D04573A50057C7ADF6927CF0F7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/GyuslDAZSOC9TXLQKs-iIA/zh-cn_image_0000002747213779.png?HW-CC-KV=V1&HW-CC-Date=20260911T073050Z&HW-CC-Expire=86400&HW-CC-Sign=395C9967CD7C49CDDDF481E5B64D0EDABFA679B2AFAC5DDD8CCAA3EDA10F1A48)
 
  
 **状态说明**
   
+
 | 状态 | 可用API | 说明 |
 | --- | --- | --- |
 | Initialized | start | 扫码已初始化，可启动相机流进行扫码。 |
@@ -79,7 +87,8 @@ customScan模块的扫码全流程包含：初始化（init）、启动相机流
  
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -89,7 +98,8 @@ import { customScan } from '@kit.ScanKit';
  
   
 
-#### ViewControl
+## ViewControl
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -101,6 +111,7 @@ import { customScan } from '@kit.ScanKit';
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | width | number | 否 | 否 | XComponent组件的宽度，默认使用单位为vp，支持px、lpx和vp。建议在不同屏幕密度下统一使用vp单位以保证兼容性。 |
@@ -114,7 +125,7 @@ import { customScan } from '@kit.ScanKit';
  
 **示例：**
  
-```json
+```text
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { scanBarcode, customScan } from '@kit.ScanKit';
@@ -149,7 +160,7 @@ struct CustomScanPage {
           try {
             customScan.start(viewControl).then((scanResult: Array<scanBarcode.ScanResult>) => {
               hilog.info(0x0001, '[Scan Sample]',
-                `Succeeded in getting ScanResult by promise, scanResult is ${JSON.stringify(scanResult)}`);
+                `Succeeded in getting ScanResult by promise, scanResult length: ${scanResult.length}`);
             }).catch((err: BusinessError) => {
               hilog.error(0x0001, '[Scan Sample]',
                 `Failed to get ScanResult by promise. Code: ${err.code}, message: ${err.message}`);
@@ -173,7 +184,8 @@ struct CustomScanPage {
  
   
 
-#### ScanFrame
+## ScanFrame
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -185,6 +197,7 @@ struct CustomScanPage {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | byteBuffer | ArrayBuffer | 否 | 否 | 相机预览流的ArrayBuffer数组，数据格式为YUV（NV21格式，基于4:2:0采样）。 |
@@ -195,7 +208,7 @@ struct CustomScanPage {
  
 **示例：**
  
-```json
+```text
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { AsyncCallback, BusinessError } from '@kit.BasicServicesKit';
 import { scanBarcode, customScan } from '@kit.ScanKit';
@@ -216,7 +229,7 @@ struct CustomScanPage {
         return;
       }
       hilog.info(0x0001, '[Scan Sample]',
-        `Succeeded in getting ScanResult by callback, result is ${JSON.stringify(data)}`);
+        `Succeeded in getting ScanResult by callback, result length: ${data.length}`);
     };
   // 回调获取ScanFrame
   private frameCallback: AsyncCallback<customScan.ScanFrame> =
@@ -226,11 +239,8 @@ struct CustomScanPage {
           `Failed to get ScanFrame by callback. Code: ${err.code}, message: ${err.message}`);
         return;
       }
-      // byteBuffer相机YUV图像数组
       hilog.info(0x0001, '[Scan Sample]',
-        `Succeeded in getting ScanFrame.byteBuffer.byteLength:  ${frameResult.byteBuffer.byteLength}`);
-      hilog.info(0x0001, '[Scan Sample]',
-        `Succeeded in getting ScanFrame.scanCodeRect: ${JSON.stringify(frameResult.scanCodeRects)}`);
+        `Succeeded in getting ScanFrame. ByteLength: ${frameResult.byteBuffer.byteLength}, width: ${frameResult.width}, height: ${frameResult.height}.`);
     };
 
   build() {
@@ -272,7 +282,8 @@ struct CustomScanPage {
  
   
 
-#### init
+## init
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -292,6 +303,7 @@ init(options?: scanBarcode.ScanOptions): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | scanBarcode.ScanOptions | 否 | 自定义界面扫码配置参数。 默认值： 参考ScanOptions的默认值。 |
@@ -307,6 +319,7 @@ init(options?: scanBarcode.ScanOptions): void
 - 在API版本5.0.2(14)及之后，未申请相机权限时调用customScan模块init接口，返回错误码201。
 
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. The application does not have the permission required to call the API. 适用版本：5.0.2(14)+ |
@@ -335,7 +348,8 @@ try {
  
   
 
-#### start
+## start
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -359,6 +373,7 @@ start(viewControl: ViewControl): Promise<Array<scanBarcode.ScanResult>>
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | viewControl | ViewControl | 是 | 相机控制参数，用于配置自定义界面扫码的相机预览流尺寸和渲染的目标surface。 |
@@ -366,6 +381,7 @@ start(viewControl: ViewControl): Promise<Array<scanBarcode.ScanResult>>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array<scanBarcode.ScanResult>> | Promise对象，返回启动相机流扫码结果对象数组。 |
@@ -381,6 +397,7 @@ start(viewControl: ViewControl): Promise<Array<scanBarcode.ScanResult>>
 - 在API版本5.0.2(14)及之后，未申请相机权限时调用customScan模块start接口，返回错误码201。
 
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. The application does not have the permission required to call the API. 适用版本：5.0.2(14)+ |
@@ -390,7 +407,7 @@ start(viewControl: ViewControl): Promise<Array<scanBarcode.ScanResult>>
  
 **示例：**
  
-```json
+```text
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { scanBarcode, customScan } from '@kit.ScanKit';
@@ -425,7 +442,7 @@ struct CustomScanPage {
           try {
             customScan.start(viewControl).then((scanResult: Array<scanBarcode.ScanResult>) => {
               hilog.info(0x0001, '[Scan Sample]',
-                `Succeeded in getting ScanResult by promise, scanResult is ${JSON.stringify(scanResult)}`);
+                `Succeeded in getting ScanResult by promise, scanResult length: ${scanResult.length}`);
             }).catch((err: BusinessError) => {
               hilog.error(0x0001, '[Scan Sample]',
                 `Failed to get ScanResult by promise. Code: ${err.code}, message: ${err.message}`);
@@ -449,7 +466,8 @@ struct CustomScanPage {
  
   
 
-#### start
+## start
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -473,6 +491,7 @@ start(viewControl: ViewControl, callback: AsyncCallback<Array<scanBarcode.ScanRe
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | viewControl | ViewControl | 是 | 相机控制参数，用于配置自定义界面扫码的相机预览流尺寸和渲染的目标surface。 |
@@ -490,6 +509,7 @@ start(viewControl: ViewControl, callback: AsyncCallback<Array<scanBarcode.ScanRe
 - 在API版本5.0.2(14)及之后，未申请相机权限时调用customScan模块start接口，返回错误码201。
 
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. The application does not have the permission required to call the API. 适用版本：5.0.2(14)+ |
@@ -499,7 +519,7 @@ start(viewControl: ViewControl, callback: AsyncCallback<Array<scanBarcode.ScanRe
  
 **示例：**
  
-```json
+```text
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { AsyncCallback, BusinessError } from '@kit.BasicServicesKit';
 import { scanBarcode, customScan } from '@kit.ScanKit';
@@ -521,18 +541,18 @@ struct CustomScanPage {
         return;
       }
       hilog.info(0x0001, '[Scan Sample]',
-        `Succeeded in getting ScanResult by callback, result is ${JSON.stringify(data)}`);
+        `Succeeded in getting ScanResult by callback, scanResult length: ${data.length}`);
     };
   // 回调获取ScanFrame
   private frameCallback: AsyncCallback<customScan.ScanFrame> =
-    (err: BusinessError, data: customScan.ScanFrame) => {
+    (err: BusinessError, frameResult: customScan.ScanFrame) => {
       if (err) {
         hilog.error(0x0001, '[Scan Sample]',
           `Failed to get ScanFrame by callback. Code: ${err.code}, message: ${err.message}`);
         return;
       }
       hilog.info(0x0001, '[Scan Sample]',
-        `Succeeded in getting ScanFrame by callback, scanFrame is ${JSON.stringify(data)}`);
+        `Succeeded in getting ScanFrame. ByteLength: ${frameResult.byteBuffer.byteLength}, width: ${frameResult.width}, height: ${frameResult.height}.`);
     };
 
   build() {
@@ -574,7 +594,8 @@ struct CustomScanPage {
  
   
 
-#### getFlashLightStatus
+## getFlashLightStatus
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -596,6 +617,7 @@ getFlashLightStatus(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回当前相机闪光灯状态。true代表开启，false代表关闭。 |
@@ -605,6 +627,7 @@ getFlashLightStatus(): boolean
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-scan)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1000500001 | Internal error. |
@@ -640,7 +663,8 @@ try {
  
   
 
-#### openFlashLight
+## openFlashLight
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -664,6 +688,7 @@ openFlashLight(): void
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-scan)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1000500001 | Internal error. |
@@ -699,7 +724,8 @@ try {
  
   
 
-#### closeFlashLight
+## closeFlashLight
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -723,6 +749,7 @@ closeFlashLight(): void
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-scan)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1000500001 | Internal error. |
@@ -758,7 +785,8 @@ if (flashLightStatus) {
  
   
 
-#### setZoom
+## setZoom
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -780,6 +808,7 @@ setZoom(zoomValue: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | zoomValue | number | 是 | 相机变焦比，精度最高为小数点后两位（例如1.45）。 |
@@ -789,6 +818,7 @@ setZoom(zoomValue: number): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-scan)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
@@ -812,7 +842,8 @@ try {
  
   
 
-#### getZoom
+## getZoom
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -834,6 +865,7 @@ getZoom(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回当前的变焦比。 |
@@ -843,6 +875,7 @@ getZoom(): number
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-scan)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1000500001 | Internal error. |
@@ -865,7 +898,8 @@ try {
  
   
 
-#### setFocusPoint
+## setFocusPoint
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -887,6 +921,7 @@ setFocusPoint(point: scanBarcode.Point): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | point | scanBarcode.Point | 是 | 焦点。x、y设置范围应在[0，1]之内，超过范围，如果小于0设置0，大于1设置1。 |
@@ -896,6 +931,7 @@ setFocusPoint(point: scanBarcode.Point): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-scan)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
@@ -918,7 +954,8 @@ try {
  
   
 
-#### resetFocus
+## resetFocus
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -942,6 +979,7 @@ resetFocus(): void
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-scan)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1000500001 | Internal error. |
@@ -963,7 +1001,8 @@ try {
  
   
 
-#### on('lightingFlash')
+## on('lightingFlash')
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -985,6 +1024,7 @@ on(type: 'lightingFlash', callback: AsyncCallback&lt;boolean&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，固定为'lightingFlash'，当环境亮度发生变化时触发。可用于提示用户开启或关闭闪光灯。 |
@@ -995,6 +1035,7 @@ on(type: 'lightingFlash', callback: AsyncCallback&lt;boolean&gt;): void
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-scan)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1000500001 | Internal error. |
@@ -1026,7 +1067,8 @@ try {
  
   
 
-#### off('lightingFlash')
+## off('lightingFlash')
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1048,6 +1090,7 @@ off(type: 'lightingFlash', callback?: AsyncCallback&lt;boolean&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，固定为'lightingFlash'，当环境亮度发生变化时触发，可用于提示用户开启或关闭闪光灯。 |
@@ -1058,6 +1101,7 @@ off(type: 'lightingFlash', callback?: AsyncCallback&lt;boolean&gt;): void
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-scan)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1000500001 | Internal error. |
@@ -1089,7 +1133,8 @@ try {
  
   
 
-#### rescan
+## rescan
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1113,6 +1158,7 @@ rescan(): void
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-scan)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1000500001 | Internal error. |
@@ -1120,7 +1166,7 @@ rescan(): void
  
 **示例：**
  
-```json
+```text
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { AsyncCallback, BusinessError } from '@kit.BasicServicesKit';
 import { scanBarcode, customScan } from '@kit.ScanKit';
@@ -1142,7 +1188,7 @@ struct CustomScanPage {
         return;
       }
       hilog.info(0x0001, '[Scan Sample]',
-        `Succeeded in getting ScanResult by callback, result is ${JSON.stringify(data)}`);
+        `Succeeded in getting ScanResult by callback, scanResult length: ${data.length}`);
       // 重新触发扫码。如需不重启相机并重新触发一次扫码，可以在start接口的Callback异步回调中，调用rescan接口。
       try {
         customScan.rescan();
@@ -1191,7 +1237,8 @@ struct CustomScanPage {
  
   
 
-#### setAutoZoomEnabled
+## setAutoZoomEnabled
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1213,6 +1260,7 @@ setAutoZoomEnabled(enabled: boolean): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 是否开启自动变焦能力。true代表开启，false代表关闭。 |
@@ -1222,6 +1270,7 @@ setAutoZoomEnabled(enabled: boolean): void
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-scan)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1000500001 | Internal error. |
@@ -1243,7 +1292,8 @@ try {
  
   
 
-#### stop
+## stop
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1265,6 +1315,7 @@ stop(): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -1274,6 +1325,7 @@ stop(): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-scan)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1000500001 | Internal error. |
@@ -1301,7 +1353,8 @@ try {
  
   
 
-#### stop
+## stop
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1323,6 +1376,7 @@ stop(callback: AsyncCallback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当暂停相机流成功，err为undefined，否则为错误对象。 |
@@ -1332,6 +1386,7 @@ stop(callback: AsyncCallback&lt;void&gt;): void
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-scan)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1000500001 | Internal error. |
@@ -1361,7 +1416,8 @@ try {
  
   
 
-#### release
+## release
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1383,6 +1439,7 @@ release(): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -1392,6 +1449,7 @@ release(): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-scan)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1000500001 | Internal error. |
@@ -1419,7 +1477,8 @@ try {
  
   
 
-#### release
+## release
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1441,6 +1500,7 @@ release(callback: AsyncCallback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当释放相机流成功，err为undefined，否则为错误对象。 |
@@ -1450,6 +1510,7 @@ release(callback: AsyncCallback&lt;void&gt;): void
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-scan)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1000500001 | Internal error. |

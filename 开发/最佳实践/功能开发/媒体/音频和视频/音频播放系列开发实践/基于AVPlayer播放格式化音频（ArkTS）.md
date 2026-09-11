@@ -1,10 +1,10 @@
 # 基于AVPlayer播放格式化音频（ArkTS）
 
-更新时间：2026-07-09 02:22:01
+更新时间：2026-09-09 06:06:31
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-playing-formatted-audio-based-avplayer-arkts
 
-#### 概述
+## 概述
 
 AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的音频。AVPlayer提供了ArkTS API和Native API，本文指导开发者使用AVPlayer的ArkTS API实现播放格式化音频的功能，主要涉及基本播控、精准跳转、静音播放、倍速播放、音量控制、焦点管理、后台播放与接入播控中心、冷启动等开发场景。
  
@@ -20,11 +20,12 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
  
  
 
-#### 场景分析
+## 场景分析
  
+
 | 场景名称 | 描述 | 实现方案 |
 | --- | --- | --- |
-| 基础播控 | 音频资源的加载、播放、暂停、退出等操作。 | 使用AVPlayer接口实现。 |
+| 基础播控 | 音频资源的加载、播放、暂停、退出等操作。 | 使用Interface (AVPlayer)接口实现。 |
 | 跳转播放 | 滑动进度条精准跳转到指定时间进行播放。 | 使用Slider组件实现进度条，在onChange()回调中触发进度调节获取目标时间，使用AVPlayer的seek()接口，跳转到目标时间。 |
 | 静音播放 | 点击按钮设置静音播放。 | 使用AVPlayer的setMediaMuted()控制静音状态。 |
 | 切换歌曲播放 | 点击上一首或下一首或歌单列表中的歌曲进行不同歌曲播放。 | 使用reset()接口重置播放器状态，给AVPlayer的fd或fdSrc属性赋值为新的歌曲资源，实现播放不同的功能。 |
@@ -37,13 +38,13 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
  
  
 
-#### 基础播控
+## 基础播控
 
  
 
-#### 场景描述
+### 场景描述
 
-通过[AVPlayer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avplayer)实现核心音频播放控制能力，包括音频资源加载、播放、暂停、停止及退出等操作。
+通过[Interface (AVPlayer)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avplayer)实现核心音频播放控制能力，包括音频资源加载、播放、暂停、停止及退出等操作。
  
 
  
@@ -53,12 +54,12 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
  
  
 
-#### 实现原理
+### 实现原理
 
-核心原理是使用[AVPlayer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avplayer)接口实现播放、暂停等功能，需要特别注意的是，AVPlayer播放器在执行不同的操作前，必须要保证此时处于正确的状态，比如执行播放操作前，只有当前状态在prepared/paused/completed时，才能正确执行，否则系统可能会抛出异常或生成其他未定义的行为。AVPlayer的播放状态和不同接口间的关系参考[使用AVPlayer播放视频](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-playback)一节中的播放状态变化示意图。
+核心原理是使用[Interface (AVPlayer)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avplayer)接口实现播放、暂停等功能，需要特别注意的是，AVPlayer播放器在执行不同的操作前，必须要保证此时处于正确的状态，比如执行播放操作前，只有当前状态在prepared/paused/completed时，才能正确执行，否则系统可能会抛出异常或生成其他未定义的行为。AVPlayer的播放状态和不同接口间的关系参考[使用AVPlayer播放视频(ArkTS)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-playback)一节中的播放状态变化示意图。
  
 主要的开发步骤如下：
- 1. 开发者可以通过[createAVPlayer()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-f#mediacreateavplayer9)构建一个AVPlayer实例，创建成功后，此时播放器处于idle状态。
+ 1. 开发者可以通过[media.createAVPlayer()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-f#mediacreateavplayer9)构建一个AVPlayer实例，创建成功后，此时播放器处于idle状态。
 2. 注册[on('stateChange')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avplayer#onstatechange9)回调，主动获取当前状态变化。
 
   
@@ -85,9 +86,9 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
  
  
 
-#### 开发步骤
+### 开发步骤
 
-1. 通过[createAVPlayer()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-f#mediacreateavplayer9)创建一个AVPlayer实例。
+1. 通过[media.createAVPlayer()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-f#mediacreateavplayer9)创建一个AVPlayer实例。
  
 ```ArkTS
 // Initialize the player
@@ -162,7 +163,7 @@ async loadSongAssent(songRawFileDescriptor: resourceManager.RawFileDescriptor) {
     return;
   }
   this.avPlayer.fdSrc = songRawFileDescriptor;
-  Logger.info(TAG, `set avPlayer url is ${this.avPlayer.fdSrc}，curState is ${this.avPlayer?.state}`);
+  Logger.info(TAG, `set avPlayer url is ${this.avPlayer.fdSrc}, curState is ${this.avPlayer?.state}`);
 }
 ```
  
@@ -248,11 +249,11 @@ public release() {
  
  
 
-#### 跳转播放
+## 跳转播放
 
  
 
-#### 场景描述
+### 场景描述
 
 通过点击或拖动进度条精准跳转到指定时间进行播放。
  
@@ -262,13 +263,13 @@ public release() {
  
  
 
-#### 实现原理
+### 实现原理
 
-使用[Slider组件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-slider)实现进度条，在[onChange()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-slider#onchange)回调中触发进度调节获取目标时间，使用AVPlayer的[seek()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avplayer#seek9)接口，跳转到目标时间。
+使用[Slider](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-slider)组件实现进度条，在[onChange()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-slider#onchange)回调中触发进度调节获取目标时间，使用AVPlayer的[seek()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avplayer#seek9)接口，跳转到目标时间。
  
  
 
-#### 开发步骤
+### 开发步骤
 
 使用AVPlayer的[seek()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avplayer#seek9)接口，跳转到目标时间。
  
@@ -284,11 +285,11 @@ public seek(ms: number) {
  
  
 
-#### 静音播放
+## 静音播放
 
  
 
-#### 场景描述
+### 场景描述
 
 通过界面按钮快捷切换音频播放静音状态，实现一键开启或关闭静音。
  
@@ -298,13 +299,13 @@ public seek(ms: number) {
  
  
 
-#### 实现原理
+### 实现原理
 
 使用AVPlayer的[setMediaMuted()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avplayer#setmediamuted12)接口，第二个参数设置为true为开启静音播放，设置为false为取消静音播放。
  
  
 
-#### 开发步骤
+### 开发步骤
 
 调用AVPlayer的[setMediaMuted()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avplayer#setmediamuted12)设置静音。
  
@@ -323,11 +324,11 @@ public setSilentMode(isSilentMode: boolean) {
  
  
 
-#### 切换歌曲播放
+## 切换歌曲播放
 
  
 
-#### 场景描述
+### 场景描述
 
 点击上一首或下一首或歌单列表中的歌曲进行不同歌曲播放。
  
@@ -337,13 +338,13 @@ public setSilentMode(isSilentMode: boolean) {
  
  
 
-#### 实现原理
+### 实现原理
 
 使用[reset()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avplayer#reset9-1)接口重置播放器状态，给AVPlayer的fd或fdSrc属性赋值为新的歌曲资源，实现播放不同歌曲的功能。
  
  
 
-#### 开发步骤
+### 开发步骤
 
 1. 停止当前播放的歌曲， 用[reset()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avplayer#reset9-1)接口重置播放器状态。
  
@@ -371,17 +372,17 @@ async loadSongAssent(songRawFileDescriptor: resourceManager.RawFileDescriptor) {
     return;
   }
   this.avPlayer.fdSrc = songRawFileDescriptor;
-  Logger.info(TAG, `set avPlayer url is ${this.avPlayer.fdSrc}，curState is ${this.avPlayer?.state}`);
+  Logger.info(TAG, `set avPlayer url is ${this.avPlayer.fdSrc}, curState is ${this.avPlayer?.state}`);
 }
 ```
  
  
 
-#### 倍速设置
+## 倍速设置
 
  
 
-#### 场景描述
+### 场景描述
 
 滑动倍速调节面板调节播放速度。
  
@@ -391,13 +392,13 @@ async loadSongAssent(songRawFileDescriptor: resourceManager.RawFileDescriptor) {
  
  
 
-#### 实现原理
+### 实现原理
 
 通过调节面板获取目标速度值，输入到[setSpeed()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avplayer#setspeed9)接口中，实现设置播放速度的功能。
  
  
 
-#### 开发步骤
+### 开发步骤
 
 1. 通过调节面板获取速度值，传入[setSpeed()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avplayer#setspeed9)接口中。
  
@@ -435,11 +436,11 @@ public setSpeed(speed: number) {
  
  
 
-#### 音量设置
+## 音量设置
 
  
 
-#### 场景描述
+### 场景描述
 
 滑动音量调节面板调节播放音量。
  
@@ -449,13 +450,13 @@ public setSpeed(speed: number) {
  
  
 
-#### 实现原理
+### 实现原理
 
 通过调节面板获取目标音量值，输入到[setVolume()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avplayer#setvolume9)接口中，实现设置播放音量的功能。
  
  
 
-#### 开发步骤
+### 开发步骤
 
 1. 通过调节面板获取音量值，传入[setVolume()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avplayer#setvolume9)接口中。
  
@@ -495,11 +496,11 @@ public setVolume(volume: number) {
  
  
 
-#### 常见问题
+## 常见问题
 
  
 
-#### 执行AVPlayer的方法时失败，返回错误信息“Operation not allowed.”
+### 执行AVPlayer的方法时失败，返回错误信息“Operation not allowed.”
 
 **问题现象**
  
@@ -511,7 +512,7 @@ public setVolume(volume: number) {
  
 **可能原因**
  
-AVPlayer的当前状态不支持此操作，执行接口前检查下当前AVPlayer的播放状态。AVPlayer播放器在执行不同的操作前，必须要保证此时处于正确的状态，比如执行播放操作前，只有当前状态在prepared/paused/completed时，才能正确执行。针对问题现象中举例的两种场景，其错误的原因可能如下。
+AVPlayer的当前状态不支持此操作，调用接口前检查下当前AVPlayer的播放状态。AVPlayer播放器在执行不同的操作前，必须要保证此时处于正确的状态，比如执行播放操作前，只有当前状态在prepared/paused/completed时，才能正确执行。针对问题现象中举例的两种场景，其错误的原因可能如下。
  
 - 设置完url、fdSrc等属性后，AVPlayer并不是就立刻进入initialized状态，如果设置完url属性后就立刻执行[prepare()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avplayer#prepare9)接口，当代码运行此行时，AVPlayer的播放状态可能还是处于idle的状态，并没有变成initialized，这时就可能产生“Operation not allowed.”的错误。
 - 同样，执行完[prepare()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avplayer#prepare9)接口，AVPlayer也不是立刻进入prepared状态，如果此时立刻执行[play()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avplayer#play9)接口，AVPlayer的播放状态可能还没有变成prepared状态，执行就可能报错。
@@ -519,9 +520,9 @@ AVPlayer的当前状态不支持此操作，执行接口前检查下当前AVPlay
  
 **解决方案**
  
-1.  先了解在AVPlayer的不同播放状态下，可以执行哪些接口。熟悉AVPlayer的播放状态和不同接口间的关系，可以参考[使用AVPlayer播放视频](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-playback)一节中的播放状态变化示意图。
+1.  先了解在AVPlayer的不同播放状态下，可以执行哪些接口。熟悉AVPlayer的播放状态和不同接口间的关系，可以参考[使用AVPlayer播放视频(ArkTS)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-playback)一节中的播放状态变化示意图。
  
-2. 保证在在正确的播放状态下，执行对应的接口。建议开发者务必注册[on('stateChange')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avplayer#onstatechange9)状态监听，当监听到AVPlayer的播放状态到达目标状态时，执行对应的接口。在[on('stateChange')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avplayer#onstatechange9)中监听到AVPlayer处于initialized状态时，再执行[prepare()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avplayer#prepare9)接口，监听到AVPlayer处于prepared状态时，再执行[play()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avplayer#play9)接口。
+2. 保证在正确的播放状态下，执行对应的接口。建议开发者务必注册[on('stateChange')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avplayer#onstatechange9)状态监听，当监听到AVPlayer的播放状态到达目标状态时，执行对应的接口。在[on('stateChange')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avplayer#onstatechange9)中监听到AVPlayer处于initialized状态时，再执行[prepare()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avplayer#prepare9)接口，监听到AVPlayer处于prepared状态时，再执行[play()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avplayer#play9)接口。
  
 ```ArkTS
 // Watch state
@@ -556,6 +557,6 @@ private stateChangeCallback() {
  
  
 
-#### 示例代码
+## 示例代码
 
 - [基于AVPlayer播放格式化音频（ArkTS）](https://gitcode.com/HarmonyOS_Samples/avplayer-play-formatted-audio-arkts)

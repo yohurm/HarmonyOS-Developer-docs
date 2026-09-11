@@ -1,6 +1,6 @@
 # SharedArrayBuffer对象
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/shared-arraybuffer-object
 
@@ -11,7 +11,7 @@ SharedArrayBuffer内部包含一块Native内存，其JS对象壳被分配在虚�
 
   
 
-#### 使用示例
+## 使用示例
 
 使用TaskPool传递Int32Array对象，实现如下：
  

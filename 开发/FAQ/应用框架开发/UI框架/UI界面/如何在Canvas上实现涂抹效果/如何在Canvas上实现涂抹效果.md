@@ -4,7 +4,7 @@
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1060
 
-#### 问题现象
+## 问题现象
 
 在移动应用开发中，屏幕涂抹交互（如签名、涂鸦、擦除）是提升用户体验的关键功能。HarmonyOS的Canvas组件结合触摸事件监听与手势识别，为开发者提供了低门槛、高性能的2D图形绘制能力。本文将通过以下常见应用场景，详解如何在Canvas上实现涂抹效果：
  
@@ -15,7 +15,7 @@
  
  
 
-#### 背景知识
+## 背景知识
 
 - [Canvas](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-drawing-customization-on-canvas)：提供画布组件，用于自定义绘制图形，开发者使用CanvasRenderingContext2D对象和OffscreenCanvasRenderingContext2D对象在Canvas组件上进行绘制，绘制对象可以是基础形状、文本、图片等。
 - [lineTo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-canvas-common-method#lineto)：从当前点到指定点进行路径连接。
@@ -26,7 +26,7 @@
  
  
 
-#### 解决方案
+## 解决方案
 
 - 场景一：结合手势或者事件实现路径绘制。Canvas组件可以绑定触摸事件和滑动手势来获取手指按压时的坐标，在事件触发过程中可以根据event对象获取到在屏幕上触摸的点，再结合Canvas的lineTo方法就可以把手指移动过程中的路径给记录下来，达到手指滑动屏幕就绘制的效果。
 
@@ -51,21 +51,21 @@ struct CanvasTouch {
           this.context.strokeStyle = '#0000ff';
         })
         .onTouch((event: TouchEvent) => {
-          // 获取到触摸的坐标点
+         <em> // 获取到触摸的坐标点</em>
           let x = event.touches[0].x;
           let y = event.touches[0].y;
           if (event.type == TouchType.Down) {
-            // 手指按下时画布移动到当前坐标点
+          <em>  // 手指按下时画布移动到当前坐标点</em>
             this.context.beginPath();
             this.context.moveTo(x, y);
           }
           if (event.type === TouchType.Move) {
-            // 手指移动时画布用线条连接到当前坐标点
+          <em>  // 手指移动时画布用线条连接到当前坐标点</em>
             this.context.lineTo(x, y);
             this.context.stroke();
           }
           if (event.type === TouchType.Up) {
-            // 手指抬起时生成闭合路径
+           <em> // 手指抬起时生成闭合路径</em>
             this.context.closePath();
           }
         })
@@ -99,19 +99,19 @@ struct CanvasPanGesture {
             .onActionStart((event: GestureEvent) => {
               let x = event.fingerList[0].localX;
               let y = event.fingerList[0].localY;
-              // 手指按下时画布移动到当前坐标点
+          <em>    // 手指按下时画布移动到当前坐标点</em>
               this.context.beginPath();
               this.context.moveTo(x, y);
             })
             .onActionUpdate((event: GestureEvent) => {
               let x = event.fingerList[0].localX;
               let y = event.fingerList[0].localY;
-              // 手指移动时画布用线条连接到当前坐标点
+           <em>   // 手指移动时画布用线条连接到当前坐标点</em>
               this.context.lineTo(x, y);
               this.context.stroke();
             })
             .onActionEnd(() => {
-              // 手指抬起时生成闭合路径
+             <em> // 手指抬起时生成闭合路径</em>
               this.context.closePath();
             })
         )
@@ -125,7 +125,7 @@ struct CanvasPanGesture {
   实现效果如下：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/EX83OEmCTaWG2d3nCrWFXQ/zh-cn_image_0000002658926415.png?HW-CC-KV=V1&HW-CC-Date=20260818T063535Z&HW-CC-Expire=86400&HW-CC-Sign=A83F99184539A7A79B62EF360F52221AF0EBE85A3344CFCE5C7712753B399FAE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/EX83OEmCTaWG2d3nCrWFXQ/zh-cn_image_0000002658926415.png?HW-CC-KV=V1&HW-CC-Date=20260911T072742Z&HW-CC-Expire=86400&HW-CC-Sign=AFED5C87A662B90C88F8D97DC2EC830EE2DF24BCABBEB2B8092F26C6FAAFCC32)
 
 
  - 场景二：撤销绘制的路径。在一些签名场景，如果用户绘制错误需要重新绘制，直接使用clearRect方法清空画布体验不够友好，需要仅撤销最新的绘制路径，这时可以使用数组来存储绘制过程中的路径，然后点击撤销时移除最新路径，最后重绘剩余路径，这样即可实现撤销绘制功能。示例代码参考如下：
@@ -166,7 +166,7 @@ struct CanvasCancelDraw {
           let x = event.touches[0].x;
           let y = event.touches[0].y;
           if (event.type == TouchType.Down) {
-            // 按下时新建一条路径
+          <em>  // 按下时新建一条路径</em>
             const path = new DrawingPath();
             path.points.push({ x: x, y: y });
             this.paths.push(path);
@@ -174,7 +174,7 @@ struct CanvasCancelDraw {
             this.context.moveTo(x, y);
           }
           if (event.type === TouchType.Move) {
-            // 移动时把当前的坐标点放入最新的路径中
+           <em> // 移动时把当前的坐标点放入最新的路径中</em>
             this.paths[this.paths.length - 1].points.push({ x: x, y: y });
             this.context.lineTo(x, y);
             this.context.stroke();
@@ -200,7 +200,7 @@ struct CanvasCancelDraw {
             }
             this.paths.pop()!!;
             this.context.clearRect(0, 0, this.context.width, this.context.height);
-            // 重绘保存的路径
+          <em>  // 重绘保存的路径</em>
             this.paths.forEach((path) => {
               if (path.points.length < 1) {
                 return;
@@ -226,7 +226,7 @@ struct CanvasCancelDraw {
   实现效果如下：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/mcrzocgTRe-gw4W48So7og/zh-cn_image_0000002628407212.png?HW-CC-KV=V1&HW-CC-Date=20260818T063535Z&HW-CC-Expire=86400&HW-CC-Sign=EDDCE0DD02C6539382572B847D932E5118591CBE110E8AA63F7A0BED5E595E44)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/mcrzocgTRe-gw4W48So7og/zh-cn_image_0000002628407212.png?HW-CC-KV=V1&HW-CC-Date=20260911T072742Z&HW-CC-Expire=86400&HW-CC-Sign=5C17F1456BD46BBB8F193F702ADD72BF9F319C19497948BF0F5CCA1A1720E654)
 
 - 场景三：擦除部分绘制内容。在一些绘图场景，可能需要在原有的线条基础上进行擦除而不是撤销，这时就需要globalCompositeOperation实现。Canvas是增量绘制，在原有的基础上进行擦除，可以通过设置globalCompositeOperation属性为destination-out来实现，示例代码参考如下：
 
@@ -295,13 +295,13 @@ struct CanvasEraseDraw {
   实现效果如下：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/T0AHrIKFTnye5O1twy_TlQ/zh-cn_image_0000002658806469.png?HW-CC-KV=V1&HW-CC-Date=20260818T063535Z&HW-CC-Expire=86400&HW-CC-Sign=5D5C749578EE7CFAFBD8A2A0F9C549FAF9CA83A5E3590333938AEF2FA62A86BD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/T0AHrIKFTnye5O1twy_TlQ/zh-cn_image_0000002658806469.png?HW-CC-KV=V1&HW-CC-Date=20260911T072742Z&HW-CC-Expire=86400&HW-CC-Sign=F282A68AA7AC92425C0BF8551CA6F784E7D5DE995CDCA96F981F8013ED942E42)
 
 
  
  
 
-#### 常见FAQ
+## 常见FAQ
 
 Q：涂抹过程中存在“不跟手”情况如何解决？
  

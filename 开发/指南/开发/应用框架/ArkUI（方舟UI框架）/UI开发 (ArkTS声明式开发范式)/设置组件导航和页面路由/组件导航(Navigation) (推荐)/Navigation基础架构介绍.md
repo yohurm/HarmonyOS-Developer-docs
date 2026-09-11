@@ -1,13 +1,13 @@
 # Navigation基础架构介绍
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-navigation-architecture
 
 导航组件（[Navigation](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navigation)）主要用于实现[NavDestination](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navdestination)页面间的跳转，支持在不同NavDestination间传递参数，提供灵活的跳转栈操作，从而更便捷地实现对不同页面的访问和复用。
 
 
-#### Navigation整体架构
+## Navigation整体架构
 
 Navigation组件结构较为复杂，包含几个关键概念：
 
@@ -65,7 +65,7 @@ Navigation组件结构较为复杂，包含几个关键概念：
 
 
 
-#### Navigation（导航容器）
+## Navigation（导航容器）
 
 Navigation是路由导航的根视图容器，通常作为页面（@Entry修饰的自定义组件，定义为Router页面）的根容器（作为全局导航使用），包括单栏（Stack）、分栏（Split）和自适应（Auto）三种显示模式，Auto模式会基于Navigation组件的宽度自动在Stack和Split中切换。
 
@@ -77,7 +77,7 @@ Navigation组件主要包含导航栏（NavBar）和子页（NavDestination）�
 
 
 
-#### NavDestination（子页面容器）
+## NavDestination（子页面容器）
 
 Navigation子页面的根容器，每个子页面都需要包裹在一个NavDestination中，通过NavPathStack提供的栈操作方法（push、pop等）将子页面挂载到Navigation上显示或删除。
 
@@ -85,7 +85,7 @@ NavDestination作为页面根容器，除了支持普通组件的通用属性外
 
 
 
-#### NavBar（导航栏）
+## NavBar（导航栏）
 
 Navigation中直接加载的孩子节点称为导航栏（NavBar），单栏显示时它是整个导航的首页，分栏显示时它是固定的导航栏。分栏显示时默认显示在左边，也可以通过[navBarPosition](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navigation#navbarposition9)属性控制。
 
@@ -187,7 +187,7 @@ struct NavigationDemo {
 
 
 
-#### NavPathStack（导航控制器）
+## NavPathStack（导航控制器）
 
 Navigation的子页面栈存在NavPathStack中，每个Navigation都需要绑定一个NavPathStack对象，NavPathStack用于控制Navigation中所有子页的切换。NavPathStack提供了很多基础的路由切换方法，如：[pushPath](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navigation#pushpath10)、[pop](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navigation#pop10)、[replacePath](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navigation#replacepath11)等，以及路由拦截、转场动画控制、路由栈信息获取等能力。
 
@@ -195,7 +195,7 @@ NavPathStack也支持开发者继承并复写相关路由操作方法。NavPathS
 
 
 
-#### 标题栏
+## 标题栏
 
 标题栏在界面顶部，用于呈现界面名称和操作入口，Navigation组件通过[title](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navigation#title)属性设置标题内容，通过[titleMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navigation#titlemode)属性设置标题栏模式。NavDestination同样支持[title](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navdestination#title)属性用于设置标题内容。
 
@@ -243,7 +243,7 @@ Navigation() {
 
 
 
-#### 菜单栏
+## 菜单栏
 
 菜单栏位于组件的顶部，开发者可以通过[menus](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navigation#menus)属性设置Navigation的菜单栏。menus支持Array<[NavigationMenuItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navigation#navigationmenuitem)>和[CustomBuilder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#custombuilder8)两种参数类型。使用Array<[NavigationMenuItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navigation#navigationmenuitem)>类型时，竖屏最多支持显示3个图标，横屏最多支持显示5个图标，多余的图标会被放入自动生成的更多图标。NavDestination同样支持[menus](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navdestination#menus12)属性用于设置菜单栏。
 
@@ -305,7 +305,7 @@ let menuItem: NavigationMenuItem  = {
 
 
 
-#### 工具栏
+## 工具栏
 
 工具栏位于组件的底部，开发者可以通过[toolbarConfiguration](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navigation#toolbarconfiguration10)属性设置Navigation的工具栏。NavDestination同样支持[toolbarConfiguration](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navdestination#toolbarconfiguration13)属性用于设置工具栏。
 

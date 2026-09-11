@@ -1,6 +1,6 @@
 # @Watch装饰器：状态变量更改通知
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-watch
 
@@ -15,17 +15,18 @@
 
 
 
-#### 概述
+## 概述
 
 @Watch用于监听状态变量的变化，当状态变量变化时，@Watch的回调方法将被调用。@Watch在ArkUI框架内部判断数值有无更新使用的是严格相等（===），遵循严格相等规范。当严格相等判断的结果是false（即不相等）的情况下，就会触发@Watch的回调。
 
 
 
-#### 装饰器说明
+## 装饰器说明
+
 
 | @Watch补充变量装饰器 | 说明 |
 | --- | --- |
-| 装饰器参数 | 必填。常量字符串，字符串需要有引号。是(string) => void自定义成员函数的方法的引用。 |
+| 装饰器参数 | 必填。常量字符串，字符串需要有引号。是(string) => void 自定义成员函数的方法的引用。 |
 | 可装饰的自定义组件变量 | 可监听所有装饰器装饰的状态变量。不允许监听常规变量。 |
 | 装饰器的顺序 | 装饰器顺序不影响实际功能，开发者可以根据自己的需要决定装饰器顺序的先后。建议@State、@Prop、@Link等装饰器在@Watch装饰器之前，以保持整体风格的一致。 |
 | @Watch触发时机 | 使用@Watch来监听状态变量变化时，回调触发时间是变量真正变化、被赋值的时间。详细示例请参考使用场景中的@Watch的触发时机。 |
@@ -33,16 +34,17 @@
 
 
 
-#### 语法说明
+## 语法说明
+
 
 | 类型 | 说明 |
 | --- | --- |
-| (changedPropertyName? : string) => void | 该函数是自定义组件的成员函数，changedPropertyName是被watch的属性名。 在多个状态变量绑定同一个@Watch的回调方法的时候，可以通过changedPropertyName进行不同的逻辑处理 将属性名作为字符串输入参数，不返回任何内容。 |
+| (changedPropertyName? : string) => void | 该函数是自定义组件的成员函数，changedPropertyName是被监听的属性名。 在多个状态变量绑定同一个@Watch的回调方法的时候，可以通过changedPropertyName进行不同的逻辑处理 将属性名作为字符串输入参数，不返回任何内容。 |
 
 
 
 
-#### 观察变化和行为表现
+## 观察变化和行为表现
 1. 当观察到状态变量的变化（包括双向绑定的[AppStorage](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-appstorage)和[LocalStorage](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-localstorage)中对应的key发生的变化）的时候，对应的@Watch的回调方法将被触发；
 2. @Watch方法在自定义组件的属性变更之后同步执行；
 3. 如果在@Watch的方法里改变了其他的状态变量，也会引起状态变更和@Watch的执行；
@@ -50,11 +52,11 @@
 
 
 
-#### 限制条件
+## 限制条件
 
  - 建议开发者避免无限循环。循环可能是因为在@Watch的回调方法里直接或者间接地修改了同一个状态变量引起的。为了避免循环的产生，建议不要在@Watch的回调方法里修改当前装饰的状态变量；
  - 开发者应关注性能，属性值更新函数会延迟组件的重新渲染（具体请见上面的行为表现），因此，回调函数应仅执行快速运算；
- - 不建议在@Watch函数中调用async await，因为@Watch设计的用途是为了快速的计算，异步行为可能会导致重新渲染速度的性能问题。
+ - 不建议在@Watch函数中调用async/await，因为@Watch设计的用途是为了快速的计算，异步行为可能会导致重新渲染速度的性能问题。
  - @Watch参数为必选，且参数类型必须是string，否则编译期会报错。不建议开发者传入undefined，传入后编译不会报错，相当于传入“undefined”。
 
 
@@ -106,11 +108,11 @@ change() {
 
 
 
-#### 使用场景
+## 使用场景
 
 
 
-#### @Watch和自定义组件更新
+### @Watch和自定义组件更新
 
 以下示例展示组件更新和@Watch的处理步骤。count在CountModifier中由@State装饰，在TotalView中由@Prop装饰。
 
@@ -163,7 +165,7 @@ struct CountModifier {
 
 
 
-#### @Watch与@Link组合使用
+### @Watch与@Link组合使用
 
 以下示例说明了如何在子组件中观察@Link变量。
 
@@ -237,12 +239,12 @@ struct BasketModifier {
 效果图如下：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/TrAbaLe1Soe-UrgFP_tpXQ/zh-cn_image_0000002674472018.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=6DEB5CFEF11B66B75428E8A9F382FDF45BF6E96B58C74656405C6893F51D6AAF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/nVXHwJqZRL-mNlPSrpo15A/zh-cn_image_0000002717610080.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072335Z&HW-CC-Expire=86400&HW-CC-Sign=71BC089C7B1AEF102D7A967D67D5191AC3B84235041A9E3FF1F4922EB0356D65)
 
 
 
 
-#### @Watch的触发时机
+### @Watch的触发时机
 
 为了展示@Watch回调触发时间是根据状态变量真正变化的时间，本示例在子组件中同时使用@Link和[@ObjectLink](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-observed-and-objectlink)装饰器，分别观察不同的状态对象。通过在父组件中更改状态变量并观察@Watch回调的先后顺序，来表明@Watch触发的时机与赋值、同步的关系。
 
@@ -360,7 +362,7 @@ struct ChildComponent {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/jPA8Myx7QDGGELrqrQDtVw/zh-cn_image_0000002704391987.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=DF4892DAF6A0B63CEF4B74B3E1FFE274777B6E8F9C1301C4231694AC3763D1D9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/DIsl-gCSTNe-9fNo2S9uSw/zh-cn_image_0000002747290031.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072335Z&HW-CC-Expire=86400&HW-CC-Sign=B7349819EC3F140B6E3C70C2F3B9B790CA4BEA4C51F3F6E8EDC4A830A6563E31)
 
 
 处理步骤如下：
@@ -380,7 +382,7 @@ struct ChildComponent {
 
 
 
-#### 使用changedPropertyName进行不同的逻辑处理
+### 使用changedPropertyName进行不同的逻辑处理
 
 以下示例说明了如何在@Watch函数中使用changedPropertyName进行不同的逻辑处理。
 
@@ -429,7 +431,7 @@ struct UsePropertyName {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/lKbBpNJ2T0eOeFh8HhkEaA/zh-cn_image_0000002674631864.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=516B2893B30B2C6A93796A0BB015698EC9201FBD38E8D84ECA7044E4BAB9BC99)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/7m_KS4prQ-W-x50S5_LMEg/zh-cn_image_0000002747209949.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072335Z&HW-CC-Expire=86400&HW-CC-Sign=7F9CC3F3AD012E994E0763894222080DF744E5DF7E9DAA107D0CAFCDEC073F24)
 
 
 处理步骤如下：

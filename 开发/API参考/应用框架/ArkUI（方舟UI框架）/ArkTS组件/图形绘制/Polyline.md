@@ -1,9 +1,9 @@
 # Polyline
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawing-components-polyline
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 折线绘制组件。
  
@@ -12,23 +12,26 @@
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
  
   
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### Polyline
+### Polyline
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 new Polyline(options?: PolylineOptions)
  
@@ -42,6 +45,7 @@ new Polyline(options?: PolylineOptions)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | PolylineOptions | 否 | Polyline绘制区域，用于设置Polyline组件的宽度和高度。当需要指定Polyline的绘制区域大小时传入此参数，不传入时使用默认宽度和高度（均为0）。 异常值undefined和null按照无效值处理，本次设置不生效。 |
@@ -49,9 +53,10 @@ new Polyline(options?: PolylineOptions)
  
   
 
-#### Polyline
+### Polyline
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Polyline(options?: PolylineOptions)
  
@@ -65,6 +70,7 @@ Polyline(options?: PolylineOptions)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | PolylineOptions | 否 | Polyline绘制区域，用于设置Polyline组件的宽度和高度。当需要指定Polyline的绘制区域大小时传入此参数，不传入时使用默认宽度和高度（均为0）。 异常值undefined和null按照无效值处理，本次设置不生效。 |
@@ -72,9 +78,10 @@ Polyline(options?: PolylineOptions)
  
   
 
-#### PolylineOptions18+对象说明
+## PolylineOptions18+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于描述Polyline组件绘制属性。
  
@@ -90,6 +97,7 @@ Polyline(options?: PolylineOptions)
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | width7+ | Length | 否 | 是 | 宽度，取值范围[0, +∞)。 默认值：0 默认单位：vp 若给定值小于0，则按默认值处理。异常值undefined、null、NaN和Infinity按照默认值处理。 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
@@ -98,17 +106,19 @@ Polyline(options?: PolylineOptions)
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)以及[图形绘制通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawing-components-common)外，还支持以下属性：
  
   
 
-#### points
+### points
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 points(value: Array&lt;any&gt;)
  
@@ -122,6 +132,7 @@ points(value: Array&lt;any&gt;)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Array&lt;any&gt; | 是 | 折线经过坐标点列表。使用时传入一个二维数组，每个子数组表示一个顶点的[x, y]坐标。 默认值：[]（空数组） 默认单位：vp 异常值undefined和null按照默认值处理。 |
@@ -129,13 +140,17 @@ points(value: Array&lt;any&gt;)
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 示例1（组件属性绘制）
+### 示例1（组件属性绘制）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过points、fillOpacity、stroke、strokeWidth、strokeLineJoin、strokeLineCap属性分别绘制折线的经过坐标、透明度、边框颜色、边框宽度、拐角样式、端点样式。
  
@@ -175,7 +190,10 @@ struct PolylineExample {
  
   
 
-#### 示例2（宽和高使用不同参数类型绘制折线）
+### 示例2（宽和高使用不同参数类型绘制折线）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 width、height属性分别使用不同的长度类型绘制图形。
  
@@ -208,12 +226,15 @@ struct PolylineTypeExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/pclu8RZDSj6Q-LiAmui8RQ/zh-cn_image_0000002656008814.png?HW-CC-KV=V1&HW-CC-Date=20260730T071511Z&HW-CC-Expire=86400&HW-CC-Sign=6DF482D5874E0C8DACA65C982AD51E92223CC88A0A24916E0739F2A1FC0742F4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/X8Sbk1ebRiaZq8i2Bz3MSg/zh-cn_image_0000002717613030.png?HW-CC-KV=V1&HW-CC-Date=20260911T073117Z&HW-CC-Expire=86400&HW-CC-Sign=F35BCA7B285AA11C766121FB45A8CC16D1DE8F71662DE6A80F6AC9B0AB034790)
 
  
   
 
-#### 示例3（使用attributeModifier动态设置Polyline组件的属性）
+### 示例3（使用attributeModifier动态设置Polyline组件的属性）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 以下示例展示了如何使用attributeModifier动态设置Polyline组件的points、fill、fillOpacity、stroke、strokeDashArray、strokeDashOffset、strokeLineCap、strokeLineJoin、strokeMiterLimit、strokeOpacity、strokeWidth和antiAlias属性。
  
@@ -255,4 +276,4 @@ struct PolylineModifierDemo {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/ddgVT5hxSf-oZGtXicV4XA/zh-cn_image_0000002655848894.png?HW-CC-KV=V1&HW-CC-Date=20260730T071511Z&HW-CC-Expire=86400&HW-CC-Sign=9E594B38A6185333B598EC191E8C075402C9096F31972219FA830A9D48FF5E76)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/wGMPI6PlRTqithGYrS9BxQ/zh-cn_image_0000002747292983.png?HW-CC-KV=V1&HW-CC-Date=20260911T073117Z&HW-CC-Expire=86400&HW-CC-Sign=98ADD4580C17C9C2C181F2A7C73A542E630E1E413DD7A286CAF89596D95511F5)

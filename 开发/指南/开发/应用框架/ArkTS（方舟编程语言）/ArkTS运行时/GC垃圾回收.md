@@ -1,17 +1,17 @@
 # GC垃圾回收
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gc-introduction
 
 GC（全称 Garbage Collection），即垃圾回收。在计算机领域，GC是指识别并释放内存中的不再使用的对象，以回收内存空间。目前广泛使用的编程语言实现的GC算法主要分为两大类：引用计数和对象追踪（即Tracing GC）。
 
 
-#### GC算法简述
+## GC算法简述
 
 
 
-#### GC的类型
+### GC的类型
 
 **引用计数**
 
@@ -62,7 +62,7 @@ function main() {
 
 
 
-#### 对象追踪的三种类型
+### 对象追踪的三种类型
 
 对象追踪算法通过遍历对象标记出垃圾，而根据垃圾回收方式的不同，对象追踪可以分为三种基本类型：标记-清扫回收、标记-复制回收、标记-整理回收。下图中蓝色标记为可达对象，黄色标记为不可达对象。
 
@@ -100,7 +100,7 @@ function main() {
 
 
 
-#### HPP GC
+### HPP GC
 
 HPP GC（High Performance Partial Garbage Collection），即高性能部分垃圾回收，其中“High Performance”主要体现在分代模型、混合算法和GC流程优化这三个方面。HPP GC根据不同对象区域采取不同的回收方式。
 
@@ -143,7 +143,7 @@ HPP GC流程中引入了大量的并发和并行优化，以减少对应用性�
 
 
 
-#### GC流程
+## GC流程
 
 
 ![](assets/GC垃圾回收/file-20260514130447163-4.png)
@@ -151,7 +151,7 @@ HPP GC流程中引入了大量的并发和并行优化，以减少对应用性�
 
 
 
-#### HPP GC的类型
+### HPP GC的类型
 
 **Young GC**
 
@@ -181,7 +181,7 @@ HPP GC流程中引入了大量的并发和并行优化，以减少对应用性�
 
 
 
-#### 触发策略
+### 触发策略
 
 **空间阈值触发GC**
 
@@ -222,7 +222,7 @@ Native绑定内存增长超过阈值。
 
 
 
-#### 执行策略
+### 执行策略
 
 **ConcurrentMark**
 
@@ -260,13 +260,13 @@ Select CSet failure: number is too few
 
 
 
-#### Heap
+## Heap
 
 Heap包含两种类型：LocalHeap和SharedHeap。LocalHeap是应用进程中每个ArkTS线程独有的虚拟机堆，SharedHeap是应用进程中所有ArkTS线程共享的虚拟机堆。
 
 
 
-#### LocalHeap结构
+### LocalHeap结构
 
 
 ![](assets/GC垃圾回收/file-20260514130447163-5.png)
@@ -287,7 +287,7 @@ Heap包含两种类型：LocalHeap和SharedHeap。LocalHeap是应用进程中每
 
 
 
-#### LocalHeap相关参数
+### LocalHeap相关参数
 
 
 ![](assets/GC垃圾回收/file-20260514130447163-7.png)
@@ -303,6 +303,7 @@ Heap包含两种类型：LocalHeap和SharedHeap。LocalHeap是应用进程中每
 
 **堆大小相关参数**
 
+
 | 参数名 | 范围 | 作用 |
 | --- | --- | --- |
 | HeapSize | 448MB | 主线程默认堆空间总大小，小内存设备（如手表）会根据设备实际内存大小自动调整该堆空间大小。 |
@@ -314,6 +315,7 @@ Heap包含两种类型：LocalHeap和SharedHeap。LocalHeap是应用进程中每
 
 **Worker线程堆上限**
 
+
 | 参数名 | 范围 | 作用 |
 | --- | --- | --- |
 | HeapSize | 768 MB | Worker类型线程堆空间大小。 |
@@ -322,6 +324,7 @@ Heap包含两种类型：LocalHeap和SharedHeap。LocalHeap是应用进程中每
 **SemiSpace**
 
 Heap中生成两个SemiSpace，供复制使用。
+
 
 | 参数名 | 范围 | 作用 |
 | --- | --- | --- |
@@ -334,12 +337,14 @@ Heap中生成两个SemiSpace，供复制使用。
 
 初始化时均设定为Heap剩余未分配空间的大小，默认手机设备主线程OldSpaceSize上限接近350MB。
 
+
 | 参数名 | 范围 | 作用 |
 | --- | --- | --- |
 | oldSpaceOvershootSize | 4MB/8MB | OldSpace允许过冲最大大小。 |
 
 
 **其他空间**
+
 
 | 参数名 | 范围 | 作用 |
 | --- | --- | --- |
@@ -351,12 +356,14 @@ Heap中生成两个SemiSpace，供复制使用。
 
 **解释器栈大小**
 
+
 | 参数名 | 值 | 作用 |
 | --- | --- | --- |
 | maxStackSize | 128KB | 控制解释器栈的大小。 |
 
 
 **并发参数**
+
 
 | 参数名 | 值 | 作用 |
 | --- | --- | --- |
@@ -369,6 +376,7 @@ Heap中生成两个SemiSpace，供复制使用。
 
 **其他参数**
 
+
 | 参数名 | 值 | 作用 |
 | --- | --- | --- |
 | minAllocLimitGrowingStep | 2MB/4MB/8MB | Heap整体重新计算空间大小限制时，此参数用于控制OldSpace、heapObject和globalNative的最小增长步长。 |
@@ -378,7 +386,7 @@ Heap中生成两个SemiSpace，供复制使用。
 
 
 
-#### SharedHeap结构
+### SharedHeap结构
 
 
 ![](assets/GC垃圾回收/file-20260514130447163-8.png)
@@ -396,12 +404,13 @@ Heap中生成两个SemiSpace，供复制使用。
 
 
 
-#### SharedHeap相关参数
+### SharedHeap相关参数
 
 以下参数适用于手机等大内存设备，开发者可以通过[getAllVMHeapMemoryInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-util#getallvmheapmemoryinfo24)获取Shared堆内存信息。
 
 > [!NOTE]
 > SharedOldSpace和SharedHugeObjectSpace的阈值上限在共享堆初始化时均设定为SharedHeap剩余未分配空间的一半，手机设备默认分配的空间上限接近350MB，超过该值会发生内存溢出。
+
 
 
 | 参数名 | 范围 | 作用 |
@@ -415,11 +424,11 @@ Heap中生成两个SemiSpace，供复制使用。
 
 
 
-#### 特性
+## 特性
 
 
 
-#### Smart GC
+### Smart GC
 
 Smart GC是一种智能GC抑制机制，在冷启动场景和性能敏感场景中通过临时提高GC触发阈值来降低GC触发频率，避免因GC而导致应用掉帧，从而影响用户体验。
 
@@ -447,16 +456,16 @@ Smart GC是一种智能GC抑制机制，在冷启动场景和性能敏感场景�
 **交互流程**
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/8OuNcKZvTN-EihkDKMTcFg/zh-cn_image_0000002704271691.png?HW-CC-KV=V1&HW-CC-Date=20260813T095650Z&HW-CC-Expire=86400&HW-CC-Sign=DE25906F9DB2277E23823999D761835BC38C8C7C22DBED1E5CBB3C36CB915FEC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/5ecbQzGGQTKc98kEmUjauw/zh-cn_image_0000002717769888.png?HW-CC-KV=V1&HW-CC-Date=20260911T072752Z&HW-CC-Expire=86400&HW-CC-Sign=5DC128422BF3A062FC2FBD3B31CA75FF0651A35278007A58D1D12F1A8B683B1C)
 
 
 
 
-#### 日志解释
+## 日志解释
 
 
 
-#### 开启全量日志
+### 开启全量日志
 
 默认情况下，详细的GC日志仅在GC耗时超过40毫秒时才会打印。若需开启所有GC日志，需使用命令在设备中开启。
 
@@ -471,7 +480,7 @@ hdc shell reboot
 
 
 
-#### 典型日志
+### 典型日志
 
 以下日志统计了GC完整执行后的信息，不同GC类型可能有所差异。在导出的日志文件中搜索关键词[gc]查看GC日志，或搜索关键词ArkCompiler查看更全面的虚拟机日志。
 
@@ -534,10 +543,10 @@ C03F00/ArkCompiler: Heap average alive rate: 0.635325
 
 
 
-#### GC开发者调试接口
+## GC开发者调试接口
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/DmkbJ0HzQECT-nEnesv72w/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095650Z&HW-CC-Expire=86400&HW-CC-Sign=9B49C13EB3E9B767A3CD20C3B2D9F3047676432BA354744B0875ADC56516A60C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/KDqPKlEcQ_qyo8DzL2UeMQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072752Z&HW-CC-Expire=86400&HW-CC-Sign=2B056A15DB2D12C2463BE06BB144D60605DDEFB9711CCBF4A6D33A0B3D7EA97E)
 
 
 以下接口仅供调试使用，非正式对外SDK接口，不应在应用正式版本中使用。
@@ -546,7 +555,7 @@ C03F00/ArkCompiler: Heap average alive rate: 0.635325
 
 
 
-#### ArkTools.hintGC()
+### ArkTools.hintGC()
 
  - 调用方式：ArkTools.hintGC()
  - 接口类型：ArkTS接口。
@@ -588,11 +597,11 @@ struct Index {
 
 
 
-#### GC常见问题
+## GC常见问题
 
 
 
-#### GC稳定性问题排查指导
+### GC稳定性问题排查指导
 
 GC稳定性问题主要由两种异常引起：一是非法多线程操作导致的对象异常，二是内存访问错误导致的指针异常。这两种问题在GC任务中通常表现为堆栈中的地址访问异常。
 

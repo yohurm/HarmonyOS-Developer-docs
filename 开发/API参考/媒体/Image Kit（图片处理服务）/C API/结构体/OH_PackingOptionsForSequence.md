@@ -1,18 +1,19 @@
 # OH_PackingOptionsForSequence
 
-更新时间：2026-06-27 10:02:54（官网已下线）
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-nativemodule-oh-packingoptionsforsequence
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct OH_PackingOptionsForSequence OH_PackingOptionsForSequence
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 OH_PackingOptionsForSequence是native层封装的GIF序列编码选项结构体，不可直接操作，而是采用函数调用方式创建、释放结构体以及操作具体字段。
  
@@ -26,6 +27,7 @@ OH_PackingOptionsForSequence是native层封装的GIF序列编码选项结构体�
  
 OH_PackingOptionsForSequence结构体内容和操作方式如下：
   
+
 | 字段类型 | 字段名称 | 字段描述 | 字段获取函数 | 字段设置函数 |
 | --- | --- | --- | --- | --- |
 | uint32_t | frameCount | 编码时指定的帧数，编码时必须大于0。 | OH_PackingOptionsForSequence_GetFrameCount | OH_PackingOptionsForSequence_SetFrameCount |

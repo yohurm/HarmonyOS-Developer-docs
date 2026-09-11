@@ -1,13 +1,13 @@
 # Basic Services Kit简介
 
-更新时间：2026-04-30 02:41:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/basic-services-kit-overview
 
 Basic Services Kit（基础服务）作为基础服务套件，为应用开发者提供常用的基础能力。比如常用的剪贴板读写、文件上传下载、文件压缩、文件打印、进程间/线程间通信、设备管理、应用账号管理等能力都由本Kit提供。
 
 
-#### 使用场景
+## 使用场景
 
 Basic Services Kit为开发者提供了多种基础能力，满足开发者不同场景的开发需求。
 
@@ -19,13 +19,13 @@ Basic Services Kit为开发者提供了多种基础能力，满足开发者不�
 本地复制粘贴：比如在A应用中复制一段文字，粘贴到其他应用中。
  - 跨设备复制粘贴：比如在A设备浏览器复制一段文本，粘贴到B设备的备忘录中。
 
-      - 文件上传下载：
+            - 文件上传下载：
 
   
 小文件前台上传下载：发布社交动态（图片、短视频等）、发送文件给好友、保存图片到本地等，通常数据量较小，要给用户即时反馈。
  - 大文件后台上传下载：云盘数据同步、下载电影，通常数据量较大，可后台执行，支持断点续传。
 
-      - 进程间/线程间通信：
+            - 进程间/线程间通信：
 
   
 进程间通信：比如ExtensionAbility发送事件给主进程。
@@ -35,7 +35,7 @@ Basic Services Kit为开发者提供了多种基础能力，满足开发者不�
 
 
 
-#### 能力范围
+## 能力范围
 
 根据不同使用场景分类，本Kit主要包含如下能力：
 
@@ -48,13 +48,13 @@ Basic Services Kit为开发者提供了多种基础能力，满足开发者不�
  - [上传下载](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-request)：提供文件上传下载、后台传输代理的基础能力。
  - [划词服务](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-selectioninput-selectionmanager)：提供划词信息监听、划词窗口管理能力。
 
-      - 进程间/线程间通信：
+            - 进程间/线程间通信：
 
   
 [公共事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-commoneventmanager)：提供进程间通信的能力，包括订阅、发布、退订公共事件等，相关开发指南请参考[公共事件简介](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/common-event-overview)。
  - [Emitter](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-emitter)：提供线程内通信的能力，包括订阅、发布、退订自定义事件等，相关开发指南请参考[使用Emitter进行线程间通信](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/itc-with-emitter)。
 
-      - 设备管理：
+            - 设备管理：
 
   
 [设备信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-device-info)：提供查询产品信息的能力，比如查询设备类型、设备品牌名称、产品系列、产品版本号等。
@@ -65,7 +65,7 @@ Basic Services Kit为开发者提供了多种基础能力，满足开发者不�
  - [热管理](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-thermal)：提供热管理相关的能力，比如热档位查询等。
  - [USB管理](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-usbmanager)：提供USB设备管理相关的能力，比如查询USB设备列表、批量数据传输、控制命令传输、权限控制等，相关开发指南请参考[USB服务开发概述](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/usbhost-overview)。
 
-      - 其他：
+            - 其他：
 
   
 [应用账号管理](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-appaccount)：提供应用账号的期管理以及数据管理的能力，相关开发指南请参考[管理应用账号](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/manage-application-account)。
@@ -76,7 +76,7 @@ Basic Services Kit为开发者提供了多种基础能力，满足开发者不�
 
 
 
-#### 与其他kit的关系
+## 与其他kit的关系
 
  - [ArkTS Kit](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-overview)：ArkTS Kit中的[多线程并发(Worker和Taskpool)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/multi-thread-concurrency-overview)需要使用本Kit中的Emitter进行线程间通信。
  - [Ability Kit](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/abilitykit-overview)：Ability Kit中的进程间通信需要使用本Kit中的公共事件。
@@ -85,7 +85,7 @@ Basic Services Kit为开发者提供了多种基础能力，满足开发者不�
 
 
 
-#### 模拟器支持情况
+## 模拟器支持情况
 
 本Kit支持模拟器。
 

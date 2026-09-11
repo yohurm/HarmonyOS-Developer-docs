@@ -1,18 +1,19 @@
 # OH_VObject
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-rdb-oh-vobject
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct {...} OH_VObject
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示允许的数据字段类型。
  
@@ -24,16 +25,19 @@ typedef struct {...} OH_VObject
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 成员变量
+### 成员变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | int64_t id | OH_VObject结构体的唯一标识符。 |
@@ -41,30 +45,34 @@ typedef struct {...} OH_VObject
  
   
 
-#### 成员函数
+### 成员函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | int (*putInt64)(OH_VObject *valueObject, int64_t *value, uint32_t count) | 将int64类型的单个参数或者数组转换为OH_VObject类型的值。 |
 | int (*putDouble)(OH_VObject *valueObject, double *value, uint32_t count) | 将double类型的单个参数或者数组转换为OH_VObject类型的值。 |
-| int (*putText)(OH_VObject *valueObject, const char *value) | 将char *类型的字符数组转换为OH_VObject类型的值。 |
+| int (*putText)(OH_VObject *valueObject, const char *value) | 将char *类型的字符串转换为OH_VObject类型的值。 |
 | int (*putTexts)(OH_VObject *valueObject, const char **value, uint32_t count) | 将char *类型的字符串数组转换为OH_VObject类型的值。 |
 | int (*destroy)(OH_VObject *valueObject) | 销毁OH_VObject对象，并回收该对象占用的内存。 |
  
  
   
 
-#### 成员函数说明
+## 成员函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### putInt64()
+### putInt64()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int (*putInt64)(OH_VObject *valueObject, int64_t *value, uint32_t count)
@@ -72,12 +80,13 @@ int (*putInt64)(OH_VObject *valueObject, int64_t *value, uint32_t count)
  
 **描述**
  
-将int64类型的单个参数或者数组转换为OH_VObject类型的值。
+将int64_t类型的单个参数或者数组转换为OH_VObject类型的值。
  
 **起始版本：** 10
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_VObject *valueObject | 表示指向OH_VObject实例的指针。 |
@@ -87,6 +96,7 @@ int (*putInt64)(OH_VObject *valueObject, int64_t *value, uint32_t count)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 |
@@ -94,9 +104,10 @@ int (*putInt64)(OH_VObject *valueObject, int64_t *value, uint32_t count)
  
   
 
-#### putDouble()
+### putDouble()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int (*putDouble)(OH_VObject *valueObject, double *value, uint32_t count)
@@ -110,6 +121,7 @@ int (*putDouble)(OH_VObject *valueObject, double *value, uint32_t count)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_VObject *valueObject | 表示指向OH_VObject实例的指针。 |
@@ -119,6 +131,7 @@ int (*putDouble)(OH_VObject *valueObject, double *value, uint32_t count)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 |
@@ -126,9 +139,10 @@ int (*putDouble)(OH_VObject *valueObject, double *value, uint32_t count)
  
   
 
-#### putText()
+### putText()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int (*putText)(OH_VObject *valueObject, const char *value)
@@ -136,20 +150,22 @@ int (*putText)(OH_VObject *valueObject, const char *value)
  
 **描述**
  
-将char *类型的字符数组转换为OH_VObject类型的值。
+将char *类型的字符串转换为OH_VObject类型的值。
  
 **起始版本：** 10
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_VObject *valueObject | 表示指向OH_VObject实例的指针。 |
-| const char *value | 表示字符数组参数。 |
+| const char *value | 表示字符串参数。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 |
@@ -157,9 +173,10 @@ int (*putText)(OH_VObject *valueObject, const char *value)
  
   
 
-#### putTexts()
+### putTexts()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int (*putTexts)(OH_VObject *valueObject, const char **value, uint32_t count)
@@ -173,6 +190,7 @@ int (*putTexts)(OH_VObject *valueObject, const char **value, uint32_t count)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_VObject *valueObject | 表示指向OH_VObject实例的指针。 |
@@ -182,6 +200,7 @@ int (*putTexts)(OH_VObject *valueObject, const char **value, uint32_t count)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 |
@@ -189,9 +208,10 @@ int (*putTexts)(OH_VObject *valueObject, const char **value, uint32_t count)
  
   
 
-#### destroy()
+### destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int (*destroy)(OH_VObject *valueObject)
@@ -205,6 +225,7 @@ int (*destroy)(OH_VObject *valueObject)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_VObject *valueObject | 表示指向OH_VObject实例的指针。 |
@@ -212,6 +233,7 @@ int (*destroy)(OH_VObject *valueObject)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 |

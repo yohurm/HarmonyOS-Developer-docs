@@ -1,13 +1,14 @@
 # oh_fileio.h
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-fileio-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fileio模块接口定义，提供获取文件存储位置的native接口。
  
@@ -23,16 +24,19 @@ fileio模块接口定义，提供获取文件存储位置的native接口。
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | FileIO_FileLocation | FileIO_FileLocation | 文件存储位置枚举值。 |
@@ -40,10 +44,12 @@ fileio模块接口定义，提供获取文件存储位置的native接口。
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | FileManagement_ErrCode OH_FileIO_GetFileLocation(char *uri, int uriLength, FileIO_FileLocation *location) | 获取文件存储位置。 |
@@ -51,15 +57,17 @@ fileio模块接口定义，提供获取文件存储位置的native接口。
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### FileIO_FileLocation
+### FileIO_FileLocation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum FileIO_FileLocation
@@ -71,6 +79,7 @@ enum FileIO_FileLocation
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | LOCAL = 1 | 文件存储于本地。 |
@@ -80,15 +89,17 @@ enum FileIO_FileLocation
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_FileIO_GetFileLocation()
+### OH_FileIO_GetFileLocation()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FileManagement_ErrCode OH_FileIO_GetFileLocation(char *uri, int uriLength, FileIO_FileLocation *location)
@@ -102,6 +113,7 @@ FileManagement_ErrCode OH_FileIO_GetFileLocation(char *uri, int uriLength, FileI
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | char *uri | 指向入参uri的指针。 |
@@ -111,6 +123,7 @@ FileManagement_ErrCode OH_FileIO_GetFileLocation(char *uri, int uriLength, FileI
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FileManagement_ErrCode | 返回FileManagement模块错误码FileManagement_ErrCode。 |

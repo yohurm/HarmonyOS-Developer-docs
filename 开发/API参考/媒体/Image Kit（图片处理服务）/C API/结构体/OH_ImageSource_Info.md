@@ -1,18 +1,19 @@
 # OH_ImageSource_Info
 
-更新时间：2026-06-27 10:02:54
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-nativemodule-imagesource-info
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 struct OH_ImageSource_Info
 ```
 
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 OH_ImageSource_Info是native层封装的ImageSource信息结构体，OH_ImageSource_Info结构体不可直接操作，而是采用函数调用方式创建、释放结构体以及操作具体字段。
 
@@ -25,6 +26,7 @@ OH_ImageSource_Info是native层封装的ImageSource信息结构体，OH_ImageSou
 使用约束：OH_ImageSource_Info对象通常配合[OH_ImageSourceNative_GetImageInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-source-native-h#oh_imagesourcenative_getimageinfo)使用，用于承载指定序号图片的宽、高、动态范围和MIME类型等信息。使用前需通过[OH_ImageSourceInfo_Create](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-source-native-h#oh_imagesourceinfo_create)创建对象；使用完成后，应调用[OH_ImageSourceInfo_Release](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-source-native-h#oh_imagesourceinfo_release)释放对象。
 
 OH_ImageSource_Info结构体内容和操作方式如下：
+
 
 | 字段类型 | 字段名称 | 字段描述 | 操作函数 | 函数描述 |
 | --- | --- | --- | --- | --- |

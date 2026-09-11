@@ -1,6 +1,6 @@
-# 使用NDK接口实现画中画功能开发（C/C++）
+# 使用NDK接口实现画中画功能开发 (C/C++)
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-09-04 10:41:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pipwindow-native
 
@@ -11,16 +11,16 @@
 
   
 
-#### 约束与限制
+## 约束与限制
 
 - 画中画窗口中画面的呈现不通过传入XComponent Controller实现，而是通过渲染surfaceId（在开启画中画回调中获取）对应的组件实现。
 - 与typeNode实现方式相同，系统不缓存页面。如需进行页面操作，应用需要开启画中画生命周期监听，在对应周期内进行对应操作。
-- 不支持设置自动拉起画中画。
+- API版本26.0.0之前，不支持设置在拉起画中画的应用主窗退后台时是否自动启动画中画。从API版本26.0.0开始，支持使用OH_PictureInPicture_SetAutoStartEnabled接口设置在拉起画中画的应用主窗退后台时是否自动启动画中画。
 
  
   
 
-#### 开发步骤
+## 开发步骤
 
 示例中的视频播放器简易实现逻辑如下：
  1. 通过OH_PictureInPicture_CreatePipConfig创建画中画参数配置器，并通过OH_PictureInPicture_SetPipMainWindowId、OH_PictureInPicture_SetPipTemplateType、OH_PictureInPicture_SetPipRect、OH_PictureInPicture_SetPipControlGroup、OH_PictureInPicture_SetPipNapiEnv接口在画中画参数配置器中设置初始配置信息。
@@ -954,4 +954,4 @@ struct NDKImplementIndexPage {
 以上示例代码对应的示意图如下所示：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/rhRw4iXOSVabp_BXOMZU4A/zh-cn_image_0000002674632678.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095733Z&HW-CC-Expire=86400&HW-CC-Sign=7C673B3C14621988C4356DE1A6B161AFB2E69251957C760E785331C3F15096B1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/ai7Yo_jaRCWB6tUXw09AqQ/zh-cn_image_0000002717610874.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073043Z&HW-CC-Expire=86400&HW-CC-Sign=753AEC8BBFCD49BB2D1239447B8B07500740AE9EF7586FCE7BF3292FE5E24C3E)

@@ -27,7 +27,7 @@ struct PixelMapToAlbumComponent {
           promise.then((pixelMap: image.PixelMap) => {
             getPixelBytesNumber();
             this.showPixelMap = pixelMap;
-            pixelMap.release(); // PixelMap使用完后及时释放内存
+            pixelMap.release(); <em>// PixelMap使用完后及时释放内存</em>
           }).catch((err: BusinessError) => {
             console.error(`Failed to save screenshot. Code: ${err.code}`);
           });

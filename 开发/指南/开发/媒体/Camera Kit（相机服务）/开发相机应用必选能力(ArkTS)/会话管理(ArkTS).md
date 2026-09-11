@@ -1,6 +1,6 @@
 # 会话管理(ArkTS)
 
-更新时间：2026-03-23 08:10:50
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-session-management
 
@@ -18,7 +18,7 @@
 完成会话配置后，应用提交和开启会话，可以开始调用相机相关功能。
 
 
-#### 开发步骤
+## 开发步骤
 1. 导入相关接口，导入方法如下。
 
   

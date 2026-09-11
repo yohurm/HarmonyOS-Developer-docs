@@ -1,9 +1,9 @@
 # SegmentButtonV2
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-segmentbuttonv2
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 分段按钮组件用于创建页签型、单选或多选的胶囊型分段按钮，支持文本、图标、Symbol等多种选项类型及图文混合配置，可自定义字体、颜色、圆角等样式。页签型分段按钮适用于页签切换场景，单选胶囊型分段按钮适用于单选切换场景，多选胶囊型分段按钮适用于多选筛选场景。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 import { TabSegmentButtonV2, CapsuleSegmentButtonV2, MultiCapsuleSegmentButtonV2, SegmentButtonV2Items } from '@kit.ArkUI';
@@ -22,33 +23,37 @@ import { TabSegmentButtonV2, CapsuleSegmentButtonV2, MultiCapsuleSegmentButtonV2
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 无
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 不支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)。
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 不支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)。
 
 
 
-#### TabSegmentButtonV2
+## TabSegmentButtonV2
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 TabSegmentButtonV2({
@@ -95,6 +100,7 @@ TabSegmentButtonV2({
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
+
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | items | SegmentButtonV2Items | 是 | @Require @Param | 配置分段按钮的选项集合信息。 值为undefined时，不显示选项信息。 该成员只读，不支持更改。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
@@ -113,8 +119,8 @@ TabSegmentButtonV2({
 | itemPadding | LocalizedPadding | 否 | @Param | 配置分段按钮选项内边距。 默认值：{ top: LengthMetrics.resource(\$r('sys.float.padding_level2')), bottom: LengthMetrics.resource(\$r('sys.float.padding_level2')), start: LengthMetrics.resource(\$r('sys.float.padding_level4')), end: LengthMetrics.resource(\$r('sys.float.padding_level4')) } 值为undefined时，按默认值处理。 该成员只读，不支持更改。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
 | itemShadow | ShadowOptions \| ShadowStyle | 否 | @Param | 配置分段按钮选项阴影。 默认值：ShadowStyle.OUTER_DEFAULT_XS 超出取值范围按默认值处理。 该成员只读，不支持更改。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
 | itemSpace | LengthMetrics | 否 | @Param | 配置分段按钮选项之间的间隔。 取值范围：[0, +∞) 默认值：LengthMetrics.vp(0) 说明： 不支持设置百分比类型，异常值按默认值处理。 该成员只读，不支持更改。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
-| itemMinFontScale | number \| Resource | 否 | @Param | 配置分段按钮选项文字大小的最小字体缩放倍数。 取值范围：[0, 1] 默认值：0 说明： 设置的最小字体缩放值小于 0 时，按值为 0 处理，设置的最小字体缩放值大于 1 时，按值为 1 处理，异常值默认不生效。 该成员只读，不支持更改。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
-| itemMaxFontScale | number \| Resource | 否 | @Param | 配置分段按钮选项文字大小的最大字体缩放倍数。 取值范围：[1, 2] 默认值：1 说明： 设置的值小于 1 时，按值为 1 处理，设置的值大于 2，按值为 2 处理，异常值默认不生效。 该成员只读，不支持更改。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
+| itemMinFontScale | number \| Resource | 否 | @Param | 配置分段按钮选项文字大小的最小字体缩放倍数。 取值范围：[0, 1] 默认值：0 说明： 设置的最小字体缩放值小于0时，按值为0处理，设置的最小字体缩放值大于1时，按值为1处理，异常值默认不生效。 该成员只读，不支持更改。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
+| itemMaxFontScale | number \| Resource | 否 | @Param | 配置分段按钮选项文字大小的最大字体缩放倍数。 取值范围：[1, 2] 默认值：1 说明： 设置的值小于1时，按值为1处理；设置的值大于2时，按值为2处理；异常值默认不生效。 该成员只读，不支持更改。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
 | itemFontSize | LengthMetrics | 否 | @Param | 配置分段按钮非选中的选项字体大小。 取值范围：[0, +∞) 默认值：14fp 说明： 不支持设置百分比类型，异常值按默认值处理。 items设置textModifier/fontSize属性值时，itemFontSize不生效。 该成员只读，不支持更改。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
 | itemSelectedFontSize | LengthMetrics | 否 | @Param | 配置分段按钮选中的选项字体大小。 取值范围：[0, +∞) 默认值：14fp 说明： 不支持设置百分比类型，异常值按默认值处理。 items设置textModifier/fontSize属性值时，itemSelectedFontSize不生效。 该成员只读，不支持更改。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
 | itemFontColor | ColorMetrics | 否 | @Param | 配置分段按钮非选中选项的字体颜色。 默认值：\$r('sys.color.font_secondary') 值为undefined时，按默认值处理。 说明： items设置textModifier/fontColor属性值时，itemFontColor不生效。 backgroundSystemMaterial设置自动反色的系统材质时，该属性使用支持反色的特殊系统资源，颜色自动适配到材质背景色的反色。 该成员只读，不支持更改。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
@@ -130,7 +136,7 @@ TabSegmentButtonV2({
 | itemSelectedSymbolFontColor | ColorMetrics | 否 | @Param | 配置分段按钮选中选项的HM Symbol类型图标颜色。 默认值：\$r('sys.color.font_primary') 值为undefined时，按默认值处理。 说明： items设置symbolModifier/fontColor属性值时，itemSelectedSymbolFontColor不生效。 backgroundSystemMaterial设置自动反色的系统材质时，该属性使用支持反色的特殊系统资源，颜色自动适配到材质背景色的反色。 该成员只读，不支持更改。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
 | languageDirection | Direction | 否 | @Param | 配置分段按钮的布局方向。 默认值：Direction.Auto 超出取值范围按默认值处理。 该成员只读，不支持更改。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
 | enableStateAnimation24+ | boolean | 否 | @Param | 设置当通过变量修改selectedIndex值时，是否开启分段按钮的属性动画。 true表示开启分段按钮的属性动画；未配置该属性或值为false时表示不开启分段按钮的属性动画，使用组件默认的切换动画效果。 默认值：false 该成员只读，不支持更改。 元服务API： 从API version 24开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
-| backgroundSystemMaterial | uiMaterial.Material | 否 | @Param | 分段按钮组件的背景板的系统材质。不同系统材质包含不同的属性影响效果。传入材质后，SegmentButtonV2的动效发生改变。 默认值：无材质效果。 该成员只读，不支持更改。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
+| backgroundSystemMaterial | uiMaterial.Material | 否 | @Param | 分段按钮组件的背景板的系统材质。需要将组件放置在Navigation或NavDestination的标题栏子树，或横向Tabs的底部TabBar子树中，材质效果才会生效。不同系统材质包含不同的属性影响效果。传入材质后，SegmentButtonV2的动效发生改变。 分段按钮在使用系统材质时支持选中项的背景跟随手指拖拽的能力，分段按钮被选中的选项下标在跟随手指拖拽过程中保持不变、在拖拽结束时更新。 默认值：无材质效果。 该成员只读，不支持更改。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 
 
 > [!NOTE]
@@ -139,9 +145,10 @@ TabSegmentButtonV2({
 
 
 
-#### CapsuleSegmentButtonV2
+## CapsuleSegmentButtonV2
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 CapsuleSegmentButtonV2({
@@ -188,6 +195,7 @@ CapsuleSegmentButtonV2({
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
+
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | items | SegmentButtonV2Items | 是 | @Require @Param | 配置分段按钮的选项集合信息。 值为undefined时，不显示选项信息。 该成员只读，不支持更改。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
@@ -206,8 +214,8 @@ CapsuleSegmentButtonV2({
 | itemPadding | LocalizedPadding | 否 | @Param | 配置分段按钮选项的内边距。 默认值：{ top: LengthMetrics.resource(\$r('sys.float.padding_level2')), bottom: LengthMetrics.resource(\$r('sys.float.padding_level2')), start: LengthMetrics.resource(\$r('sys.float.padding_level4')), end: LengthMetrics.resource(\$r('sys.float.padding_level4')) } 值为undefined时，按默认值处理。 该成员只读，不支持更改。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
 | itemShadow | ShadowOptions \| ShadowStyle | 否 | @Param | 配置分段按钮选项的阴影。 默认值：ShadowStyle.OUTER_DEFAULT_XS 超出取值范围按默认值处理。 该成员只读，不支持更改。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
 | itemSpace | LengthMetrics | 否 | @Param | 配置分段按钮选项之间的间隔。 取值范围：[0, +∞) 默认值：LengthMetrics.vp(0) 说明： 不支持设置百分比类型，异常值按默认值处理。 该成员只读，不支持更改。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
-| itemMinFontScale | number \| Resource | 否 | @Param | 配置分段按钮选项文字大小的最小字体缩放倍数。 取值范围：[0, 1] 默认值：0 说明： 设置的最小字体缩放值小于 0 时，按值为 0 处理，设置的最小字体缩放值大于 1 时，按值为 1 处理，异常值默认不生效。 该成员只读，不支持更改。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
-| itemMaxFontScale | number \| Resource | 否 | @Param | 配置分段按钮选项文字大小的最大字体缩放倍数。 取值范围：[1, 2] 默认值：1 说明： 设置的值小于 1 时，按值为 1 处理，设置的值大于 2，按值为 2 处理，异常值默认不生效。 该成员只读，不支持更改。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
+| itemMinFontScale | number \| Resource | 否 | @Param | 配置分段按钮选项文字大小的最小字体缩放倍数。 取值范围：[0, 1] 默认值：0 说明： 设置的最小字体缩放值小于0时，按值为0处理，设置的最小字体缩放值大于1时，按值为1处理，异常值默认不生效。 该成员只读，不支持更改。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
+| itemMaxFontScale | number \| Resource | 否 | @Param | 配置分段按钮选项文字大小的最大字体缩放倍数。 取值范围：[1, 2] 默认值：1 说明： 设置的值小于1时，按值为1处理；设置的值大于2时，按值为2处理；异常值默认不生效。 该成员只读，不支持更改。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
 | itemFontSize | LengthMetrics | 否 | @Param | 配置分段按钮非选中的选项字体大小。 取值范围：[0, +∞) 默认值：14fp 说明： 不支持设置百分比类型，异常值按默认值处理。 items设置textModifier/fontSize属性值时，itemFontSize不生效。 该成员只读，不支持更改。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
 | itemSelectedFontSize | LengthMetrics | 否 | @Param | 配置分段按钮选中的选项字体大小。 取值范围：[0, +∞) 默认值：14fp 说明： 不支持设置百分比类型，异常值按默认值处理。 items设置textModifier/fontSize属性值时，itemSelectedFontSize不生效。 该成员只读，不支持更改。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
 | itemFontColor | ColorMetrics | 否 | @Param | 配置分段按钮非选中的选项字体颜色。 默认值：\$r('sys.color.font_secondary') 值为undefined时，按默认值处理。 说明： items设置textModifier/fontColor属性值时，itemFontColor不生效。 backgroundSystemMaterial设置自动反色的系统材质时，该属性使用支持反色的特殊系统资源，颜色自动适配到材质背景色的反色。 该成员只读，不支持更改。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
@@ -223,7 +231,7 @@ CapsuleSegmentButtonV2({
 | itemSelectedSymbolFontColor | ColorMetrics | 否 | @Param | 配置分段按钮选中的选项中HM Symbol类型图标颜色。 默认值：\$r('sys.color.font_on_primary') 值为undefined时，按默认值处理。 说明： items设置symbolModifier/fontColor属性值时，itemSelectedSymbolFontColor不生效。 backgroundSystemMaterial设置自动反色的系统材质时，该属性使用支持反色的特殊系统资源，颜色自动适配到材质背景色的反色。 该成员只读，不支持更改。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
 | languageDirection | Direction | 否 | @Param | 配置分段按钮的布局方向。 默认值：Direction.Auto 超出取值范围按默认值处理。 该成员只读，不支持更改。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
 | enableStateAnimation24+ | boolean | 否 | @Param | 设置当通过变量修改selectedIndex值时，是否开启分段按钮的属性动画。 true表示开启分段按钮的属性动画；未配置该属性或值为false时表示不开启分段按钮的属性动画，使用组件默认的切换动画效果。 默认值：false 该成员只读，不支持更改。 元服务API： 从API version 24开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
-| backgroundSystemMaterial | uiMaterial.Material | 否 | @Param | 分段按钮组件的背景板的系统材质。不同系统材质包含不同的属性影响效果。传入材质后，SegmentButtonV2的动效发生改变。 默认值：无材质效果。 该成员只读，不支持更改。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
+| backgroundSystemMaterial | uiMaterial.Material | 否 | @Param | 分段按钮组件的背景板的系统材质。需要将组件放置在Navigation或NavDestination的标题栏子树，或横向Tabs的底部TabBar子树中，材质效果才会生效。不同系统材质包含不同的属性影响效果。传入材质后，SegmentButtonV2的动效发生改变。 分段按钮在使用系统材质时支持选中项的背景跟随手指拖拽的能力，分段按钮被选中的选项下标在跟随手指拖拽过程中保持不变、在拖拽结束时更新。 默认值：无材质效果。 该成员只读，不支持更改。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 
 
 > [!NOTE]
@@ -232,9 +240,10 @@ CapsuleSegmentButtonV2({
 
 
 
-#### MultiCapsuleSegmentButtonV2
+## MultiCapsuleSegmentButtonV2
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 MultiCapsuleSegmentButtonV2({
@@ -277,6 +286,7 @@ MultiCapsuleSegmentButtonV2({
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
+
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | items | SegmentButtonV2Items | 是 | @Require @Param | 配置分段按钮的选项集合信息。 值为undefined时，不显示选项信息。 该成员只读，不支持更改。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
@@ -291,8 +301,8 @@ MultiCapsuleSegmentButtonV2({
 | itemMinHeight | LengthMetrics | 否 | @Param | 配置分段按钮选项的最小高度。 取值范围：[0, +∞) 默认值： 只有纯文本或者纯图标选项时：\$r('sys.float.segment_button_v2_singleline_selected_height')；有图文混合的选项时：\$r('sys.float.segment_button_v2_doubleline_selected_height') 超出取值范围按默认值处理。 该成员只读，不支持更改。 |
 | itemPadding | LocalizedPadding | 否 | @Param | 配置分段按钮选项的内边距。 默认值：{ top: LengthMetrics.resource(\$r('sys.float.padding_level2')), bottom: LengthMetrics.resource(\$r('sys.float.padding_level2')), start: LengthMetrics.resource(\$r('sys.float.padding_level4')), end: LengthMetrics.resource(\$r('sys.float.padding_level4')) } 值为undefined时，按默认值处理。 该成员只读，不支持更改。 |
 | itemSpace | LengthMetrics | 否 | @Param | 配置分段按钮选项之间的间隔。 取值范围：[0, +∞) 默认值：LengthMetrics.vp(1) 说明： 不支持设置百分比类型，异常值按默认值处理。 该成员只读，不支持更改。 |
-| itemMinFontScale | number \| Resource | 否 | @Param | 配置分段按钮选项文字大小的最小字体缩放倍数。 取值范围：[0, 1] 默认值：0 说明： 设置的最小字体缩放值小于 0 时，按值为 0 处理，设置的最小字体缩放值大于 1 时，按值为 1 处理，异常值默认不生效。 该成员只读，不支持更改。 |
-| itemMaxFontScale | number \| Resource | 否 | @Param | 配置分段按钮选项文字大小的最大字体缩放倍数。 取值范围：[1, 2] 默认值：1 说明： 设置的值小于 1 时，按值为 1 处理，设置的值大于 2，按值为 2 处理，异常值默认不生效。 该成员只读，不支持更改。 |
+| itemMinFontScale | number \| Resource | 否 | @Param | 配置分段按钮选项文字大小的最小字体缩放倍数。 取值范围：[0, 1] 默认值：0 说明： 设置的最小字体缩放值小于0时，按值为0处理，设置的最小字体缩放值大于1时，按值为1处理，异常值默认不生效。 该成员只读，不支持更改。 |
+| itemMaxFontScale | number \| Resource | 否 | @Param | 配置分段按钮选项文字大小的最大字体缩放倍数。 取值范围：[1, 2] 默认值：1 说明： 设置的值小于1时，按值为1处理；设置的值大于2时，按值为2处理；异常值默认不生效。 该成员只读，不支持更改。 |
 | itemSelectedFontSize | LengthMetrics | 否 | @Param | 配置分段按钮选中的选项字体大小。 取值范围：[0, +∞) 默认值：14fp 说明： 不支持设置百分比类型，异常值按默认值处理。 items设置textModifier/fontSize属性值时，itemSelectedFontSize不生效。 该成员只读，不支持更改。 |
 | itemFontColor | ColorMetrics | 否 | @Param | 配置分段按钮非选中的选项字体颜色。 默认值：\$r('sys.color.font_secondary') 值为undefined时，按默认值处理。 说明： items设置textModifier/fontColor属性值时，itemFontColor不生效。 该成员只读，不支持更改。 |
 | itemFontSize | LengthMetrics | 否 | @Param | 配置分段按钮非选中的选项字体大小。 取值范围：[0, +∞) 默认值：14fp 说明： 不支持设置百分比类型，异常值按默认值处理。 items设置textModifier/fontSize属性值时，itemFontSize不生效。 该成员只读，不支持更改。 |
@@ -311,9 +321,10 @@ MultiCapsuleSegmentButtonV2({
 
 
 
-#### SegmentButtonV2Items
+## SegmentButtonV2Items
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 分段按钮选项集合。
 
@@ -323,9 +334,10 @@ MultiCapsuleSegmentButtonV2({
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 constructor(items: SegmentButtonV2ItemOptions[])
 
@@ -339,6 +351,7 @@ constructor(items: SegmentButtonV2ItemOptions[])
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | items | SegmentButtonV2ItemOptions[] | 是 | 分段按钮选项配置参数集合。 |
@@ -346,9 +359,10 @@ constructor(items: SegmentButtonV2ItemOptions[])
 
 
 
-#### hasHybrid
+### hasHybrid
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 get hasHybrid():boolean
 
@@ -362,6 +376,7 @@ get hasHybrid():boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 是否包含图文混合选项。 true：有图文混合选项；false：无图文混合选项。 |
@@ -369,23 +384,26 @@ get hasHybrid():boolean
 
 
 
-#### SegmentButtonV2Item
+## SegmentButtonV2Item
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 **装饰器类型：** @ObservedV2
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -407,9 +425,10 @@ get hasHybrid():boolean
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 constructor(options: SegmentButtonV2ItemOptions)
 
@@ -423,6 +442,7 @@ constructor(options: SegmentButtonV2ItemOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | SegmentButtonV2ItemOptions | 是 | 分段按钮选项配置参数。 |
@@ -430,9 +450,10 @@ constructor(options: SegmentButtonV2ItemOptions)
 
 
 
-#### isHybrid
+### isHybrid
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 get isHybrid():boolean
 
@@ -446,6 +467,7 @@ get isHybrid():boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 选项是否有图文混合配置。 true：有图文混合配置；false：无图文混合配置。 |
@@ -453,9 +475,10 @@ get isHybrid():boolean
 
 
 
-#### SegmentButtonV2ItemOptions
+## SegmentButtonV2ItemOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 配置分段按钮选项参数。
 
@@ -464,6 +487,7 @@ get isHybrid():boolean
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -485,9 +509,10 @@ get isHybrid():boolean
 
 
 
-#### OnSelectedIndexChange
+## OnSelectedIndexChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 type OnSelectedIndexChange = (selectedIndex: number) => void
 
@@ -501,6 +526,7 @@ type OnSelectedIndexChange = (selectedIndex: number) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | selectedIndex | number | 是 | 分段按钮选项下标。第一项编号为0，之后按顺序递增。 |
@@ -508,9 +534,10 @@ type OnSelectedIndexChange = (selectedIndex: number) => void
 
 
 
-#### OnSelectedIndexesChange
+## OnSelectedIndexesChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 type OnSelectedIndexesChange = (selectedIndexes: number[]) => void
 
@@ -524,6 +551,7 @@ type OnSelectedIndexesChange = (selectedIndexes: number[]) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | selectedIndexes | number[] | 是 | 分段按钮被选中项的下标集合，第一项编号为0，之后按顺序递增。 |
@@ -531,13 +559,17 @@ type OnSelectedIndexesChange = (selectedIndexes: number[]) => void
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 示例1（页签型分段按钮）
+
+
+### 示例1（页签型分段按钮）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 此示例说明页签型分段按钮的基本用法。
 
@@ -679,7 +711,10 @@ export struct VCard {
 
 
 
-#### 示例2（单选的胶囊型分段按钮）
+### 示例2（单选的胶囊型分段按钮）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例介绍单选胶囊型分段按钮的基本用法。
 
@@ -813,7 +848,10 @@ export struct VCard {
 
 
 
-#### 示例3（多选的胶囊型分段按钮）
+### 示例3（多选的胶囊型分段按钮）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例介绍多选胶囊型分段按钮的基本用法。
 
@@ -947,7 +985,10 @@ export struct VCard {
 
 
 
-#### 示例4（分段按钮Modifier的基本用法）
+### 示例4（分段按钮Modifier的基本用法）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例介绍页签型分段按钮、单选的胶囊型分段按钮、多选的胶囊型分段按钮的Modifier基本用法。
 
@@ -1046,7 +1087,10 @@ export struct VCard {
 
 
 
-#### 示例5（开启SegmentButtonV2的属性动画）
+### 示例5（开启SegmentButtonV2的属性动画）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 此示例展示了SegmentButtonV2开启enableStateAnimation后，在通过状态变量修改selectedIndex的值时，按钮切换也具有动画效果。
 
@@ -1145,9 +1189,12 @@ export struct VCard {
 
 
 
-#### 示例6（设置背景板材质）
+### 示例6（设置背景板材质）
 
-以下示例通过backgroundSystemMaterial属性，为分段按钮设置透明的背景板材质，开启自动反色和交互形变效果，并自定义反馈光感的颜色。
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+以下示例通过backgroundSystemMaterial属性，为分段按钮设置了透明的背景板材质、开启自动反色和交互形变效果，并自定义反馈光感的颜色。
 
 从API版本26.0.0开始，[TabSegmentButtonV2](#tabsegmentbuttonv2)和[CapsuleSegmentButtonV2](#capsulesegmentbuttonv2)中新增backgroundSystemMaterial属性。
 
@@ -1172,7 +1219,8 @@ struct SegmentButtonV2Example {
   ]);
   @Local imageSelectedIndex: number = 0;
 
-  build() {
+  @Builder
+  NavigationTitle() {
     Column({ space: 12 }) {
       VCard({ title: '纯文本选项' }) {
         TabSegmentButtonV2({
@@ -1207,7 +1255,6 @@ struct SegmentButtonV2Example {
           })
         })
       }
-
     }
     .linearGradient({
       angle: 180, // 渐变角度，180度是从上到下。
@@ -1220,6 +1267,15 @@ struct SegmentButtonV2Example {
     .height(225)
     .justifyContent(FlexAlign.Start)
     .padding(16)
+  }
+
+  build() {
+    Column() {
+      Navigation() {
+        // 页面内容
+      }
+      .title({ builder: this.NavigationTitle, height: '100%' })
+    }.width('100%').height('100%')
   }
 }
 
@@ -1253,12 +1309,15 @@ export struct VCard {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/JlDKL06YT6yJevokLnnPCA/zh-cn_image_0000002686088459.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071519Z&HW-CC-Expire=86400&HW-CC-Sign=6CC1F33FF6E71A30F35265AB8AD4963F01278E4FBFDDCF7A42D712DDCDCDF79A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/ahlYxabgSWanyXrUczb0Jw/zh-cn_image_0000002747213039.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073029Z&HW-CC-Expire=86400&HW-CC-Sign=CC21C69C9B089D0CE6DD324DB314F8E280163D0E2E28FE8B89F018317AC93249)
 
 
 
 
-#### 示例7（监听对象类型属性内部属性的变化）
+### 示例7（监听对象类型属性内部属性的变化）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 [SegmentButtonV2Item](#segmentbuttonv2item)使用了@ObservedV2装饰器，SegmentButtonV2组件通过@Param接收各个属性参数。对于@Trace装饰的基本类型属性，@Param已能观测到属性变化并触发UI刷新。但对于对象类型属性（如itemIconSize、itemPadding等）的内部属性（如itemIconSize的width、height，itemPadding的top、bottom、start、end），这些对象类型本身未被@ObservedV2装饰，其内部属性变化无法被@Param感知。因此，修改内部属性时UI不会自动刷新。使用[makeObserved](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-statemanagement#makeobserved)接口对对象类型属性（如itemIconSize）进行包裹，可以为该对象的内部属性补充深度观察能力，使得修改内部属性（如width、height）时，框架能够监听到变化并触发UI刷新。makeObserved接口的详细说明请参考[makeObserved接口：将非观察数据变为可观察数据](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-makeobserved)。
 
@@ -1304,4 +1363,4 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/BzPc8AYIQRGqz_wzXQOnZQ/zh-cn_image_0000002685928629.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071519Z&HW-CC-Expire=86400&HW-CC-Sign=51FEDA8D371EFA1125C5F7FD5928FF0C6E641EEC17CBE1996FD532437C5183EE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/NbVl4fQMQoG5r0BbnL3cOA/zh-cn_image_0000002717773104.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073029Z&HW-CC-Expire=86400&HW-CC-Sign=336B18A75F65A24C73EA850BF6D522CCC1B59C0533B4138CC0D0676EAD47AC7A)

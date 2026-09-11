@@ -1,13 +1,14 @@
 # http_interceptor_type.h
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-net-http-interceptor-type-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 为HTTP全局拦截器模块提供C接口的数据结构定义，包含拦截器的请求/响应头信息、HTTP请求/响应数据包结构、拦截器配置信息以及相关的枚举类型和函数指针。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_Http_Interceptor_Headers | OH_Http_Interceptor_Headers | 定义拦截器的请求/响应头信息。 |
@@ -43,10 +47,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_Interceptor_Stage | OH_Interceptor_Stage | 定义拦截器的执行阶段。 |
@@ -56,10 +62,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | typedef OH_Interceptor_Result (*OH_Http_InterceptorHandler)(OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified) | OH_Http_InterceptorHandler | 指向HTTP拦截器处理函数的指针。 |
@@ -67,15 +75,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_Interceptor_Stage
+### OH_Interceptor_Stage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Interceptor_Stage
@@ -89,6 +99,7 @@ enum OH_Interceptor_Stage
  
 **参数：**
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_STAGE_REQUEST | 拦截器处理请求。 |
@@ -97,9 +108,10 @@ enum OH_Interceptor_Stage
  
   
 
-#### OH_Interceptor_Type
+### OH_Interceptor_Type
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Interceptor_Type
@@ -111,6 +123,7 @@ enum OH_Interceptor_Type
  
 **参数：**
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_TYPE_READ_ONLY | 只读拦截器。起始版本： 24。 |
@@ -119,9 +132,10 @@ enum OH_Interceptor_Type
  
   
 
-#### OH_Interceptor_Result
+### OH_Interceptor_Result
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Interceptor_Result
@@ -135,6 +149,7 @@ enum OH_Interceptor_Result
  
 **参数：**
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_CONTINUE | 继续处理。 |
@@ -143,15 +158,17 @@ enum OH_Interceptor_Result
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_Http_InterceptorHandler()
+### OH_Http_InterceptorHandler()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef OH_Interceptor_Result (*OH_Http_InterceptorHandler)(
@@ -168,6 +185,7 @@ typedef OH_Interceptor_Result (*OH_Http_InterceptorHandler)(
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Http_Interceptor_Request *request | HTTP请求数据包指针（仅在请求阶段有效）。 |
@@ -177,6 +195,7 @@ typedef OH_Interceptor_Result (*OH_Http_InterceptorHandler)(
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Interceptor_Result | 拦截器处理结果。 - OH_CONTINUE：继续处理 - OH_ABORT：拦截处理 |

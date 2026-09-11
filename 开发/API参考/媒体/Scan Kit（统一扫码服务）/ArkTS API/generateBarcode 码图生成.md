@@ -1,13 +1,14 @@
 # generateBarcode (码图生成)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/scan-generatebarcode
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 模块概述
+## 模块概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 generateBarcode模块支持通过文本或字节数组生成码图。目前已支持的码类型为EAN-8、EAN-13、UPC-A、UPC-E、Codabar、Code 39、Code 93、Code 128、ITF-14、QR Code、Data Matrix、PDF417、Aztec。暂不支持MULTIFUNCTIONAL CODE生成。
  
@@ -17,9 +18,10 @@ generateBarcode模块支持通过文本或字节数组生成码图。目前已�
  
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { generateBarcode } from '@kit.ScanKit';
@@ -27,9 +29,10 @@ import { generateBarcode } from '@kit.ScanKit';
  
   
 
-#### ErrorCorrectionLevel
+## ErrorCorrectionLevel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 纠错率枚举。纠错率越高，码图在物理损伤（如损坏、污损、遮挡等场景）下的可识别性越强，但相应会导致图案复杂度提升和尺寸增大；反之，低纠错率则呈现更简洁的码图但抗损能力较弱。
  
@@ -41,6 +44,7 @@ import { generateBarcode } from '@kit.ScanKit';
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | LEVEL_L | 0 | 7%纠错率。 |
@@ -51,9 +55,10 @@ import { generateBarcode } from '@kit.ScanKit';
  
   
 
-#### CreateOptions
+## CreateOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 生成码参数。
  
@@ -65,6 +70,7 @@ import { generateBarcode } from '@kit.ScanKit';
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | scanType | scanCore.ScanType | 否 | 否 | 指定要生成的码类型。 |
@@ -99,9 +105,10 @@ let options: generateBarcode.CreateOptions = {
  
   
 
-#### createBarcode
+## createBarcode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createBarcode(content: string, options: CreateOptions): Promise<image.PixelMap>
  
@@ -117,6 +124,7 @@ createBarcode(content: string, options: CreateOptions): Promise<image.PixelMap>
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | content | string | 是 | 码内容字符串，参数限制请参见下方表1-content参数限制条件。 |
@@ -125,6 +133,7 @@ createBarcode(content: string, options: CreateOptions): Promise<image.PixelMap>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<image.PixelMap> | Promise对象，返回生成的码图对象。 |
@@ -134,6 +143,7 @@ createBarcode(content: string, options: CreateOptions): Promise<image.PixelMap>
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-scan)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
@@ -168,6 +178,7 @@ generateBarcode.createBarcode(content, options).then((data: image.PixelMap) => {
  
 **表1** content参数限制条件
   
+
 | 生成码类型 | 参数建议内容 |
 | --- | --- |
 | QR Code | 支持中文，不超过512字符长度，如果内容过长会导致码复杂，影响识别。 |
@@ -187,9 +198,10 @@ generateBarcode.createBarcode(content, options).then((data: image.PixelMap) => {
  
   
 
-#### createBarcode
+## createBarcode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createBarcode(content: string, options: CreateOptions, callback: AsyncCallback<image.PixelMap>): void
  
@@ -205,6 +217,7 @@ createBarcode(content: string, options: CreateOptions, callback: AsyncCallback<i
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | content | string | 是 | 码内容字符串。参数限制请参见createBarcode的表1-content参数限制条件。 |
@@ -216,6 +229,7 @@ createBarcode(content: string, options: CreateOptions, callback: AsyncCallback<i
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-scan)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
@@ -252,9 +266,10 @@ generateBarcode.createBarcode(content, options, (err: BusinessError, data: image
  
   
 
-#### createBarcode
+## createBarcode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createBarcode(content: ArrayBuffer, options: CreateOptions): Promise<image.PixelMap>
  
@@ -270,6 +285,7 @@ createBarcode(content: ArrayBuffer, options: CreateOptions): Promise<image.Pixel
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | content | ArrayBuffer | 是 | 码内容字节数组，参数限制请参见下方表2-content参数限制条件。 |
@@ -278,6 +294,7 @@ createBarcode(content: ArrayBuffer, options: CreateOptions): Promise<image.Pixel
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<image.PixelMap> | Promise对象，返回生成的码图对象。 |
@@ -287,6 +304,7 @@ createBarcode(content: ArrayBuffer, options: CreateOptions): Promise<image.Pixel
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-scan)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
@@ -341,6 +359,7 @@ struct Index {
  
 **表2** content参数限制条件：
   
+
 | 纠错水平 | 参数内容限制 |
 | --- | --- |
 | LEVEL_L | 字节数组长度限制建议不超过2048，如果内容过长会导致码复杂，影响识别。 |

@@ -51,7 +51,7 @@ struct NavigationRouterDemo {
           .width('80%')
           .height(40)
           .onClick(() => {
-            // navigation路由跳转
+         <em>   // navigation路由跳转</em>
             const info = new RouterParams('以Navigation方式进行跳转');
             this.pageInfos.pushPathByName('PageD', info);
           });
@@ -59,7 +59,7 @@ struct NavigationRouterDemo {
           .width('80%')
           .height(40)
           .onClick(() => {
-            // router路由跳转
+          <em>  // router路由跳转</em>
             this.getUIContext()
               .getRouter()
               .pushUrl({ url: 'pages/PageD', params: new RouterParams('以Router方式进行跳转') });

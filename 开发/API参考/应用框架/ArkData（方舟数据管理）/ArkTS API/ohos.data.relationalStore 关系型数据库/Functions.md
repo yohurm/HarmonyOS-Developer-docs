@@ -1,18 +1,19 @@
 # Functions
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-data-relationalstore-f
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { relationalStore } from '@kit.ArkData';
@@ -20,9 +21,10 @@ import { relationalStore } from '@kit.ArkData';
 
 
 
-#### relationalStore.getRdbStore
+## relationalStore.getRdbStore
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRdbStore(context: Context, config: StoreConfig, callback: AsyncCallback&lt;RdbStore&gt;): void
 
@@ -31,6 +33,7 @@ getRdbStore(context: Context, config: StoreConfig, callback: AsyncCallback&lt;Rd
 对应沙箱路径下无数据库文件时，将创建数据库文件，文件创建位置详见[StoreConfig](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-data-relationalstore-i#storeconfig)。对应路径下已有数据库文件时，将打开已有数据库文件。
 
 开发者在创建数据库时，应谨慎配置是否进行数据库加密的参数[encrypt](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-data-relationalstore-i#storeconfig)，数据库创建后，禁止对该参数进行修改。
+
 
 | 当前打开数据库时配置的加密类型 | 本设备上创建该数据库时的加密类型 | 结果 |
 | --- | --- | --- |
@@ -44,6 +47,7 @@ getRdbStore支持多线程并发操作。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 |
@@ -54,6 +58,7 @@ getRdbStore支持多线程并发操作。
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -132,9 +137,10 @@ class EntryAbility extends UIAbility {
 
 
 
-#### relationalStore.getRdbStore
+## relationalStore.getRdbStore
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRdbStore(context: Context, config: StoreConfig): Promise&lt;RdbStore&gt;
 
@@ -143,6 +149,7 @@ getRdbStore(context: Context, config: StoreConfig): Promise&lt;RdbStore&gt;
 对应沙箱路径下无数据库文件时，将创建数据库文件，文件创建位置详见[StoreConfig](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-data-relationalstore-i#storeconfig)。对应路径下已有数据库文件时，将打开已有数据库文件。
 
 开发者在创建数据库时，应谨慎配置是否进行数据库加密的参数[encrypt](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-data-relationalstore-i#storeconfig)，数据库创建后，禁止对该参数进行修改。
+
 
 | 当前打开数据库时配置的加密类型 | 本设备上创建该数据库时的加密类型 | 结果 |
 | --- | --- | --- |
@@ -156,6 +163,7 @@ getRdbStore支持多线程并发操作。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 |
@@ -163,6 +171,7 @@ getRdbStore支持多线程并发操作。
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -172,6 +181,7 @@ getRdbStore支持多线程并发操作。
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -244,9 +254,10 @@ class EntryAbility extends UIAbility {
 
 
 
-#### relationalStore.getRdbStoreSync24+
+## relationalStore.getRdbStoreSync24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRdbStoreSync(context: Context, config: StoreConfig): RdbStore
 
@@ -255,6 +266,7 @@ getRdbStoreSync(context: Context, config: StoreConfig): RdbStore
 对应沙箱路径下无数据库文件时，将创建数据库文件，文件创建位置详见[StoreConfig](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-data-relationalstore-i#storeconfig)。对应路径下已有数据库文件时，将打开已有数据库文件。
 
 开发者在创建数据库时，应谨慎配置是否进行数据库加密的参数[encrypt](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-data-relationalstore-i#storeconfig)，数据库创建后，禁止对该参数进行修改。如果有修改参数，则会报错误码。
+
 
 | 当前打开数据库时配置的加密类型 | 本设备上创建该数据库时的加密类型 | 结果 |
 | --- | --- | --- |
@@ -270,6 +282,7 @@ getRdbStoreSync支持多线程并发操作。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 |
@@ -277,6 +290,7 @@ getRdbStoreSync支持多线程并发操作。
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -286,6 +300,7 @@ getRdbStoreSync支持多线程并发操作。
 **错误码：**
 
 以下错误码的详细介绍请参见[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -331,9 +346,10 @@ class EntryAbility extends UIAbility {
 
 
 
-#### relationalStore.deleteRdbStore
+## relationalStore.deleteRdbStore
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteRdbStore(context: Context, name: string, callback: AsyncCallback&lt;void&gt;): void
 
@@ -347,6 +363,7 @@ deleteRdbStore(context: Context, name: string, callback: AsyncCallback&lt;void&g
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 |
@@ -357,6 +374,7 @@ deleteRdbStore(context: Context, name: string, callback: AsyncCallback&lt;void&g
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -410,9 +428,10 @@ class EntryAbility extends UIAbility {
 
 
 
-#### relationalStore.deleteRdbStore
+## relationalStore.deleteRdbStore
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteRdbStore(context: Context, name: string): Promise&lt;void&gt;
 
@@ -426,6 +445,7 @@ deleteRdbStore(context: Context, name: string): Promise&lt;void&gt;
 
 **参数**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 |
@@ -433,6 +453,7 @@ deleteRdbStore(context: Context, name: string): Promise&lt;void&gt;
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -442,6 +463,7 @@ deleteRdbStore(context: Context, name: string): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -491,9 +513,10 @@ class EntryAbility extends UIAbility {
 
 
 
-#### relationalStore.deleteRdbStore10+
+## relationalStore.deleteRdbStore10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteRdbStore(context: Context, config: StoreConfig, callback: AsyncCallback&lt;void&gt;): void
 
@@ -507,6 +530,7 @@ deleteRdbStore(context: Context, config: StoreConfig, callback: AsyncCallback&lt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 |
@@ -517,6 +541,7 @@ deleteRdbStore(context: Context, config: StoreConfig, callback: AsyncCallback&lt
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -581,9 +606,10 @@ class EntryAbility extends UIAbility {
 
 
 
-#### relationalStore.deleteRdbStore10+
+## relationalStore.deleteRdbStore10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteRdbStore(context: Context, config: StoreConfig): Promise&lt;void&gt;
 
@@ -597,6 +623,7 @@ deleteRdbStore(context: Context, config: StoreConfig): Promise&lt;void&gt;
 
 **参数**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 |
@@ -604,6 +631,7 @@ deleteRdbStore(context: Context, config: StoreConfig): Promise&lt;void&gt;
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -613,6 +641,7 @@ deleteRdbStore(context: Context, config: StoreConfig): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -674,9 +703,10 @@ class EntryAbility extends UIAbility {
 
 
 
-#### relationalStore.isVectorSupported18+
+## relationalStore.isVectorSupported18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isVectorSupported(): boolean
 
@@ -685,6 +715,7 @@ isVectorSupported(): boolean
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -730,9 +761,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### relationalStore.isTokenizerSupported18+
+## relationalStore.isTokenizerSupported18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isTokenizerSupported(tokenizer: Tokenizer): boolean
 
@@ -744,12 +776,14 @@ isTokenizerSupported(tokenizer: Tokenizer): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | tokenizer | Tokenizer | 是 | 需要被判断是否支持的分词器。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -759,6 +793,7 @@ isTokenizerSupported(tokenizer: Tokenizer): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -775,9 +810,10 @@ console.info("custom tokenizer supported on current platform: " + customTypeSupp
 
 
 
-#### relationalStore.getInsertSqlInfo20+
+## relationalStore.getInsertSqlInfo20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getInsertSqlInfo(table: string, values: ValuesBucket, conflict?: ConflictResolution): SqlInfo
 
@@ -786,6 +822,7 @@ getInsertSqlInfo(table: string, values: ValuesBucket, conflict?: ConflictResolut
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -796,6 +833,7 @@ getInsertSqlInfo(table: string, values: ValuesBucket, conflict?: ConflictResolut
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | SqlInfo | SqlInfo对象，其中sql为返回的sql语句，args为执行SQL中的参数信息。 |
@@ -804,6 +842,7 @@ getInsertSqlInfo(table: string, values: ValuesBucket, conflict?: ConflictResolut
 **错误码：**
 
 以下错误码的详细介绍请参见[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -828,9 +867,10 @@ const sqlInfo: relationalStore.SqlInfo = relationalStore.getInsertSqlInfo(
 
 
 
-#### relationalStore.getUpdateSqlInfo20+
+## relationalStore.getUpdateSqlInfo20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getUpdateSqlInfo(predicates: RdbPredicates, values: ValuesBucket, conflict?: ConflictResolution): SqlInfo
 
@@ -839,6 +879,7 @@ getUpdateSqlInfo(predicates: RdbPredicates, values: ValuesBucket, conflict?: Con
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -849,6 +890,7 @@ getUpdateSqlInfo(predicates: RdbPredicates, values: ValuesBucket, conflict?: Con
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | SqlInfo | SqlInfo对象，其中sql为返回的sql语句，args为执行SQL中的参数信息。 |
@@ -857,6 +899,7 @@ getUpdateSqlInfo(predicates: RdbPredicates, values: ValuesBucket, conflict?: Con
 **错误码：**
 
 以下错误码的详细介绍请参见[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -882,9 +925,10 @@ const sqlInfo: relationalStore.SqlInfo = relationalStore.getUpdateSqlInfo(
 
 
 
-#### relationalStore.getDeleteSqlInfo20+
+## relationalStore.getDeleteSqlInfo20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDeleteSqlInfo(predicates: RdbPredicates): SqlInfo
 
@@ -894,12 +938,14 @@ getDeleteSqlInfo(predicates: RdbPredicates): SqlInfo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | predicates | RdbPredicates | 是 | 与指定字段匹配的谓词。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -909,6 +955,7 @@ getDeleteSqlInfo(predicates: RdbPredicates): SqlInfo
 **错误码：**
 
 以下错误码的详细介绍请参见[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -926,9 +973,10 @@ const sqlInfo: relationalStore.SqlInfo = relationalStore.getDeleteSqlInfo(predic
 
 
 
-#### relationalStore.getQuerySqlInfo20+
+## relationalStore.getQuerySqlInfo20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getQuerySqlInfo(predicates: RdbPredicates, columns?: Array&lt;string&gt;): SqlInfo
 
@@ -938,6 +986,7 @@ getQuerySqlInfo(predicates: RdbPredicates, columns?: Array&lt;string&gt;): SqlIn
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | predicates | RdbPredicates | 是 | 与指定字段匹配的谓词。 |
@@ -945,6 +994,7 @@ getQuerySqlInfo(predicates: RdbPredicates, columns?: Array&lt;string&gt;): SqlIn
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -954,6 +1004,7 @@ getQuerySqlInfo(predicates: RdbPredicates, columns?: Array&lt;string&gt;): SqlIn
 **错误码：**
 
 以下错误码的详细介绍请参见[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

@@ -1,6 +1,6 @@
 # makeObserved接口：将非观察数据变为可观察数据
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-makeobserved
 
@@ -13,7 +13,7 @@ makeObserved可以在@Trace无法标记的情况下使用。在阅读本文档�
 
 
 
-#### 概述
+## 概述
 
  - 状态管理框架已提供[@ObservedV2/@Trace](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-observedv2-and-trace)用于观察类属性变化，makeObserved接口提供主要应用于@ObservedV2/@Trace无法涵盖的场景：
 
@@ -22,7 +22,7 @@ class的定义在三方包中：开发者无法手动对class中需要观察的�
  - 当前类的成员属性不能被修改：因为@Trace观察类属性会动态修改类的属性，这个行为在[@Sendable](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable#sendable装饰器)装饰的class中是不被允许的，此时可以使用makeObserved。
  - interface或者JSON.parse返回的匿名对象：这类场景往往没有明确的class声明，开发者无法使用@Trace标记当前属性可以被观察，此时可以使用makeObserved。
 
-      - 使用makeObserved接口需要导入UIUtils。
+            - 使用makeObserved接口需要导入UIUtils。
 
   
 ```text
@@ -33,7 +33,7 @@ import { UIUtils } from '@kit.ArkUI';
 
 
 
-#### 限制条件
+## 限制条件
 
  - makeObserved仅支持非空的对象类型传参。
 
@@ -53,7 +53,7 @@ class Info {
 }
 let rawInfo: Info = UIUtils.makeObserved(new Info()); // 正确用法
 ```
-      - makeObserved不支持传入被[@ObservedV2](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-observedv2-and-trace)、[@Observed](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-observed-and-objectlink)装饰的类的实例和被makeObserved封装过的代理数据。为了防止数据被双重代理，makeObserved发现入参为上述情况时则直接返回，不做处理。
+            - makeObserved不支持传入被[@ObservedV2](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-observedv2-and-trace)、[@Observed](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-observed-and-objectlink)装饰的类的实例和被makeObserved封装过的代理数据。为了防止数据被双重代理，makeObserved发现入参为上述情况时则直接返回，不做处理。
 
   
 ```text
@@ -127,7 +127,7 @@ struct Page1 {
 
 
 
-#### makeObserved仅对入参对象进行深度观察
+### makeObserved仅对入参对象进行深度观察
 
  - message被[@Local](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-local)装饰，本身具有观察自身赋值的能力。其初始值为makeObserved的返回值，具有深度观察能力。需要注意，makeObserved仅对message进行深度观察，而message自身赋值的变化，则是由@Local观察的。
  - 点击change id可以触发UI刷新。
@@ -180,11 +180,11 @@ struct Page2 {
 
 
 
-#### 支持类型和观察变化
+## 支持类型和观察变化
 
 
 
-#### 支持类型
+### 支持类型
 
  - 支持未被[@Observed](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-observed-and-objectlink)或[@ObservedV2](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-observedv2-and-trace)装饰的类。
  - 支持Array、Map、Set和Date。
@@ -195,26 +195,32 @@ struct Page2 {
 
 
 
-#### 观察变化
+### 观察变化
 
  - makeObserved传入内置类型或collections类型的实例时，可以观测其API带来的变化：
 
 | 类型 | 可观测变化的API |
+
 | --- | --- |
+
 | Array | push、pop、shift、unshift、splice、copyWithin、fill、reverse、sort |
+
 | collections.Array | push、pop、shift、unshift、splice、fill、reverse、sort、shrinkTo、extendTo |
+
 | Map/collections.Map | set、clear、delete |
+
 | Set/collections.Set | add、clear、delete |
+
 | Date | setFullYear、setMonth、setDate、setHours、setMinutes、setSeconds、setMilliseconds、setTime、setUTCFullYear、setUTCMonth、setUTCDate、setUTCHours、setUTCMinutes、setUTCSeconds、setUTCMilliseconds |
 
 
 
 
-#### 使用场景
+## 使用场景
 
 
 
-#### makeObserved和@Sendable装饰的class配合使用
+### makeObserved和@Sendable装饰的class配合使用
 
 [@Sendable](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable)主要是为了处理应用场景中的并发任务。将makeObserved和@Sendable配合使用，可以满足一般应用开发中，在子线程做大数据处理，在UI线程做ViewModel的显示和观察数据的需求。@Sendable具体内容可参考[并发任务文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/multi-thread-concurrency-overview)。
 
@@ -308,7 +314,7 @@ struct Page3 {
 
 
 
-#### makeObserved和collections.Array/Set/Map配合使用
+### makeObserved和collections.Array/Set/Map配合使用
 
 collections提供ArkTS容器集，可用于并发场景下的高性能数据传递。详情见[@arkts.collections (ArkTS容器集)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-arkts-collections)相关文档。
 
@@ -549,7 +555,7 @@ struct Page5 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/vNJmYUZ_Q5G1GPRlyzakZg/zh-cn_image_0000002674631940.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095707Z&HW-CC-Expire=86400&HW-CC-Sign=73642737F57A9A8A23EB382D2B8CDC02CAF6B79B2F537B26A42823259D316228)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/UHQ8ii2YRTan10yTiukXsA/zh-cn_image_0000002717770092.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072131Z&HW-CC-Expire=86400&HW-CC-Sign=292B83C0404B10F35EEA23A5F9226B60FFB27EA1800BF51106426D6D55182428)
 
 
 **collections.Set**
@@ -619,12 +625,12 @@ struct Page6 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/3QnR7ZAhRROX3jRO_DPetw/zh-cn_image_0000002704271895.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095707Z&HW-CC-Expire=86400&HW-CC-Sign=F36858B9872E7F299CFF313056F241F8D4B20EC5546E1BCDBEA6BACC6F2B63C1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/SKfX2qZDTEKyTZonxcJuyQ/zh-cn_image_0000002717610158.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072131Z&HW-CC-Expire=86400&HW-CC-Sign=BDDB375AE4880589EA925D3558F71CA53AFAA00D646CA565A6819D8552ED679E)
 
 
 
 
-#### makeObserved的入参为JSON.parse的返回值
+### makeObserved的入参为JSON.parse的返回值
 
 JSON.parse返回Object，无法使用@Trace装饰其属性，可以使用makeObserved使其变为可观察数据。
 
@@ -676,12 +682,12 @@ struct Page7 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/iaPgjR3UT6yqc16nh9Qj_A/zh-cn_image_0000002674472096.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095707Z&HW-CC-Expire=86400&HW-CC-Sign=08DAECF80BD18A392DD952A308601FD7B77B85427B56B11470A97C282254AB32)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/WBe5dIM8SW60ClF_9tIN8A/zh-cn_image_0000002747290109.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072131Z&HW-CC-Expire=86400&HW-CC-Sign=D5F3A265AF0FB181434AF5328262F09CA10B387EE1C832FC416144729E86E208)
 
 
 
 
-#### makeObserved和V2装饰器配合使用
+### makeObserved和V2装饰器配合使用
 
 makeObserved可以和V2的装饰器一起使用。对于[@Monitor](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-monitor)和[@Computed](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-computed)，因为makeObserved传入@Observed或ObservedV2装饰的类实例会返回其自身，所以@Monitor或者@Computed不能定义在class中，只能定义在自定义组件里。
 
@@ -711,7 +717,7 @@ struct Page8 {
   // 当message.id发生变化时，触发该函数调用
   @Monitor('message.id')
   onStrChange(monitor: IMonitor) {
-    hilog.info(DOMAIN, TAG, `name change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
+    hilog.info(DOMAIN, TAG, `id change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
   }
 
   // 当message.id和message.age发生变化，需要重新计算时，触发该函数调用
@@ -768,12 +774,12 @@ struct Child {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/AZUqJ89cQnC3pDAF4zOHoQ/zh-cn_image_0000002704392065.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095707Z&HW-CC-Expire=86400&HW-CC-Sign=A5FA328126C84FF9FD805DA403F4E686C599B983B6CF0A758B96F8223B587977)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/2WTuSvNlS_C__KVDKSQqjg/zh-cn_image_0000002747210027.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072131Z&HW-CC-Expire=86400&HW-CC-Sign=D518344326B9038B4D1C4E31A74FB28589D0A947EA2D1E02505E98564D61C59D)
 
 
 
 
-#### makeObserved在@Component内使用
+### makeObserved在@Component内使用
 
 makeObserved不能和V1的状态变量装饰器一起使用，但可以在@Component装饰的自定义组件里使用。
 
@@ -811,16 +817,16 @@ struct Page9 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/rTaXx49OSlqlo1Eead2Cbg/zh-cn_image_0000002674631942.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095707Z&HW-CC-Expire=86400&HW-CC-Sign=E4C52EA9523957C29767BA14C2435F6632A79D967AEE561FC9DFB808A940A81A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/eD0oWGbKQWuLKX_sGEGikA/zh-cn_image_0000002717770094.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072131Z&HW-CC-Expire=86400&HW-CC-Sign=51CB449ADA89BE16E3813C71C657F521372D74A8542E4890012288EB1CC239B2)
 
 
 
 
-#### 常见问题
+## 常见问题
 
 
 
-#### getTarget后的数据可以正常赋值，但是无法触发UI刷新
+### getTarget后的数据可以正常赋值，但是无法触发UI刷新
 
 [getTarget](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-gettarget)可以获取状态管理框架代理前的原始对象。
 
@@ -868,4 +874,4 @@ struct Page10 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/Y0tQ9PttTx-plG6qcP8fnA/zh-cn_image_0000002704271897.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095707Z&HW-CC-Expire=86400&HW-CC-Sign=54B35BF7DA0C2A44BE67382C163C08D7C328960A9AD308759E53C7CD814E6A08)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/Rq9quxblSdSZ0nZMhkZx9A/zh-cn_image_0000002717610160.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072131Z&HW-CC-Expire=86400&HW-CC-Sign=504AC2A6C2D3D66E13A4961400A919EF78DDD489FEF16BB395721ED622463F0A)

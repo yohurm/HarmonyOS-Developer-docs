@@ -1,9 +1,9 @@
 # @ohos.multimodalInput.inputConsumer (全局快捷键)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inputconsumer
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 全局快捷键订阅模块，用于处理组合按键的订阅，本模块也支持音量键拦截监听能力。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { inputConsumer, KeyEvent } from '@kit.InputKit';
@@ -22,13 +23,15 @@ import { inputConsumer, KeyEvent } from '@kit.InputKit';
 
 
 
-#### HotkeyOptions
+## HotkeyOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 快捷键选项。
 
 **系统能力：** SystemCapability.MultimodalInput.Input.InputConsumer
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -39,15 +42,17 @@ import { inputConsumer, KeyEvent } from '@kit.InputKit';
 
 
 
-#### KeyPressedConfig16+
+## KeyPressedConfig16+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 按键事件消费设置。
 
 **系统能力：** SystemCapability.MultimodalInput.Input.InputConsumer
 
-**设备行为差异**：API version 23之前，该接口在Phone和Tablet设备中可正常调用，在其他设备上返回801错误码。从API version 23开始，该接口在Phone、Tablet、PC/2in1和TV设备中可正常调用，在其他设备上返回801错误码。
+**设备行为差异**：API version 19之前，该接口在Phone、Tablet和PC/2in1设备中可正常调用，在其他设备上返回801错误码。从API version 19开始，该接口在Phone、Tablet、PC/2in1和TV设备中可正常调用，在其他设备上返回801错误码。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -58,9 +63,10 @@ import { inputConsumer, KeyEvent } from '@kit.InputKit';
 
 
 
-#### inputConsumer.getAllSystemHotkeys
+## inputConsumer.getAllSystemHotkeys
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 getAllSystemHotkeys(): Promise<Array&lt;HotkeyOptions&gt;>
 
@@ -72,6 +78,7 @@ getAllSystemHotkeys(): Promise<Array&lt;HotkeyOptions&gt;>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;HotkeyOptions&gt;> | Promise对象，返回所有系统快捷键的列表。 |
@@ -80,6 +87,7 @@ getAllSystemHotkeys(): Promise<Array&lt;HotkeyOptions&gt;>
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -113,9 +121,10 @@ struct Index {
 
 
 
-#### inputConsumer.on('hotkeyChange')
+## inputConsumer.on('hotkeyChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 on(type: 'hotkeyChange', hotkeyOptions: HotkeyOptions, callback: Callback&lt;HotkeyOptions&gt;): void
 
@@ -127,6 +136,7 @@ on(type: 'hotkeyChange', hotkeyOptions: HotkeyOptions, callback: Callback&lt;Hot
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件类型，固定取值为'hotkeyChange'。 |
@@ -137,6 +147,7 @@ on(type: 'hotkeyChange', hotkeyOptions: HotkeyOptions, callback: Callback&lt;Hot
 **错误码**：
 
 以下错误码的详细介绍请参见[全局快捷键管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputconsumer)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -183,9 +194,10 @@ struct Index {
 
 
 
-#### inputConsumer.off('hotkeyChange')
+## inputConsumer.off('hotkeyChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'hotkeyChange', hotkeyOptions: HotkeyOptions, callback?: Callback&lt;HotkeyOptions&gt;): void
 
@@ -194,6 +206,7 @@ off(type: 'hotkeyChange', hotkeyOptions: HotkeyOptions, callback?: Callback&lt;H
 **系统能力：** SystemCapability.MultimodalInput.Input.InputConsumer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -205,6 +218,7 @@ off(type: 'hotkeyChange', hotkeyOptions: HotkeyOptions, callback?: Callback&lt;H
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -282,9 +296,10 @@ struct Index {
 
 
 
-#### inputConsumer.on('keyPressed')16+
+## inputConsumer.on('keyPressed')16+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 on(type: 'keyPressed', options: KeyPressedConfig, callback: Callback&lt;KeyEvent&gt;): void
 
@@ -294,9 +309,10 @@ on(type: 'keyPressed', options: KeyPressedConfig, callback: Callback&lt;KeyEvent
 
 **系统能力：** SystemCapability.MultimodalInput.Input.InputConsumer
 
-**设备行为差异**：API version 23之前，该接口在Phone和Tablet设备中可正常调用，在其他设备上返回801错误码。从API version 23开始，该接口在Phone、Tablet、PC/2in1和TV设备中可正常调用，在其他设备上返回801错误码。
+**设备行为差异**：API version 19之前，该接口在Phone、Tablet和PC/2in1设备中可正常调用，在其他设备上返回801错误码。从API version 19开始，该接口在Phone、Tablet、PC/2in1和TV设备中可正常调用，在其他设备上返回801错误码。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -308,6 +324,7 @@ on(type: 'keyPressed', options: KeyPressedConfig, callback: Callback&lt;KeyEvent
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -349,9 +366,10 @@ struct Index {
 
 
 
-#### inputConsumer.off('keyPressed')16+
+## inputConsumer.off('keyPressed')16+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 off(type: 'keyPressed', callback?: Callback&lt;KeyEvent&gt;): void
 
@@ -359,9 +377,10 @@ off(type: 'keyPressed', callback?: Callback&lt;KeyEvent&gt;): void
 
 **系统能力：** SystemCapability.MultimodalInput.Input.InputConsumer
 
-**设备行为差异**：API version 23之前，该接口在Phone和Tablet设备中可正常调用，在其他设备上返回801错误码。从API version 23开始，该接口在Phone、Tablet、PC/2in1和TV设备中可正常调用，在其他设备上返回801错误码。
+**设备行为差异**：API version 19之前，该接口在Phone、Tablet和PC/2in1设备中可正常调用，在其他设备上返回801错误码。从API version 19开始，该接口在Phone、Tablet、PC/2in1和TV设备中可正常调用，在其他设备上返回801错误码。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -372,6 +391,7 @@ off(type: 'keyPressed', callback?: Callback&lt;KeyEvent&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

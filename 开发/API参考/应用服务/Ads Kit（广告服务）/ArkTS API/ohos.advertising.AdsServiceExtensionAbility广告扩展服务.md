@@ -1,6 +1,6 @@
 # @ohos.advertising.AdsServiceExtensionAbility (广告扩展服务)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-adsserviceextensionability
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -12,7 +12,8 @@
 
 
 
-#### 约束限制
+## 约束限制
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -27,7 +28,8 @@
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -37,7 +39,8 @@ import { RespCallback } from '@kit.AdsKit';
 
 
 
-#### RespCallback
+## RespCallback
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -48,6 +51,7 @@ import { RespCallback } from '@kit.AdsKit';
 **系统能力：** SystemCapability.Advertising.Ads
 
 **参数：**
+
 
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |

@@ -1,10 +1,10 @@
 # 应用UI进程空跑问题分析
 
-更新时间：2026-04-27 09:23:00
+更新时间：2026-08-26 06:47:01
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-ui-skip-analysis
 
-#### 应用UI进程空跑介绍
+## 应用UI进程空跑介绍
 
 应用UI进程空跑主要指在应用界面无实际变化、无用户交互、无可见动画播放等情况下，应用进程仍以固定帧率刷新。
  
@@ -14,13 +14,13 @@
 ![](assets/应用UI进程空跑问题分析/file-20260515115047416-0.png)
 
  
-开发者可进一步在空刷帧中搜索“FlushMessages”，如下图所示，当“FlushMessages”下方存在“UI skip”时，表示该帧未递交任何绘制指令，属于UI空跑。
+开发者可进一步在空跑帧中搜索“FlushMessages”，如下图所示，当“FlushMessages”下方存在“UI skip”时，表示该帧未递交任何绘制指令，属于UI空跑。
  
 
 ![](assets/应用UI进程空跑问题分析/file-20260515115047416-1.png)
 
  
-对比下图的非UI空跑场景，“FlushMessages”下方发现“H:MarshRSTransactionData cmdCount: 2, transactionFlag:[22766,879]”字样时，可确认该帧有绘制指令递交，将引起下一帧render_service的RS树准备工作。其中22766表示下发绘制指令的线程ID，879表示帧数据的索引，“cmdCount:2”表示绘制指令数量为2，有两个arkui节点在该帧被标脏。
+对比下图的非UI空跑场景，“FlushMessages”下方发现“H:MarshRSTransactionData cmdCount: 2, transactionFlag:[22766,879]”字样时，可确认该帧有绘制指令递交，将引起下一帧render_service的RS树准备工作。其中22766表示下发绘制指令的线程ID，879表示帧数据的索引，“cmdCount:2”表示绘制指令数量为2，有两个arkui节点在该帧被触发脏区刷新。
  
 
 ![](assets/应用UI进程空跑问题分析/file-20260515115047416-2.png)
@@ -28,11 +28,11 @@
  
  
 
-#### 分析思路
+## 分析思路
 
  
 
-#### 使用Trace分析
+### 使用Trace分析
 
 开发者可在Profiler中的Energy模板录制一段trace分析，以找到UI帧空帧的原因。关键Trace：H:DisplaySyncId[29] Type[0]... 其中Type的类型是导致刷帧的原因，包括：
  
@@ -48,13 +48,13 @@ Type[1]：Xcomponent
  
  
 
-#### 使用Profiler的Energy工具分析（推荐）
+### 使用Profiler的Energy工具分析（推荐）
 
-在DevEco Studio 6.1版本（手机版本需配套HarmonyOS 6.1及以上版本），针对UI空刷问题，增加了自动检测与分析能力，可通过以下步骤辅助问题定位:
+在DevEco Studio 6.1版本（手机版本需配套HarmonyOS 6.1及以上版本），针对UI空跑问题，增加了自动检测与分析能力，可通过以下步骤辅助问题定位:
  1. 抓取Trace信息点击Profiler工具，选择要分析的应用进程，创建一个Energy Session，操作应用进行测试。
-2. 查看异常信息点击Energy Anomaly泳道，在Detail栏展示异常信息，其中UI Empty Run表示存在UI空刷异常。
+2. 查看异常信息点击Energy Anomaly泳道，在Detail栏展示异常信息，其中UI Empty Run表示存在UI空跑异常。
 
-  图中① AnomalyType: 异常类型，② Anomaly Reason: 异常原因，③ Anomaly Count: 异常的帧数，④ More: 异常帧。
+  图中① AnomalyType: 异常类型，② Anomaly Reason: 异常原因，③ Anomaly Count: 异常帧的数量，④ More: 异常帧。
  
 
 ![](assets/应用UI进程空跑问题分析/file-20260515115047416-4.png)
@@ -67,11 +67,11 @@ Type[1]：Xcomponent
  
  
 
-#### 常见故障根因
+## 常见故障根因
 
  
 
-#### Animator动画
+### Animator动画
 
 Animator是一种依赖DisplaySync机制产生UI刷新的动画机制。如下图“1”处所示，“jsAnimator onframe, duration: 5000, curve: ease, id:1”表明，该动效持续时间为5000ms，动效曲线为ease，Animator的ID为1。
  
@@ -85,7 +85,7 @@ Animator是一种依赖DisplaySync机制产生UI刷新的动画机制。如下�
 
  
  
-重点关注其中提到的MyAnimatorTest、wid、hei三处信息，这表明该Animator的执行在MyAnimatorTest组件上进行，受影响的状态变量为wid与hei。此外，下图标志“2”“3”“4”处会打印组件脏区刷新、FlushTask以及SendCommand的信息，证实了该Animator的效果在递交绘制指令时，是通过组件变量wid、hei更新来完成的。
+重点关注其中提到的MyAnimatorTest、wid与hei三处信息，这表明该Animator的执行在MyAnimatorTest组件上进行，受影响的状态变量为wid与hei。此外，下图标志“2”“3”“4”处会打印组件脏区刷新、FlushTask以及SendCommand的信息，证实了该Animator的效果在递交绘制指令时，是通过组件变量wid、hei更新来完成的。
  
 
 ![](assets/应用UI进程空跑问题分析/file-20260515115047416-7.png)
@@ -198,7 +198,7 @@ export struct MyAnimatorTest {
 ```
  
 
-#### DisplaySync
+### DisplaySync
 
 DisplaySync支持开发者以[指定帧率运行UI业务](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/displaysync-ui)，主要用于精细控制绘制帧率的场景，如动态帧率动画、为特定UI组件设置独立于系统刷新率的绘制帧率等。
  

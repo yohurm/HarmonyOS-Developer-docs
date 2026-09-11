@@ -1,22 +1,21 @@
 # @ohos.sendableResourceManager (资源管理)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-sendable-resource-manager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-资源管理导入sendableResourceManager模块，通过调用[resourceToSendableResource](#sendableresourcemanagerresourcetosendableresource)和[sendableResourceToResource](#sendableresourcemanagersendableresourcetoresource)方法可以将[Resource](#resource)对象和[SendableResource](#sendableresource)对象进行互转。
-
-Resource对象通过转换为SendableResource对象后，可以被[Sendable类](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable)持有。Sendable类在跨线程传输后，取出持有的SendableResource对象转为Resource对象，作为参数获取资源。
+本模块提供[Resource](#resource)对象与[SendableResource](#sendableresource)对象之间的相互转换功能。SendableResource实现了[ISendable](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable#isendable)接口，支持跨线程传输。跨线程传输后，SendableResource对象可以再转换为Resource对象，作为参数传递给[资源管理](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-resource-manager)接口以获取资源。
 
 > [!NOTE]
 > 本模块首批接口从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { sendableResourceManager } from '@kit.LocalizationKit';
@@ -24,13 +23,14 @@ import { sendableResourceManager } from '@kit.LocalizationKit';
 
 
 
-#### sendableResourceManager.resourceToSendableResource
+## sendableResourceManager.resourceToSendableResource
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 resourceToSendableResource(resource: Resource): SendableResource
 
-将Resource对象转换为SendableResource对象。
+将Resource对象转换为可用于跨线程传输的SendableResource对象。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -38,12 +38,14 @@ resourceToSendableResource(resource: Resource): SendableResource
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resource | Resource | 是 | Resource对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -54,9 +56,10 @@ resourceToSendableResource(resource: Resource): SendableResource
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed. |
 
 
 **示例：**
@@ -88,13 +91,14 @@ try {
 
 
 
-#### sendableResourceManager.sendableResourceToResource
+## sendableResourceManager.sendableResourceToResource
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sendableResourceToResource(resource: SendableResource): Resource
 
-将SendableResource对象转换为Resource对象。
+将跨线程传输的SendableResource对象转换为Resource对象。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -102,12 +106,14 @@ sendableResourceToResource(resource: SendableResource): Resource
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resource | SendableResource | 是 | SendableResource对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -118,9 +124,10 @@ sendableResourceToResource(resource: SendableResource): Resource
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed. |
 
 
 **示例：**
@@ -152,15 +159,19 @@ try {
 
 
 
-#### Resource
+## Resource
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Resource = _Resource
+
+表示资源相关信息，包括应用包名、应用模块名、资源ID、资源类型和其他资源参数。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Global.ResourceManager
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -169,15 +180,19 @@ type Resource = _Resource
 
 
 
-#### SendableResource
+## SendableResource
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type SendableResource = _SendableResource
+
+表示跨线程传输的Sendable资源相关信息，包括应用包名、应用模块名、资源ID、资源类型和其他资源参数。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Global.ResourceManager
+
 
 | 类型 | 说明 |
 | --- | --- |

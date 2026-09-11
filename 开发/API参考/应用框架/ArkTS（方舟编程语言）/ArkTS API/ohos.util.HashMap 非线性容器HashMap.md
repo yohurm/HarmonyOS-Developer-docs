@@ -1,9 +1,9 @@
 # @ohos.util.HashMap (非线性容器HashMap)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hashmap
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 HashMap底层采用数组、链表和红黑树实现，支持高效查询、插入和删除。HashMap存储内容基于键值对映射，不允许重复的key，且一个key只能对应一个value。
  
@@ -24,9 +24,10 @@ HashMap和[TreeMap](https://developer.huawei.com/consumer/cn/doc/harmonyos-refer
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { HashMap } from '@kit.ArkTS';
@@ -34,20 +35,23 @@ import { HashMap } from '@kit.ArkTS';
  
   
 
-#### HashMap
+## HashMap
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
  
 **系统能力：** SystemCapability.Utils.Lang
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | length | number | 是 | 否 | HashMap的元素个数。 |
@@ -55,9 +59,10 @@ import { HashMap } from '@kit.ArkTS';
  
   
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
  
@@ -71,6 +76,7 @@ constructor()
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200012 | The HashMap's constructor cannot be directly invoked. |
@@ -84,9 +90,10 @@ let hashMap = new HashMap<string, number>();
  
   
 
-#### isEmpty
+### isEmpty
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isEmpty(): boolean
  
@@ -98,6 +105,7 @@ isEmpty(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 为空返回true，不为空返回false。 |
@@ -107,6 +115,7 @@ isEmpty(): boolean
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The isEmpty method cannot be bound. |
@@ -122,9 +131,10 @@ console.info("result:", result);  // result: true
  
   
 
-#### hasKey
+### hasKey
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hasKey(key: K): boolean
  
@@ -136,6 +146,7 @@ hasKey(key: K): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | K | 是 | 指定要查询的键，用于判断HashMap中是否包含该键。 |
@@ -143,6 +154,7 @@ hasKey(key: K): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 包含指定key返回true，不包含指定key返回false。 |
@@ -152,6 +164,7 @@ hasKey(key: K): boolean
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The hasKey method cannot be bound. |
@@ -168,9 +181,10 @@ console.info("result:", result);  // result: true
  
   
 
-#### hasValue
+### hasValue
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hasValue(value: V): boolean
  
@@ -182,6 +196,7 @@ hasValue(value: V): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | V | 是 | 指定要查询的值，用于判断HashMap中是否包含该值。 |
@@ -189,6 +204,7 @@ hasValue(value: V): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 包含指定的value返回true，不包含指定的value返回false。 |
@@ -198,6 +214,7 @@ hasValue(value: V): boolean
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The hasValue method cannot be bound. |
@@ -214,9 +231,10 @@ console.info("result:", result);  // result: true
  
   
 
-#### get
+### get
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get(key: K): V
  
@@ -228,6 +246,7 @@ get(key: K): V
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | K | 是 | 指定要获取其对应value的键。 |
@@ -235,6 +254,7 @@ get(key: K): V
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | V | 返回key映射的value值；key不存在时返回undefined。 |
@@ -244,6 +264,7 @@ get(key: K): V
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The get method cannot be bound. |
@@ -261,9 +282,10 @@ console.info("result:", result);  // result: 356
  
   
 
-#### setAll
+### setAll
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAll(map: HashMap<K, V>): void
  
@@ -275,6 +297,7 @@ setAll(map: HashMap<K, V>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | map | HashMap<K, V> | 是 | 需要将其全部元素添加到当前HashMap的源HashMap对象。若map与当前HashMap存在重复key，map中的value将替换当前HashMap中对应key的value。 |
@@ -284,6 +307,7 @@ setAll(map: HashMap<K, V>): void
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The setAll method cannot be bound. |
@@ -304,9 +328,10 @@ console.info("result:", result);  // result: true
  
   
 
-#### set
+### set
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set(key: K, value: V): Object
  
@@ -318,6 +343,7 @@ set(key: K, value: V): Object
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | K | 是 | 添加或更新的键名。若key已存在，将替换对应的value。 |
@@ -326,6 +352,7 @@ set(key: K, value: V): Object
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Object | 返回包含添加或更新后元素的当前HashMap实例。 |
@@ -335,6 +362,7 @@ set(key: K, value: V): Object
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The set method cannot be bound. |
@@ -350,9 +378,10 @@ console.info("result:", hashMap.get("squirrel"));  // result: 123
  
   
 
-#### remove
+### remove
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 remove(key: K): V
  
@@ -364,6 +393,7 @@ remove(key: K): V
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | K | 是 | 指定要删除元素的键，用于定位并移除HashMap中该键对应的键值对。 |
@@ -371,6 +401,7 @@ remove(key: K): V
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | V | 返回删除元素的值；key不存在时返回undefined。 |
@@ -380,6 +411,7 @@ remove(key: K): V
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The remove method cannot be bound. |
@@ -397,9 +429,10 @@ console.info("result:", result);  // result: 356
  
   
 
-#### clear
+### clear
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clear(): void
  
@@ -413,6 +446,7 @@ clear(): void
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The clear method cannot be bound. |
@@ -431,9 +465,10 @@ console.info("result:", result);  // result: true
  
   
 
-#### keys
+### keys
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 keys(): IterableIterator&lt;K&gt;
  
@@ -449,6 +484,7 @@ keys(): IterableIterator&lt;K&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator&lt;K&gt; | 返回包含此HashMap中所有key的迭代器。 |
@@ -458,6 +494,7 @@ keys(): IterableIterator&lt;K&gt;
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The keys method cannot be bound. |
@@ -479,9 +516,10 @@ for (let key of keys) {
  
   
 
-#### values
+### values
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 values(): IterableIterator&lt;V&gt;
  
@@ -497,6 +535,7 @@ values(): IterableIterator&lt;V&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator&lt;V&gt; | 返回包含此HashMap中所有value的迭代器。 |
@@ -506,6 +545,7 @@ values(): IterableIterator&lt;V&gt;
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The values method cannot be bound. |
@@ -527,9 +567,10 @@ for (let value of values) {
  
   
 
-#### replace
+### replace
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 replace(key: K, newValue: V): boolean
  
@@ -541,6 +582,7 @@ replace(key: K, newValue: V): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | K | 是 | 依据key指定替换的元素，仅当key已存在时替换生效。 |
@@ -549,6 +591,7 @@ replace(key: K, newValue: V): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 是否成功对已有数据进行替换，成功返回true，失败返回false。 |
@@ -558,6 +601,7 @@ replace(key: K, newValue: V): boolean
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The replace method cannot be bound. |
@@ -574,9 +618,10 @@ console.info("result:", result);  // result: true
  
   
 
-#### forEach
+### forEach
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 forEach(callbackFn: (value?: V, key?: K, map?: HashMap<K, V>) => void, thisArg?: Object): void
  
@@ -592,6 +637,7 @@ forEach(callbackFn: (value?: V, key?: K, map?: HashMap<K, V>) => void, thisArg?:
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callbackFn | function | 是 | 回调函数，在遍历每个元素时被调用，用于对元素执行自定义操作。 |
@@ -600,6 +646,7 @@ forEach(callbackFn: (value?: V, key?: K, map?: HashMap<K, V>) => void, thisArg?:
  
 callbackFn的参数说明：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | V | 否 | 当前遍历到的元素键值对的值。 |
@@ -611,6 +658,7 @@ callbackFn的参数说明：
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The forEach method cannot be bound. |
@@ -643,9 +691,10 @@ for (let i = 0; i < 10; i++) {
  
   
 
-#### entries
+### entries
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 entries(): IterableIterator<[K, V]>
  
@@ -661,6 +710,7 @@ entries(): IterableIterator<[K, V]>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator<[K, V]> | 返回包含此HashMap中所有键值对的迭代器。 |
@@ -670,6 +720,7 @@ entries(): IterableIterator<[K, V]>
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The entries method cannot be bound. |
@@ -704,9 +755,10 @@ for (let i = 0; i < 10; i++) {
  
   
 
-#### [Symbol.iterator]
+### [Symbol.iterator]
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [Symbol.iterator](): IterableIterator<[K, V]>
  
@@ -722,6 +774,7 @@ for (let i = 0; i < 10; i++) {
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator<[K, V]> | 返回包含此HashMap中所有键值对的迭代器。 |
@@ -731,6 +784,7 @@ for (let i = 0; i < 10; i++) {
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The Symbol.iterator method cannot be bound. |

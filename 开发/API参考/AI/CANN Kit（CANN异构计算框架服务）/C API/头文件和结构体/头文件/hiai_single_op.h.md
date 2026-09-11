@@ -1,11 +1,12 @@
 # hiai_single_op.h
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/cannkit-hiai-single-op-8h
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 结构体
+### 结构体
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | struct HiAISingleOpDescriptor_ConvolutionParam | HMS_HiAISingleOpDescriptor_CreateConvolution输入参数。 |
@@ -42,10 +46,12 @@
  
   
 
-#### 类型定义
+### 类型定义
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | typedef struct HiAI_SingleOpTensorDesc HiAI_SingleOpTensorDesc | 单算子Tensor描述的句柄。 |
@@ -61,10 +67,12 @@
  
   
 
-#### 枚举
+### 枚举
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | HiAI_SingleOpDataType { HIAI_SINGLEOP_DT_FLOAT = 0, HIAI_SINGLEOP_DT_FLOAT16 = 1, HIAI_SINGLEOP_DT_UNDEFINED = 17 } | 单算子张量数据类型枚举。 |
@@ -77,10 +85,12 @@
  
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | HiAI_SingleOpTensorDesc * HMS_HiAISingleOpTensorDesc_Create (const int64_t *dims, size_t dimNum, HiAI_SingleOpDataType dataType, HiAI_SingleOpFormat format, bool isVirtual) | 创建HiAI_SingleOpTensorDesc对象。 |

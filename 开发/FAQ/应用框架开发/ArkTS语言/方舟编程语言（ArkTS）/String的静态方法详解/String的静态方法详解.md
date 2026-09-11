@@ -28,14 +28,14 @@
 
   
 ```text
-// 生成字母'A'和'Z'
+<em>// 生成字母'A'和'Z'</em>
 const charA = String.fromCharCode(65);
 const charZ = String.fromCharCode(90);
 
 hilog.info(0x0000, 'testTag', charA);
 hilog.info(0x0000, 'testTag', charZ);
 
-// 生成数字'0'到'9'
+<em>// 生成数字'0'到'9'</em>
 const digits: string[] = [];
 for (let i = 48; i <= 57; i++) {
   digits.push(String.fromCharCode(i));
@@ -52,15 +52,15 @@ hilog.info(0x0000, 'testTag', digits.join(''));
 
   
 ```text
-// 生成地球Emoji
+<em>// 生成地球Emoji</em>
 const earth = String.fromCodePoint(0x1F30D);
 hilog.info(0x0000, 'testTag', earth);
 
-// 生成程序员Emoji
+<em>// 生成程序员Emoji</em>
 const programmer = String.fromCodePoint(0x1F469, 0x200D, 0x1F4BB);
 hilog.info(0x0000, 'testTag', programmer);
 
-// 生成家庭Emoji
+<em>// 生成家庭Emoji</em>
 const family = String.fromCodePoint(0x1F468, 0x200D, 0x1F469, 0x200D, 0x1F467, 0x200D, 0x1F466);
 hilog.info(0x0000, 'testTag', family);
 ```
@@ -74,15 +74,15 @@ hilog.info(0x0000, 'testTag', family);
 
   
 ```text
-// 普通模板字符串：转义字符会被解析
+<em>// 普通模板字符串：转义字符会被解析</em>
 const normalStr = `第一行\n第二行`;
 hilog.info(0x0000, 'testTag', normalStr);
 
-// 使用String.raw()：转义字符作为字面量保留
+<em>// 使用String.raw()：转义字符作为字面量保留</em>
 const rawStr = String.raw`第一行\n第二行`;
 hilog.info(0x0000, 'testTag', rawStr);
 
-// 处理路径字符串（避免反斜杠被转义）
+<em>// 处理路径字符串（避免反斜杠被转义）</em>
 const filePath = String.raw`C:\Users\John\Documents`;
 hilog.info(0x0000, 'testTag', filePath);
 ```
@@ -103,14 +103,14 @@ struct StringStaticMethod {
     Column() {
       Button('fromCharCode')
         .onClick(() => {
-          // 生成字母'A'和'Z'
+          <em>// 生成字母'A'和'Z'</em>
           const charA = String.fromCharCode(65);
           const charZ = String.fromCharCode(90);
 
           hilog.info(0x0000, 'testTag', charA);
           hilog.info(0x0000, 'testTag', charZ);
 
-          // 生成数字'0'到'9'
+          <em>// 生成数字'0'到'9'</em>
           const digits: string[] = [];
           for (let i = 48; i <= 57; i++) {
             digits.push(String.fromCharCode(i));
@@ -119,29 +119,29 @@ struct StringStaticMethod {
         }).margin({ bottom: 10 });
       Button('fromCodePoint')
         .onClick(() => {
-          // 生成地球Emoji
+          <em>// 生成地球Emoji</em>
           const earth = String.fromCodePoint(0x1F30D);
           hilog.info(0x0000, 'testTag', earth);
 
-          // 生成程序员Emoji
+          <em>// 生成程序员Emoji</em>
           const programmer = String.fromCodePoint(0x1F469, 0x200D, 0x1F4BB);
           hilog.info(0x0000, 'testTag', programmer);
 
-          // 生成家庭Emoji
+          <em>// 生成家庭Emoji</em>
           const family = String.fromCodePoint(0x1F468, 0x200D, 0x1F469, 0x200D, 0x1F467, 0x200D, 0x1F466);
           hilog.info(0x0000, 'testTag', family);
         }).margin({ bottom: 10 });
       Button('String.raw')
         .onClick(() => {
-          // 普通模板字符串：转义字符会被解析
+          <em>// 普通模板字符串：转义字符会被解析</em>
           const normalStr = `第一行\n第二行`;
           hilog.info(0x0000, 'testTag', normalStr);
 
-          // 使用String.raw()：转义字符作为字面量保留
+          <em>// 使用String.raw()：转义字符作为字面量保留</em>
           const rawStr = String.raw`第一行\n第二行`;
           hilog.info(0x0000, 'testTag', rawStr);
 
-          // 处理路径字符串（避免反斜杠被转义）
+          <em>// 处理路径字符串（避免反斜杠被转义）</em>
           const filePath = String.raw`C:\Users\John\Documents`;
           hilog.info(0x0000, 'testTag', filePath);
         });

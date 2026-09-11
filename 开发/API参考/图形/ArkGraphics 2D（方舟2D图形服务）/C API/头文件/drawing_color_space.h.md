@@ -1,13 +1,14 @@
 # drawing_color_space.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-color-space-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文件中定义了与颜色空间相关的功能函数。
  
@@ -25,16 +26,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_Drawing_ColorSpace* OH_Drawing_ColorSpaceCreateSrgb(void) | 创建一个标准颜色空间。 |
@@ -44,15 +48,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_Drawing_ColorSpaceCreateSrgb()
+### OH_Drawing_ColorSpaceCreateSrgb()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ColorSpace* OH_Drawing_ColorSpaceCreateSrgb(void)
@@ -68,6 +74,7 @@ OH_Drawing_ColorSpace* OH_Drawing_ColorSpaceCreateSrgb(void)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_ColorSpace* | 函数返回一个指针，指针指向创建的颜色空间对象OH_Drawing_ColorSpace。 |
@@ -75,9 +82,10 @@ OH_Drawing_ColorSpace* OH_Drawing_ColorSpaceCreateSrgb(void)
  
   
 
-#### OH_Drawing_ColorSpaceCreateSrgbLinear()
+### OH_Drawing_ColorSpaceCreateSrgbLinear()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ColorSpace* OH_Drawing_ColorSpaceCreateSrgbLinear(void)
@@ -93,6 +101,7 @@ OH_Drawing_ColorSpace* OH_Drawing_ColorSpaceCreateSrgbLinear(void)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_ColorSpace* | 函数返回一个指针，指针指向创建的颜色空间对象OH_Drawing_ColorSpace。 |
@@ -100,9 +109,10 @@ OH_Drawing_ColorSpace* OH_Drawing_ColorSpaceCreateSrgbLinear(void)
  
   
 
-#### OH_Drawing_ColorSpaceDestroy()
+### OH_Drawing_ColorSpaceDestroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_ColorSpaceDestroy(OH_Drawing_ColorSpace* colorSpace)
@@ -118,6 +128,7 @@ void OH_Drawing_ColorSpaceDestroy(OH_Drawing_ColorSpace* colorSpace)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_ColorSpace* colorSpace | 指向颜色空间对象OH_Drawing_ColorSpace的指针。 |

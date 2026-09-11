@@ -1,9 +1,9 @@
 # 自定义弹窗 (CustomDialog)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-custom-dialog-box
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过CustomDialogController类显示自定义弹窗。使用弹窗组件时，优先考虑自定义弹窗，便于弹窗样式与内容的自定义。
 
@@ -12,9 +12,10 @@
 
 
 
-#### CustomDialogController
+## CustomDialogController
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 自定义弹窗的控制器。
 
@@ -24,7 +25,10 @@
 
 
 
-#### 导入对象
+### 导入对象
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 dialogController : CustomDialogController | null = new CustomDialogController(CustomDialogControllerOptions)
@@ -36,9 +40,10 @@ dialogController : CustomDialogController | null = new CustomDialogController(Cu
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(value: CustomDialogControllerOptions)
 
@@ -54,6 +59,7 @@ constructor(value: CustomDialogControllerOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | CustomDialogControllerOptions | 是 | 配置自定义弹窗的参数。 |
@@ -61,9 +67,10 @@ constructor(value: CustomDialogControllerOptions)
 
 
 
-#### open
+### open
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 open()
 
@@ -79,9 +86,10 @@ open()
 
 
 
-#### close
+### close
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close()
 
@@ -93,9 +101,10 @@ close()
 
 
 
-#### getState20+
+### getState20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getState(): PromptActionCommonState
 
@@ -109,6 +118,7 @@ getState(): PromptActionCommonState
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | PromptActionCommonState | 返回对应的弹窗状态。 |
@@ -116,9 +126,10 @@ getState(): PromptActionCommonState
 
 
 
-#### PromptActionCommonState20+
+## PromptActionCommonState20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type PromptActionCommonState = import('../api/@ohos.promptAction').promptAction.CommonState
 
@@ -130,6 +141,7 @@ type PromptActionCommonState = import('../api/@ohos.promptAction').promptAction.
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | import('../api/@ohos.promptAction').promptAction.CommonState | 返回对应的弹窗状态。 |
@@ -137,13 +149,15 @@ type PromptActionCommonState = import('../api/@ohos.promptAction').promptAction.
 
 
 
-#### CustomDialogControllerOptions对象说明
+## CustomDialogControllerOptions对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 自定义弹窗的样式。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -152,7 +166,7 @@ type PromptActionCommonState = import('../api/@ohos.promptAction').promptAction.
 | autoCancel | boolean | 否 | 是 | 是否允许点击遮罩层退出，true表示关闭弹窗。false表示不关闭弹窗。 默认值：true 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | alignment | DialogAlignment | 否 | 是 | 弹窗在竖直方向上的对齐方式。 默认值：DialogAlignment.Default 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | offset | Offset | 否 | 是 | 弹窗相对alignment所在位置的偏移量。 默认值：{ dx: 0, dy: 0 } 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
-| customStyle | boolean | 否 | 是 | 弹窗容器样式是否自定义。值为true表示弹窗容器样式能自定义，值为false表示弹窗容器样式不能自定义。 默认值：false 设置为false时： 1. 默认圆角为32vp。 2. 未设置弹窗宽度高度：弹窗容器的宽度根据栅格系统自适应。高度自适应自定义的内容节点。 3. 设置弹窗宽度高度：弹窗容器的宽度不超过默认样式下的最大宽度（自定义节点设置100%的宽度），弹窗容器的高度不超过默认样式下的最大高度（自定义节点设置100%的高度）。 4. 受安全区域的影响，弹窗显示区域将排除安全区域。例如在PC/2in1设备上避让屏幕边缘以及窗口标题栏。 设置为true时： 1. 圆角为0，弹窗背景色为透明色，并且弹窗的系统材质不生效。 2. 不支持设置弹窗宽度、高度、边框宽度、边框样式、边框颜色以及阴影宽度。 3. 弹窗显示区域为屏幕。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| customStyle | boolean | 否 | 是 | 弹窗容器样式是否自定义。值为true表示弹窗容器样式能自定义，值为false表示弹窗容器样式不能自定义。 默认值：false 设置为false时： 1. 默认圆角为32vp。 2. 未设置弹窗宽度高度：弹窗容器的宽度根据栅格系统自适应。高度自适应自定义的内容节点。 3. 设置弹窗宽度高度：弹窗容器的宽度不超过默认样式下的最大宽度（自定义节点设置100%的宽度），弹窗容器的高度不超过默认样式下的最大高度（自定义节点设置100%的高度）。 4. 受安全区域的影响，弹窗显示区域将排除安全区域。例如在PC/2in1设备上避让屏幕边缘以及窗口标题栏。 设置为true时： 1. 圆角为0，弹窗背景色为透明色，并且弹窗的沉浸光感效果不生效。 2. 不支持设置弹窗宽度、高度、边框宽度、边框样式、边框颜色以及阴影宽度。 3. 弹窗显示区域为屏幕。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | gridCount8+ | number | 否 | 是 | 弹窗宽度占栅格宽度的个数。 默认为按照窗口大小自适应，异常值按默认值处理，最大栅格数为系统最大栅格数。 取值范围：大于等于0的整数。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | maskColor10+ | ResourceColor | 否 | 是 | 自定义遮罩层颜色。 默认值：0x33000000 模型约束： 此接口仅可在Stage模型下使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | maskRect10+ | Rectangle | 否 | 是 | 弹窗遮罩层区域，在遮罩层区域内的事件不透传，在遮罩层区域外的事件透传。 默认值：{ x: 0, y: 0, width: '100%', height: '100%' } 说明： showInSubWindow为true时，maskRect不生效。 模型约束： 此接口仅可在Stage模型下使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
@@ -195,9 +209,10 @@ type PromptActionCommonState = import('../api/@ohos.promptAction').promptAction.
 
 
 
-#### DismissDialogAction12+
+## DismissDialogAction12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 弹窗关闭的信息。
 
@@ -209,7 +224,11 @@ type PromptActionCommonState = import('../api/@ohos.promptAction').promptAction.
 
 
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -219,13 +238,17 @@ type PromptActionCommonState = import('../api/@ohos.promptAction').promptAction.
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（弹出嵌套弹窗）
+
+
+### 示例1（弹出嵌套弹窗）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例实现了在CustomDialog中打开另一个或另一些CustomDialog。
 
@@ -378,7 +401,10 @@ struct CustomDialogUser {
 
 
 
-#### 示例2（可在主窗外弹出的弹窗）
+### 示例2（可在主窗外弹出的弹窗）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 在2in1设备上设置[showInSubWindow](#customdialogcontrolleroptions对象说明)为true时，可以弹出在主窗外显示的弹窗。
 
@@ -475,7 +501,10 @@ struct CustomDialogUser {
 
 
 
-#### 示例3（设置弹窗的样式）
+### 示例3（设置弹窗的样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例展示了CustomDialog的样式，包括宽度、高度、背景色、阴影等。
 
@@ -571,7 +600,10 @@ struct CustomDialogUser {
 
 
 
-#### 示例4（悬停态弹窗）
+### 示例4（悬停态弹窗）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例展示了在折叠屏悬停态下设置dialog布局区域的效果。
 
@@ -669,7 +701,10 @@ struct CustomDialogUser {
 
 
 
-#### 示例5（获取弹窗的状态）
+### 示例5（获取弹窗的状态）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例实现了在[CustomDialogController](#customdialogcontroller)中调用[getState](#getstate20)获取弹窗当前状态。
 
@@ -732,7 +767,10 @@ struct CustomDialogUser {
 
 
 
-#### 示例6（使用@Link和@Consume监听数据变化）
+### 示例6（使用@Link和@Consume监听数据变化）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例使用[@Link](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-link)和[@Consume](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-provide-and-consume)实现页面与弹窗内数据的双向绑定。
 
@@ -840,7 +878,10 @@ struct CustomDialogUser {
 
 
 
-#### 示例7（自定义带loading的弹窗）
+### 示例7（自定义带loading的弹窗）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例使用[maskColor](#customdialogcontrolleroptions对象说明)，[maskRect](#customdialogcontrolleroptions对象说明)和[LoadingProgress](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-loadingprogress)，实现带loading的弹窗，并展示不在maskRect区域的事件透传效果。
 
@@ -949,7 +990,10 @@ struct CustomDialogUser {
 
 
 
-#### 示例8（不使用keyboardAvoidDistance调整弹窗与软键盘的间距）
+### 示例8（不使用keyboardAvoidDistance调整弹窗与软键盘的间距）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过监听键盘变化，调整布局[margin](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size#margin)的bottom属性，实现与使用[keyboardAvoidDistance](#customdialogcontrolleroptions对象说明)调整弹窗与软键盘的间距一样的效果。
 
@@ -1094,7 +1138,10 @@ struct CustomDialogUser {
 
 
 
-#### 示例9（弹窗生命周期）
+### 示例9（弹窗生命周期）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例为弹窗配置生命周期回调。
 
@@ -1190,12 +1237,15 @@ struct Example3 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/5KieslduSqqFOtrxh9nYRw/zh-cn_image_0000002704394985.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095450Z&HW-CC-Expire=86400&HW-CC-Sign=9B24080A4D960CCF4A8615F84C4BC407B55DF5903E6703F4736830120A0324AD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/It5oteRqQ4mn8e1gmzPIeg/zh-cn_image_0000002717613068.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=E001A8AC52206FFBBC8268A26C07E7BAAF643F152BD8DFF7EF48DAC907985D56)
 
 
 
 
-#### 示例10（不同customStyle下的弹窗示例）
+### 示例10（不同customStyle下的弹窗示例）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例是在对齐方式为[DialogAlignment.Bottom](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-alert-dialog-box#dialogalignment枚举说明)时，展示[customStyle](#customdialogcontrolleroptions对象说明)不同值下，弹窗内容与安全区域的效果。
 
@@ -1280,12 +1330,15 @@ struct CustomDialogUser {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/Jz8py0axR6O-IrnJInTxWw/zh-cn_image_0000002674634864.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095450Z&HW-CC-Expire=86400&HW-CC-Sign=151B4A7C904C71F757C24419340D1436E2A1411387C9C6E4FF712AE217271104)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/oM0dSLZkTNKSerRKtl1tiA/zh-cn_image_0000002747293021.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=40A9DA9E019FFF1A41BAFFA8DE5BF0B7E3F4672CF9A32342FD6145051A6BC8C2)
 
 
 
 
-#### 示例11（自定义背景模糊效果参数）
+### 示例11（自定义背景模糊效果参数）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置[backgroundBlurStyleOptions](#customdialogcontrolleroptions对象说明)，实现自定义背景模糊效果。
 
@@ -1346,12 +1399,15 @@ struct CustomDialogUser {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/LC9M9yU3RLasAxKvTFriPw/zh-cn_image_0000002704274817.png?HW-CC-KV=V1&HW-CC-Date=20260813T095450Z&HW-CC-Expire=86400&HW-CC-Sign=2B9545ADD021BBB34006AAAD4CB73313F3F75F59690EC7EB03DA3592C6189358)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/YPj1q7WwQBmfZ6AiqY1grw/zh-cn_image_0000002747212937.png?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=8CB1B21AE6E3D79354F28ED068B6BEDCAE838B5711E527FABAD2ACD4D6385EB0)
 
 
 
 
-#### 示例12（自定义背景效果参数）
+### 示例12（自定义背景效果参数）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置[backgroundEffect](#customdialogcontrolleroptions对象说明)，实现自定义背景效果。
 
@@ -1413,12 +1469,15 @@ struct CustomDialogUser {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/D0yAPRXKRPKNoTpznocA9w/zh-cn_image_0000002674475026.png?HW-CC-KV=V1&HW-CC-Date=20260813T095450Z&HW-CC-Expire=86400&HW-CC-Sign=5BCEF80EA8E92B9A2156CAD078C99AEDFB0E68FF20133C881FD270F61400F67B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/fDg1azDOQbqD_i6Pr9ncSA/zh-cn_image_0000002717773002.png?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=37CC4EB543396EF3F1D8183259C3EF6F282114138D2C95F526A365B4655EDCE8)
 
 
 
 
-#### 示例13（自定义弹窗动态刷新宽度）
+### 示例13（自定义弹窗动态刷新宽度）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过状态变量同步自定义组件的宽度，实现自定义弹窗宽度动态切换。
 
@@ -1484,14 +1543,19 @@ struct CustomDialogUser {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/jZzzZjrhRc2mTJwUL5pQoQ/zh-cn_image_0000002704394987.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095450Z&HW-CC-Expire=86400&HW-CC-Sign=B4D010882F6285EAD781B0F1ABABF5147B6BB008AD6B106ABBAAF77BD5C0446B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/NkzojCR4QBy-2SX52xwLUQ/zh-cn_image_0000002717613070.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=AEC782484492EA068DEB3C61513CD89CF182F9F33F7725403990A13D44593DE2)
 
 
 
 
-#### 示例14（设置弹窗的系统材质）
+### 示例14（设置弹窗的沉浸光感效果）
 
-该示例通过配置[systemMaterial](#customdialogcontrolleroptions对象说明)，实现系统材质效果。
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+该示例通过[systemMaterial](#customdialogcontrolleroptions对象说明)设置组件的系统材质，实现沉浸光感效果。
+
+组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
 
 从API版本26.0.0开始，在[CustomDialogControllerOptions](#customdialogcontrolleroptions对象说明)中新增了systemMaterial属性。
 
@@ -1539,11 +1603,21 @@ struct CustomDialogUser {
       }
       .height('100%')
       .width('100%')
-      .backgroundColor(Color.Gray)
+      // 请开发者替换为实际资源文件
+      .backgroundImage($r("app.media.img"))
+      .backgroundImageSize({width: '100%', height: '100%'})
     }
   }
 }
 ```
 
+未设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/BC9GdtD8STWx1NSxTVJC6A/zh-cn_image_0000002674634866.png?HW-CC-KV=V1&HW-CC-Date=20260813T095450Z&HW-CC-Expire=86400&HW-CC-Sign=F38EB318C0703AF4180B8888563C8165E091BAD58C399979D9D1FCB9CE0E68E4)
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/3BhpnyxHT1qxkSdNZU82sw/zh-cn_image_0000002747293023.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=5984C2B882F71E1D30812EFED14B33EC78A5C07EC8DDCFED8FA7D6317A250287)
+
+
+设置系统材质后：
+
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/qPOjc6wUSDKOWKs6L9384w/zh-cn_image_0000002747212939.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=B833CD886B638D6BFDFEC00ECD32BC4736DE8DE24E1768361C32940DB7C249FA)

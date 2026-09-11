@@ -1,9 +1,9 @@
 # resultSet (结果集)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-data-resultset
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 结果集是指用户调用关系型数据库查询接口之后返回的结果集合，提供了多种灵活的数据访问方式，以便用户获取各项数据。
  
@@ -12,15 +12,19 @@
 
   
 
-#### ResultSet
+## ResultSet
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供通过查询数据库生成的数据库结果集的访问方法。
  
   
 
-#### 使用说明
+### 使用说明
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 需要通过[RdbStore.query()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-data-rdb#query)获取resultSet对象。
  
@@ -30,19 +34,22 @@ let predicates = new dataRdb.RdbPredicates("EMPLOYEE");
 predicates.equalTo("AGE", 18);
 let promise = rdbStore.query(predicates, ["ID", "NAME", "AGE", "SALARY", "CODES"]);
 promise.then((resultSet) => {
-  console.info(TAG + "resultSet columnNames:" + resultSet.columnNames);
-  console.info(TAG + "resultSet columnCount:" + resultSet.columnCount);
+  console.info("resultSet columnNames:" + resultSet.columnNames);
+  console.info("resultSet columnCount:" + resultSet.columnCount);
+  resultSet.close();
 });
 ```
  
   
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | columnNames | Array&lt;string&gt; | 是 | 否 | 获取结果集中所有列的名称。 |
@@ -58,9 +65,10 @@ promise.then((resultSet) => {
  
   
 
-#### getColumnIndex
+### getColumnIndex
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getColumnIndex(columnName: string): number
  
@@ -70,6 +78,7 @@ getColumnIndex(columnName: string): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | columnName | string | 是 | 表示结果集中指定列的名称。 |
@@ -77,6 +86,7 @@ getColumnIndex(columnName: string): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回指定列的索引。 |
@@ -96,9 +106,10 @@ if (success) {
  
   
 
-#### getColumnName
+### getColumnName
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getColumnName(columnIndex: number): string
  
@@ -108,6 +119,7 @@ getColumnName(columnIndex: number): string
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | columnIndex | number | 是 | 表示结果集中指定列的索引。 |
@@ -115,6 +127,7 @@ getColumnName(columnIndex: number): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 返回指定列的名称。 |
@@ -130,9 +143,10 @@ const age = resultSet.getColumnName(2);
  
   
 
-#### goTo
+### goTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 goTo(offset:number): boolean
  
@@ -142,6 +156,7 @@ goTo(offset:number): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 是 | 表示相对于当前位置的偏移量。 |
@@ -149,6 +164,7 @@ goTo(offset:number): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 如果成功移动结果集，则为true；否则返回false。 |
@@ -169,9 +185,10 @@ promisequerygoto.then((resultSet) => {
  
   
 
-#### goToRow
+### goToRow
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 goToRow(position: number): boolean
  
@@ -181,6 +198,7 @@ goToRow(position: number): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | position | number | 是 | 表示要移动到的指定位置。 |
@@ -188,6 +206,7 @@ goToRow(position: number): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 如果成功移动结果集，则为true；否则返回false。 |
@@ -208,9 +227,10 @@ promisequerygotorow.then((resultSet) => {
  
   
 
-#### goToFirstRow
+### goToFirstRow
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 goToFirstRow(): boolean
  
@@ -220,6 +240,7 @@ goToFirstRow(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 如果成功移动结果集到第一行，则为true；否则为false。 |
@@ -240,9 +261,10 @@ promisequerygoFirst.then((resultSet) => {
  
   
 
-#### goToLastRow
+### goToLastRow
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 goToLastRow(): boolean
  
@@ -252,6 +274,7 @@ goToLastRow(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 如果成功移动结果集到最后一行，则为true；否则为false。 |
@@ -272,9 +295,10 @@ promisequerygoLast.then((resultSet) => {
  
   
 
-#### goToNextRow
+### goToNextRow
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 goToNextRow(): boolean
  
@@ -284,6 +308,7 @@ goToNextRow(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 如果成功移动结果集到下一行，则为true；否则为false。 |
@@ -295,6 +320,7 @@ goToNextRow(): boolean
 let predicatesgoNext = new dataRdb.RdbPredicates("EMPLOYEE");
 let promisequerygoNext = rdbStore.query(predicatesgoNext, ["ID", "NAME", "AGE", "SALARY", "CODES"]);
 promisequerygoNext.then((resultSet) => {
+  resultSet.goToNextRow();
   resultSet.close();
 }).catch((err) => {
   console.error('query failed');
@@ -303,9 +329,10 @@ promisequerygoNext.then((resultSet) => {
  
   
 
-#### goToPreviousRow
+### goToPreviousRow
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 goToPreviousRow(): boolean
  
@@ -315,6 +342,7 @@ goToPreviousRow(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 如果成功移动结果集到上一行，则为true；否则为false。 |
@@ -326,6 +354,7 @@ goToPreviousRow(): boolean
 let predicatesgoPrev = new dataRdb.RdbPredicates("EMPLOYEE");
 let promisequerygoPrev = rdbStore.query(predicatesgoPrev, ["ID", "NAME", "AGE", "SALARY", "CODES"]);
 promisequerygoPrev.then((resultSet) => {
+  resultSet.goToPreviousRow();
   resultSet.close();
 }).catch((err) => {
   console.error('query failed');
@@ -334,9 +363,10 @@ promisequerygoPrev.then((resultSet) => {
  
   
 
-#### getBlob
+### getBlob
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBlob(columnIndex: number): Uint8Array
  
@@ -346,6 +376,7 @@ getBlob(columnIndex: number): Uint8Array
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | columnIndex | number | 是 | 指定的列索引，从0开始。 |
@@ -353,6 +384,7 @@ getBlob(columnIndex: number): Uint8Array
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Uint8Array | 以字节数组的形式返回指定列的值。 |
@@ -366,9 +398,10 @@ const codes = resultSet.getBlob(resultSet.getColumnIndex("CODES"));
  
   
 
-#### getString
+### getString
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getString(columnIndex: number): string
  
@@ -378,6 +411,7 @@ getString(columnIndex: number): string
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | columnIndex | number | 是 | 指定的列索引，从0开始。 |
@@ -385,6 +419,7 @@ getString(columnIndex: number): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 以字符串形式返回指定列的值。 |
@@ -398,9 +433,10 @@ const name = resultSet.getString(resultSet.getColumnIndex("NAME"));
  
   
 
-#### getLong
+### getLong
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLong(columnIndex: number): number
  
@@ -410,6 +446,7 @@ getLong(columnIndex: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | columnIndex | number | 是 | 指定的列索引，从0开始。 |
@@ -417,6 +454,7 @@ getLong(columnIndex: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 以Long形式返回指定列的值。 该接口支持的数据范围是：Number.MIN_SAFE_INTEGER ~ Number.MAX_SAFE_INTEGER，若超出该范围，建议使用getDouble。 |
@@ -430,9 +468,10 @@ const age = resultSet.getLong(resultSet.getColumnIndex("AGE"));
  
   
 
-#### getDouble
+### getDouble
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDouble(columnIndex: number): number
  
@@ -442,6 +481,7 @@ getDouble(columnIndex: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | columnIndex | number | 是 | 指定的列索引，从0开始。 |
@@ -449,6 +489,7 @@ getDouble(columnIndex: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 以double形式返回指定列的值。 |
@@ -462,9 +503,10 @@ const salary = resultSet.getDouble(resultSet.getColumnIndex("SALARY"));
  
   
 
-#### isColumnNull
+### isColumnNull
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isColumnNull(columnIndex: number): boolean
  
@@ -474,6 +516,7 @@ isColumnNull(columnIndex: number): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | columnIndex | number | 是 | 指定的列索引，从0开始。 |
@@ -481,6 +524,7 @@ isColumnNull(columnIndex: number): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 如果当前行中指定列的值为null，则返回true，否则返回false。 |
@@ -494,9 +538,10 @@ const isColumnNull = resultSet.isColumnNull(resultSet.getColumnIndex("CODES"));
  
   
 
-#### close
+### close
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(): void
  

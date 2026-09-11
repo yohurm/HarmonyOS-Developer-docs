@@ -29,16 +29,16 @@ class TestOrg {
 
 2. 使用Canvas绘制每个文本框和内部文字方法。
 ```text
-// 绘制文本框
+<em>// </em><em>绘制文本框</em>
 drawTextItem(startX: number, startY: number, width: number, height: number, title: string) {
   this.context.beginPath();
-  // 画一个外边框
+ <em> // 画一个外边框</em>
   this.context.rect(startX, startY, width, height);
   this.context.fillStyle = '#0A59F7';
   this.context.strokeStyle = '#0A59F7';
   this.context.stroke();
   this.context.fill();
-  // 绘制文字
+  <em>// </em><em>绘制文字</em>
   this.context.fillStyle = Color.White;
   this.context.font = '16vp sans-serif';
   this.context.textBaseline = 'middle';
@@ -49,7 +49,7 @@ drawTextItem(startX: number, startY: number, width: number, height: number, titl
 
 3. 使用Canvas绘制文本框之间起点和终点路径。
 ```text
-// 绘制路径线条
+<em>// </em><em>绘制路径线条</em>
 drawLine(nodeX: number, nodeY: number, childX: number, childY: number) {
   let nodeWidth = 100;
   let nodeHeight = 50;
@@ -60,13 +60,13 @@ drawLine(nodeX: number, nodeY: number, childX: number, childY: number) {
   this.context.lineTo(childX + (nodeWidth / 2), childY - (nodeMargin / 2));
   this.context.lineTo(childX + (nodeWidth / 2), childY);
   this.context.lineWidth = 2;
-  this.context.stroke(); // 将起点和终点连接
+  this.context.stroke(); <em>// 将起点和终点连接</em>
 }
 ```
 
 4. 计算子节点的个数。
 ```text
-// 计算节点数
+<em>// </em><em>计算节点数</em>
 getAllCount(city: TestOrg) {
   let count = 0;
   city.children.reduce((pre, cue) => {
@@ -86,8 +86,8 @@ render(startX: number, startY: number, node: TestOrg) {
   this.drawTextItem(startX, startY, nodeWidth, nodeHeight, node.title);
   if (node.children && node.children.length > 0) {
     let count = 0;
-    count = this.getAllCount(node); // 计算底层节点个数
-    let start = startX - (nodeWidth * count + (nodeMargin * (count - 1))) / 2; // 起点
+    count = this.getAllCount(node); <em>// 计算底层节点个数</em>
+    let start = startX - (nodeWidth * count + (nodeMargin * (count - 1))) / 2;<em> </em><em>// 起点</em>
     node.children.forEach((item) => {
       let childrenStartX = 0;
       let childrenStartY = startY + nodeMargin + nodeHeight;
@@ -99,8 +99,8 @@ render(startX: number, startY: number, node: TestOrg) {
       }
       childrenStartX = start + (nodeWidth * nodeLength + (nodeMargin * (nodeLength - 1))) / 2;
       start = start + (nodeWidth * nodeLength + (nodeMargin * (nodeLength - 1))) + nodeMargin;
-      this.drawLine(startX, startY, childrenStartX, childrenStartY); // 划线
-      this.render(childrenStartX, childrenStartY, item); // 画子级
+      this.drawLine(startX, startY, childrenStartX, childrenStartY); <em>// 划线</em>
+      this.render(childrenStartX, childrenStartY, item); <em>// </em><em>画子级</em>
     });
   }
 }
@@ -124,7 +124,7 @@ struct CanvasExample {
   province = new TestOrg();
 
   aboutToAppear(): void {
-    // 创建树形数据
+   <em> // 创建树形数据</em>
     const street1 = new TestOrg;
     street1.title = '街道1';
     const street2 = new TestOrg;
@@ -143,7 +143,7 @@ struct CanvasExample {
     this.province.children = [city1, city2];
   }
 
-  // 计算节点数
+ <em> // 计算节点数</em>
   getAllCount(city: TestOrg) {
     let count = 0;
     city.children.reduce((pre, cue) => {
@@ -153,16 +153,16 @@ struct CanvasExample {
     return count;
   }
 
-  // 绘制文本框
+ <em> // 绘制文本框</em>
   drawTextItem(startX: number, startY: number, width: number, height: number, title: string) {
     this.context.beginPath();
-    // 画一个外边框
+  <em>  // 画一个外边框</em>
     this.context.rect(startX, startY, width, height);
     this.context.fillStyle = '#0A59F7';
     this.context.strokeStyle = '#0A59F7';
     this.context.stroke();
     this.context.fill();
-    // 绘制文字
+  <em>  // 绘制文字</em>
     this.context.fillStyle = Color.White;
     this.context.font = '16vp sans-serif';
     this.context.textBaseline = 'middle';
@@ -177,8 +177,8 @@ struct CanvasExample {
     this.drawTextItem(startX, startY, nodeWidth, nodeHeight, node.title);
     if (node.children && node.children.length > 0) {
       let count = 0;
-      count = this.getAllCount(node); // 计算底层节点个数
-      let start = startX - (nodeWidth * count + (nodeMargin * (count - 1))) / 2; // 起点
+      count = this.getAllCount(node);<em> </em><em>// 计算底层节点个数</em>
+      let start = startX - (nodeWidth * count + (nodeMargin * (count - 1))) / 2; <em>// 起点</em>
       node.children.forEach((item) => {
         let childrenStartX = 0;
         let childrenStartY = startY + nodeMargin + nodeHeight;
@@ -190,13 +190,13 @@ struct CanvasExample {
         }
         childrenStartX = start + (nodeWidth * nodeLength + (nodeMargin * (nodeLength - 1))) / 2;
         start = start + (nodeWidth * nodeLength + (nodeMargin * (nodeLength - 1))) + nodeMargin;
-        this.drawLine(startX, startY, childrenStartX, childrenStartY); // 划线
-        this.render(childrenStartX, childrenStartY, item); // 画子级
+        this.drawLine(startX, startY, childrenStartX, childrenStartY); <em>// </em><em>划线</em>
+        this.render(childrenStartX, childrenStartY, item); <em>// 画子级</em>
       });
     }
   }
 
-  // 绘制路径线条
+ <em> // 绘制路径线条</em>
   drawLine(nodeX: number, nodeY: number, childX: number, childY: number) {
     let nodeWidth = 100;
     let nodeHeight = 50;
@@ -207,7 +207,7 @@ struct CanvasExample {
     this.context.lineTo(childX + (nodeWidth / 2), childY - (nodeMargin / 2));
     this.context.lineTo(childX + (nodeWidth / 2), childY);
     this.context.lineWidth = 2;
-    this.context.stroke(); // 将起点和终点连接
+    this.context.stroke(); <em>// 将起点和终点连接</em>
   }
 
   build() {

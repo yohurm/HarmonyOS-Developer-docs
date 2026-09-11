@@ -1,14 +1,19 @@
 # REST API错误码
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-server-error-code
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 获取用户级凭证
+## 获取用户级凭证
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 接口URL：https://oauth-login.cloud.huawei.com/oauth2/v3/token
 
 错误码信息：
+
 
 | HTTP响应码 | 描述 | 解决方法 |
 | --- | --- | --- |
@@ -22,6 +27,7 @@
 | 503 | 系统流控。 | 触发系统流控，请稍后重试。 |
 | 504 | 请求连接超时，常见于网络状况不稳定。 | 建议稍后重试，若仍无法解决，请通过在线提单提交问题。 |
 | 590 | 服务内部错误。 | 请通过在线提单提交问题。 |
+
 
 
 | 业务响应主错误码 | 业务响应子错误码 | 描述 | 解决方法 |
@@ -48,11 +54,15 @@
 
 
 
-#### 刷新用户级凭证
+## 刷新用户级凭证
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 接口URL：https://oauth-login.cloud.huawei.com/oauth2/v3/token
 
 错误码信息：
+
 
 | HTTP响应码 | 描述 | 解决方法 |
 | --- | --- | --- |
@@ -66,6 +76,7 @@
 | 503 | 系统流控。 | 触发系统流控，请稍后重试。 |
 | 504 | 请求连接超时，常见于网络状况不稳定。 | 建议稍后重试，若仍无法解决，请通过在线提单提交问题。 |
 | 590 | 服务内部错误。 | 请通过在线提单提交问题。 |
+
 
 
 | 业务响应主错误码 | 业务响应子错误码 | 描述 | 解决方法 |
@@ -92,11 +103,15 @@
 
 
 
-#### 获取应用级凭证
+## 获取应用级凭证
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 接口URL：https://oauth-login.cloud.huawei.com/oauth2/v3/token
 
 错误码信息：
+
 
 | HTTP响应码 | 描述 | 解决方法 |
 | --- | --- | --- |
@@ -110,6 +125,7 @@
 | 503 | 系统流控。 | 触发系统流控，请稍后重试。 |
 | 504 | 请求连接超时，常见于网络状况不稳定。 | 建议稍后重试，若仍无法解决，请通过在线提单提交问题。 |
 | 590 | 服务内部错误。 | 请通过在线提单提交问题。 |
+
 
 
 | 业务响应主错误码 | 业务响应子错误码 | 描述 | 解决方法 |
@@ -128,11 +144,15 @@
 
 
 
-#### 扫码授权登录-获取用户级凭证
+## 扫码授权登录-获取用户级凭证
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 接口URL：https://oauth-login.cloud.huawei.com/oauth2/v3/token
 
 错误码信息：
+
 
 | HTTP响应码 | 描述 | 解决方法 |
 | --- | --- | --- |
@@ -146,6 +166,7 @@
 | 503 | 系统流控。 | 触发系统流控，请稍后重试。 |
 | 504 | 请求连接超时，常见于网络状况不稳定。 | 建议稍后重试，若仍无法解决，请通过在线提单提交问题。 |
 | 590 | 服务内部错误。 | 请通过在线提单提交问题。 |
+
 
 
 | 业务响应主错误码 | 业务响应子错误码 | 描述 | 解决方法 |
@@ -180,11 +201,15 @@
 
 
 
-#### 解析凭证
+## 解析凭证
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 接口URL：https://oauth-api.cloud.huawei.com/rest.php?nsp_fmt=JSON&nsp_svc=huawei.oauth2.user.getTokenInfo
 
 错误码信息：
+
 
 | HTTP响应码 | 描述 | 解决方法 |
 | --- | --- | --- |
@@ -204,6 +229,7 @@
 > Response Header中的NSP_STATUS字段，在处理成功时不会返回。
 
 
+
 | NSP_STATUS | 描述 | 解决方法 |
 | --- | --- | --- |
 | 6 | access_token已过期。access_token的有效期为3600秒，超过有效期后将无法继续使用。 | 请引导用户重新授权，获取新的access_token。 |
@@ -216,11 +242,15 @@
 
 
 
-#### 取消用户级凭证授权
+## 取消用户级凭证授权
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 接口URL：https://oauth-login.cloud.huawei.com/oauth2/v3/revoke
 
 错误码信息：
+
 
 | HTTP响应码 | 描述 | 解决方法 |
 | --- | --- | --- |
@@ -234,6 +264,7 @@
 | 503 | 系统流控。 | 触发系统流控，请稍后重试。 |
 | 504 | 请求连接超时，常见于网络状况不稳定。 | 建议稍后重试，若仍无法解决，请通过在线提单提交问题。 |
 | 590 | 服务内部错误。 | 请通过在线提单提交问题。 |
+
 
 
 | 业务响应主错误码 | 业务响应子错误码 | 描述 | 解决方法 |
@@ -251,11 +282,15 @@
 
 
 
-#### 获取二维码信息
+## 获取二维码信息
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 接口URL：https://oauth-login.cloud.huawei.com/oauth2/v3/device/code
 
 错误码信息：
+
 
 | HTTP响应码 | 描述 | 解决方法 |
 | --- | --- | --- |
@@ -269,6 +304,7 @@
 | 503 | 系统流控。 | 触发系统流控，请稍后重试。 |
 | 504 | 请求连接超时，常见于网络状况不稳定。 | 建议稍后重试，若仍无法解决，请通过在线提单提交问题。 |
 | 590 | 服务内部错误。 | 请通过在线提单提交问题。 |
+
 
 
 | 业务响应主错误码 | 业务响应子错误码 | 描述 | 解决方法 |
@@ -285,11 +321,15 @@
 
 
 
-#### 获取用户信息
+## 获取用户信息
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 接口URL：https://account.cloud.huawei.com/rest.php?nsp_svc=GOpen.User.getInfo
 
 错误码信息：
+
 
 | HTTP响应码 | 描述 | 解决方法 |
 | --- | --- | --- |
@@ -308,6 +348,7 @@
 > Response Header中的NSP_STATUS字段，在处理成功时不会返回。
 
 
+
 | NSP_STATUS | 描述 | 解决方法 |
 | --- | --- | --- |
 | 6 | 会话失效，session timeout。 可能原因: - access_token无效或已过期 - access_token格式不正确 - 其他内部原因 | - 请检查传参是否正确，如无问题请尝试重新获取。 - 未对access_token进行URLEncode处理，可参考示例代码组装参数。 - 根据返回的错误描述进行处理，若仍无法解决，请通过在线提单提交问题。 |
@@ -323,11 +364,15 @@
 
 
 
-#### 一键登录获取华为账号绑定号码和UnionID/OpenID
+## 一键登录获取华为账号绑定号码和UnionID/OpenID
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 接口URL：https://account-api.cloud.huawei.com/oauth2/v6/quickLogin/getPhoneNumber
 
 错误码信息：
+
 
 | HTTP响应码 | 描述 | 解决方法 |
 | --- | --- | --- |
@@ -341,6 +386,7 @@
 | 503 | 系统流控。 | 触发系统流控，请稍后重试。 |
 | 504 | 请求连接超时，常见于网络状况不稳定。 | 建议稍后重试，若仍无法解决，请通过在线提单提交问题。 |
 | 590 | 服务内部错误。 | 请通过在线提单提交问题。 |
+
 
 
 | 错误码 | 描述 | 解决方法 |
@@ -360,11 +406,15 @@
 
 
 
-#### 获取用户风险等级
+## 获取用户风险等级
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 接口URL：https://account.cloud.huawei.com/user/getuserrisklevel
 
 错误码信息：
+
 
 | HTTP响应码 | 描述 | 解决方法 |
 | --- | --- | --- |
@@ -380,6 +430,7 @@
 | 590 | 服务内部错误。 | 请通过在线提单提交问题。 |
 
 
+
 | errCode | 描述 | 解决方法 |
 | --- | --- | --- |
 | 6 | 会话失效，session timeout。 可能原因: - access_token无效或已过期。 - access_token格式不正确。 - 其他内部原因。 | - 请检查传参是否正确，如无问题请尝试重新获取。 - 本接口请求数据格式为 application/json;charset=utf-8，在构造请求体时，请确保不对access_token参数进行URLEncode处理，可参考示例代码组装参数。 - 根据返回的错误描述进行处理，若仍无法解决，请通过在线提单提交问题。 |
@@ -393,12 +444,16 @@
 
 
 
-#### 获取实名信息
+## 获取实名信息
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 接口URL：https://openrealname.cloud.huawei.com/rest.php?nsp_svc=OpenRealName.User.getDetailInfo
 
 错误码信息：
 
+
 | HTTP响应码 | 描述 | 解决方法 |
 | --- | --- | --- |
 | 200 | 仅表示本次接口调用成功，实际业务处理结果需要通过Response Header中的NSP_STATUS进行判断。 | - |
@@ -417,6 +472,7 @@
 > Response Header中的NSP_STATUS字段，在处理成功时不会返回。
 
 
+
 | NSP_STATUS | 描述 | 解决方法 |
 | --- | --- | --- |
 | 6 | 会话失效，session timeout。 可能原因: - access_token无效或已过期 - access_token格式不正确 | - access_token无效或已过期，请检查传参是否正确，如无问题请尝试重新获取。 - 未对access_token进行URLEncode处理，可参考示例代码组装参数。 |
@@ -431,12 +487,16 @@
 
 
 
-#### 实名信息校验
+## 实名信息校验
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 接口URL：https://openrealname.cloud.huawei.com/rest.php?nsp_svc=OpenRealName.User.verifyRealName
 
 错误码信息：
 
+
 | HTTP响应码 | 描述 | 解决方法 |
 | --- | --- | --- |
 | 200 | 仅表示本次接口调用成功，实际业务处理结果需要通过Response Header中的NSP_STATUS进行判断。 | - |
@@ -455,6 +515,7 @@
 > Response Header中的NSP_STATUS字段，在处理成功时不会返回。
 
 
+
 | NSP_STATUS | 描述 | 解决方法 |
 | --- | --- | --- |
 | 6 | 会话失效，session timeout。 可能原因: - access_token无效或已过期 - access_token格式不正确 | - access_token无效或已过期，请检查传参是否正确，如无问题请尝试重新获取。 - 未对access_token进行URLEncode处理，可参考示例代码组装参数。 |
@@ -470,11 +531,15 @@
 
 
 
-#### 获取用户年龄段标识
+## 获取用户年龄段标识
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 接口URL：https://account-realname-api.cloud.huawei.com/openrealname/v6/realname-info/get
 
 错误码信息：
+
 
 | HTTP响应码 | 描述 | 解决方法 |
 | --- | --- | --- |
@@ -493,6 +558,7 @@
 > Response Body中的resultCode字段，在处理成功时不会返回。
 
 
+
 | resultCode | 描述 | 解决方法 |
 | --- | --- | --- |
 | 60010002 | 参数不合法。 | 请按照错误描述及接口Request Body参数说明检查入参。 |
@@ -506,11 +572,15 @@
 
 
 
-#### 通过OpenID获取UnionID
+## 通过OpenID获取UnionID
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 接口URL：https://oauth-login.cloud.huawei.com/rest.php?nsp_svc=huawei.oauth2.app.openIdToUnionId
 
 错误码信息：
+
 
 | HTTP响应码 | 描述 | 解决方法 |
 | --- | --- | --- |
@@ -530,6 +600,7 @@
 > Response Header中的NSP_STATUS字段，在处理成功时不会返回。
 
 
+
 | NSP_STATUS | 描述 | 解决方法 |
 | --- | --- | --- |
 | 6 | access_token已过期。access_token有效期为3600秒，超过有效期后将无法继续使用。 | 请通过获取应用级凭证重新获取新的access_token。 |
@@ -544,11 +615,15 @@
 
 
 
-#### 通过Authorization Code获取GroupUnionID
+## 通过Authorization Code获取GroupUnionID
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 接口URL：https://oauth-login.cloud.huawei.com/oauth2/v3/token
 
 错误码信息：
+
 
 | HTTP响应码 | 描述 | 解决方法 |
 | --- | --- | --- |
@@ -562,6 +637,7 @@
 | 503 | 系统流控。 | 触发系统流控，请稍后重试。 |
 | 504 | 请求连接超时，常见于网络状况不稳定。 | 建议稍后重试，若仍无法解决，请通过在线提单提交问题。 |
 | 590 | 服务内部错误。 | 请通过在线提单提交问题。 |
+
 
 
 | 业务响应主错误码 | 业务响应子错误码 | 描述 | 解决方法 |
@@ -590,11 +666,15 @@
 
 
 
-#### 通过OpenID或UnionID获取GroupUnionID
+## 通过OpenID或UnionID获取GroupUnionID
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 接口URL：https://account-api.cloud.huawei.com/oauth2/v6/groupUnionId/batchGet
 
 错误码信息：
+
 
 | HTTP响应码 | 描述 | 解决方法 |
 | --- | --- | --- |
@@ -610,6 +690,7 @@
 | 590 | 服务内部错误。 | 请通过在线提单提交问题。 |
 
 
+
 | 错误码 | 描述 | 解决方法 |
 | --- | --- | --- |
 | 60010002 | 参数错误。 | 请按照响应描述中的提示，检查并修改请求参数。 |
@@ -620,12 +701,16 @@
 
 
 
-#### 获取OpenID Connect配置公开信息
+## 获取OpenID Connect配置公开信息
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 接口URL：https://oauth-login.cloud.huawei.com/.well-known/openid-configuration
 
 错误码信息：
 
+
 | HTTP响应码 | 描述 | 解决方法 |
 | --- | --- | --- |
 | 200 | 成功。 | - |
@@ -641,12 +726,16 @@
 
 
 
-#### 获取验证ID Token的JWT公钥信息
+## 获取验证ID Token的JWT公钥信息
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 接口URL：https://oauth-login.cloud.huawei.com/oauth2/v3/certs
 
 错误码信息：
 
+
 | HTTP响应码 | 描述 | 解决方法 |
 | --- | --- | --- |
 | 200 | 成功。 | - |
@@ -662,11 +751,15 @@
 
 
 
-#### 验证ID Token有效性
+## 验证ID Token有效性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 接口URL：https://oauth-login.cloud.huawei.com/oauth2/v3/tokeninfo
 
 错误码信息：
+
 
 | HTTP响应码 | 描述 | 解决方法 |
 | --- | --- | --- |
@@ -680,6 +773,7 @@
 | 503 | 系统流控。 | 触发系统流控，请稍后重试。 |
 | 504 | 请求连接超时，常见于网络状况不稳定。 | 建议稍后重试，若仍无法解决，请通过在线提单提交问题。 |
 | 590 | 服务内部错误。 | 请通过在线提单提交问题。 |
+
 
 
 | 业务响应主错误码 | 业务响应子错误码 | 描述 | 解决方法 |

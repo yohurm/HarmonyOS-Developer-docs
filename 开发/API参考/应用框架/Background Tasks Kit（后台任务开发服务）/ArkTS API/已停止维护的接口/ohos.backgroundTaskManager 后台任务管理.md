@@ -1,9 +1,9 @@
 # @ohos.backgroundTaskManager (后台任务管理)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-backgroundtaskmanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供后台任务管理能力。
  
@@ -18,9 +18,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import backgroundTaskManager from '@ohos.backgroundTaskManager';
@@ -28,9 +29,10 @@ import backgroundTaskManager from '@ohos.backgroundTaskManager';
  
   
 
-#### backgroundTaskManager.requestSuspendDelay(deprecated)
+## backgroundTaskManager.requestSuspendDelay(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 requestSuspendDelay(reason: string, callback: Callback&lt;void&gt;): DelaySuspendInfo
  
@@ -46,6 +48,7 @@ requestSuspendDelay(reason: string, callback: Callback&lt;void&gt;): DelaySuspen
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | reason | string | 是 | 延迟挂起申请的原因。 |
@@ -54,6 +57,7 @@ requestSuspendDelay(reason: string, callback: Callback&lt;void&gt;): DelaySuspen
  
 **返回值**：
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DelaySuspendInfo | 返回延迟挂起信息。 |
@@ -80,9 +84,10 @@ console.info("The actualDelayTime is: " + time);
  
   
 
-#### backgroundTaskManager.getRemainingDelayTime(deprecated)
+## backgroundTaskManager.getRemainingDelayTime(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRemainingDelayTime(requestId: number, callback: AsyncCallback&lt;number&gt;): void
  
@@ -96,6 +101,7 @@ getRemainingDelayTime(requestId: number, callback: AsyncCallback&lt;number&gt;):
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | requestId | number | 是 | 延迟挂起的请求ID。这个值通过调用requestSuspendDelay方法获取。 |
@@ -120,9 +126,10 @@ backgroundTaskManager.getRemainingDelayTime(delayInfo.requestId, (err: BusinessE
  
   
 
-#### backgroundTaskManager.getRemainingDelayTime(deprecated)
+## backgroundTaskManager.getRemainingDelayTime(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRemainingDelayTime(requestId: number): Promise&lt;number&gt;
  
@@ -136,6 +143,7 @@ getRemainingDelayTime(requestId: number): Promise&lt;number&gt;
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | requestId | number | 是 | 延迟挂起的请求ID。这个值通过调用requestSuspendDelay方法获取。 |
@@ -143,6 +151,7 @@ getRemainingDelayTime(requestId: number): Promise&lt;number&gt;
  
 **返回值**：
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | 指定的Promise回调方法。返回应用程序进入挂起状态之前的剩余时间，单位：ms。 |
@@ -164,9 +173,10 @@ let delayInfo = backgroundTaskManager.requestSuspendDelay("test", () => {});
  
   
 
-#### backgroundTaskManager.cancelSuspendDelay(deprecated)
+## backgroundTaskManager.cancelSuspendDelay(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancelSuspendDelay(requestId: number): void
  
@@ -180,6 +190,7 @@ cancelSuspendDelay(requestId: number): void
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | requestId | number | 是 | 延迟挂起的请求ID。这个值通过调用requestSuspendDelay方法获取。 |
@@ -194,9 +205,10 @@ backgroundTaskManager.cancelSuspendDelay(delayInfo.requestId);
  
   
 
-#### backgroundTaskManager.startBackgroundRunning(deprecated)
+## backgroundTaskManager.startBackgroundRunning(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startBackgroundRunning(context: Context, bgMode: BackgroundMode, wantAgent: WantAgent, callback: AsyncCallback&lt;void&gt;): void
  
@@ -212,6 +224,7 @@ startBackgroundRunning(context: Context, bgMode: BackgroundMode, wantAgent: Want
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用运行的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 |
@@ -298,9 +311,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### backgroundTaskManager.startBackgroundRunning(deprecated)
+## backgroundTaskManager.startBackgroundRunning(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startBackgroundRunning(context: Context, bgMode: BackgroundMode, wantAgent: WantAgent): Promise&lt;void&gt;
  
@@ -316,6 +330,7 @@ startBackgroundRunning(context: Context, bgMode: BackgroundMode, wantAgent: Want
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用运行的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 |
@@ -325,6 +340,7 @@ startBackgroundRunning(context: Context, bgMode: BackgroundMode, wantAgent: Want
  
 **返回值**：
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 使用Promise形式返回结果。 |
@@ -402,9 +418,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### backgroundTaskManager.stopBackgroundRunning(deprecated)
+## backgroundTaskManager.stopBackgroundRunning(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stopBackgroundRunning(context: Context, callback: AsyncCallback&lt;void&gt;): void
  
@@ -418,6 +435,7 @@ stopBackgroundRunning(context: Context, callback: AsyncCallback&lt;void&gt;): vo
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用运行的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 |
@@ -470,9 +488,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### backgroundTaskManager.stopBackgroundRunning(deprecated)
+## backgroundTaskManager.stopBackgroundRunning(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stopBackgroundRunning(context: Context): Promise&lt;void&gt;
  
@@ -486,6 +505,7 @@ stopBackgroundRunning(context: Context): Promise&lt;void&gt;
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用运行的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 |
@@ -493,6 +513,7 @@ stopBackgroundRunning(context: Context): Promise&lt;void&gt;
  
 **返回值**：
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 使用Promise形式返回结果。 |
@@ -538,9 +559,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### DelaySuspendInfo(deprecated)
+## DelaySuspendInfo(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 延迟挂起信息。
  
@@ -550,6 +572,7 @@ export default class EntryAbility extends UIAbility {
  
 **系统能力:** SystemCapability.ResourceSchedule.BackgroundTaskManager.TransientTask
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | requestId | number | 否 | 否 | 延迟挂起的请求ID。 |
@@ -558,9 +581,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### BackgroundMode(deprecated)
+## BackgroundMode(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 长时任务类型。
  
@@ -570,6 +594,7 @@ export default class EntryAbility extends UIAbility {
  
 **系统能力:** SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DATA_TRANSFER | 1 | 数据传输。 |

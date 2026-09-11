@@ -19,17 +19,17 @@ export struct Page {
       selectIndex: this.selectIndex,
     }),
   })
-  // ...
+ <em> // ...</em>
 }
 ```
  
 ```text
-// 定义弹窗
+<em>// </em><em>定义弹窗</em>
 @CustomDialog
 export struct AccountSafeDialog {
   controller?: CustomDialogController;
   @Link selectIndex: number;
-  // ...
+ <em> // ...</em>
 }
 ```
  
@@ -83,7 +83,7 @@ struct NavigationExample {
           .margin(20)
           .onClick(() => {
             this.pageInfos.pushPathByName('pageOne', this.selectIndex, () => {
-            }, false); // 将name指定的NavDestination页面信息入栈
+            }, false); <em>// 将name指定的NavDestination页面信息入栈</em>
           });
       };
     }.title('NavIndex');

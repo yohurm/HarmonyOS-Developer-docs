@@ -1,6 +1,6 @@
 # 模型（Model）配置
 
-更新时间：2026-07-28 12:07:32
+更新时间：2026-09-08 02:53:31
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-agent-model
 
@@ -13,19 +13,13 @@ CodeGenie支持通过Gemini-API和OpenAI-API协议接入第三方模型，为自
 从DevEco Studio 6.0.2 Release（6.0.2.646）开始， 支持通过服务提供商接入三方模型，URL接入时支持使用Ollama协议的三方模型。
 
 
-#### 操作步骤
-1. 点击界面右上方
-![](assets/模型（Model）配置/file-20260514132759917-0.png)
-按钮，或者点击界面右上方**Settings**
-![](assets/模型（Model）配置/file-20260514132759917-1.png)
-按钮，选择**Model**，进入配置页面。
+## 操作步骤
+1. 点击界面右上方![icon](assets/模型（Model）配置/file-20260514132759917-0.png)按钮，或者点击界面右上方**Settings**![icon](assets/模型（Model）配置/file-20260514132759917-1.png)按钮，选择**Model**，进入配置页面。
 
   
 ![](assets/模型（Model）配置/file-20260514132759917-2.png)
 
-2. 点击
-![](assets/模型（Model）配置/file-20260514132759917-3.png)
-按钮添加模型，当前支持通过Service Provider（服务提供商）和URL两种方式添加，推荐使用Service Provider方式。
+2. 点击![icon](assets/模型（Model）配置/file-20260514132759917-3.png)按钮添加模型，当前支持通过Service Provider（服务提供商）和URL两种方式添加，推荐使用Service Provider方式。
 
   
  - 通过服务提供商添加。CodeGenie已预置主流模型服务商的配置信息，填写API Key即可快速接入。
@@ -60,11 +54,11 @@ CodeGenie支持通过Gemini-API和OpenAI-API协议接入第三方模型，为自
 
   
 
-  #### 附录
+  ## 附录
 
   
 
-  #### 通过URL添加模型
+  ### 通过URL添加模型
 
   **约束与限制**
 

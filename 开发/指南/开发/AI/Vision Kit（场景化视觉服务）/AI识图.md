@@ -1,10 +1,10 @@
 # AI识图
 
-更新时间：2026-04-29 07:35:50
+更新时间：2026-09-07 06:42:31
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/vision-imageanalyzer
 
-#### 场景介绍
+## 场景介绍
 
 AI识图是通过聚合OCR（Optical Character Recognition）、主体分割、实体识别、多目标识别等AI能力，提供场景化的文本识别、主体分割、识图搜索功能。AI识图功能主开关入口在基础控件API列表中，如果您接受AI识图默认的交互和功能，仅需使用基础控件提供的相关使能接口打开功能开关即可。该文档配套的API配合基础控件使用，主要满足您的定制诉求，帮助您完成AI识图功能交互上的细粒度控制，获取文本识别、图像分割等分析结果以便您进行扩展业务的开发，目前支持的基础控件范围包括[Image](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-image#enableanalyzer11)、[Video](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-media-components-video#enableanalyzer12)、[XComponent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-xcomponent#enableanalyzer12)。其中，配合Image控件可完成静态图片上的识图功能，配合Video控件可完成视频播放暂停帧的识图功能，配合XComponent可完成自定义渲染等场景下的图像的识图功能。
 
@@ -38,7 +38,7 @@ AI识图是通过聚合OCR（Optical Character Recognition）、主体分割、�
 
 
 
-#### 约束与限制
+## 约束与限制
 
  - 支持的文本语种类型：简体中文、繁体中文、英文、维吾尔文、藏文。
  - 支持图片最小规格100*100分辨率。
@@ -75,7 +75,7 @@ struct Index {
 
 
 
-#### 开发步骤
+## 开发步骤
 1. 将AI识图控件相关的类添加。
 
   
@@ -157,11 +157,11 @@ build() {
 
 
 
-#### 开发实例
+## 开发实例
 
 
 
-#### Index.ets
+### Index.ets
 
 ```json
 import { visionImageAnalyzer } from '@kit.VisionKit';

@@ -11,8 +11,8 @@
 问题代码示例参考如下：
  
 ```text
-// 媒体文件字节数组
-let context = this.getUIContext().getHostContext() as common.UIAbilityContext; // 获取resourceManager资源管理
+<em>// </em><em>媒体文件字节数组</em>
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext; <em>// 获取resourceManager资源管理</em>
 context.resourceManager.getMediaContent($r('app.media.ic_image1').id, (error, value: ArrayBuffer) => {
   let opts: image.InitializationOptions = {
     editable: true,
@@ -22,7 +22,7 @@ context.resourceManager.getMediaContent($r('app.media.ic_image1').id, (error, va
   let uint8Array: Uint8Array = new Uint8Array(value);
   let buffer: ArrayBuffer = uint8Array.buffer.slice(0);
 
-  // 创建PixelMap
+  <em>// 创建PixelMap</em>
   image.createPixelMap(buffer, opts).then((pixelMap) => {
     this.savePixelMapToAlbum('test', pixelMap, 0);
   })
@@ -88,11 +88,11 @@ import { image } from '@kit.ImageKit';
 struct Index {
   @State pixelMap: image.PixelMap | undefined = undefined;
 
-  // 把资源目录下的文件转为pixelMap
+<em>  // 把资源目录下的文件转为pixelMap</em>
   async loadImage(resource: Resource): Promise<image.PixelMap> {
-    let context = this.getUIContext().getHostContext() as common.UIAbilityContext; // 获取resourceManager资源管理
-    const resourceManager = context.resourceManager; // 获取图片数据
-    const fileData: Uint8Array = await resourceManager.getMediaContent(resource.id); // 返回对应的媒体文件内容。
+    let context = this.getUIContext().getHostContext() as common.UIAbilityContext; <em>// 获取resourceManager资源管理</em>
+    const resourceManager = context.resourceManager;<em> </em><em>// 获取图片数据</em>
+    const fileData: Uint8Array = await resourceManager.getMediaContent(resource.id);<em> </em><em>// 返回对应的媒体文件内容。</em>
     let buffer: ArrayBuffer = fileData.buffer.slice(0);
     const imageSource: image.ImageSource = image.createImageSource(buffer);
     const pixelMap: image.PixelMap = await imageSource.createPixelMap();

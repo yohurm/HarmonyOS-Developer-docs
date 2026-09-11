@@ -1,9 +1,9 @@
 # namespace (ASON)
 
-更新时间：2026-08-04 06:06:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-arkts-utils-ason
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 为支持将JSON字符串解析为共享数据，即[Sendable支持的数据类型](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable#sendable支持的数据类型)，ArkTS语言基础库新增了ASON工具。ASON工具支持解析JSON字符串并生成共享数据，用于跨并发实例引用传递，同时也支持将共享数据转换为JSON字符串。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { ArkTSUtils } from '@kit.ArkTS';
@@ -22,9 +23,10 @@ import { ArkTSUtils } from '@kit.ArkTS';
 
 
 
-#### ISendable
+## ISendable
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ISendable = lang.ISendable
 
@@ -34,6 +36,7 @@ ISendable是所有Sendable类型（除null和undefined）的父类型。自身�
 
 **系统能力：** SystemCapability.Utils.Lang
 
+
 | 类型 | 说明 |
 | --- | --- |
 | lang.ISendable | 所有Sendable类型的父类型。 |
@@ -41,9 +44,10 @@ ISendable是所有Sendable类型（除null和undefined）的父类型。自身�
 
 
 
-#### Transformer
+## Transformer
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Transformer = (this: ISendable, key: string, value: ISendable | undefined | null) => ISendable | undefined | null
 
@@ -55,6 +59,7 @@ type Transformer = (this: ISendable, key: string, value: ISendable | undefined |
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | this | ISendable | 是 | 所解析的键值对所属的对象。 |
@@ -64,6 +69,7 @@ type Transformer = (this: ISendable, key: string, value: ISendable | undefined |
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ISendable \| undefined \| null | 返回转换结果后的ISendable对象或undefined或null。 |
@@ -71,15 +77,17 @@ type Transformer = (this: ISendable, key: string, value: ISendable | undefined |
 
 
 
-#### BigIntMode
+## BigIntMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义处理BigInt的模式。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -90,15 +98,17 @@ type Transformer = (this: ISendable, key: string, value: ISendable | undefined |
 
 
 
-#### ParseReturnType
+## ParseReturnType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义解析结果的返回类型。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -108,15 +118,17 @@ type Transformer = (this: ISendable, key: string, value: ISendable | undefined |
 
 
 
-#### ParseOptions
+## ParseOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 解析的选项，可定义处理BigInt的模式和解析结果的返回类型。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -126,9 +138,10 @@ type Transformer = (this: ISendable, key: string, value: ISendable | undefined |
 
 
 
-#### parse
+## parse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 parse(text: string, reviver?: Transformer, options?: ParseOptions): ISendable | null
 
@@ -140,6 +153,7 @@ parse(text: string, reviver?: Transformer, options?: ParseOptions): ISendable | 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | text | string | 是 | 有效的JSON字符串。 |
@@ -148,6 +162,7 @@ parse(text: string, reviver?: Transformer, options?: ParseOptions): ISendable | 
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -193,9 +208,10 @@ console.info(`largeNumber is ${(parsedMap as collections.Map<string,bigint>).get
 
 
 
-#### stringify
+## stringify
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stringify(value: Object | null | undefined): string
 
@@ -211,12 +227,14 @@ stringify(value: Object | null | undefined): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object \| null \| undefined | 是 | ArkTS对象数据。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |

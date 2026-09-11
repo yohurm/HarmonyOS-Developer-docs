@@ -1,18 +1,19 @@
 # sceneMap（场景化控件）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-scenemap
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable
+**支持设备：** Phone | PC/2in1 | Tablet
 
 本模块提供地图场景化控件功能，包括地点详情展示控件、地点选取控件和区划选择控件。
 
 **起始版本：** 4.1.0(11)
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 import { sceneMap } from '@kit.MapKit';
@@ -20,9 +21,10 @@ import { sceneMap } from '@kit.MapKit';
 
 
 
-#### queryLocation
+## queryLocation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 queryLocation(context: common.UIAbilityContext, options: LocationQueryOptions): Promise&lt;void&gt;
 
@@ -44,6 +46,7 @@ queryLocation(context: common.UIAbilityContext, options: LocationQueryOptions): 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | UIAbility或UIExtensionAbility所对应的context。 |
@@ -51,6 +54,7 @@ queryLocation(context: common.UIAbilityContext, options: LocationQueryOptions): 
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -61,6 +65,7 @@ queryLocation(context: common.UIAbilityContext, options: LocationQueryOptions): 
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid input parameter. |
@@ -68,7 +73,7 @@ queryLocation(context: common.UIAbilityContext, options: LocationQueryOptions): 
 | 1002600002 | Failed to connect to the Map Kit server. |
 | 1002600003 | App authentication failed. |
 | 1002600004 | The Map permission is not enabled. |
-| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities. 适用版本：5.1.0(18)+ |
 
 
 **示例：**
@@ -89,9 +94,10 @@ sceneMap.queryLocation(this.getUIContext().getHostContext() as common.UIAbilityC
 
 
 
-#### chooseLocation
+## chooseLocation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 chooseLocation(context: common.UIAbilityContext, options: LocationChoosingOptions): Promise&lt;LocationChoosingResult&gt;
 
@@ -113,6 +119,7 @@ chooseLocation(context: common.UIAbilityContext, options: LocationChoosingOption
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | UIAbility或UIExtensionAbility所对应的context。 |
@@ -120,6 +127,7 @@ chooseLocation(context: common.UIAbilityContext, options: LocationChoosingOption
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -129,6 +137,7 @@ chooseLocation(context: common.UIAbilityContext, options: LocationChoosingOption
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -162,9 +171,10 @@ sceneMap.chooseLocation(this.getUIContext().getHostContext() as common.UIAbility
 
 
 
-#### selectDistrict
+## selectDistrict
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 selectDistrict(context: common.Context, options: DistrictSelectOptions): Promise&lt;DistrictSelectResult&gt;
 
@@ -186,6 +196,7 @@ selectDistrict(context: common.Context, options: DistrictSelectOptions): Promise
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | UIAbility或UIExtensionAbility所对应的context。 |
@@ -193,6 +204,7 @@ selectDistrict(context: common.Context, options: DistrictSelectOptions): Promise
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -202,6 +214,7 @@ selectDistrict(context: common.Context, options: DistrictSelectOptions): Promise
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -231,9 +244,10 @@ sceneMap.selectDistrict(this.getUIContext().getHostContext(), districtSelectOpti
 
 
 
-#### LocationQueryOptions
+## LocationQueryOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 查询地点详情的参数。
 
@@ -244,6 +258,7 @@ sceneMap.selectDistrict(this.getUIContext().getHostContext(), districtSelectOpti
 **设备行为差异：** 该接口在phone、tablet和PC/2in1设备上可以正常使用，在其他设备中返回801错误码。
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -270,9 +285,10 @@ let queryLocationOptions: sceneMap.LocationQueryOptions = { siteId: "92220715406
 
 
 
-#### LocationChoosingOptions
+## LocationChoosingOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 地点选取的参数。
 
@@ -283,6 +299,7 @@ let queryLocationOptions: sceneMap.LocationQueryOptions = { siteId: "92220715406
 **设备行为差异：** 该接口在phone、tablet和PC/2in1设备上可以正常使用，在其他设备中返回801错误码。
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -307,9 +324,10 @@ let locationChoosingOptions: sceneMap.LocationChoosingOptions = {
 
 
 
-#### LocationChoosingResult
+## LocationChoosingResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 地点选取的返回结果。
 
@@ -320,6 +338,7 @@ let locationChoosingOptions: sceneMap.LocationChoosingOptions = {
 **设备行为差异：** 该接口在phone、tablet和PC/2in1设备上可以正常使用，在其他设备中返回801错误码。
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -334,9 +353,10 @@ let locationChoosingOptions: sceneMap.LocationChoosingOptions = {
 
 
 
-#### DistrictSelectOptions
+## DistrictSelectOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 区划选择页面初始选项。
 
@@ -347,6 +367,7 @@ let locationChoosingOptions: sceneMap.LocationChoosingOptions = {
 **设备行为差异：** 该接口在phone、tablet和PC/2in1设备上可以正常使用，在其他设备中返回801错误码。
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -373,9 +394,10 @@ let districtSelectOptions: sceneMap.DistrictSelectOptions = {
 
 
 
-#### DistrictSelectResult
+## DistrictSelectResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 区划选择请求的结果。
 
@@ -389,6 +411,7 @@ let districtSelectOptions: sceneMap.DistrictSelectOptions = {
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | districts | Array&lt;District&gt; | 否 | 否 | 所选行政区划的级别信息。 |
@@ -397,9 +420,10 @@ let districtSelectOptions: sceneMap.DistrictSelectOptions = {
 
 
 
-#### District
+## District
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 行政区划信息。
 
@@ -412,6 +436,7 @@ let districtSelectOptions: sceneMap.DistrictSelectOptions = {
 **设备行为差异：** 该接口在phone、tablet和PC/2in1设备上可以正常使用，在其他设备中返回801错误码。
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

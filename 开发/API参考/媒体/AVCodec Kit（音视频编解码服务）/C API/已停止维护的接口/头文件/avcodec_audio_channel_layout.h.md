@@ -1,13 +1,14 @@
 # avcodec_audio_channel_layout.h
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avcodec-audio-channel-layout-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 音频编解码声道布局枚举的声明。
  
@@ -25,16 +26,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | AudioChannelSet | 音频声道数集合，将每一个声道数映射为uint64_t的变量。(API11废弃) |
@@ -43,15 +47,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### AudioChannelSet
+### AudioChannelSet
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum AudioChannelSet : uint64_t
@@ -69,6 +75,7 @@ enum AudioChannelSet : uint64_t
  
 **替代接口：** [OH_AudioChannelSet](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-audio-channel-layout-h#oh_audiochannelset)
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | FRONT_LEFT = 1ULL << 0U | 左前声道。 |
@@ -125,9 +132,10 @@ enum AudioChannelSet : uint64_t
  
   
 
-#### AudioChannelLayout
+### AudioChannelLayout
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum AudioChannelLayout : uint64_t
@@ -145,6 +153,7 @@ enum AudioChannelLayout : uint64_t
  
 **替代接口：** [OH_AudioChannelLayout](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-audio-channel-layout-h#oh_audiochannellayout)
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | UNKNOWN_CHANNEL_LAYOUT = 0 | 未知声道布局。 |

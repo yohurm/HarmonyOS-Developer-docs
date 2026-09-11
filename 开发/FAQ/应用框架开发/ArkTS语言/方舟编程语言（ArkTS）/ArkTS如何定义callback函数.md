@@ -9,7 +9,7 @@
 
   
 ```text
-// Define 2 parameters on the page, return empty callback function
+<em>// Define 2 parameters on the page, return empty callback function</em>
 myCallback: (a: number,b: string) => void = () => {}
 ```
 
@@ -18,7 +18,7 @@ myCallback: (a: number,b: string) => void = () => {}
   
 ```text
 aboutToAppear() {
-  // Initialization of callback function
+ <em> // Initialization of callback function</em>
   this.myCallback = (a,b) => {
     console.info(`handle myCallback a=${a},b=${b}`)
   }

@@ -1,27 +1,27 @@
 # USB实时传输
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/isochronoustransfer
 
-#### 场景介绍
+## 场景介绍
 
 实时传输是通过USB协议在固定时间窗口内完成数据传输，确保数据流的时序稳定性和低延迟，但允许少量数据丢失（如视频丢帧、音频杂音）的传输模式。这种传输方式适用于USB耳机、USB音响、视频会议设备等对连续性要求高、容错性强的场景。
 
 
 
-#### 环境准备
+## 环境准备
 
 
 
-#### 环境要求
+### 环境要求
 
  - 开发工具及配置：
 
   DevEco Studio作为驱动开发工具，是进行驱动开发必备条件之一，开发者可以使用该工具进行开发、调试、打包等操作。请[下载安装](https://developer.huawei.com/consumer/cn/download/)该工具，并参考[DevEco Studio使用指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-tools-overview)中的[创建工程及运行](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-create-new-project)进行基本的操作验证，保证DevEco Studio可正常运行。
  - SDK版本配置：
 
-  扩展外设管理提供的ArkTs接口，所需SDK版本为API16及以上才可使用。
+  扩展外设管理提供的ArkTS接口，所需SDK版本为API16及以上才可使用。
  - HDC配置：
 
   HDC（HarmonyOS Device Connector）是为开发人员提供的用于调试的命令行工具，通过该工具可以在Windows/Linux/Mac系统上与真实设备或者模拟器进行交互，详细参考[HDC配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hdc)。
@@ -29,7 +29,7 @@
 
 
 
-#### 搭建环境
+### 搭建环境
 
  - 在PC上安装[DevEco Studio](https://developer.huawei.com/consumer/cn/download/deveco-studio)，要求版本在4.1及以上。
  - 将public-SDK更新到API 16或以上。
@@ -39,11 +39,12 @@
 
 
 
-#### 开发指导
+## 开发指导
 
 
 
-#### 接口说明
+### 接口说明
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -55,7 +56,7 @@
 
 
 
-#### 开发步骤
+### 开发步骤
 
 主机（Host）连接设备（Device），通过usbSubmitTransfer接口进行数据传输。以下步骤描述了如何使用实时传输方式来传输数据：
 
@@ -311,7 +312,7 @@ try {
 
 
 
-#### 调测验证
+### 调测验证
 1. 主机端通过USB接口连接支持实时传输的设备（USB耳机等）。
 2. 执行上述代码。
 3. log中搜索关键字transfer success，表示实时传输接口调用成功。

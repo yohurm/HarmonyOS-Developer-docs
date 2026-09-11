@@ -23,7 +23,7 @@ struct WebComponent {
     Column() {
       Button('setDownloadDelegate')
         .onClick(() => {
-          // 下载开始前通知给用户，用户需要在此接口中调用WebDownloadItem.start("xxx")并提供下载路径，否则下载会一直处于PENDING状态。
+         <em> // 下载开始前通知给用户，用户需要在此接口中调用WebDownloadItem.start("xxx")并提供下载路径，否则下载会一直处于PENDING状态。</em>
           this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
             console.info('EntryAbility: will start a download.');
             const documentSaveOptions = new picker.DocumentSaveOptions();
@@ -125,16 +125,16 @@ struct WebComponent {
     Column() {
       Button('setDownloadDelegate')
         .onClick(() => {
-          // 下载开始前通知给用户，用户需要在此接口中调用WebDownloadItem.start("xxx")并提供下载路径，否则下载会一直处于PENDING状态。
+        <em>  // 下载开始前通知给用户，用户需要在此接口中调用WebDownloadItem.start("xxx")并提供下载路径，否则下载会一直处于PENDING状态。</em>
           this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
             console.info('EntryAbility: will start a download.');
             const documentSaveOptions = new picker.DocumentSaveOptions();
-            // 修改pickerMode为DOWNLOAD，删除newFileNames和fileSuffixChoices，设置为DOWNLOAD时，配置的参数newFileNames和fileSuffixChoices将不会生效
+           <em> // 修改pickerMode为DOWNLOAD，删除newFileNames和fileSuffixChoices，设置为DOWNLOAD时，配置的参数newFileNames和fileSuffixChoices将不会生效</em>
             documentSaveOptions.pickerMode = picker.DocumentPickerMode.DOWNLOAD;
             let uris: Array<string> = [];
             let documentViewPicker = new picker.DocumentViewPicker();
             documentViewPicker.save(documentSaveOptions).then((documentSaveResult: Array<string>) => {
-              // 固定返回当前HAP包名的文件夹
+            <em>  // 固定返回当前HAP包名的文件夹</em>
               uris = documentSaveResult;
               if (0 == uris.length) {
                 return;
@@ -145,7 +145,7 @@ struct WebComponent {
               if (!uriString) {
                 return;
               }
-              // 添加文件路径转换
+            <em>  // 添加文件路径转换</em>
               const uri = new fileUri.FileUri(uriString);
               webDownloadItem.start(uri.path + '/fileName_' + (new Date()).getTime() + '.txt');
               console.info(`EntryAbility: download to ${uri.path}`);
@@ -159,13 +159,13 @@ struct WebComponent {
       Button('startDownload')
         .onClick(() => {
           try {
-            // 运行时需替换为实际的链接
+           <em> // 运行时需替换为实际的链接</em>
             this.controller.startDownload('XXX');
           } catch (error) {
             console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
           }
         });
-      // 运行时需替换为实际的链接
+     <em> // 运行时需替换为实际的链接</em>
       Web({ src: 'XXX', controller: this.controller }).fileAccess(false).geolocationAccess(false);
     };
   }

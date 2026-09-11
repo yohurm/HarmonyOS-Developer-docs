@@ -1,11 +1,12 @@
 # OpenGTX_NetworkInfo
 
-更新时间：2026-05-19 09:13:51
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_open_g_t_x___network_info
 **支持设备：** Phone | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -19,16 +20,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | Tablet | TV
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OpenGTX_NetworkLatency networkLatency | 游戏中的网络延迟。 如果没有上下行时延，则设置为total（总时延）的值。将游戏总时延以0ms、50ms、100ms、150ms、200ms分为5个档位，当档位发生变化时，游戏应用通知OpenGTX。 |
@@ -37,13 +41,15 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
 
 **支持设备：** Phone | Tablet | TV
 
   
 
-#### networkLatency
+### networkLatency
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -57,7 +63,8 @@ OpenGTX_NetworkLatency OpenGTX_NetworkInfo::networkLatency
  
   
 
-#### networkServerIP
+### networkServerIP
+
 
 **支持设备：** Phone | Tablet | TV
 

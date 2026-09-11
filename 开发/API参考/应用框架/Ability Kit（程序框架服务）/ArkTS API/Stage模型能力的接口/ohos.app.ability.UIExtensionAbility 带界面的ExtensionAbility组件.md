@@ -1,13 +1,13 @@
 # @ohos.app.ability.UIExtensionAbility (带界面的ExtensionAbility组件)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiextensionability
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 UIExtensionAbility组件是带界面的ExtensionAbility组件，继承自[ExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-extensionability)，提供了组件创建、销毁、前后台切换等基础生命周期。和UIAbility组件不同，UIExtensionAbility组件不会作为单独的任务在任务视图中体现。UIExtensionAbility组件被宿主窗口启动，该组件的前后台切换状态、以及是否可见均跟随宿主窗口。
  
-开发者不可以直接继承UIExtensionAbility组件，但可以根据实际业务场景选择使用继承自UIExtensionAbility组件的其他组件。例如，开发者处理其他应用分享的数据时，可以使用[ShareExtensionAbility组件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-shareextensionability)；开发者提供卡片编辑功能时，可以使用[FormEditExtensionAbility组件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-form-formeditextensionability)。
+开发者不可以直接继承UIExtensionAbility组件，但可以根据实际业务场景选择使用继承自UIExtensionAbility组件的其他组件。例如，开发者处理其他应用分享的数据时，可以使用[@ohos.app.ability.ShareExtensionAbility (支持分享详情页接入的ExtensionAbility组件)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-shareextensionability)；开发者提供卡片编辑功能时，可以使用[@ohos.app.form.FormEditExtensionAbility (FormEditExtensionAbility)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-form-formeditextensionability)。
  
 各类Ability组件的继承关系详见[继承关系说明](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-ability#ability的继承关系说明)。
  
@@ -16,9 +16,10 @@ UIExtensionAbility组件是带界面的ExtensionAbility组件，继承自[Extens
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { UIExtensionAbility } from '@kit.AbilityKit';
@@ -26,20 +27,23 @@ import { UIExtensionAbility } from '@kit.AbilityKit';
  
   
 
-#### UIExtensionAbility
+## UIExtensionAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示包含UI界面的扩展组件，提供组件创建、销毁、前后台切换等生命周期回调。
  
   
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.AbilityCore
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | context | UIExtensionContext | 否 | 否 | UIExtensionAbility组件的上下文。 |
@@ -47,9 +51,10 @@ import { UIExtensionAbility } from '@kit.AbilityKit';
  
   
 
-#### onCreate
+### onCreate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onCreate(launchParam: AbilityConstant.LaunchParam): void
  
@@ -59,6 +64,7 @@ onCreate(launchParam: AbilityConstant.LaunchParam): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | launchParam12+ | AbilityConstant.LaunchParam | 是 | 应用启动参数，包含应用启动原因、应用上次退出原因等。 |
@@ -81,9 +87,10 @@ export default class ShareExtAbility extends ShareExtensionAbility {
  
   
 
-#### onSessionCreate
+### onSessionCreate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onSessionCreate(want: Want, session: UIExtensionContentSession): void
  
@@ -93,6 +100,7 @@ onSessionCreate(want: Want, session: UIExtensionContentSession): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | 调用方拉起该UIExtensionAbility组件时传递的数据。 |
@@ -124,9 +132,10 @@ export default class ShareExtAbility extends ShareExtensionAbility {
  
   
 
-#### onSessionDestroy
+### onSessionDestroy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onSessionDestroy(session: UIExtensionContentSession): void
  
@@ -136,6 +145,7 @@ onSessionDestroy(session: UIExtensionContentSession): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | session | UIExtensionContentSession | 是 | UIExtensionContentSession实例对象。 |
@@ -158,9 +168,10 @@ export default class ShareExtAbility extends ShareExtensionAbility {
  
   
 
-#### onForeground
+### onForeground
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onForeground(): void
  
@@ -185,9 +196,10 @@ export default class ShareExtAbility extends ShareExtensionAbility {
  
   
 
-#### onBackground
+### onBackground
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onBackground(): void
  
@@ -212,9 +224,10 @@ export default class ShareExtAbility extends ShareExtensionAbility {
  
   
 
-#### onDestroy
+### onDestroy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDestroy(): void | Promise&lt;void&gt;
  
@@ -226,6 +239,7 @@ onDestroy(): void | Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | void \| Promise&lt;void&gt; | 无返回结果或无返回结果的Promise对象。 |

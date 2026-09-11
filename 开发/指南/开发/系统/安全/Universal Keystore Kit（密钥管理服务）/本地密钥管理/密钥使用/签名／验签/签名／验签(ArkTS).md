@@ -1,6 +1,6 @@
 # 签名/验签(ArkTS)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-signing-signature-verification-arkts
 
@@ -20,7 +20,7 @@
 具体的场景介绍及支持的算法规格，请参考[签名/验签支持的算法](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-signing-signature-verification-overview#支持的算法)。
 
 
-#### 开发步骤
+## 开发步骤
 
 **生成密钥**
 1. 指定密钥别名，密钥别名命名规范参考[密钥生成介绍及算法规格](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-key-generation-overview)。
@@ -50,11 +50,11 @@
 
 
 
-#### 开发案例
+## 开发案例
 
 
 
-#### ECC256/SHA256
+### ECC256/SHA256
 
 ```ArkTS
 /*
@@ -225,7 +225,7 @@ async function testSignVerify() {
 
 
 
-#### SM2/SM3
+### SM2/SM3
 
 ```ArkTS
 /*
@@ -396,7 +396,7 @@ export async function testSignVerify() {
 
 
 
-#### SM2/NoDigest
+### SM2/NoDigest
 
 ```ArkTS
 /*
@@ -570,7 +570,7 @@ async function testSignVerify() {
 
 
 
-#### RSA/SHA256/PSS
+### RSA/SHA256/PSS
 
 ```ArkTS
 /*
@@ -751,7 +751,7 @@ export async function testSignVerify() {
 
 
 
-#### RSA/SHA256/PKCS1_V1_5
+### RSA/SHA256/PKCS1_V1_5
 
 ```ArkTS
 /*
@@ -924,7 +924,7 @@ export async function testSignVerify() {
 
 
 
-#### RSA2048/SHA384/PSS
+### RSA2048/SHA384/PSS
 
 ```ArkTS
 /*
@@ -1104,7 +1104,7 @@ async function testSignVerify() {
 
 
 
-#### ECC/SHA256/携带认证信息的签名类型
+### ECC/SHA256/携带认证信息的签名类型
 
 前提条件：此功能的示例代码依赖数字盾服务的设置数字盾密码和验证数字盾密码，请参考[数字盾服务](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurity-trustedauth-service)的数字盾密码管理和交易信息密码认证。
 

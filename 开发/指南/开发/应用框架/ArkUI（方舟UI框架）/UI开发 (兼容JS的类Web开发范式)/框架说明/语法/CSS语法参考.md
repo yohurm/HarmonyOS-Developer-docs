@@ -1,13 +1,13 @@
 # CSS语法参考
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-framework-syntax-css
 
 CSS是描述[HML](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-framework-syntax-hml)页面结构的样式语言。所有组件均存在系统默认样式，也可在页面CSS样式文件中对组件、页面自定义不同的样式。请参考[通用样式](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-styles)了解兼容JS的类Web开发范式支持的组件样式。
 
 
-#### 尺寸单位
+## 尺寸单位
 
  - 逻辑像素px（文档中以&lt;length&gt;表示）：
 
@@ -15,18 +15,18 @@ CSS是描述[HML](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/
 默认屏幕具有的逻辑宽度为720px（配置见[js标签配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-framework-js-tag)中的window小节），实际显示时会将页面布局缩放至屏幕实际宽度，如100px在实际宽度为1440物理像素的屏幕上，实际渲染为200物理像素（从720px向1440物理像素，所有尺寸放大2倍）。
  - 额外配置autoDesignWidth为true时（配置见[js标签配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-framework-js-tag)中的window小节），逻辑像素px将按照屏幕密度进行缩放，如100px在屏幕密度为3的设备上，实际渲染为300物理像素。应用需要适配多种设备时，建议采用此方法。
 
-      - 百分比（文档中以&lt;percentage&gt;表示）：表示该组件占父组件尺寸的百分比，如组件的width设置为50%，代表其宽度为父组件的50%。
+            - 百分比（文档中以&lt;percentage&gt;表示）：表示该组件占父组件尺寸的百分比，如组件的width设置为50%，代表其宽度为父组件的50%。
 
 
 
 
-#### 样式导入
+## 样式导入
 
 为了模块化管理和代码复用，CSS样式文件支持 @import 语句，导入css文件。
 
 
 
-#### 声明样式
+## 声明样式
 
 每个页面目录下存在一个与布局hml文件同名的css文件，用来描述该hml页面中组件的样式，决定组件应该如何显示。
 1. 内部样式，支持使用style、class属性来控制组件的样式。例如：
@@ -67,9 +67,10 @@ CSS是描述[HML](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/
 
 
 
-#### 选择器
+## 选择器
 
 css选择器用于选择需要添加样式的元素，支持的选择器如下表所示：
+
 
 | 选择器 | 样例 | 样例描述 |
 | --- | --- | --- |
@@ -136,7 +137,7 @@ div {
 
 
 
-#### 选择器优先级
+## 选择器优先级
 
 选择器的优先级计算规则与w3c规则保持一致（只支持：内联样式，id，class，tag，后代和直接后代），其中内联样式为在元素style属性中声明的样式。
 
@@ -144,11 +145,12 @@ div {
 
 
 
-#### 伪类
+## 伪类
 
 css伪类是选择器中的关键字，用于指定要选择元素的特殊状态。例如，:disabled状态可以用来设置元素的disabled属性变为true时的样式。
 
 除了单个伪类之外，还支持伪类的组合，例如，:focus:checked状态可以用来设置元素的focus属性和checked属性同时为true时的样式。支持的单个伪类如下表所示，按照优先级降序排列：
+
 
 | 名称 | 支持组件 | 描述 |
 | --- | --- | --- |
@@ -187,7 +189,7 @@ css伪类是选择器中的关键字，用于指定要选择元素的特殊状�
 
 
 
-#### 样式预编译
+## 样式预编译
 
 预编译提供了利用特有语法生成css的程序，可以提供变量、运算等功能，令开发者更便捷地定义组件样式，目前支持less、sass和scss的预编译。使用样式预编译时，需要将原css文件后缀改为less、sass或scss，如index.css改为index.less、index.sass或index.scss。
 
@@ -230,7 +232,7 @@ $colorBackground: #000000;
 
 
 
-#### CSS样式继承6+
+## CSS样式继承6+
 
 css样式继承提供了子节点继承父节点样式的能力，继承下来的样式在多选择器样式匹配的场景下，优先级排最低，当前支持以下样式的继承：
 

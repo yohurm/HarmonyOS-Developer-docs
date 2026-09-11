@@ -1,13 +1,14 @@
 # media_asset_manager_capi.h
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-media-asset-manager-capi-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义媒体资产管理器的接口。使用由媒体资产管理器提供的C API来请求媒体库资源。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_MediaAssetManager* OH_MediaAssetManager_Create(void) | 创建一个媒体资产管理器。 |
@@ -47,15 +51,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_MediaAssetManager_Create()
+### OH_MediaAssetManager_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_MediaAssetManager* OH_MediaAssetManager_Create(void)
@@ -69,16 +75,18 @@ OH_MediaAssetManager* OH_MediaAssetManager_Create(void)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| OH_MediaAssetManager* | 返回一个指向OH_MediaAssetManager实例的指针。 |
+| OH_MediaAssetManager* | 返回一个指向OH_MediaAssetManager实例的指针，用于请求和管理媒体库资源。 |
  
  
   
 
-#### OH_MediaAssetManager_RequestImageForPath()
+### OH_MediaAssetManager_RequestImageForPath()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 MediaLibrary_RequestId OH_MediaAssetManager_RequestImageForPath(OH_MediaAssetManager* manager, const char* uri,MediaLibrary_RequestOptions requestOptions, const char* destPath, OH_MediaLibrary_OnDataPrepared callback)
@@ -94,27 +102,30 @@ MediaLibrary_RequestId OH_MediaAssetManager_RequestImageForPath(OH_MediaAssetMan
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_MediaAssetManager* manager | 指向OH_MediaAssetManager实例的指针。 |
 | const char* uri | 请求的图像资源的uri。 |
-| MediaLibrary_RequestOptions requestOptions | 请求策略模式配置项。 |
+| MediaLibrary_RequestOptions requestOptions | 请求策略模式配置项。用于指定资源请求的具体策略，如缓存策略、网络加载策略等。 |
 | const char* destPath | 请求资源的目标地址。 |
 | OH_MediaLibrary_OnDataPrepared callback | 媒体资源处理器，当所请求的媒体资源准备完成时会触发回调。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| MediaLibrary_RequestId | 返回请求Id。 |
+| MediaLibrary_RequestId | 返回请求ID，用于标识该图像资源请求，可用于后续取消请求操作。 |
  
  
   
 
-#### OH_MediaAssetManager_RequestVideoForPath()
+### OH_MediaAssetManager_RequestVideoForPath()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 MediaLibrary_RequestId OH_MediaAssetManager_RequestVideoForPath(OH_MediaAssetManager* manager, const char* uri,MediaLibrary_RequestOptions requestOptions, const char* destPath, OH_MediaLibrary_OnDataPrepared callback)
@@ -130,27 +141,30 @@ MediaLibrary_RequestId OH_MediaAssetManager_RequestVideoForPath(OH_MediaAssetMan
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_MediaAssetManager* manager | 指向OH_MediaAssetManager实例的指针。 |
 | const char* uri | 请求的视频资源的uri。 |
-| MediaLibrary_RequestOptions requestOptions | 请求策略模式配置项。 |
+| MediaLibrary_RequestOptions requestOptions | 请求策略模式配置项。用于指定资源请求的具体策略，如缓存策略、网络加载策略等。 |
 | const char* destPath | 请求资源的目标地址。 |
 | OH_MediaLibrary_OnDataPrepared callback | 媒体资源处理器，当所请求的媒体资源准备完成时会触发回调。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| MediaLibrary_RequestId | 返回请求Id。 |
+| MediaLibrary_RequestId | 返回请求ID，用于标识该视频资源请求，可用于后续取消请求操作。 |
  
  
   
 
-#### OH_MediaAssetManager_CancelRequest()
+### OH_MediaAssetManager_CancelRequest()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_MediaAssetManager_CancelRequest(OH_MediaAssetManager* manager, const MediaLibrary_RequestId requestId)
@@ -166,14 +180,16 @@ bool OH_MediaAssetManager_CancelRequest(OH_MediaAssetManager* manager, const Med
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_MediaAssetManager* manager | 指向OH_MediaAssetManager实例的指针。 |
-| const MediaLibrary_RequestId requestId | 待取消的请求Id。 |
+| const MediaLibrary_RequestId requestId | 待取消的请求ID。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 如果请求成功取消，则返回true；否则返回false。 |
@@ -181,9 +197,10 @@ bool OH_MediaAssetManager_CancelRequest(OH_MediaAssetManager* manager, const Med
  
   
 
-#### OH_MediaAssetManager_RequestMovingPhoto()
+### OH_MediaAssetManager_RequestMovingPhoto()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 MediaLibrary_ErrorCode OH_MediaAssetManager_RequestMovingPhoto(OH_MediaAssetManager* manager,OH_MediaAsset* mediaAsset, MediaLibrary_RequestOptions requestOptions, MediaLibrary_RequestId* requestId,OH_MediaLibrary_OnMovingPhotoDataPrepared callback)
@@ -199,17 +216,19 @@ MediaLibrary_ErrorCode OH_MediaAssetManager_RequestMovingPhoto(OH_MediaAssetMana
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| OH_MediaAssetManager* manager | OH_MediaAssetManager实例指针。 |
+| OH_MediaAssetManager* manager | 指向OH_MediaAssetManager实例的指针。 |
 | OH_MediaAsset* mediaAsset | 要请求的媒体文件对象的OH_MediaAsset实例。 |
 | MediaLibrary_RequestOptions requestOptions | 用于图像请求策略模式的MediaLibrary_RequestOptions。 |
-| MediaLibrary_RequestId* requestId | 请求的MediaLibrary_RequestId，出参。 |
-| OH_MediaLibrary_OnMovingPhotoDataPrepared callback | 当请求的动态照片准备就绪时调用OH_MediaLibrary_OnMovingPhotoDataPrepared。 |
+| MediaLibrary_RequestId* requestId | 输出参数，本次请求的MediaLibrary_RequestId。该ID可用于取消请求或跟踪请求状态。 |
+| OH_MediaLibrary_OnMovingPhotoDataPrepared callback | 当请求的动态照片准备就绪时调用。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | MediaLibrary_ErrorCode | MEDIA_LIBRARY_OK：方法调用成功。 MEDIA_LIBRARY_PARAMETER_ERROR：参数错误。可能的原因： 1. 未指定强制参数。 2. 参数类型不正确。 3. 参数验证失败。 MEDIA_LIBRARY_OPERATION_NOT_SUPPORTED：不支持该操作。 MEDIA_LIBRARY_PERMISSION_DENIED：没有权限。 MEDIA_LIBRARY_INTERNAL_SYSTEM_ERROR：内部系统错误。 |
@@ -217,9 +236,10 @@ MediaLibrary_ErrorCode OH_MediaAssetManager_RequestMovingPhoto(OH_MediaAssetMana
  
   
 
-#### OH_MediaAssetManager_RequestImage()
+### OH_MediaAssetManager_RequestImage()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 MediaLibrary_ErrorCode OH_MediaAssetManager_RequestImage(OH_MediaAssetManager* manager, OH_MediaAsset* mediaAsset,MediaLibrary_RequestOptions requestOptions, MediaLibrary_RequestId* requestId,OH_MediaLibrary_OnImageDataPrepared callback)
@@ -235,17 +255,19 @@ MediaLibrary_ErrorCode OH_MediaAssetManager_RequestImage(OH_MediaAssetManager* m
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| OH_MediaAssetManager* manager | OH_MediaAssetManager实例指针。 |
+| OH_MediaAssetManager* manager | 指向OH_MediaAssetManager实例的指针。 |
 | OH_MediaAsset* mediaAsset | 要请求的媒体文件对象的OH_MediaAsset实例。 |
 | MediaLibrary_RequestOptions requestOptions | 用于图像请求策略模式的MediaLibrary_RequestOptions。 |
-| MediaLibrary_RequestId* requestId | 请求的MediaLibrary_RequestId，出参。 |
-| OH_MediaLibrary_OnImageDataPrepared callback | 当请求的图像源准备就绪时调用OH_MediaLibrary_OnImageDataPrepared。 |
+| MediaLibrary_RequestId* requestId | 输出参数，请求的MediaLibrary_RequestId。该ID可用于取消请求或跟踪请求状态。 |
+| OH_MediaLibrary_OnImageDataPrepared callback | 当请求的图像源准备就绪时调用。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | MediaLibrary_ErrorCode | MEDIA_LIBRARY_OK：方法调用成功。 MEDIA_LIBRARY_PARAMETER_ERROR：参数错误。可能的原因： 1. 未指定强制参数。 2. 参数类型不正确。 3. 参数验证失败。 MEDIA_LIBRARY_OPERATION_NOT_SUPPORTED：不支持该操作。 MEDIA_LIBRARY_PERMISSION_DENIED：没有权限。 MEDIA_LIBRARY_INTERNAL_SYSTEM_ERROR：内部系统错误。 |
@@ -253,9 +275,10 @@ MediaLibrary_ErrorCode OH_MediaAssetManager_RequestImage(OH_MediaAssetManager* m
  
   
 
-#### OH_MediaAssetManager_Release()
+### OH_MediaAssetManager_Release()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 MediaLibrary_ErrorCode OH_MediaAssetManager_Release(OH_MediaAssetManager* manager)
@@ -269,6 +292,7 @@ MediaLibrary_ErrorCode OH_MediaAssetManager_Release(OH_MediaAssetManager* manage
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_MediaAssetManager* manager | 要释放的OH_MediaAssetManager实例。 |
@@ -276,6 +300,7 @@ MediaLibrary_ErrorCode OH_MediaAssetManager_Release(OH_MediaAssetManager* manage
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | MediaLibrary_ErrorCode | MEDIA_LIBRARY_OK：方法调用成功。 MEDIA_LIBRARY_PARAMETER_ERROR：参数错误。可能的原因： 1. 未指定强制参数。 2. 参数类型不正确。 3. 参数验证失败。 |
@@ -283,9 +308,10 @@ MediaLibrary_ErrorCode OH_MediaAssetManager_Release(OH_MediaAssetManager* manage
  
   
 
-#### OH_MediaAssetManager_QuickRequestImage()
+### OH_MediaAssetManager_QuickRequestImage()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 MediaLibrary_ErrorCode OH_MediaAssetManager_QuickRequestImage(OH_MediaAssetManager* manager, OH_MediaAsset* mediaAsset, MediaLibrary_RequestOptions requestOptions, MediaLibrary_RequestId* requestId, OH_MediaLibrary_OnQuickImageDataPrepared callback)
@@ -301,17 +327,19 @@ MediaLibrary_ErrorCode OH_MediaAssetManager_QuickRequestImage(OH_MediaAssetManag
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_MediaAssetManager* manager | OH_MediaAssetManager的实例指针。 |
 | OH_MediaAsset* mediaAsset | 要请求的媒体文件对象的OH_MediaAsset实例。 |
-| MediaLibrary_RequestOptions requestOptions | 用于图像请求策略模式的MediaLibrary_RequestOptions。 |
+| MediaLibrary_RequestOptions requestOptions | 图像请求策略模式的配置项。 |
 | MediaLibrary_RequestId* requestId | 请求的MediaLibrary_RequestId，该参数为输出参数。 |
-| OH_MediaLibrary_OnQuickImageDataPrepared callback | 当请求的源数据准备就绪时，将会调用OH_MediaLibrary_OnQuickImageDataPrepared方法。 |
+| OH_MediaLibrary_OnQuickImageDataPrepared callback | 当请求的图像源数据准备就绪时调用。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | MediaLibrary_ErrorCode | MEDIA_LIBRARY_OK：方法调用成功。 MEDIA_LIBRARY_OPERATION_NOT_SUPPORTED：不支持该操作。 MEDIA_LIBRARY_PERMISSION_DENIED：没有权限。 MEDIA_LIBRARY_INTERNAL_SYSTEM_ERROR：内部系统错误。 |

@@ -1,16 +1,16 @@
 # @ohos.util.List (线性容器List)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-list
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 List底层通过单向链表实现，每个节点有一个指向后一个元素的引用。查询元素必须从头遍历，因此查询效率低，但插入和删除效率高。List允许元素为null。
  
 List和[LinkedList](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-linkedlist)相比，LinkedList是双向链表，可以快速地在头尾进行增删，而List是单向链表，不支持双向操作。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/DkJelpsSTvyfn3RzXo4dQw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071440Z&HW-CC-Expire=86400&HW-CC-Sign=D46311C09F2873E0FD4930F4AA6709AF0607550E6F02A93E40E798AB9C941548)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/1PhJX0QHQZmBaEOMuPcP5w/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072921Z&HW-CC-Expire=86400&HW-CC-Sign=0335445F4633F075F0E4028606649871F4287D65956824A9D291C42FB22ED3F1)
  
  
 在List中使用[index]的方式获取元素可能导致未定义结果，推荐使用get()方法。
@@ -29,9 +29,10 @@ List和[LinkedList](https://developer.huawei.com/consumer/cn/doc/harmonyos-refer
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { List } from '@kit.ArkTS';
@@ -39,20 +40,23 @@ import { List } from '@kit.ArkTS';
  
   
 
-#### List
+## List
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
  
 **系统能力：** SystemCapability.Utils.Lang
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | length | number | 是 | 否 | List的元素个数。 |
@@ -60,9 +64,10 @@ import { List } from '@kit.ArkTS';
  
   
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
  
@@ -76,6 +81,7 @@ List的构造函数。
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200012 | The List's constructor cannot be directly invoked. |
@@ -89,9 +95,10 @@ let list = new List<string | number | boolean | object>();
  
   
 
-#### add
+### add
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 add(element: T): boolean
  
@@ -103,6 +110,7 @@ add(element: T): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | element | T | 是 | 待添加的元素。 |
@@ -110,6 +118,7 @@ add(element: T): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 插入成功返回true，否则返回false。 |
@@ -119,6 +128,7 @@ add(element: T): boolean
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The add method cannot be bound. |
@@ -149,9 +159,10 @@ console.info("result = ", result5); // result =  true
  
   
 
-#### insert
+### insert
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 insert(element: T, index: number): void
  
@@ -163,6 +174,7 @@ insert(element: T, index: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | element | T | 是 | 待插入元素。 |
@@ -173,6 +185,7 @@ insert(element: T, index: number): void
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of index is out of range. |
@@ -191,9 +204,10 @@ console.info("result:", list.get(1));  // result: 0
  
   
 
-#### has
+### has
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 has(element: T): boolean
  
@@ -205,6 +219,7 @@ has(element: T): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | element | T | 是 | 指定元素。 |
@@ -212,6 +227,7 @@ has(element: T): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 包含指定元素返回true，否则返回false。 |
@@ -221,6 +237,7 @@ has(element: T): boolean
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The has method cannot be bound. |
@@ -237,9 +254,10 @@ console.info("result:", result);  // result: true
  
   
 
-#### get
+### get
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get(index: number): T
  
@@ -251,6 +269,7 @@ get(index: number): T
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 要查找的下标。需要小于等于int32_max即2147483647。 |
@@ -258,6 +277,7 @@ get(index: number): T
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | T | 根据下标查找到的元素。 |
@@ -267,6 +287,7 @@ get(index: number): T
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The get method cannot be bound. |
@@ -289,9 +310,10 @@ console.info("result:", result);  // result: 5
  
   
 
-#### getLastIndexOf
+### getLastIndexOf
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLastIndexOf(element: T): number
  
@@ -303,6 +325,7 @@ getLastIndexOf(element: T): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | element | T | 是 | 指定元素。 |
@@ -310,6 +333,7 @@ getLastIndexOf(element: T): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回指定元素最后一次出现的下标值，没有找到返回-1。 |
@@ -319,6 +343,7 @@ getLastIndexOf(element: T): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The getLastIndexOf method cannot be bound. |
@@ -341,9 +366,10 @@ console.info("result:", result); // result: 5
  
   
 
-#### getIndexOf
+### getIndexOf
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getIndexOf(element: T): number
  
@@ -355,6 +381,7 @@ getIndexOf(element: T): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | element | T | 是 | 指定元素。 |
@@ -362,6 +389,7 @@ getIndexOf(element: T): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回第一次找到指定元素的下标，没有找到返回-1。 |
@@ -371,6 +399,7 @@ getIndexOf(element: T): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The getIndexOf method cannot be bound. |
@@ -393,9 +422,10 @@ console.info("result:", result); // result: 0
  
   
 
-#### equal
+### equal
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 equal(obj: Object): boolean
  
@@ -407,6 +437,7 @@ equal(obj: Object): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | obj | Object | 是 | 用来比较的对象。 |
@@ -414,6 +445,7 @@ equal(obj: Object): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 如果对象与此列表相同返回true，否则返回false。 |
@@ -423,6 +455,7 @@ equal(obj: Object): boolean
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The equal method cannot be bound. |
@@ -445,9 +478,10 @@ console.info("result:", result);  // result: true
  
   
 
-#### removeByIndex
+### removeByIndex
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeByIndex(index: number): T
  
@@ -459,6 +493,7 @@ removeByIndex(index: number): T
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 指定元素的下标值，取值范围[0, List.length-1]，需要小于等于int32_max即2147483647。 |
@@ -466,6 +501,7 @@ removeByIndex(index: number): T
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | T | 返回被删除的元素。 |
@@ -475,6 +511,7 @@ removeByIndex(index: number): T
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of index is out of range. |
@@ -496,9 +533,10 @@ console.info("result:", result);  // result: 5
  
   
 
-#### remove
+### remove
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 remove(element: T): boolean
  
@@ -510,6 +548,7 @@ remove(element: T): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | element | T | 是 | 指定元素。 |
@@ -517,6 +556,7 @@ remove(element: T): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 删除成功返回true，否则返回false。 |
@@ -526,6 +566,7 @@ remove(element: T): boolean
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The remove method cannot be bound. |
@@ -545,9 +586,10 @@ console.info("result:", result);  // result: true
  
   
 
-#### replaceAllElements
+### replaceAllElements
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 replaceAllElements(callbackFn: (value: T, index?: number, list?: List&lt;T&gt;) => T, thisArg?: Object): void
  
@@ -559,6 +601,7 @@ replaceAllElements(callbackFn: (value: T, index?: number, list?: List&lt;T&gt;) 
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callbackFn | function | 是 | 回调函数。 |
@@ -567,6 +610,7 @@ replaceAllElements(callbackFn: (value: T, index?: number, list?: List&lt;T&gt;) 
  
 callbackFn的参数说明：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | T | 是 | 当前遍历到的元素。 |
@@ -578,6 +622,7 @@ callbackFn的参数说明：
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The replaceAllElements method cannot be bound. |
@@ -604,9 +649,10 @@ console.info("result:", list.get(2));  // result: 10
  
   
 
-#### forEach
+### forEach
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 forEach(callbackFn: (value: T, index?: number, List?: List&lt;T&gt;) => void, thisArg?: Object): void
  
@@ -618,6 +664,7 @@ forEach(callbackFn: (value: T, index?: number, List?: List&lt;T&gt;) => void, th
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callbackFn | function | 是 | 回调函数。 |
@@ -626,6 +673,7 @@ forEach(callbackFn: (value: T, index?: number, List?: List&lt;T&gt;) => void, th
  
 callbackFn的参数说明：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | T | 是 | 当前遍历到的元素。 |
@@ -637,6 +685,7 @@ callbackFn的参数说明：
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The forEach method cannot be bound. |
@@ -662,9 +711,10 @@ list.forEach((value: number, index: number) => {
  
   
 
-#### sort
+### sort
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sort(comparator: ListComparatorFn&lt;T&gt;): void
  
@@ -676,6 +726,7 @@ sort(comparator: ListComparatorFn&lt;T&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | comparator | ListComparatorFn&lt;T&gt; | 是 | 回调函数。 API version 23开始发生兼容性变更，在API version 22及之前的版本其类型为：(firstValue: T, secondValue: T) => number。 |
@@ -685,6 +736,7 @@ sort(comparator: ListComparatorFn&lt;T&gt;): void
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The sort method cannot be bound. |
@@ -707,9 +759,10 @@ console.info("result:", list.convertToArray());  // result: 4,3,2,1
  
   
 
-#### getSubList
+### getSubList
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSubList(fromIndex: number, toIndex: number): List&lt;T&gt;
  
@@ -721,6 +774,7 @@ getSubList(fromIndex: number, toIndex: number): List&lt;T&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fromIndex | number | 是 | 起始下标。 |
@@ -729,6 +783,7 @@ getSubList(fromIndex: number, toIndex: number): List&lt;T&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | List&lt;T&gt; | 返回List对象实例。 |
@@ -738,6 +793,7 @@ getSubList(fromIndex: number, toIndex: number): List&lt;T&gt;
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of fromIndex or toIndex is out of range. |
@@ -758,9 +814,10 @@ console.info("result:", result.convertToArray());  // result: 4,6
  
   
 
-#### clear
+### clear
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clear(): void
  
@@ -774,6 +831,7 @@ clear(): void
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The clear method cannot be bound. |
@@ -794,9 +852,10 @@ console.info("result:", result);  // result: true
  
   
 
-#### set
+### set
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set(index: number, element: T): T
  
@@ -808,6 +867,7 @@ set(index: number, element: T): T
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 查找的下标值。取值范围[0, List.length-1]，需要小于等于int32_max即2147483647。 |
@@ -816,6 +876,7 @@ set(index: number, element: T): T
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | T | 返回替换后的元素。 |
@@ -825,6 +886,7 @@ set(index: number, element: T): T
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of index is out of range. |
@@ -845,9 +907,10 @@ console.info("result:", JSON.stringify(list));  // result: {"0":2,"1":4,"2":"b",
  
   
 
-#### convertToArray
+### convertToArray
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 convertToArray(): Array&lt;T&gt;
  
@@ -859,6 +922,7 @@ convertToArray(): Array&lt;T&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;T&gt; | 返回转换后的数组。 |
@@ -868,6 +932,7 @@ convertToArray(): Array&lt;T&gt;
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The convertToArray method cannot be bound. |
@@ -887,9 +952,10 @@ console.info("result:", result);  // result: 2,4,5,4
  
   
 
-#### isEmpty
+### isEmpty
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isEmpty(): boolean
  
@@ -901,6 +967,7 @@ isEmpty(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 为空返回true，不为空返回false。 |
@@ -910,6 +977,7 @@ isEmpty(): boolean
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The isEmpty method cannot be bound. |
@@ -929,9 +997,10 @@ console.info("result:", result);  // result: false
  
   
 
-#### getFirst
+### getFirst
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFirst(): T
  
@@ -943,6 +1012,7 @@ getFirst(): T
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | T | 返回实例的第一个元素。 |
@@ -952,6 +1022,7 @@ getFirst(): T
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The getFirst method cannot be bound. |
@@ -971,9 +1042,10 @@ console.info("result:", result);  // result: 2
  
   
 
-#### getLast
+### getLast
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLast(): T
  
@@ -985,6 +1057,7 @@ getLast(): T
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | T | 返回实例的最后一个元素。 |
@@ -994,6 +1067,7 @@ getLast(): T
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The getLast method cannot be bound. |
@@ -1013,9 +1087,10 @@ console.info("result:", result);  // result: 4
  
   
 
-#### [Symbol.iterator]
+### [Symbol.iterator]
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [Symbol.iterator](): IterableIterator&lt;T&gt;
  
@@ -1027,6 +1102,7 @@ console.info("result:", result);  // result: 4
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator&lt;T&gt; | 返回一个迭代器。 |
@@ -1036,6 +1112,7 @@ console.info("result:", result);  // result: 4
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The Symbol.iterator method cannot be bound. |
@@ -1074,9 +1151,10 @@ while(!temp.done) {
  
   
 
-#### ListComparatorFn&lt;T&gt;23+
+### ListComparatorFn&lt;T&gt;23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ListComparatorFn&lt;T&gt; = (firstValue: T, secondValue: T) => number
  
@@ -1088,6 +1166,7 @@ List中sort方法的回调函数。
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | firstValue | T | 是 | 需要排序的前一项元素。 |
@@ -1096,6 +1175,7 @@ List中sort方法的回调函数。
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 通过回调函数返回的值，List能够根据自定义的比较规则维护元素的顺序。 |

@@ -1,9 +1,9 @@
 # Types
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-t
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本文件介绍ArkUI UIContext相关类型，包括自定义组件构建、UIObserver事件监听回调、节点标识、光标样式和上下文等类型。
 
@@ -12,9 +12,10 @@
 
 
 
-#### CustomBuilderWithId18+
+## CustomBuilderWithId18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type CustomBuilderWithId = (id: number) => void
 
@@ -28,6 +29,7 @@ type CustomBuilderWithId = (id: number) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | number | 是 | 组件ID。 |
@@ -35,9 +37,10 @@ type CustomBuilderWithId = (id: number) => void
 
 
 
-#### ClickEventListenerCallback12+
+## ClickEventListenerCallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ClickEventListenerCallback = (event: ClickEvent, node?: FrameNode) => void
 
@@ -51,6 +54,7 @@ type ClickEventListenerCallback = (event: ClickEvent, node?: FrameNode) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | ClickEvent | 是 | 触发事件监听的点击事件的相关信息。 |
@@ -59,9 +63,10 @@ type ClickEventListenerCallback = (event: ClickEvent, node?: FrameNode) => void
 
 
 
-#### PanListenerCallback19+
+## PanListenerCallback19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type PanListenerCallback = (event: GestureEvent, current: GestureRecognizer, node?: FrameNode) => void
 
@@ -75,6 +80,7 @@ Pan手势事件监听函数类型，可用于需要监听组件拖拽、平移�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | GestureEvent | 是 | 触发事件监听的手势事件的相关信息。 |
@@ -84,9 +90,10 @@ Pan手势事件监听函数类型，可用于需要监听组件拖拽、平移�
 
 
 
-#### GestureEventListenerCallback12+
+## GestureEventListenerCallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type GestureEventListenerCallback = (event: GestureEvent, node?: FrameNode) => void
 
@@ -100,6 +107,7 @@ type GestureEventListenerCallback = (event: GestureEvent, node?: FrameNode) => v
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | GestureEvent | 是 | 触发事件监听的手势事件的相关信息。 |
@@ -108,9 +116,10 @@ type GestureEventListenerCallback = (event: GestureEvent, node?: FrameNode) => v
 
 
 
-#### NodeIdentity20+
+## NodeIdentity20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type NodeIdentity = string | number
 
@@ -122,6 +131,7 @@ type NodeIdentity = string | number
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 指定组件ID，该ID通过通用属性id设置。 |
@@ -130,9 +140,10 @@ type NodeIdentity = string | number
 
 
 
-#### NodeRenderStateChangeCallback20+
+## NodeRenderStateChangeCallback20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type NodeRenderStateChangeCallback = (state: NodeRenderState, node?: FrameNode) => void
 
@@ -146,6 +157,7 @@ type NodeRenderStateChangeCallback = (state: NodeRenderState, node?: FrameNode) 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | state | NodeRenderState | 是 | 节点当前的渲染状态，用于表示被监控节点是否处于可渲染状态。 |
@@ -154,9 +166,10 @@ type NodeRenderStateChangeCallback = (state: NodeRenderState, node?: FrameNode) 
 
 
 
-#### GestureListenerCallback20+
+## GestureListenerCallback20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type GestureListenerCallback = (info: GestureTriggerInfo) => void
 
@@ -170,6 +183,7 @@ type GestureListenerCallback = (info: GestureTriggerInfo) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | info | GestureTriggerInfo | 是 | 交互触发的手势详情。 |
@@ -177,7 +191,8 @@ type GestureListenerCallback = (info: GestureTriggerInfo) => void
 
 
 
-#### PointerStyle12+
+## PointerStyle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -189,6 +204,7 @@ type PointerStyle = pointer.PointerStyle
 
 **系统能力：** SystemCapability.MultimodalInput.Input.Pointer
 
+
 | 类型 | 说明 |
 | --- | --- |
 | pointer.PointerStyle | 光标样式。 |
@@ -196,9 +212,10 @@ type PointerStyle = pointer.PointerStyle
 
 
 
-#### Context12+
+## Context
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Context = common.Context
 
@@ -210,6 +227,34 @@ type Context = common.Context
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | common.Context | Context的具体类型为当前Ability关联的Context对象。 |
+
+
+
+
+## OnOverlayBackPressCallback
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+type OnOverlayBackPressCallback = () => boolean
+
+定义拦截Overlay侧滑返回事件的回调类型。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**返回值：**
+
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 是否拦截返回事件。 返回true表示拦截返回事件，事件不会向下层组件传递；返回false表示不拦截，事件将向下层组件透传。 |

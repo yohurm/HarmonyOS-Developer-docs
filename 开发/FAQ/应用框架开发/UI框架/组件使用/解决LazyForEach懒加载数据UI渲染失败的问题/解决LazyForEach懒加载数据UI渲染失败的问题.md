@@ -38,7 +38,7 @@ List() {
           .backgroundColor(Color.Green)
         })
       }
-      // 为外层组件添加高度
+     <em> // 为外层组件添加高度</em>
       .height(300)
     }
   }
@@ -62,7 +62,7 @@ List() {
       Text(`index = ${index}`)
         .reuseId('article')
     }
-    // 需确保每个index值唯一
+    <em>// 需确保每个index值唯一</em>
   }, (index: number) => index.toString())
 }
 ```
@@ -144,7 +144,7 @@ class BasicDataSource<T>  implements IDataSource {
   }
 }
 
-// LazyForEach的数据源需要实现IDataSource接口
+<em>// LazyForEach的数据源需要实现IDataSource接口</em>
 export class DataSource extends BasicDataSource<number> {
   private dataArray: number[] = [];
 
@@ -174,10 +174,10 @@ import { DataSource } from '../models/DataSource';
 @Entry
 @Component
 struct Index {
-  // LazyForEach的数据源需要实现IDataSource接口，DataSource为自定义类，已实现IDataSource接口
+  <em>// LazyForEach的数据源需要实现IDataSource接口，DataSource为自定义类，已实现IDataSource接口</em>
   @State data: DataSource = new DataSource();
 
-  // 构造数据
+ <em> // 构造数据</em>
   aboutToAppear(): void {
     for (let i = 0; i < 50; i++) {
       this.data.pushData(i);
@@ -198,7 +198,7 @@ struct Index {
                   .backgroundColor(Color.Green)
                 })
               }
-              // 为外层组件添加高度
+              <em>// 为外层组件添加高度</em>
               .height(300)
             }
           }
@@ -212,7 +212,7 @@ struct Index {
               Text(`index = ${index}`)
                 .reuseId('article')
             }
-            // 需确保每个index值唯一
+            <em>// 需确保每个index值唯一</em>
           }, (index: number) => index.toString())
         }
         .cachedCount(10)

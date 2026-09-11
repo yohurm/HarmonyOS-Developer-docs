@@ -1,6 +1,6 @@
 # 使用ECC压缩/非压缩公钥格式转换(C/C++)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-convert-compressed-or-uncompressed-ecc-pubkey-ndk
 
@@ -8,12 +8,12 @@
 
 当前仅支持满足X.509规范的ECC算法的压缩或非压缩格式的完整公钥数据。此处的公钥数据应当是完整的X.509公钥，对于仅使用点数据的情况，请参考[使用ECC压缩/非压缩点格式转换](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-convert-compressed-or-uncompressed-ecc-point)。
 
-查看[非对称密钥生成和转换规格：ECC](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-asym-key-generation-conversion-spec#ecc)。
+查看[非对称密钥生成和转换规格：ECC](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-key-generation-conversion#ecc)。
 
 通过传入字符串参数，可指定需要获取的ECC公钥数据格式。如果需要获取满足X.509规范的压缩格式数据，则指定参数为："X509|COMPRESSED"；需要获取非压缩格式，则指定参数为："X509|UNCOMPRESSED"。
 
 
-#### 指定非压缩公钥数据转换为压缩公钥数据
+## 指定非压缩公钥数据转换为压缩公钥数据
 1. 指定uint8_t类型的ECC非压缩公钥数据，封装成[Crypto_DataBlob](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-cryptocommonapi-crypto-datablob)。
 
   公钥和私钥可单独传入，此处示例传入非压缩公钥。
@@ -25,7 +25,7 @@
 #include "CryptoArchitectureKit/crypto_common.h"
 #include "CryptoArchitectureKit/crypto_asym_key.h"
 
-OH_Crypto_ErrCode doTestEccDataCovert()
+OH_Crypto_ErrCode doTestEccDataConvert()
 {
     OH_CryptoAsymKeyGenerator *generator = nullptr;
     OH_CryptoKeyPair *keyPair = nullptr;

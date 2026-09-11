@@ -1,6 +1,6 @@
 # hidumper
 
-更新时间：2026-08-04 06:06:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hidumper
 
@@ -11,7 +11,7 @@ HiDumper是用于统一系统信息导出的命令行工具，支持分析CPU、
 HiDumper命令行工具使用常见问题汇总在[常见问题](#常见问题)章节。
 
 
-#### 环境要求
+## 环境要求
 
  - 根据hdc命令行工具指导，完成[环境准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hdc#环境准备)。
  - 请确保设备已正常连接，并执行hdc shell。
@@ -19,7 +19,8 @@ HiDumper命令行工具使用常见问题汇总在[常见问题](#常见问题)�
 
 
 
-#### 命令行说明
+## 命令行说明
+
 
 | 选项 | 说明 |
 | --- | --- |
@@ -52,13 +53,13 @@ HiDumper命令行工具使用常见问题汇总在[常见问题](#常见问题)�
 
 
 
-#### 查询内存信息
+## 查询内存信息
 
 HiDumper内存信息查询模块主要用于查看系统整机内存使用情况和单个进程内存使用情况。开发者需要了解相关的[内存基础知识](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-memory-basic-knowledge)。
 
 
 
-#### 查询整机内存
+### 查询整机内存
 
 可使用hidumper --mem命令获取整机内存使用情况。
 
@@ -152,7 +153,7 @@ AdjLabel代表该进程内存的回收优先级，取值范围为[-1000, 1000]�
 
 
 
-#### 查询进程内存
+### 查询进程内存
 
 可使用hidumper --mem pid命令获取指定进程的内存使用情况，pid为指定的进程号。
 
@@ -300,6 +301,7 @@ Total Ashmem:144 kB
 
 字段说明：
 
+
 | 字段 | 说明 |
 | --- | --- |
 | Process | 持有ION内存块的应用进程包名（16个字符截断）。 |
@@ -337,9 +339,11 @@ Size        Rss         Pss         Clean       Dirty       Clean       Dirty   
 
 统计信息说明：
 
+
 | 字段 | 说明 |
 | --- | --- |
-| Counts | 相同内存段出现的次数。 |
+| Name | 虚拟内存映射名称。 |
+| Counts | 相同Name内存段出现的次数。 |
 | Category | 内存所属类别。 |
 
 
@@ -380,7 +384,7 @@ hdc shell "bm dump -n com.example.myapplication | grep appProvisionType"
 
 
 
-#### 查询虚拟机堆内存
+### 查询虚拟机堆内存
 
 使用hidumper --mem-jsheap pid [-T tid] [--gc] [--leakobj] [--raw] [--clean] [--single]命令可以查看ArkTS应用虚拟机堆内存，使用hidumper --mem-heap pid ARG [--leakobj]命令可以查看指定虚拟机堆内存，ARG用于指定快照类型。生成的堆内存文件存放于/data/log/reliability/resource_leak/memory_leak目录。
 
@@ -544,7 +548,7 @@ $ hidumper --mem-heap 65097 --native  -> 65097 为目标应用进程号
 解析说明：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/CF8yfMWHTaezZOzDPDsN6g/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095817Z&HW-CC-Expire=86400&HW-CC-Sign=8B54EFBBFE26B52AF8A01D56BA390CE1E0D6162543FE6F38BE66672CCAD91336)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/cSq0pWvPSi22ZdNslGq-fQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072800Z&HW-CC-Expire=86400&HW-CC-Sign=AD066803477A80CC56E00F2B065FF583BF98A8A605F6C8EAD0605DC82FEC9C81)
 
 
 该文件内容格式为二进制，需要使用十六进制编辑器查看。
@@ -653,13 +657,13 @@ $ hidumper --mem-heap 56032 --kotlin  -> 56032 为目标应用进程号
 
 
 
-#### 查询CPU使用情况
+## 查询CPU使用情况
 
 使用hidumper工具查看CPU相关信息，可以了解到当前系统的CPU负载情况。
 
 
 
-#### 查询整机CPU使用率
+### 查询整机CPU使用率
 
 可使用hidumper --cpuusage获取整机CPU使用率。
 
@@ -682,7 +686,7 @@ Details of Processes:
 
 
 
-#### 查询进程CPU使用率
+### 查询进程CPU使用率
 
 可使用hidumper --cpuusage pid获取指定进程的CPU使用率。
 
@@ -703,7 +707,7 @@ Details of Processes:
 
 
 
-#### 查询CPU频率
+### 查询CPU频率
 
 可使用hidumper --cpufreq获取CPU频率信息。
 
@@ -727,11 +731,11 @@ cmd is: cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq
 
 
 
-#### 查询系统服务
+## 查询系统服务
 
 
 
-#### 查询系统服务列表
+### 查询系统服务列表
 
  - 可使用hidumper -ls命令获取正在运行的系统服务列表。
 
@@ -755,7 +759,7 @@ NetPolicyManager                 NetStatsManager                  NetTetheringMa
 
 
 
-#### 获取系统服务详细信息
+### 获取系统服务详细信息
 
  - 可使用hidumper -s获取所有系统服务的详细信息。
 
@@ -827,7 +831,7 @@ composer fps                   |dump the fps info of composer
 
 
 
-#### 获取指定系统服务提供的能力
+### 获取指定系统服务提供的能力
 
 可使用hidumper -s [SA] -a ["option"]可以获取指定系统服务提供的能力。
 
@@ -886,12 +890,12 @@ GL_SHADING_LANGUAGE_VERSION: OpenGL ES GLSL ES 3.20
 
 
 
-#### 查询进程信息
+## 查询进程信息
 
 可使用hidumper -p [pid]命令获取指定进程的相关信息，包括进程的挂载信息，进程的线程信息，线程的运行时间，进程等待通道信息。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/vfi_GcqdTlG3he1NVURSCg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095817Z&HW-CC-Expire=86400&HW-CC-Sign=B749AC63CE82A5672FA8254A1C748A891E2EE7253385CB858135405E9D903CE3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/glDPLaW6QM6cFRffuUFNDg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072800Z&HW-CC-Expire=86400&HW-CC-Sign=0B7996E5FC880C82AA6FB8C89394EE7629BEF0913A734A98011A04BDAAB4CD0A)
 
 
 hidumper -p [pid]命令调试的进程应为“使用调试证书签名的应用”。
@@ -930,12 +934,12 @@ root             2     4     0  127 10:46:59 ?     00:00:00 [call_ebr]
 
 
 
-#### 查询fd及线程信息
+## 查询fd及线程信息
 
 从API版本26.0.0开始，可使用-p pid --fd/--thread [-v]命令 获取指定进程的文件句柄或线程的摘要信息，其中-v选项为获取指定进程的文件句柄或线程的详细信息。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/QSvhfUAPRM2VnK3la-igqA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095817Z&HW-CC-Expire=86400&HW-CC-Sign=23BB7674D48C4532410F419E2AAF084E03132CB5DD84531F618C11BBF6D4F63E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/j3PcncbTSLWSyasLgSW-LA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072800Z&HW-CC-Expire=86400&HW-CC-Sign=C00197401E5C1B9A9DEC47EEC7A9B5DF9727DAF5EF4EA099649632AC9C8AB1B7)
 
 
 可使用-p pid --fd/--thread [-v]命令调试的进程应为“使用调试证书签名的应用”。
@@ -1050,7 +1054,7 @@ hidumper: invalid arg: --fd and --thread cannot be used together
 
 
 
-#### 查询网络信息
+## 查询网络信息
 
 可使用hidumper --net命令获取网络流量信息，网络接口统计信息、网口统计信息、IP信息、iptable信息和binder信息。该功能是通过netstat、ifconfig、iptables等系统命令获取网络信息。
 
@@ -1085,7 +1089,7 @@ Sent Bytes:51885
 
 
 
-#### 查询存储信息
+## 查询存储信息
 
  - 可使用hidumper --storage命令获取磁盘统计信息、磁盘使用量信息、文件句柄信息、IO流量统计信息和挂载信息。
 
@@ -1137,7 +1141,7 @@ IO信息的相关字段解释如下：
 
 
 
-#### 查询系统信息
+## 查询系统信息
 
  - 可使用hidumper -lc命令获取系统信息簇列表。
 
@@ -1280,7 +1284,7 @@ PID        Total Pss(xxx in SwapPss)    Total Vss    Total Rss    Total Uss     
 
 
 
-#### 获取系统故障日志
+## 获取系统故障日志
 
 可使用hidumper -e命令获取系统故障日志，打印对应故障日志的文件名及详细内容。
 
@@ -1298,7 +1302,7 @@ Generated by HiviewDFX@HarmonyOS  -> 故障日志详细内容
 
 
 
-#### 获取异常退出记录列表
+## 获取异常退出记录列表
 
 可使用hidumper -e --list命令获取异常退出记录列表。
 
@@ -1355,6 +1359,7 @@ no records found.
 
 字段说明：
 
+
 | 字段 | 说明 |
 | --- | --- |
 | time | 异常退出发生的时间。 |
@@ -1366,9 +1371,10 @@ no records found.
 
 
 
-#### reason字段说明
+### reason字段说明
 
 以下异常退出原因，可参考[应用终止分析思路和分析步骤](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appkilled-guidelines#分析思路和分析步骤)进行问题排查处理。
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1391,7 +1397,7 @@ no records found.
 
 
 
-#### 获取异常退出故障日志
+## 获取异常退出故障日志
 
 可使用 hidumper -e --print 命令获取系统故障日志，打印文件名和详细内容。
 
@@ -1508,7 +1514,7 @@ this type of record does not have faultlog.  -> 查询失败原因
 
 
 
-#### 获取进程间通信信息
+## 获取进程间通信信息
 
 可使用hidumper --ipc -a --start-stat/stop-stat/stat命令获取整机采集时间区间内IPC信息。
 
@@ -1566,7 +1572,7 @@ StopIpcStatistics pid:1473 success
 
 
 
-#### 导出信息压缩存储
+## 导出信息压缩存储
 
 hidumper提供有--zip命令支持将任意类型导出信息输出到 /data/log/hidumper 下的压缩文件，可以与其他命令组合使用，压缩格式为ZIP，文件命名为当前时间戳，如下打印效果所示。
 
@@ -1593,13 +1599,13 @@ $ hidumper -e --zip
 
 
 
-#### 常用ArkUI基础信息显示能力
+## 常用ArkUI基础信息显示能力
 
 ArkUI基于hidumper增强开发了获取组件树等信息的能力。
 
 
 
-#### 获取应用窗口信息
+### 获取应用窗口信息
 
 打印全量窗口信息，可以在全量信息中找出对应窗口的WinId，将该WinId作为参数传递给其他命令以获取相关信息。
 
@@ -1633,6 +1639,7 @@ total window num: 10
 
 常见windowName与内置应用窗口的对应关系：
 
+
 | windowName | 内置应用窗口 |
 | --- | --- |
 | EntryView | 桌面 |
@@ -1644,7 +1651,7 @@ total window num: 10
 
 
 
-#### 获取期望应用组件树
+### 获取期望应用组件树
 
 如果需要查看应用中所有组件的信息，可以通过下列命令实现。
 
@@ -1699,7 +1706,7 @@ TouchHotAreas: [ 0, 1208, 720, 72 ]
 
 
 
-#### 获取应用中指定Node的组件信息
+### 获取应用中指定Node的组件信息
 
 如果只需要查看组件中某一节点的组件信息，可以通过下列命令实现。
 
@@ -1739,7 +1746,7 @@ TouchHotAreas: [ 0, 1208, 720, 72 ]
 
 
 
-#### 获取期望应用的Inspector树
+### 获取期望应用的Inspector树
 
 上述示例中的element/render树主要包含多项内部实现，与应用代码中的组件无法一一对应。可以通过打印Inspector树来获取与应用中组件对应的树结构及组件基本信息。Inspector树与DevEco Testing及DevEco中的ArkUI Inspector完全匹配。
 
@@ -1812,7 +1819,7 @@ hdc shell "hidumper -s WindowManagerService -a '-w 5 -inspector'"
 
 
 
-#### 获取期望应用路由栈信息
+### 获取期望应用路由栈信息
 
 该命令将输出应用页面路由栈的信息，依据栈的创建顺序及其父子关系排列。
 
@@ -1877,11 +1884,11 @@ Navigation number: 4
 
 
 
-#### 常见问题
+## 常见问题
 
 
 
-#### hidumper 查询到的内存使用情况与Hidebug接口获取到的内存使用情况之间的关系
+### hidumper 查询到的内存使用情况与Hidebug接口获取到的内存使用情况之间的关系
 
 **现象描述**
 
@@ -1892,6 +1899,7 @@ hidumper --mem 系列命令与[HiDebug](https://developer.huawei.com/consumer/cn
 hidumper --mem命令与HiDebug接口内存获取功能详细对比参考下表。
 
 **表1**
+
 
 | 命令或接口 | 使用场景 | 数据来源 | 是否导出图形内存 |
 | --- | --- | --- | --- |
@@ -1905,7 +1913,7 @@ hidumper --mem命令与HiDebug接口内存获取功能详细对比参考下表�
 
 
 
-#### hidumper获取进程虚拟机内存和泄漏对象信息为空
+### hidumper获取进程虚拟机内存和泄漏对象信息为空
 
 **现象描述**
 

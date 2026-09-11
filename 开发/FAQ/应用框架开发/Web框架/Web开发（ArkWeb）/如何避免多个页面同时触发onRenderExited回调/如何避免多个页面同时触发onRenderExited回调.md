@@ -41,7 +41,7 @@ struct PageA {
             .onClick(() => {
               this.pageStack.pushPathByName('PageB', null);
             });
-          Web({ src: 'xxx.xxx.com', controller: this.controller }) // 请根据实际情况填写网址
+          Web({ src: 'xxx.xxx.com', controller: this.controller }) <em>// 请根据实际情况填写网址</em>
             .fileAccess(false)
             .geolocationAccess(false)
             .onRenderExited((event) => {

@@ -1,21 +1,22 @@
 # 多网状态监听(C/C++)
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/networkboost-netmultipath-statechangecallback-c
 
 从6.0.2(22)开始，支持多网状态监听。
 
 
-#### 场景介绍
+## 场景介绍
 
 应用通过监听多网络状态的变化，感知可用网络的变化，从而选择在多网络上传输数据的策略。
 
 
 
-#### 接口说明
+## 接口说明
 
 具体API说明详见[接口文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/network-boost-c-overview)。
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -25,7 +26,7 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 1. 导入Network Boost Kit模块。
 
   
@@ -49,11 +50,18 @@ uint32_t callbackId = 0;
 void onMultiPathStateChangeCallback(NetworkBoost_MultiPathStateChange* result)
 {
     // 多网状态变化回调处理
+    if (result != NULL) {
+        printf("多网状态回调：多网状态=%d, 多网状态变化原因=%d\n", result->multiPathState, result->changeCause);
+        printf("多网状态回调：多网链路的netHandle=%d, 多网链路状态=%d\n", result->netHandle, result->pathState);
+        printf("多网状态回调：多网链路类型=%d\n", result->pathType);
+    } else {
+        printf("回调参数为空\n");
+    }
 }
 
 int32_t RegisterMultiPathStateChange()
 {
-    // 注册回调，获取回调Id
+    // 注册回调，获取回调Id，该Id由系统返回并用于后续取消注册操作
     int32_t ret = HMS_NetworkBoost_RegisterMultiPathStateChangeCallback(onMultiPathStateChangeCallback, &callbackId);
     printf("注册多网状态监听回调结果: %d, Id：%d\n", ret, callbackId);
     return ret;

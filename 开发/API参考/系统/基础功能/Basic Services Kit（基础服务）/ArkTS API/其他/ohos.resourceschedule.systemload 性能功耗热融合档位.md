@@ -1,9 +1,9 @@
 # @ohos.resourceschedule.systemload (性能功耗热融合档位)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-resourceschedule-systemload
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 系统根据当前温度、负载以及是否处于高负载场景等信息决策出系统负载融合档位，并在档位变化时通知已注册的应用。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { systemLoad } from '@kit.BasicServicesKit';
@@ -22,9 +23,10 @@ import { systemLoad } from '@kit.BasicServicesKit';
 
 
 
-#### systemLoad.on('systemLoadChange')
+## systemLoad.on('systemLoadChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'systemLoadChange', callback: Callback&lt;SystemLoadLevel&gt;): void
 
@@ -33,6 +35,7 @@ on(type: 'systemLoadChange', callback: Callback&lt;SystemLoadLevel&gt;): void
 **系统能力:** SystemCapability.ResourceSchedule.SystemLoad
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -43,6 +46,7 @@ on(type: 'systemLoadChange', callback: Callback&lt;SystemLoadLevel&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -68,9 +72,10 @@ try {
 
 
 
-#### systemLoad.off('systemLoadChange')
+## systemLoad.off('systemLoadChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'systemLoadChange', callback?: Callback&lt;SystemLoadLevel&gt;): void
 
@@ -79,6 +84,7 @@ off(type: 'systemLoadChange', callback?: Callback&lt;SystemLoadLevel&gt;): void
 **系统能力:** SystemCapability.ResourceSchedule.SystemLoad
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -89,6 +95,7 @@ off(type: 'systemLoadChange', callback?: Callback&lt;SystemLoadLevel&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -106,7 +113,7 @@ function onSystemLoadChange(res: systemLoad.SystemLoadLevel) {
 
 try {
     systemLoad.off('systemLoadChange', onSystemLoadChange);
-    console.info(`unregister systemload callback succeeded:. `);
+    console.info(`unregister systemload callback succeeded. `);
 } catch (err) {
     console.error(`unregister systemload callback failed: ` + JSON.stringify(err));
 }
@@ -114,17 +121,19 @@ try {
 
 
 
-#### systemLoad.getLevel
+## systemLoad.getLevel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-getLevel(): Promise<[SystemLoadLevel](#systemloadlevel)>
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-获取系统负载融合档位，使用promise异步回调。
+getLevel(): Promise&lt;SystemLoadLevel&gt;
+
+获取系统负载融合档位，使用Promise异步回调。
 
 **系统能力:** SystemCapability.ResourceSchedule.SystemLoad
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -146,13 +155,15 @@ systemLoad.getLevel().then((res: systemLoad.SystemLoadLevel) => {
 
 
 
-#### SystemLoadLevel
+## SystemLoadLevel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 系统负载融合档位。
 
 **系统能力:** SystemCapability.ResourceSchedule.SystemLoad
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

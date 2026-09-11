@@ -1,6 +1,6 @@
 # sceneManager （生态查询服务）
 
-更新时间：2026-06-27 10:02:54
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/store-scenemanager
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -14,7 +14,8 @@
 **起始版本：** 4.1.0(11)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -24,9 +25,10 @@ import { sceneManager } from '@kit.AppGalleryKit';
  
   
 
-#### sceneManager.getSelfSceneCode
+## sceneManager.getSelfSceneCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 getSelfSceneCode(): string
  
@@ -42,6 +44,7 @@ getSelfSceneCode(): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 自身场景值。 |
@@ -63,7 +66,8 @@ try {
  
   
 
-#### sceneManager.getAdsVerificationVersion
+## sceneManager.getAdsVerificationVersion
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -79,6 +83,7 @@ getAdsVerificationVersion(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 广告验签版本。当前返回值为1。 广告场景中开发者需要在want参数中携带以下参数：ohos.market.param.signature、ohos.market.param.ad_networkid、ohos.market.param.timestamp、ohos.market.param.verify_version、ohos.market.param.ad_nonce，验签时会根据want中这些字段值使用公钥进行验签。 |

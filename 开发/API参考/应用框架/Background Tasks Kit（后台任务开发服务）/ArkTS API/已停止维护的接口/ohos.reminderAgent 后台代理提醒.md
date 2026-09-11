@@ -1,9 +1,9 @@
 # @ohos.reminderAgent (后台代理提醒)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-reminderagent
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供后台代理提醒的能力。
 
@@ -14,9 +14,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import reminderAgent from '@ohos.reminderAgent';
@@ -24,9 +25,10 @@ import reminderAgent from '@ohos.reminderAgent';
 
 
 
-#### reminderAgent.publishReminder(deprecated)
+## reminderAgent.publishReminder(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 publishReminder(reminderReq: ReminderRequest, callback: AsyncCallback&lt;number&gt;): void
 
@@ -41,6 +43,7 @@ publishReminder(reminderReq: ReminderRequest, callback: AsyncCallback&lt;number&
 **系统能力**：SystemCapability.Notification.ReminderAgent
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -66,9 +69,10 @@ reminderAgent.publishReminder(timer, (err: BusinessError, reminderId: number) =>
 
 
 
-#### reminderAgent.publishReminder(deprecated)
+## reminderAgent.publishReminder(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 publishReminder(reminderReq: ReminderRequest): Promise&lt;number&gt;
 
@@ -84,12 +88,14 @@ publishReminder(reminderReq: ReminderRequest): Promise&lt;number&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | reminderReq | ReminderRequest | 是 | 需要发布的提醒实例。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -113,9 +119,10 @@ reminderAgent.publishReminder(timer).then((reminderId: number) => {
 
 
 
-#### reminderAgent.cancelReminder(deprecated)
+## reminderAgent.cancelReminder(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancelReminder(reminderId: number, callback: AsyncCallback&lt;void&gt;): void
 
@@ -128,6 +135,7 @@ cancelReminder(reminderId: number, callback: AsyncCallback&lt;void&gt;): void
 **系统能力**： SystemCapability.Notification.ReminderAgent
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -148,9 +156,10 @@ reminderAgent.cancelReminder(1, (err: BusinessError, data: void) => {
 
 
 
-#### reminderAgent.cancelReminder(deprecated)
+## reminderAgent.cancelReminder(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancelReminder(reminderId: number): Promise&lt;void&gt;
 
@@ -164,12 +173,14 @@ cancelReminder(reminderId: number): Promise&lt;void&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | reminderId | number | 是 | 目标reminder的id号。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -188,9 +199,10 @@ reminderAgent.cancelReminder(1).then(() => {
 
 
 
-#### reminderAgent.getValidReminders(deprecated)
+## reminderAgent.getValidReminders(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getValidReminders(callback: AsyncCallback<Array&lt;ReminderRequest&gt;>): void
 
@@ -203,6 +215,7 @@ getValidReminders(callback: AsyncCallback<Array&lt;ReminderRequest&gt;>): void
 **系统能力**： SystemCapability.Notification.ReminderAgent
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -242,9 +255,10 @@ reminderAgent.getValidReminders((err: BusinessError, reminders: Array<reminderAg
 
 
 
-#### reminderAgent.getValidReminders(deprecated)
+## reminderAgent.getValidReminders(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getValidReminders(): Promise<Array&lt;ReminderRequest&gt;>
 
@@ -257,6 +271,7 @@ getValidReminders(): Promise<Array&lt;ReminderRequest&gt;>
 **系统能力**： SystemCapability.Notification.ReminderAgent
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -295,9 +310,10 @@ reminderAgent.getValidReminders().then((reminders: Array<reminderAgent.ReminderR
 
 
 
-#### reminderAgent.cancelAllReminders(deprecated)
+## reminderAgent.cancelAllReminders(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancelAllReminders(callback: AsyncCallback&lt;void&gt;): void
 
@@ -310,6 +326,7 @@ cancelAllReminders(callback: AsyncCallback&lt;void&gt;): void
 **系统能力**： SystemCapability.Notification.ReminderAgent
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -329,9 +346,10 @@ reminderAgent.cancelAllReminders((err: BusinessError, data: void) =>{
 
 
 
-#### reminderAgent.cancelAllReminders(deprecated)
+## reminderAgent.cancelAllReminders(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancelAllReminders(): Promise&lt;void&gt;
 
@@ -344,6 +362,7 @@ cancelAllReminders(): Promise&lt;void&gt;
 **系统能力**： SystemCapability.Notification.ReminderAgent
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -362,9 +381,10 @@ reminderAgent.cancelAllReminders().then(() => {
 
 
 
-#### reminderAgent.addNotificationSlot(deprecated)
+## reminderAgent.addNotificationSlot(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addNotificationSlot(slot: NotificationSlot, callback: AsyncCallback&lt;void&gt;): void
 
@@ -377,6 +397,7 @@ addNotificationSlot(slot: NotificationSlot, callback: AsyncCallback&lt;void&gt;)
 **系统能力**： SystemCapability.Notification.ReminderAgent
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -402,9 +423,10 @@ reminderAgent.addNotificationSlot(mySlot, (err: BusinessError, data: void) => {
 
 
 
-#### reminderAgent.addNotificationSlot(deprecated)
+## reminderAgent.addNotificationSlot(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addNotificationSlot(slot: NotificationSlot): Promise&lt;void&gt;
 
@@ -418,12 +440,14 @@ addNotificationSlot(slot: NotificationSlot): Promise&lt;void&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | slot | NotificationSlot | 是 | notification.slot实例，仅支持设置其type属性。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -447,9 +471,10 @@ reminderAgent.addNotificationSlot(mySlot).then(() => {
 
 
 
-#### reminderAgent.removeNotificationSlot(deprecated)
+## reminderAgent.removeNotificationSlot(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeNotificationSlot(slotType: notification.SlotType, callback: AsyncCallback&lt;void&gt;): void
 
@@ -462,6 +487,7 @@ removeNotificationSlot(slotType: notification.SlotType, callback: AsyncCallback&
 **系统能力**：SystemCapability.Notification.ReminderAgent
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -483,9 +509,10 @@ reminderAgent.removeNotificationSlot(notification.SlotType.CONTENT_INFORMATION, 
 
 
 
-#### reminderAgent.removeNotificationSlot(deprecated)
+## reminderAgent.removeNotificationSlot(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeNotificationSlot(slotType: notification.SlotType): Promise&lt;void&gt;
 
@@ -499,12 +526,14 @@ removeNotificationSlot(slotType: notification.SlotType): Promise&lt;void&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | slotType | notification.SlotType | 是 | 目标notification.slot的类型。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -524,9 +553,10 @@ reminderAgent.removeNotificationSlot(notification.SlotType.CONTENT_INFORMATION).
 
 
 
-#### ActionButtonType(deprecated)
+## ActionButtonType(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 按钮的类型。
 
@@ -536,6 +566,7 @@ reminderAgent.removeNotificationSlot(notification.SlotType.CONTENT_INFORMATION).
 
 **系统能力**：SystemCapability.Notification.ReminderAgent
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ACTION_BUTTON_TYPE_CLOSE | 0 | 表示关闭提醒的按钮。 |
@@ -544,9 +575,10 @@ reminderAgent.removeNotificationSlot(notification.SlotType.CONTENT_INFORMATION).
 
 
 
-#### ReminderType(deprecated)
+## ReminderType(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提醒的类型。
 
@@ -555,6 +587,7 @@ reminderAgent.removeNotificationSlot(notification.SlotType.CONTENT_INFORMATION).
 
 
 **系统能力**：SystemCapability.Notification.ReminderAgent
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -565,9 +598,10 @@ reminderAgent.removeNotificationSlot(notification.SlotType.CONTENT_INFORMATION).
 
 
 
-#### ActionButton(deprecated)
+## ActionButton(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于设置弹出的提醒通知信息上显示的按钮类型和标题。
 
@@ -577,6 +611,7 @@ reminderAgent.removeNotificationSlot(notification.SlotType.CONTENT_INFORMATION).
 
 **系统能力**：SystemCapability.Notification.ReminderAgent
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | title | string | 否 | 否 | 按钮显示的标题。 |
@@ -585,9 +620,10 @@ reminderAgent.removeNotificationSlot(notification.SlotType.CONTENT_INFORMATION).
 
 
 
-#### WantAgent(deprecated)
+## WantAgent(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 点击提醒通知后跳转的目标ability信息。
 
@@ -597,6 +633,7 @@ reminderAgent.removeNotificationSlot(notification.SlotType.CONTENT_INFORMATION).
 
 **系统能力**：SystemCapability.Notification.ReminderAgent
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | pkgName | string | 否 | 否 | 指明点击提醒通知栏后跳转的目标HAP名。 |
@@ -605,9 +642,10 @@ reminderAgent.removeNotificationSlot(notification.SlotType.CONTENT_INFORMATION).
 
 
 
-#### MaxScreenWantAgent(deprecated)
+## MaxScreenWantAgent(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 全屏显示提醒到达时自动拉起的目标ability信息，该接口预留。
 
@@ -617,6 +655,7 @@ reminderAgent.removeNotificationSlot(notification.SlotType.CONTENT_INFORMATION).
 
 **系统能力**：SystemCapability.Notification.ReminderAgent
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | pkgName | string | 否 | 否 | 指明提醒到达时自动拉起的目标HAP名（如果设备在使用中，则只弹出通知横幅框）。 |
@@ -625,9 +664,10 @@ reminderAgent.removeNotificationSlot(notification.SlotType.CONTENT_INFORMATION).
 
 
 
-#### ReminderRequest(deprecated)
+## ReminderRequest(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提醒实例对象，用于设置提醒类型、响铃时长等具体信息。
 
@@ -636,6 +676,7 @@ reminderAgent.removeNotificationSlot(notification.SlotType.CONTENT_INFORMATION).
 
 
 **系统能力**：SystemCapability.Notification.ReminderAgent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -656,9 +697,10 @@ reminderAgent.removeNotificationSlot(notification.SlotType.CONTENT_INFORMATION).
 
 
 
-#### ReminderRequestCalendar(deprecated)
+## ReminderRequestCalendar(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 日历实例对象，用于设置提醒的时间。
 
@@ -667,6 +709,7 @@ reminderAgent.removeNotificationSlot(notification.SlotType.CONTENT_INFORMATION).
 
 
 **系统能力**：SystemCapability.Notification.ReminderAgent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -677,9 +720,10 @@ reminderAgent.removeNotificationSlot(notification.SlotType.CONTENT_INFORMATION).
 
 
 
-#### ReminderRequestAlarm(deprecated)
+## ReminderRequestAlarm(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 闹钟实例对象，用于设置提醒的时间。
 
@@ -688,6 +732,7 @@ reminderAgent.removeNotificationSlot(notification.SlotType.CONTENT_INFORMATION).
 
 
 **系统能力**：SystemCapability.Notification.ReminderAgent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -698,9 +743,10 @@ reminderAgent.removeNotificationSlot(notification.SlotType.CONTENT_INFORMATION).
 
 
 
-#### ReminderRequestTimer(deprecated)
+## ReminderRequestTimer(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 倒计时实例对象，用于设置提醒的时间。
 
@@ -710,6 +756,7 @@ reminderAgent.removeNotificationSlot(notification.SlotType.CONTENT_INFORMATION).
 
 **系统能力**：SystemCapability.Notification.ReminderAgent
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | triggerTimeInSeconds | number | 否 | 否 | 指明倒计时的秒数。 单位：s |
@@ -717,9 +764,10 @@ reminderAgent.removeNotificationSlot(notification.SlotType.CONTENT_INFORMATION).
 
 
 
-#### LocalDateTime(deprecated)
+## LocalDateTime(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于日历类提醒设置时指定时间信息。
 
@@ -728,6 +776,7 @@ reminderAgent.removeNotificationSlot(notification.SlotType.CONTENT_INFORMATION).
 
 
 **系统能力**：SystemCapability.Notification.ReminderAgent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

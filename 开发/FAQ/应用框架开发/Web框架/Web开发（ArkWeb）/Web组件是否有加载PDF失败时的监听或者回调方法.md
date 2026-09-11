@@ -1,6 +1,6 @@
 # Web组件是否有加载PDF失败时的监听或者回调方法
 
-更新时间：2026-06-26 09:07:13
+更新时间：2026-06-26 09:07:13（官网已下线）
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-84
 

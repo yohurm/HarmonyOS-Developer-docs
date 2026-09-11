@@ -1,11 +1,12 @@
 # XEG_AdaptiveVRSCreateInfo
 
-更新时间：2026-06-27 10:02:54
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-kit-xeg-adaptivevrscreateinfo
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -19,16 +20,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | VkExtent2D inputSize | 上一帧渲染管线最终渲染的图像尺寸。 |
@@ -40,13 +44,15 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### adaptiveTileSize
+### adaptiveTileSize
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -60,7 +66,8 @@ int32_t XEG_AdaptiveVRSCreateInfo::adaptiveTileSize
  
   
 
-#### errorSensitivity
+### errorSensitivity
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -74,7 +81,8 @@ float XEG_AdaptiveVRSCreateInfo::errorSensitivity
  
   
 
-#### flip
+### flip
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -88,7 +96,8 @@ bool XEG_AdaptiveVRSCreateInfo::flip
  
   
 
-#### inputRegion
+### inputRegion
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -102,7 +111,8 @@ VkRect2D XEG_AdaptiveVRSCreateInfo::inputRegion
  
   
 
-#### inputSize
+### inputSize
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 

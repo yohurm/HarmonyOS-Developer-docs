@@ -1,16 +1,21 @@
 # Vulkan支持能力
 
-更新时间：2026-03-09 02:50:43
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/vulkan
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [Vulkan](https://www.vulkan.org/)是一套2D和3D绘图应用程序接口，具有跨平台、高性能的特点。HarmonyOS SDK 现已支持Vulkan v1.4.309版本接口，具体可用版本取决于GPU驱动实现。
   
 
-#### 支持的标准库接口列表
+## 支持的标准库接口列表
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持Vulkan v1.4.309版本的部分接口能力，具体请见下表。
   
+
 | 符号类型 | 符号名 |
 | --- | --- |
 | FUNC | vkAcquireNextImage2KHR |
@@ -280,10 +285,14 @@
  
   
 
-#### HarmonyOS新增的扩展接口列表
+## HarmonyOS新增的扩展接口列表
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除了标准能力，还提供了HarmonyOS平台扩展的Vulkan能力，扩展了使用OHNativeWindow创建Vulkan Surface的能力，以及获取OH_NativeBuffer和OH_NativeBuffer属性的能力。
   
+
 | 符号类型 | 符号名 |
 | --- | --- |
 | FUNC | vkCreateSurfaceOHOS |

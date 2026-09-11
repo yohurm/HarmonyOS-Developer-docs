@@ -44,7 +44,7 @@
 3. 当App主进程切换到后台时，在onBackground回调函数中调用startLongTask方法启动长时任务。关键代码如下：
 ```text
 onBackground(): void {
-  // Ability has back to background
+ <em> // Ability has back to background</em>
   hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onBackground');
   this.longItemModel.startLongTask(this.context);
 }
@@ -57,9 +57,9 @@ startLongTask(currentContext: common.UIAbilityContext): void {
   let wantAgentInfo: wantAgent.WantAgentInfo = {
     wants: [
       {
-        // 应用的包名
+        <em>// 应用的包名</em>
         bundleName: 'com.example.vpnkeepdemo',
-        // 扩展的Ability文件名称
+        <em>// 扩展的Ability文件名称</em>
         abilityName: 'VpnAbility'
       }
     ],
@@ -120,7 +120,7 @@ export default class EntryAbility extends UIAbility {
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
-    // Main window is created, set main page for this ability
+ <em>   // Main window is created, set main page for this ability</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
     windowStage.loadContent('pages/Index', (err) => {
@@ -133,17 +133,17 @@ export default class EntryAbility extends UIAbility {
   }
 
   onWindowStageDestroy(): void {
-    // Main window is destroyed, release UI related resources
+   <em> // Main window is destroyed, release UI related resources</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
   }
 
   onForeground(): void {
-    // Ability has brought to foreground
+   <em> // Ability has brought to foreground</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onForeground');
   }
 
   onBackground(): void {
-    // Ability has back to background
+   <em> // Ability has back to background</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onBackground');
     this.longItemModel.startLongTask(this.context);
   }
@@ -181,9 +181,9 @@ struct Index {
   testVpn() {
     vpnExtension.startVpnExtensionAbility({
       deviceId: '',
-      // 应用的包名；vpn启动成功后显示的包名格式为【包名:vpn】
+     <em> // 应用的包名；vpn启动成功后显示的包名格式为【包名:vpn】</em>
       bundleName: 'com.example.vpnkeepdemo',
-      // 扩展的Ability文件名称
+     <em> // 扩展的Ability文件名称</em>
       abilityName: 'VpnAbility',
       parameters: {
         'testParam': '测试第一次启动无法传参数的问题',
@@ -212,9 +212,9 @@ export class LongTermTaskModel {
     let wantAgentInfo: wantAgent.WantAgentInfo = {
       wants: [
         {
-          // 应用的包名
+          <em>// 应用的包名</em>
           bundleName: 'com.example.vpnkeepdemo',
-          // 扩展的Ability文件名称
+         <em> // 扩展的Ability文件名称</em>
           abilityName: 'VpnAbility'
         }
       ],
@@ -245,7 +245,7 @@ export class LongTermTaskModel {
     }
   }
 
-  // Stop a long task
+  <em>// Stop a long task</em>
   stopLongTask(currentContext: common.UIAbilityContext): void {
     backgroundTaskManager.getAllContinuousTasks(currentContext, false)
       .then((res: backgroundTaskManager.ContinuousTaskInfo[]) => {

@@ -1,9 +1,9 @@
 # @ohos.net.vpnExtension (VPN增强管理)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-net-vpnextension
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 三方VPN管理模块，支持三方VPN的启动和停止功能。三方VPN是指由第三方提供的VPN服务，它们通常提供更多的功能和更广泛的网络连接选项，包括更多的安全和隐私功能，以及更全面的定制选项。当前提供三方VPN能力主要用于创建虚拟网卡及配置VPN路由信息，连接隧道过程及内部连接的协议需要应用内部自行实现。
 
@@ -12,17 +12,19 @@
 
 
 
-#### 约束限制
+## 约束限制
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 为保障系统安全性和稳定性，防止VpnExtensionAbility滥用系统资源，系统对其能力进行管控，不支持部分模块的引用，详情请参考[附录](#附录)。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { vpnExtension } from '@kit.NetworkKit';
@@ -30,15 +32,17 @@ import { vpnExtension } from '@kit.NetworkKit';
 
 
 
-#### LinkAddress
+## LinkAddress
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type LinkAddress = connection.LinkAddress
 
 获取网络链接信息。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -47,15 +51,17 @@ type LinkAddress = connection.LinkAddress
 
 
 
-#### RouteInfo
+## RouteInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type RouteInfo = connection.RouteInfo
 
 获取网络路由信息。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -64,15 +70,17 @@ type RouteInfo = connection.RouteInfo
 
 
 
-#### VpnExtensionContext
+## VpnExtensionContext
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type VpnExtensionContext = _VpnExtensionContext
 
 VPN扩展的上下文。它允许访问serviceExtension特定资源。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -81,9 +89,10 @@ VPN扩展的上下文。它允许访问serviceExtension特定资源。
 
 
 
-#### vpnExtension.startVpnExtensionAbility
+## vpnExtension.startVpnExtensionAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startVpnExtensionAbility(want: Want): Promise&lt;void&gt;
 
@@ -95,12 +104,14 @@ startVpnExtensionAbility(want: Want): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | 指示要启动的信息。 说明： 从API version 22开始，支持在VPN首次启动时传递want中的parameters字段。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -110,6 +121,7 @@ startVpnExtensionAbility(want: Want): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -166,9 +178,10 @@ struct Index {
 
 
 
-#### vpnExtension.stopVpnExtensionAbility
+## vpnExtension.stopVpnExtensionAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stopVpnExtensionAbility(want: Want): Promise&lt;void&gt;
 
@@ -180,12 +193,14 @@ stopVpnExtensionAbility(want: Want): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | 指示要启动的信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -195,6 +210,7 @@ stopVpnExtensionAbility(want: Want): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码 ID | 错误信息 |
 | --- | --- |
@@ -259,9 +275,10 @@ struct Index {
 
 
 
-#### vpnExtension.createVpnObserver
+## vpnExtension.createVpnObserver
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createVpnObserver(): VpnObserver
 
@@ -274,6 +291,7 @@ createVpnObserver(): VpnObserver
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -290,24 +308,26 @@ let vpnObserver: vpnExtension.VpnObserver = vpnExtension.createVpnObserver();
 
 
 
-#### VpnObserver
+## VpnObserver
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 VPN观察者对象。用于监听VPN相关事件。在调用VpnObserver的方法前，需要先通过[vpnExtension.createVpnObserver](#vpnextensioncreatevpnobserver)创建VPN连接对象。
 
 
 
-#### onAuthorizationResult
+### onAuthorizationResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onAuthorizationResult(callback: Callback&lt;boolean&gt;): void
 
 注册用户授权结果监听器。授权结果在调用[startVpnExtensionAbility](#vpnextensionstartvpnextensionability)弹出授权弹窗，用户点击弹窗后通知，仅接收当前VPN的结果。在不需要监听授权结果时可以调用[offAuthorizationResult](#offauthorizationresult)接口取消注册。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/k6paNbLfR8Gz3vcyyl68JQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071624Z&HW-CC-Expire=86400&HW-CC-Sign=DCB268D1D379CE425064D54DE35DECE37E033E2285679F3DE85E66EF758ACB52)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/ZBBejbDRRg2oH0DUZZJPvQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072925Z&HW-CC-Expire=86400&HW-CC-Sign=8940C88EC7AAB48254269F7AE1D8A633C39A28E789767125EB027D79E8D3066D)
 
 
 多次调用该接口时，仅最后一次传入的callback生效。
@@ -321,6 +341,7 @@ onAuthorizationResult(callback: Callback&lt;boolean&gt;): void
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -344,16 +365,17 @@ vpnObserver.onAuthorizationResult((result: boolean) => {
 
 
 
-#### offAuthorizationResult
+### offAuthorizationResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offAuthorizationResult(callback?: Callback&lt;boolean&gt;): void
 
 取消注册用户授权结果监听器。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/LnA7U3cnRkiIVDd36SK6sg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071624Z&HW-CC-Expire=86400&HW-CC-Sign=A25A1C5ED07CB9E05FE83AE6D6242DCF6310139CBE8E18050E420E7C53FD9235)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/wU9BHU_mTqCnW2kWIFZizA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072925Z&HW-CC-Expire=86400&HW-CC-Sign=95A183759467DF8DA6B2DBBF31002E4C7A43C0F9688205766BCC57E781DE9064)
 
 
 多次调用[onAuthorizationResult](#onauthorizationresult)注册监听时，若需取消授权结果监听，需要传最后一次调用时传入的callback，或者不传入参数。
@@ -367,6 +389,7 @@ offAuthorizationResult(callback?: Callback&lt;boolean&gt;): void
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -395,9 +418,10 @@ vpnObserver.offAuthorizationResult();
 
 
 
-#### vpnExtension.createVpnConnection
+## vpnExtension.createVpnConnection
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createVpnConnection(context: VpnExtensionContext): VpnConnection
 
@@ -413,12 +437,14 @@ createVpnConnection(context: VpnExtensionContext): VpnConnection
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | VpnExtensionContext | 是 | 指定 context。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -428,6 +454,7 @@ createVpnConnection(context: VpnExtensionContext): VpnConnection
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -453,17 +480,19 @@ export default class MyVpnExtAbility extends VpnExtensionAbility {
 
 
 
-#### VpnConnection
+## VpnConnection
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 VPN连接对象。在调用VpnConnection的方法前，需要先通过vpnExt.createVpnConnection创建VPN连接对象。
 
 
 
-#### create
+### create
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 create(config: VpnConfig): Promise&lt;number&gt;
 
@@ -477,12 +506,14 @@ create(config: VpnConfig): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | config | VpnConfig | 是 | 指定VPN网络的配置信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -492,6 +523,7 @@ create(config: VpnConfig): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[VPN错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-vpn)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -584,9 +616,10 @@ export default class MyVpnExtAbility extends VpnExtensionAbility {
 
 
 
-#### protect
+### protect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 protect(socketFd: number): Promise&lt;void&gt;
 
@@ -596,12 +629,14 @@ protect(socketFd: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | socketFd | number | 是 | 指定保护的 socketfd，该文件描述符通过getSocketFd获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -611,6 +646,7 @@ protect(socketFd: number): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[VPN错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-vpn)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -655,9 +691,10 @@ export default class MyVpnExtAbility extends VpnExtensionAbility {
 
 
 
-#### destroy
+### destroy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 destroy(): Promise&lt;void&gt;
 
@@ -667,6 +704,7 @@ destroy(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -675,6 +713,7 @@ destroy(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[VPN错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-vpn)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -706,9 +745,10 @@ export default class MyVpnExtAbility extends VpnExtensionAbility {
 
 
 
-#### destroy20+
+### destroy20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 destroy(vpnId: string): Promise&lt;void&gt;
 
@@ -718,12 +758,14 @@ destroy(vpnId: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | vpnId | string | 是 | vpn唯一标识。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -733,6 +775,7 @@ destroy(vpnId: string): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[VPN错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-vpn)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -763,9 +806,10 @@ export default class MyVpnExtAbility extends VpnExtensionAbility {
 
 
 
-#### generateVpnId20+
+### generateVpnId20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 generateVpnId(): Promise&lt;string&gt;
 
@@ -774,7 +818,7 @@ generateVpnId(): Promise&lt;string&gt;
 如需使用系统多VPN能力，需调用该接口生成vpnId，配置到VpnConfig中。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/p-gdBZNeTuiP6PG3SczbUQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071624Z&HW-CC-Expire=86400&HW-CC-Sign=E03DA3A4590DBD7C99EF9D7911E74079A84E4EFB1F64C2D52254053586B1EE32)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/QaSVPcpqRFORQvxP8dlApw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072925Z&HW-CC-Expire=86400&HW-CC-Sign=55C0F54DECBED89336975DB8F757385352B8E6FB9949BF3686C850841C2E07A3)
 
 
 当前系统多VPN能力仅支持IPv4。
@@ -785,6 +829,7 @@ generateVpnId(): Promise&lt;string&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | 以Promise形式返回获取结果，返回vpnId。 |
@@ -793,6 +838,7 @@ generateVpnId(): Promise&lt;string&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[VPN错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-vpn)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -822,9 +868,10 @@ export default class MyVpnExtAbility extends VpnExtensionAbility {
 
 
 
-#### protectProcessNet22+
+### protectProcessNet22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 protectProcessNet(): Promise&lt;void&gt;
 
@@ -833,6 +880,7 @@ protectProcessNet(): Promise&lt;void&gt;
 **系统能力**：SystemCapability.Communication.NetManager.Vpn
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -870,13 +918,15 @@ export default class MyVpnExtAbility  extends VpnExtensionAbility {
 
 
 
-#### VpnConfig
+## VpnConfig
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 三方VPN配置参数。
 
 **系统能力**：SystemCapability.Communication.NetManager.Vpn
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -885,11 +935,11 @@ export default class MyVpnExtAbility  extends VpnExtensionAbility {
 | routes | Array&lt;RouteInfo&gt; | 否 | 是 | VPN虚拟网卡的路由信息（API version 23前最多可配置1024条路由；从API version 23开始最多可配置10000条路由）。 |
 | dnsAddresses | Array&lt;string&gt; | 否 | 是 | DNS服务器地址信息。当配置DNS服务器地址后，VPN启动状态下被代理的应用上网时，使用配置的DNS服务器做DNS查询。最多可配置64个DNS服务器地址。 |
 | searchDomains | Array&lt;string&gt; | 否 | 是 | DNS的搜索域列表。 |
-| mtu | number | 否 | 是 | 最大传输单元MTU值（单位：字节）。取值范围：[576，1500]。 |
-| isIPv4Accepted | boolean | 否 | 是 | 是否支持IPv4。true表示支持，false表示不支持, 默认值为true。 注意：若支持IPv4功能，需要在addresses中配置IPv4类型的IP地址。 |
-| isIPv6Accepted | boolean | 否 | 是 | 是否支持IPv6。true表示支持，false表示不支持, 默认值为false。 注意：若支持IPv6功能，需要在addresses中配置IPv6类型的IP地址。 |
-| isInternal | boolean | 否 | 是 | 是否支持内置VPN。true表示支持，false表示不支持, 默认值为false。 |
-| isBlocking | boolean | 否 | 是 | 是否阻塞模式。true表示阻塞模式，false表示非阻塞模式, 默认值为false。 |
+| mtu | number | 否 | 是 | 最大传输单元MTU值（单位：字节）。取值范围：[576, 1500]。 |
+| isIPv4Accepted | boolean | 否 | 是 | 是否支持IPv4。true表示支持，false表示不支持，默认值为true。 注意：若支持IPv4功能，需要在addresses中配置IPv4类型的IP地址。 |
+| isIPv6Accepted | boolean | 否 | 是 | 是否支持IPv6。true表示支持，false表示不支持，默认值为false。 注意：若支持IPv6功能，需要在addresses中配置IPv6类型的IP地址。 |
+| isInternal | boolean | 否 | 是 | 是否支持内置VPN。true表示支持，false表示不支持，默认值为false。 |
+| isBlocking | boolean | 否 | 是 | 是否阻塞模式。true表示阻塞模式，false表示非阻塞模式，默认值为false。 |
 | trustedApplications | Array&lt;string&gt; | 否 | 是 | 受信任的应用信息列表，string类型表示的包名。当配置该列表后，仅该列表中的应用数据才能根据routes被VPN代理。API version 23前最多可配置64个受信任的应用包名；从API version 23开始最多可配置256个受信任的应用包名。 注意：trustedApplications和blockedApplications列表不能同时配置。 |
 | blockedApplications | Array&lt;string&gt; | 否 | 是 | 被阻止的应用信息列表，string类型表示的包名。当配置该列表后，该列表中的应用数据不会被VPN代理，其他应用可以根据routes配置被VPN代理。API version 23前最多可配置64个被阻止的应用包名；从API version 23开始最多可配置256个被阻止的应用包名。 注意：trustedApplications和blockedApplications列表不能同时配置。 |
 
@@ -941,11 +991,13 @@ function vpnCreate(){
 
 
 
-#### 附录
+## 附录
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 VpnExtensionAbility不支持以下模块的引用。
+
 
 | Kit | 模块 |
 | --- | --- |

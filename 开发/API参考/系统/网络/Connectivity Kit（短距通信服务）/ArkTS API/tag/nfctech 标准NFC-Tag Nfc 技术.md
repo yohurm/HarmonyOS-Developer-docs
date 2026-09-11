@@ -1,6 +1,6 @@
 # nfctech (标准NFC-Tag Nfc 技术)
 
-更新时间：2026-04-28 03:31:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-nfctech
 **支持设备：** Phone | Wearable
@@ -12,7 +12,7 @@
 
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/_7r_iPorQ3qY9s5VXMw8kg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260528T025227Z&HW-CC-Expire=86400&HW-CC-Sign=59CB0D726D99300F3318B77E032EC05C50080AF457A0229B77EC307D2766B241)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/6MeaMmhmSc-NP7JQu8t2YA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072926Z&HW-CC-Expire=86400&HW-CC-Sign=1A7AFA07D5820F51CD29CC1B78686F81CE199689AA1A3BB9F5C43E171645B9F5)
 
 
 导入tag模块编辑器报错，在某个具体设备型号上能力可能超出工程默认设备定义的能力集范围，如需要使用此部分能力需额外配置自定义syscap，参考[syscap开发指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/syscap)。
@@ -20,7 +20,8 @@
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | Wearable
 
@@ -30,11 +31,12 @@ import { tag } from '@kit.ConnectivityKit';
 
 
 
-#### NfcATag
+## NfcATag
+
 
 **支持设备：** Phone | Wearable
 
-NfcATag 提供 NFC-A(ISO 14443-3A)技术的属性和I/O操作的访问，继承自[TagSession](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-tagsession)。
+NfcATag提供对NFC-A(ISO 14443-3A)技术的属性和I/O操作的访问，继承自[TagSession](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-tagsession)。
 
 TagSession是所有NFC Tag技术类型的基类， 提供建立连接和发送数据等共同接口。具体请参见[TagSession](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-tagsession)。
 
@@ -44,7 +46,8 @@ NfcATag获取方式请参考[nfc-tag开发指南](https://developer.huawei.com/c
 
 
 
-#### NfcATag.getSak
+### NfcATag.getSak
+
 
 **支持设备：** Phone | Wearable
 
@@ -57,6 +60,7 @@ getSak(): number
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -75,7 +79,8 @@ console.info("nfcA sak: " + sak);
 
 
 
-#### NfcATag.getAtqa
+### NfcATag.getAtqa
+
 
 **支持设备：** Phone | Wearable
 
@@ -88,6 +93,7 @@ getAtqa(): number[]
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -106,7 +112,8 @@ console.info("nfcA atqa: " + atqa);
 
 
 
-#### NfcBTag
+## NfcBTag
+
 
 **支持设备：** Phone | Wearable
 
@@ -120,7 +127,8 @@ NfcBTag获取方式请参考[nfc-tag开发指南](https://developer.huawei.com/c
 
 
 
-#### NfcBTag.getRespAppData
+### NfcBTag.getRespAppData
+
 
 **支持设备：** Phone | Wearable
 
@@ -133,6 +141,7 @@ getRespAppData(): number[]
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -151,7 +160,8 @@ console.info("nfcB respAppData: " + respAppData);
 
 
 
-#### NfcBTag.getRespProtocol
+### NfcBTag.getRespProtocol
+
 
 **支持设备：** Phone | Wearable
 
@@ -164,6 +174,7 @@ getRespProtocol(): number[]
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -182,7 +193,8 @@ console.info("nfcB respProtocol: " + respProtocol);
 
 
 
-#### NfcFTag
+## NfcFTag
+
 
 **支持设备：** Phone | Wearable
 
@@ -196,7 +208,8 @@ NfcFTag获取方式请参考[nfc-tag开发指南](https://developer.huawei.com/c
 
 
 
-#### NfcFTag.getSystemCode
+### NfcFTag.getSystemCode
+
 
 **支持设备：** Phone | Wearable
 
@@ -209,6 +222,7 @@ getSystemCode(): number[]
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -227,7 +241,8 @@ console.info("nfcF systemCode: " + systemCode);
 
 
 
-#### NfcFTag.getPmm
+### NfcFTag.getPmm
+
 
 **支持设备：** Phone | Wearable
 
@@ -240,6 +255,7 @@ getPmm(): number[]
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -258,7 +274,8 @@ console.info("nfcF pmm: " + pmm);
 
 
 
-#### NfcVTag
+## NfcVTag
+
 
 **支持设备：** Phone | Wearable
 
@@ -272,7 +289,8 @@ NfcVTag获取方式请参考[nfc-tag开发指南](https://developer.huawei.com/c
 
 
 
-#### NfcVTag.getResponseFlags
+### NfcVTag.getResponseFlags
+
 
 **支持设备：** Phone | Wearable
 
@@ -285,6 +303,7 @@ getResponseFlags(): number
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -303,7 +322,8 @@ console.info("nfcV responseFlags: " + responseFlags);
 
 
 
-#### NfcVTag.getDsfId
+### NfcVTag.getDsfId
+
 
 **支持设备：** Phone | Wearable
 
@@ -316,6 +336,7 @@ getDsfId(): number
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -334,7 +355,8 @@ console.info("nfcV dsfId: " + dsfId);
 
 
 
-#### IsoDepTag9+
+## IsoDepTag9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -348,7 +370,8 @@ IsoDepTag获取方式请参考[nfc-tag开发指南](https://developer.huawei.com
 
 
 
-#### IsoDepTag.getHistoricalBytes9+
+### IsoDepTag.getHistoricalBytes9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -361,6 +384,7 @@ getHistoricalBytes(): number[]
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -379,7 +403,8 @@ console.info("isoDep historicalBytes: " + historicalBytes);
 
 
 
-#### IsoDepTag.getHiLayerResponse9+
+### IsoDepTag.getHiLayerResponse9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -392,6 +417,7 @@ getHiLayerResponse(): number[]
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -410,7 +436,8 @@ console.info("isoDep hiLayerResponse: " + hiLayerResponse);
 
 
 
-#### IsoDepTag.isExtendedApduSupported9+
+### IsoDepTag.isExtendedApduSupported9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -426,6 +453,7 @@ isExtendedApduSupported(): Promise&lt;boolean&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回true表示支持；返回false表示不支持。 |
@@ -434,6 +462,7 @@ isExtendedApduSupported(): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -473,7 +502,8 @@ function nfcTechDemo() {
 
 
 
-#### IsoDepTag.isExtendedApduSupported9+
+### IsoDepTag.isExtendedApduSupported9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -489,6 +519,7 @@ isExtendedApduSupported(callback: AsyncCallback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;boolean&gt; | 是 | 回调函数，true: 支持， false: 不支持。 |
@@ -497,6 +528,7 @@ isExtendedApduSupported(callback: AsyncCallback&lt;boolean&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -538,13 +570,15 @@ function nfcTechDemo() {
 
 
 
-#### NdefMessage9+
+## NdefMessage9+
+
 
 **支持设备：** Phone | Wearable
 
 
 
-#### NdefMessage.getNdefRecords9+
+### NdefMessage.getNdefRecords9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -557,6 +591,7 @@ getNdefRecords(): [tag.NdefRecord](https://developer.huawei.com/consumer/cn/doc/
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -578,11 +613,12 @@ console.info("ndef ndefRecords number: " + ndefRecords.length);
 
 
 
-#### NdefTag9+
+## NdefTag9+
+
 
 **支持设备：** Phone | Wearable
 
-提供对已格式化为NDEF的NFC标签的数据和操作的访问，继承自TagSession。
+NdefTag提供对已格式化为NDEF的NFC标签的数据和操作的访问，继承自[TagSession](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-tagsession)。
 
 TagSession是所有NFC Tag技术类型的基类，提供建立连接和发送数据等共同接口。具体请参见[TagSession](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-tagsession)。
 
@@ -592,7 +628,8 @@ NdefTag获取方式请参考[nfc-tag开发指南](https://developer.huawei.com/c
 
 
 
-#### NdefTag.getNdefTagType9+
+### NdefTag.getNdefTagType9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -605,6 +642,7 @@ getNdefTagType(): [tag.NfcForumType](https://developer.huawei.com/consumer/cn/do
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -623,7 +661,8 @@ console.info("ndef ndefTagType: " + ndefTagType);
 
 
 
-#### NdefTag.getNdefMessage9+
+### NdefTag.getNdefMessage9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -636,6 +675,7 @@ getNdefMessage(): [NdefMessage](#ndefmessage9)
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -654,7 +694,8 @@ console.info("ndef ndefMessage: " + ndefMessage);
 
 
 
-#### NdefTag.isNdefWritable9+
+### NdefTag.isNdefWritable9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -667,6 +708,7 @@ isNdefWritable(): boolean
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -685,7 +727,8 @@ console.info("ndef isNdefWritable: " + isWritable);
 
 
 
-#### NdefTag.readNdef9+
+### NdefTag.readNdef9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -701,6 +744,7 @@ readNdef(): Promise<[NdefMessage](#ndefmessage9)>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;NdefMessage&gt; | Promise对象。返回从NDEF标签中读取到的Message数据对象。 |
@@ -709,6 +753,7 @@ readNdef(): Promise<[NdefMessage](#ndefmessage9)>
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -738,7 +783,7 @@ function nfcTechDemo(){
         ndefTag.readNdef().then((ndefmessage : tag.NdefMessage) => {
             console.info("ndef readNdef Promise ndefmessage: " + ndefmessage);
         }).catch((err : BusinessError)=> {
-            console.error("ndef readNdef Promise err Code: ${err.code}, message: ${err.message}");
+            console.error(`ndef readNdef Promise err Code: ${err.code}, message: ${err.message}`);
         });
     } catch (businessError) {
         console.error(`ndef readNdef Promise catch businessError Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
@@ -748,7 +793,8 @@ function nfcTechDemo(){
 
 
 
-#### NdefTag.readNdef9+
+### NdefTag.readNdef9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -764,6 +810,7 @@ readNdef(callback: AsyncCallback<[NdefMessage](#ndefmessage9)>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;NdefMessage&gt; | 是 | 回调函数，返回从NDEF标签中读取到的Message信息。 |
@@ -772,6 +819,7 @@ readNdef(callback: AsyncCallback<[NdefMessage](#ndefmessage9)>): void
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -813,7 +861,8 @@ function nfcTechDemo() {
 
 
 
-#### NdefTag.writeNdef9+
+### NdefTag.writeNdef9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -829,12 +878,14 @@ writeNdef(msg: [NdefMessage](#ndefmessage9)): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | msg | NdefMessage | 是 | NDEF Message数据对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -844,6 +895,7 @@ writeNdef(msg: [NdefMessage](#ndefmessage9)): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -888,7 +940,8 @@ function nfcTechDemo() {
 
 
 
-#### NdefTag.writeNdef9+
+### NdefTag.writeNdef9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -904,6 +957,7 @@ writeNdef(msg: [NdefMessage](#ndefmessage9), callback: AsyncCallback&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | msg | NdefMessage | 是 | NDEF Message数据对象。 |
@@ -913,6 +967,7 @@ writeNdef(msg: [NdefMessage](#ndefmessage9), callback: AsyncCallback&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -959,7 +1014,8 @@ function nfcTechDemo() {
 
 
 
-#### NdefTag.canSetReadOnly9+
+### NdefTag.canSetReadOnly9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -975,6 +1031,7 @@ canSetReadOnly(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | true: NDEF标签可设置为只读， false: NDEF标签不可设置为只读。 |
@@ -983,6 +1040,7 @@ canSetReadOnly(): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1002,7 +1060,8 @@ console.info("ndef canSetReadOnly: " + canSetReadOnly);
 
 
 
-#### NdefTag.setReadOnly9+
+### NdefTag.setReadOnly9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -1018,6 +1077,7 @@ setReadOnly(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -1026,6 +1086,7 @@ setReadOnly(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1066,7 +1127,8 @@ function nfcTechDemo() {
 
 
 
-#### NdefTag.setReadOnly9+
+### NdefTag.setReadOnly9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -1082,6 +1144,7 @@ setReadOnly(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当NDEF标签设置为只读成功时，err为undefined，否则为错误对象。 |
@@ -1090,6 +1153,7 @@ setReadOnly(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1132,7 +1196,8 @@ function nfcTechDemo() {
 
 
 
-#### NdefTag.getNdefTagTypeString9+
+### NdefTag.getNdefTagTypeString9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -1146,12 +1211,14 @@ getNdefTagTypeString(type: [tag.NfcForumType](https://developer.huawei.com/consu
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | tag.NfcForumType | 是 | NDEF标签类型，包括NFC FORUM TYPE 1/2/3/4等。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1161,6 +1228,7 @@ getNdefTagTypeString(type: [tag.NfcForumType](https://developer.huawei.com/consu
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1185,7 +1253,8 @@ try {
 
 
 
-#### MifareClassicTag9+
+## MifareClassicTag9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -1199,7 +1268,8 @@ MifareClassicTag获取方式请参考[nfc-tag开发指南](https://developer.hua
 
 
 
-#### MifareClassicTag.authenticateSector9+
+### MifareClassicTag.authenticateSector9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -1215,6 +1285,7 @@ authenticateSector(sectorIndex: number, key: number[], isKeyA: boolean): Promise
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sectorIndex | number | 是 | 待验证的扇区索引，从0开始。 |
@@ -1224,6 +1295,7 @@ authenticateSector(sectorIndex: number, key: number[], isKeyA: boolean): Promise
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -1232,6 +1304,7 @@ authenticateSector(sectorIndex: number, key: number[], isKeyA: boolean): Promise
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1260,7 +1333,7 @@ function nfcTechDemo() {
 
     try {
         let sectorIndex = 1; // 将其更改为正确的 index
-        let key = [0x01, 0x02, 0x03, 0x04, 0x05, 0x06]  // 必须是6个字节，将其更改为正确的key
+        let key = [0x01, 0x02, 0x03, 0x04, 0x05, 0x06];  // 必须是6个字节，将其更改为正确的key
         mifareClassic.authenticateSector(sectorIndex, key, true).then(() => {
             console.info("mifareClassic authenticateSector Promise success.");
         }).catch((err : BusinessError)=> {
@@ -1274,7 +1347,8 @@ function nfcTechDemo() {
 
 
 
-#### MifareClassicTag.authenticateSector9+
+### MifareClassicTag.authenticateSector9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -1290,6 +1364,7 @@ authenticateSector(sectorIndex: number, key: number[], isKeyA: boolean, callback
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sectorIndex | number | 是 | 待验证的扇区索引，从0开始。 |
@@ -1301,6 +1376,7 @@ authenticateSector(sectorIndex: number, key: number[], isKeyA: boolean, callback
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1329,7 +1405,7 @@ function nfcTechDemo() {
 
     try {
         let sectorIndex = 1; // 将其更改为正确的 index
-        let key = [0x01, 0x02, 0x03, 0x04, 0x05, 0x06]  // 必须是6个字节，将其更改为正确的key
+        let key = [0x01, 0x02, 0x03, 0x04, 0x05, 0x06];  // 必须是6个字节，将其更改为正确的key
         mifareClassic.authenticateSector(sectorIndex, key, true, (err : BusinessError)=> {
             if (err) {
                 console.error(`mifareClassic authenticateSector AsyncCallback errCode: ${err.code}, message: ${err.message}`);
@@ -1345,7 +1421,8 @@ function nfcTechDemo() {
 
 
 
-#### MifareClassicTag.readSingleBlock9+
+### MifareClassicTag.readSingleBlock9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -1361,12 +1438,14 @@ readSingleBlock(blockIndex: number): Promise<number[]>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | blockIndex | number | 是 | 要读取的块索引，从0开始。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1376,6 +1455,7 @@ readSingleBlock(blockIndex: number): Promise<number[]>
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1417,7 +1497,8 @@ function nfcTechDemo() {
 
 
 
-#### MifareClassicTag.readSingleBlock9+
+### MifareClassicTag.readSingleBlock9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -1433,6 +1514,7 @@ readSingleBlock(blockIndex: number, callback: AsyncCallback<number[]>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | blockIndex | number | 是 | 要读取的块索引，从0开始。 |
@@ -1442,6 +1524,7 @@ readSingleBlock(blockIndex: number, callback: AsyncCallback<number[]>): void
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1485,7 +1568,8 @@ function nfcTechDemo() {
 
 
 
-#### MifareClassicTag.writeSingleBlock9+
+### MifareClassicTag.writeSingleBlock9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -1501,6 +1585,7 @@ writeSingleBlock(blockIndex: number, data: number[]): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | blockIndex | number | 是 | 要写入的块索引，从0开始。 |
@@ -1508,6 +1593,7 @@ writeSingleBlock(blockIndex: number, data: number[]): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1517,6 +1603,7 @@ writeSingleBlock(blockIndex: number, data: number[]): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1560,7 +1647,8 @@ function nfcTechDemo() {
 
 
 
-#### MifareClassicTag.writeSingleBlock9+
+### MifareClassicTag.writeSingleBlock9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -1576,6 +1664,7 @@ writeSingleBlock(blockIndex: number, data: number[], callback: AsyncCallback&lt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | blockIndex | number | 是 | 要写入的块索引，从0开始。 |
@@ -1586,6 +1675,7 @@ writeSingleBlock(blockIndex: number, data: number[], callback: AsyncCallback&lt;
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1631,7 +1721,8 @@ function nfcTechDemo() {
 
 
 
-#### MifareClassicTag.incrementBlock9+
+### MifareClassicTag.incrementBlock9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -1647,6 +1738,7 @@ incrementBlock(blockIndex: number, value: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | blockIndex | number | 是 | 要指定增加的块索引，从0开始。 |
@@ -1654,6 +1746,7 @@ incrementBlock(blockIndex: number, value: number): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1663,6 +1756,7 @@ incrementBlock(blockIndex: number, value: number): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1705,7 +1799,8 @@ function nfcTechDemo() {
 
 
 
-#### MifareClassicTag.incrementBlock9+
+### MifareClassicTag.incrementBlock9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -1721,6 +1816,7 @@ incrementBlock(blockIndex: number, value: number, callback: AsyncCallback&lt;voi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | blockIndex | number | 是 | 要被运算的块索引，从0开始。 |
@@ -1731,6 +1827,7 @@ incrementBlock(blockIndex: number, value: number, callback: AsyncCallback&lt;voi
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1775,7 +1872,8 @@ function nfcTechDemo() {
 
 
 
-#### MifareClassicTag.decrementBlock9+
+### MifareClassicTag.decrementBlock9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -1791,6 +1889,7 @@ decrementBlock(blockIndex: number, value: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | blockIndex | number | 是 | 要被运算的块索引，从0开始。 |
@@ -1798,6 +1897,7 @@ decrementBlock(blockIndex: number, value: number): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1807,6 +1907,7 @@ decrementBlock(blockIndex: number, value: number): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1849,7 +1950,8 @@ function nfcTechDemo() {
 
 
 
-#### MifareClassicTag.decrementBlock9+
+### MifareClassicTag.decrementBlock9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -1865,6 +1967,7 @@ decrementBlock(blockIndex: number, value: number, callback: AsyncCallback&lt;voi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | blockIndex | number | 是 | 要被运算的块索引，从0开始。 |
@@ -1875,6 +1978,7 @@ decrementBlock(blockIndex: number, value: number, callback: AsyncCallback&lt;voi
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1920,13 +2024,14 @@ function nfcTechDemo() {
 
 
 
-#### MifareClassicTag.transferToBlock9+
+### MifareClassicTag.transferToBlock9+
+
 
 **支持设备：** Phone | Wearable
 
 transferToBlock(blockIndex: number): Promise&lt;void&gt;
 
-将临时寄存器的值转移到指定的块。使用Promise异步异步回调。
+将临时寄存器的值转移到指定的块。使用Promise异步回调。
 
 **需要权限：** ohos.permission.NFC_TAG
 
@@ -1936,12 +2041,14 @@ transferToBlock(blockIndex: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | blockIndex | number | 是 | 被操作的块的索引，从0开始。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1951,6 +2058,7 @@ transferToBlock(blockIndex: number): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1992,7 +2100,8 @@ function nfcTechDemo() {
 
 
 
-#### MifareClassicTag.transferToBlock9+
+### MifareClassicTag.transferToBlock9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -2008,6 +2117,7 @@ transferToBlock(blockIndex: number, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | blockIndex | number | 是 | 被操作的块的索引，从0开始。 |
@@ -2017,6 +2127,7 @@ transferToBlock(blockIndex: number, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2060,7 +2171,8 @@ function nfcTechDemo() {
 
 
 
-#### MifareClassicTag.restoreFromBlock9+
+### MifareClassicTag.restoreFromBlock9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -2076,12 +2188,14 @@ restoreFromBlock(blockIndex: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | blockIndex | number | 是 | 被操作的块的索引，从0开始。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2091,6 +2205,7 @@ restoreFromBlock(blockIndex: number): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2132,7 +2247,8 @@ function nfcTechDemo() {
 
 
 
-#### MifareClassicTag.restoreFromBlock9+
+### MifareClassicTag.restoreFromBlock9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -2148,6 +2264,7 @@ restoreFromBlock(blockIndex: number, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | blockIndex | number | 是 | 被操作的块的索引，从0开始。 |
@@ -2157,6 +2274,7 @@ restoreFromBlock(blockIndex: number, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2200,7 +2318,8 @@ function nfcTechDemo() {
 
 
 
-#### MifareClassicTag.getSectorCount9+
+### MifareClassicTag.getSectorCount9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -2213,6 +2332,7 @@ getSectorCount(): number
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2232,7 +2352,8 @@ console.info("mifareClassic sectorCount: " + sectorCount);
 
 
 
-#### MifareClassicTag.getBlockCountInSector9+
+### MifareClassicTag.getBlockCountInSector9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -2246,12 +2367,14 @@ getBlockCountInSector(sectorIndex: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sectorIndex | number | 是 | 扇区序号，从0开始。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2261,6 +2384,7 @@ getBlockCountInSector(sectorIndex: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2286,7 +2410,8 @@ try {
 
 
 
-#### MifareClassicTag.getType9+
+### MifareClassicTag.getType9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -2299,6 +2424,7 @@ getType(): [tag.MifareClassicType](https://developer.huawei.com/consumer/cn/doc/
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2317,7 +2443,8 @@ console.info("mifareClassic getType: " + getType);
 
 
 
-#### MifareClassicTag.getTagSize9+
+### MifareClassicTag.getTagSize9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -2330,6 +2457,7 @@ getTagSize(): number
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2349,7 +2477,8 @@ console.info("mifareClassic tagSize: " + tagSize);
 
 
 
-#### MifareClassicTag.isEmulatedTag9+
+### MifareClassicTag.isEmulatedTag9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -2362,6 +2491,7 @@ isEmulatedTag(): boolean
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2381,7 +2511,8 @@ console.info("mifareClassic isEmulatedTag: " + isEmulatedTag);
 
 
 
-#### MifareClassicTag.getBlockIndex9+
+### MifareClassicTag.getBlockIndex9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -2395,12 +2526,14 @@ getBlockIndex(sectorIndex: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sectorIndex | number | 是 | 扇区序号，从0开始。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2410,6 +2543,7 @@ getBlockIndex(sectorIndex: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2435,7 +2569,8 @@ try {
 
 
 
-#### MifareClassicTag.getSectorIndex9+
+### MifareClassicTag.getSectorIndex9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -2449,12 +2584,14 @@ getSectorIndex(blockIndex: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | blockIndex | number | 是 | 块序号，从0开始。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2464,6 +2601,7 @@ getSectorIndex(blockIndex: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2489,7 +2627,8 @@ try {
 
 
 
-#### MifareUltralightTag9+
+## MifareUltralightTag9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -2503,13 +2642,14 @@ MifareUltralightTag获取方式请参考[nfc-tag开发指南](https://developer.
 
 
 
-#### MifareUltralightTag.readMultiplePages9+
+### MifareUltralightTag.readMultiplePages9+
+
 
 **支持设备：** Phone | Wearable
 
 readMultiplePages(pageIndex: number): Promise<number[]>
 
-读取标签的4页数据，共16字节的数据。每个页面数据大小为4字节。使用Promise异步回调
+读取标签的4页数据，共16字节的数据。每个页面数据大小为4字节。使用Promise异步回调。
 
 **需要权限：** ohos.permission.NFC_TAG
 
@@ -2519,12 +2659,14 @@ readMultiplePages(pageIndex: number): Promise<number[]>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pageIndex | number | 是 | 要读取页面的索引，从0开始。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2534,6 +2676,7 @@ readMultiplePages(pageIndex: number): Promise<number[]>
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2575,7 +2718,8 @@ function nfcTechDemo() {
 
 
 
-#### MifareUltralightTag.readMultiplePages9+
+### MifareUltralightTag.readMultiplePages9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -2591,6 +2735,7 @@ readMultiplePages(pageIndex: number, callback: AsyncCallback<number[]>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pageIndex | number | 是 | 要读取页面的索引，从0开始。 |
@@ -2600,6 +2745,7 @@ readMultiplePages(pageIndex: number, callback: AsyncCallback<number[]>): void
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2643,7 +2789,8 @@ function nfcTechDemo() {
 
 
 
-#### MifareUltralightTag.writeSinglePage9+
+### MifareUltralightTag.writeSinglePage9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -2659,6 +2806,7 @@ writeSinglePage(pageIndex: number, data: number[]): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pageIndex | number | 是 | 要写入页面的索引，从0开始。 |
@@ -2666,6 +2814,7 @@ writeSinglePage(pageIndex: number, data: number[]): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2675,6 +2824,7 @@ writeSinglePage(pageIndex: number, data: number[]): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2717,7 +2867,8 @@ function nfcTechDemo() {
 
 
 
-#### MifareUltralightTag.writeSinglePage9+
+### MifareUltralightTag.writeSinglePage9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -2733,6 +2884,7 @@ writeSinglePage(pageIndex: number, data: number[], callback: AsyncCallback&lt;vo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pageIndex | number | 是 | 要写入页面的索引，从0开始。 |
@@ -2743,6 +2895,7 @@ writeSinglePage(pageIndex: number, data: number[], callback: AsyncCallback&lt;vo
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2787,7 +2940,8 @@ function nfcTechDemo() {
 
 
 
-#### MifareUltralightTag.getType9+
+### MifareUltralightTag.getType9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -2800,6 +2954,7 @@ getType(): [tag.MifareUltralightType](https://developer.huawei.com/consumer/cn/d
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2818,7 +2973,8 @@ console.info("mifareUltralight getType: " + getType);
 
 
 
-#### NdefFormatableTag9+
+## NdefFormatableTag9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -2832,7 +2988,8 @@ NdefFormatableTag获取方式请参考[nfc-tag开发指南](https://developer.hu
 
 
 
-#### NdefFormatableTag.format9+
+### NdefFormatableTag.format9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -2848,12 +3005,14 @@ format(message: [NdefMessage](#ndefmessage9)): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | message | NdefMessage | 是 | 格式化成功时要写入的NDEF消息。可以为null，为null时仅格式化标签，不写入内容。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2863,6 +3022,7 @@ format(message: [NdefMessage](#ndefmessage9)): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2908,7 +3068,8 @@ function nfcTechDemo() {
 
 
 
-#### NdefFormatableTag.format9+
+### NdefFormatableTag.format9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -2924,6 +3085,7 @@ format(message: [NdefMessage](#ndefmessage9), callback: AsyncCallback&lt;void&gt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | message | NdefMessage | 是 | 格式化成功时要写入的Ndef消息。可以为null，为null时仅格式化标签，不写入内容。 |
@@ -2933,6 +3095,7 @@ format(message: [NdefMessage](#ndefmessage9), callback: AsyncCallback&lt;void&gt
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2979,7 +3142,8 @@ function nfcTechDemo() {
 
 
 
-#### NdefFormatableTag.formatReadOnly9+
+### NdefFormatableTag.formatReadOnly9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -2995,12 +3159,14 @@ formatReadOnly(message: [NdefMessage](#ndefmessage9)): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | message | NdefMessage | 是 | 格式化成功时要写入的NDEF消息。可以为null，为null时仅格式化标签，不写入内容。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3010,6 +3176,7 @@ formatReadOnly(message: [NdefMessage](#ndefmessage9)): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3055,7 +3222,8 @@ function nfcTechDemo() {
 
 
 
-#### NdefFormatableTag.formatReadOnly9+
+### NdefFormatableTag.formatReadOnly9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -3071,6 +3239,7 @@ formatReadOnly(message: [NdefMessage](#ndefmessage9), callback: AsyncCallback&lt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | message | NdefMessage | 是 | 格式化成功时要写入的NDEF消息。可以为null，为null时仅格式化标签，不写入内容。 |
@@ -3080,6 +3249,7 @@ formatReadOnly(message: [NdefMessage](#ndefmessage9), callback: AsyncCallback&lt
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3127,7 +3297,8 @@ function nfcTechDemo() {
 
 
 
-#### BarcodeTag18+
+## BarcodeTag18+
+
 
 **支持设备：** Phone | Wearable
 
@@ -3141,7 +3312,8 @@ BarcodeTag获取方式请参考[nfc-tag开发指南](https://developer.huawei.co
 
 
 
-#### BarcodeTag.getBarcode18+
+### BarcodeTag.getBarcode18+
+
 
 **支持设备：** Phone | Wearable
 
@@ -3157,6 +3329,7 @@ getBarcode(): Promise&lt;ArrayBuffer&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;ArrayBuffer&gt; | Promise对象。返回BarCode类型的 tag。 |
@@ -3165,6 +3338,7 @@ getBarcode(): Promise&lt;ArrayBuffer&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

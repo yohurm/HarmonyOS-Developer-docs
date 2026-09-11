@@ -1,6 +1,6 @@
 # @system.brightness (屏幕亮度)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-system-brightness
 **支持设备：** Wearable | lite_wearable
@@ -12,7 +12,8 @@
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -22,7 +23,8 @@ import brightness, { BrightnessModeResponse, BrightnessResponse } from '@system.
 
 
 
-#### Brightness
+## Brightness
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -30,7 +32,8 @@ import brightness, { BrightnessModeResponse, BrightnessResponse } from '@system.
 
 
 
-#### getValue(deprecated)
+### getValue(deprecated)
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -41,6 +44,7 @@ getValue(options?: GetBrightnessOptions): void
 **系统能力：** SystemCapability.PowerManager.DisplayPowerManager.Lite
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -116,7 +120,8 @@ export default {
 
 
 
-#### setValue(deprecated)
+### setValue(deprecated)
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -127,6 +132,7 @@ setValue(options?: SetBrightnessOptions): void
 **系统能力：** SystemCapability.PowerManager.DisplayPowerManager.Lite
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -203,7 +209,8 @@ export default {
 
 
 
-#### getMode(deprecated)
+### getMode(deprecated)
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -214,6 +221,7 @@ getMode(options?: GetBrightnessModeOptions): void
 **系统能力：** SystemCapability.PowerManager.DisplayPowerManager.Lite
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -289,7 +297,8 @@ export default {
 
 
 
-#### setMode(deprecated)
+### setMode(deprecated)
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -300,6 +309,7 @@ setMode(options?: SetBrightnessModeOptions): void
 **系统能力：** SystemCapability.PowerManager.DisplayPowerManager.Lite
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -376,7 +386,8 @@ export default {
 
 
 
-#### setKeepScreenOn(deprecated)
+### setKeepScreenOn(deprecated)
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -385,7 +396,7 @@ setKeepScreenOn(options?: SetKeepScreenOnOptions): void
 设置屏幕是否保持常亮状态，开启常亮模式推荐在onShow()阶段调用。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/OrfGeDHfQNaXcYnoAZiXCQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071632Z&HW-CC-Expire=86400&HW-CC-Sign=722BAB82601A5FEB79DFEBFCF20310820F738C642D018264225AE4E31DB62B7D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/9IDK80GiR5a3OMa0PjrSwg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072940Z&HW-CC-Expire=86400&HW-CC-Sign=DA35E63FD69FAE7F6AFB575B45E3C0F95A4D23EAEC778F013D71ED93B49E9F0B)
 
 
  - 除Lite Wearable外，从API version 7开始不再维护，建议使用[window.setWindowKeepScreenOn()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-window-window#setwindowkeepscreenon9)替代。
@@ -397,6 +408,7 @@ setKeepScreenOn(options?: SetKeepScreenOnOptions): void
 **系统能力：** SystemCapability.PowerManager.DisplayPowerManager.Lite
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -473,13 +485,15 @@ export default {
 
 
 
-#### GetBrightnessOptions(deprecated)
+## GetBrightnessOptions(deprecated)
+
 
 **支持设备：** Wearable | lite_wearable
 
 获取屏幕亮度的参数对象。
 
 **系统能力：** SystemCapability.PowerManager.DisplayPowerManager.Lite
+
 
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -490,13 +504,15 @@ export default {
 
 
 
-#### SetBrightnessOptions(deprecated)
+## SetBrightnessOptions(deprecated)
+
 
 **支持设备：** Wearable | lite_wearable
 
 设置屏幕亮度的参数对象。
 
 **系统能力：** SystemCapability.PowerManager.DisplayPowerManager.Lite
+
 
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -508,13 +524,15 @@ export default {
 
 
 
-#### BrightnessResponse(deprecated)
+## BrightnessResponse(deprecated)
+
 
 **支持设备：** Wearable | lite_wearable
 
 包含屏幕亮度的对象。
 
 **系统能力：** SystemCapability.PowerManager.DisplayPowerManager.Lite
+
 
 | 名称 | 类型 | 可读 | 可写 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -523,13 +541,15 @@ export default {
 
 
 
-#### GetBrightnessModeOptions(deprecated)
+## GetBrightnessModeOptions(deprecated)
+
 
 **支持设备：** Wearable | lite_wearable
 
 获取屏幕亮度模式的参数对象。
 
 **系统能力：** SystemCapability.PowerManager.DisplayPowerManager.Lite
+
 
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -540,13 +560,15 @@ export default {
 
 
 
-#### SetBrightnessModeOptions(deprecated)
+## SetBrightnessModeOptions(deprecated)
+
 
 **支持设备：** Wearable | lite_wearable
 
 设置屏幕亮度模式的参数对象。
 
 **系统能力：** SystemCapability.PowerManager.DisplayPowerManager.Lite
+
 
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -558,13 +580,15 @@ export default {
 
 
 
-#### BrightnessModeResponse(deprecated)
+## BrightnessModeResponse(deprecated)
+
 
 **支持设备：** Wearable | lite_wearable
 
 包含屏幕亮度模式的对象。
 
 **系统能力：** SystemCapability.PowerManager.DisplayPowerManager.Lite
+
 
 | 名称 | 类型 | 可读 | 可写 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -573,13 +597,15 @@ export default {
 
 
 
-#### SetKeepScreenOnOptions(deprecated)
+## SetKeepScreenOnOptions(deprecated)
+
 
 **支持设备：** Wearable | lite_wearable
 
 设置屏幕常亮的参数对象。
 
 **系统能力：** SystemCapability.PowerManager.DisplayPowerManager.Lite
+
 
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |

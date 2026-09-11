@@ -1,9 +1,9 @@
 # @ohos.bundle (Bundle模块)
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bundle
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供应用信息查询能力，支持[BundleInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bundle-bundleinfo)、[ApplicationInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bundle-applicationinfo)、[AbilityInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bundle-abilityinfo)等信息的查询，以及应用禁用状态的查询、设置等。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import bundle from '@ohos.bundle';
@@ -22,9 +23,11 @@ import bundle from '@ohos.bundle';
 
 
 
-#### 权限列表
+## 权限列表
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 权限 | 权限等级 | 描述 |
 | --- | --- | --- |
@@ -36,9 +39,10 @@ import bundle from '@ohos.bundle';
 
 
 
-#### bundle.getApplicationInfodeprecated
+## bundle.getApplicationInfodeprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getApplicationInfo(bundleName: string, bundleFlags: number, userId?: number): Promise&lt;ApplicationInfo&gt;
 
@@ -60,6 +64,7 @@ SystemCapability.BundleManager.BundleFramework
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bundleName | string | 是 | 要查询的应用Bundle名称。 |
@@ -68,6 +73,7 @@ SystemCapability.BundleManager.BundleFramework
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -94,9 +100,10 @@ bundle.getApplicationInfo(bundleName, bundleFlags, userId)
 
 
 
-#### bundle.getApplicationInfodeprecated
+## bundle.getApplicationInfodeprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getApplicationInfo(bundleName: string, bundleFlags: number, userId: number, callback: AsyncCallback&lt;ApplicationInfo&gt;): void
 
@@ -117,6 +124,7 @@ ohos.permission.GET_BUNDLE_INFO_PRIVILEGED 或 ohos.permission.GET_BUNDLE_INFO
 SystemCapability.BundleManager.BundleFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -146,9 +154,10 @@ bundle.getApplicationInfo(bundleName, bundleFlags, userId, (err, data) => {
 
 
 
-#### bundle.getApplicationInfodeprecated
+## bundle.getApplicationInfodeprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getApplicationInfo(bundleName: string, bundleFlags: number, callback: AsyncCallback&lt;ApplicationInfo&gt;): void
 
@@ -169,6 +178,7 @@ ohos.permission.GET_BUNDLE_INFO_PRIVILEGED 或 ohos.permission.GET_BUNDLE_INFO
 SystemCapability.BundleManager.BundleFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -196,9 +206,10 @@ bundle.getApplicationInfo(bundleName, bundleFlags, (err, data) => {
 
 
 
-#### bundle.getAllBundleInfodeprecated
+## bundle.getAllBundleInfodeprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllBundleInfo(bundleFlag: BundleFlag, userId?: number): Promise<Array&lt;BundleInfo&gt;>
 
@@ -218,6 +229,7 @@ SystemCapability.BundleManager.BundleFramework
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bundleFlag | BundleFlag | 是 | 用于指定返回的包信息对象中包含信息的标记。取值范围：参考BundleFlag说明中包信息相关flag。 |
@@ -225,6 +237,7 @@ SystemCapability.BundleManager.BundleFramework
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -250,9 +263,10 @@ bundle.getAllBundleInfo(bundleFlag, userId)
 
 
 
-#### bundle.getAllBundleInfodeprecated
+## bundle.getAllBundleInfodeprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllBundleInfo(bundleFlag: BundleFlag, callback: AsyncCallback<Array&lt;BundleInfo&gt;>): void
 
@@ -271,6 +285,7 @@ ohos.permission.GET_BUNDLE_INFO_PRIVILEGED
 SystemCapability.BundleManager.BundleFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -296,9 +311,10 @@ bundle.getAllBundleInfo(bundleFlag, (err, data) => {
 
 
 
-#### bundle.getAllBundleInfodeprecated
+## bundle.getAllBundleInfodeprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllBundleInfo(bundleFlag: BundleFlag, userId: number, callback: AsyncCallback<Array&lt;BundleInfo&gt;>): void
 
@@ -317,6 +333,7 @@ ohos.permission.GET_BUNDLE_INFO_PRIVILEGED
 SystemCapability.BundleManager.BundleFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -344,9 +361,10 @@ bundle.getAllBundleInfo(bundleFlag, userId, (err, data) => {
 
 
 
-#### bundle.getBundleInfodeprecated
+## bundle.getBundleInfodeprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBundleInfo(bundleName: string, bundleFlags: number, options?: BundleOptions): Promise&lt;BundleInfo&gt;
 
@@ -368,6 +386,7 @@ SystemCapability.BundleManager.BundleFramework
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bundleName | string | 是 | 要查询的应用Bundle名称。 |
@@ -376,6 +395,7 @@ SystemCapability.BundleManager.BundleFramework
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -404,9 +424,10 @@ bundle.getBundleInfo(bundleName, bundleFlags, options)
 
 
 
-#### bundle.getBundleInfodeprecated
+## bundle.getBundleInfodeprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBundleInfo(bundleName: string, bundleFlags: number, callback: AsyncCallback&lt;BundleInfo&gt;): void
 
@@ -427,6 +448,7 @@ ohos.permission.GET_BUNDLE_INFO_PRIVILEGED 或 ohos.permission.GET_BUNDLE_INFO
 SystemCapability.BundleManager.BundleFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -454,9 +476,10 @@ bundle.getBundleInfo(bundleName, bundleFlags, (err, data) => {
 
 
 
-#### bundle.getBundleInfodeprecated
+## bundle.getBundleInfodeprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBundleInfo(bundleName: string, bundleFlags: number, options: BundleOptions, callback: AsyncCallback&lt;BundleInfo&gt;): void
 
@@ -477,6 +500,7 @@ ohos.permission.GET_BUNDLE_INFO_PRIVILEGED 或 ohos.permission.GET_BUNDLE_INFO
 SystemCapability.BundleManager.BundleFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -508,9 +532,10 @@ bundle.getBundleInfo(bundleName, bundleFlags, options, (err, data) => {
 
 
 
-#### bundle.getAllApplicationInfodeprecated
+## bundle.getAllApplicationInfodeprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllApplicationInfo(bundleFlags: number, userId?: number): Promise<Array&lt;ApplicationInfo&gt;>
 
@@ -530,6 +555,7 @@ SystemCapability.BundleManager.BundleFramework
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bundleFlags | number | 是 | 用于指定返回的应用信息对象中包含信息的标记。取值范围：参考BundleFlag说明中应用信息相关flag。 |
@@ -537,6 +563,7 @@ SystemCapability.BundleManager.BundleFramework
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -562,9 +589,10 @@ bundle.getAllApplicationInfo(bundleFlags, userId)
 
 
 
-#### bundle.getAllApplicationInfodeprecated
+## bundle.getAllApplicationInfodeprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllApplicationInfo(bundleFlags: number, userId: number, callback: AsyncCallback<Array&lt;ApplicationInfo&gt;>): void
 
@@ -583,6 +611,7 @@ ohos.permission.GET_BUNDLE_INFO_PRIVILEGED
 SystemCapability.BundleManager.BundleFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -610,9 +639,10 @@ bundle.getAllApplicationInfo(bundleFlags, userId, (err, data) => {
 
 
 
-#### bundle.getAllApplicationInfodeprecated
+## bundle.getAllApplicationInfodeprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllApplicationInfo(bundleFlags: number, callback: AsyncCallback<Array&lt;ApplicationInfo&gt;>): void
 
@@ -631,6 +661,7 @@ ohos.permission.GET_BUNDLE_INFO_PRIVILEGED
 SystemCapability.BundleManager.BundleFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -656,9 +687,10 @@ bundle.getAllApplicationInfo(bundleFlags, (err, data) => {
 
 
 
-#### bundle.getBundleArchiveInfodeprecated
+## bundle.getBundleArchiveInfodeprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBundleArchiveInfo(hapFilePath: string, bundleFlags: number) : Promise&lt;BundleInfo&gt;
 
@@ -674,6 +706,7 @@ SystemCapability.BundleManager.BundleFramework
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | hapFilePath | string | 是 | HAP存放路径。支持当前应用程序的绝对路径和数据目录沙箱路径。 |
@@ -681,6 +714,7 @@ SystemCapability.BundleManager.BundleFramework
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -706,9 +740,10 @@ bundle.getBundleArchiveInfo(hapFilePath, bundleFlags)
 
 
 
-#### bundle.getBundleArchiveInfodeprecated
+## bundle.getBundleArchiveInfodeprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBundleArchiveInfo(hapFilePath: string, bundleFlags: number, callback: AsyncCallback&lt;BundleInfo&gt;) : void
 
@@ -723,6 +758,7 @@ getBundleArchiveInfo(hapFilePath: string, bundleFlags: number, callback: AsyncCa
 SystemCapability.BundleManager.BundleFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -750,9 +786,10 @@ bundle.getBundleArchiveInfo(hapFilePath, bundleFlags, (err, data) => {
 
 
 
-#### bundle.getAbilityInfodeprecated
+## bundle.getAbilityInfodeprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAbilityInfo(bundleName: string, abilityName: string): Promise&lt;AbilityInfo&gt;
 
@@ -774,6 +811,7 @@ SystemCapability.BundleManager.BundleFramework
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bundleName | string | 是 | 应用Bundle名称。 |
@@ -781,6 +819,7 @@ SystemCapability.BundleManager.BundleFramework
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -806,9 +845,10 @@ bundle.getAbilityInfo(bundleName, abilityName)
 
 
 
-#### bundle.getAbilityInfodeprecated
+## bundle.getAbilityInfodeprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAbilityInfo(bundleName: string, abilityName: string, callback: AsyncCallback&lt;AbilityInfo&gt;): void
 
@@ -829,6 +869,7 @@ ohos.permission.GET_BUNDLE_INFO_PRIVILEGED 或 ohos.permission.GET_BUNDLE_INFO
 SystemCapability.BundleManager.BundleFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -856,9 +897,10 @@ bundle.getAbilityInfo(bundleName, abilityName, (err, data) => {
 
 
 
-#### bundle.getAbilityLabeldeprecated
+## bundle.getAbilityLabeldeprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAbilityLabel(bundleName: string, abilityName: string): Promise&lt;string&gt;
 
@@ -880,6 +922,7 @@ SystemCapability.BundleManager.BundleFramework
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bundleName | string | 是 | 应用Bundle名称。 |
@@ -887,6 +930,7 @@ SystemCapability.BundleManager.BundleFramework
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -912,9 +956,10 @@ bundle.getAbilityLabel(bundleName, abilityName)
 
 
 
-#### bundle.getAbilityLabeldeprecated
+## bundle.getAbilityLabeldeprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAbilityLabel(bundleName: string, abilityName: string, callback : AsyncCallback&lt;string&gt;): void
 
@@ -935,6 +980,7 @@ ohos.permission.GET_BUNDLE_INFO_PRIVILEGED 或 ohos.permission.GET_BUNDLE_INFO
 SystemCapability.BundleManager.BundleFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -962,9 +1008,10 @@ bundle.getAbilityLabel(bundleName, abilityName, (err, data) => {
 
 
 
-#### bundle.isAbilityEnableddeprecated
+## bundle.isAbilityEnableddeprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isAbilityEnabled(info: AbilityInfo): Promise&lt;boolean&gt;
 
@@ -980,12 +1027,14 @@ SystemCapability.BundleManager.BundleFramework
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | info | AbilityInfo | 是 | Ability的配置信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1012,9 +1061,10 @@ bundle.getAbilityInfo(bundleName, abilityName).then((abilityInfo) => {
 
 
 
-#### bundle.isAbilityEnableddeprecated
+## bundle.isAbilityEnableddeprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isAbilityEnabled(info : AbilityInfo, callback : AsyncCallback&lt;boolean&gt;): void
 
@@ -1029,6 +1079,7 @@ isAbilityEnabled(info : AbilityInfo, callback : AsyncCallback&lt;boolean&gt;): v
 SystemCapability.BundleManager.BundleFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1057,9 +1108,10 @@ bundle.getAbilityInfo(bundleName, abilityName).then((abilityInfo) => {
 
 
 
-#### bundle.isApplicationEnableddeprecated
+## bundle.isApplicationEnableddeprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isApplicationEnabled(bundleName: string): Promise&lt;boolean&gt;
 
@@ -1075,12 +1127,14 @@ SystemCapability.BundleManager.BundleFramework
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bundleName | string | 是 | 要查询的应用Bundle名称。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1105,9 +1159,10 @@ bundle.isApplicationEnabled(bundleName)
 
 
 
-#### bundle.isApplicationEnableddeprecated
+## bundle.isApplicationEnableddeprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isApplicationEnabled(bundleName: string, callback : AsyncCallback&lt;boolean&gt;): void
 
@@ -1122,6 +1177,7 @@ isApplicationEnabled(bundleName: string, callback : AsyncCallback&lt;boolean&gt;
 SystemCapability.BundleManager.BundleFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1147,9 +1203,10 @@ bundle.isApplicationEnabled(bundleName, (err, data) => {
 
 
 
-#### bundle.queryAbilityByWantdeprecated
+## bundle.queryAbilityByWantdeprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 queryAbilityByWant(want: Want, bundleFlags: number, userId?: number): Promise<Array&lt;AbilityInfo&gt;>
 
@@ -1171,6 +1228,7 @@ SystemCapability.BundleManager.BundleFramework
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | 包含要查询的应用Bundle名称的意图。 |
@@ -1179,6 +1237,7 @@ SystemCapability.BundleManager.BundleFramework
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1209,9 +1268,10 @@ bundle.queryAbilityByWant(want, bundleFlags, userId)
 
 
 
-#### bundle.queryAbilityByWantdeprecated
+## bundle.queryAbilityByWantdeprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 queryAbilityByWant(want: Want, bundleFlags: number, userId: number, callback: AsyncCallback<Array&lt;AbilityInfo&gt;>): void
 
@@ -1232,6 +1292,7 @@ ohos.permission.GET_BUNDLE_INFO_PRIVILEGED 或 ohos.permission.GET_BUNDLE_INFO
 SystemCapability.BundleManager.BundleFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1265,9 +1326,10 @@ bundle.queryAbilityByWant(want, bundleFlags, userId, (err, data) => {
 
 
 
-#### bundle.queryAbilityByWantdeprecated
+## bundle.queryAbilityByWantdeprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 queryAbilityByWant(want: Want, bundleFlags: number, callback: AsyncCallback<Array&lt;AbilityInfo&gt;>): void
 
@@ -1288,6 +1350,7 @@ ohos.permission.GET_BUNDLE_INFO_PRIVILEGED 或 ohos.permission.GET_BUNDLE_INFO
 SystemCapability.BundleManager.BundleFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1319,9 +1382,10 @@ bundle.queryAbilityByWant(want, bundleFlags, (err, data) => {
 
 
 
-#### bundle.getLaunchWantForBundledeprecated
+## bundle.getLaunchWantForBundledeprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLaunchWantForBundle(bundleName: string): Promise&lt;Want&gt;
 
@@ -1341,12 +1405,14 @@ SystemCapability.BundleManager.BundleFramework
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bundleName | string | 是 | 要查询的应用Bundle名称。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1371,9 +1437,10 @@ bundle.getLaunchWantForBundle(bundleName)
 
 
 
-#### bundle.getLaunchWantForBundledeprecated
+## bundle.getLaunchWantForBundledeprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLaunchWantForBundle(bundleName: string, callback: AsyncCallback&lt;Want&gt;): void
 
@@ -1392,6 +1459,7 @@ ohos.permission.GET_BUNDLE_INFO_PRIVILEGED
 SystemCapability.BundleManager.BundleFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1417,9 +1485,10 @@ bundle.getLaunchWantForBundle(bundleName, (err, data) => {
 
 
 
-#### bundle.getNameForUiddeprecated
+## bundle.getNameForUiddeprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getNameForUid(uid: number): Promise&lt;string&gt;
 
@@ -1435,12 +1504,14 @@ SystemCapability.BundleManager.BundleFramework
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uid | number | 是 | 要查询的uid。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1465,9 +1536,10 @@ bundle.getNameForUid(uid)
 
 
 
-#### bundle.getNameForUiddeprecated
+## bundle.getNameForUiddeprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getNameForUid(uid: number, callback: AsyncCallback&lt;string&gt;) : void
 
@@ -1482,6 +1554,7 @@ getNameForUid(uid: number, callback: AsyncCallback&lt;string&gt;) : void
 SystemCapability.BundleManager.BundleFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1507,9 +1580,10 @@ bundle.getNameForUid(uid, (err, data) => {
 
 
 
-#### bundle.getAbilityIcondeprecated
+## bundle.getAbilityIcondeprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAbilityIcon(bundleName: string, abilityName: string): Promise<image.PixelMap>
 
@@ -1531,6 +1605,7 @@ SystemCapability.BundleManager.BundleFramework
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bundleName | string | 是 | 要查询的应用Bundle名称。 |
@@ -1538,6 +1613,7 @@ SystemCapability.BundleManager.BundleFramework
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1563,9 +1639,10 @@ bundle.getAbilityIcon(bundleName, abilityName)
 
 
 
-#### bundle.getAbilityIcon deprecated
+## bundle.getAbilityIcon deprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAbilityIcon(bundleName: string, abilityName: string, callback: AsyncCallback<image.PixelMap>): void
 
@@ -1586,6 +1663,7 @@ ohos.permission.GET_BUNDLE_INFO_PRIVILEGED 或 ohos.permission.GET_BUNDLE_INFO
 SystemCapability.BundleManager.BundleFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1613,15 +1691,17 @@ bundle.getAbilityIcon(bundleName, abilityName, (err, data) => {
 
 
 
-#### InstallErrorCodedeprecated
+## InstallErrorCodedeprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 从API version 7开始支持，从API version 9开始废弃，建议使用 包管理子系统通用错误码 替代。
 
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1649,9 +1729,10 @@ bundle.getAbilityIcon(bundleName, abilityName, (err, data) => {
 
 
 
-#### BundleFlagdeprecated
+## BundleFlagdeprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 从API version 7开始支持，从API version 9开始废弃，建议使用 bundleManager.BundleFlag 替代。
@@ -1664,6 +1745,7 @@ bundle.getAbilityIcon(bundleName, abilityName, (err, data) => {
 标志可以叠加使用，例如使用GET_APPLICATION_INFO_WITH_PERMISSION + GET_APPLICATION_INFO_WITH_DISABLE可以使结果同时包含应用权限信息和被禁用的应用信息。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1683,9 +1765,10 @@ bundle.getAbilityIcon(bundleName, abilityName, (err, data) => {
 
 
 
-#### BundleOptionsdeprecated
+## BundleOptionsdeprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 从API version 7开始支持，从API version 9开始废弃，暂无替代接口。
@@ -1695,6 +1778,7 @@ bundle.getAbilityIcon(bundleName, abilityName, (err, data) => {
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | userId | number | 否 | 是 | 用户ID。默认值：调用方所在用户，取值范围：大于等于0。 |
@@ -1702,9 +1786,10 @@ bundle.getAbilityIcon(bundleName, abilityName, (err, data) => {
 
 
 
-#### AbilityTypedeprecated
+## AbilityTypedeprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 从API version 7开始支持，从API version 9开始废弃，建议使用 bundleManager.AbilityType 替代。
@@ -1713,6 +1798,7 @@ bundle.getAbilityIcon(bundleName, abilityName, (err, data) => {
 Ability组件类型。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1724,9 +1810,10 @@ Ability组件类型。
 
 
 
-#### DisplayOrientationdeprecated
+## DisplayOrientationdeprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 从API version 7开始支持，从API version 9开始废弃，建议使用 bundleManager.DisplayOrientation 替代。
@@ -1735,6 +1822,7 @@ Ability组件类型。
 屏幕显示方向。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1746,9 +1834,10 @@ Ability组件类型。
 
 
 
-#### LaunchModedeprecated
+## LaunchModedeprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 从API version 7开始支持，从API version 9开始废弃，建议使用 bundleManager.LaunchType 替代。
@@ -1758,6 +1847,7 @@ Ability组件的启动模式。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SINGLETON | 0 | Ability只有一个实例。 |
@@ -1766,9 +1856,10 @@ Ability组件的启动模式。
 
 
 
-#### AbilitySubTypedeprecated
+## AbilitySubTypedeprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 从API version 7开始支持，从API version 9开始废弃，暂无替代接口。
@@ -1778,6 +1869,7 @@ Ability组件的子类型。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | UNSPECIFIED | 0 | 未定义Ability子类型。 |
@@ -1786,9 +1878,10 @@ Ability组件的子类型。
 
 
 
-#### ColorModedeprecated
+## ColorModedeprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 从API version 7开始支持，从API version 9开始废弃，暂无替代接口。
@@ -1797,6 +1890,7 @@ Ability组件的子类型。
 应用、卡片等的颜色模式。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1807,9 +1901,10 @@ Ability组件的子类型。
 
 
 
-#### GrantStatusdeprecated
+## GrantStatusdeprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 从API version 7开始支持，从API version 9开始废弃，建议使用 bundleManager.PermissionGrantState 替代。
@@ -1818,6 +1913,7 @@ Ability组件的子类型。
 权限授予状态。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

@@ -33,7 +33,7 @@
 Stack() {
   this.swiperItemSlotParam(item);
 }
-// 设置组件旋转
+<em>// </em><em>设置组件旋转</em>
 .rotate({
   x: 0,
   y: 1,
@@ -48,31 +48,31 @@ Stack() {
 
 2. 给Swiper组件设置页面切换动画属性customContentTransition，在页面切换时逐帧触发回调，在回调中设置子组件的rotate属性值。
 ```text
-// 自定义Swiper页面切换动画
+<em>// </em><em>自定义Swiper页面切换动画</em>
 .customContentTransition({
-  // 页面移除视窗时超时1000ms下渲染树
+ <em> // 页面移除视窗时超时1000ms下渲染树</em>
   timeout: 1000,
   transition: (proxy: SwiperContentTransitionProxy) => {
-    // 旋转角度
+   <em> // 旋转角度</em>
     let angle = 0;
     console.info('proxy.position===>' + proxy.position);
     console.info('proxy.index===>' + proxy.index);
-    // position为index页面相对于selectedIndex对应页面的起始位置的移动比例，向左移动减小，向右移动增加。
+   <em> // position为index页面相对于selectedIndex对应页面的起始位置的移动比例，向左移动减小，向右移动增加。</em>
     if (proxy.position < 0 && proxy.position > -1) {
-      // 当前页向左滑出或上一页向右滑入
+     <em> // 当前页向左滑出或上一页向右滑入</em>
       angle = proxy.position * 90;
-      // 设置index页面的旋转中心轴为右侧边缘
+   <em>   // 设置index页面的旋转中心轴为右侧边缘</em>
       this.centerXList[proxy.index] = '100%';
     } else if (proxy.position > 0 && proxy.position < 1) {
-      // 当前页向右滑出或下一页向左滑入
+    <em>  // 当前页向右滑出或下一页向左滑入</em>
       angle = proxy.position * 90;
-      // 设置index页面的旋转中心轴为左侧边缘
+     <em> // 设置index页面的旋转中心轴为左侧边缘</em>
       this.centerXList[proxy.index] = '0%';
     } else {
-      // position小于-1时表示向左完全滑出区域，大于1时表示向右完全滑出区域，重置角度
+   <em>   // position小于-1时表示向左完全滑出区域，大于1时表示向右完全滑出区域，重置角度</em>
       angle = 0;
     }
-    // 修改index页的旋转角
+  <em>  // 修改index页的旋转角</em>
     this.angleList[proxy.index] = angle;
   }
 });
@@ -85,7 +85,7 @@ Stack() {
 @Component
 @Entry
 export struct Swiper3D {
-  // Swiper数据
+ <em> // Swiper数据</em>
   private swiperList: MySwiperItem[] =
     [new MySwiperItem('模块1', '#4B48F7'),
       new MySwiperItem('模块2', '#46B1E3'),
@@ -94,7 +94,7 @@ export struct Swiper3D {
 
   build() {
     Column() {
-      // 轮播网格
+     <em> // 轮播网格</em>
       Custom3DComponentPage({
         items: this.swiperList,
         swiperItemSlotParam: (item: MySwiperItem) => {
@@ -104,7 +104,7 @@ export struct Swiper3D {
     };
   }
 
-  // 自定义3D立方体旋转轮播项UI内容
+ <em> // 自定义3D立方体旋转轮播项UI内容</em>
   @Builder
   mySwiperItem(item: MySwiperItem) {
     Column() {
@@ -118,9 +118,9 @@ export struct Swiper3D {
 }
 
 export class MySwiperItem {
-  // 标题
+ <em> // 标题</em>
   title: string;
-  // 颜色
+ <em> // 颜色</em>
   colors: Color | string;
 
   constructor(title: string, colors: Color | string) {
@@ -131,25 +131,25 @@ export class MySwiperItem {
 
 @Component
 export struct Custom3DComponentPage {
-  // --------------------暴露外部属性----------------------------
-  // 动画持续时间，默认500ms
+  <em>// --------------------暴露外部属性----------------------------</em>
+<em>  // 动画持续时间，默认500ms</em>
   duration: number = 500;
-  // 是否自动播放
+ <em> // 是否自动播放</em>
   autoPlay: boolean = false;
-  // 是否循环播放
+ <em> // 是否循环播放</em>
   loop: boolean = true;
-  // 轮播数据
+ <em> // 轮播数据</em>
   items: ESObject[] = [];
-  // 轮播页插槽参数
+ <em> // 轮播页插槽参数</em>
   @BuilderParam swiperItemSlotParam: (item: ESObject) => void;
-  // --------------------私有属性----------------------------
-  // 当前项下标
+ <em> // --------------------私有属性----------------------------</em>
+<em>  // 当前项下标</em>
   @State currentIndex: number = 0;
-  // 旋转角度列表
+  <em>// </em><em>旋转角度列表</em>
   @State angleList: number[] = [];
-  // 旋转中心点列表
+  <em>// 旋转中心点列表</em>
   @State centerXList: Array<number | string> = [];
-  // 轮播控制器
+  <em>// 轮播控制器</em>
   private swiperController: SwiperController = new SwiperController();
 
   build() {
@@ -158,7 +158,7 @@ export struct Custom3DComponentPage {
         Stack() {
           this.swiperItemSlotParam(item);
         }
-        // 设置组件旋转
+       <em> // 设置组件旋转</em>
         .rotate({
           x: 0,
           y: 1,
@@ -178,31 +178,31 @@ export struct Custom3DComponentPage {
     .onChange((index: number) => {
       this.currentIndex = index;
     })
-    // 自定义Swiper页面切换动画
+   <em> // 自定义Swiper页面切换动画</em>
     .customContentTransition({
-      // 页面移除视窗时超时1000ms下渲染树
+      <em>// 页面移除视窗时超时1000ms下渲染树</em>
       timeout: 1000,
       transition: (proxy: SwiperContentTransitionProxy) => {
-        // 旋转角度
+    <em>    // 旋转角度</em>
         let angle = 0;
         console.info('proxy.position===>' + proxy.position);
         console.info('proxy.index===>' + proxy.index);
-        // position为index页面相对于selectedIndex对应页面的起始位置的移动比例，向左移动减小，向右移动增加。
+       <em> // position为index页面相对于selectedIndex对应页面的起始位置的移动比例，向左移动减小，向右移动增加。</em>
         if (proxy.position < 0 && proxy.position > -1) {
-          // 当前页向左滑出或上一页向右滑入
+          <em>// </em><em>当前页向左滑出或上一页向右滑入</em>
           angle = proxy.position * 90;
-          // 设置index页面的旋转中心轴为右侧边缘
+        <em>  // 设置index页面的旋转中心轴为右侧边缘</em>
           this.centerXList[proxy.index] = '100%';
         } else if (proxy.position > 0 && proxy.position < 1) {
-          // 当前页向右滑出或下一页向左滑入
+       <em>   // 当前页向右滑出或下一页向左滑入</em>
           angle = proxy.position * 90;
-          // 设置index页面的旋转中心轴为左侧边缘
+        <em>  // 设置index页面的旋转中心轴为左侧边缘</em>
           this.centerXList[proxy.index] = '0%';
         } else {
-          // position小于-1时表示向左完全滑出区域，大于1时表示向右完全滑出区域，重置角度
+       <em>   // position小于-1时表示向左完全滑出区域，大于1时表示向右完全滑出区域，重置角度</em>
           angle = 0;
         }
-        // 修改index页的旋转角
+       <em> // 修改index页的旋转角</em>
         this.angleList[proxy.index] = angle;
       }
     });

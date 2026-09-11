@@ -1,6 +1,6 @@
 # @hms.enterpriseSpaceService.fileTransfer(空间数据传输)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/enterprisespace-spacedatatransfer
 **支持设备：** PC/2in1
@@ -12,7 +12,8 @@
 **起始版本：** 6.0.0(20)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** PC/2in1
 
@@ -22,7 +23,23 @@ import { fileTransfer } from '@kit.EnterpriseSpaceKit';
  
   
 
-#### AuditInfo
+## fileTransfer
+
+
+**支持设备：** PC/2in1
+
+该类为企业安全管控类应用提供下发空间互传策略能力。
+ 
+**模型约束：** 此接口仅可在Stage模型下使用。
+ 
+**系统能力：** SystemCapability.EnterpriseSpace.SpaceDataTransfer
+ 
+**起始版本：** 6.0.0(20)
+ 
+  
+
+### AuditInfo
+
 
 **支持设备：** PC/2in1
 
@@ -34,6 +51,7 @@ import { fileTransfer } from '@kit.EnterpriseSpaceKit';
  
 **系统能力：** SystemCapability.EnterpriseSpace.SpaceDataTransfer
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | auditId | string | 否 | 否 | 表示在发起审批时由数据库自动生成的审批ID，通常为由9位数字组成的字符串。不能为空字符串。 |
@@ -46,7 +64,8 @@ import { fileTransfer } from '@kit.EnterpriseSpaceKit';
  
   
 
-#### setAuditInfo
+### setAuditInfo
+
 
 **支持设备：** PC/2in1
 
@@ -64,6 +83,7 @@ setAuditInfo(transactionNum: string, info: AuditInfo): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | transactionNum | string | 是 | 在传输文件时由数据库自动生成的传输编号，通常为由19位数字组成的字符串。不能为空字符串。 |
@@ -72,6 +92,7 @@ setAuditInfo(transactionNum: string, info: AuditInfo): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回设置审批信息的结果。0表示设置审批信息成功，否则表示失败。 |
@@ -81,6 +102,7 @@ setAuditInfo(transactionNum: string, info: AuditInfo): number
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-space)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | the application does not have permission to call this function. |
@@ -113,7 +135,8 @@ try {
  
   
 
-#### getAuditInfo
+### getAuditInfo
+
 
 **支持设备：** PC/2in1
 
@@ -131,6 +154,7 @@ getAuditInfo(transactionNum: string): AuditInfo
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | transactionNum | string | 是 | 在传输文件时由数据库自动生成的传输编号，通常为由19位数字组成的字符串。不能为空字符串。 |
@@ -138,6 +162,7 @@ getAuditInfo(transactionNum: string): AuditInfo
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AuditInfo | 表示审批信息。 |
@@ -147,6 +172,7 @@ getAuditInfo(transactionNum: string): AuditInfo
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-space)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | the application does not have permission to call this function. |
@@ -171,7 +197,8 @@ try {
  
   
 
-#### policyPush
+### policyPush
+
 
 **支持设备：** PC/2in1
 
@@ -189,6 +216,7 @@ policyPush(policyContext: string): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | policyContext | string | 是 | 下发单双通策略的内容。一级节点为config，其有6个二级节点，分别为inEnable、incoming_check、outEnable、outgoing_check、checkpoint_config和approvalpoint_config。每个节点负责不同的功能，共同构成了完整的策略配置。详细内容参考下表。 - inEnable：控制企业空间接收文件的权限。 - incoming_check：定义个人空间向企业空间发送文件时的检测规则。参数格式为字符串，内容会在后续详细解释。 - outEnable：控制企业空间外发文件的权限。 - outgoing_check：定义企业空间向个人空间发送文件时的检测规则。参数格式为字符串，内容会在后续详细解释。 - checkpoint_config：配置检测应用的信息，包括应用的包名、组件名、参数、检测函数编码。参数格式为字符串，内容会在后续详细解释。 - approvalpoint_config：配置审批点的信息，包括应用的包名和组件名。 |
@@ -201,14 +229,16 @@ policyPush(policyContext: string): void
 - **incoming_check**
 
   
+
 | 参数名 | 说明 | 示例 |
 | --- | --- | --- |
-| data_list | 定义个人空间向企业空间发送文件时的检测规则。 | [ { "allow": "VirusCheck.result == 0", "approval": "", "check_point": "VirusCheck", "check_point_name": "VirusCheck_in", "is_enable": "true", "forbidden": "VirusCheck.result == 1", "order": "0" } ] |
+| data_list | 定义个人空间向企业空间发送文件时的检测规则。 | [ { "allow": "VirusCheck.Result == 0", "approval": "", "check_point": "VirusCheck", "check_point_name": "VirusCheck_in", "is_enable": "true", "forbidden": "VirusCheck.Result == 1", "order": "0" } ] |
  
  
 - **outgoing_check**
 
   
+
 | 参数名 | 说明 | 示例 |
 | --- | --- | --- |
 | data_list | 定义企业空间向个人空间发送文件时的检测规则。 | [ { "allow": "SecurityCheck.Result == 3 or SecurityCheck.Result == 4 or SecurityCheck.Result == 6 or SecurityCheck.Result == 7", "approval": "SecurityCheck.Result == 10", "check_point": "SecurityCheck", "check_point_name": "SecurityCheck_out", "is_enable": "true", "forbidden": "SecurityCheck.Result == 0 or SecurityCheck.Result == 1 or SecurityCheck.Result == 12 or SecurityCheck.Result == 2 or SecurityCheck.Result == 5 or SecurityCheck.Result == 8 or SecurityCheck.Result == 9 or SecurityCheck.Result == 11", "order": "0" } ] |
@@ -217,6 +247,7 @@ policyPush(policyContext: string): void
 - **checkpoint_config**
 
   
+
 | 参数名 | 说明 | 示例 |
 | --- | --- | --- |
 | data_list | 配置检测应用的信息，包括应用的包名、组件名、参数、检测函数编码。 | [ { "check_point_name": "SecurityCheck", "bundle_name": "com.example.enterprisespacekit_samplecode_clientdemo_arkts", "ability_name": "TestScanAbility", "func_code": "2", "type": "2" } ] |
@@ -225,6 +256,7 @@ policyPush(policyContext: string): void
 - **approvalpoint_config**
 
   
+
 | 参数名 | 说明 | 示例 |
 | --- | --- | --- |
 | data_list | 配置审批点的信息，包括应用的包名和组件名。 | [ { "bundle_name": "com.example.enterprisespacekit_samplecode_clientdemo_arkts", "ability_name": "TestApprovalAbility" } ] |
@@ -235,20 +267,22 @@ policyPush(policyContext: string): void
 - **incoming_check**下的**data_list**
 
   
+
 | 参数名 | 说明 | 示例 |
 | --- | --- | --- |
-| allow | 放通动作配置，通过表达式配置。 | "VirusCheck.result == 0" |
+| allow | 放通动作配置，通过表达式配置。 | "VirusCheck.Result == 0" |
 | approval | 审批动作配置，个人空间向企业空间发送文件时的审批不生效，不需要配置。 | "VirusCheck.Result == 10" |
 | check_point | 检测点类型。 SecurityCheck：安全检查 VirusCheck：病毒检查 | "SecurityCheck" |
 | check_point_name | 检测点名称。由用户自定义，无长度限制。 | "VirusCheck_in" |
 | is_enable | 配置个人空间向企业空间发送文件时检测的规则是否生效。可选参数。 true：生效 false：不生效 默认值：true | "true" |
-| forbidden | 拦截动作配置信息，通过“VirusCheck.Result == xx”样式表达拦截动作，当用“or”连接多个表达式时，多个拦截动作组合配置。“xx”具体取值由业务决定。 | "VirusCheck.result == 1 or VirusCheck.result == 2" |
+| forbidden | 拦截动作配置信息，通过“VirusCheck.Result == xx”样式表达拦截动作，当用“or”连接多个表达式时，多个拦截动作组合配置。“xx”具体取值由业务决定。 | "VirusCheck.Result == 1 or VirusCheck.Result == 2" |
 | order | 检测点顺序号，编号从0开始。空间互传服务会根据编号顺序依次处理检测点。 | "0" |
  
  
 - **outgoing_check**下的**data_list**
 
   
+
 | 参数名 | 说明 | 示例 |
 | --- | --- | --- |
 | allow | 放通动作配置，通过表达式配置。 | "SecurityCheck.Result == 3 or SecurityCheck.Result == 4 or SecurityCheck.Result == 6 or SecurityCheck.Result == 7" |
@@ -263,6 +297,7 @@ policyPush(policyContext: string): void
 - **checkpoint_config**下的**data_list**
 
   
+
 | 参数名 | 说明 | 示例 |
 | --- | --- | --- |
 | check_point_name | 检测点名称，与该节点下type的检测点类型对应。由用户自定义，无长度限制。 | "SecurityCheck" 或 "VirusCheck" |
@@ -275,6 +310,7 @@ policyPush(policyContext: string): void
 - **approvalpoint_config**下的**data_list**
 
   
+
 | 参数名 | 说明 | 示例 |
 | --- | --- | --- |
 | bundle_name | 包名。 | "com.example.enterprisespacekit_samplecode_clientdemo_arkts" |
@@ -290,12 +326,12 @@ policyContext内容可参考如下：
     "incoming_check": {
       "data_list": [
         {
-          "allow": "VirusCheck.result == 0",
+          "allow": "VirusCheck.Result == 0",
           "approval": "",
           "check_point": "VirusCheck",
           "check_point_name": "VirusCheck_in",
           "is_enable": "true",
-          "forbidden": "VirusCheck.result == 1",
+          "forbidden": "VirusCheck.Result == 1",
           "order": "0"
         }
       ]
@@ -348,6 +384,7 @@ policyContext内容可参考如下：
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-space)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | the application does not have permission to call this function. |
@@ -362,7 +399,7 @@ policyContext内容可参考如下：
 import { fileTransfer } from '@kit.EnterpriseSpaceKit';
 
 const policyContext: string =
-  '{\"config\":{\"inEnable\":\"1\",\"incoming_check\":{\"data_list\":[{\"allow\":\"VirusCheck.result == 0\",\"approval\":\"\",\"check_point\":\"VirusCheck\",\"check_point_name\":\"VirusCheck_in\",\"forbidden\":\"VirusCheck.result == 1\",\"order\":\"0\"}]},\"outEnable\":\"0\",\"outgoing_check\":{\"data_list\":[{\"allow\":\"SecurityCheck.Result == 3 or SecurityCheck.Result == 4 or SecurityCheck.Result == 6 or SecurityCheck.Result == 7\",\"approval\":\"SecurityCheck.Result == 10\",\"check_point\":\"SecurityCheck\",\"check_point_name\":\"SecurityCheck_out\",\"forbidden\":\"SecurityCheck.Result == 0 or SecurityCheck.Result == 1 or SecurityCheck.Result == 12 or SecurityCheck.Result == 2 or SecurityCheck.Result == 5 or SecurityCheck.Result == 8 or SecurityCheck.Result == 9 or SecurityCheck.Result == 11\",\"order\":\"0\"}]},\"checkpoint_config\":{\"data_list\":[{\"check_point_name\":\"SecurityCheck\",\"bundle_name\":\"com.example.enterprisespacekit_samplecode_clientdemo_arkts\",\"ability_name\":\"TestScanAbility\",\"func_code\":\"2\",\"type\":\"2\"},{\"check_point_name\":\"VirusCheck\",\"bundle_name\":\"com.example.enterprisespacekit_samplecode_clientdemo_arkts\",\"ability_name\":\"TestScanAbility\",\"func_code\":\"3\",\"type\":\"1\"}]},\"approvalpoint_config\":{\"data_list\":[{\"bundle_name\":\"com.example.enterprisespacekit_samplecode_clientdemo_arkts\",\"ability_name\":\"TestApprovalAbility\"}]}}}';
+  '{\"config\":{\"inEnable\":\"1\",\"incoming_check\":{\"data_list\":[{\"allow\":\"VirusCheck.Result == 0\",\"approval\":\"\",\"check_point\":\"VirusCheck\",\"check_point_name\":\"VirusCheck_in\",\"forbidden\":\"VirusCheck.Result == 1\",\"order\":\"0\"}]},\"outEnable\":\"0\",\"outgoing_check\":{\"data_list\":[{\"allow\":\"SecurityCheck.Result == 3 or SecurityCheck.Result == 4 or SecurityCheck.Result == 6 or SecurityCheck.Result == 7\",\"approval\":\"SecurityCheck.Result == 10\",\"check_point\":\"SecurityCheck\",\"check_point_name\":\"SecurityCheck_out\",\"forbidden\":\"SecurityCheck.Result == 0 or SecurityCheck.Result == 1 or SecurityCheck.Result == 12 or SecurityCheck.Result == 2 or SecurityCheck.Result == 5 or SecurityCheck.Result == 8 or SecurityCheck.Result == 9 or SecurityCheck.Result == 11\",\"order\":\"0\"}]},\"checkpoint_config\":{\"data_list\":[{\"check_point_name\":\"SecurityCheck\",\"bundle_name\":\"com.example.enterprisespacekit_samplecode_clientdemo_arkts\",\"ability_name\":\"TestScanAbility\",\"func_code\":\"2\",\"type\":\"2\"},{\"check_point_name\":\"VirusCheck\",\"bundle_name\":\"com.example.enterprisespacekit_samplecode_clientdemo_arkts\",\"ability_name\":\"TestScanAbility\",\"func_code\":\"3\",\"type\":\"1\"}]},\"approvalpoint_config\":{\"data_list\":[{\"bundle_name\":\"com.example.enterprisespacekit_samplecode_clientdemo_arkts\",\"ability_name\":\"TestApprovalAbility\"}]}}}';
 fileTransfer.policyPush(policyContext);
 console.info(`Succeeded in pushing policy.`);
 ```

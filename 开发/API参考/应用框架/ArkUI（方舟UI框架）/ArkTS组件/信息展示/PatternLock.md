@@ -1,9 +1,9 @@
 # PatternLock
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-patternlock
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 图案密码锁组件，以九宫格图案的方式输入密码，用于密码验证场景。组件支持自定义九宫格尺寸、圆点及连线样式、选中/激活状态颜色等外观属性，支持密码输入过程中的实时反馈以及密码验证结果（正确/错误）的状态设置。手指在PatternLock组件区域按下时开始进入输入状态，手指离开屏幕时结束输入状态完成密码输入。
 
@@ -12,17 +12,19 @@
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 PatternLock(controller?: PatternLockController)
 
@@ -34,6 +36,7 @@ PatternLock(controller?: PatternLockController)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | controller | PatternLockController | 否 | 设置PatternLock组件控制器，用于重置组件状态和设置图案密码状态。当需要程序化控制组件状态（如重置密码锁、设置密码验证结果）时传入此参数；不传入时无法通过控制器手动操作组件状态（即无法调用reset()、setChallengeResult()等方法）。 |
@@ -41,17 +44,19 @@ PatternLock(controller?: PatternLockController)
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
 
 
 
-#### sideLength
+### sideLength
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sideLength(value: Length)
 
@@ -67,6 +72,7 @@ sideLength(value: Length)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Length | 是 | 组件的宽度和高度。 取值范围：大于0。 设置为0或负数时，组件不显示。 |
@@ -74,9 +80,10 @@ sideLength(value: Length)
 
 
 
-#### circleRadius
+### circleRadius
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 circleRadius(value: Length)
 
@@ -88,6 +95,7 @@ circleRadius(value: Length)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Length | 是 | 宫格中圆点的半径。 取值范围：(0, sideLength/11]。设置小于等于0的值时，按默认值处理；超过最大值时，按最大值处理。 |
@@ -95,9 +103,10 @@ circleRadius(value: Length)
 
 
 
-#### backgroundColor
+### backgroundColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 backgroundColor(value: ResourceColor)
 
@@ -113,6 +122,7 @@ backgroundColor(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 背景颜色。 |
@@ -120,9 +130,10 @@ backgroundColor(value: ResourceColor)
 
 
 
-#### regularColor
+### regularColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 regularColor(value: ResourceColor)
 
@@ -134,6 +145,7 @@ regularColor(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 宫格圆点在“未选中”状态的填充颜色。 |
@@ -141,9 +153,10 @@ regularColor(value: ResourceColor)
 
 
 
-#### selectedColor
+### selectedColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectedColor(value: ResourceColor)
 
@@ -155,6 +168,7 @@ selectedColor(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 宫格圆点在“选中”状态的填充颜色。 |
@@ -162,9 +176,10 @@ selectedColor(value: ResourceColor)
 
 
 
-#### activeColor
+### activeColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 activeColor(value: ResourceColor)
 
@@ -176,6 +191,7 @@ activeColor(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 宫格圆点在“激活”状态的填充颜色。 |
@@ -183,9 +199,10 @@ activeColor(value: ResourceColor)
 
 
 
-#### pathColor
+### pathColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pathColor(value: ResourceColor)
 
@@ -197,6 +214,7 @@ pathColor(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 连线的颜色。 |
@@ -204,9 +222,10 @@ pathColor(value: ResourceColor)
 
 
 
-#### pathStrokeWidth
+### pathStrokeWidth
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pathStrokeWidth(value: number | string)
 
@@ -218,6 +237,7 @@ pathStrokeWidth(value: number | string)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| string | 是 | 连线的宽度。 单位：vp 取值范围：(0, sideLength/3]，设置为0或负数时连线不显示，超过最大值按最大值处理。 |
@@ -225,9 +245,10 @@ pathStrokeWidth(value: number | string)
 
 
 
-#### autoReset
+### autoReset
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 autoReset(value: boolean)
 
@@ -239,6 +260,7 @@ autoReset(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 在完成密码输入后再次在组件区域按下时是否重置组件状态。 true：重置组件状态（即清除之前输入的密码）；false：不重置组件状态。 |
@@ -246,9 +268,10 @@ autoReset(value: boolean)
 
 
 
-#### activateCircleStyle12+
+### activateCircleStyle12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 activateCircleStyle(options: Optional&lt;CircleStyleOptions&gt;)
 
@@ -262,6 +285,7 @@ activateCircleStyle(options: Optional&lt;CircleStyleOptions&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | Optional&lt;CircleStyleOptions&gt; | 是 | 宫格圆点在“激活”状态的背景圆环样式。 |
@@ -269,9 +293,10 @@ activateCircleStyle(options: Optional&lt;CircleStyleOptions&gt;)
 
 
 
-#### skipUnselectedPoint15+
+### skipUnselectedPoint15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 skipUnselectedPoint(skipped: boolean)
 
@@ -285,6 +310,7 @@ skipUnselectedPoint(skipped: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | skipped | boolean | 是 | 未选中的宫格圆点在密码路径经过时是否跳过选中。 true：跳过选中；false：自动选中。 |
@@ -292,17 +318,19 @@ skipUnselectedPoint(skipped: boolean)
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)外，还支持以下事件：
 
 
 
-#### onPatternComplete
+### onPatternComplete
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onPatternComplete(callback: (input: Array&lt;number&gt;) => void)
 
@@ -318,6 +346,7 @@ onPatternComplete(callback: (input: Array&lt;number&gt;) => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | input | Array&lt;number&gt; | 是 | 与选中宫格圆点顺序一致的数字数组，每个数字表示选中宫格圆点的索引值（第一行圆点从左往右依次为0、1、2，第二行圆点从左往右依次为3、4、5，第三行圆点从左往右依次为6、7、8）。 |
@@ -325,9 +354,10 @@ onPatternComplete(callback: (input: Array&lt;number&gt;) => void)
 
 
 
-#### onDotConnect11+
+### onDotConnect11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDotConnect(callback: import('../api/@ohos.base').Callback&lt;number&gt;)
 
@@ -345,6 +375,7 @@ onDotConnect(callback: import('../api/@ohos.base').Callback&lt;number&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | import('../api/@ohos.base').Callback&lt;number&gt; | 是 | 密码输入选中宫格圆点时触发该回调。回调参数为选中宫格圆点的索引值（第一行圆点从左往右依次为0、1、2，第二行圆点从左往右依次为3、4、5，第三行圆点从左往右依次为6、7、8）。 |
@@ -352,15 +383,17 @@ onDotConnect(callback: import('../api/@ohos.base').Callback&lt;number&gt;)
 
 
 
-#### CircleStyleOptions12+对象说明
+## CircleStyleOptions12+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 圆环样式的参数说明。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -372,15 +405,19 @@ onDotConnect(callback: import('../api/@ohos.base').Callback&lt;number&gt;)
 
 
 
-#### PatternLockController
+## PatternLockController
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 PatternLock组件的控制器，用于重置组件状态和设置图案密码状态。
 
 
 
-#### 导入对象
+### 导入对象
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 let patternLockController: PatternLockController = new PatternLockController();
@@ -388,9 +425,10 @@ let patternLockController: PatternLockController = new PatternLockController();
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -402,9 +440,10 @@ PatternLockController的构造函数。
 
 
 
-#### reset
+### reset
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reset()
 
@@ -416,9 +455,10 @@ reset()
 
 
 
-#### setChallengeResult11+
+### setChallengeResult11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setChallengeResult(result: PatternLockChallengeResult): void
 
@@ -432,6 +472,7 @@ setChallengeResult(result: PatternLockChallengeResult): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | result | PatternLockChallengeResult | 是 | 图案密码状态。包括正确和错误状态。 |
@@ -439,9 +480,10 @@ setChallengeResult(result: PatternLockChallengeResult): void
 
 
 
-#### PatternLockChallengeResult11+枚举说明
+## PatternLockChallengeResult11+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 图案密码状态。
 
@@ -451,6 +493,7 @@ setChallengeResult(result: PatternLockChallengeResult): void
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CORRECT | 1 | 图案密码正确。 |
@@ -459,13 +502,17 @@ setChallengeResult(result: PatternLockChallengeResult): void
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（创建图案密码锁）
+
+
+### 示例1（创建图案密码锁）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例展示了PatternLock组件的基本使用方法。
 
@@ -500,12 +547,15 @@ struct PatternLockExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/z5IOP27zRdmJgfefzzOodQ/zh-cn_image_0000002686088243.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071508Z&HW-CC-Expire=86400&HW-CC-Sign=EF157C699AC29D622D40799658626FB5FBEB5E4C4048F080F6FD17A44CE71727)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/_9IQ_tLSTFCncDpJ3pBnoA/zh-cn_image_0000002747212819.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073105Z&HW-CC-Expire=86400&HW-CC-Sign=4198838143C43350206487F921E75B5914A7F23654F7740CF01C24EA1141A8E5)
 
 
 
 
-#### 示例2（判断密码是否正确）
+### 示例2（判断密码是否正确）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[sideLength](#sidelength)属性设置九宫格的大小、[circleRadius](#circleradius)属性设置宫格中圆点的半径、[onPatternComplete](#onpatterncomplete)属性设置密码输入完成时的回调。
 
@@ -579,4 +629,4 @@ struct PatternLockExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/bW2yo2C2SiKUFWtTHAwHVg/zh-cn_image_0000002685928413.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071508Z&HW-CC-Expire=86400&HW-CC-Sign=2DB4B6B7AC30826008A858F22C3B6BBAC8C5DF4EA27F741D0980DF74526DB8AF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/N9tGfSkBRzWNVMQ59uKKHg/zh-cn_image_0000002717772884.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073105Z&HW-CC-Expire=86400&HW-CC-Sign=120FDCA17C07F0663B6329E56F88EEBF629AB68D5F04AE6D536672D71944B6CE)

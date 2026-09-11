@@ -1,9 +1,9 @@
 # Class (OverlayManager)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-overlaymanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供绘制浮层的能力。OverlayManager支持通过配置浮层层级、显示顺序、显示模式等方式管理浮层节点，适用于需要在Page页面之上但Dialog、Popup、Menu等之下的长时间显示的浮层场景，为开发者提供灵活的浮层管理能力。
  
@@ -12,9 +12,10 @@
 
   
 
-#### openOrderOverlay
+## openOrderOverlay
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 openOrderOverlay(content: ComponentContent, options?: OrderOverlayOptions): Promise&lt;void&gt;
  
@@ -30,6 +31,7 @@ openOrderOverlay(content: ComponentContent, options?: OrderOverlayOptions): Prom
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | content | ComponentContent | 是 | 浮层的显示内容，在OverlayManager的新节点上添加此内容节点。 说明： 新增的节点默认处于页面居中位置，按层级堆叠。 |
@@ -38,6 +40,7 @@ openOrderOverlay(content: ComponentContent, options?: OrderOverlayOptions): Prom
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。成功时无返回结果；失败时抛出错误，错误码参见错误码部分。 |
@@ -47,6 +50,7 @@ openOrderOverlay(content: ComponentContent, options?: OrderOverlayOptions): Prom
  
 以下错误码的详细介绍请参见[弹窗错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-promptaction)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 103307 | The overlay cannot be opened due to the system pop-up window. |
@@ -104,9 +108,10 @@ struct OverlayExample {
  
   
 
-#### OrderOverlayOptions
+## OrderOverlayOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 浮层的层级配置选项。
  
@@ -118,6 +123,7 @@ struct OverlayExample {
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | levelOrder | LevelOrder | 否 | 是 | 浮层的显示顺序。 说明： - 默认值：LevelOrder.clamp(0) |
@@ -127,9 +133,10 @@ struct OverlayExample {
  
   
 
-#### addComponentContent12+
+## addComponentContent12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addComponentContent(content: ComponentContent, index?: number): void
  
@@ -143,6 +150,7 @@ addComponentContent(content: ComponentContent, index?: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | content | ComponentContent | 是 | 在OverlayManager上新增此content节点。 说明： 新增的节点默认处于页面居中，按层级堆叠。 |
@@ -249,9 +257,10 @@ struct OverlayExample {
  
   
 
-#### addComponentContentWithOrder18+
+## addComponentContentWithOrder18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addComponentContentWithOrder(content: ComponentContent, levelOrder?: LevelOrder): void
  
@@ -265,6 +274,7 @@ addComponentContentWithOrder(content: ComponentContent, levelOrder?: LevelOrder)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | content | ComponentContent | 是 | 在OverlayManager上新增此content节点。 说明： 新增的节点默认处于页面居中，按层级堆叠。 |
@@ -353,14 +363,15 @@ struct Index {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/FkvsqNjFQgS9zyN-1sglTg/zh-cn_image_0000002674474352.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095444Z&HW-CC-Expire=86400&HW-CC-Sign=BBC64CDDA5902EB97FE21FC5ABCA55770622D4D9B27D9DB3D39961FBF71A431B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/Qj0BLUJOSf24XxdaNAMR2g/zh-cn_image_0000002717772312.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072446Z&HW-CC-Expire=86400&HW-CC-Sign=3873590BCB623599C5D051D808D352ECC74453EF6B3359D979EAC3AF5606EEB8)
 
  
   
 
-#### removeComponentContent12+
+## removeComponentContent12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeComponentContent(content: ComponentContent): void
  
@@ -374,6 +385,7 @@ removeComponentContent(content: ComponentContent): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | content | ComponentContent | 是 | 在OverlayManager上删除此content。 |
@@ -385,9 +397,10 @@ removeComponentContent(content: ComponentContent): void
  
   
 
-#### showComponentContent12+
+## showComponentContent12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showComponentContent(content: ComponentContent): void
  
@@ -401,6 +414,7 @@ showComponentContent(content: ComponentContent): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | content | ComponentContent | 是 | 在OverlayManager上显示此content。 |
@@ -412,9 +426,10 @@ showComponentContent(content: ComponentContent): void
  
   
 
-#### hideComponentContent12+
+## hideComponentContent12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hideComponentContent(content: ComponentContent): void
  
@@ -428,6 +443,7 @@ hideComponentContent(content: ComponentContent): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | content | ComponentContent | 是 | 在OverlayManager上隐藏此content。 |
@@ -439,9 +455,10 @@ hideComponentContent(content: ComponentContent): void
  
   
 
-#### showAllComponentContents12+
+## showAllComponentContents12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showAllComponentContents(): void
  
@@ -459,9 +476,10 @@ showAllComponentContents(): void
  
   
 
-#### hideAllComponentContents12+
+## hideAllComponentContents12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hideAllComponentContents(): void
  

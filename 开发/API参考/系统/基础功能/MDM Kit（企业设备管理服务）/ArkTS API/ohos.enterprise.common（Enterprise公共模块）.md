@@ -1,18 +1,27 @@
 # @ohos.enterprise.common（Enterprise公共模块）
 
-更新时间：2026-06-12 06:54:11
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-common
 **支持设备：** Phone | PC/2in1 | Tablet
 
 本模块提供MDM Kit中常用公共能力的纯类型定义，包含枚举类型和数据结构。本模块仅导出类型声明，不包含具体实现逻辑或可执行代码。
 
+**使用场景**：
+
+在企业设备管理应用开发中，当需要配置设备管控策略、管理应用实例、处理应用安装结果、监听策略变更等场景时，会使用本模块定义的类型。这些类型为MDM Kit中各子模块的接口提供统一的参数和返回值标准。
+
+**收益**：
+
+通过标准化的类型定义，可以简化企业设备管理应用的开发流程，提高代码的可维护性和类型安全性，降低类型相关的运行时错误。
+
 > [!NOTE]
 > 本模块首批接口从API version 22开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 本模块接口仅可在Stage模型下使用。
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -22,13 +31,15 @@ import { common } from '@kit.MDMKit';
 
 
 
-#### ManagedPolicy
+## ManagedPolicy
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 企业设备管控策略。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -39,7 +50,8 @@ import { common } from '@kit.MDMKit';
 
 
 
-#### ApplicationInstance
+## ApplicationInstance
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -48,6 +60,7 @@ import { common } from '@kit.MDMKit';
 该接口目前在[addUserNonStopApps](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-applicationmanager#applicationmanageraddusernonstopapps22)、[removeUserNonStopApps](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-applicationmanager#applicationmanagerremoveusernonstopapps22)、[addFreezeExemptedApps](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-applicationmanager#applicationmanageraddfreezeexemptedapps22)、[removeFreezeExemptedApps](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-applicationmanager#applicationmanagerremovefreezeexemptedapps22)接口中作为入参使用。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -58,7 +71,8 @@ import { common } from '@kit.MDMKit';
 
 
 
-#### InstallationResult
+## InstallationResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -68,21 +82,24 @@ import { common } from '@kit.MDMKit';
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| result | Result | 否 | 否 | 应用安装结果码。 |
+| result | Result | 否 | 否 | 应用安装结果码。SUCCESS表示应用安装成功，应用可正常使用；FAIL表示应用安装失败，应用不可用。 |
 | message | string | 否 | 否 | 应用安装结果消息。 |
 
 
 
 
-#### Result
+## Result
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 应用安装结果码。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -92,7 +109,8 @@ import { common } from '@kit.MDMKit';
 
 
 
-#### EnterpriseAdminExtensionContext23+
+## EnterpriseAdminExtensionContext23+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -104,6 +122,7 @@ EnterpriseAdminExtensionContext是[EnterpriseAdminExtensionAbility](https://deve
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _EnterpriseAdminExtensionContext.default | EnterpriseAdminExtensionAbility组件的上下文EnterpriseAdminExtensionContext。 |
@@ -111,7 +130,8 @@ EnterpriseAdminExtensionContext是[EnterpriseAdminExtensionAbility](https://deve
 
 
 
-#### StartupScene24+
+## StartupScene24+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -120,6 +140,7 @@ EnterpriseAdminExtensionContext是[EnterpriseAdminExtensionAbility](https://deve
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
 **模型约束**：此接口仅可在Stage模型下使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -130,7 +151,8 @@ EnterpriseAdminExtensionContext是[EnterpriseAdminExtensionAbility](https://deve
 
 
 
-#### PolicyChangedEvent
+## PolicyChangedEvent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -143,6 +165,7 @@ EnterpriseAdminExtensionContext是[EnterpriseAdminExtensionAbility](https://deve
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

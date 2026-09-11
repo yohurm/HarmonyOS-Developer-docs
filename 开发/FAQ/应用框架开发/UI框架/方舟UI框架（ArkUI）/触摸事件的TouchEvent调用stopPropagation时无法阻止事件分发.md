@@ -14,7 +14,7 @@ Button() {
     .onTouch(xx)
 }
 .onTouch((event: TouchEvent) => {
-  // 没有阻止内部的button触发onTouch事件
+<em>  // 没有阻止内部的button触发onTouch事件</em>
   event.stopPropagation();
 })
 ```

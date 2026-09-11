@@ -1,9 +1,9 @@
 # Interface (VideoSession)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-videosession
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 VideoSession继承自[Session](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-session)、[Flash](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-flash)、[AutoExposure](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-autoexposure)、[WhiteBalance](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-whitebalance)、[Focus](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-focus)、[Zoom](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-zoom)、[Stabilization](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-stabilization)、[ColorManagement](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-colormanagement)、[AutoDeviceSwitch](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-autodeviceswitch)、[Macro](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-macro)、[ControlCenter](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-controlcenter)、[ManualExposure](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-manualexposure)、[ManualFocus](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-manualfocus)、[ManualIso](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-manualiso)、[OIS](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-ois)、[Aperture](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-aperture)。
 
@@ -16,9 +16,10 @@ VideoSession继承自[Session](https://developer.huawei.com/consumer/cn/doc/harm
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { camera } from '@kit.CameraKit';
@@ -26,9 +27,10 @@ import { camera } from '@kit.CameraKit';
 
 
 
-#### canPreconfig12+
+## canPreconfig12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 canPreconfig(preconfigType: PreconfigType, preconfigRatio?: PreconfigRatio): boolean
 
@@ -40,6 +42,7 @@ canPreconfig(preconfigType: PreconfigType, preconfigRatio?: PreconfigRatio): boo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | preconfigType | PreconfigType | 是 | 指定配置预期分辨率。 |
@@ -47,6 +50,7 @@ canPreconfig(preconfigType: PreconfigType, preconfigRatio?: PreconfigRatio): boo
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -56,6 +60,7 @@ canPreconfig(preconfigType: PreconfigType, preconfigRatio?: PreconfigRatio): boo
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -81,9 +86,10 @@ function testCanPreconfig(videoSession: camera.VideoSession, preconfigType: came
 
 
 
-#### preconfig12+
+## preconfig12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 preconfig(preconfigType: PreconfigType, preconfigRatio?: PreconfigRatio): void
 
@@ -95,6 +101,7 @@ preconfig(preconfigType: PreconfigType, preconfigRatio?: PreconfigRatio): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | preconfigType | PreconfigType | 是 | 指定配置预期分辨率。 |
@@ -104,6 +111,7 @@ preconfig(preconfigType: PreconfigType, preconfigRatio?: PreconfigRatio): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -129,9 +137,10 @@ function testPreconfig(videoSession: camera.VideoSession, preconfigType: camera.
 
 
 
-#### on('error')11+
+## on('error')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'error', callback: ErrorCallback): void
 
@@ -146,6 +155,7 @@ on(type: 'error', callback: ErrorCallback): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -169,9 +179,10 @@ function registerSessionError(videoSession: camera.VideoSession): void {
 
 
 
-#### off('error')11+
+## off('error')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'error', callback?: ErrorCallback): void
 
@@ -182,6 +193,7 @@ off(type: 'error', callback?: ErrorCallback): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -199,9 +211,10 @@ function unregisterSessionError(videoSession: camera.VideoSession): void {
 
 
 
-#### on('focusStateChange')11+
+## on('focusStateChange')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'focusStateChange', callback: AsyncCallback&lt;FocusState&gt;): void
 
@@ -216,6 +229,7 @@ on(type: 'focusStateChange', callback: AsyncCallback&lt;FocusState&gt;): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -243,9 +257,10 @@ function registerFocusStateChange(videoSession: camera.VideoSession): void {
 
 
 
-#### off('focusStateChange')11+
+## off('focusStateChange')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'focusStateChange', callback?: AsyncCallback&lt;FocusState&gt;): void
 
@@ -256,6 +271,7 @@ off(type: 'focusStateChange', callback?: AsyncCallback&lt;FocusState&gt;): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -273,9 +289,10 @@ function unregisterFocusStateChange(videoSession: camera.VideoSession): void {
 
 
 
-#### on('smoothZoomInfoAvailable')11+
+## on('smoothZoomInfoAvailable')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'smoothZoomInfoAvailable', callback: AsyncCallback&lt;SmoothZoomInfo&gt;): void
 
@@ -290,6 +307,7 @@ on(type: 'smoothZoomInfoAvailable', callback: AsyncCallback&lt;SmoothZoomInfo&gt
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -317,9 +335,10 @@ function registerSmoothZoomInfo(videoSession: camera.VideoSession): void {
 
 
 
-#### off('smoothZoomInfoAvailable')11+
+## off('smoothZoomInfoAvailable')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'smoothZoomInfoAvailable', callback?: AsyncCallback&lt;SmoothZoomInfo&gt;): void
 
@@ -330,6 +349,7 @@ off(type: 'smoothZoomInfoAvailable', callback?: AsyncCallback&lt;SmoothZoomInfo&
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -347,9 +367,10 @@ function unregisterSmoothZoomInfo(videoSession: camera.VideoSession): void {
 
 
 
-#### on('autoDeviceSwitchStatusChange')13+
+## on('autoDeviceSwitchStatusChange')13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'autoDeviceSwitchStatusChange', callback: AsyncCallback&lt;AutoDeviceSwitchStatus&gt;): void
 
@@ -364,6 +385,7 @@ on(type: 'autoDeviceSwitchStatusChange', callback: AsyncCallback&lt;AutoDeviceSw
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -391,9 +413,10 @@ function registerAutoDeviceSwitchStatus(videoSession: camera.VideoSession): void
 
 
 
-#### off('autoDeviceSwitchStatusChange')13+
+## off('autoDeviceSwitchStatusChange')13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'autoDeviceSwitchStatusChange', callback?: AsyncCallback&lt;AutoDeviceSwitchStatus&gt;): void
 
@@ -404,6 +427,7 @@ off(type: 'autoDeviceSwitchStatusChange', callback?: AsyncCallback&lt;AutoDevice
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -421,9 +445,10 @@ function unregisterSmoothZoomInfo(videoSession: camera.VideoSession): void {
 
 
 
-#### setQualityPrioritization14+
+## setQualityPrioritization14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setQualityPrioritization(quality : QualityPrioritization) : void;
 
@@ -439,6 +464,7 @@ setQualityPrioritization(quality : QualityPrioritization) : void;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | quality | QualityPrioritization | 是 | 需要设置的视频质量优先级（默认为高录像质量）。 |
@@ -447,6 +473,7 @@ setQualityPrioritization(quality : QualityPrioritization) : void;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -472,9 +499,10 @@ function setQualityPrioritization(videoSession: camera.VideoSession): void {
 
 
 
-#### on('systemPressureLevelChange')20+
+## on('systemPressureLevelChange')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'systemPressureLevelChange', callback: AsyncCallback&lt;SystemPressureLevel&gt;): void
 
@@ -489,6 +517,7 @@ on(type: 'systemPressureLevelChange', callback: AsyncCallback&lt;SystemPressureL
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -516,9 +545,10 @@ function registerSystemPressureLevelChangeCallback(videoSession: camera.VideoSes
 
 
 
-#### off('systemPressureLevelChange')20+
+## off('systemPressureLevelChange')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'systemPressureLevelChange', callback?: AsyncCallback&lt;SystemPressureLevel&gt;): void
 
@@ -529,6 +559,7 @@ off(type: 'systemPressureLevelChange', callback?: AsyncCallback&lt;SystemPressur
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -546,9 +577,10 @@ function unregisterSystemPressureLevelChangeCallback(videoSession: camera.VideoS
 
 
 
-#### on('controlCenterEffectStatusChange')20+
+## on('controlCenterEffectStatusChange')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'controlCenterEffectStatusChange', callback: AsyncCallback&lt;ControlCenterStatusInfo&gt;): void
 
@@ -563,6 +595,7 @@ on(type: 'controlCenterEffectStatusChange', callback: AsyncCallback&lt;ControlCe
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -590,9 +623,10 @@ function registerControlCenterEffectStatusChangeCallback(videoSession: camera.Vi
 
 
 
-#### off('controlCenterEffectStatusChange')20+
+## off('controlCenterEffectStatusChange')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'controlCenterEffectStatusChange', callback?: AsyncCallback&lt;ControlCenterStatusInfo&gt;): void
 
@@ -603,6 +637,7 @@ off(type: 'controlCenterEffectStatusChange', callback?: AsyncCallback&lt;Control
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -620,9 +655,10 @@ function unregisterControlCenterEffectStatusChange(videoSession: camera.VideoSes
 
 
 
-#### on('macroStatusChanged')20+
+## on('macroStatusChanged')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'macroStatusChanged', callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -633,6 +669,7 @@ on(type: 'macroStatusChanged', callback: AsyncCallback&lt;boolean&gt;): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -660,9 +697,10 @@ function registerMacroStatusChanged(videoSession: camera.VideoSession): void {
 
 
 
-#### off('macroStatusChanged')20+
+## off('macroStatusChanged')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'macroStatusChanged', callback?: AsyncCallback&lt;boolean&gt;): void
 
@@ -673,6 +711,7 @@ off(type: 'macroStatusChanged', callback?: AsyncCallback&lt;boolean&gt;): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -690,9 +729,10 @@ function unregisterMacroStatusChanged(videoSession: camera.VideoSession): void {
 
 
 
-#### onIsoInfoChange22+
+## onIsoInfoChange22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onIsoInfoChange(callback: Callback&lt;IsoInfo&gt;): void
 
@@ -705,6 +745,7 @@ onIsoInfoChange(callback: Callback&lt;IsoInfo&gt;): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -725,9 +766,10 @@ function registerIsoInfoChanged(videoSession: camera.VideoSession): void {
 
 
 
-#### offIsoInfoChange22+
+## offIsoInfoChange22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offIsoInfoChange(callback?: Callback&lt;IsoInfo&gt;): void
 
@@ -740,6 +782,7 @@ offIsoInfoChange(callback?: Callback&lt;IsoInfo&gt;): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -764,9 +807,10 @@ function unregisterAllIsoInfoChanged(videoSession: camera.VideoSession): void {
 
 
 
-#### onExposureInfoChange
+## onExposureInfoChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onExposureInfoChange(callback: Callback&lt;ExposureInfo&gt;): void
 
@@ -781,6 +825,7 @@ onExposureInfoChange(callback: Callback&lt;ExposureInfo&gt;): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -799,9 +844,10 @@ function onExposureInfoChange(videoSession: camera.VideoSession): void {
 
 
 
-#### offExposureInfoChange
+## offExposureInfoChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offExposureInfoChange(callback?: Callback&lt;ExposureInfo&gt;): void
 
@@ -816,6 +862,7 @@ offExposureInfoChange(callback?: Callback&lt;ExposureInfo&gt;): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |

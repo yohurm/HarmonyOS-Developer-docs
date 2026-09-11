@@ -93,7 +93,7 @@ struct MultiTabs {
 
   build() {
     Column() {
-      // 一级Tab
+      <em>// 一级Tab</em>
       Tabs({ barPosition: BarPosition.Start, index: this.currentIndex, controller: this.controller }) {
         TabContent() {
           Column() {
@@ -117,7 +117,7 @@ struct MultiTabs {
               }
               .tabBar(this.subTabBuilder(0, '组件1'))
               .margin({ left: 16, right: 16 })
-              // 关键代码
+              <em>// 关键代码</em>
               .gesture(
                 PanGesture(this.panOptionRight)
                   .onActionEnd(() => {
@@ -142,7 +142,7 @@ struct MultiTabs {
               }
               .tabBar(this.subTabBuilder(3, '组件4'))
               .margin({ left: 16, right: 16, top: 5 })
-              // 关键代码
+              <em>// 关键代码</em>
               .gesture(
                 PanGesture(this.panOptionLeft)
                   .onActionEnd(() => {

@@ -1,6 +1,6 @@
 # 使用Web组件打印前端页面
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-print
 
@@ -17,7 +17,7 @@ Web组件打印HTML页面时可通过W3C标准协议接口和应用接口两种�
 ```
 
 
-#### 使用W3C标准协议接口拉起打印
+## 使用W3C标准协议接口拉起打印
 
 通过创建打印适配器，拉起打印应用，并对当前Web页面内容进行渲染，渲染后生成的PDF文件信息通过文件描述符（fd）传递给打印框架。W3C标准协议接口window.print()方法用于打印当前页面或弹出打印对话框。该方法没有任何参数，只需要在JavaScript中调用即可。
 
@@ -138,7 +138,7 @@ struct Index {
 
 
 
-#### 通过调用应用侧接口拉起打印
+## 通过调用应用侧接口拉起打印
 
 应用侧通过调用[createWebPrintDocumentAdapter](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller#createwebprintdocumentadapter11)创建打印适配器，通过将适配器传入打印的print接口调起打印。
 

@@ -1,9 +1,9 @@
 # panel
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-container-panel
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 从API version 5开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
@@ -12,20 +12,23 @@
 可滑动面板，提供一种轻量的内容展示窗口，在不同尺寸中切换，属于弹出式组件。
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 可以包含子组件。
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-attributes)外，还支持如下属性：
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | type | string | foldable | 是 | 设置可滑动面板类型，不可动态变更，可选值有： - minibar：提供minibar和类全屏展示切换效果。 - foldable：内容永久展示类，提供大（类全屏）、中（类半屏）、小三种尺寸展示切换效果。 - temporary：内容临时展示区，提供大（类全屏）、中（类半屏）两种尺寸展示切换效果。 |
@@ -42,12 +45,14 @@
  
   
 
-#### 样式
+## 样式
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 仅支持如下样式：
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | padding | &lt;length&gt; | 0 | 否 | 该属性可以有1到4个值： - 指定一个值时，该值指定四个边的内边距。 - 指定两个值时，第一个值指定上下两边的内边距，第二个指定左右两边的内边距。 - 指定三个值时，第一个指定上边的内边距，第二个指定左右两边的内边距，第三个指定下边的内边距。 - 指定四个值时分别为上、右、下、左边的内边距（顺时针顺序）。 |
@@ -77,12 +82,14 @@
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 仅支持如下事件：
   
+
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | sizechange | { size: { height: heightLength, width: widthLength }, mode: modeStr } | 当可滑动面板发生状态变化时触发，mode参数可选值为： - mini：类型为minibar和foldable时，处于最小状态； - half: 类型为foldable时，处于类半屏状态； - full: 类全屏状态。 返回的height值为内容区高度值，当dragbar属性为true时，panel本身的高度值为dragbar高度加上内容区高度。 |
@@ -90,12 +97,14 @@
  
   
 
-#### 方法
+## 方法
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 仅支持如下方法：
   
+
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | show | - | 弹出panel可滑动面板。 |
@@ -104,9 +113,10 @@
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 <!-- xxx.hml -->
@@ -190,4 +200,4 @@ export default {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/tGW3LtbdQcWi9B5V2yEYDw/zh-cn_image_0000002685928691.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071523Z&HW-CC-Expire=86400&HW-CC-Sign=E14C7D91A1F8F35D57198B808EBF04885C572A27D7D75096752332F61EB57D69)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/g3m-Us2ATPObF06bLfvK4w/zh-cn_image_0000002717773166.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072957Z&HW-CC-Expire=86400&HW-CC-Sign=4A892A76C5DE8F378CA4B726691235DAC11D07079D60C87F9FCE698C1F956ADE)

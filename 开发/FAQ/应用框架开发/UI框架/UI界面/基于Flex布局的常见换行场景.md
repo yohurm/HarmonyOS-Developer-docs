@@ -66,13 +66,13 @@ FlexDirection.Row（默认值）：主轴为水平方向，子元素从起始端
 @Entry
 @Component
 struct FlexPage {
-  // 模拟图标数据（宽度不一致）
+ <em> // 模拟图标数据（宽度不一致）</em>
   @State iconLabels: string[] = [];
-  private xCount: number = 0; // 计数器
+  private xCount: number = 0; <em>// 计数器</em>
 
   build() {
     Column() {
-      // 核心Flex容器（自动换行）
+     <em> // 核心Flex容器（自动换行）</em>
       Flex({ direction: FlexDirection.Row, wrap: FlexWrap.Wrap }) {
         ForEach(this.iconLabels, (label: string) => {
           Text(label)
@@ -138,29 +138,29 @@ struct FlexPageSample {
 
   aboutToAppear(): void {
     window.getLastWindow(this.getUIContext().getHostContext(), (err, data) => {
-      data.setWindowLayoutFullScreen(true); // 设置沉浸式布局
-      let properties = data.getWindowProperties(); // 获取当前窗口的属性
-      let windowWidth = properties.windowRect.width; // 获取当前窗口宽度
-      this.flexWidth = windowWidth - this.uiContext.vp2px(20 * 2); // 计算Flex组件的最大宽度，单位px
+      data.setWindowLayoutFullScreen(true);<em> // 设置沉浸式布局</em>
+      let properties = data.getWindowProperties();<em> // 获取当前窗口的属性</em>
+      let windowWidth = properties.windowRect.width;<em> // 获取当前窗口宽度</em>
+      this.flexWidth = windowWidth - this.uiContext.vp2px(20 * 2);<em> // 计算Flex组件的最大宽度，单位px</em>
       this.setFlexWrap(this.textList);
     });
   }
 
-  // 设置是否换行
+ <em> // 设置是否换行</em>
   setFlexWrap(textList: string[]) {
-    this.isWarp = false; // 默认不换行
-    let lineWidth = this.flexWidth - this.uiContext.px2vp(6 * 2); // Flex组件一行的最大宽度，单位px
-    let countWidth = 0; // 文本框占用的的宽度
+    this.isWarp = false; <em>// 默认不换行</em>
+    let lineWidth = this.flexWidth - this.uiContext.px2vp(6 * 2);<em> // Flex组件一行的最大宽度，单位px</em>
+    let countWidth = 0;<em> // 文本框占用的的宽度</em>
     textList.forEach((item) => {
       if (this.isWarp === false) {
-        // 计算文本的宽度
+      <em>  // 计算文本的宽度</em>
         let textWidth = this.measureUtils.measureText({
           textContent: item,
-          fontSize: 12 // 文本字体大小
+          fontSize: 12<em> // 文本字体大小</em>
         });
-        // 累计文本框占用宽度，文本宽度+2*文本框左右内边距+2*文本框左右外边距
+      <em>  // 累计文本框占用宽度，文本宽度+2*文本框左右内边距+2*文本框左右外边距</em>
         countWidth = countWidth + textWidth + this.uiContext.vp2px(2 * 12 + 2 * 3);
-        // 超过每行最大宽度，设置为换行
+       <em> // 超过每行最大宽度，设置为换行</em>
         if (countWidth >= lineWidth) {
           this.isWarp = true;
         }
@@ -174,7 +174,7 @@ struct FlexPageSample {
         Text(`计算首行能否放下全部文本，是否需要换行`);
         Flex({
           justifyContent: FlexAlign.Start,
-          wrap: this.isWarp ? FlexWrap.Wrap : FlexWrap.NoWrap, // 根据状态变量设置是否换行
+          wrap: this.isWarp ? FlexWrap.Wrap : FlexWrap.NoWrap,<em> // 根据状态变量设置是否换行</em>
           direction: FlexDirection.Row
         }) {
           ForEach(this.textList, (item: string) => {
@@ -185,12 +185,12 @@ struct FlexPageSample {
               .borderRadius(4)
               .textOverflow({ overflow: TextOverflow.Ellipsis })
               .ellipsisMode(EllipsisMode.END)
-              .margin(3) // 文本框外边距3
-              .padding({ left: 12, right: 12 }) // 文本框左右内边距12
+              .margin(3) <em>// 文本框外边距3</em>
+              .padding({ left: 12, right: 12 }) <em>// 文本框左右内边距12</em>
               .height(32);
           });
         }
-        .padding(6) // Flex组件内边距6
+        .padding(6) <em>// Flex组件内边距6</em>
         .backgroundColor('#ffffff')
         .width('auto');
       }.width('100%')
@@ -212,7 +212,7 @@ struct FlexPageSample {
       left: 20,
       right: 20,
       bottom: 20
-    }) // 左右内边距20
+    }) <em>// 左右内边距20</em>
     .height('100%')
     .width('100%')
     .backgroundColor('#f1f3f5');
@@ -246,15 +246,15 @@ import { LengthMetrics, MeasureUtils, UIContext, window } from '@kit.ArkUI';
 export struct InputTag {
   @Link value: string[];
   @State inputVal: string = '';
-  // input组件的宽度
+<em>  // input组件的宽度</em>
   @Link remainingSpaceVp: number;
-  // 父组件传递的计算函数
+ <em> // 父组件传递的计算函数</em>
   private onTagsChanged?: () => void;
-  @Link lineWidth: number; // 改为@Link修饰符
+  @Link lineWidth: number; <em>// 改为@Link修饰符</em>
   flexWidth: number = 0;
 
   aboutToAppear() {
-    // 初始计算
+   <em> // 初始计算</em>
     if (this.onTagsChanged) {
       this.onTagsChanged();
     }
@@ -268,7 +268,7 @@ export struct InputTag {
           wrap: FlexWrap.Wrap,
           space: { main: LengthMetrics.vp(6), cross: LengthMetrics.vp(6) }
         }) {
-          // 渲染已有tag
+        <em>  // 渲染已有tag</em>
           ForEach(this.value, (tag: string) => {
             Text(tag)
               .fontSize(12)
@@ -277,9 +277,9 @@ export struct InputTag {
               .borderRadius(4)
               .padding({ left: 8, right: 8 });
           });
-          // 根据剩余空间决定输入框的布局方式
+         <em> // 根据剩余空间决定输入框的布局方式</em>
           TextInput({ text: this.inputVal })
-          // 剩余空间大于lineWidth占用剩余空间，小于lineWidth占用一整行
+         <em> // 剩余空间大于lineWidth占用剩余空间，小于lineWidth占用一整行</em>
             .width((this.remainingSpaceVp >= this.lineWidth) ? this.remainingSpaceVp - 30 : '100%')
             .height(24)
             .padding({ left: 5, right: 0 })
@@ -301,26 +301,26 @@ export struct InputTag {
 @Entry
 @Component
 struct InputTagPage {
-  // 容器宽度相关
+<em>  // 容器宽度相关</em>
   private containerWidth: number = 0;
   flexWidth: number = 0;
   private uiContext: UIContext = this.getUIContext();
   private measureUtils: MeasureUtils = this.uiContext.getMeasureUtils();
   @State value: string[] = ['文本'];
   @State remainingSpaceVp: number = 0;
-  @State lineWidth: number = 150; // 添加状态变量
-  @State customLineWidth: string = '150'; // 用于输入框的状态
+  @State lineWidth: number = 150;<em> // 添加状态变量</em>
+  @State customLineWidth: string = '150';<em> // 用于输入框的状态</em>
 
   aboutToAppear(): void {
-    // 获取窗口宽度
+  <em>  // 获取窗口宽度</em>
     window.getLastWindow(this.getUIContext().getHostContext(), (err, data) => {
       data.setWindowLayoutFullScreen(true);
       let properties = data.getWindowProperties();
       let windowWidth = properties.windowRect.width;
-      // 计算Flex容器的实际宽度
+     <em> // 计算Flex容器的实际宽度</em>
       this.flexWidth = windowWidth - this.uiContext.vp2px(14 * 2) - this.uiContext.vp2px(5 * 2);
       this.containerWidth = this.flexWidth;
-      // 初始计算
+    <em>  // 初始计算</em>
       this.calculateLayout();
     });
   }
@@ -329,41 +329,41 @@ struct InputTagPage {
     this.calculateLayout();
   }
 
-  // 动态计算标签占用宽度和剩余空间
+<em>  // 动态计算标签占用宽度和剩余空间</em>
   calculateLayout() {
-    const tagSpacing = 6; // tag之间的间距
-    const tagPadding = 8 * 2; // tag左右padding各8vp
+    const tagSpacing = 6;<em> // tag之间的间距</em>
+    const tagPadding = 8 * 2;<em> // tag左右padding各8vp</em>
     let currentLineWidth = 0;
-    // 计算当前行已使用的宽度
+   <em> // 计算当前行已使用的宽度</em>
     for (let i = 0; i < this.value.length; i++) {
       const tag = this.value[i];
-      // 测量文本宽度
+     <em> // 测量文本宽度</em>
       const textWidth = this.measureUtils.measureText({
         textContent: tag,
         fontSize: 12
       });
-      // 计算tag总宽度：文本宽度+padding+可能的间距
+    <em>  // 计算tag总宽度：文本宽度+padding+可能的间距</em>
       const tagTotalWidth = textWidth + this.uiContext.vp2px(tagPadding);
       if (currentLineWidth === 0) {
-        // 第一个元素，不加间距
+       <em> // 第一个元素，不加间距</em>
         currentLineWidth = tagTotalWidth;
       } else {
-        // 检查当前行是否能放下这个tag
+       <em> // 检查当前行是否能放下这个tag</em>
         if (currentLineWidth + this.uiContext.vp2px(tagSpacing) + tagTotalWidth <= this.containerWidth) {
-          // 能放下，添加到当前行
+         <em> // 能放下，添加到当前行</em>
           currentLineWidth += this.uiContext.vp2px(tagSpacing) + tagTotalWidth;
         } else {
-          // 放不下，开始新的一行
+        <em>  // 放不下，开始新的一行</em>
           currentLineWidth = tagTotalWidth;
           this.containerWidth = this.flexWidth;
         }
       }
     }
-    // 计算剩余空间（转换为vp单位）
+   <em> // 计算剩余空间（转换为vp单位）</em>
     this.remainingSpaceVp = this.uiContext.px2vp(this.containerWidth - currentLineWidth);
   }
 
-  // 更新lineWidth的函数
+ <em> // 更新lineWidth的函数</em>
   updateLineWidth() {
     const width = parseInt(this.customLineWidth);
     if (!isNaN(width) && width > 0) {
@@ -377,7 +377,7 @@ struct InputTagPage {
       InputTag({
         value: $value,
         remainingSpaceVp: this.remainingSpaceVp,
-        lineWidth: $lineWidth, // 传递lineWidth参数
+        lineWidth: $lineWidth, <em>// 传递lineWidth参数</em>
         flexWidth: this.flexWidth
       });
 
@@ -391,7 +391,7 @@ struct InputTagPage {
             this.calculateLayout();
           });
 
-        // 添加避让长度输入框
+       <em> // 添加避让长度输入框</em>
         TextInput({ text: this.customLineWidth, placeholder: '避让长度' })
           .width(100)
           .height(40)

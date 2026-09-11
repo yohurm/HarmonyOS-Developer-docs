@@ -1,9 +1,9 @@
 # @ohos.app.ability.abilityManager (Ability信息管理)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-abilitymanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 AbilityManager模块提供获取Ability相关信息和运行状态信息的能力。
 
@@ -12,9 +12,10 @@ AbilityManager模块提供获取Ability相关信息和运行状态信息的能�
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { abilityManager } from '@kit.AbilityKit';
@@ -22,13 +23,15 @@ import { abilityManager } from '@kit.AbilityKit';
 
 
 
-#### AbilityState14+
+## AbilityState14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Ability的状态，该类型为枚举，可配合[AbilityRunningInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-abilityrunninginfo)返回Ability的状态。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -42,9 +45,10 @@ Ability的状态，该类型为枚举，可配合[AbilityRunningInfo](https://de
 
 
 
-#### abilityManager.getAbilityRunningInfos14+
+## abilityManager.getAbilityRunningInfos14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAbilityRunningInfos(): Promise<Array&lt;AbilityRunningInfo&gt;>
 
@@ -60,6 +64,7 @@ getAbilityRunningInfos(): Promise<Array&lt;AbilityRunningInfo&gt;>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;AbilityRunningInfo&gt;> | Promise对象，返回UIAbility运行时的相关信息。开发者可在此进行错误处理或其他自定义处理。 |
@@ -68,6 +73,7 @@ getAbilityRunningInfos(): Promise<Array&lt;AbilityRunningInfo&gt;>
 **错误码**：
 
 以下错误码详细介绍请参考[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -97,9 +103,10 @@ try {
 
 
 
-#### abilityManager.restartSelfAtomicService20+
+## abilityManager.restartSelfAtomicService20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 restartSelfAtomicService(context: Context): void
 
@@ -117,6 +124,7 @@ restartSelfAtomicService(context: Context): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 当前Ability的上下文。 说明：当前仅支持UIAbilityContext。 |
@@ -125,6 +133,7 @@ restartSelfAtomicService(context: Context): void
 **错误码**：
 
 以下错误码详细介绍请参考[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -154,9 +163,10 @@ export default class EntryAbility extends EmbeddableUIAbility {
 
 
 
-#### abilityManager.isEmbeddedUIExtensionSupported
+## abilityManager.isEmbeddedUIExtensionSupported
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isEmbeddedUIExtensionSupported(): boolean
 
@@ -169,6 +179,7 @@ isEmbeddedUIExtensionSupported(): boolean
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -190,15 +201,17 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### AbilityRunningInfo14+
+## AbilityRunningInfo14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AbilityRunningInfo = _AbilityRunningInfo
 
 AbilityRunningInfo二级模块。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -207,15 +220,17 @@ AbilityRunningInfo二级模块。
 
 
 
-#### AbilityStateData14+
+## AbilityStateData14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AbilityStateData = _AbilityStateData.default
 
 AbilityStateData二级模块。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 类型 | 说明 |
 | --- | --- |

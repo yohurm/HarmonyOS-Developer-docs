@@ -1,6 +1,6 @@
 # TextReaderIconV2（朗读听筒图标）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-01 03:59:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/speech-textreadericonv2
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -12,7 +12,8 @@
 **起始版本：** 6.1.1(24)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -22,7 +23,8 @@ import { TextReaderIconV2, UpReadState } from '@kit.SpeechKit';
  
   
 
-#### UpReadState
+## UpReadState
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -40,6 +42,7 @@ type UpReadState = (readState:ReadStateCode)=>void
  
 **参数：**
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | readState | ReadStateCode | 是 | 播报状态。 |
@@ -47,7 +50,8 @@ type UpReadState = (readState:ReadStateCode)=>void
  
   
 
-#### TextReaderIconV2
+## TextReaderIconV2
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -65,6 +69,7 @@ type UpReadState = (readState:ReadStateCode)=>void
  
 **参数：**
   
+
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | readState | ReadStateCode | 是 | @Param | 播报状态。 说明： readState使用@Param装饰器：父子单向同步。 |
@@ -73,7 +78,8 @@ type UpReadState = (readState:ReadStateCode)=>void
  
   
 
-#### build
+### build
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -110,7 +116,7 @@ struct Index {
   @Local readState: ReadStateCode = ReadStateCode.WAITING;
 
   /**
-   * 用于显示当前页的按钮状态
+   * 初始化状态
    */
   @Local isInit: boolean = false;
 
@@ -166,7 +172,9 @@ struct Index {
     TextReader.on('stateChange', (state: TextReader.ReadState) => {
       this.onStateChanged(state);
     });
-    TextReader.on('requestMore', () => this.onStateChanged);
+       TextReader.on('requestMore', () => {
+      TextReader.loadMore([], true);
+    });
   }
 
   onStateChanged = (state: TextReader.ReadState) => {
@@ -207,10 +215,10 @@ struct Index {
 静止状态
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/BZOOBVQiT2S7Rfq0WPlfhA/zh-cn_image_0000002656009756.png?HW-CC-KV=V1&HW-CC-Date=20260730T071747Z&HW-CC-Expire=86400&HW-CC-Sign=78922C24DB89345A733E65E760943681652766FFAE6DDF9590C662BC004DAC02)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/Hmv0vQEkSo2gHub4meZ3Fg/zh-cn_image_0000002747213847.png?HW-CC-KV=V1&HW-CC-Date=20260911T073057Z&HW-CC-Expire=86400&HW-CC-Sign=D73B30C605659E943C8D101DA30A433F2C0CB520AA1EB6C8C2EA7203E06E6E07)
 
  
 播放状态
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/A6JfrnHPQmqnL4W8ti_kpg/zh-cn_image_0000002655849834.png?HW-CC-KV=V1&HW-CC-Date=20260730T071747Z&HW-CC-Expire=86400&HW-CC-Sign=21EDC6F45CFFDE2AAD7C99E55CB49A943CA5A877D77DE5833A0988B72E741811)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/Ki5pAZWtRk2ASOalgHihxA/zh-cn_image_0000002717773912.png?HW-CC-KV=V1&HW-CC-Date=20260911T073057Z&HW-CC-Expire=86400&HW-CC-Sign=2230454FF7EEF31BB0298131FCE50065AF010C2203C2069035B0EC8E32C8CF02)

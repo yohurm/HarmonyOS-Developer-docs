@@ -1,6 +1,6 @@
 # HAP转HAR指导
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hap-to-har
 
@@ -11,7 +11,7 @@ HAP不支持导出接口或ArkUI组件给其他模块或应用使用，如果需
 
 
 
-#### HAP转HAR的操作步骤
+## HAP转HAR的操作步骤
 1. 修改HAP模块下的[module.json5](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)文件，具体操作如下：
 
   

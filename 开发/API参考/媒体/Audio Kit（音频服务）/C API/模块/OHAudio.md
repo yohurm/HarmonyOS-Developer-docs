@@ -1,13 +1,14 @@
 # OHAudio
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohaudio
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供音频模块C接口定义。
  
@@ -17,10 +18,12 @@
  
   
 
-#### 文件汇总
+## 文件汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | native_audiocapturer.h | 声明音频采集的相关接口。 |
@@ -32,6 +35,9 @@
 | native_audio_volume_manager.h | 声明音频音量管理器接口。该文件接口用于创建AudioVolumeManager。 |
 | native_audiorenderer.h | 声明输出类型的音频流相关接口。 |
 | native_audio_common.h | 声明音频公共基础数据结构。 定义音频接口的公共返回值的类型。 |
+| native_audio_accessory_common.h | 声明外部音频配件设备接口的公共数据结构。 |
+| native_audio_accessory_manager.h | 声明音频配件管理器相关接口。 |
+| native_audio_accessory_input_stream_manager.h | 声明音频配件输入流管理器相关接口。 |
 | native_audio_device_base.h | 定义音频设备参数的类型以及获取每个设备参数的接口。 |
 | native_audiostream_base.h | 声明OHAudio基础的数据结构。 |
 | native_audiostreambuilder.h | 声明音频流构造器相关接口。 包含构造和销毁构造器，设置音频流属性、回调等相关接口。 |

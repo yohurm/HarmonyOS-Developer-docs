@@ -1,13 +1,14 @@
 # native_avsource.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avsource-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明用于音视频媒体数据解析的接口。
  
@@ -25,16 +26,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_AVSource | OH_AVSource | 为媒体资源接口定义native层对象。 |
@@ -42,10 +46,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_AVSource *OH_AVSource_CreateWithDataSource(OH_AVDataSource *dataSource) | 为用户自定义数据源的资源对象创建OH_AVSource实例，可以通过调用OH_AVSource_Destroy接口释放实例。 参数dataSource生命周期需与返回的指针OH_AVSource *保持一致。 |
@@ -60,15 +66,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_AVSource_CreateWithDataSource()
+### OH_AVSource_CreateWithDataSource()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVSource *OH_AVSource_CreateWithDataSource(OH_AVDataSource *dataSource)
@@ -86,6 +94,7 @@ OH_AVSource *OH_AVSource_CreateWithDataSource(OH_AVDataSource *dataSource)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVDataSource *dataSource | 用户自定义数据源。 |
@@ -93,6 +102,7 @@ OH_AVSource *OH_AVSource_CreateWithDataSource(OH_AVDataSource *dataSource)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVSource * | 如果执行成功，则返回一个指向OH_AVSource实例的指针，否则返回NULL。 可能的故障原因： 1. dataSource为nullptr。 2. dataSource->size == 0。 3. 设置数据源失败。 4. 内存不足。 5. 解码器引擎为nullptr。 6. dataSource->readAt == nullptr。 |
@@ -100,9 +110,10 @@ OH_AVSource *OH_AVSource_CreateWithDataSource(OH_AVDataSource *dataSource)
  
   
 
-#### OH_AVSource_CreateWithDataSourceExt()
+### OH_AVSource_CreateWithDataSourceExt()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVSource *OH_AVSource_CreateWithDataSourceExt(OH_AVDataSourceExt *dataSource, void *userData)
@@ -122,6 +133,7 @@ OH_AVSource *OH_AVSource_CreateWithDataSourceExt(OH_AVDataSourceExt *dataSource,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVDataSourceExt *dataSource | 指向数据源结构体的指针，该结构体可用于获取输入数据。 |
@@ -130,6 +142,7 @@ OH_AVSource *OH_AVSource_CreateWithDataSourceExt(OH_AVDataSourceExt *dataSource,
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVSource * | 如果执行成功，则返回一个指向OH_AVSource实例的指针，否则返回NULL。 可能的故障原因： 1. dataSource为nullptr。 2. dataSource->size == 0。 3. 设置数据源失败。 4. 内存不足。 5. 解码器引擎为nullptr。 6. dataSource->readAt == nullptr。 |
@@ -137,9 +150,10 @@ OH_AVSource *OH_AVSource_CreateWithDataSourceExt(OH_AVDataSourceExt *dataSource,
  
   
 
-#### OH_AVSource_CreateWithURI()
+### OH_AVSource_CreateWithURI()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVSource *OH_AVSource_CreateWithURI(char *uri)
@@ -155,6 +169,7 @@ OH_AVSource *OH_AVSource_CreateWithURI(char *uri)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | char *uri | 远程媒体资源的统一资源标识符。 |
@@ -162,6 +177,7 @@ OH_AVSource *OH_AVSource_CreateWithURI(char *uri)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVSource * | 执行成功返回一个指向OH_AVSource实例的指针，否则返回NULL。 可能的故障原因： 1. 网络异常。 2. 资源无效。 3. 文件格式不支持。 4. 应用配置明文拦截。 |
@@ -169,9 +185,10 @@ OH_AVSource *OH_AVSource_CreateWithURI(char *uri)
  
   
 
-#### OH_AVSource_CreateWithFD()
+### OH_AVSource_CreateWithFD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVSource *OH_AVSource_CreateWithFD(int32_t fd, int64_t offset, int64_t size)
@@ -189,6 +206,7 @@ OH_AVSource *OH_AVSource_CreateWithFD(int32_t fd, int64_t offset, int64_t size)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | int32_t fd | 数据资源的文件描述符。 |
@@ -198,6 +216,7 @@ OH_AVSource *OH_AVSource_CreateWithFD(int32_t fd, int64_t offset, int64_t size)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVSource * | 执行成功返回一个指向OH_AVSource实例的指针，否则返回NULL。 可能的故障原因： 1. fd无效。 2. 传入offset不是文件起始位置。 3. size错误。 4. 资源无效。 5. 文件格式不支持。 |
@@ -205,9 +224,10 @@ OH_AVSource *OH_AVSource_CreateWithFD(int32_t fd, int64_t offset, int64_t size)
  
   
 
-#### OH_AVSource_Destroy()
+### OH_AVSource_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVSource_Destroy(OH_AVSource *source)
@@ -225,6 +245,7 @@ OH_AVErrCode OH_AVSource_Destroy(OH_AVSource *source)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSource *source | 指向OH_AVSource实例的指针。 |
@@ -232,6 +253,7 @@ OH_AVErrCode OH_AVSource_Destroy(OH_AVSource *source)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：操作成功。 AV_ERR_INVALID_VAL： 1. source指针无效，空指针。 2. 非OH_AVSource实例。 |
@@ -239,9 +261,10 @@ OH_AVErrCode OH_AVSource_Destroy(OH_AVSource *source)
  
   
 
-#### OH_AVSource_GetSourceFormat()
+### OH_AVSource_GetSourceFormat()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVFormat *OH_AVSource_GetSourceFormat(OH_AVSource *source)
@@ -259,6 +282,7 @@ OH_AVFormat *OH_AVSource_GetSourceFormat(OH_AVSource *source)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSource *source | 指向OH_AVSource实例的指针。 |
@@ -266,6 +290,7 @@ OH_AVFormat *OH_AVSource_GetSourceFormat(OH_AVSource *source)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVFormat * | 执行成功返回文件的基础信息，否则返回NULL。 可能的故障原因： 1. source指针无效。 2. 空指针或非OH_AVSource实例。 3. source没有初始化。 |
@@ -273,9 +298,10 @@ OH_AVFormat *OH_AVSource_GetSourceFormat(OH_AVSource *source)
  
   
 
-#### OH_AVSource_GetTrackFormat()
+### OH_AVSource_GetTrackFormat()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVFormat *OH_AVSource_GetTrackFormat(OH_AVSource *source, uint32_t trackIndex)
@@ -293,6 +319,7 @@ OH_AVFormat *OH_AVSource_GetTrackFormat(OH_AVSource *source, uint32_t trackIndex
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSource *source | 指向OH_AVSource实例的指针。 |
@@ -301,6 +328,7 @@ OH_AVFormat *OH_AVSource_GetTrackFormat(OH_AVSource *source, uint32_t trackIndex
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVFormat * | 执行成功返回轨道的基础信息，否则返回NULL。 可能的故障原因： 1. source指针无效，空指针或非OH_AVSource实例。 2. 轨道的索引超出范围。 3. source没有初始化。 |
@@ -308,9 +336,10 @@ OH_AVFormat *OH_AVSource_GetTrackFormat(OH_AVSource *source, uint32_t trackIndex
  
   
 
-#### OH_AVSource_GetCustomMetadataFormat()
+### OH_AVSource_GetCustomMetadataFormat()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVFormat *OH_AVSource_GetCustomMetadataFormat(OH_AVSource *source)
@@ -328,6 +357,7 @@ OH_AVFormat *OH_AVSource_GetCustomMetadataFormat(OH_AVSource *source)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSource *source | 指向OH_AVSource实例的指针。 |
@@ -335,6 +365,7 @@ OH_AVFormat *OH_AVSource_GetCustomMetadataFormat(OH_AVSource *source)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVFormat * | 执行成功返回元数据的基础信息，否则返回NULL。 可能的故障原因： 1. source指针无效。 2. 空指针或非OH_AVSource实例。 3. source没有初始化。 |

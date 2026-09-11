@@ -1,6 +1,6 @@
 # module.json5配置文件
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file
 
@@ -11,7 +11,7 @@
 
 
 
-#### 配置文件示例
+## 配置文件示例
 
 通过一个示例，整体了解module.json5配置文件。
 
@@ -113,11 +113,12 @@
 
 
 
-#### 配置文件标签
+## 配置文件标签
 
 module.json5配置文件包含以下标签。
 
 **表1** module.json5配置文件标签说明
+
 
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- |
@@ -169,9 +170,10 @@ module.json5配置文件包含以下标签。
 
 
 
-#### deviceTypes标签
+## deviceTypes标签
 
 **表2** deviceTypes标签说明
+
 
 | 设备类型 | 枚举值 | 说明 |
 | --- | --- | --- |
@@ -202,7 +204,7 @@ deviceTypes示例：
 
 
 
-#### pages标签
+## pages标签
 
 该标签是一个profile文件资源，用于指定描述页面信息的配置文件。
 
@@ -220,6 +222,7 @@ deviceTypes示例：
 
 **表3** pages标签说明
 
+
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- |
 | src | 标识当前Module中所有页面的路由信息，包括页面路径和页面名称。其中，页面路径是以当前Module的src/main/ets为基准。该标签取值为一个字符串数组，其中每个元素表示一个页面。 | 字符串数组 | 该标签不可缺省。 |
@@ -227,6 +230,7 @@ deviceTypes示例：
 
 
 **表4** window标签说明
+
 
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- |
@@ -248,11 +252,12 @@ deviceTypes示例：
 
 
 
-#### metadata标签
+## metadata标签
 
 该标签标识HAP的自定义元信息，标签值为数组类型，包含name、value、resource三个子标签。
 
 **表5** metadata标签说明
+
 
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- |
@@ -280,11 +285,12 @@ deviceTypes示例：
 
 
 
-#### abilities标签
+## abilities标签
 
 abilities标签描述UIAbility组件的配置信息，标签值为数组类型，该标签下的配置只对当前UIAbility生效。
 
 **表6** abilities标签说明
+
 
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- |
@@ -320,7 +326,7 @@ abilities标签描述UIAbility组件的配置信息，标签值为数组类型�
 | preferMultiWindowOrientation | 标识当前UIAbility组件多窗布局方向： - default：缺省值，参数不配置默认值，建议其他应用类配置。 - portrait：多窗布局方向为竖向，建议竖向游戏类应用配置。 - landscape：多窗布局方向为横向，配置后支持横屏悬浮窗和上下分屏，建议横向游戏类应用配置。 - landscape_auto：多窗布局动态可变为横向，需要配合API enableLandScapeMultiWindow/disableLandScapeMultiWindow使用，建议视频类应用配置。 | 字符串 | 该标签可缺省，缺省值为default。 |
 | continueType | 标识当前UIAbility组件的跨端迁移类型。 | 字符串数组 | 该标签可缺省，缺省值为当前组件的名称。 |
 | continueBundleName | 标识当前应用支持跨端迁移的其它应用名称列表。 说明： 不能配置为本应用包名，仅为了做异包名迁移使用。 从API version 13开始，支持该标签。 | 字符串数组 | 该标签可缺省，缺省值为空。 |
-| process | 标识组件的进程名称。具体使用方式参考进程模型定义中的"静态指定进程"。 说明： 1. 仅在PC/2in1和Tablet设备上生效。 2. UIAbility组件和type为embeddedUI的ExtensionAbility组件标签一致时运行在同一个进程中。 3. 从API version 14开始，支持该标签。 | 字符串 | 该标签可缺省，缺省值为空。 |
+| process | 标识组件的进程名称。具体使用方式参考独立进程配置中的"静态指定进程"。 说明： 1. 仅在PC/2in1和Tablet设备上生效。 2. UIAbility组件和type为embeddedUI的ExtensionAbility组件标签一致时运行在同一个进程中。 3. 从API version 14开始，支持该标签。 | 字符串 | 该标签可缺省，缺省值为空。 |
 
 
 abilities示例：
@@ -390,13 +396,14 @@ abilities示例：
 
 
 
-#### skills标签
+## skills标签
 
 该标签标识UIAbility组件或者ExtensionAbility组件能够接收的[Want](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/want-overview)的特征。
 
 例如：在浏览器中下载PDF文件时，可以通过配置skills标签选择并打开该PDF文件。详情请参考[拉起文件处理类应用](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/file-processing-apps-startup)。
 
 **表7** skills标签说明
+
 
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- |
@@ -411,6 +418,7 @@ abilities示例：
 
 > [!NOTE]
 > 以下字符串类型的标签不支持使用资源索引的方式（$string）配置。
+
 
 
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
@@ -469,11 +477,12 @@ skills示例：
 
 
 
-#### extensionAbilities标签
+## extensionAbilities标签
 
 描述extensionAbilities的配置信息，标签值为数组类型，该标签下的配置只对当前extensionAbilities生效。
 
 **表9** extensionAbilities标签说明
+
 
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- |
@@ -493,7 +502,7 @@ skills示例：
 | exported | 标识当前ExtensionAbility组件是否可以被其他应用调用。 - true：表示可以被其他应用调用。 - false：表示不可以被其他应用调用，包括无法被aa工具命令拉起应用。 | 布尔值 | 该标签可缺省，缺省值为false。 |
 | extensionProcessMode | 标识当前ExtensionAbility组件的进程模型，根据ExtensionAbility的类型不同，支持的配置项有所区别。支持的取值范围如下，默认值为bundle。 - instance：表示该ExtensionAbility每个实例都各自运行在单独进程。 - type：表示该ExtensionAbility的所有实例都运行在同一独立进程，与其他name的ExtensionAbility组件实例运行在不同进程。 - bundle：表示该ExtensionAbility的实例与同包名下相同extensionType的ExtensionAbility实例运行在同一进程。 对于UIExtensionAbility及其子类，支持instance、type、bundle三种进程模型。 对于类型为appService的ExtensionAbility，支持type和bundle两种进程模型。 - runWithMainProcess：表示该ExtensionAbility和应用主进程共进程，只有状态栏开放服务的ExtensionAbility可以配置runWithMainProcess。 | 字符串 | 该标签可缺省，缺省值为bundle。 |
 | dataGroupIds | 标识当前ExtensionAbility组件的dataGroupId集合。如果当前ExtensionAbility组件所在的应用在应用市场申请的证书里groupIds也申请了某个dataGroupId，那么当前ExtensionAbility组件可以和应用共享这一个dataGroupId生成的目录，所以ExtensionAbility组件的dataGroupId需要是应用的签名证书中groupIds标签里配置的才能生效。 且该标签仅在当前ExtensionAbility组件存在独立的沙箱目录时生效。详见共享沙箱介绍第3点共享沙箱的配置流程中的步骤a申请data-group-id。 | 字符串数组 | 该标签可缺省，缺省值为空。 |
-| process | 标识组件的进程名称，只有type为embeddedUI时可以配置该标签。具体使用方式参考进程模型定义中的"静态指定进程"。 说明： 1. 仅在PC/2in1和Tablet设备上生效。 2. UIAbility组件和ExtensionAbility组件标签一致时运行在同一个进程中。 3. 从API version 14开始，支持该标签。 | 字符串 | 该标签可缺省，缺省值为空。 |
+| process | 标识组件的进程名称，只有type为embeddedUI时可以配置该标签。具体使用方式参考独立进程配置中的"静态指定进程"。 说明： 1. 仅在PC/2in1和Tablet设备上生效。 2. UIAbility组件和ExtensionAbility组件标签一致时运行在同一个进程中。 3. 从API version 14开始，支持该标签。 | 字符串 | 该标签可缺省，缺省值为空。 |
 | isolationProcess | 标识ExtensionAbility组件能否运行在独立的进程中。 - true：表示能运行在独立的进程中。 - false：表示不能运行在独立的进程中。 说明： 仅当ExtensionAbility组件的type为"sys/commonUI"时该标签配置生效，且仅支持由系统应用配置type为"sys/commonUI"。 从API version 20开始，支持该标签。 | 布尔值 | 该标签可缺省，缺省值为false。 |
 | skipAbilityStageLifecycle | 标识type为backup的ExtensionAbility组件是否跳过AbilityStage生命周期回调。 - true：跳过AbilityStage生命周期，不执行onCreate、onDestroy等回调。 - false：不跳过AbilityStage生命周期，正常执行生命周期回调。 说明： 1. 该标签仅在ExtensionAbility的type为backup时配置生效。 2. 从API version 26.0.0开始，支持该标签。 | 布尔值 | 该标签可缺省，缺省值为false。 |
 
@@ -538,9 +547,10 @@ extensionAbilities示例：
 
 
 
-#### type标签
+### type标签
 
 标识当前ExtensionAbility组件的类型，支持的取值如下：
+
 
 | 标签取值 | 含义 |
 | --- | --- |
@@ -559,8 +569,8 @@ extensionAbilities示例：
 | backup | 数据备份的ExtensionAbility。 |
 | enterpriseAdmin | 企业设备管理的ExtensionAbility。企业设备管理应用必须拥有此类型的ExtensionAbility。 |
 | window | 该ExtensionAbility会在启动过程中创建一个window，为开发者提供界面开发。开发者开发出来的界面将通过UIExtensionComponent控件组合到其他应用的窗口中，三方应用配置不生效，当前配置仅在系统应用中有效。 |
-| thumbnail | 获取文件缩略图的ExtensionAbility，开发者可以对自定义文件类型的文件提供缩略图。 |
-| preview | 该ExtensionAbility会将文件解析后在一个窗口中显示，开发者可以通过将此窗口组合到其他应用窗口中。 |
+| thumbnail | 获取文件缩略图的ExtensionAbility，开发者可以对自定义文件类型的文件提供缩略图。预留字段，暂不支持使用。 |
+| preview | 该ExtensionAbility会将文件解析后在一个窗口中显示，开发者可以通过将此窗口组合到其他应用窗口中。预留字段，暂不支持使用。 |
 | print | 打印框架的ExtensionAbility。 |
 | push | 推送的ExtensionAbility。 |
 | driver | 驱动框架的ExtensionAbility。应用配置了driver类型的ExtensionAbility后会被视为驱动应用，驱动应用在安装、卸载和恢复时不会区分用户，且创建新用户时也会安装设备上已有的驱动应用。例如，创建子用户时会默认安装主用户已有的驱动应用，在子用户上卸载驱动应用时，主用户上对应的驱动应用也会同时被卸载。 |
@@ -627,7 +637,7 @@ extensionAbilities示例：
 
 
 
-#### shortcuts标签
+## shortcuts标签
 
 shortcuts标识应用的快捷方式信息。标签值为数组，包含四个子标签shortcutId、label、icon、wants。
 
@@ -642,6 +652,7 @@ shortcuts标识应用的快捷方式信息。标签值为数组，包含四个�
 
 
 **表10** shortcuts标签说明
+
 
 | 属性名称 | 含义 | 类型 | 是否可缺省 |
 | --- | --- | --- | --- |
@@ -717,11 +728,12 @@ shortcuts标识应用的快捷方式信息。标签值为数组，包含四个�
 
 
 
-#### wants标签
+### wants标签
 
 此标签用于标识快捷方式内定义的目标wants信息集合。
 
 **表11** wants标签说明
+
 
 | 属性名称 | 含义 | 类型 | 是否可缺省 |
 | --- | --- | --- | --- |
@@ -750,7 +762,7 @@ wants标签示例：
 
 
 
-#### distributionFilter标签
+## distributionFilter标签
 
 该标签用于定义HAP对应的细分设备规格的分发策略，以便在应用市场进行云端分发应用包时做精准匹配。
 
@@ -800,10 +812,11 @@ wants标签示例：
  - 如果一个Entry中配置了任意一个或多个属性，则其他Entry也必须包含相同的属性。
  - screenShape和screenWindow属性仅适用于轻量级智能穿戴设备。
 
-      - **配置方式：** 该标签需要配置在/resources/base/profile资源目录下，并在metadata的resource标签中引用。
+            - **配置方式：** 该标签需要配置在/resources/base/profile资源目录下，并在metadata的resource标签中引用。
 
 
 **表12** distributionFilter标签配置说明
+
 
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- |
@@ -815,9 +828,10 @@ wants标签示例：
 
 
 
-#### screenShape标签
+### screenShape标签
 
 **表13** screenShape标签说明
+
 
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- |
@@ -827,9 +841,10 @@ wants标签示例：
 
 
 
-#### screenWindow标签
+### screenWindow标签
 
 **表14** screenWindow标签说明
+
 
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- |
@@ -839,9 +854,10 @@ wants标签示例：
 
 
 
-#### screenDensity标签
+### screenDensity标签
 
 **表15** screenDensity标签说明
+
 
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- |
@@ -851,9 +867,10 @@ wants标签示例：
 
 
 
-#### countryCode标签
+### countryCode标签
 
 **表16** countryCode标签说明
+
 
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- |
@@ -918,11 +935,12 @@ wants标签示例：
 
 
 
-#### testRunner标签
+## testRunner标签
 
 此标签用于支持对测试框架的配置。
 
 **表17** testRunner标签说明
+
 
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- |
@@ -947,11 +965,12 @@ testRunner标签示例：
 
 
 
-#### atomicService标签
+## atomicService标签
 
 此标签用于支持对元服务的配置。此标签仅在app.json5中将bundleType设置为atomicService时生效。
 
 **表18** atomicService标签说明
+
 
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- |
@@ -960,6 +979,7 @@ testRunner标签示例：
 
 
 **表19** preloads标签说明
+
 
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- |
@@ -987,11 +1007,12 @@ atomicService标签示例：
 
 
 
-#### dependencies标签
+## dependencies标签
 
 此标签标识模块运行时依赖的共享库列表。
 
 **表20** dependencies标签说明
+
 
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- |
@@ -1020,11 +1041,12 @@ dependencies标签示例：
 
 
 
-#### proxyData标签
+## proxyData标签
 
 此标签标识模块提供的数据代理列表，仅限entry和feature配置。
 
 **表21** proxyData标签说明
+
 
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- |
@@ -1058,13 +1080,14 @@ proxyData标签示例：
 
 
 
-#### routerMap标签
+## routerMap标签
 
 此标签标识模块配置的路由表的路径。
 
 routerMap配置文件描述模块的路由表信息，routerMap标签的值为数组类型。
 
 **表22** routerMap标签说明
+
 
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- |
@@ -1117,7 +1140,7 @@ routerMap配置文件描述模块的路由表信息，routerMap标签的值为�
 
 
 
-#### data标签
+### data标签
 
 此标签用于支持在路由表中配置自定义的字符串数据。
 
@@ -1141,7 +1164,7 @@ data标签示例：
 
 
 
-#### customData标签
+### customData标签
 
 此标签用于支持在路由表中配置自定义数据。
 
@@ -1176,11 +1199,12 @@ customData标签示例：
 
 
 
-#### appEnvironments标签
+## appEnvironments标签
 
 此标签标识模块配置的应用环境变量。
 
 **表23** appEnvironments标签说明
+
 
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- |
@@ -1207,11 +1231,12 @@ appEnvironments标签示例：
 
 
 
-#### hnpPackages标签
+## hnpPackages标签
 
 该标签标识应用包含的Native软件包信息。
 
 **表24** hnpPackages标签说明
+
 
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- |
@@ -1240,7 +1265,7 @@ hnpPackages示例：
 
 
 
-#### fileContextMenu标签
+## fileContextMenu标签
 
 该标签标识当前HAP的右键菜单配置项，是一个profile文件资源，用于指定描述应用注册右键菜单配置文件。仅在PC/2in1设备上生效。仅允许在entry类型模块中配置。
 
@@ -1262,6 +1287,7 @@ fileContextMenu标签示例
 
 **表25** fileContextMenu标签配置说明
 
+
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- |
 | abilityName | 表示当前右键菜单对应的需要拉起的ability名称。 | 字符串 | 不可缺省。 |
@@ -1271,6 +1297,7 @@ fileContextMenu标签示例
 
 
 **表26** menuContext标签配置说明
+
 
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- |
@@ -1323,6 +1350,7 @@ resources/base/profile路径下的menu.json资源文件示例如下：
 
 **表27** want中parameter标签说明
 
+
 | 参数名 | 值 | 类型 |
 | --- | --- | --- |
 | menuHandler | 对应注册配置文件中menuHandler的值。 | 字符串 |
@@ -1331,7 +1359,7 @@ resources/base/profile路径下的menu.json资源文件示例如下：
 
 
 
-#### startWindow标签
+## startWindow标签
 
 该标签指向一个profile文件资源，用于指定UIAbility组件启动页面的配置文件，在开发视图的resources/base/profile下面定义配置文件start_window.json，如果配置了该标签，startWindowIcon和startWindowBackground标签将不生效。
 
@@ -1340,6 +1368,7 @@ resources/base/profile路径下的menu.json资源文件示例如下：
 从API version 19开始，支持使用该字段配置增强启动页。
 
 **表28** startWindow标签配置说明
+
 
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- |
@@ -1370,7 +1399,7 @@ resources/base/profile路径下的start_window.json资源文件示例如下：
 
 
 
-#### systemTheme标签
+## systemTheme标签
 
 该标签指向一个profile文件资源，用于指定当前应用使用的系统主题配置文件。从API version 20开始，支持该标签。
 
@@ -1389,6 +1418,7 @@ systemTheme标签示例：
 
 **表29** theme_config.json配置说明
 
+
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- |
 | systemTheme | 标识当前应用使用的系统主题，取值为引用系统主题名称的枚举。枚举支持的取值如下： - $ohos:theme:ohos_theme 系统默认的主题 | 字符串 | 该标签不可缺省。 |
@@ -1404,9 +1434,10 @@ resources/base/profile路径下的theme_config.json资源文件示例如下：
 
 
 
-#### requiredDeviceFeatures标签
+## requiredDeviceFeatures标签
 
 **表30** requiredDeviceFeatures标签说明
+
 
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- |
@@ -1434,11 +1465,12 @@ requiredDeviceFeatures示例：
 
 
 
-#### executableBinaryPaths标签
+## executableBinaryPaths标签
 
 标识应用内可执行二进制文件的路径信息，仅在PC/2in1设备上生效。从API version 24开始，支持该标签。
 
 **表31** executableBinaryPaths标签说明
+
 
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- |
@@ -1463,11 +1495,12 @@ executableBinaryPaths示例：
 
 
 
-#### skillProfiles标签
+## skillProfiles标签
 
 从API版本26.0.0开始，新增skillProfiles标签。该标签标识当前模块的技能配置信息，用于定义AI代理的技能能力。通过定义技能，应用可以将AI代理的能力暴露给系统或其他应用，使其能够被其他应用发现和调用。仅type取值为entry、feature、shared、skill的模块配置该标签生效。
 
 **表32** skillProfiles标签说明
+
 
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- |

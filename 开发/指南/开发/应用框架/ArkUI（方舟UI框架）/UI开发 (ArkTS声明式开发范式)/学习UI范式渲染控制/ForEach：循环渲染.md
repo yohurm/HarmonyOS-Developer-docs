@@ -1,6 +1,6 @@
 # ForEach：循环渲染
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-foreach
 
@@ -13,7 +13,7 @@ API参数说明见：[ForEach API参数说明](https://developer.huawei.com/cons
 
 
 
-#### 键值生成规则
+## 键值生成规则
 
 在ForEach循环渲染过程中，系统会为每个数组元素生成一个唯一且持久的键值，用于标识对应的组件。当键值变化时，ArkUI框架会视为该数组元素已被替换或修改，并会基于新的键值创建一个新的组件。
 
@@ -33,7 +33,7 @@ ArkUI框架对于ForEach的键值生成有一套特定的判断规则，这主�
 
 键值生成示例:
 
-```text
+```ArkTS
 interface ChildItemType {
   str: string;
   num: number;
@@ -41,7 +41,7 @@ interface ChildItemType {
 
 @Entry
 @Component
-struct Index {
+export struct ForEachKeyGeneration {
   @State simpleList: Array<ChildItemType> = [
     { str: 'one', num: 1 },
     { str: 'two', num: 2 },
@@ -66,7 +66,7 @@ struct Index {
 }
 
 @Component
-struct ChildItem {
+export struct ChildItem {
   @Prop str: string = '';
   @Prop num: number = 0;
 
@@ -81,13 +81,13 @@ struct ChildItem {
 
 
 
-#### 组件创建规则
+## 组件创建规则
 
 在确定键值生成规则后，ForEach的第二个参数itemGenerator函数会根据键值生成规则为数据源的每个数组项创建组件。组件的创建包括两种情况：[ForEach首次渲染](#首次渲染)和[ForEach非首次渲染](#非首次渲染)。
 
 
 
-#### 首次渲染
+### 首次渲染
 
 在ForEach首次渲染时，会根据前述键值生成规则为数据源的每个数组项生成唯一键值，并创建相应的组件。
 
@@ -179,7 +179,7 @@ struct SameKeyChildItem {
 
 
 
-#### 非首次渲染
+### 非首次渲染
 
 在ForEach组件进行非首次渲染时，它会检查新生成的键值是否在上次渲染中已经存在。如果键值不存在，则会创建一个新的组件；如果键值存在，则不会创建新的组件，而是直接渲染该键值所对应的组件。例如，在以下的代码示例中，通过点击事件修改了数组的第三项值为"new three"，这将触发ForEach组件进行非首次渲染。
 
@@ -239,13 +239,13 @@ struct NotFirstRenderChildItem {
 
 
 
-#### 使用场景
+## 使用场景
 
 ForEach组件在开发过程中的主要应用场景包括：[数据源不变](#数据源不变)、[数据源数组项发生变化](#数据源数组项发生变化)（如插入、删除操作）、[数据源数组项子属性变化](#数据源数组项子属性变化)。
 
 
 
-#### 数据源不变
+### 数据源不变
 
 在数据源保持不变的场景中，数据源可以直接采用基本数据类型。例如，页面加载状态时，可以使用骨架屏列表进行渲染展示。
 
@@ -315,7 +315,7 @@ struct ArticleSkeletonView {
 
 
 
-#### 数据源数组项发生变化
+### 数据源数组项发生变化
 
 在数据源数组项发生变化的场景下，如数组插入、删除操作或者数组项索引位置交换时，数据源应为对象数组类型，并使用对象的唯一ID作为键值。
 
@@ -429,7 +429,7 @@ struct ArticleCardChangeSource {
 
 
 
-#### 数据源数组项子属性变化
+### 数据源数组项子属性变化
 
 当数据源的数组项为对象数据类型，并且只修改某个数组项的属性值时，由于数据源为复杂数据类型，ArkUI框架无法监听到@State装饰器修饰的数据源数组项的属性变化，从而无法触发ForEach的重新渲染。为实现ForEach子组件重新渲染，需要结合[@Observed和@ObjectLink](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-observed-and-objectlink)装饰器使用。例如，在文章列表卡片上点击“点赞”按钮，从而修改文章的点赞数量。
 
@@ -507,8 +507,8 @@ struct ArticleCardChangeChild {
           .margin({ bottom: 8 })
 
         Row() {
-          // 此处'app.media.iconLiked'，'app.media.iconUnLiked'仅作示例，请开发者自行替换，否则imageSource创建失败会导致后续无法正常执行。
-          Image(this.article.isLiked ? $r('app.media.iconLiked') : $r('app.media.iconUnLiked'))
+          // 此处'app.media.iconLiked'，'app.media.iconUnliked'仅作示例，请开发者自行替换，否则imageSource创建失败会导致后续无法正常执行。
+          Image(this.article.isLiked ? $r('app.media.iconLiked') : $r('app.media.iconUnliked'))
             .width(24)
             .height(24)
             .margin({ right: 8 })
@@ -546,7 +546,7 @@ struct ArticleCardChangeChild {
 
 
 
-#### 拖拽排序
+### 拖拽排序
 
 在List组件下使用ForEach，并设置[onMove](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-drag-sorting#onmove)事件，每次迭代生成一个ListItem时，可以使能拖拽排序。拖拽排序离手后，如果组件位置发生变化，将触发onMove事件，上报组件移动原始索引号和目标索引号。在onMove事件中，需要根据上报的起始索引号和目标索引号修改数据源。数据源修改前后，要保持每个数据的键值不变，只是顺序发生变化，才能保证落位动画正常执行。
 
@@ -614,7 +614,7 @@ struct ForEachSort {
 
 
 
-#### 使用建议
+## 使用建议
 
  - 为满足键值的唯一性，对于对象数据类型，建议使用对象数据中的唯一id作为键值。
  - 不建议在键值中包含数据项索引index，可能会导致[渲染结果非预期](#渲染结果非预期)和[渲染性能降低](#渲染性能降低)。如果确实需要使用index，例如列表通过index进行条件渲染，开发者需接受ForEach在数据源变更后重新创建组件导致的性能损耗。
@@ -627,13 +627,13 @@ struct ForEachSort {
 
 
 
-#### 常见问题
+## 常见问题
 
 对ForEach键值的错误使用会导致功能和性能问题。详见案例[渲染结果非预期](#渲染结果非预期)和[渲染性能降低](#渲染性能降低)。
 
 
 
-#### 渲染结果非预期
+### 渲染结果非预期
 
 在本示例中，通过设置ForEach的第三个参数KeyGenerator函数，自定义键值生成规则为数据源的索引index的字符串类型值。当点击父组件ForEachAbnormal中“Insert Item After First Item”文本组件后，界面会出现非预期的结果。
 
@@ -674,7 +674,7 @@ struct ForEachAbnormalChildItem {
 }
 ```
 
-上述代码的初始渲染效果和点击“在第1项后插入新项”文本组件后的渲染效果如下图所示。
+上述代码的初始渲染效果和点击“Insert Item After First Item”文本组件后的渲染效果如下图所示。
 
 **图10** 渲染结果非预期运行效果图
 
@@ -692,7 +692,7 @@ ForEach依次遍历新数据源，遍历数据项"one"时生成键值"0"，存�
 
 
 
-#### 渲染性能降低
+### 渲染性能降低
 
 在本示例中，ForEach的第三个参数KeyGenerator函数缺省。根据上述[键值生成规则](#键值生成规则)，此例使用框架默认的键值，即最终键值为字符串index + '__' + JSON.stringify(item)。点击文本组件“在第1项后插入新项”后，ForEach将为第2个数组项及后面的所有数据项重新创建组件。
 
@@ -777,9 +777,9 @@ ForEach(this.simpleList, (item: string) => {
 
 
 
-#### 数据变化不渲染
+### 数据变化不渲染
 
-点击按钮Like/UnLike first article，第一个组件会切换点赞手势和后面的点赞数量，但是点击按钮Replace first article之后再点击按钮Like/UnLike first article就不生效了。原因是替换articleList[0]之后，articleList状态变量发生变化，触发ForEach重新渲染，但是新的articleList[0]生成的key没有变，ForEach不会将数据更新同步给子组件，因此第一个组件仍然绑定旧的articleList[0]。新articleList[0]的属性发生变更，第一个组件感知不到，不会重新渲染。点击点赞手势，会触发渲染。因为变更的是跟组件绑定的数组项的属性，组件会感知并重新渲染。
+点击按钮Like/Unlike first article，第一个组件会切换点赞手势和后面的点赞数量，但是点击按钮Replace first article之后再点击按钮Like/Unlike first article就不生效了。原因是替换articleList[0]之后，articleList状态变量发生变化，触发ForEach重新渲染，但是新的articleList[0]生成的key没有变，ForEach不会将数据更新同步给子组件，因此第一个组件仍然绑定旧的articleList[0]。新articleList[0]的属性发生变更，第一个组件感知不到，不会重新渲染。点击点赞手势，会触发渲染。因为变更的是跟组件绑定的数组项的属性，组件会感知并重新渲染。
 
 ```ArkTS
 @Observed
@@ -873,8 +873,8 @@ struct ArticleCardChangeData {
           .margin({ bottom: 8 })
 
         Row() {
-          // 此处'app.media.iconLiked'，'app.media.iconUnLiked'仅作示例，请开发者自行替换，否则imageSource创建失败会导致后续无法正常执行。
-          Image(this.article.isLiked ? $r('app.media.iconLiked') : $r('app.media.iconUnLiked'))
+          // 此处'app.media.iconLiked'，'app.media.iconUnliked'仅作示例，请开发者自行替换，否则imageSource创建失败会导致后续无法正常执行。
+          Image(this.article.isLiked ? $r('app.media.iconLiked') : $r('app.media.iconUnliked'))
             .width(24)
             .height(24)
             .margin({ right: 8 })
@@ -906,7 +906,7 @@ struct ArticleCardChangeData {
 
 
 
-#### 非必要内存消耗
+### 非必要内存消耗
 
 如果开发者没有定义keyGenerator函数，则ArkUI框架会使用默认的键值生成函数，即(item: Object, index: number) => { return index + '__' + JSON.stringify(item); }。当item是复杂对象时，将其JSON序列化会得到长字符串，占用更多的内存。
 
@@ -966,12 +966,12 @@ struct NonNecessaryMemory {
 **图15** 自定义键值生成函数下的内存占用
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/7A17H9RRROic9yly8JiqkQ/zh-cn_image_0000002674631990.png?HW-CC-KV=V1&HW-CC-Date=20260813T095708Z&HW-CC-Expire=86400&HW-CC-Sign=5C76D0F7E30FAD288FC624051E99109ED50887E2CFC3B084D61A62717F76D04D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/TrIsPKQZTSaezwJc3qHpkw/zh-cn_image_0000002717770140.png?HW-CC-KV=V1&HW-CC-Date=20260911T072511Z&HW-CC-Expire=86400&HW-CC-Sign=22BBE11E3B74DE474FFAC148EE0D183A67521A54144ED675F3C5B9E055E5B9EC)
 
 
 
 
-#### 键值生成失败
+### 键值生成失败
 
 如果开发者没有定义keyGenerator函数，则ArkUI框架会使用默认的键值生成函数，即(item: Object, index: number) => { return index + '__' + JSON.stringify(item); }。然而，JSON.stringify序列化在某些数据结构上会失败，导致应用发生jscrash并退出。例如，bigint无法被JSON.stringify序列化：
 
@@ -1021,8 +1021,10 @@ struct GenerationKeyChildItem {
 
 开发者定义keyGenerator函数，应用正常启动：
 
+**图16** 键值生成失败
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/0bMHFFTsTKmu3Yqs6H0Fzg/zh-cn_image_0000002704271943.png?HW-CC-KV=V1&HW-CC-Date=20260813T095708Z&HW-CC-Expire=86400&HW-CC-Sign=FA01DDFA2742D91DA2EC5287C98CEF3030F77E0DFE7F25D6BA9AA4E686556A88)
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/XVXE1Wh3QtuyJuuPQtAfog/zh-cn_image_0000002717610206.png?HW-CC-KV=V1&HW-CC-Date=20260911T072511Z&HW-CC-Expire=86400&HW-CC-Sign=A80925D024D1AADF37E9F55B2969B26D120EE9BD23A9B1D6816F1B223B9A24A8)
 
 
 使用默认的键值生成函数，应用发生jscrash：

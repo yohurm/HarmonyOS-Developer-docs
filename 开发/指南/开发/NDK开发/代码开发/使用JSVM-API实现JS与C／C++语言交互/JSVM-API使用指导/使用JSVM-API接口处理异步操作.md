@@ -1,16 +1,16 @@
 # 使用JSVM-API接口处理异步操作
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-about-promise
 
-#### 简介
+## 简介
 
 使用JSVM-API接口处理异步操作。异步操作是指需要一定时间才能完成的操作，例如从网络下载数据或读取大型文件。与同步操作不同，异步操作不会阻塞主线程，而是会在后台执行。当异步操作完成后，事件循环将把它放入任务队列中，等待主线程空闲时执行。
  
   
 
-#### 基本概念
+## 基本概念
 
 Promise是JavaScript中用来处理异步操作的对象，Promise有pending（待定）、fulfilled（已兑现）和rejected（已拒绝）三种状态，Promise的初始状态是pending，resolve函数可以使其状态从pending变为fulfilled（已兑现），reject函数可以使其状态从pending变为rejected（已拒绝），一旦兑现或拒绝Promise的状态将不能更改。下面是一些基本概念：
  
@@ -26,8 +26,9 @@ Promise是JavaScript中用来处理异步操作的对象，Promise有pending（�
  
   
 
-#### 接口说明
+## 接口说明
  
+
 | 接口 | 功能说明 |
 | --- | --- |
 | OH_JSVM_IsPromise | 查询Promise是否为Promise对象 |
@@ -39,13 +40,13 @@ Promise是JavaScript中用来处理异步操作的对象，Promise有pending（�
  
   
 
-#### 使用示例
+## 使用示例
 
 JSVM-API接口开发流程参考[使用JSVM-API实现JS与C/C++语言交互开发流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-process)，本文仅对接口对应C++相关代码进行展示。
  
   
 
-#### OH_JSVM_IsPromise
+### OH_JSVM_IsPromise
 
 判断给定的JSVM_Value是否表示一个Promise对象。
  
@@ -96,13 +97,13 @@ JSVM OH_JSVM_IsPromise success:0
  
   
 
-#### OH_JSVM_CreatePromise
+### OH_JSVM_CreatePromise
 
 OH_JSVM_CreatePromise用于创建一个Promise对象。
  
   
 
-#### OH_JSVM_ResolveDeferred & OH_JSVM_RejectDeferred
+### OH_JSVM_ResolveDeferred & OH_JSVM_RejectDeferred
 
 用于对Promise关联的deferred对象进行解析，OH_JSVM_ResolveDeferred将其从挂起状态转换为已兑现状态，OH_JSVM_RejectDeferred将其从挂起状态转换为已拒绝状态。
  
@@ -191,7 +192,7 @@ OH_JSVM_RejectDeferred reject
  
   
 
-#### OH_JSVM_PromiseRegisterHandler
+### OH_JSVM_PromiseRegisterHandler
 
 用于设置 Promise 解析或拒绝后的回调，等效于调用原生的 Promise.then() 或 Promise.catch()。
  

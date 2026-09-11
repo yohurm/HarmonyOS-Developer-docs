@@ -1,6 +1,6 @@
 # ScsiPeripheral_RequestSenseRequest
 
-更新时间：2026-06-03 01:38:22（官网已下线）
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-scsiperipheralddk-scsiperipheral-requestsenserequest
 **支持设备：** PC/2in1
@@ -10,11 +10,12 @@ typedef struct ScsiPeripheral_RequestSenseRequest {...} ScsiPeripheral_RequestSe
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** PC/2in1
 
-SCSI命令（Request Sense）的请求结构体。
+SCSI命令（REQUEST SENSE）的请求结构体，该命令通常用于获取设备的错误信息。
  
 **起始版本：** 18
  
@@ -24,19 +25,22 @@ SCSI命令（Request Sense）的请求结构体。
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** PC/2in1
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** PC/2in1
  
+
 | 名称 | 描述 |
 | --- | --- |
-| uint8_t allocationLength | Allocation length字段，指定了请求方向发起者（通常是主机）为响应数据准备的缓冲区大小。 |
-| uint8_t control | Control字段，用于指定一些控制信息。 |
-| uint8_t byte1 | CDB的第一个字节。 |
-| uint32_t timeout | 超时时间(单位: 毫秒)。 |
+| uint8_t allocationLength | Allocation length字段，指定了请求发起者（通常是主机）为响应数据准备的缓冲区大小，单位：Byte。 |
+| uint8_t control | Control字段，用于指定SCSI命令的控制信息。 |
+| uint8_t byte1 | CDB（Command Descriptor Block，命令描述符块）的第一个字节。 |
+| uint32_t timeout | 超时时间（单位：ms）。 |

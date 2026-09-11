@@ -1,9 +1,9 @@
 # Functions
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-f
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供图像处理相关功能，包括创建PixelMap、Picture、ImageSource、ImagePacker、ImageReceiver等图像对象，支持图像解码、编码、像素数据操作、图像变换等能力，适用于图像编辑、图像处理、相机预览截帧等场景。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { image } from '@kit.ImageKit';
@@ -22,9 +23,10 @@ import { image } from '@kit.ImageKit';
 
 
 
-#### image.createPicture13+
+## image.createPicture13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPicture(mainPixelmap : PixelMap): Picture
 
@@ -36,12 +38,14 @@ createPicture(mainPixelmap : PixelMap): Picture
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mainPixelmap | PixelMap | 是 | 主图的PixelMap。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -50,7 +54,8 @@ createPicture(mainPixelmap : PixelMap): Picture
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -79,9 +84,10 @@ async function CreatePicture(context: Context) {
 
 
 
-#### image.createPictureFromParcel13+
+## image.createPictureFromParcel13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPictureFromParcel(sequence: rpc.MessageSequence): Picture
 
@@ -93,12 +99,14 @@ createPictureFromParcel(sequence: rpc.MessageSequence): Picture
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sequence | rpc.MessageSequence | 是 | 保存有Picture信息的MessageSequence。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -107,7 +115,8 @@ createPictureFromParcel(sequence: rpc.MessageSequence): Picture
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -172,9 +181,10 @@ async function marshallingUnmarshalling(context: Context) {
 
 
 
-#### image.createPixelMapFromPixels
+## image.createPixelMapFromPixels
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPixelMapFromPixels(pixels: ArrayBuffer, param: InitializationOptions): Promise&lt;PixelMap&gt;
 
@@ -196,6 +206,7 @@ createPixelMapFromPixels(pixels: ArrayBuffer, param: InitializationOptions): Pro
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pixels | ArrayBuffer | 是 | 图像像素数据的缓冲区，用于初始化PixelMap的像素。缓冲区内的像素数据必须紧密排列，不可以包含内存对齐填充字节。 缓冲区的像素格式需要由InitializationOptions.srcPixelFormat指定，否则默认缓冲区的像素格式为BGRA_8888。 说明： 缓冲区长度为：图像宽度 * 图像高度 * 每像素字节数。 |
@@ -203,6 +214,7 @@ createPixelMapFromPixels(pixels: ArrayBuffer, param: InitializationOptions): Pro
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -212,6 +224,7 @@ createPixelMapFromPixels(pixels: ArrayBuffer, param: InitializationOptions): Pro
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -258,9 +271,10 @@ function createPixelMapFromPixels() {
 
 
 
-#### image.createPixelMapFromPixelsSync
+## image.createPixelMapFromPixelsSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPixelMapFromPixelsSync(pixels: ArrayBuffer, param: InitializationOptions): PixelMap
 
@@ -282,6 +296,7 @@ createPixelMapFromPixelsSync(pixels: ArrayBuffer, param: InitializationOptions):
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pixels | ArrayBuffer | 是 | 图像像素数据的缓冲区，用于初始化PixelMap的像素。缓冲区内的像素数据必须紧密排列，不可以包含内存对齐填充字节。 缓冲区的像素格式需要由InitializationOptions.srcPixelFormat指定，否则默认缓冲区的像素格式为BGRA_8888。 说明： 缓冲区长度为：图像宽度 * 图像高度 * 每像素字节数。 |
@@ -289,6 +304,7 @@ createPixelMapFromPixelsSync(pixels: ArrayBuffer, param: InitializationOptions):
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -298,6 +314,7 @@ createPixelMapFromPixelsSync(pixels: ArrayBuffer, param: InitializationOptions):
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -345,9 +362,10 @@ function createPixelMapFromPixelsSync() {
 
 
 
-#### image.createEmptyPixelMap
+## image.createEmptyPixelMap
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createEmptyPixelMap(param: InitializationOptions): PixelMap
 
@@ -369,12 +387,14 @@ createEmptyPixelMap(param: InitializationOptions): PixelMap
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | param | InitializationOptions | 是 | 创建图像的属性，包括尺寸、像素格式、透明度类型、缩放模式和是否可编辑。 说明： 如果像素格式被指定为ASTC_4x4，则会使用默认的RGBA_8888格式。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -384,6 +404,7 @@ createEmptyPixelMap(param: InitializationOptions): PixelMap
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -416,9 +437,10 @@ function createEmptyPixelMap() {
 
 
 
-#### image.createPixelMap8+
+## image.createPixelMap8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPixelMap(colors: ArrayBuffer, options: InitializationOptions): Promise&lt;PixelMap&gt;
 
@@ -432,6 +454,7 @@ createPixelMap(colors: ArrayBuffer, options: InitializationOptions): Promise&lt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | colors | ArrayBuffer | 是 | 图像像素数据的缓冲区，用于初始化PixelMap的像素。缓冲区内的像素数据必须紧密排列，不可以包含内存对齐填充字节。 缓冲区的像素格式需要由InitializationOptions.srcPixelFormat指定，否则默认缓冲区的像素格式为BGRA_8888。 说明： 缓冲区长度为：图像宽度 * 图像高度 * 每像素字节数。 |
@@ -439,6 +462,7 @@ createPixelMap(colors: ArrayBuffer, options: InitializationOptions): Promise&lt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -468,9 +492,10 @@ function createPixelMap() {
 
 
 
-#### image.createPixelMap8+
+## image.createPixelMap8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPixelMap(colors: ArrayBuffer, options: InitializationOptions, callback: AsyncCallback&lt;PixelMap&gt;): void
 
@@ -483,6 +508,7 @@ createPixelMap(colors: ArrayBuffer, options: InitializationOptions, callback: As
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -516,9 +542,10 @@ function createPixelMap() {
 
 
 
-#### image.createPixelMapSync12+
+## image.createPixelMapSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPixelMapSync(colors: ArrayBuffer, options: InitializationOptions): PixelMap
 
@@ -532,6 +559,7 @@ createPixelMapSync(colors: ArrayBuffer, options: InitializationOptions): PixelMa
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | colors | ArrayBuffer | 是 | 图像像素数据的缓冲区，用于初始化PixelMap的像素。缓冲区内的像素数据必须紧密排列，不可以包含内存对齐填充字节。 缓冲区的像素格式需要由InitializationOptions.srcPixelFormat指定，否则默认缓冲区的像素格式为BGRA_8888。 说明： 缓冲区长度为：图像宽度 * 图像高度 * 每像素字节数。 |
@@ -540,6 +568,7 @@ createPixelMapSync(colors: ArrayBuffer, options: InitializationOptions): PixelMa
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | PixelMap | 返回创建的PixelMap对象，接口调用失败时会抛出异常。 |
@@ -547,11 +576,12 @@ createPixelMapSync(colors: ArrayBuffer, options: InitializationOptions): PixelMa
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
 
 
 **示例：**
@@ -583,9 +613,10 @@ function createPixelMapSync() {
 
 
 
-#### image.createPixelMapSync12+
+## image.createPixelMapSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPixelMapSync(options: InitializationOptions): PixelMap
 
@@ -599,12 +630,14 @@ createPixelMapSync(options: InitializationOptions): PixelMap
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | InitializationOptions | 是 | 创建图像的属性，包括尺寸、像素格式、透明度类型、缩放模式和是否可编辑。 说明： 如果像素格式被指定为ASTC_4x4，则会使用默认的RGBA_8888格式。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -613,11 +646,12 @@ createPixelMapSync(options: InitializationOptions): PixelMap
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
 
 
 **示例：**
@@ -643,9 +677,10 @@ function createPixelMapSync() {
 
 
 
-#### image.createPixelMapUsingAllocator20+
+## image.createPixelMapUsingAllocator20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPixelMapUsingAllocator(colors: ArrayBuffer, param: InitializationOptions, allocatorType?: AllocatorType): Promise&lt;PixelMap&gt;
 
@@ -659,6 +694,7 @@ createPixelMapUsingAllocator(colors: ArrayBuffer, param: InitializationOptions, 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | colors | ArrayBuffer | 是 | 图像像素数据的缓冲区，用于初始化PixelMap的像素。缓冲区内的像素数据必须紧密排列，不可以包含内存对齐填充字节。 初始化前，必须通过InitializationOptions.srcPixelFormat指定缓冲区的像素格式，否则会创建失败。 说明： 缓冲区长度为：图像宽度 * 图像高度 * 每像素字节数。 |
@@ -668,6 +704,7 @@ createPixelMapUsingAllocator(colors: ArrayBuffer, param: InitializationOptions, 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;PixelMap&gt; | Promise对象，返回创建的PixelMap对象，接口调用失败时会抛出异常。 |
@@ -676,6 +713,7 @@ createPixelMapUsingAllocator(colors: ArrayBuffer, param: InitializationOptions, 
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -707,9 +745,10 @@ function createPixelMapUsingAllocator() {
 
 
 
-#### image.createPixelMapUsingAllocatorSync20+
+## image.createPixelMapUsingAllocatorSync20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPixelMapUsingAllocatorSync(colors: ArrayBuffer, param: InitializationOptions, allocatorType?: AllocatorType): PixelMap
 
@@ -723,6 +762,7 @@ createPixelMapUsingAllocatorSync(colors: ArrayBuffer, param: InitializationOptio
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | colors | ArrayBuffer | 是 | 图像像素数据的缓冲区，用于初始化PixelMap的像素。缓冲区内的像素数据必须紧密排列，不可以包含内存对齐填充字节。 初始化前，必须通过InitializationOptions.srcPixelFormat指定缓冲区的像素格式，否则会创建失败。 说明： 缓冲区长度为：图像宽度 * 图像高度 * 每像素字节数。 |
@@ -732,6 +772,7 @@ createPixelMapUsingAllocatorSync(colors: ArrayBuffer, param: InitializationOptio
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | PixelMap | 返回创建的PixelMap对象，接口调用失败时会抛出异常。 |
@@ -740,6 +781,7 @@ createPixelMapUsingAllocatorSync(colors: ArrayBuffer, param: InitializationOptio
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -777,9 +819,10 @@ function createPixelMapUsingAllocatorSync() {
 
 
 
-#### image.createPixelMapUsingAllocatorSync20+
+## image.createPixelMapUsingAllocatorSync20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPixelMapUsingAllocatorSync(param: InitializationOptions, allocatorType?: AllocatorType): PixelMap
 
@@ -793,6 +836,7 @@ createPixelMapUsingAllocatorSync(param: InitializationOptions, allocatorType?: A
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | param | InitializationOptions | 是 | 创建图像的初始化属性，包括尺寸、像素格式、透明度类型、缩放模式和是否可编辑。 说明： 如果像素格式被指定为ASTC_4x4，则会使用默认的RGBA_8888格式。 |
@@ -800,6 +844,7 @@ createPixelMapUsingAllocatorSync(param: InitializationOptions, allocatorType?: A
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -809,6 +854,7 @@ createPixelMapUsingAllocatorSync(param: InitializationOptions, allocatorType?: A
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -839,9 +885,10 @@ function createPixelMapUsingAllocatorSync() {
 
 
 
-#### image.createPixelMapFromParcel11+
+## image.createPixelMapFromParcel11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPixelMapFromParcel(sequence: rpc.MessageSequence): PixelMap
 
@@ -855,12 +902,14 @@ createPixelMapFromParcel(sequence: rpc.MessageSequence): PixelMap
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sequence | rpc.MessageSequence | 是 | 保存了PixelMap序列化数据的MessageSequence。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -870,6 +919,7 @@ createPixelMapFromParcel(sequence: rpc.MessageSequence): PixelMap
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -945,21 +995,23 @@ async function createPixelMapFromParcel() {
 
 
 
-#### image.createPixelMapFromSurface11+
+## image.createPixelMapFromSurface11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPixelMapFromSurface(surfaceId: string, region: Region): Promise&lt;PixelMap&gt;
 
 根据Surface ID和区域信息创建一个PixelMap对象。该区域的大小由[Region](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-i#region8).size指定。使用Promise异步回调。
 
 > [!NOTE]
-> 当设备为折叠屏，且折叠状态切换时，可能因Surface自带旋转角度导致接口创建失败。需根据Surface的旋转角度相应调整传入的宽高值（如旋转90°或270°时互换宽与高）。如果需要截取整个Surface的区域，推荐使用 image.createPixelMapFromSurface 。 由于图片占用内存较大，所以当PixelMap对象使用完成后，应主动调用 release 方法及时释放内存。释放时应确保该对象的所有异步方法均执行完成，且后续不再使用该对象。
+> 当设备为折叠屏，切换折叠状态时，可能因Surface自带旋转角度导致接口创建失败。需根据Surface的旋转角度相应调整传入的宽高值，如旋转90°或270°时互换宽与高。如果需要截取整个Surface的区域，推荐使用 image.createPixelMapFromSurface 。 由于图片占用内存较大，所以当PixelMap对象使用完成后，应主动调用 release 方法及时释放内存。释放时应确保该对象的所有异步方法均执行完成，且后续不再使用该对象。
 
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -969,6 +1021,7 @@ createPixelMapFromSurface(surfaceId: string, region: Region): Promise&lt;PixelMa
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;PixelMap&gt; | Promise对象，返回创建的PixelMap对象，接口调用失败时会抛出异常。 |
@@ -977,6 +1030,7 @@ createPixelMapFromSurface(surfaceId: string, region: Region): Promise&lt;PixelMa
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1002,21 +1056,23 @@ function createPixelMapFromSurface(surfaceId: string) {
 
 
 
-#### image.createPixelMapFromSurfaceSync12+
+## image.createPixelMapFromSurfaceSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPixelMapFromSurfaceSync(surfaceId: string, region: Region): PixelMap
 
 根据Surface ID和区域信息创建一个PixelMap对象。该区域的大小由[Region](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-i#region8).size指定。同步返回结果。
 
 > [!NOTE]
-> 当设备为折叠屏，且折叠状态切换时，可能因Surface自带旋转角度导致接口创建失败。需根据Surface的旋转角度相应调整传入的宽高值（如旋转90°或270°时互换宽与高）。如果需要截取整个Surface的区域，推荐使用 image.createPixelMapFromSurfaceSync 。 由于图片占用内存较大，所以当PixelMap对象使用完成后，应主动调用 release 方法及时释放内存。释放时应确保该对象的所有异步方法均执行完成，且后续不再使用该对象。
+> 当设备为折叠屏，切换折叠状态时，可能因Surface自带旋转角度导致接口创建失败。需根据Surface的旋转角度相应调整传入的宽高值，如旋转90°或270°时互换宽与高。如果需要截取整个Surface的区域，推荐使用 image.createPixelMapFromSurfaceSync 。 由于图片占用内存较大，所以当PixelMap对象使用完成后，应主动调用 release 方法及时释放内存。释放时应确保该对象的所有异步方法均执行完成，且后续不再使用该对象。
 
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1026,6 +1082,7 @@ createPixelMapFromSurfaceSync(surfaceId: string, region: Region): PixelMap
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | PixelMap | 返回创建的PixelMap对象，接口调用失败时会抛出异常。 |
@@ -1033,7 +1090,8 @@ createPixelMapFromSurfaceSync(surfaceId: string, region: Region): PixelMap
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1061,9 +1119,10 @@ function createPixelMapFromSurfaceSync(surfaceId: string) {
 
 
 
-#### image.createPixelMapFromSurface15+
+## image.createPixelMapFromSurface15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPixelMapFromSurface(surfaceId: string): Promise&lt;PixelMap&gt;
 
@@ -1077,12 +1136,14 @@ createPixelMapFromSurface(surfaceId: string): Promise&lt;PixelMap&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | surfaceId | string | 是 | 对应Surface的ID，可通过预览组件获取，如XComponent组件。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1091,13 +1152,14 @@ createPixelMapFromSurface(surfaceId: string): Promise&lt;PixelMap&gt;
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed |
-| 62980105 | Failed to get the data |
-| 62980178 | Failed to create the PixelMap |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 62980105 | Failed to get the data. |
+| 62980178 | Failed to create the PixelMap. |
 
 
 **示例：**
@@ -1116,9 +1178,10 @@ function createPixelMapFromSurface(surfaceId: string) {
 
 
 
-#### image.createPixelMapFromSurfaceSync15+
+## image.createPixelMapFromSurfaceSync15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPixelMapFromSurfaceSync(surfaceId: string): PixelMap
 
@@ -1132,12 +1195,14 @@ createPixelMapFromSurfaceSync(surfaceId: string): PixelMap
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | surfaceId | string | 是 | 对应Surface的ID，可通过预览组件获取，如XComponent组件。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1146,13 +1211,14 @@ createPixelMapFromSurfaceSync(surfaceId: string): PixelMap
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed |
-| 62980105 | Failed to get the data |
-| 62980178 | Failed to create the PixelMap |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 62980105 | Failed to get the data. |
+| 62980178 | Failed to create the PixelMap. |
 
 
 **示例：**
@@ -1173,9 +1239,10 @@ function createPixelMapFromSurfaceSync(surfaceId: string) {
 
 
 
-#### image.createPixelMapFromSurfaceWithTransformation23+
+## image.createPixelMapFromSurfaceWithTransformation23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPixelMapFromSurfaceWithTransformation(surfaceId: string, transformEnabled: boolean): Promise&lt;PixelMap&gt;
 
@@ -1191,6 +1258,7 @@ createPixelMapFromSurfaceWithTransformation(surfaceId: string, transformEnabled:
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | surfaceId | string | 是 | 对应Surface的ID，可通过预览组件获取，如XComponent组件。 |
@@ -1198,6 +1266,7 @@ createPixelMapFromSurfaceWithTransformation(surfaceId: string, transformEnabled:
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1207,6 +1276,7 @@ createPixelMapFromSurfaceWithTransformation(surfaceId: string, transformEnabled:
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1232,9 +1302,10 @@ function createPixelMapFromSurfaceWithTransformation(surfaceId: string, transfor
 
 
 
-#### image.createPixelMapFromSurfaceWithTransformationSync23+
+## image.createPixelMapFromSurfaceWithTransformationSync23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPixelMapFromSurfaceWithTransformationSync(surfaceId: string, transformEnabled: boolean): PixelMap
 
@@ -1250,6 +1321,7 @@ createPixelMapFromSurfaceWithTransformationSync(surfaceId: string, transformEnab
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | surfaceId | string | 是 | 对应Surface的ID，可通过预览组件获取，如XComponent组件。 |
@@ -1257,6 +1329,7 @@ createPixelMapFromSurfaceWithTransformationSync(surfaceId: string, transformEnab
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1266,6 +1339,7 @@ createPixelMapFromSurfaceWithTransformationSync(surfaceId: string, transformEnab
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1293,9 +1367,10 @@ function createPixelMapFromSurfaceWithTransformationSync(surfaceId: string, tran
 
 
 
-#### image.createPremultipliedPixelMap12+
+## image.createPremultipliedPixelMap12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPremultipliedPixelMap(src: PixelMap, dst: PixelMap, callback: AsyncCallback&lt;void&gt;): void
 
@@ -1309,6 +1384,7 @@ createPremultipliedPixelMap(src: PixelMap, dst: PixelMap, callback: AsyncCallbac
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | src | PixelMap | 是 | 源PixelMap对象，透明度类型需为非预乘模式（AlphaType.UNPREMUL），像素格式必须包含Alpha通道（RGBA_F16和ASTC_4x4除外）。 |
@@ -1318,14 +1394,15 @@ createPremultipliedPixelMap(src: PixelMap, dst: PixelMap, callback: AsyncCallbac
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed |
-| 62980103 | The image data is not supported |
-| 62980246 | Failed to read the pixelMap |
-| 62980248 | Pixelmap not allow modify |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 62980103 | The image data is not supported. |
+| 62980246 | Failed to read the pixelMap. |
+| 62980248 | Pixelmap not allow modify. |
 
 
 **示例：**
@@ -1358,9 +1435,10 @@ function createPremultipliedPixelMap() {
 
 
 
-#### image.createPremultipliedPixelMap12+
+## image.createPremultipliedPixelMap12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPremultipliedPixelMap(src: PixelMap, dst: PixelMap): Promise&lt;void&gt;
 
@@ -1374,6 +1452,7 @@ createPremultipliedPixelMap(src: PixelMap, dst: PixelMap): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | src | PixelMap | 是 | 源PixelMap对象，透明度类型需为非预乘模式（AlphaType.UNPREMUL），像素格式必须包含Alpha通道（RGBA_F16和ASTC_4x4除外）。 |
@@ -1382,6 +1461,7 @@ createPremultipliedPixelMap(src: PixelMap, dst: PixelMap): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1389,14 +1469,15 @@ createPremultipliedPixelMap(src: PixelMap, dst: PixelMap): Promise&lt;void&gt;
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed |
-| 62980103 | The image data is not supported |
-| 62980246 | Failed to read the pixelMap |
-| 62980248 | Pixelmap not allow modify |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 62980103 | The image data is not supported. |
+| 62980246 | Failed to read the pixelMap. |
+| 62980248 | Pixelmap not allow modify. |
 
 
 **示例：**
@@ -1427,9 +1508,10 @@ function createPremultipliedPixelMap() {
 
 
 
-#### image.createUnpremultipliedPixelMap12+
+## image.createUnpremultipliedPixelMap12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createUnpremultipliedPixelMap(src: PixelMap, dst: PixelMap, callback: AsyncCallback&lt;void&gt;): void
 
@@ -1443,6 +1525,7 @@ createUnpremultipliedPixelMap(src: PixelMap, dst: PixelMap, callback: AsyncCallb
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | src | PixelMap | 是 | 源PixelMap对象，透明度类型需为预乘模式（AlphaType.PREMUL），像素格式必须包含Alpha通道（RGBA_F16和ASTC_4x4除外）。 |
@@ -1452,14 +1535,15 @@ createUnpremultipliedPixelMap(src: PixelMap, dst: PixelMap, callback: AsyncCallb
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed |
-| 62980103 | The image data is not supported |
-| 62980246 | Failed to read the pixelMap |
-| 62980248 | Pixelmap not allow modify |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 62980103 | The image data is not supported. |
+| 62980246 | Failed to read the pixelMap. |
+| 62980248 | Pixelmap not allow modify. |
 
 
 **示例：**
@@ -1492,9 +1576,10 @@ function createUnpremultipliedPixelMap() {
 
 
 
-#### image.createUnpremultipliedPixelMap12+
+## image.createUnpremultipliedPixelMap12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createUnpremultipliedPixelMap(src: PixelMap, dst: PixelMap): Promise&lt;void&gt;
 
@@ -1508,6 +1593,7 @@ createUnpremultipliedPixelMap(src: PixelMap, dst: PixelMap): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | src | PixelMap | 是 | 源PixelMap对象，透明度类型需为预乘模式（AlphaType.PREMUL），像素格式必须包含Alpha通道（RGBA_F16和ASTC_4x4除外）。 |
@@ -1516,6 +1602,7 @@ createUnpremultipliedPixelMap(src: PixelMap, dst: PixelMap): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1523,7 +1610,8 @@ createUnpremultipliedPixelMap(src: PixelMap, dst: PixelMap): Promise&lt;void&gt;
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1561,9 +1649,10 @@ function createUnpremultipliedPixelMap() {
 
 
 
-#### image.createImageSource
+## image.createImageSource
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createImageSource(uri: string): ImageSource
 
@@ -1577,12 +1666,14 @@ createImageSource(uri: string): ImageSource
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uri | string | 是 | 图片路径，当前仅支持应用沙箱路径。 当前支持格式有：JPEG、PNG、GIF、BMP、WebP、DNG、HEIC12+、WBMP23+、HEIFS23+、TIFF23+、SVG10+（可参考SVG标签说明）、ICO11+。从API版本26.0.0开始，增加支持AVIF、AVIS格式。 部分格式的解码能力依赖于具体的设备硬件，建议在调用前使用image.getImageSourceSupportedFormats接口，动态查询当前设备上的解码能力。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1601,9 +1692,10 @@ async function CreateImageSource(context : Context) {
 
 
 
-#### image.createImageSource9+
+## image.createImageSource9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createImageSource(uri: string, options: SourceOptions): ImageSource
 
@@ -1619,6 +1711,7 @@ createImageSource(uri: string, options: SourceOptions): ImageSource
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uri | string | 是 | 图片路径，当前仅支持应用沙箱路径（可参考使用说明）。 当前支持格式有：JPEG、PNG、GIF、BMP、WebP、DNG、HEIC12+、WBMP23+、HEIFS23+、TIFF23+、SVG10+（可参考SVG标签说明）、ICO11+。从API版本26.0.0开始，增加支持AVIF、AVIS格式。部分格式的解码能力依赖于具体的设备硬件，建议在调用前使用image.getImageSourceSupportedFormats接口，动态查询当前设备上的解码能力。 |
@@ -1626,6 +1719,7 @@ createImageSource(uri: string, options: SourceOptions): ImageSource
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1645,9 +1739,10 @@ async function CreateImageSource(context : Context) {
 
 
 
-#### image.createImageSource7+
+## image.createImageSource7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createImageSource(fd: number): ImageSource
 
@@ -1661,12 +1756,14 @@ createImageSource(fd: number): ImageSource
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fd | number | 是 | 文件描述符fd。取值范围为[0，65535]。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1688,9 +1785,10 @@ async function CreateImageSource(context : Context) {
 
 
 
-#### image.createImageSource9+
+## image.createImageSource9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createImageSource(fd: number, options: SourceOptions): ImageSource
 
@@ -1706,6 +1804,7 @@ createImageSource(fd: number, options: SourceOptions): ImageSource
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fd | number | 是 | 文件描述符fd。取值范围为[0，65535]。 |
@@ -1713,6 +1812,7 @@ createImageSource(fd: number, options: SourceOptions): ImageSource
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1735,9 +1835,10 @@ async function CreateImageSource(context : Context) {
 
 
 
-#### image.createImageSource9+
+## image.createImageSource9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createImageSource(buf: ArrayBuffer): ImageSource
 
@@ -1753,12 +1854,14 @@ createImageSource(buf: ArrayBuffer): ImageSource
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | buf | ArrayBuffer | 是 | 图像缓冲区数组。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1776,9 +1879,10 @@ async function CreateImageSource() {
 
 
 
-#### image.createImageSource9+
+## image.createImageSource9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createImageSource(buf: ArrayBuffer, options: SourceOptions): ImageSource
 
@@ -1794,6 +1898,7 @@ createImageSource(buf: ArrayBuffer, options: SourceOptions): ImageSource
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | buf | ArrayBuffer | 是 | 图像缓冲区数组。 |
@@ -1801,6 +1906,7 @@ createImageSource(buf: ArrayBuffer, options: SourceOptions): ImageSource
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1819,9 +1925,10 @@ async function CreateImageSource() {
 
 
 
-#### image.createImageSource11+
+## image.createImageSource11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createImageSource(rawfile: resourceManager.RawFileDescriptor, options?: SourceOptions): ImageSource
 
@@ -1835,6 +1942,7 @@ createImageSource(rawfile: resourceManager.RawFileDescriptor, options?: SourceOp
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | rawfile | resourceManager.RawFileDescriptor | 是 | 图像资源文件的RawFileDescriptor。 |
@@ -1842,6 +1950,7 @@ createImageSource(rawfile: resourceManager.RawFileDescriptor, options?: SourceOp
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1868,9 +1977,10 @@ async function CreateImageSource(context : Context) {
 
 
 
-#### image.CreateIncrementalSource9+
+## image.CreateIncrementalSource9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 CreateIncrementalSource(buf: ArrayBuffer): ImageSource
 
@@ -1892,12 +2002,14 @@ CreateIncrementalSource(buf: ArrayBuffer): ImageSource
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | buf | ArrayBuffer | 是 | 增量数据。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1930,9 +2042,10 @@ async function CreateIncrementalImageSource(context : Context) {
 
 
 
-#### image.CreateIncrementalSource9+
+## image.CreateIncrementalSource9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 CreateIncrementalSource(buf: ArrayBuffer, options?: SourceOptions): ImageSource
 
@@ -1946,6 +2059,7 @@ CreateIncrementalSource(buf: ArrayBuffer, options?: SourceOptions): ImageSource
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | buf | ArrayBuffer | 是 | 增量数据。 |
@@ -1953,6 +2067,7 @@ CreateIncrementalSource(buf: ArrayBuffer, options?: SourceOptions): ImageSource
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1987,9 +2102,10 @@ async function CreateIncrementalImageSource(context : Context) {
 
 
 
-#### image.getImageSourceSupportedFormats20+
+## image.getImageSourceSupportedFormats20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getImageSourceSupportedFormats(): string[]
 
@@ -1998,6 +2114,7 @@ getImageSourceSupportedFormats(): string[]
 **系统能力：** SystemCapability.Multimedia.Image.ImageSource
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2020,9 +2137,10 @@ async function IsSupportedTiffFormat() {
 
 
 
-#### image.createImagePacker
+## image.createImagePacker
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createImagePacker(): ImagePacker
 
@@ -2035,6 +2153,7 @@ createImagePacker(): ImagePacker
 **系统能力：** SystemCapability.Multimedia.Image.ImagePacker
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2051,9 +2170,10 @@ async function CreateImagePacker() {
 
 
 
-#### image.getImagePackerSupportedFormats20+
+## image.getImagePackerSupportedFormats20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getImagePackerSupportedFormats(): string[]
 
@@ -2062,6 +2182,7 @@ getImagePackerSupportedFormats(): string[]
 **系统能力：** SystemCapability.Multimedia.Image.ImagePacker
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2079,9 +2200,10 @@ async function GetImagePackerSupportedFormats() {
 
 
 
-#### image.createAuxiliaryPicture13+
+## image.createAuxiliaryPicture13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAuxiliaryPicture(buffer: ArrayBuffer, size: Size, type: AuxiliaryPictureType): AuxiliaryPicture
 
@@ -2093,6 +2215,7 @@ createAuxiliaryPicture(buffer: ArrayBuffer, size: Size, type: AuxiliaryPictureTy
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | buffer | ArrayBuffer | 是 | 以buffer形式存放的图像数据。 |
@@ -2102,6 +2225,7 @@ createAuxiliaryPicture(buffer: ArrayBuffer, size: Size, type: AuxiliaryPictureTy
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | AuxiliaryPicture | 如果操作成功，则返回AuxiliaryPicture实例。 |
@@ -2109,7 +2233,8 @@ createAuxiliaryPicture(buffer: ArrayBuffer, size: Size, type: AuxiliaryPictureTy
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2141,9 +2266,10 @@ async function CreateAuxiliaryPicture(context: Context) {
 
 
 
-#### image.createAuxiliaryPictureUsingAllocator24+
+## image.createAuxiliaryPictureUsingAllocator24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAuxiliaryPictureUsingAllocator(auxiliaryPictureInfo: AuxiliaryPictureInfo, allocatorType?: AllocatorType, pixels?: ArrayBuffer): AuxiliaryPicture
 
@@ -2159,6 +2285,7 @@ createAuxiliaryPictureUsingAllocator(auxiliaryPictureInfo: AuxiliaryPictureInfo,
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | auxiliaryPictureInfo | AuxiliaryPictureInfo | 是 | 辅助图图像信息。 - 输入的ArrayBuffer的pixelFormat和最终创建出的辅助图的实际pixelFormat需与auxiliaryPictureInfo中指定的pixelFormat保持一致。 - 当AuxiliaryPictureType为GAINMAP时，AllocatorType仅支持传入AUTO/DMA。 - 当传入SHARE_MEMORY时，返回错误码7600205。 |
@@ -2168,6 +2295,7 @@ createAuxiliaryPictureUsingAllocator(auxiliaryPictureInfo: AuxiliaryPictureInfo,
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | AuxiliaryPicture | 如果操作成功，则返回AuxiliaryPicture实例。 |
@@ -2176,6 +2304,7 @@ createAuxiliaryPictureUsingAllocator(auxiliaryPictureInfo: AuxiliaryPictureInfo,
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2201,9 +2330,10 @@ function CreateAuxiliaryPictureUsingAllocator(info: image.AuxiliaryPictureInfo, 
 
 
 
-#### image.createImageReceiver11+
+## image.createImageReceiver11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createImageReceiver(size: Size, format: ImageFormat, capacity: number): ImageReceiver
 
@@ -2215,6 +2345,7 @@ createImageReceiver(size: Size, format: ImageFormat, capacity: number): ImageRec
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | size | Size | 是 | 图像的默认大小。单位：像素（px）。该参数不会影响接收到的图片大小，实际返回大小由生产者决定，如相机。 |
@@ -2224,6 +2355,7 @@ createImageReceiver(size: Size, format: ImageFormat, capacity: number): ImageRec
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageReceiver | 如果操作成功，则返回ImageReceiver实例。 |
@@ -2231,7 +2363,8 @@ createImageReceiver(size: Size, format: ImageFormat, capacity: number): ImageRec
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2250,9 +2383,10 @@ let receiver: image.ImageReceiver = image.createImageReceiver(size, image.ImageF
 
 
 
-#### image.createImageReceiver23+
+## image.createImageReceiver23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createImageReceiver(options?: ImageReceiverOptions): ImageReceiver | undefined
 
@@ -2266,12 +2400,14 @@ createImageReceiver(options?: ImageReceiverOptions): ImageReceiver | undefined
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ImageReceiverOptions | 否 | 创建ImageReceiver的属性，包括图片的默认大小和同时访问的最大图片数。 未传入options时，默认的size为1920*1080，单位为像素（px），表示期望接收宽为1920px，高为1080px的图片。 未传入options时，默认的capacity为3，表示期望同时最多有3张图片等待读取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2281,6 +2417,7 @@ createImageReceiver(options?: ImageReceiverOptions): ImageReceiver | undefined
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2299,9 +2436,10 @@ let receiver: image.ImageReceiver | undefined = image.createImageReceiver(option
 
 
 
-#### image.createImageCreator11+
+## image.createImageCreator11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createImageCreator(size: Size, format: ImageFormat, capacity: number): ImageCreator
 
@@ -2313,6 +2451,7 @@ createImageCreator(size: Size, format: ImageFormat, capacity: number): ImageCrea
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | size | Size | 是 | 图像的默认大小。单位：像素（px）。 |
@@ -2322,6 +2461,7 @@ createImageCreator(size: Size, format: ImageFormat, capacity: number): ImageCrea
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageCreator | 如果操作成功，则返回ImageCreator实例。 |
@@ -2329,7 +2469,8 @@ createImageCreator(size: Size, format: ImageFormat, capacity: number): ImageCrea
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2348,9 +2489,10 @@ let creator: image.ImageCreator = image.createImageCreator(size, image.ImageForm
 
 
 
-#### image.createImageReceiver(deprecated)
+## image.createImageReceiver(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createImageReceiver(width: number, height: number, format: number, capacity: number): ImageReceiver
 
@@ -2366,6 +2508,7 @@ createImageReceiver(width: number, height: number, format: number, capacity: num
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | width | number | 是 | 图像的默认宽度。单位：像素（px）。该参数不会影响接收到的图片宽度，实际宽度由生产者决定，如相机。 |
@@ -2375,6 +2518,7 @@ createImageReceiver(width: number, height: number, format: number, capacity: num
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2389,9 +2533,10 @@ let receiver: image.ImageReceiver = image.createImageReceiver(8192, 8192, image.
 
 
 
-#### image.createImageCreator(deprecated)
+## image.createImageCreator(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createImageCreator(width: number, height: number, format: number, capacity: number): ImageCreator
 
@@ -2407,6 +2552,7 @@ createImageCreator(width: number, height: number, format: number, capacity: numb
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | width | number | 是 | 图像的默认宽度。单位：像素（px）。 |
@@ -2416,6 +2562,7 @@ createImageCreator(width: number, height: number, format: number, capacity: numb
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2430,9 +2577,10 @@ let creator: image.ImageCreator = image.createImageCreator(8192, 8192, image.Ima
 
 
 
-#### SVG标签说明
+## SVG标签说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 10开始支持SVG标签，使用版本为(SVG) 1.1，SVG标签需设置width，height。SVG文件可添加xml声明，应以“<?xml”开头，当前支持的标签列表有：
 

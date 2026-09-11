@@ -1,9 +1,9 @@
 # ecnyPaymentService (数字人民币服务)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-ecnypaymentservice
-**支持设备：** Phone | PC/2in1 | Tablet
+**支持设备：** Phone
 
 本模块提供数字人民币支付服务。
 
@@ -16,9 +16,10 @@
 **起始版本：** 5.0.1(13)
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone
 
 ```text
 import { ecnyPaymentService } from '@kit.PaymentKit';
@@ -26,9 +27,10 @@ import { ecnyPaymentService } from '@kit.PaymentKit';
 
 
 
-#### EcnyOrderInfo
+## EcnyOrderInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone
 
 拉起数字人民币收银台时传入的订单信息。
 
@@ -39,6 +41,7 @@ import { ecnyPaymentService } from '@kit.PaymentKit';
 **系统能力：** SystemCapability.Payment.ECNYPaymentService
 
 **起始版本：** 5.0.1(13)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -59,9 +62,10 @@ import { ecnyPaymentService } from '@kit.PaymentKit';
 
 
 
-#### EcnyPayResult
+## EcnyPayResult
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone
 
 数字人民币支付结果。
 
@@ -73,6 +77,7 @@ import { ecnyPaymentService } from '@kit.PaymentKit';
 
 **起始版本：** 5.0.1(13)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | orderNo | string | 否 | 否 | 订单号。 |
@@ -81,9 +86,10 @@ import { ecnyPaymentService } from '@kit.PaymentKit';
 
 
 
-#### requestEcnyPayment
+## requestEcnyPayment
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone
 
 requestEcnyPayment(context: common.Context, orderInfo: EcnyOrderInfo): Promise&lt;EcnyPayResult&gt;
 
@@ -101,6 +107,7 @@ requestEcnyPayment(context: common.Context, orderInfo: EcnyOrderInfo): Promise&l
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文，不传会报401参数错误。 |
@@ -108,6 +115,7 @@ requestEcnyPayment(context: common.Context, orderInfo: EcnyOrderInfo): Promise&l
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -117,6 +125,7 @@ requestEcnyPayment(context: common.Context, orderInfo: EcnyOrderInfo): Promise&l
 **错误码**：
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-payment)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

@@ -37,16 +37,16 @@
 @Entry
 @Component
 struct GestureIdentity {
-  // 用来配置CanvasRenderingContext2D对象和OffscreenCanvasRenderingContext2D对象的参数，包括是否开启抗锯齿。true表明开启抗锯齿
+ <em> // 用来配置CanvasRenderingContext2D对象和OffscreenCanvasRenderingContext2D对象的参数，包括是否开启抗锯齿。true表明开启抗锯齿</em>
   private settings: RenderingContextSettings = new RenderingContextSettings(true);
   private context: CanvasRenderingContext2D = new CanvasRenderingContext2D(this.settings);
-  // 拖动手势信息
+ <em> // 拖动手势信息</em>
   @State offsetX: number = 0;
   @State offsetY: number = 0;
   @State positionX: number = 0;
   @State positionY: number = 0;
   private panOption: PanGestureOptions = new PanGestureOptions({ direction: PanDirection.All });
-  // 座位信息
+ <em> // 座位信息</em>
   @State seatArr: number[][] = [
     [0, 1, 0, 0],
     [0, 0, 0, 0],
@@ -58,7 +58,7 @@ struct GestureIdentity {
   seatWidth: number = 30;
   seatHeight: number = 30;
   fontSize: number = 14;
-  // 捏合手势信息
+ <em> // 捏合手势信息</em>
   @State scaleValue: number = 1;
   @State pinchValue: number = 1;
   @State pinchX: number = 0;
@@ -66,36 +66,36 @@ struct GestureIdentity {
 
   drawCanvas() {
     this.context.reset();
-    let w = this.seatWidth * this.scaleValue; // 最新座位宽度
-    let h = this.seatHeight * this.scaleValue; // 最新座位高度
+    let w = this.seatWidth * this.scaleValue; <em>// 最新座位宽度</em>
+    let h = this.seatHeight * this.scaleValue;<em> </em><em>// 最新座位高度</em>
     let newSeatSpacing = this.seatSpacing * this.scaleValue;
-    // 座位图
+   <em> // 座位图</em>
     for (let i = 0; i < this.seatArr.length; i++) {
-      // 内循环遍历每一行中的每一个元素
+      <em>// </em><em>内循环遍历每一行中的每一个元素</em>
       for (let j = 0; j < this.seatArr[i].length; j++) {
         this.context.fillStyle = '#0097D4';
         const seatStatus = this.seatArr[i][j];
-        // 设置座位的颜色
+       <em> // 设置座位的颜色</em>
         if (seatStatus === 0) {
-          this.context.fillStyle = 'green'; // 空闲座位
+          this.context.fillStyle = 'green'; <em>// </em><em>空闲座位</em>
         } else if (seatStatus === 1) {
-          this.context.fillStyle = 'blue'; // 已选择座位
+          this.context.fillStyle = 'blue'; <em>// 已选择座位</em>
         } else {
-          this.context.fillStyle = 'gray'; // 已售座位
+          this.context.fillStyle = 'gray';<em> </em><em>// 已售座位</em>
         }
         let x = this.offsetX + w + (w + newSeatSpacing) * i;
         let y = this.offsetY + (h + newSeatSpacing) * j;
         this.context.fillRect(x, y, w, h);
       }
     }
-    // 索引图
+  <em>  // 索引图</em>
     this.context.fillStyle = 'rgba(0,0,0,0.3)';
     this.context.font = `${this.fontSize}vp sans-serif`;
     this.context.textAlign = 'center';
     for (let i = 0; i < this.seatArr.length; i++) {
-      // 第一个
+      <em>// </em><em>第一个</em>
       if (i === 0) {
-        // 椭圆+矩形
+       <em> // 椭圆+矩形</em>
         this.context.beginPath();
         this.context.ellipse(this.listWidth / 2, this.offsetY + h / 2, this.listWidth / 2, h / 2, 0, 0, Math.PI, true);
         this.context.fill();
@@ -104,7 +104,7 @@ struct GestureIdentity {
         this.context.fillText(`${i + 1}`, (this.listWidth - this.fontSize) / 2 + 5,
           this.offsetY + (h + newSeatSpacing) * i + (h + newSeatSpacing) / 2);
       } else if (i === this.seatArr.length - 1) {
-        // 最后一行行号
+        <em>// 最后一行行号</em>
         this.context.fillRect(0, this.offsetY + (h + newSeatSpacing) * i, this.listWidth,
           h / 2);
         this.context.beginPath();
@@ -114,7 +114,7 @@ struct GestureIdentity {
         this.context.fillText(`${i + 1}`, (this.listWidth - this.fontSize) / 2 + 5,
           this.offsetY + (h + newSeatSpacing) * i + (h + newSeatSpacing) / 2);
       } else {
-        // 中间行号
+       <em> // 中间行号</em>
         this.context.fillRect(0, this.offsetY + (h + newSeatSpacing) * i, this.listWidth,
           h + newSeatSpacing);
         this.context.fillText(`${i + 1}`, (this.listWidth - this.fontSize) / 2 + 5,
@@ -131,10 +131,10 @@ struct GestureIdentity {
         .backgroundColor(Color.White)
         .onReady(() => {
           this.drawCanvas();
-        }) // 以下组合手势为顺序识别，当长按手势事件未正常触发时不会触发拖动手势事件
+        })<em> </em><em>// 以下组合手势为顺序识别，当长按手势事件未正常触发时不会触发拖动手势事件</em>
         .gesture(
           GestureGroup(GestureMode.Exclusive,
-            // 捏合手势
+          <em>  // 捏合手势</em>
             PinchGesture({ fingers: 2 })
               .onActionStart(() => {
               })
@@ -144,14 +144,14 @@ struct GestureIdentity {
                   this.scaleValue = this.pinchValue * event.scale;
                   this.pinchX = event.pinchCenterX;
                   this.pinchY = event.pinchCenterY;
-                  this.drawCanvas(); // 重绘制
+                  this.drawCanvas(); <em>// 重绘制</em>
                 }
                 console.info(event.toString());
               })
               .onActionEnd(() => {
                 this.pinchValue = this.scaleValue;
               }),
-            // 拖动手势事件
+          <em>  // 拖动手势事件</em>
             PanGesture(this.panOption)
               .onActionStart(() => {
               })
@@ -159,7 +159,7 @@ struct GestureIdentity {
                 if (event) {
                   this.offsetX = this.positionX + event.offsetX;
                   this.offsetY = this.positionY + event.offsetY;
-                  this.drawCanvas(); // 重绘制
+                  this.drawCanvas();<em> </em><em>// 重绘制</em>
                 }
                 console.info(event.toString());
               })

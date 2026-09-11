@@ -1,6 +1,6 @@
 # 使用ImageSource完成图片解码
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-decoding
 
@@ -9,7 +9,7 @@
 解码后的PixelMap可用于图片显示、图像处理和编辑等场景。开发者还可在解码时设置图片尺寸、解码区域和输出像素格式，以适配不同的业务需求。
 
 
-#### 解码支持的图片格式
+## 解码支持的图片格式
 
 当前支持的图片文件格式包括JPEG、PNG、GIF、WebP、BMP、SVG、ICO、DNG、HEIC、TIFF23+、HEIFS23+、WBMP23+。
 
@@ -21,7 +21,7 @@
 
 
 
-#### 设置解码输出像素格式
+## 设置解码输出像素格式
 
 图片解码像素格式是指将图片解码为PixelMap后采用的数据存储格式。使用[createPixelMap](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-imagesource#createpixelmap7)和[createPixelMapUsingAllocator](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-imagesource#createpixelmapusingallocator15)解码图片时，通过设置[DecodingOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-i#decodingoptions7)中的desiredPixelFormat可指定期望的输出像素格式[PixelMapFormat](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-e#pixelmapformat7)。
 
@@ -31,6 +31,7 @@
 
 下表为不同图片格式支持的目标像素格式（desiredPixelFormat）：
 
+
 | 输入图片格式 | 支持的目标像素格式 |
 | --- | --- |
 | JPEG、BMP、DNG、HEIC、WBMP、HEIFS、AVIF、AVIS | RGB_565、RGBA_8888、BGRA_8888、NV21、NV12、ASTC_4x4 |
@@ -39,7 +40,7 @@
 
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/O7PahTn7RnC5xkeDGHWLoQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095826Z&HW-CC-Expire=86400&HW-CC-Sign=6D8F9D9EA4F6E50509992685A26A8FDBCF34D175BB49F0BD5B878D0EF35D29B3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/HD1V94CaQU28dHqTkcgkZw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072823Z&HW-CC-Expire=86400&HW-CC-Sign=6C9395933EEF7C5622D326C1599628753F1983071ED153D4971FF80E666BC6D6)
 
 
  - 将desiredPixelFormat设置为UNKNOWN时，输出像素格式默认为RGBA_8888。
@@ -52,7 +53,7 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 
 图片解码相关API的详细介绍请参见[ImageSource](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-imagesource)。
 1. 全局导入Image模块。
@@ -266,7 +267,7 @@ async release() {
 
   
 
-  #### 进阶主题
+  ## 进阶主题
 
   
 **内存优化解码**：使用DMA内存和YUV像素格式降低内存占用、提升解码性能，参见[图片解码内存优化](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-allocator-type)。
@@ -277,7 +278,7 @@ async release() {
 
 
 
-#### 示例代码
+## 示例代码
 
  - [实现图片获取与保存功能](https://gitcode.com/HarmonyOS_Samples/ImageGetAndSave)
  - [水印添加能力](https://gitcode.com/HarmonyOS_Samples/watermark)

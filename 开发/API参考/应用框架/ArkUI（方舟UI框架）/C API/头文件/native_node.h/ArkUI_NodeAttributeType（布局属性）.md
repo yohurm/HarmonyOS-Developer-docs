@@ -1,15 +1,19 @@
 # ArkUI_NodeAttributeType（布局属性）
 
-更新时间：2026-07-28 11:23:46（官网已下线）
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-node-h-nodeattributetype-layoutattributes
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_NodeAttributeType
 ```
   
 
-#### 概述
+## 概述
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义ArkUI在Native侧可以设置的布局相关属性集合，包含尺寸、百分比尺寸、内外边距、边框、位置、对齐、方向、约束、Flex参数、布局规则及布局类组件相关属性设置。适用于需要在Native侧进行精细化的组件布局控制、响应式布局适配、复杂布局场景等。通过这些属性，开发者可以灵活控制组件的位置、尺寸、对齐方式等，解决组件布局定位、尺寸适配、对齐调整等布局问题，提升布局效率和灵活性。
  
@@ -21,7 +25,10 @@ enum ArkUI_NodeAttributeType
  
   
 
-#### NODE_WIDTH
+## NODE_WIDTH
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_WIDTH = 0
@@ -35,6 +42,7 @@ NODE_WIDTH = 0
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 设置宽度数值，单位为vp。取值范围：[0, +∞)。设置异常值时，按默认值显示或组件尺寸异常。 |
@@ -42,6 +50,7 @@ NODE_WIDTH = 0
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 宽度数值，单位为vp。 |
@@ -49,7 +58,10 @@ NODE_WIDTH = 0
  
   
 
-#### NODE_HEIGHT
+## NODE_HEIGHT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_HEIGHT = 1
@@ -63,6 +75,7 @@ NODE_HEIGHT = 1
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 设置高度数值，单位为vp。取值范围：[0, +∞)。设置异常值时，按默认值显示或组件尺寸异常。 |
@@ -70,6 +83,7 @@ NODE_HEIGHT = 1
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 高度数值，单位为vp。 |
@@ -77,7 +91,10 @@ NODE_HEIGHT = 1
  
   
 
-#### NODE_PADDING
+## NODE_PADDING
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_PADDING = 4
@@ -97,6 +114,7 @@ NODE_PADDING = 4
  
 1：只传入一个参数，表示统一设置上下左右四个位置的内间距值。
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 统一设置上下左右四个位置的内间距值，单位为vp。取值范围：[0, +∞)。设置异常值时，按默认值0vp显示。 |
@@ -104,6 +122,7 @@ NODE_PADDING = 4
  
 2：传入四个参数，表示分别设置上下左右四个位置的内间距值。
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 设置上内间距数值，单位为vp，默认值为0vp。取值范围：[0, +∞)。设置异常值时，按默认值0vp显示。 |
@@ -114,6 +133,7 @@ NODE_PADDING = 4
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 上内间距数值，单位为vp。 |
@@ -124,7 +144,10 @@ NODE_PADDING = 4
  
   
 
-#### NODE_MARGIN
+## NODE_MARGIN
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_MARGIN = 7
@@ -144,6 +167,7 @@ NODE_MARGIN = 7
  
 1：只传入一个参数，表示统一设置上下左右四个位置的外间距值。
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 统一设置上下左右四个位置的外间距值，单位为vp。取值范围：[0, +∞)。设置异常值时，按默认值0vp显示。 |
@@ -151,6 +175,7 @@ NODE_MARGIN = 7
  
 2：传入四个参数，表示分别设置上下左右四个位置的外间距值。
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 设置上外间距数值，单位为vp，默认值为0vp。取值范围：[0, +∞)。设置异常值时，按默认值0vp显示。 |
@@ -161,6 +186,7 @@ NODE_MARGIN = 7
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 上外间距数值，单位为vp。 |
@@ -171,7 +197,10 @@ NODE_MARGIN = 7
  
   
 
-#### NODE_ALIGNMENT
+## NODE_ALIGNMENT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_ALIGNMENT = 15
@@ -185,6 +214,7 @@ NODE_ALIGNMENT = 15
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 设置对齐方式，参数类型ArkUI_Alignment，默认值为ARKUI_ALIGNMENT_CENTER。 |
@@ -192,6 +222,7 @@ NODE_ALIGNMENT = 15
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 对齐方式，类型为ArkUI_Alignment。 |
@@ -199,7 +230,10 @@ NODE_ALIGNMENT = 15
  
   
 
-#### NODE_BORDER_WIDTH
+## NODE_BORDER_WIDTH
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_BORDER_WIDTH = 17
@@ -219,6 +253,7 @@ NODE_BORDER_WIDTH = 17
  
 1：只传入一个参数，表示统一设置四条边的边框宽度。
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 统一设置四条边的边框宽度，单位为vp。取值范围：[0, +∞)。默认值为0vp。 |
@@ -226,6 +261,7 @@ NODE_BORDER_WIDTH = 17
  
 2：传入四个参数，表示分别设置四条边的边框宽度。
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 设置上边框的边框宽度，单位为vp，默认值为0vp。取值范围：[0, +∞)。 |
@@ -236,6 +272,7 @@ NODE_BORDER_WIDTH = 17
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 上边框的边框宽度，单位为vp。 |
@@ -246,7 +283,10 @@ NODE_BORDER_WIDTH = 17
  
   
 
-#### NODE_BORDER_RADIUS
+## NODE_BORDER_RADIUS
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_BORDER_RADIUS = 18
@@ -266,6 +306,7 @@ NODE_BORDER_RADIUS = 18
  
 1：只传入一个参数，表示统一设置四个角的边框圆角半径。
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 统一设置四个角的边框圆角半径，单位为vp。取值范围：[0, +∞)。默认值为0vp。 |
@@ -273,6 +314,7 @@ NODE_BORDER_RADIUS = 18
  
 2：传入四个参数，表示分别设置四个角的边框圆角半径。
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 设置左上角圆角半径，单位为vp，默认值为0vp。取值范围：[0, +∞)。 |
@@ -283,6 +325,7 @@ NODE_BORDER_RADIUS = 18
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 左上角圆角半径，单位为vp。 |
@@ -293,7 +336,10 @@ NODE_BORDER_RADIUS = 18
  
   
 
-#### NODE_BORDER_COLOR
+## NODE_BORDER_COLOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_BORDER_COLOR = 19
@@ -313,34 +359,40 @@ NODE_BORDER_COLOR = 19
  
 1：统一设置四条边的边框颜色。
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].u32 | 统一设置四条边的边框颜色，使用0xargb表示，如0xFFFF11FF。 |
+| .value[0].u32 | 统一设置四条边的边框颜色，使用0xARGB表示，如0xFFFF11FF。 |
  
  
 2：分别设置四条边的边框颜色。
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].u32 | 设置上侧边框颜色，使用0xargb表示，默认值为0xFF000000。 |
-| .value[1].u32 | 设置右侧边框颜色，使用0xargb表示，默认值为0xFF000000。 |
-| .value[2].u32 | 设置下侧边框颜色，使用0xargb表示，默认值为0xFF000000。 |
-| .value[3].u32 | 设置左侧边框颜色，使用0xargb表示，默认值为0xFF000000。 |
+| .value[0].u32 | 设置上侧边框颜色，使用0xARGB表示，默认值为0xFF000000。 |
+| .value[1].u32 | 设置右侧边框颜色，使用0xARGB表示，默认值为0xFF000000。 |
+| .value[2].u32 | 设置下侧边框颜色，使用0xARGB表示，默认值为0xFF000000。 |
+| .value[3].u32 | 设置左侧边框颜色，使用0xARGB表示，默认值为0xFF000000。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| .value[0].u32 | 上侧边框颜色，使用0xargb表示，如0xFFFF11FF。 |
-| .value[1].u32 | 右侧边框颜色，使用0xargb表示，如0xFFFF11FF。 |
-| .value[2].u32 | 下侧边框颜色，使用0xargb表示，如0xFFFF11FF。 |
-| .value[3].u32 | 左侧边框颜色，使用0xargb表示，如0xFFFF11FF。 |
+| .value[0].u32 | 上侧边框颜色，使用0xARGB表示，如0xFFFF11FF。 |
+| .value[1].u32 | 右侧边框颜色，使用0xARGB表示，如0xFFFF11FF。 |
+| .value[2].u32 | 下侧边框颜色，使用0xARGB表示，如0xFFFF11FF。 |
+| .value[3].u32 | 左侧边框颜色，使用0xARGB表示，如0xFFFF11FF。 |
  
  
   
 
-#### NODE_BORDER_STYLE
+## NODE_BORDER_STYLE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_BORDER_STYLE = 20
@@ -360,6 +412,7 @@ NODE_BORDER_STYLE = 20
  
 1：只传入一个参数，表示统一设置四条边的边框线条样式。
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 统一设置四条边的边框线条样式，参数类型ArkUI_BorderStyle，默认值为ARKUI_BORDER_STYLE_SOLID。 |
@@ -367,6 +420,7 @@ NODE_BORDER_STYLE = 20
  
 2：传入四个参数，表示分别设置四条边的边框线条样式。
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 设置上侧边框线条样式，参数类型ArkUI_BorderStyle，默认值为ARKUI_BORDER_STYLE_SOLID。 |
@@ -377,6 +431,7 @@ NODE_BORDER_STYLE = 20
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 上侧边框线条样式，参数类型ArkUI_BorderStyle。 |
@@ -387,7 +442,10 @@ NODE_BORDER_STYLE = 20
  
   
 
-#### NODE_POSITION
+## NODE_POSITION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_POSITION = 27
@@ -403,6 +461,7 @@ NODE_POSITION = 27
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 设置x轴坐标，单位为vp。取值范围：(-∞, +∞)。 |
@@ -411,6 +470,7 @@ NODE_POSITION = 27
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | x轴坐标，单位为vp。 |
@@ -419,7 +479,10 @@ NODE_POSITION = 27
  
   
 
-#### NODE_DIRECTION
+## NODE_DIRECTION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_DIRECTION = 47
@@ -433,6 +496,7 @@ NODE_DIRECTION = 47
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 主轴方向，设置容器内子组件的排列方向。参数类型ArkUI_Direction，默认值为ARKUI_DIRECTION_AUTO。 |
@@ -440,6 +504,7 @@ NODE_DIRECTION = 47
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 主轴方向，类型为ArkUI_Direction。 |
@@ -447,7 +512,10 @@ NODE_DIRECTION = 47
  
   
 
-#### NODE_CONSTRAINT_SIZE
+## NODE_CONSTRAINT_SIZE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_CONSTRAINT_SIZE = 48
@@ -463,6 +531,7 @@ NODE_CONSTRAINT_SIZE = 48
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 设置最小宽度，单位为vp。取值范围：[0, +∞)。默认值：0。 |
@@ -473,6 +542,7 @@ NODE_CONSTRAINT_SIZE = 48
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 最小宽度，单位为vp。 |
@@ -483,7 +553,10 @@ NODE_CONSTRAINT_SIZE = 48
  
   
 
-#### NODE_OFFSET
+## NODE_OFFSET
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_OFFSET = 54
@@ -497,6 +570,7 @@ NODE_OFFSET = 54
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 设置x轴偏移量，单位为vp。取值范围：(-∞, +∞)。默认值：0。 |
@@ -505,6 +579,7 @@ NODE_OFFSET = 54
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 相对于组件自身的x轴偏移量，单位为vp。 |
@@ -513,7 +588,10 @@ NODE_OFFSET = 54
  
   
 
-#### NODE_MARK_ANCHOR
+## NODE_MARK_ANCHOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_MARK_ANCHOR = 55
@@ -527,6 +605,7 @@ NODE_MARK_ANCHOR = 55
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 设置锚点x轴坐标，单位为vp。取值范围：(-∞, +∞)。默认值：0。 |
@@ -535,6 +614,7 @@ NODE_MARK_ANCHOR = 55
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 锚点在组件坐标系中的x轴坐标，单位为vp。 |
@@ -543,7 +623,10 @@ NODE_MARK_ANCHOR = 55
  
   
 
-#### NODE_ALIGN_RULES
+## NODE_ALIGN_RULES
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_ALIGN_RULES = 57
@@ -557,6 +640,7 @@ NODE_ALIGN_RULES = 57
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 设置相对容器中子组件的对齐规则，参数类型为ArkUI_AlignmentRuleOption。 |
@@ -564,6 +648,7 @@ NODE_ALIGN_RULES = 57
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .object | 相对容器中子组件的对齐规则，参数类型为ArkUI_AlignmentRuleOption。 |
@@ -571,7 +656,10 @@ NODE_ALIGN_RULES = 57
  
   
 
-#### NODE_ALIGN_SELF
+## NODE_ALIGN_SELF
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_ALIGN_SELF = 58
@@ -585,6 +673,7 @@ NODE_ALIGN_SELF = 58
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 设置子组件在父容器交叉轴上的对齐方式，改变子组件在交叉轴方向的位置。参数类型ArkUI_ItemAlignment，默认值为ARKUI_ITEM_ALIGNMENT_AUTO。 |
@@ -592,6 +681,7 @@ NODE_ALIGN_SELF = 58
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 子组件在父容器交叉轴上的对齐方式，类型为ArkUI_ItemAlignment。 |
@@ -599,7 +689,10 @@ NODE_ALIGN_SELF = 58
  
   
 
-#### NODE_FLEX_GROW
+## NODE_FLEX_GROW
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_FLEX_GROW = 59
@@ -613,6 +706,7 @@ NODE_FLEX_GROW = 59
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 设置组件在父容器剩余空间中所占比例。取值范围：[0, +∞)。默认值：0。 |
@@ -620,6 +714,7 @@ NODE_FLEX_GROW = 59
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 组件在父容器剩余空间中所占比例。 |
@@ -627,7 +722,10 @@ NODE_FLEX_GROW = 59
  
   
 
-#### NODE_FLEX_SHRINK
+## NODE_FLEX_SHRINK
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_FLEX_SHRINK = 60
@@ -641,6 +739,7 @@ NODE_FLEX_SHRINK = 60
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 设置父容器压缩尺寸分配给当前组件的比例。取值范围：[0, +∞)。默认值：1。 |
@@ -648,6 +747,7 @@ NODE_FLEX_SHRINK = 60
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 父容器压缩尺寸分配给当前组件的比例。 |
@@ -655,7 +755,10 @@ NODE_FLEX_SHRINK = 60
  
   
 
-#### NODE_FLEX_BASIS
+## NODE_FLEX_BASIS
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_FLEX_BASIS = 61
@@ -669,6 +772,7 @@ NODE_FLEX_BASIS = 61
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 设置组件在父容器主轴上的基准尺寸，单位为vp。取值范围：[0, +∞)。默认值：auto。 |
@@ -676,6 +780,7 @@ NODE_FLEX_BASIS = 61
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 组件在父容器主轴上的基准尺寸，单位为vp。 |
@@ -683,7 +788,10 @@ NODE_FLEX_BASIS = 61
  
   
 
-#### NODE_ASPECT_RATIO
+## NODE_ASPECT_RATIO
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_ASPECT_RATIO = 67
@@ -697,6 +805,7 @@ NODE_ASPECT_RATIO = 67
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 设置组件宽高比，格式为宽度/高度。取值范围：(0, +∞)。默认值：不设置宽高比约束。 |
@@ -704,6 +813,7 @@ NODE_ASPECT_RATIO = 67
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 组件宽高比，格式为宽度/高度。设置后组件将按此比例调整尺寸。 |
@@ -711,7 +821,10 @@ NODE_ASPECT_RATIO = 67
  
   
 
-#### NODE_LAYOUT_WEIGHT
+## NODE_LAYOUT_WEIGHT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_LAYOUT_WEIGHT = 68
@@ -725,6 +838,7 @@ Row/Column/Flex布局下的子组件布局权重参数，支持属性设置、�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].u32 | 设置组件在主轴上的布局权重，决定组件在剩余空间中的分配比例。取值范围：[0, +∞)。默认值：0。 |
@@ -732,6 +846,7 @@ Row/Column/Flex布局下的子组件布局权重参数，支持属性设置、�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].u32 | 组件在主轴上的布局权重，决定组件在剩余空间中的分配比例。 |
@@ -739,7 +854,10 @@ Row/Column/Flex布局下的子组件布局权重参数，支持属性设置、�
  
   
 
-#### NODE_DISPLAY_PRIORITY
+## NODE_DISPLAY_PRIORITY
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_DISPLAY_PRIORITY = 69
@@ -755,6 +873,7 @@ Row/Column/Flex（单行）布局下的子组件在布局容器中显示的优�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].u32 | 设置组件在布局容器中的显示优先级。取值范围：[0, +∞)。 |
@@ -762,6 +881,7 @@ Row/Column/Flex（单行）布局下的子组件在布局容器中显示的优�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].u32 | 组件在布局容器中的显示优先级。值越大优先级越高，空间不足时优先显示高优先级组件。 |
@@ -769,7 +889,10 @@ Row/Column/Flex（单行）布局下的子组件在布局容器中显示的优�
  
   
 
-#### NODE_OUTLINE_WIDTH
+## NODE_OUTLINE_WIDTH
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_OUTLINE_WIDTH = 70
@@ -783,6 +906,7 @@ NODE_OUTLINE_WIDTH = 70
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 左侧外描边宽度，单位为vp。取值范围：[0, +∞)。默认值：0。 |
@@ -793,6 +917,7 @@ NODE_OUTLINE_WIDTH = 70
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 左侧外描边宽度，单位为vp。 |
@@ -803,7 +928,10 @@ NODE_OUTLINE_WIDTH = 70
  
   
 
-#### NODE_WIDTH_PERCENT
+## NODE_WIDTH_PERCENT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_WIDTH_PERCENT = 71
@@ -817,13 +945,15 @@ NODE_WIDTH_PERCENT = 71
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].f32 | 设置宽度数值，单位为百分比。取值范围：[0, +∞)。设置异常值时，按默认值显示。 |
+| .value[0].f32 | 设置宽度数值，单位为百分比。取值范围：(0, +∞)。无默认值，不设置时由组件布局决定尺寸，使用子组件自身内容需要的宽度。传入异常值时返回错误码。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 宽度数值，单位为百分比。 |
@@ -831,7 +961,10 @@ NODE_WIDTH_PERCENT = 71
  
   
 
-#### NODE_HEIGHT_PERCENT
+## NODE_HEIGHT_PERCENT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_HEIGHT_PERCENT = 72
@@ -845,13 +978,15 @@ NODE_HEIGHT_PERCENT = 72
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].f32 | 设置高度数值，单位为百分比。取值范围：[0, +∞)。设置异常值时，按默认值显示。 |
+| .value[0].f32 | 设置高度数值，单位为百分比。取值范围：(0, +∞)。无默认值，不设置时由组件布局决定尺寸，使用子组件自身内容需要的高度。传入异常值时返回错误码。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 高度数值，单位为百分比。 |
@@ -859,7 +994,10 @@ NODE_HEIGHT_PERCENT = 72
  
   
 
-#### NODE_PADDING_PERCENT
+## NODE_PADDING_PERCENT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_PADDING_PERCENT = 73
@@ -879,6 +1017,7 @@ NODE_PADDING_PERCENT = 73
  
 1：只传入一个参数，表示统一设置上下左右四个位置的内间距百分比数值。
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 统一设置上下左右四个位置的内间距数值，单位为百分比。默认值为0。取值范围：[0, +∞)。设置异常值时，按默认值显示。 |
@@ -886,6 +1025,7 @@ NODE_PADDING_PERCENT = 73
  
 2：传入四个参数，表示分别设置上下左右四个位置的内间距百分比数值。
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 设置上内间距数值，单位为百分比。默认值为0。取值范围：[0, +∞)。设置异常值时，按默认值显示。 |
@@ -896,6 +1036,7 @@ NODE_PADDING_PERCENT = 73
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 上内间距数值，单位为百分比。 |
@@ -906,7 +1047,10 @@ NODE_PADDING_PERCENT = 73
  
   
 
-#### NODE_MARGIN_PERCENT
+## NODE_MARGIN_PERCENT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_MARGIN_PERCENT = 74
@@ -926,6 +1070,7 @@ NODE_MARGIN_PERCENT = 74
  
 1：只传入一个参数，表示统一设置上下左右四个位置的外间距百分比数值。
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 统一设置上下左右四个位置的外间距数值，单位为百分比。默认值为0。取值范围：[0, +∞)。设置异常值时，按默认值显示。 |
@@ -933,6 +1078,7 @@ NODE_MARGIN_PERCENT = 74
  
 2：传入四个参数，表示分别设置上下左右四个位置的外间距百分比数值。
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 设置上外间距数值，单位为百分比。默认值为0。取值范围：[0, +∞)。设置异常值时，按默认值显示。 |
@@ -943,6 +1089,7 @@ NODE_MARGIN_PERCENT = 74
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 上外间距数值，单位为百分比。 |
@@ -953,7 +1100,10 @@ NODE_MARGIN_PERCENT = 74
  
   
 
-#### NODE_RELATIVE_LAYOUT_CHAIN_MODE
+## NODE_RELATIVE_LAYOUT_CHAIN_MODE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_RELATIVE_LAYOUT_CHAIN_MODE = 76
@@ -967,6 +1117,7 @@ NODE_RELATIVE_LAYOUT_CHAIN_MODE = 76
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 链的方向，设置链在水平或垂直方向上排列。枚举ArkUI_Axis。 |
@@ -975,6 +1126,7 @@ NODE_RELATIVE_LAYOUT_CHAIN_MODE = 76
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 链的方向，类型为ArkUI_Axis。 |
@@ -983,7 +1135,10 @@ NODE_RELATIVE_LAYOUT_CHAIN_MODE = 76
  
   
 
-#### NODE_SIZE
+## NODE_SIZE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SIZE = 79
@@ -999,6 +1154,7 @@ NODE_SIZE = 79
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 设置宽度数值，单位为vp。取值范围：[0, +∞)。 |
@@ -1007,6 +1163,7 @@ NODE_SIZE = 79
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 宽度数值，单位为vp。 |
@@ -1015,7 +1172,10 @@ NODE_SIZE = 79
  
   
 
-#### NODE_LAYOUT_RECT
+## NODE_LAYOUT_RECT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_LAYOUT_RECT = 83
@@ -1029,6 +1189,7 @@ NODE_LAYOUT_RECT = 83
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 设置组件x轴坐标，单位为px。取值范围：(-∞, +∞)。 |
@@ -1039,6 +1200,7 @@ NODE_LAYOUT_RECT = 83
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 组件x轴坐标，单位为px。 |
@@ -1049,7 +1211,10 @@ NODE_LAYOUT_RECT = 83
  
   
 
-#### NODE_BORDER_WIDTH_PERCENT
+## NODE_BORDER_WIDTH_PERCENT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_BORDER_WIDTH_PERCENT = 85
@@ -1069,6 +1234,7 @@ NODE_BORDER_WIDTH_PERCENT = 85
  
 1：只传入一个参数，表示统一设置四条边的边框宽度百分比数值。
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 统一设置四条边的边框宽度数值，单位为百分比。取值范围：[0, +∞)。默认值：0。 |
@@ -1076,6 +1242,7 @@ NODE_BORDER_WIDTH_PERCENT = 85
  
 2：传入四个参数，表示分别设置四条边的边框宽度百分比数值。
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 设置上边框的边框宽度，单位为百分比。取值范围：[0, +∞)。默认值：0。 |
@@ -1086,6 +1253,7 @@ NODE_BORDER_WIDTH_PERCENT = 85
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 上边框的边框宽度，单位为百分比。 |
@@ -1096,7 +1264,10 @@ NODE_BORDER_WIDTH_PERCENT = 85
  
   
 
-#### NODE_BORDER_RADIUS_PERCENT
+## NODE_BORDER_RADIUS_PERCENT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_BORDER_RADIUS_PERCENT = 86
@@ -1116,6 +1287,7 @@ NODE_BORDER_RADIUS_PERCENT = 86
  
 1：只传入一个参数，表示统一设置四个角的边框圆角半径百分比数值。
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 统一设置四个角的边框圆角半径数值，单位为百分比。取值范围：[0, +∞)。默认值：0。 |
@@ -1123,6 +1295,7 @@ NODE_BORDER_RADIUS_PERCENT = 86
  
 2：传入四个参数，表示分别设置四个角的边框圆角半径百分比数值。
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 设置左上角圆角半径，单位为百分比。取值范围：[0, +∞)。默认值：0。 |
@@ -1133,6 +1306,7 @@ NODE_BORDER_RADIUS_PERCENT = 86
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 左上角圆角半径，单位为百分比。 |
@@ -1143,7 +1317,10 @@ NODE_BORDER_RADIUS_PERCENT = 86
  
   
 
-#### NODE_WIDTH_LAYOUTPOLICY
+## NODE_WIDTH_LAYOUTPOLICY
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_WIDTH_LAYOUTPOLICY = 105
@@ -1157,6 +1334,7 @@ NODE_WIDTH_LAYOUTPOLICY = 105
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 设置组件宽度布局策略，参数类型ArkUI_LayoutPolicy，默认值：ARKUI_LAYOUT_POLICY_WRAP_CONTENT。设置异常值时，按默认值显示。 |
@@ -1164,6 +1342,7 @@ NODE_WIDTH_LAYOUTPOLICY = 105
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 组件宽度布局策略，参数类型ArkUI_LayoutPolicy，默认值：ARKUI_LAYOUT_POLICY_WRAP_CONTENT。设置异常值时，按默认值显示。 |
@@ -1171,7 +1350,10 @@ NODE_WIDTH_LAYOUTPOLICY = 105
  
   
 
-#### NODE_HEIGHT_LAYOUTPOLICY
+## NODE_HEIGHT_LAYOUTPOLICY
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_HEIGHT_LAYOUTPOLICY = 106
@@ -1185,6 +1367,7 @@ NODE_HEIGHT_LAYOUTPOLICY = 106
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 设置组件高度布局策略，参数类型ArkUI_LayoutPolicy，默认值：ARKUI_LAYOUT_POLICY_WRAP_CONTENT。设置异常值时，按默认值显示。 |
@@ -1192,6 +1375,7 @@ NODE_HEIGHT_LAYOUTPOLICY = 106
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 组件高度布局策略，参数类型ArkUI_LayoutPolicy，默认值：ARKUI_LAYOUT_POLICY_WRAP_CONTENT。设置异常值时，按默认值显示。 |
@@ -1199,7 +1383,10 @@ NODE_HEIGHT_LAYOUTPOLICY = 106
  
   
 
-#### NODE_POSITION_EDGES
+## NODE_POSITION_EDGES
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_POSITION_EDGES = 107
@@ -1213,6 +1400,7 @@ NODE_POSITION_EDGES = 107
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 设置组件相对容器内容区边界的位置，参数类型为ArkUI_PositionEdges。 |
@@ -1220,6 +1408,7 @@ NODE_POSITION_EDGES = 107
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .object | 组件相对容器内容区边界的位置，参数类型为ArkUI_PositionEdges。 |
@@ -1227,7 +1416,10 @@ NODE_POSITION_EDGES = 107
  
   
 
-#### NODE_CHAIN_WEIGHT
+## NODE_CHAIN_WEIGHT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_CHAIN_WEIGHT = 118
@@ -1243,6 +1435,7 @@ NODE_CHAIN_WEIGHT = 118
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 设置组件在水平方向的布局权重，默认值：0。权重值越大，组件在链中占据的空间比例越大。取值范围：[0, +∞)。设置异常值时，按默认值显示。 |
@@ -1251,6 +1444,7 @@ NODE_CHAIN_WEIGHT = 118
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 组件在水平方向的布局权重，权重值越大，组件在链中占据的空间比例越大。 |
@@ -1259,7 +1453,10 @@ NODE_CHAIN_WEIGHT = 118
  
   
 
-#### NODE_IGNORE_LAYOUT_SAFE_AREA
+## NODE_IGNORE_LAYOUT_SAFE_AREA
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_IGNORE_LAYOUT_SAFE_AREA = 119
@@ -1275,6 +1472,7 @@ NODE_IGNORE_LAYOUT_SAFE_AREA = 119
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].u32 | 设置扩展安全区域的类型。参数类型为ArkUI_LayoutSafeAreaType，默认值：ARKUI_LAYOUT_SAFE_AREA_TYPE_SYSTEM。设置异常值时，按默认值显示。 |
@@ -1283,6 +1481,7 @@ NODE_IGNORE_LAYOUT_SAFE_AREA = 119
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].u32 | 扩展安全区域的类型，类型为ArkUI_LayoutSafeAreaType。 |
@@ -1291,7 +1490,10 @@ NODE_IGNORE_LAYOUT_SAFE_AREA = 119
  
   
 
-#### NODE_DASH_WIDTH
+## NODE_DASH_WIDTH
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_DASH_WIDTH = 120
@@ -1307,6 +1509,7 @@ NODE_DASH_WIDTH = 120
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 设置上边框虚线的长度，单位vp，控制虚线段的长度。取值范围：[0, +∞)。默认值：NODE_BORDER_WIDTH属性的边框宽度值。设置异常值时，按默认的虚线效果显示。 |
@@ -1317,6 +1520,7 @@ NODE_DASH_WIDTH = 120
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 上边框虚线的长度，单位vp。 |
@@ -1327,7 +1531,10 @@ NODE_DASH_WIDTH = 120
  
   
 
-#### NODE_DASH_GAP
+## NODE_DASH_GAP
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_DASH_GAP = 121
@@ -1343,6 +1550,7 @@ NODE_DASH_GAP = 121
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 设置上边框虚线的间隙，单位vp，控制虚线段之间的间隔。取值范围：[0, +∞)。默认值：NODE_BORDER_WIDTH属性的边框宽度值。设置异常值时，按默认的虚线效果显示。 |
@@ -1353,6 +1561,7 @@ NODE_DASH_GAP = 121
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 上边框虚线的间隙，单位vp。 |
@@ -1363,7 +1572,10 @@ NODE_DASH_GAP = 121
  
   
 
-#### NODE_LAYOUT_GRAVITY
+## NODE_LAYOUT_GRAVITY
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_LAYOUT_GRAVITY = 122
@@ -1377,6 +1589,7 @@ NODE_LAYOUT_GRAVITY = 122
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 设置Stack容器中子组件的对齐规则，决定子组件在Stack容器中的位置。参数类型为ArkUI_LocalizedAlignment，默认值：ARKUI_ALIGNMENT_CENTER。设置异常值时，按默认值显示。 |
@@ -1384,6 +1597,7 @@ NODE_LAYOUT_GRAVITY = 122
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | Stack容器中子组件的对齐规则，类型为ArkUI_LocalizedAlignment。 |
@@ -1391,7 +1605,10 @@ NODE_LAYOUT_GRAVITY = 122
  
   
 
-#### NODE_BORDER_RADIUS_TYPE
+## NODE_BORDER_RADIUS_TYPE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_BORDER_RADIUS_TYPE = 123
@@ -1405,6 +1622,7 @@ NODE_BORDER_RADIUS_TYPE = 123
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 设置组件绘制圆角的模式，影响圆角的渲染效果和性能。参数类型为ArkUI_RenderStrategy，默认值：ARKUI_RENDERSTRATEGY_FAST。FAST模式直接裁剪圆角，渲染性能优先；OFFSCREEN模式使用离屏渲染优化圆角效果，可能影响性能。设置异常值时，按默认值显示。 |
@@ -1412,6 +1630,7 @@ NODE_BORDER_RADIUS_TYPE = 123
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 组件绘制圆角的模式，类型为ArkUI_RenderStrategy。 |
@@ -1419,7 +1638,10 @@ NODE_BORDER_RADIUS_TYPE = 123
  
   
 
-#### NODE_ACCESSIBILITY_NEXT_FOCUS_ID
+## NODE_ACCESSIBILITY_NEXT_FOCUS_ID
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_ACCESSIBILITY_NEXT_FOCUS_ID = 124
@@ -1433,6 +1655,7 @@ NODE_ACCESSIBILITY_NEXT_FOCUS_ID = 124
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 无障碍下一个焦点组件的NODE_ID。 |
@@ -1440,6 +1663,7 @@ NODE_ACCESSIBILITY_NEXT_FOCUS_ID = 124
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .string | 无障碍下一个焦点组件的NODE_ID。 |
@@ -1447,7 +1671,10 @@ NODE_ACCESSIBILITY_NEXT_FOCUS_ID = 124
  
   
 
-#### NODE_ACCESSIBILITY_DEFAULT_FOCUS
+## NODE_ACCESSIBILITY_DEFAULT_FOCUS
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_ACCESSIBILITY_DEFAULT_FOCUS = 125
@@ -1461,6 +1688,7 @@ NODE_ACCESSIBILITY_DEFAULT_FOCUS = 125
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 无障碍默认焦点。取值为0或1，取值为1表示该组件被定义为无障碍服务中的默认焦点，取值为0表示组件不被定义为无障碍服务中的默认焦点。传入其他值时，按默认值0处理。 |
@@ -1468,6 +1696,7 @@ NODE_ACCESSIBILITY_DEFAULT_FOCUS = 125
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 无障碍默认焦点。取值为0或1，取值为1表示该组件被定义为无障碍服务中的默认焦点，取值为0表示组件不被定义为无障碍服务中的默认焦点。传入其他值时，按默认值0处理。 |

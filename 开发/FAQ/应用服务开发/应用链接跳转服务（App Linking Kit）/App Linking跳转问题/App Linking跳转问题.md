@@ -1,22 +1,22 @@
 # App Linking跳转问题
 
-更新时间：2026-07-30 01:03:01
+更新时间：2026-08-26 01:00:31
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-linking-2
 
-#### 问题现象
+## 问题现象
 
 开发者在AGC开通了App Linking服务，并且在域名服务器上配置了对应文件，AGC上面也显示发布成功，但是点击跳转失败，提示16000019，是什么原因呢？
  
  
 
-#### 背景知识
+## 背景知识
 
 App Linking：为开发者提供了统一的链接跳转能力，可以基于社交平台、应用链接等形态，满足对用户的拉新、促活等场景，后续还将规划应用短链等能力，支持链接跳转逻辑可配置，提供更加灵活的链接跳转能力。
  
  
 
-#### 解决方案
+## 解决方案
 
 [16000019](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability#section16000019-隐式启动未查找到匹配应用)是隐式拉起失败，可能的原因是隐式启动的参数配置有误或者指定的HAP包未安装。
  
@@ -24,13 +24,13 @@ App Linking：为开发者提供了统一的链接跳转能力，可以基于社
  1. 检查目标应用代码中的skills配置：
 "entities"列表中必须包含"entity.system.browsable"；
 2. "actions"列表中必须包含"ohos.want.action.viewData"；
-3. "uris"列表中必须包含"scheme"为"https"且"host"为域名地址的元素，可选属性包含"path"、"pathStartWith"和"pathRegex"，具体请参见“[uris标签说明](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-uri-config#uris标签说明)”；
+3. "uris"列表中必须包含"scheme"为"https"且"host"为域名地址的元素，可选属性包含"path"、"pathStartWith"和"pathRegex"，具体请参见"[uris标签说明](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-uri-config#uris标签说明)"；
 4. "domainVerify"设置为true，表示开启域名校验开关。
 5. 检查应用中指定的目标应用HAP包是否安装成功。
  
  
 
-#### 常见FAQ
+## 常见FAQ
 
 Q：HarmonyOS是否支持从短信链接跳转到指定App？
  
@@ -38,7 +38,7 @@ A:可以设置一个链接，点击此链接，就能拉起目标应用。然后
  
 Q：已接入扫码直达服务，如何在应用的生命周期内获取到对应的码值信息？
  
-A：参考官网接入扫码直达服务-[开发步骤](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-directservice#开发步骤)中的代码，根据不同的启动场景（冷启动/热启动）在onCreate/onNewWant中获取到对应的码值信息，并作出相应的处理。
+A：参考官网接入扫码直达服务-[开发步骤](https://developer.huawei.com/consumer/cn/doc/doccenter-capabilities/scan-directservice#开发步骤)中的代码，根据不同的启动场景（冷启动/热启动）在onCreate/onNewWant中获取到对应的码值信息，并作出相应的处理。
  
 Q：点击App Linking从短信链接跳转到指定App，为何页面是空白的？
  
@@ -96,16 +96,24 @@ A：path、pathStartWith、pathRegex的取值前后均不需要加斜杠/，如�
  
 Q：在AGC创建元服务的App linking链接时报错：源JSON文件中未找到正确的AppID，请检查源JSON文件的配置是否准确？
  
-A：报错是由于applinking.json配置文件中appIdentifier字段值错误或缺失导致，此字段必须与AGC控制台的应用标识符严格匹配，否则系统无法验证域名与应用的关系。元服务需参考[在开发者网站上关联元服务](https://developer.huawei.com/consumer/cn/doc/atomic-guides/atomic-applinking)配置正确的appIdentifier字段值。
+A：报错是由于applinking.json配置文件中appIdentifier字段值错误或缺失导致，此字段必须与AGC控制台的应用标识符严格匹配，否则系统无法验证域名与应用的关系。元服务需参考[在开发者网站上关联元服务](https://developer.huawei.com/consumer/cn/doc/doccenter-atomic-service/atomic-applinking)配置正确的appIdentifier字段值。
  
 Q：在AGC创建应用链接时错出现报错：源JSON文件中的index字段不符合要求，请检查配置是否准确？
  
 A：报错是由于applinking.json文件中类型不对导致的，比如HarmonyOS应用在applinking.json文件中类型为atomicServices，或者元服务应用在applinking.json文件中类型为apps。需要改为对应的正确类型。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/N6Fm-tJhQsC3qrMUuWMm4w/zh-cn_image_0000002628554440.png?HW-CC-KV=V1&HW-CC-Date=20260811T005625Z&HW-CC-Expire=86400&HW-CC-Sign=7D6E9003AB1BA77FC4A365A10A2E49830494DFDB5A7C39DB39545FCE8E31D07F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/Fxbjma90RdqfIUcpNoKm1g/zh-cn_image_0000002719054371.png?HW-CC-KV=V1&HW-CC-Date=20260911T072745Z&HW-CC-Expire=86400&HW-CC-Sign=F29EA23A122C88A9B518C53CED879D80ED0E639E37EA89D354258C16881EB662)
 
  
-Q：应用链接发布失败后，在域名服务器上重新完成了applinking.json配置文件放置，为何AGC显示的状态仍然是“失败”？
+Q：应用链接发布失败后，在域名服务器上重新完成了applinking.json配置文件放置，为何AGC显示的状态仍然是"失败"？
  
 A：应用链接发布失败后，重新设置applinking.json配置文件，并不会自动去刷新配置状态，需要在AGC平台重新发布配置。
+ 
+Q：App Linking配置pathRegex使用负向前瞻正则表达式后，点击链接无法拉起应用而是打开浏览器，如何解决？
+ 
+A：系统不支持负向前瞻（如(?!...)）等高级正则操作符，使用后系统会跳过该路由规则，将链接直接重定向到浏览器。建议使用pathStartWith显式列出应用支持的路径前缀，系统会自动将未匹配的路径重定向到浏览器，无需通过正则排除。pathStartWith的配置方式请参考[uris标签说明](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-uri-config#uris标签说明)。
+ 
+Q：配置App Linking直达应用市场能力后，未安装应用时未跳转到应用市场而是打开了域名服务器地址，如何解决？
+ 
+A：在配置直达应用市场链接时，域名地址末尾需要加上斜杠"/"，例如https://www.example.com/。直达链接配置的是.*，表示域名+斜杠+任意值，即使不需要匹配任意路径值，斜杠"/"也必须保留。具体配置方式请参考[通过直达应用市场能力跳转至应用市场下载详情页](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/applinking-direct-to-ag)。

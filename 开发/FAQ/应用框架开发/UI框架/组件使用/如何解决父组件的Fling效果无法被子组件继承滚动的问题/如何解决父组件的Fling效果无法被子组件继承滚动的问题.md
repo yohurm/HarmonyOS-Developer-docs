@@ -1,38 +1,30 @@
 # 如何解决父组件的Fling效果无法被子组件继承滚动的问题
 
-更新时间：2026-06-26 07:47:42
+更新时间：2026-08-27 00:56:37
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1643
 
-#### 问题现象
+## 问题现象
 
 父组件为Scroll组件，其子组件包含一个List组件，且位于Scroll组件底部。当滑动触点在Scroll组件内容区域进行快速滑动，滚动到底部List组件位置的时，位于底部的List组件无法继承父组件的剩余滚动速度，进行完整的惯性滚动。
  
-滑动前效果预览：
+滑动前如下图：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/Y87GJ_nlTEi1s0wGdTVDfw/zh-cn_image_0000002628821082.png?HW-CC-KV=V1&HW-CC-Date=20260811T005820Z&HW-CC-Expire=86400&HW-CC-Sign=898C37AB128DC4B8BFCB1FE1641F8F157B44707B04377F667B0A1FABC514BE51)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/3paH9ipiShuyuVLES7QwXg/zh-cn_image_0000002686304330.png?HW-CC-KV=V1&HW-CC-Date=20260911T072743Z&HW-CC-Expire=86400&HW-CC-Sign=88A354EDEC71EE3ABF39E981B4715E067B52FF164B9F648EE6C6F8A72A16E701)
 
  
-滑动后效果预览：
+滑动后：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/wIfIOJkxSQmWj3K2puR8Jg/zh-cn_image_0000002659020395.png?HW-CC-KV=V1&HW-CC-Date=20260811T005820Z&HW-CC-Expire=86400&HW-CC-Sign=DB1A95188166AF73832623DB73AF12393F762F2D917DE87FB9754E51BD90C363)
-
- 
- 
-
-#### 效果预览
-
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/HU0qMfZ2Sbu-01xEieowvQ/zh-cn_image_0000002628661192.gif?HW-CC-KV=V1&HW-CC-Date=20260811T005820Z&HW-CC-Expire=86400&HW-CC-Sign=38693D6AD5891A81B48148A9329AB6C86F39853CBC92116D650D2205F7DDDA09)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/hykOuqbuR-aUK1QxPHvwTw/zh-cn_image_0000002686464204.png?HW-CC-KV=V1&HW-CC-Date=20260911T072743Z&HW-CC-Expire=86400&HW-CC-Sign=208CDE93927FE1BBBE6E9D7A5CAA686DCF3E9B2336C452279BDD9260FB891B3D)
 
  
  
 
-#### 背景知识
+## 背景知识
 
-Fling效果，又被称为惯性滚动，是在App中的常见交互设计。在[List组件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list)中，有如下方法：
+Fling效果，又被称为惯性滚动，是在APP中的常见交互设计。在[List组件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list)中，有如下方法：
  
 - [edgeEffect](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list#edgeeffect)：用于设置边缘滑动效果。List组件默认为EdgeEffect.Spring（惯性滚动），Scroll组件默认为EdgeEffect.None（无效果）。
 - [nestedScroll](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list#nestedscroll10)：用于设置向前向后两个方向上的嵌套滚动模式，实现与父组件的滚动联动。
@@ -41,23 +33,23 @@ Fling效果，又被称为惯性滚动，是在App中的常见交互设计。在
  
  
 
-#### 问题定位
+## 问题定位
 
-如果只是简单的进行可滚动容器组件的嵌套，那么当父级Scroll组件滚动到底部List组件时，子级List组件会视为Scroll组件的一部分，跟随Scroll组件进行整体滚动，那么就无法实现子组件继承父组件组件的惯性滚动的剩余速度。
+如果只是简单的进行可滚动容器组件的嵌套，那么当父级Scroll组件滚动到底部List组件时，子级List组件会视为Scroll组件的一部分，跟随Scroll组件进行整体滚动，那么就无法实现子组件继承父组件的惯性滚动的剩余速度。
  
  
 
-#### 分析结论
+## 分析结论
 
-实现子组件继承父组件组件的惯性滚动的剩余速度思路如下：
- 1. 首先设置组件的边缘滑动效果为惯性滚动，即[EdgeEffect.Spring](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#edgeeffect)。
-2. 在父级组件onScrollStart，onScrollStop事件中记录父级组件的滚动状态。
-3. 在父级组件onTouch事件中记录上下滑动的方向。
+实现子组件继承父组件的惯性滚动的剩余速度思路如下：
+ 1. 首先设置组件的边缘滑动效果为惯性滚动，即[EdgeEffect.Spring](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#edgeeffect)；
+2. 在父级组件onScrollStart，onScrollStop事件中记录父级组件的滚动状态；
+3. 在父级组件onTouch事件中记录上下滑动的方向；
 4. 在父级组件onScrollFrameBegin进行剩余滚动量的计算，并通过子组件Scroller控制器，按照剩余滚动量计算值视情况进行滚动，同时返回最终计算后父级组件的实际滚动量。
  
  
 
-#### 修改建议
+## 修改建议
 
 根据定位思路，Fling效果继承滚动的主要实现代码如下，代码中附加一部分顶部tabbar吸顶逻辑：
  
@@ -65,7 +57,7 @@ Fling效果，又被称为惯性滚动，是在App中的常见交互设计。在
 @Entry
 @Component
 struct StickyNestedScroll {
-  @State arr: number[] = []; // 定义状态变量，用于存储列表数据。
+  @State arr: number[] = [];   <em>// 定义状态变量，用于存储列表数据。</em>
   private touchDown: boolean = false;
   private listTouchDown: boolean = false;
   private scrolling: boolean = false;
@@ -73,7 +65,7 @@ struct StickyNestedScroll {
   private listScroller: Scroller = new Scroller();
   private CONTENT_HEIGHT = 400;
 
-  // 定义样式类listCard，用于统一ListItem样式。
+  <em>// 定义样式类listCard，用于统一ListItem样式。</em>
   @Styles
   listCard() {
     .backgroundColor(Color.White)
@@ -99,16 +91,16 @@ struct StickyNestedScroll {
         Tabs({ barPosition: BarPosition.Start }) {
           TabContent() {
             List({ space: 10, scroller: this.listScroller }) {
-              // 使用 ForEach遍历arr数组生成列表项。
+              <em>// 使用 ForEach遍历arr数组生成列表项。</em>
               ForEach(this.arr, (item: number) => {
                 ListItem() {
                   Text('item' + item)
                     .fontSize(16);
-                }.listCard(); // 应用listCard样式。
+                }.listCard(); <em>// 应用listCard样式。</em>
               }, (item: number) => item.toString());
             }.width('100%')
             .edgeEffect(EdgeEffect.Spring)
-            // 设置嵌套滚动模式。
+            <em>// 设置嵌套滚动模式。</em>
             .nestedScroll({
               scrollForward: NestedScrollMode.PARENT_FIRST,
               scrollBackward: NestedScrollMode.SELF_FIRST
@@ -136,26 +128,26 @@ struct StickyNestedScroll {
         this.touchDown = false;
       }
     })
-    // 自定义滚动帧开始时的处理逻辑。
+    <em>// 自定义滚动帧开始时的处理逻辑。</em>
     .onScrollFrameBegin((offset: number) => {
-      // 如果正在滚动且偏移量大于0（向下滚动）。
+      <em>// 如果正在滚动且偏移量大于0（向下滚动）。</em>
       if (this.scrolling && offset > 0) {
-        let yOffset: number = this.scroller.currentOffset().yOffset; // 获取当前滚动偏移量。
+        let yOffset: number = this.scroller.currentOffset().yOffset; <em>// 获取当前滚动偏移量。</em>
         if (yOffset >= this.CONTENT_HEIGHT) {
           this.listScroller.scrollBy(0, offset);
           return { offsetRemain: 0 };
         }
-        // 如果滚动将超过内容区域底部。
+        <em>// 如果滚动将超过内容区域底部。</em>
         else if (yOffset + offset > this.CONTENT_HEIGHT) {
           this.listScroller.scrollBy(0, yOffset + offset - this.CONTENT_HEIGHT);
           return { offsetRemain: this.CONTENT_HEIGHT - yOffset };
         }
       }
-      // 返回原始偏移量。
+      <em>// 返回原始偏移量。</em>
       return { offsetRemain: offset };
     })
     .onScrollStart(() => {
-      // 如果父Scroll被触摸且List未被触摸，则标记为正在滚动。
+      <em>// 如果父Scroll被触摸且List未被触摸，则标记为正在滚动。</em>
       if (this.touchDown && !this.listTouchDown) {
         this.scrolling = true;
       }
@@ -172,9 +164,15 @@ struct StickyNestedScroll {
 }
 ```
  
+实现效果如下：
  
 
-#### 总结
-1. 通过父组件的onScrollFrameBegin事件，可以明确的知道组件即将发生的滑动量，并根据需要计算实际需要的滑动量，作为返回值返回。
-2. 再结合onTouch，onScrollStart等事件，收集具体的滑动行为。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/d0lYkdqcReOYvq6yG993rg/zh-cn_image_0000002716146383.png?HW-CC-KV=V1&HW-CC-Date=20260911T072743Z&HW-CC-Expire=86400&HW-CC-Sign=CC6D80A24714BA35724092C473E092C760D455F8B431EB0E29479298E428ECD8)
+
+ 
+ 
+
+## 总结
+1. 通过父组件的onScrollFrameBegin事件，可以明确的知道组件即将发生的滑动量，并根据需要计算实际需要的滑动量，作为返回值返回；
+2. 再结合onTouch，onScrollStart等事件，收集具体的滑动行为；
 3. 最后通过滚动组件的Scroll控制器，触发惯性滑动效果。

@@ -1,13 +1,14 @@
 # native_avdemuxer.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avdemuxer-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明用于音视频媒体数据解析的接口。
  
@@ -25,16 +26,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_AVDemuxer | OH_AVDemuxer | 为OH_AVDemuxer接口定义native层对象。 |
@@ -43,10 +47,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | typedef void (*DRM_MediaKeySystemInfoCallback)(DRM_MediaKeySystemInfo* mediaKeySystemInfo) | DRM_MediaKeySystemInfoCallback | DRM_MediaKeySystemInfo回调函数指针类型，不返回解封装器实例，适用于单个解封装器实例场景。 需要使用OH_AVDemuxer_SetMediaKeySystemInfoCallback接口将其设置为回调。 |
@@ -65,15 +71,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### DRM_MediaKeySystemInfoCallback()
+### DRM_MediaKeySystemInfoCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*DRM_MediaKeySystemInfoCallback)(DRM_MediaKeySystemInfo* mediaKeySystemInfo)
@@ -95,9 +103,10 @@ DRM_MediaKeySystemInfo回调函数指针类型，不返回解封装器实例，�
  
   
 
-#### Demuxer_MediaKeySystemInfoCallback()
+### Demuxer_MediaKeySystemInfoCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*Demuxer_MediaKeySystemInfoCallback)(OH_AVDemuxer *demuxer, DRM_MediaKeySystemInfo *mediaKeySystemInfo)
@@ -113,11 +122,21 @@ DRM_MediaKeySystemInfo回调函数指针类型，返回解封装器实例，适�
  
 **起始版本：** 12
  
+**参数：**
   
 
-#### OH_AVDemuxer_CreateWithSource()
+| 参数项 | 描述 |
+| --- | --- |
+| OH_AVDemuxer *demuxer | 指向OH_AVDemuxer实例的指针。 |
+| DRM_MediaKeySystemInfo *mediaKeySystemInfo | 指向DRM信息的指针。 |
+ 
+ 
+  
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+### OH_AVDemuxer_CreateWithSource()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVDemuxer *OH_AVDemuxer_CreateWithSource(OH_AVSource *source)
@@ -135,6 +154,7 @@ OH_AVDemuxer *OH_AVDemuxer_CreateWithSource(OH_AVSource *source)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSource *source | 指向OH_AVSource实例的指针。 |
@@ -142,6 +162,7 @@ OH_AVDemuxer *OH_AVDemuxer_CreateWithSource(OH_AVSource *source)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVDemuxer * | 返回一个指向OH_AVDemuxer实例的指针。 如果执行成功，则返回指向OH_AVDemuxer实例的指针，否则返回NULL。 可能的失败原因： 1. source为空指针。 2. source为非OH_AVSource实例。 |
@@ -149,9 +170,10 @@ OH_AVDemuxer *OH_AVDemuxer_CreateWithSource(OH_AVSource *source)
  
   
 
-#### OH_AVDemuxer_Destroy()
+### OH_AVDemuxer_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVDemuxer_Destroy(OH_AVDemuxer *demuxer)
@@ -169,6 +191,7 @@ OH_AVErrCode OH_AVDemuxer_Destroy(OH_AVDemuxer *demuxer)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVDemuxer *demuxer | 指向OH_AVDemuxer实例的指针。 |
@@ -176,6 +199,7 @@ OH_AVErrCode OH_AVDemuxer_Destroy(OH_AVDemuxer *demuxer)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：当输入的demuxer指针为空或非解封装器实例。 |
@@ -183,9 +207,10 @@ OH_AVErrCode OH_AVDemuxer_Destroy(OH_AVDemuxer *demuxer)
  
   
 
-#### OH_AVDemuxer_SelectTrackByID()
+### OH_AVDemuxer_SelectTrackByID()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVDemuxer_SelectTrackByID(OH_AVDemuxer *demuxer, uint32_t trackIndex)
@@ -205,6 +230,7 @@ OH_AVErrCode OH_AVDemuxer_SelectTrackByID(OH_AVDemuxer *demuxer, uint32_t trackI
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVDemuxer *demuxer | 指向OH_AVDemuxer实例的指针。 |
@@ -213,6 +239,7 @@ OH_AVErrCode OH_AVDemuxer_SelectTrackByID(OH_AVDemuxer *demuxer, uint32_t trackI
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL： 1. 输入的demuxer指针为空或为非解封装器实例。 2. 轨道的索引超出范围。 3. 不支持读取轨道。 AV_ERR_OPERATE_NOT_PERMIT：demuxer没有正确的初始化。 |
@@ -220,9 +247,10 @@ OH_AVErrCode OH_AVDemuxer_SelectTrackByID(OH_AVDemuxer *demuxer, uint32_t trackI
  
   
 
-#### OH_AVDemuxer_UnselectTrackByID()
+### OH_AVDemuxer_UnselectTrackByID()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVDemuxer_UnselectTrackByID(OH_AVDemuxer *demuxer, uint32_t trackIndex)
@@ -242,6 +270,7 @@ OH_AVErrCode OH_AVDemuxer_UnselectTrackByID(OH_AVDemuxer *demuxer, uint32_t trac
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVDemuxer *demuxer | 指向OH_AVDemuxer实例的指针。 |
@@ -250,6 +279,7 @@ OH_AVErrCode OH_AVDemuxer_UnselectTrackByID(OH_AVDemuxer *demuxer, uint32_t trac
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：输入的demuxer指针为空或为非解封装器实例。 AV_ERR_OPERATE_NOT_PERMIT：demuxer没有正确的初始化。 |
@@ -257,9 +287,10 @@ OH_AVErrCode OH_AVDemuxer_UnselectTrackByID(OH_AVDemuxer *demuxer, uint32_t trac
  
   
 
-#### OH_AVDemuxer_ReadSample()
+### OH_AVDemuxer_ReadSample()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVDemuxer_ReadSample(OH_AVDemuxer *demuxer, uint32_t trackIndex, OH_AVMemory *sample, OH_AVCodecBufferAttr *info)
@@ -281,6 +312,7 @@ OH_AVErrCode OH_AVDemuxer_ReadSample(OH_AVDemuxer *demuxer, uint32_t trackIndex,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVDemuxer *demuxer | 指向OH_AVDemuxer实例的指针。 |
@@ -291,6 +323,7 @@ OH_AVErrCode OH_AVDemuxer_ReadSample(OH_AVDemuxer *demuxer, uint32_t trackIndex,
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL： 1. 输入的demuxer指针为空或为非解封装器实例。 2. 轨道的索引超出范围。 3. 不支持读取轨道。 4. 输入sample为空。 5. 输入info为空。 AV_ERR_OPERATE_NOT_PERMIT： 1. 轨道的索引没有被选中。 2. demuxer没有正确的初始化。 AV_ERR_NO_MEMORY：sample容量不足以存储所有帧数据。 AV_ERR_UNKNOWN：无法从文件中读取或解析帧。 |
@@ -298,9 +331,10 @@ OH_AVErrCode OH_AVDemuxer_ReadSample(OH_AVDemuxer *demuxer, uint32_t trackIndex,
  
   
 
-#### OH_AVDemuxer_ReadSampleBuffer()
+### OH_AVDemuxer_ReadSampleBuffer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVDemuxer_ReadSampleBuffer(OH_AVDemuxer *demuxer, uint32_t trackIndex, OH_AVBuffer *sample)
@@ -318,6 +352,7 @@ OH_AVErrCode OH_AVDemuxer_ReadSampleBuffer(OH_AVDemuxer *demuxer, uint32_t track
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVDemuxer *demuxer | 指向OH_AVDemuxer实例的指针。 |
@@ -327,6 +362,7 @@ OH_AVErrCode OH_AVDemuxer_ReadSampleBuffer(OH_AVDemuxer *demuxer, uint32_t track
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL： 1. 输入的demuxer指针为空或为非解封装器实例。 2. sample为空指针。 3. 轨道的索引超出范围。 AV_ERR_OPERATE_NOT_PERMIT： 1. 轨道的索引没有被选中。 2. demuxer没有正确的初始化。 AV_ERR_NO_MEMORY：sample容量不足以存储所有帧数据。 AV_ERR_UNKNOWN：无法从文件中读取或解析帧。 |
@@ -334,9 +370,10 @@ OH_AVErrCode OH_AVDemuxer_ReadSampleBuffer(OH_AVDemuxer *demuxer, uint32_t track
  
   
 
-#### OH_AVDemuxer_SeekToTime()
+### OH_AVDemuxer_SeekToTime()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVDemuxer_SeekToTime(OH_AVDemuxer *demuxer, int64_t millisecond, OH_AVSeekMode mode)
@@ -352,6 +389,7 @@ OH_AVErrCode OH_AVDemuxer_SeekToTime(OH_AVDemuxer *demuxer, int64_t millisecond,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVDemuxer *demuxer | 指向OH_AVDemuxer实例的指针。 |
@@ -361,6 +399,7 @@ OH_AVErrCode OH_AVDemuxer_SeekToTime(OH_AVDemuxer *demuxer, int64_t millisecond,
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL： 1. 输入的demuxer指针为空或为非解封装器实例。 2. 毫秒值超出范围。 AV_ERR_OPERATE_NOT_PERMIT： 1. 轨道的索引没有被选中。 2. demuxer没有正确的初始化。 3. 资源无法seek。 AV_ERR_UNKNOWN： 1. seek失败。 2. OH_AVSeekMode选择SEEK_MODE_NEXT_SYNC，并且时间点后无I帧，可能会跳转失败。 |
@@ -368,9 +407,10 @@ OH_AVErrCode OH_AVDemuxer_SeekToTime(OH_AVDemuxer *demuxer, int64_t millisecond,
  
   
 
-#### OH_AVDemuxer_SetMediaKeySystemInfoCallback()
+### OH_AVDemuxer_SetMediaKeySystemInfoCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVDemuxer_SetMediaKeySystemInfoCallback(OH_AVDemuxer *demuxer, DRM_MediaKeySystemInfoCallback callback)
@@ -390,6 +430,7 @@ OH_AVErrCode OH_AVDemuxer_SetMediaKeySystemInfoCallback(OH_AVDemuxer *demuxer, D
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVDemuxer *demuxer | 指向OH_AVDemuxer实例的指针。 |
@@ -398,6 +439,7 @@ OH_AVErrCode OH_AVDemuxer_SetMediaKeySystemInfoCallback(OH_AVDemuxer *demuxer, D
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：操作成功。 AV_ERR_OPERATE_NOT_PERMIT：demuxer没有正确的初始化。 AV_ERR_INVALID_VAL：输入的demuxer指针为空或为非解封装器实例。 |
@@ -405,9 +447,10 @@ OH_AVErrCode OH_AVDemuxer_SetMediaKeySystemInfoCallback(OH_AVDemuxer *demuxer, D
  
   
 
-#### OH_AVDemuxer_SetDemuxerMediaKeySystemInfoCallback()
+### OH_AVDemuxer_SetDemuxerMediaKeySystemInfoCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVDemuxer_SetDemuxerMediaKeySystemInfoCallback(OH_AVDemuxer *demuxer, Demuxer_MediaKeySystemInfoCallback callback)
@@ -423,6 +466,7 @@ OH_AVErrCode OH_AVDemuxer_SetDemuxerMediaKeySystemInfoCallback(OH_AVDemuxer *dem
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVDemuxer *demuxer | 指向OH_AVDemuxer实例的指针。 |
@@ -431,6 +475,7 @@ OH_AVErrCode OH_AVDemuxer_SetDemuxerMediaKeySystemInfoCallback(OH_AVDemuxer *dem
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：操作成功。 AV_ERR_OPERATE_NOT_PERMIT：demuxer没有正确的初始化。 AV_ERR_INVALID_VAL：输入的demuxer指针为空或为非解封装器实例。 |
@@ -438,9 +483,10 @@ OH_AVErrCode OH_AVDemuxer_SetDemuxerMediaKeySystemInfoCallback(OH_AVDemuxer *dem
  
   
 
-#### OH_AVDemuxer_GetMediaKeySystemInfo()
+### OH_AVDemuxer_GetMediaKeySystemInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVDemuxer_GetMediaKeySystemInfo(OH_AVDemuxer *demuxer, DRM_MediaKeySystemInfo *mediaKeySystemInfo)
@@ -456,6 +502,7 @@ OH_AVErrCode OH_AVDemuxer_GetMediaKeySystemInfo(OH_AVDemuxer *demuxer, DRM_Media
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVDemuxer *demuxer | 指向OH_AVDemuxer实例的指针。 |
@@ -464,6 +511,7 @@ OH_AVErrCode OH_AVDemuxer_GetMediaKeySystemInfo(OH_AVDemuxer *demuxer, DRM_Media
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：操作成功。 AV_ERR_OPERATE_NOT_PERMIT：解封装引擎未初始化或初始化失败。 AV_ERR_INVALID_VAL： 1. 输入的demuxer指针为空或为非解封装器实例。 2. mediaKeySystemInfo为nullptr。 |

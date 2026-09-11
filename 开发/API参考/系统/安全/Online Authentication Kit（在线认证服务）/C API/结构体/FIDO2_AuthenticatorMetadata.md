@@ -1,10 +1,14 @@
 # FIDO2_AuthenticatorMetadata
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_f_i_d_o2___authenticator_metadata
+**支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 认证器元数据。
  
@@ -16,12 +20,19 @@
  
   
 
-#### 汇总
+## 汇总
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 成员变量
+### 成员变量
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | Uint8Buff aaguid | 认证器的唯一标识符。 |
@@ -31,11 +42,17 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### aaguid
+### aaguid
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 Uint8Buff FIDO2_AuthenticatorMetadata::aaguid
@@ -47,7 +64,10 @@ Uint8Buff FIDO2_AuthenticatorMetadata::aaguid
  
   
 
-#### isAvailable
+### isAvailable
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 bool FIDO2_AuthenticatorMetadata::isAvailable
@@ -59,7 +79,10 @@ bool FIDO2_AuthenticatorMetadata::isAvailable
  
   
 
-#### uvm
+### uvm
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FIDO2_Uvm FIDO2_AuthenticatorMetadata::uvm

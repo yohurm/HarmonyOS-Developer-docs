@@ -1,17 +1,18 @@
 # 使用JSVM-API接口获取JSVM API的版本号
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-about-version
 
-#### 简介
+## 简介
 
 用于获取当前JSVM API的版本信息。
  
   
 
-#### 接口说明
+## 接口说明
  
+
 | 接口 | 功能说明 |
 | --- | --- |
 | OH_JSVM_GetVersion | 获取JSVM运行时支持的最高JSVM API版本。 |
@@ -20,13 +21,13 @@
  
   
 
-#### 使用示例
+## 使用示例
 
 JSVM-API接口开发流程参考[使用JSVM-API实现JS与C/C++语言交互开发流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-process)，本文仅对接口对应C++相关代码进行展示。
  
   
 
-#### OH_JSVM_GetVersion && OH_JSVM_GetVMInfo
+### OH_JSVM_GetVersion && OH_JSVM_GetVMInfo
 
 获取当前环境支持的JSVM API的最高版本号和当前虚拟机的信息。
  
@@ -59,7 +60,7 @@ static JSVM_Value GetVMInfo(JSVM_Env env, JSVM_CallbackInfo info)
     // 调用接口，获取虚拟机的信息
     JSVM_VMInfo result;
     JSVM_CALL(OH_JSVM_GetVMInfo(&result));
-    // 输出VM虚拟机信息
+    // 输出虚拟机信息
     PrintVmInfo(result);
     return nullptr;
 }

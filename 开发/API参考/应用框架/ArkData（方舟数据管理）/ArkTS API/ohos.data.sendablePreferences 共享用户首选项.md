@@ -1,9 +1,9 @@
 # @ohos.data.sendablePreferences (共享用户首选项)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-data-sendablepreferences
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 共享用户首选项为应用提供Key-Value键值型的数据处理能力，支持应用持久化轻量级数据，并对其修改和查询。
 
@@ -18,9 +18,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { sendablePreferences } from '@kit.ArkData';
@@ -28,13 +29,15 @@ import { sendablePreferences } from '@kit.ArkData';
 
 
 
-#### 常量
+## 常量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.DistributedDataManager.Preferences.Core
+
 
 | 名称 | 类型 | 只读 | 说明 |
 | --- | --- | --- | --- |
@@ -44,9 +47,10 @@ import { sendablePreferences } from '@kit.ArkData';
 
 
 
-#### sendablePreferences.getPreferences
+## sendablePreferences.getPreferences
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPreferences(context: Context, options: Options): Promise&lt;Preferences&gt;
 
@@ -60,6 +64,7 @@ getPreferences(context: Context, options: Options): Promise&lt;Preferences&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文。 |
@@ -67,6 +72,7 @@ getPreferences(context: Context, options: Options): Promise&lt;Preferences&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -76,6 +82,7 @@ getPreferences(context: Context, options: Options): Promise&lt;Preferences&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[用户首选项错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-preferences)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -111,9 +118,10 @@ class EntryAbility extends UIAbility {
 
 
 
-#### sendablePreferences.getPreferencesSync
+## sendablePreferences.getPreferencesSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPreferencesSync(context: Context, options: Options): Preferences
 
@@ -127,6 +135,7 @@ getPreferencesSync(context: Context, options: Options): Preferences
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文。 |
@@ -134,6 +143,7 @@ getPreferencesSync(context: Context, options: Options): Preferences
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -143,6 +153,7 @@ getPreferencesSync(context: Context, options: Options): Preferences
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[用户首选项错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-preferences)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -171,9 +182,10 @@ class EntryAbility extends UIAbility {
 
 
 
-#### sendablePreferences.deletePreferences
+## sendablePreferences.deletePreferences
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deletePreferences(context: Context, options: Options): Promise&lt;void&gt;
 
@@ -187,6 +199,7 @@ deletePreferences(context: Context, options: Options): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文。 |
@@ -194,6 +207,7 @@ deletePreferences(context: Context, options: Options): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -203,6 +217,7 @@ deletePreferences(context: Context, options: Options): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[用户首选项错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-preferences)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -236,9 +251,10 @@ class EntryAbility extends UIAbility {
 
 
 
-#### sendablePreferences.removePreferencesFromCache
+## sendablePreferences.removePreferencesFromCache
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removePreferencesFromCache(context: Context, options: Options): Promise&lt;void&gt;
 
@@ -252,6 +268,7 @@ removePreferencesFromCache(context: Context, options: Options): Promise&lt;void&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文。 |
@@ -259,6 +276,7 @@ removePreferencesFromCache(context: Context, options: Options): Promise&lt;void&
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -268,6 +286,7 @@ removePreferencesFromCache(context: Context, options: Options): Promise&lt;void&
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[用户首选项错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-preferences)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -300,9 +319,10 @@ class EntryAbility extends UIAbility {
 
 
 
-#### sendablePreferences.removePreferencesFromCacheSync
+## sendablePreferences.removePreferencesFromCacheSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removePreferencesFromCacheSync(context: Context, options: Options):void
 
@@ -316,6 +336,7 @@ removePreferencesFromCacheSync(context: Context, options: Options):void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文。 |
@@ -325,6 +346,7 @@ removePreferencesFromCacheSync(context: Context, options: Options):void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[用户首选项错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-preferences)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -351,9 +373,10 @@ class EntryAbility extends UIAbility {
 
 
 
-#### Options
+## Options
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Preferences实例配置选项。
 
@@ -361,17 +384,19 @@ Preferences实例配置选项。
 
 **系统能力：** SystemCapability.DistributedDataManager.Preferences.Core
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | name | string | 否 | 否 | Preferences实例的名称。名称长度需大于零且小于等于255字节，名称中不能包含'/'且不能以'/'结尾。 |
-| dataGroupId | string\|null | 否 | 是 | 应用组ID，需要向应用市场获取，详见dataGroupId申请流程。基于dataGroupId的数据共享支持两种场景：1.同一应用的不同进程间共享，只支持三方应用中输入法和输入法的扩展场景使用；2.不同应用间的数据共享，只支持系统应用使用。 为可选参数。指定在此dataGroupId对应的沙箱路径下创建Preferences实例。当此参数不填时，默认在本应用沙箱目录下创建Preferences实例。 模型约束： 此属性仅在Stage模型下可用。 |
+| dataGroupId | string \| null | 否 | 是 | 应用组ID，需要向应用市场获取，详见dataGroupId申请流程。基于dataGroupId的数据共享支持两种场景：1.同一应用的不同进程间共享，只支持三方应用中输入法和输入法的扩展场景使用；2.不同应用间的数据共享，只支持系统应用使用。 为可选参数。指定在此dataGroupId对应的沙箱路径下创建Preferences实例。当此参数不填时，默认在本应用沙箱目录下创建Preferences实例。 模型约束： 此属性仅在Stage模型下可用。 |
 
 
 
 
-#### Preferences
+## Preferences
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Preferences继承自[ISendable](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable#isendable)，可以在ArkTS并发实例间（包括主线程、TaskPool&Worker工作线程）传递，传递的行为是引用传递，提供获取和修改存储数据的接口。
 
@@ -379,9 +404,10 @@ Preferences继承自[ISendable](https://developer.huawei.com/consumer/cn/doc/har
 
 
 
-#### get
+### get
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get(key: string, defValue: lang.ISendable): Promise<lang.ISendable>
 
@@ -393,6 +419,7 @@ get(key: string, defValue: lang.ISendable): Promise<lang.ISendable>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 要获取的存储Key名称，不能为空，最大长度限制为MAX_KEY_LENGTH。 |
@@ -400,6 +427,7 @@ get(key: string, defValue: lang.ISendable): Promise<lang.ISendable>
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -409,6 +437,7 @@ get(key: string, defValue: lang.ISendable): Promise<lang.ISendable>
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[用户首选项错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-preferences)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -433,9 +462,10 @@ promise.then((data: lang.ISendable) => {
 
 
 
-#### getSync
+### getSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSync(key: string, defValue: lang.ISendable): lang.ISendable
 
@@ -447,6 +477,7 @@ getSync(key: string, defValue: lang.ISendable): lang.ISendable
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 要获取的存储Key名称，不能为空，最大长度限制为MAX_KEY_LENGTH。 |
@@ -454,6 +485,7 @@ getSync(key: string, defValue: lang.ISendable): lang.ISendable
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -463,6 +495,7 @@ getSync(key: string, defValue: lang.ISendable): lang.ISendable
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[用户首选项错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-preferences)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -480,19 +513,21 @@ let value: lang.ISendable = preferences.getSync('startup', 'default');
 
 
 
-#### getAll
+### getAll
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAll(): Promise<lang.ISendable>
 
-获取缓存的Preferences实例中的所有键值数据。
+获取缓存的Preferences实例中的所有键值数据，使用Promise异步回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.DistributedDataManager.Preferences.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -502,6 +537,7 @@ getAll(): Promise<lang.ISendable>
 **错误码：**
 
 以下错误码的详细介绍请参见[用户首选项错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-preferences)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -526,9 +562,10 @@ promise.then((keyValues: lang.ISendable) => {
 
 
 
-#### getAllSync
+### getAllSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllSync(): lang.ISendable
 
@@ -540,6 +577,7 @@ getAllSync(): lang.ISendable
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | lang.ISendable | 返回所有包含的键值数据。 |
@@ -548,6 +586,7 @@ getAllSync(): lang.ISendable
 **错误码：**
 
 以下错误码的详细介绍请参见[用户首选项错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-preferences)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -567,9 +606,10 @@ for (let value of Object.keys(keyValues)) {
 
 
 
-#### put
+### put
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 put(key: string, value: lang.ISendable): Promise&lt;void&gt;
 
@@ -585,6 +625,7 @@ put(key: string, value: lang.ISendable): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 要修改的存储的Key，不能为空，最大长度限制为MAX_KEY_LENGTH。 |
@@ -592,6 +633,7 @@ put(key: string, value: lang.ISendable): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -601,6 +643,7 @@ put(key: string, value: lang.ISendable): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[用户首选项错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-preferences)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -623,9 +666,10 @@ promise.then(() => {
 
 
 
-#### putSync
+### putSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 putSync(key: string, value: lang.ISendable): void
 
@@ -641,6 +685,7 @@ putSync(key: string, value: lang.ISendable): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 要修改的存储的Key，不能为空，最大长度限制为MAX_KEY_LENGTH。 |
@@ -650,6 +695,7 @@ putSync(key: string, value: lang.ISendable): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[用户首选项错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-preferences)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -665,9 +711,10 @@ preferences.putSync('startup', 'auto');
 
 
 
-#### has
+### has
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 has(key: string): Promise&lt;boolean&gt;
 
@@ -679,12 +726,14 @@ has(key: string): Promise&lt;boolean&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 要检查的存储Key名称，不能为空，最大长度限制为MAX_KEY_LENGTH。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -694,6 +743,7 @@ has(key: string): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[用户首选项错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-preferences)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -720,9 +770,10 @@ promise.then((val: boolean) => {
 
 
 
-#### hasSync
+### hasSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hasSync(key: string): boolean
 
@@ -734,12 +785,14 @@ hasSync(key: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 要检查的存储Key名称，不能为空，最大长度限制为MAX_KEY_LENGTH。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -749,6 +802,7 @@ hasSync(key: string): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[用户首选项错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-preferences)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -769,9 +823,10 @@ if (isExist) {
 
 
 
-#### delete
+### delete
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 delete(key: string): Promise&lt;void&gt;
 
@@ -783,12 +838,14 @@ delete(key: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 要删除的存储Key名称，不能为空，最大长度限制为MAX_KEY_LENGTH。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -798,6 +855,7 @@ delete(key: string): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[用户首选项错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-preferences)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -820,9 +878,10 @@ promise.then(() => {
 
 
 
-#### deleteSync
+### deleteSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteSync(key: string): void
 
@@ -834,6 +893,7 @@ deleteSync(key: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 要删除的存储Key名称，不能为空，最大长度限制为MAX_KEY_LENGTH。 |
@@ -842,6 +902,7 @@ deleteSync(key: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[用户首选项错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-preferences)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -857,9 +918,10 @@ preferences.deleteSync('startup');
 
 
 
-#### flush
+### flush
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 flush(): Promise&lt;void&gt;
 
@@ -875,6 +937,7 @@ flush(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -883,6 +946,7 @@ flush(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[用户首选项错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-preferences)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -904,9 +968,10 @@ promise.then(() => {
 
 
 
-#### flushSync14+
+### flushSync14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 flushSync(): void
 
@@ -924,6 +989,7 @@ flushSync(): void
 
 以下错误码的详细介绍请参见[用户首选项错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-preferences)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 15500000 | Inner error. |
@@ -937,9 +1003,10 @@ preferences.flushSync();
 
 
 
-#### clear
+### clear
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clear(): Promise&lt;void&gt;
 
@@ -951,6 +1018,7 @@ clear(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -959,6 +1027,7 @@ clear(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[用户首选项错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-preferences)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -980,9 +1049,10 @@ promise.then(() => {
 
 
 
-#### clearSync
+### clearSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clearSync(): void
 
@@ -995,6 +1065,7 @@ clearSync(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[用户首选项错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-preferences)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1009,9 +1080,10 @@ preferences.clearSync();
 
 
 
-#### on('change')
+### on('change')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'change', callback: Callback&lt;string&gt;): void
 
@@ -1035,6 +1107,7 @@ on(type: 'change', callback: Callback&lt;string&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件类型，固定值'change'，表示数据变更。 |
@@ -1044,6 +1117,7 @@ on(type: 'change', callback: Callback&lt;string&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[用户首选项错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-preferences)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1070,9 +1144,10 @@ preferences.flush().then(() => {
 
 
 
-#### on('multiProcessChange')
+### on('multiProcessChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'multiProcessChange', callback: Callback&lt;string&gt;): void
 
@@ -1090,6 +1165,7 @@ on(type: 'multiProcessChange', callback: Callback&lt;string&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件类型，固定值'multiProcessChange'，表示多进程间的数据变更。 |
@@ -1099,6 +1175,7 @@ on(type: 'multiProcessChange', callback: Callback&lt;string&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[用户首选项错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-preferences)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1126,9 +1203,10 @@ preferences.flush().then(() => {
 
 
 
-#### on('dataChange')
+### on('dataChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'dataChange', keys: Array&lt;string&gt;, callback: Callback<lang.ISendable>): void
 
@@ -1144,6 +1222,7 @@ on(type: 'dataChange', keys: Array&lt;string&gt;, callback: Callback<lang.ISenda
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件类型，固定值'dataChange'，表示精确的数据变更。 |
@@ -1154,6 +1233,7 @@ on(type: 'dataChange', keys: Array&lt;string&gt;, callback: Callback<lang.ISenda
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[用户首选项错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-preferences)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1183,9 +1263,10 @@ preferences.flush().then(() => {
 
 
 
-#### off('change')
+### off('change')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'change', callback?: Callback&lt;string&gt;): void
 
@@ -1208,6 +1289,7 @@ off(type: 'change', callback?: Callback&lt;string&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件类型，固定值'change'，表示数据变更。 |
@@ -1217,6 +1299,7 @@ off(type: 'change', callback?: Callback&lt;string&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[用户首选项错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-preferences)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1244,9 +1327,10 @@ preferences.flush().then(() => {
 
 
 
-#### off('multiProcessChange')
+### off('multiProcessChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'multiProcessChange', callback?: Callback&lt;string&gt;): void
 
@@ -1260,6 +1344,7 @@ off(type: 'multiProcessChange', callback?: Callback&lt;string&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件类型，固定值'multiProcessChange'，表示多进程间的数据变更。 |
@@ -1269,6 +1354,7 @@ off(type: 'multiProcessChange', callback?: Callback&lt;string&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[用户首选项错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-preferences)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1296,9 +1382,10 @@ preferences.flush().then(() => {
 
 
 
-#### off('dataChange')
+### off('dataChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'dataChange', keys: Array&lt;string&gt;, callback?: Callback<lang.ISendable>): void
 
@@ -1321,6 +1408,7 @@ off(type: 'dataChange', keys: Array&lt;string&gt;, callback?: Callback<lang.ISen
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件类型，固定值'dataChange'，表示精确的数据变更。 |
@@ -1331,6 +1419,7 @@ off(type: 'dataChange', keys: Array&lt;string&gt;, callback?: Callback<lang.ISen
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[用户首选项错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-preferences)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

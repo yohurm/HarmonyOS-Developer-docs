@@ -1,10 +1,10 @@
 # IDE应用调用插件包二进制及so文件的权限与签名要求
 
-更新时间：2026-07-22 03:28:08
+更新时间：2026-08-19 01:11:38
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-access-control-23
 
-#### 问题现象
+## 问题现象
 
 场景一：有弱沙箱权限下，IDE应用能否调用插件包的二进制可执行文件，能否将插件包的so复制到其他目录。
  
@@ -12,13 +12,13 @@
  
  
 
-#### 背景知识
+## 背景知识
 
-应用在HarmonyOS中运行时受到沙箱权限管控，调用非应用市场的扩展程序或二进制可执行文件需要相应的权限和签名支持。可使用[二进制签名工具](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/binary-sign-tool#二进制签名工具命令列表2)对二进制文件进行签名。
+应用在HarmonyOS中运行时受到沙箱权限管控，调用非应用市场的扩展程序或二进制可执行文件需要相应的权限和签名支持。可使用[二进制签名工具](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/binary-sign-tool)对二进制文件进行签名。
  
  
 
-#### 解决方案
+## 解决方案
 
 场景一：调用二进制可执行文件及复制so文件。
  

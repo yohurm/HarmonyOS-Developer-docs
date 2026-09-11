@@ -80,7 +80,7 @@ struct SwiperOnChange {
       .onChange((index: number) => {
         console.info(`onChangeIndex + ${index}`);
       })
-      .indicator( // 设置圆点导航点样式
+      .indicator( <em>// 设置圆点导航点样式</em>
         new DotIndicator()
           .itemWidth(8)
           .itemHeight(8)
@@ -90,7 +90,7 @@ struct SwiperOnChange {
           .selectedColor(Color.Blue)
           .maxDisplayCount(9))
       .displayArrow({
-        // 设置导航点箭头样式
+     <em>   // 设置导航点箭头样式</em>
         showBackground: true,
         isSidebarMiddle: true,
         backgroundSize: 24,
@@ -171,7 +171,7 @@ struct SwiperOnAnimationStart {
         console.info(`target offset: + ${extraInfo.targetOffset}`);
         console.info(`velocity: + ${extraInfo.velocity}`);
       })
-      .indicator( // 设置圆点导航点样式
+      .indicator( <em>// 设置圆点导航点样式</em>
         new DotIndicator()
           .itemWidth(8)
           .itemHeight(8)
@@ -181,7 +181,7 @@ struct SwiperOnAnimationStart {
           .selectedColor(Color.Blue)
           .maxDisplayCount(9))
       .displayArrow({
-        // 设置导航点箭头样式
+       <em> // 设置导航点箭头样式</em>
         showBackground: true,
         isSidebarMiddle: true,
         backgroundSize: 24,

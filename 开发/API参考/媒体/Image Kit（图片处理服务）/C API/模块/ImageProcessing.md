@@ -1,15 +1,16 @@
 # ImageProcessing
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imageprocessing
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-ImageProcessing模块提供图片处理功能的API接口，包括颜色空间转换和元数据生成。
+ImageProcessing模块提供图片处理功能的API接口，包括色彩空间转换和元数据生成。
  
 开发者可根据实际的开发需求，参考对应的开发指南及样例：
  
@@ -24,10 +25,12 @@ ImageProcessing模块提供图片处理功能的API接口，包括颜色空间�
  
   
 
-#### 文件汇总
+## 文件汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | image_processing.h | 声明图片处理函数。提供图片处理能力，包括色彩空间转换，元数据生成及图片缩放。 |

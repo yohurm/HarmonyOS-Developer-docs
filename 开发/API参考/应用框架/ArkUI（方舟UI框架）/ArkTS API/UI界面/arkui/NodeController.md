@@ -1,9 +1,9 @@
 # NodeController
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-nodecontroller
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 NodeController用于管理自定义节点的创建、显示、更新等操作，并负责将自定义节点挂载到[NodeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-nodecontainer)上，适用于需要在页面中动态创建、更新、复用自定义节点的场景。
 
@@ -12,9 +12,10 @@ NodeController用于管理自定义节点的创建、显示、更新等操作，
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { NodeController } from '@kit.ArkUI';
@@ -22,9 +23,10 @@ import { NodeController } from '@kit.ArkUI';
 
 
 
-#### NodeController
+## NodeController
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通常搭配[NodeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-nodecontainer)使用。用于创建控制器，管理绑定的[NodeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-nodecontainer)组件。一个NodeController只允许与一个[NodeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-nodecontainer)进行绑定。最佳实践请参考组件动态创建-[组件动态添加、更新和删除](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-component-dynamic-creation#组件动态添加更新和删除)。
 
@@ -34,9 +36,10 @@ import { NodeController } from '@kit.ArkUI';
 
 
 
-#### makeNode
+### makeNode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 abstract makeNode(uiContext : UIContext): FrameNode | null
 
@@ -54,12 +57,14 @@ abstract makeNode(uiContext : UIContext): FrameNode | null
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uiContext | UIContext | 是 | 回调该方法时，绑定NodeContainer的UI上下文。跨实例复用NodeContainer时，该参数可能为undefined，需要开发者自行判断。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -68,13 +73,14 @@ abstract makeNode(uiContext : UIContext): FrameNode | null
 
 
 
-#### aboutToAppear
+### aboutToAppear
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 aboutToAppear?(): void
 
-当NodeController绑定的[NodeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-nodecontainer)挂载显示后触发此回调。
+当NodeController绑定的[NodeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-nodecontainer)挂载至主节点树时触发此回调。该回调为异步回调，实际执行时机晚于挂载动作。
 
 > [!NOTE]
 > 回调时机参考 onAppear 。
@@ -86,13 +92,14 @@ aboutToAppear?(): void
 
 
 
-#### aboutToDisappear
+### aboutToDisappear
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 aboutToDisappear?(): void
 
-当NodeController绑定的[NodeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-nodecontainer)销毁时触发此回调。
+当NodeController绑定的[NodeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-nodecontainer)从主节点树卸载时触发此回调。该回调为同步回调。
 
 > [!NOTE]
 > 回调时机参考 onDisAppear 。
@@ -104,13 +111,14 @@ aboutToDisappear?(): void
 
 
 
-#### onAttach18+
+### onAttach18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onAttach?(): void
 
-当NodeController绑定的[NodeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-nodecontainer)挂载至主节点树时触发此回调。与[aboutToAppear](#abouttoappear)不同，aboutToAppear在NodeContainer挂载显示后触发，onAttach在NodeContainer挂载至主节点树时触发，两者触发时机可能不同。
+当NodeController绑定的[NodeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-nodecontainer)挂载至主节点树时触发此回调。与[aboutToAppear](#abouttoappear)在同一时机触发（均为NodeContainer挂载至主节点树时），区别在于onAttach为同步回调，aboutToAppear为异步回调，因此onAttach会先于aboutToAppear执行。
 
 > [!NOTE]
 > 回调时机参考 onAttach 。
@@ -122,13 +130,14 @@ onAttach?(): void
 
 
 
-#### onDetach18+
+### onDetach18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDetach?(): void
 
-当NodeController绑定的[NodeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-nodecontainer)从主节点树卸载时触发此回调。与[aboutToDisappear](#abouttodisappear)不同，aboutToDisappear在NodeContainer销毁时触发，onDetach在NodeContainer从主节点树卸载时触发，两者触发时机可能不同。
+当NodeController绑定的[NodeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-nodecontainer)从主节点树卸载时触发此回调。与[aboutToDisappear](#abouttodisappear)在同一时机触发（均为NodeContainer从主节点树卸载时），两者均为同步回调，框架在卸载流程中先触发onDetach、再触发aboutToDisappear，因此onDetach会先于aboutToDisappear执行。
 
 > [!NOTE]
 > 回调时机参考 onDetach 。
@@ -140,9 +149,10 @@ onDetach?(): void
 
 
 
-#### onWillBind18+
+### onWillBind18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onWillBind?(containerId: number): void
 
@@ -154,6 +164,7 @@ onWillBind?(containerId: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | containerId | number | 是 | 回调该方法时，即将与NodeController绑定的NodeContainer的标识。 |
@@ -161,9 +172,10 @@ onWillBind?(containerId: number): void
 
 
 
-#### onWillUnbind18+
+### onWillUnbind18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onWillUnbind?(containerId: number): void
 
@@ -175,6 +187,7 @@ onWillUnbind?(containerId: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | containerId | number | 是 | 回调该方法时，即将与NodeController解绑的NodeContainer的标识。 |
@@ -182,9 +195,10 @@ onWillUnbind?(containerId: number): void
 
 
 
-#### onBind18+
+### onBind18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onBind?(containerId: number): void
 
@@ -196,6 +210,7 @@ onBind?(containerId: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | containerId | number | 是 | 回调该方法时，已完成与NodeController绑定的NodeContainer的标识。 |
@@ -203,9 +218,10 @@ onBind?(containerId: number): void
 
 
 
-#### onUnbind18+
+### onUnbind18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onUnbind?(containerId: number): void
 
@@ -217,6 +233,7 @@ onUnbind?(containerId: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | containerId | number | 是 | 回调该方法时，已完成与NodeController解绑的NodeContainer的标识。 |
@@ -224,9 +241,10 @@ onUnbind?(containerId: number): void
 
 
 
-#### aboutToResize
+### aboutToResize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 aboutToResize?(size: Size): void
 
@@ -238,6 +256,7 @@ aboutToResize?(size: Size): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | size | Size | 是 | 组件布局大小的宽和高，单位为vp。 |
@@ -245,9 +264,10 @@ aboutToResize?(size: Size): void
 
 
 
-#### onTouchEvent
+### onTouchEvent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onTouchEvent?(event: TouchEvent): void
 
@@ -259,6 +279,7 @@ onTouchEvent?(event: TouchEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | TouchEvent | 是 | 触摸事件，包含触摸点的坐标、触摸动作类型等信息，具体结构详见TouchEvent。 |
@@ -266,9 +287,10 @@ onTouchEvent?(event: TouchEvent): void
 
 
 
-#### rebuild
+### rebuild
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 rebuild(): void
 
@@ -284,17 +306,21 @@ rebuild(): void
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（添加节点布局、Touch、挂载和销毁时的生命周期回调）
+
+
+### 示例1（添加节点布局、Touch、挂载和卸载时的生命周期回调）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过aboutToResize、onTouchEvent，实现了NodeContainer节点布局、收到Touch事件时的生命周期回调功能。
 
-并通过aboutToAppear、aboutToDisappear接口，实现了NodeContainer节点挂载、销毁时的生命周期回调功能。
+并通过aboutToAppear、aboutToDisappear接口，实现了NodeContainer节点挂载至主节点树、从主节点树卸载时的生命周期回调功能。
 
 该示例还通过NodeController挂载BuilderNode节点。
 
@@ -363,12 +389,15 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/APDo9QSGQ0uVf1wmfXSzaA/zh-cn_image_0000002686087737.jpg?HW-CC-KV=V1&HW-CC-Date=20260730T071448Z&HW-CC-Expire=86400&HW-CC-Sign=776242045A4F9004D1358ACED97908F776CC495D9AEFF5B3B2F292099F2ABA8C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/REBpX28nT6y9ooGaz0cXLg/zh-cn_image_0000002747292395.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T072836Z&HW-CC-Expire=86400&HW-CC-Sign=19E575BD628C1034F4822EC12D8025774B4D32032D70FD11B063CA754376BBCE)
 
 
 
 
-#### 示例2（添加节点上下树和绑定解绑前后的生命周期回调）
+### 示例2（添加节点上下树和绑定解绑前后的生命周期回调）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过onAttach、onDetach接口，实现了NodeContainer节点上下主节点树的生命周期回调功能。
 
@@ -467,4 +496,4 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/u0s57jV-RhGkJNUwDH0cDQ/zh-cn_image_0000002685927909.jpg?HW-CC-KV=V1&HW-CC-Date=20260730T071448Z&HW-CC-Expire=86400&HW-CC-Sign=54EB579C01B953E671DCD9FE102414CA72BA94B73CB83518007D1E38093D863E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/Y40f9I2hRj2bmNwPVLvhHA/zh-cn_image_0000002747212311.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T072836Z&HW-CC-Expire=86400&HW-CC-Sign=DAFB416E370B611B91EE03B73BC5027D29D00BACFC9B2C2DEFC3608BE94DAF64)

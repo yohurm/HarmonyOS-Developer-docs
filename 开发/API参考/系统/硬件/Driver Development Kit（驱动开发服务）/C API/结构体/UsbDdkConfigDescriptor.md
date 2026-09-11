@@ -1,6 +1,6 @@
 # UsbDdkConfigDescriptor
 
-更新时间：2026-04-28 03:31:56
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-usbddk-usbddkconfigdescriptor
 **支持设备：** PC/2in1
@@ -10,11 +10,12 @@ typedef struct UsbDdkConfigDescriptor {...} UsbDdkConfigDescriptor
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** PC/2in1
 
-配置描述符。
+配置描述符，包含标准配置描述符和接口描述符等信息。
  
 **起始版本：** 10
  
@@ -24,19 +25,22 @@ typedef struct UsbDdkConfigDescriptor {...} UsbDdkConfigDescriptor
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** PC/2in1
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** PC/2in1
  
+
 | 名称 | 描述 |
 | --- | --- |
 | struct UsbConfigDescriptor configDescriptor | 标准配置描述符。 |
 | struct UsbDdkInterface* interface | 该配置所包含的接口。 |
-| const uint8_t* extra | 未做解析的描述符，包含特定于类或供应商的描述符。 |
+| const uint8_t* extra | 未做解析的描述符指针，包含特定于类或供应商的描述符。 |
 | uint32_t extraLength | 未做解析的描述符长度。 |

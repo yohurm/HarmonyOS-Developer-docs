@@ -1,20 +1,20 @@
 # OS新增和增强特性
 
-更新时间：2026-08-04 06:19:31
+更新时间：2026-08-29 09:40:02
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-611
 
-#### 6.1.1(24) Release新增和增强特性
+## 6.1.1(24) Release新增和增强特性
 
  
 
-#### Ability Kit
+### Ability Kit
 
 AbilityStage组件管理器新增AbilityStage即将创建第一个Ability的回调（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-abilitystage#onabouttocreateability24)），以及当进程从应用快照启动时的回调（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-abilitystage#onlaunchfromhypersnap24)）。
  
  
 
-#### ArkTS
+### ArkTS
 
 - 新增enableLocalHandleDetection接口，保证EventHandler和libuv机制的任务在scope范围内执行，从而避免内存泄漏。（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-util#enablelocalhandledetection24)）
 - XML解析新增支持XmlSAXHandler，定义了SAX解析xml文本时的回调方法。开发者需要实现这些回调方法来处理xml文本的不同部分。这些回调方法会在xml解析过程的对应时机触发。（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-xml#xmlsaxhandler24)）
@@ -22,19 +22,19 @@ AbilityStage组件管理器新增AbilityStage即将创建第一个Ability的回�
  
  
 
-#### ArkWeb
+### ArkWeb
 
 在下载任务完成的回调中，新增支持获取下载项的原始URL地址（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webdownloaditem#getoriginalurl24)）；新增支持获取引用页的URL地址（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webdownloaditem#getreferrerurl24)）。
  
  
 
-#### Call Service Kit
+### Call Service Kit
 
 在企业员工来电或去电时，开发者可通过来电、去电手机号查询获取对应的企业服务信息，帮助员工快速了解通话号码相关的企业服务数据，目前支持快递类型的企业服务。（[指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/callservice-enterprise-sersvice-display)、[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/callservicekit-callerinfoquery-extension-ability#onquerybusinessservicedata)）
  
  
 
-#### Camera Kit
+### Camera Kit
 
 新增一批拍照/录像模式下的相机专业能力，包括：
  
@@ -71,23 +71,23 @@ ArkTS API新增物理光圈对象定义（[API参考](https://developer.huawei.c
  
  
 
-#### CANN Kit
+### CANN Kit
 
 针对PC设备开放大语言模型推理API，新增支持接入大语言模型，实现计算链路的加速封装和计算加速。（[指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-llm-summary)）
  
  
 
-#### MDM Kit
+### MDM Kit
 
 设备设置管理支持对当前用户下被隐藏的设置项列表进行添加、删除、查询操作。（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-devicesettings#devicesettingsaddhiddensettingsmenu24)）
  
  
 
-#### 6.1.1(24) Beta1新增和增强特性
+## 6.1.1(24) Beta1新增和增强特性
 
  
 
-#### Ability Kit
+### Ability Kit
 
 - Ability上次退出的信息字段新增支持获取退出原因。（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-abilityconstant#lastexitdetailinfo18)）
 - AbilityStage上下文新增launchElement字段，用于在AbilityStage调用onCreate时告知应用正在加载的Ability，从而动态加载资源。（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-abilitystagecontext#属性)）
@@ -95,20 +95,20 @@ ArkTS API新增物理光圈对象定义（[API参考](https://developer.huawei.c
  
  
 
-#### AppGallery Kit
+### AppGallery Kit
 
 新增支持查询、删除应用内快捷方式的能力，支持用户查看、管理应用的桌面快捷方式。（[指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appgallery-productview-getshortcut)、[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/store-productviewmanager#productviewmanagergetpinshortcutinfos)）
  
  
 
-#### ArkData
+### ArkData
 
 - 新增创建或打开已有的关系型数据库的同步方法。同步方法可阻塞线程直到获取到RdbStore。（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-data-relationalstore-f#relationalstoregetrdbstoresync24)）
 
  
  
 
-#### ArkGraphics 2D
+### ArkGraphics 2D
 
 - 新增支持为组件内容添加HDR（高动态范围成像）提亮效果。（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-uieffect#hdrbrightnessratio24)）
 - 新增支持视频的AIHDR格式。（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hdrcapability#hdrformat)）
@@ -116,7 +116,7 @@ ArkTS API新增物理光圈对象定义（[API参考](https://developer.huawei.c
  
  
 
-#### ArkTS
+### ArkTS
 
 - 虚拟机维测能力增强：
 新增支持获取所有虚拟机线程的堆内存信息，包括线程ID、线程名称、堆类型和堆对象大小。（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-util#getallvmheapmemoryinfo24)）
@@ -127,7 +127,7 @@ ArkTS API新增物理光圈对象定义（[API参考](https://developer.huawei.c
  
  
 
-#### ArkUI
+### ArkUI
 
 - 应用主动接入平行视界功能时，通过新API接口能够运行时获取当前平行视界的分栏状态，方便对业务逻辑&UX动效等进行调整。（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)）
 - 自定义组件支持跨Ability迁移。（[指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-custom-components#自定义组件支持跨ability迁移)）
@@ -149,7 +149,7 @@ ArkTS API新增物理光圈对象定义（[API参考](https://developer.huawei.c
  
  
 
-#### ArkWeb
+### ArkWeb
 
 - ArkWeb网页请求支持User-Agent Client Hints功能。（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller#setuseragentclienthintsenabled24)）
 - ArkWeb新增默认右键菜单启用开关，可通过该接口控制默认的右键菜单是否开启。（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-attributes#enabledefaultcontextmenu24)）
@@ -158,7 +158,7 @@ ArkTS API新增物理光圈对象定义（[API参考](https://developer.huawei.c
  
  
 
-#### Audio Kit
+### Audio Kit
 
 - 音频采集和音频渲染新增支持设置独立的音频会话策略和行为参数。（[API参考-音频采集](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiocapturer#setindependentaudiosessionstrategy24)、[API参考-音频渲染](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer#setindependentaudiosessionstrategy24)）
 - 新增OH_MIDI的C API，支持应用通过USB或蓝牙BLE连接外接MIDI设备（如MIDI键盘、电子琴、MIDI控制器等），实现MIDI消息的收发、设备枚举与热插拔监听，可用于音乐创作、乐器录制与教学、MIDI设备控制等场景。（[指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/midi-overview)）
@@ -166,27 +166,27 @@ ArkTS API新增物理光圈对象定义（[API参考](https://developer.huawei.c
  
  
 
-#### AVCodec Kit
+### AVCodec Kit
 
-- 新增支持Cinepak媒体格式的编解码能力。（[指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avcodec-support-formats#媒体编解码)）
+- 新增支持Cinepak媒体格式的编解码能力。（[指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avcodec-support-formats#视频解码)）
 - 新增支持筛选特定MIME类型的安全解码器，在处理受数字版权管理保护的DRM媒体资源时，可以使用支持安全链路的"安全解码器"。（[指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/obtain-supported-codecs#筛选特定mime类型的安全解码器drm播放场景)）
 
  
  
 
-#### AVSession Kit
+### AVSession Kit
 
 新增支持后台播放模式的设置，可由应用告知系统是否支持后台播放，系统根据能力决策实况胶囊的显示。（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-avsession-avsession#setbackgroundplaymode24)）
  
  
 
-#### Camera Kit
+### Camera Kit
 
 新增支持创建延迟预览输出对象，在配流时替代普通的预览输出对象加入数据流（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-cameramanager#createdeferredpreviewoutput24)）。同时支持配置延迟预览的Surface（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-previewoutput#adddeferredsurface24)）。
  
  
 
-#### Connectivity Kit
+### Connectivity Kit
 
 - 新增支持通过C API获取Wi-Fi连接信息。（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-wifi-h#oh_wifi_getlinkedinfo)）
 - 新增A2DP的播放状态广播以及SCO广播事件。（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/commoneventmanager-definitions#common_event_bluetooth_a2dpsource_play_state_change24)）
@@ -194,13 +194,13 @@ ArkTS API新增物理光圈对象定义（[API参考](https://developer.huawei.c
  
  
 
-#### Content Embed Kit
+### Content Embed Kit
 
 【新增Kit】Content Embed Kit（内容嵌入服务）提供应用间文档互相嵌入与协同编辑的框架能力，并为开发者封装了客户端与服务端的开发接口，便于快速实现文档跨应用嵌入与协作。（[指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/content-embed-kit-overview)、[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-contentembed)）
  
  
 
-#### Desktop Extension Kit
+### Desktop Extension Kit
 
 - 新增支持更新单个一级菜单项内容。（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/statusbar-extension-manager#statusbarmanagerupdatestatusbarmenuitem)）
 - 新增支持更新单个二级菜单项内容。（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/statusbar-extension-manager#statusbarmanagerupdatestatusbarsubmenuitem)）
@@ -209,7 +209,7 @@ ArkTS API新增物理光圈对象定义（[API参考](https://developer.huawei.c
  
  
 
-#### Device Security Kit
+### Device Security Kit
 
 - 新增代码签名信息查询功能，开发者可获取设备上已签名的文件签名信息。（[指南-ArkTS](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurity-audit-acquirecodesign-arkts)、[API参考-ArkTS](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesecurity-securityaudit-api#acquirecodesign)、[指南-C/C++](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurity-audit-acquirecodesign-c)、[API参考-C/C++](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesecurity-capi-securityaudit#hms_securityaudit_acquirecodesign)）
 - 数字盾服务新增支持Tablet、PC/2in1设备。（[指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurity-introduction#支持的设备)、[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesecurity-trusted-auth-api)）
@@ -218,7 +218,7 @@ ArkTS API新增物理光圈对象定义（[API参考](https://developer.huawei.c
  
  
 
-#### Enterprise Data Guard
+### Enterprise Data Guard
 
 - 新增放通应用列表管理功能，开发者可设定特定应用不受KIA策略管控。（[指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fileguard-unrestricted-app-list)、[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/dataguard-fileguard#addunrestrictedapplicationlist)）
 - 新增设置上位机和下位机之间的HDC鉴权密钥。（[指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fileguard-set-hdc-authentication-key)、[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/dataguard-fileguard#sethdcauthenticationkey)）
@@ -228,13 +228,13 @@ ArkTS API新增物理光圈对象定义（[API参考](https://developer.huawei.c
  
  
 
-#### Enterprise Threat Protection Kit
+### Enterprise Threat Protection Kit
 
 【新增Kit】Enterprise Threat Protection Kit（企业威胁防护服务）提供了构建安全防护应用的核心能力，专注于文件访问与处置。应用可对文件进行扫描以识别潜在威胁，并对威胁文件执行隔离、恢复或删除操作，从而有效保护企业设备的数据安全。详细信息请参见[Enterprise Threat Protection Kit开发指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/enterprise-threat-protection-kit-guide)。
  
  
 
-#### FAST Kit
+### FAST Kit
 
 - 新增并发哈希表。（[指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fast-concurrent-hashmap)、[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/fast-kit-fast-ads-concurrent-hashmap-8h)）
 - 新增部分向量运算和复数处理功能。（[指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fast-dsp-vector-calculation)、[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/fast-kit-fast-dsp-common-8h)）
@@ -243,25 +243,25 @@ ArkTS API新增物理光圈对象定义（[API参考](https://developer.huawei.c
  
  
 
-#### Form Kit
+### Form Kit
 
 在onUpdateForm回调中新增支持卡片更新原因字段。（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-form-forminfo#formupdatereason24)）
  
  
 
-#### Image Kit
+### Image Kit
 
 新增WebP图像元数据类，用于存储图像的元数据。（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-webpmetadata)）
  
  
 
-#### Input Kit
+### Input Kit
 
 C API输入事件增强，提供输入事件的压力、相对窗口左上角的XY相对坐标等事件。（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-input-manager-h#oh_input_settoucheventpressure)）
  
  
 
-#### Live View Kit
+### Live View Kit
 
 - 新增支持点击实况窗卡片辅助区结束实况窗。（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/liveview-liveviewmanager#actiontype)）
 - 新增实况窗最长存活时间参数配置，系统将在达到预设时间后自动结束实况窗。（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/liveview-liveviewmanager#primarydata)）
@@ -269,7 +269,7 @@ C API输入事件增强，提供输入事件的压力、相对窗口左上角的
  
  
 
-#### Map Kit
+### Map Kit
 
 - 关键字搜索场景下，查询结果新增支持展示相关性分数。（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-site#site)）
 - 在区划查询场景下，新增支持选择区划层级范围。（[指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-location-division#开发步骤)、[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-scenemap#districtselectoptions)）
@@ -282,13 +282,13 @@ C API输入事件增强，提供输入事件的压力、相对窗口左上角的
  
  
 
-#### NearLink Kit
+### NearLink Kit
 
 新增获取星闪合作设备集合管理信息的能力。（[指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nearlink-cdsm-information)、[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/nearlink-cdsm)）
  
  
 
-#### MDM Kit
+### MDM Kit
 
 - kiosk模式下，新增支持通过上划停留手势进入最近任务栏（ALLOW_GESTURE_CONTROL）以及通过边缘内划停留手势进入侧边DOCK栏（ALLOW_SIDE_DOCK）。（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-applicationmanager#kioskfeature20)）
 - 新增支持安装和卸载企业重签名证书的能力。（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-securitymanager#securitymanagerinstallenterpriseresignaturecertificate24)）
@@ -297,7 +297,7 @@ C API输入事件增强，提供输入事件的压力、相对窗口左上角的
  
  
 
-#### Media Kit
+### Media Kit
 
 - C API新增隐私保护设置的回调函数，用于响应截屏录屏时捕获的隐私保护事件。（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avscreen-capture-h#oh_avscreencapture_setprivacyprotectcallback)）
 - C API新增支持获取多屏幕录制能力信息（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avscreen-capture-h#oh_avscreencapture_getmultidisplaycapturecapability)），以及通过DisplayID选择多屏幕进行录制（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avscreen-capture-h#oh_avscreencapture_getmultidisplayidsselected)）。
@@ -305,19 +305,19 @@ C API输入事件增强，提供输入事件的压力、相对窗口左上角的
  
  
 
-#### Network Boost Kit
+### Network Boost Kit
 
 新增支持设置数据传输低功耗模式。（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/networkboost-netboost#netboostsetlowpowermode)）
  
  
 
-#### Network Kit
+### Network Kit
 
 TLS支持证书链的验证，可通过传入数组的方式最多支持到1000个证书。（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-socket#tlssecureoptions9)）
  
  
 
-#### Notification Kit
+### Notification Kit
 
 - 新增支持查询本APP通知中wantAgent字段的部分信息。（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-notificationmanager#notificationmanagergetnotificationparameters24)）
 - 新增支持使用应用沙箱内的文件作为通知的自定义铃声。（[指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-customized-ringtone)）
@@ -325,13 +325,13 @@ TLS支持证书链的验证，可通过传入数组的方式最多支持到1000�
  
  
 
-#### Payment Kit
+### Payment Kit
 
 人脸核身能力新增支持PC设备。（[指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-introduction)、[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-realnameservice)）
  
  
 
-#### Performance Analysis Kit
+### Performance Analysis Kit
 
 - 当应用发生SIGPIPE异常退出时，在Debug版本应用可开启SIGPIPE信号打印调用栈功能辅助定位问题。（[指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cppcrash-guidelines#应用发生sigpipe异常退出)）
 - hiprofiler新增文件缓存模式（use_file_cache_mode），通过将缓存数据落盘，提升内存分配信息的采集性能。（[指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiprofiler#native-hook插件)）
@@ -344,7 +344,7 @@ TLS支持证书链的验证，可通过传入数组的方式最多支持到1000�
  
  
 
-#### Remote Communication Kit
+### Remote Communication Kit
 
 - 新增支持发起仅建立连接的请求。（[指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-communication-pre-connect)、[API参考-ArkTS](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/remote-communication-rcp#request)、[API参考-C/C++](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/remote-communication-overview#hms_rcp_setrequestconnectonly)）
 - 新增支持C API获取默认session。（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/remote-communication-overview#hms_rcp_getdefaultsession)）
@@ -353,13 +353,13 @@ TLS支持证书链的验证，可通过传入数组的方式最多支持到1000�
  
  
 
-#### Screen Time Guard Kit
+### Screen Time Guard Kit
 
 新增支持请求用户授权的同时配置管控应用在管控生效过程中是否可卸载。（[指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimeguard-request-user-auth)、[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/screentimeguard-guardservice#requestuserauth-1)）
  
  
 
-#### Speech Kit
+### Speech Kit
 
 - AI字幕初始化场景下，新增支持设置源语言、目标语言以及对应语言下字体颜色和字体大小。（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/speech-aicaptioncomponent#aicaptionoptions)）
 - 朗读控件新增TextReaderIconV2图标接口，支持对ArkTS的状态管理V2装饰器的适配。（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/speech-textreadericonv2)）
@@ -367,18 +367,18 @@ TLS支持证书链的验证，可通过传入数组的方式最多支持到1000�
  
  
 
-#### UI Design Kit
+### UI Design Kit
 
 底部页签新增支持页签栏和迷你栏垂直布局样式。（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdstabs#hdsbarlayoutmode)）
  
  
 
-#### Vision Kit
+### Vision Kit
 
 卡证识别场景下，新增支持识别港澳居民来往内地通行证、台湾居民来往大陆通行证。（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/vision-card-recognition#cardtype)）
  
  
 
-#### 标准库
+### 标准库
 
 新增Seccomp开放系统调用列表。（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/seccomp-symbol)）

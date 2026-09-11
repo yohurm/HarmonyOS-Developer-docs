@@ -1,9 +1,9 @@
 # Interface (CameraInput)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-camerainput
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 相机设备输入对象。
 
@@ -14,9 +14,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { camera } from '@kit.CameraKit';
@@ -24,9 +25,10 @@ import { camera } from '@kit.CameraKit';
 
 
 
-#### open
+## open
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 open(callback: AsyncCallback&lt;void&gt;): void
 
@@ -38,6 +40,7 @@ open(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当打开相机成功，err为undefined，否则为错误对象，错误码类型CameraErrorCode。 |
@@ -46,6 +49,7 @@ open(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -72,9 +76,10 @@ function openCameraInput(cameraInput: camera.CameraInput): void {
 
 
 
-#### open
+## open
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 open(): Promise&lt;void&gt;
 
@@ -86,6 +91,7 @@ open(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -94,6 +100,7 @@ open(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -119,9 +126,10 @@ function openCameraInput(cameraInput: camera.CameraInput): void {
 
 
 
-#### open12+
+## open12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 open(isSecureEnabled: boolean): Promise&lt;bigint&gt;
 
@@ -133,12 +141,14 @@ open(isSecureEnabled: boolean): Promise&lt;bigint&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isSecureEnabled | boolean | 是 | 设置true为使能以安全的方式打开相机，设置false则反之。接口调用失败会返回相应错误码，错误码类型CameraErrorCode。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -148,6 +158,7 @@ open(isSecureEnabled: boolean): Promise&lt;bigint&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -172,9 +183,10 @@ function openCameraInput(cameraInput: camera.CameraInput): void {
 
 
 
-#### open18+
+## open18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 open(type: CameraConcurrentType): Promise&lt;void&gt;
 
@@ -186,12 +198,14 @@ open(type: CameraConcurrentType): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | CameraConcurrentType | 是 | 以指定的并发类型打开相机。接口调用失败会返回相应错误码。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -201,6 +215,7 @@ open(type: CameraConcurrentType): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -226,9 +241,10 @@ function openCameraInput(cameraInput: camera.CameraInput): void {
 
 
 
-#### close
+## close
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(callback: AsyncCallback&lt;void&gt;): void
 
@@ -240,6 +256,7 @@ close(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当关闭相机成功，err为undefined，否则为错误对象。错误码类型CameraErrorCode。 |
@@ -248,6 +265,7 @@ close(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -272,9 +290,10 @@ function closeCameraInput(cameraInput: camera.CameraInput): void {
 
 
 
-#### close
+## close
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(): Promise&lt;void&gt;
 
@@ -286,6 +305,7 @@ close(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -294,6 +314,7 @@ close(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -316,9 +337,10 @@ function closeCameraInput(cameraInput: camera.CameraInput): void {
 
 
 
-#### on('error')
+## on('error')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'error', camera: CameraDevice, callback: ErrorCallback): void
 
@@ -333,6 +355,7 @@ on(type: 'error', camera: CameraDevice, callback: ErrorCallback): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -357,9 +380,10 @@ function registerCameraInputError(cameraInput: camera.CameraInput, camera: camer
 
 
 
-#### off('error')
+## off('error')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'error', camera: CameraDevice, callback?: ErrorCallback): void
 
@@ -370,6 +394,7 @@ off(type: 'error', camera: CameraDevice, callback?: ErrorCallback): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -388,9 +413,10 @@ function unregisterCameraInputError(cameraInput: camera.CameraInput, camera: cam
 
 
 
-#### isPhysicalCameraOrientationVariable22+
+## isPhysicalCameraOrientationVariable22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isPhysicalCameraOrientationVariable(): boolean
 
@@ -401,6 +427,7 @@ isPhysicalCameraOrientationVariable(): boolean
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -418,9 +445,10 @@ function isPhysicalCameraOrientationVariable(cameraInput: camera.CameraInput): b
 
 
 
-#### getPhysicalCameraOrientation22+
+## getPhysicalCameraOrientation22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPhysicalCameraOrientation(): number
 
@@ -431,6 +459,7 @@ getPhysicalCameraOrientation(): number
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -448,9 +477,10 @@ function getPhysicalCameraOrientation(cameraInput: camera.CameraInput): number {
 
 
 
-#### usePhysicalCameraOrientation22+
+## usePhysicalCameraOrientation22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 usePhysicalCameraOrientation(isUsed: boolean): void
 
@@ -462,6 +492,7 @@ usePhysicalCameraOrientation(isUsed: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isUsed | boolean | 是 | 选择是否使用物理镜头角度。true表示使用，false表示不使用。 |
@@ -470,6 +501,7 @@ usePhysicalCameraOrientation(isUsed: boolean): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -494,9 +526,10 @@ function usePhysicalCameraOrientation(cameraInput: camera.CameraInput, isUsed: b
 
 
 
-#### on('cameraOcclusionDetection')23+
+## on('cameraOcclusionDetection')23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'cameraOcclusionDetection', callback: AsyncCallback&lt;CameraOcclusionDetectionResult&gt;): void
 
@@ -511,6 +544,7 @@ on(type: 'cameraOcclusionDetection', callback: AsyncCallback&lt;CameraOcclusionD
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -543,9 +577,10 @@ function registerCameraOcclusionDetection(cameraInput: camera.CameraInput): void
 
 
 
-#### off('cameraOcclusionDetection')23+
+## off('cameraOcclusionDetection')23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'cameraOcclusionDetection', callback?: AsyncCallback&lt;CameraOcclusionDetectionResult&gt;): void
 
@@ -556,6 +591,7 @@ off(type: 'cameraOcclusionDetection', callback?: AsyncCallback&lt;CameraOcclusio
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |

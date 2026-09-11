@@ -1,11 +1,11 @@
 # @ohos.file.picker (选择器)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-file-picker
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-选择器(Picker)是一个封装DocumentViewPicker、AudioViewPicker、PhotoViewPicker的API模块，具有选择与保存的能力。应用可以选择使用以下API来实现文件的选择和保存的功能。该类接口，需要应用在界面UIAbility中调用，否则无法拉起FilePicker应用、AudioPicker应用或PhotoPicker应用。
+Picker（选择器）是一个封装DocumentViewPicker、AudioViewPicker、PhotoViewPicker的API模块，具有选择与保存的能力。通过Picker拉起系统文件选择界面，用户可在安全可控的环境下选择或保存文件，应用无需申请权限即可使用该接口。应用可以选择使用以下API来实现文件的选择和保存的功能。该类接口需要应用在UIAbility界面中调用，否则无法拉起FilePicker应用、AudioPicker应用或PhotoPicker应用。
 
 调用本模块接口返回的URI数组，URI中的中文及非数字字母的特殊字符会被编码为对应的ASCII码并拼接到URI中。
 
@@ -14,17 +14,19 @@
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
-import  { picker } from '@kit.CoreFileKit';
+import { picker } from '@kit.CoreFileKit';
 ```
 
 
 
-#### DocumentViewPicker
+## DocumentViewPicker
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -34,7 +36,8 @@ import  { picker } from '@kit.CoreFileKit';
 
 
 
-#### constructor12+
+### constructor12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -48,6 +51,7 @@ constructor(context: Context)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文（仅支持UIAbilityContext）。Stage模型的应用Context定义见Context。 |
@@ -57,7 +61,7 @@ constructor(context: Context)
 
 ```text
 import { common } from '@kit.AbilityKit';
-import  { picker } from '@kit.CoreFileKit';
+import { picker } from '@kit.CoreFileKit';
 @Entry
 @Component
 struct Index {
@@ -69,7 +73,7 @@ struct Index {
         Text(this.message)
           .fontSize(50)
           .fontWeight(FontWeight.Bold)
-          .onClick(()=>{
+          .onClick(() => {
             let context = this.getUIContext().getHostContext() as common.UIAbilityContext; // 请确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
             let documentPicker = new picker.DocumentViewPicker(context);
           })
@@ -83,7 +87,8 @@ struct Index {
 
 
 
-#### constructor12+
+### constructor12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -103,17 +108,19 @@ let documentPicker = new picker.DocumentViewPicker(); // 不推荐使用无参�
 
 
 
-#### constructor13+
+### constructor13+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 constructor(context: Context, window: window.Window)
 
-应用自行创建窗口中，可用通过该构造函数创建DocumentViewPicker对象。一般场景推荐使用constructor(context: Context)方法创建DocumentViewPicker对象。
+在应用自行创建窗口的场景中，可通过该构造函数创建DocumentViewPicker对象。一般场景推荐使用constructor(context: Context)方法创建DocumentViewPicker对象。
 
 **系统能力**：SystemCapability.FileManagement.UserFileService
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -138,7 +145,7 @@ struct Index {
         Text(this.message)
           .fontSize(50)
           .fontWeight(FontWeight.Bold)
-          .onClick(()=>{
+          .onClick(() => {
             let context = this.getUIContext().getHostContext() as common.UIAbilityContext; // 请确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
             let windowClass: window.Window | undefined = undefined;
             windowClass = window.findWindow('test'); // 请确保window已创建，此处的'test'为window创建时的name参数
@@ -154,7 +161,8 @@ struct Index {
 
 
 
-#### select
+### select
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -168,16 +176,18 @@ select(option?: DocumentSelectOptions): Promise<Array&lt;string&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| option | DocumentSelectOptions | 否 | documentPicker选择选项。若无此参数，则默认拉起documentPicker主界面。 |
+| option | DocumentSelectOptions | 否 | documentPicker选择选项，用于配置文件选择的参数（如选择文件的最大数量、文件后缀过滤等）。若无此参数，则默认拉起documentPicker主界面。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise<Array&lt;string&gt;> | Promise对象。返回documentPicker选择后的结果集。 注意：此接口返回的URI数组的具体使用方式参见用户文件URI介绍中的文档类uri的使用方式。 |
+| Promise<Array&lt;string&gt;> | Promise对象。返回documentPicker选择后的结果集。 注意：此接口返回的URI数组的具体使用方式参见用户文件URI介绍中的文档类URI的使用方式。 |
 
 
 **示例：**
@@ -185,7 +195,7 @@ select(option?: DocumentSelectOptions): Promise<Array&lt;string&gt;>
 ```json
 import { BusinessError } from '@kit.BasicServicesKit';
 import { common } from '@kit.AbilityKit';
-import  { picker } from '@kit.CoreFileKit';
+import { picker } from '@kit.CoreFileKit';
 async function example07(context: common.UIAbilityContext) { // 需确保 context 由 UIAbilityContext 转换而来
   try {
     let documentSelectOptions = new picker.DocumentSelectOptions();
@@ -204,7 +214,8 @@ async function example07(context: common.UIAbilityContext) { // 需确保 contex
 
 
 
-#### select
+### select
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -218,10 +229,11 @@ select(option: DocumentSelectOptions, callback: AsyncCallback<Array&lt;string&gt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| option | DocumentSelectOptions | 是 | documentPicker选择选项。 |
-| callback | AsyncCallback<Array&lt;string&gt;> | 是 | callback 返回documentPicker选择后的结果集。 注意：此接口返回的URI数组的具体使用方式参见用户文件URI介绍中的文档类uri的使用方式。 |
+| option | DocumentSelectOptions | 是 | documentPicker选择选项，用于配置文件选择的参数（如选择文件的最大数量、文件后缀过滤等）。 |
+| callback | AsyncCallback<Array&lt;string&gt;> | 是 | callback 返回documentPicker选择后的结果集。 注意：此接口返回的URI数组的具体使用方式参见用户文件URI介绍中的文档类URI的使用方式。 |
 
 
 **示例：**
@@ -229,7 +241,7 @@ select(option: DocumentSelectOptions, callback: AsyncCallback<Array&lt;string&gt
 ```json
 import { BusinessError } from '@kit.BasicServicesKit';
 import { common } from '@kit.AbilityKit';
-import  { picker } from '@kit.CoreFileKit';
+import { picker } from '@kit.CoreFileKit';
 async function example08(context: common.UIAbilityContext) { // 需确保 context 由 UIAbilityContext 转换而来
   try {
     let documentSelectOptions = new picker.DocumentSelectOptions();
@@ -250,7 +262,8 @@ async function example08(context: common.UIAbilityContext) { // 需确保 contex
 
 
 
-#### select
+### select
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -264,9 +277,10 @@ select(callback: AsyncCallback<Array&lt;string&gt;>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback<Array&lt;string&gt;> | 是 | callback 返回documentPicker选择后的结果集。 注意：此接口返回的URI数组的具体使用方式参见用户文件URI介绍中的文档类uri的使用方式。 |
+| callback | AsyncCallback<Array&lt;string&gt;> | 是 | callback 返回documentPicker选择后的结果集。 注意：此接口返回的URI数组的具体使用方式参见用户文件URI介绍中的文档类URI的使用方式。 |
 
 
 **示例：**
@@ -274,7 +288,7 @@ select(callback: AsyncCallback<Array&lt;string&gt;>): void
 ```json
 import { BusinessError } from '@kit.BasicServicesKit';
 import { common } from '@kit.AbilityKit';
-import  { picker } from '@kit.CoreFileKit';
+import { picker } from '@kit.CoreFileKit';
 async function example09(context: common.UIAbilityContext) { // 需确保 context 由 UIAbilityContext 转换而来
   try {
     let documentPicker = new picker.DocumentViewPicker(context);
@@ -294,7 +308,8 @@ async function example09(context: common.UIAbilityContext) { // 需确保 contex
 
 
 
-#### save
+### save
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -308,16 +323,18 @@ save(option?: DocumentSaveOptions): Promise<Array&lt;string&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| option | DocumentSaveOptions | 否 | documentPicker保存选项。若无此参数，则拉起documentPicker界面后需用户自行输入保存的文件名。 |
+| option | DocumentSaveOptions | 否 | documentPicker保存选项，用于配置文件保存的参数（如保存文件名、默认保存路径、文件后缀等）。若无此参数，则拉起documentPicker界面后需用户自行输入保存的文件名。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise<Array&lt;string&gt;> | Promise对象。返回documentPicker保存后的结果集。 注意：此接口返回的URI数组的具体使用方式参见用户文件URI介绍中的文档类uri的使用方式。 |
+| Promise<Array&lt;string&gt;> | Promise对象。返回documentPicker保存后的结果集。调用失败时，reject抛出BusinessError错误信息。 注意：此接口返回的URI数组的具体使用方式参见用户文件URI介绍中的文档类URI的使用方式。 |
 
 
 **示例：**
@@ -325,7 +342,7 @@ save(option?: DocumentSaveOptions): Promise<Array&lt;string&gt;>
 ```json
 import { BusinessError } from '@kit.BasicServicesKit';
 import { common } from '@kit.AbilityKit';
-import  { picker } from '@kit.CoreFileKit';
+import { picker } from '@kit.CoreFileKit';
 async function example10(context: common.UIAbilityContext) { // 需确保 context 由 UIAbilityContext 转换而来
   try {
     let documentSaveOptions = new picker.DocumentSaveOptions();
@@ -345,7 +362,8 @@ async function example10(context: common.UIAbilityContext) { // 需确保 contex
 
 
 
-#### save
+### save
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -359,10 +377,11 @@ save(option: DocumentSaveOptions, callback: AsyncCallback<Array&lt;string&gt;>):
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| option | DocumentSaveOptions | 是 | documentPicker保存选项。 |
-| callback | AsyncCallback<Array&lt;string&gt;> | 是 | callback 返回documentPicker保存后的结果集。 注意：此接口返回的URI数组的具体使用方式参见用户文件URI介绍中的文档类uri的使用方式。 |
+| option | DocumentSaveOptions | 是 | documentPicker保存选项，用于配置文件保存的参数（如保存文件名、默认保存路径、文件后缀等）。 |
+| callback | AsyncCallback<Array&lt;string&gt;> | 是 | callback 返回documentPicker保存后的结果集。 注意：此接口返回的URI数组的具体使用方式参见用户文件URI介绍中的文档类URI的使用方式。 |
 
 
 **示例：**
@@ -370,7 +389,7 @@ save(option: DocumentSaveOptions, callback: AsyncCallback<Array&lt;string&gt;>):
 ```json
 import { BusinessError } from '@kit.BasicServicesKit';
 import { common } from '@kit.AbilityKit';
-import  { picker } from '@kit.CoreFileKit';
+import { picker } from '@kit.CoreFileKit';
 async function example11(context: common.UIAbilityContext) { // 需确保 context 由 UIAbilityContext 转换而来
   try {
     let documentSaveOptions = new picker.DocumentSaveOptions();
@@ -392,7 +411,8 @@ async function example11(context: common.UIAbilityContext) { // 需确保 contex
 
 
 
-#### save
+### save
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -406,9 +426,10 @@ save(callback: AsyncCallback<Array&lt;string&gt;>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback<Array&lt;string&gt;> | 是 | callback 返回documentPicker保存后的结果集。 注意：此接口返回的URI数组的具体使用方式参见用户文件URI介绍中的文档类uri的使用方式。 |
+| callback | AsyncCallback<Array&lt;string&gt;> | 是 | callback 返回documentPicker保存后的结果集。 注意：此接口返回的URI数组的具体使用方式参见用户文件URI介绍中的文档类URI的使用方式。 |
 
 
 **示例：**
@@ -416,7 +437,7 @@ save(callback: AsyncCallback<Array&lt;string&gt;>): void
 ```json
 import { BusinessError } from '@kit.BasicServicesKit';
 import { common } from '@kit.AbilityKit';
-import  { picker } from '@kit.CoreFileKit';
+import { picker } from '@kit.CoreFileKit';
 async function example12(context: common.UIAbilityContext) { // 需确保 context 由 UIAbilityContext 转换而来
   try {
     let documentPicker = new picker.DocumentViewPicker(context);
@@ -436,19 +457,20 @@ async function example12(context: common.UIAbilityContext) { // 需确保 contex
 
 
 
-#### getSelectedIndex14+
+### getSelectedIndex14+
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** PC/2in1 | Tablet
 
 getSelectedIndex(): number
 
 获取保存成功后的文件后缀类型的下标。
 
-该方法只在调用 [save()](#save)时使用生效，其他场景下不适用。
+该方法仅在调用[save()](#save)时生效，其他场景下不适用。
 
 该方法需要配置参数[DocumentSaveOptions.fileSuffixChoices](#documentsaveoptions)。
 
-该方法返回的是所选后缀类型的下标(number)。所选的后缀类型是开发者所传的参数[DocumentSaveOptions.fileSuffixChoices](#documentsaveoptions)里的某个后缀类型。如果没有传参，并且调用了getSelectedIndex()方法，返回值为-1。
+该方法返回的是所选后缀类型的下标（number）。所选的后缀类型是开发者所传的参数[DocumentSaveOptions.fileSuffixChoices](#documentsaveoptions)里的某个后缀类型。如果没有传参，并且调用了getSelectedIndex()方法，返回值为-1。使用返回值作为数组下标前，需先判断返回值是否大于等于0，避免数组越界。
 
 **元服务API**：从API version 14开始，该接口支持在元服务中使用。
 
@@ -456,15 +478,16 @@ getSelectedIndex(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| number | 返回所选后缀类型在DocumentSaveOptions.fileSuffixChoices里的下标(number)。默认返回-1。 |
+| number | 返回所选后缀类型在DocumentSaveOptions.fileSuffixChoices里的下标（number）。默认返回-1。 |
 
 
 ```json
 import { BusinessError } from '@kit.BasicServicesKit';
 import { common } from '@kit.AbilityKit';
-import  { picker } from '@kit.CoreFileKit';
+import { picker } from '@kit.CoreFileKit';
 async function exampleIndex(context: common.UIAbilityContext) { // 需确保 context 由 UIAbilityContext 转换而来
   try {
     let documentSaveOptions = new picker.DocumentSaveOptions();
@@ -478,8 +501,8 @@ async function exampleIndex(context: common.UIAbilityContext) { // 需确保 con
         // 获取保存文件的后缀类型的下标
         let index = documentPicker.getSelectedIndex();
         // 获取保存文件的后缀类型。
-        let selectedsuffix = documentSaveOptions.fileSuffixChoices[index];
-        console.info ('DocumentViewPicker.save selectedsuffix is ' + selectedsuffix);
+        let selectedSuffix = documentSaveOptions.fileSuffixChoices[index];
+        console.info('DocumentViewPicker.save selectedSuffix is ' + selectedSuffix);
       }
       console.info('DocumentViewPicker.save successfully, documentSaveResult uri: ' + JSON.stringify(documentSaveResult));
     }).catch((err: BusinessError) => {
@@ -494,7 +517,8 @@ async function exampleIndex(context: common.UIAbilityContext) { // 需确保 con
 
 
 
-#### AudioViewPicker
+## AudioViewPicker
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -504,7 +528,8 @@ async function exampleIndex(context: common.UIAbilityContext) { // 需确保 con
 
 
 
-#### constructor12+
+### constructor12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -518,6 +543,7 @@ constructor(context: Context)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文（仅支持UIAbilityContext）。Stage模型的应用Context定义见Context。 |
@@ -527,7 +553,7 @@ constructor(context: Context)
 
 ```text
 import { common } from '@kit.AbilityKit';
-import  { picker } from '@kit.CoreFileKit';
+import { picker } from '@kit.CoreFileKit';
 @Entry
 @Component
 struct Index {
@@ -539,7 +565,7 @@ struct Index {
         Text(this.message)
           .fontSize(50)
           .fontWeight(FontWeight.Bold)
-          .onClick(()=>{
+          .onClick(() => {
             let context = this.getUIContext().getHostContext() as common.UIAbilityContext; // 请确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
             let audioPicker = new picker.AudioViewPicker(context);
           })
@@ -553,7 +579,8 @@ struct Index {
 
 
 
-#### constructor12+
+### constructor12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -573,7 +600,8 @@ let audioPicker = new picker.AudioViewPicker(); // 不推荐使用无参构造�
 
 
 
-#### select
+### select
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -587,16 +615,18 @@ select(option?: AudioSelectOptions): Promise<Array&lt;string&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| option | AudioSelectOptions | 否 | audioPicker音频选择选项。若无此参数，则默认拉起audioPicker主界面。 |
+| option | AudioSelectOptions | 否 | audioPicker音频选择选项，用于配置音频文件选择的参数（如选择文件的最大数量等）。若无此参数，则默认拉起audioPicker主界面。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise<Array&lt;string&gt;> | Promise对象。返回audioPicker选择音频后的结果集。 注意： 此接口返回的URI数组的具体使用方式参见用户文件URI介绍中的媒体类uri的使用方式。 |
+| Promise<Array&lt;string&gt;> | Promise对象。返回audioPicker选择音频后的结果集。调用失败时，reject抛出BusinessError错误信息。 注意： 此接口返回的URI数组的具体使用方式参见用户文件URI介绍中的媒体文件URI的使用方式。 |
 
 
 **示例：**
@@ -604,7 +634,7 @@ select(option?: AudioSelectOptions): Promise<Array&lt;string&gt;>
 ```json
 import { BusinessError } from '@kit.BasicServicesKit';
 import { common } from '@kit.AbilityKit';
-import  { picker } from '@kit.CoreFileKit';
+import { picker } from '@kit.CoreFileKit';
 async function example13(context: common.UIAbilityContext) { // 需确保 context 由 UIAbilityContext 转换而来
   try {
     let audioSelectOptions = new picker.AudioSelectOptions();
@@ -623,7 +653,8 @@ async function example13(context: common.UIAbilityContext) { // 需确保 contex
 
 
 
-#### select
+### select
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -635,10 +666,11 @@ select(option: AudioSelectOptions, callback: AsyncCallback<Array&lt;string&gt;>)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| option | AudioSelectOptions | 是 | audioPicker音频选择选项。 |
-| callback | AsyncCallback<Array&lt;string&gt;> | 是 | callback 返回audioPicker选择音频后的结果集。 注意： 此接口返回的URI数组的具体使用方式参见用户文件URI介绍中的媒体类uri的使用方式。 |
+| option | AudioSelectOptions | 是 | audioPicker音频选择选项，用于配置音频文件选择的参数（如选择文件的最大数量等）。 |
+| callback | AsyncCallback<Array&lt;string&gt;> | 是 | callback 返回audioPicker选择音频后的结果集。 注意： 此接口返回的URI数组的具体使用方式参见用户文件URI介绍中的媒体文件URI的使用方式。 |
 
 
 **示例：**
@@ -646,7 +678,7 @@ select(option: AudioSelectOptions, callback: AsyncCallback<Array&lt;string&gt;>)
 ```json
 import { BusinessError } from '@kit.BasicServicesKit';
 import { common } from '@kit.AbilityKit';
-import  { picker } from '@kit.CoreFileKit';
+import { picker } from '@kit.CoreFileKit';
 async function example14(context: common.UIAbilityContext) { // 需确保 context 由 UIAbilityContext 转换而来
   try {
     let audioSelectOptions = new picker.AudioSelectOptions();
@@ -667,7 +699,8 @@ async function example14(context: common.UIAbilityContext) { // 需确保 contex
 
 
 
-#### select
+### select
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -679,9 +712,10 @@ select(callback: AsyncCallback<Array&lt;string&gt;>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback<Array&lt;string&gt;> | 是 | callback 返回audioPicker选择音频后的结果集。 注意： 此接口返回的URI数组的具体使用方式参见用户文件URI介绍中的媒体类uri的使用方式。 |
+| callback | AsyncCallback<Array&lt;string&gt;> | 是 | callback 返回audioPicker选择音频后的结果集。 注意： 此接口返回的URI数组的具体使用方式参见用户文件URI介绍中的媒体文件URI的使用方式。 |
 
 
 **示例：**
@@ -689,7 +723,7 @@ select(callback: AsyncCallback<Array&lt;string&gt;>): void
 ```json
 import { BusinessError } from '@kit.BasicServicesKit';
 import { common } from '@kit.AbilityKit';
-import  { picker } from '@kit.CoreFileKit';
+import { picker } from '@kit.CoreFileKit';
 async function example15(context: common.UIAbilityContext) { // 需确保 context 由 UIAbilityContext 转换而来
   try {
     let audioPicker = new picker.AudioViewPicker(context);
@@ -709,7 +743,8 @@ async function example15(context: common.UIAbilityContext) { // 需确保 contex
 
 
 
-#### save
+### save
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -723,6 +758,7 @@ save(option?: AudioSaveOptions): Promise<Array&lt;string&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | option | AudioSaveOptions | 否 | audioPicker保存音频文件选项。若无此参数，则拉起audioPicker界面后需用户自行输入保存的文件名。 |
@@ -730,9 +766,10 @@ save(option?: AudioSaveOptions): Promise<Array&lt;string&gt;>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise<Array&lt;string&gt;> | Promise对象。返回audioPicker保存音频文件后的结果集。 注意： 此接口返回的URI数组的具体使用方式参见用户文件URI介绍中的文档类uri的使用方式。 |
+| Promise<Array&lt;string&gt;> | Promise对象。返回audioPicker保存音频文件后的结果集。调用失败时，reject抛出BusinessError错误信息。 注意： 此接口返回的URI数组的具体使用方式参见用户文件URI介绍中的文档类URI的使用方式。 |
 
 
 **示例：**
@@ -740,14 +777,14 @@ save(option?: AudioSaveOptions): Promise<Array&lt;string&gt;>
 ```json
 import { BusinessError } from '@kit.BasicServicesKit';
 import { common } from '@kit.AbilityKit';
-import  { picker } from '@kit.CoreFileKit';
+import { picker } from '@kit.CoreFileKit';
 async function example16(context: common.UIAbilityContext) { // 需确保 context 由 UIAbilityContext 转换而来
   try {
     let audioSaveOptions = new picker.AudioSaveOptions();
     audioSaveOptions.newFileNames = ['AudioViewPicker01.mp3'];
     let audioPicker = new picker.AudioViewPicker(context);
     audioPicker.save(audioSaveOptions).then((audioSaveResult: Array<string>) => {
-      console.info('AudioViewPicker.save successfully, audioSaveResult uri: ' + JSON.stringify(audioSaveResult))
+      console.info('AudioViewPicker.save successfully, audioSaveResult uri: ' + JSON.stringify(audioSaveResult));
     }).catch((err: BusinessError) => {
       console.error(`AudioViewPicker.save failed with err, code is: ${err.code}, message is: ${err.message}`);
     });
@@ -760,7 +797,8 @@ async function example16(context: common.UIAbilityContext) { // 需确保 contex
 
 
 
-#### save
+### save
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -772,10 +810,11 @@ save(option: AudioSaveOptions, callback: AsyncCallback<Array&lt;string&gt;>): vo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| option | AudioSaveOptions | 是 | audioPicker保存音频文件选项。 |
-| callback | AsyncCallback<Array&lt;string&gt;> | 是 | callback 返回audioPicker保存音频文件后的结果集。 注意： 此接口返回的URI数组的具体使用方式参见用户文件URI介绍中的文档类uri的使用方式。 |
+| option | AudioSaveOptions | 是 | audioPicker保存音频文件选项，用于配置音频文件保存的参数（如保存文件名等）。 |
+| callback | AsyncCallback<Array&lt;string&gt;> | 是 | callback 返回audioPicker保存音频文件后的结果集。 注意： 此接口返回的URI数组的具体使用方式参见用户文件URI介绍中的文档类URI的使用方式。 |
 
 
 **示例：**
@@ -783,7 +822,7 @@ save(option: AudioSaveOptions, callback: AsyncCallback<Array&lt;string&gt;>): vo
 ```json
 import { BusinessError } from '@kit.BasicServicesKit';
 import { common } from '@kit.AbilityKit';
-import  { picker } from '@kit.CoreFileKit';
+import { picker } from '@kit.CoreFileKit';
 async function example17(context: common.UIAbilityContext) { // 需确保 context 由 UIAbilityContext 转换而来
   try {
     let audioSaveOptions = new picker.AudioSaveOptions();
@@ -805,7 +844,8 @@ async function example17(context: common.UIAbilityContext) { // 需确保 contex
 
 
 
-#### save
+### save
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -817,9 +857,10 @@ save(callback: AsyncCallback<Array&lt;string&gt;>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback<Array&lt;string&gt;> | 是 | callback 返回audioPicker保存音频文件后的结果集。 注意： 此接口返回的URI数组的具体使用方式参见用户文件URI介绍中的文档类uri的使用方式。 |
+| callback | AsyncCallback<Array&lt;string&gt;> | 是 | callback 返回audioPicker保存音频文件后的结果集。 注意： 此接口返回的URI数组的具体使用方式参见用户文件URI介绍中的文档类URI的使用方式。 |
 
 
 **示例：**
@@ -827,7 +868,7 @@ save(callback: AsyncCallback<Array&lt;string&gt;>): void
 ```json
 import { BusinessError } from '@kit.BasicServicesKit';
 import { common } from '@kit.AbilityKit';
-import  { picker } from '@kit.CoreFileKit';
+import { picker } from '@kit.CoreFileKit';
 async function example18(context: common.UIAbilityContext) { // 需确保 context 由 UIAbilityContext 转换而来
   try {
     let audioPicker = new picker.AudioViewPicker(context);
@@ -840,22 +881,24 @@ async function example18(context: common.UIAbilityContext) { // 需确保 contex
     });
   } catch (error) {
     let err: BusinessError = error as BusinessError;
-        console.error(`AudioViewPicker failed with err, code is: ${err.code}, message is: ${err.message}`);
+    console.error(`AudioViewPicker failed with err, code is: ${err.code}, message is: ${err.message}`);
   }
 }
 ```
 
 
 
-#### DocumentSelectMode11+
+## DocumentSelectMode11+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
-枚举，picker选择的文档类型。
+枚举，Picker选择的文档类型。
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.FileManagement.UserFileService.FolderSelection
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -866,11 +909,13 @@ async function example18(context: common.UIAbilityContext) { // 需确保 contex
 
 
 
-#### DocumentSelectOptions
+## DocumentSelectOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 文档选择选项。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -881,34 +926,37 @@ async function example18(context: common.UIAbilityContext) { // 需确保 contex
 | authMode12+ | boolean | 否 | 是 | 拉起授权Picker，默认为false（非授权模式）。当authMode为true时为授权模式，defaultFilePathUri必填，表明待授权URI。 设备行为差异：该参数在2in1设备中可正常使用，在其他设备中无效果。 元服务API：从API version 12开始，该接口支持在元服务中使用。 系统能力：SystemCapability.FileManagement.UserFileService.FolderSelection |
 | multiAuthMode15+ | boolean | 否 | 是 | 支持批量授权模式，默认为false（非批量授权模式）。当multiAuthMode为true时为批量授权模式。当multiAuthMode为true时，只有multiUriArray参数生效，其他参数不生效。 设备行为差异：该参数在Phone设备中可正常使用，在其他设备中无效果。 元服务API：从API version 15开始，该接口支持在元服务中使用。 系统能力：SystemCapability.FileManagement.UserFileService |
 | multiUriArray15+ | Array&lt;string&gt; | 否 | 是 | 传入需要批量授权的URI数组（仅支持文件，文件夹不生效）。配合multiAuthMode使用。当multiAuthMode为false时，配置该参数不生效。默认为空（效果为拉起批量授权页面后展示的文件为空）。 设备行为差异：该参数在Phone设备中可正常使用，在其他设备中无效果。 元服务API：从API version 15开始，该接口支持在元服务中使用。 系统能力：SystemCapability.FileManagement.UserFileService |
-| mergeMode15+ | MergeTypeMode | 否 | 是 | 开启聚合视图模式，支持拉起文件管理应用的聚合视图。默认为DEFAULT，表示该参数不生效，非聚合视图。当该参数置为非DEFAULT时，其他参数不生效。 API版本26.0.0及之后的版本当该参数置为非DEFAULT时，仅fileSuffixFilters参数生效，其他参数不生效。 设备行为差异：该参数在Phone设备中可正常使用，在其他设备中无效果。 元服务API：从API version 15开始，该接口支持在元服务中使用。 系统能力：SystemCapability.FileManagement.UserFileService |
+| mergeMode15+ | MergeTypeMode | 否 | 是 | 开启聚合视图模式，支持拉起文件管理应用的聚合视图。默认为DEFAULT，表示该参数不生效，非聚合视图。当该参数置为非DEFAULT时，其他参数不生效。 API版本26.0.0及之后的版本当该参数置为非DEFAULT时，仅fileSuffixFilters参数生效，其他参数不生效。该参数不推荐与multiAuthMode一起使用。 设备行为差异：该参数在Phone设备中可正常使用，在其他设备中无效果。 元服务API：从API version 15开始，该接口支持在元服务中使用。 系统能力：SystemCapability.FileManagement.UserFileService |
 | isEncryptionSupported19+ | boolean | 否 | 是 | 是否支持加密（仅支持文件，文件夹不生效），默认为false。该参数为true时，在Picker界面可以选择对文件进行加密。 元服务API：从API version 19开始，该接口支持在元服务中使用。 系统能力：SystemCapability.FileManagement.UserFileService |
 | allowsMulFolderSelection | boolean | 否 | 是 | 是否支持多选文件夹。true表示支持，false表示不支持，默认值为false。 该参数需要与selectMode配合使用，当selectMode为FOLDER或者MIXED，并且allowsMulFolderSelection为true，多选文件夹功能生效。 起始版本：26.0.0 元服务API：从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束：此接口仅可在Stage模型下使用。 系统能力：SystemCapability.FileManagement.UserFileService.FolderSelection |
 
 
 
 
-#### DocumentPickerMode12+
+## DocumentPickerMode12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-枚举，picker保存的模式。
+枚举，Picker保存的模式。
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.FileManagement.UserFileService
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| DEFAULT | 0 | 标准模式。 |
-| DOWNLOAD | 1 | 下载模式。 注意： DOWNLOAD模式创建的目录仅用于保存文件，目录之间无访问隔离，不建议保存应用敏感数据。 |
+| DEFAULT | 0 | 标准模式，适用于常规文件保存场景。用户可通过配置newFileNames、defaultFilePathUri和fileSuffixChoices等参数自定义保存行为。 |
+| DOWNLOAD | 1 | 下载模式，适用于文件下载等场景的简化保存流程，用户无需指定文件名和后缀即可完成保存。 注意： DOWNLOAD模式创建的目录仅用于保存文件，目录之间无访问隔离，不建议保存应用敏感数据。 |
 
 
 
 
-#### MergeTypeMode15+
+## MergeTypeMode15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone
 
 枚举，文件聚合类型。
 
@@ -918,22 +966,25 @@ async function example18(context: common.UIAbilityContext) { // 需确保 contex
 
 **设备行为差异**：该接口在Phone设备中可正常调用，在其他设备中无效果。
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DEFAULT | 0 | 默认模式，表示该参数不生效。 |
-| AUDIO | 1 | 音频文件模式。 |
-| VIDEO | 2 | 视频文件模式。 |
-| DOCUMENT | 3 | 文档文件模式。 |
-| PICTURE | 4 | 图片文件模式。 |
+| AUDIO | 1 | 音频文件模式，聚合视图按音频文件类型展示。 |
+| VIDEO | 2 | 视频文件模式，聚合视图按视频文件类型展示。 |
+| DOCUMENT | 3 | 文档文件模式，聚合视图按文档文件类型展示。 |
+| PICTURE | 4 | 图片文件模式，聚合视图按图片文件类型展示。 |
 
 
 
 
-#### DocumentSaveOptions
+## DocumentSaveOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 文档保存选项。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -946,7 +997,8 @@ async function example18(context: common.UIAbilityContext) { // 需确保 contex
 
 
 
-#### AudioSelectOptions
+## AudioSelectOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -956,6 +1008,7 @@ async function example18(context: common.UIAbilityContext) { // 需确保 contex
 
 **系统能力**：SystemCapability.FileManagement.UserFileService
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | maxSelectNumber12+ | number | 否 | 是 | 选择文件最大个数，默认值为1，上限为500个，有效值范围1-500。 |
@@ -963,7 +1016,8 @@ async function example18(context: common.UIAbilityContext) { // 需确保 contex
 
 
 
-#### AudioSaveOptions
+## AudioSaveOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -973,6 +1027,7 @@ async function example18(context: common.UIAbilityContext) { // 需确保 contex
 
 **系统能力**：SystemCapability.FileManagement.UserFileService
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | newFileNames | Array&lt;string&gt; | 否 | 是 | 拉起audioPicker进行保存音频资源的文件名。若无此参数，则默认需要用户自行输入。 |
@@ -980,7 +1035,8 @@ async function example18(context: common.UIAbilityContext) { // 需确保 contex
 
 
 
-#### PhotoViewPicker(deprecated)
+## PhotoViewPicker(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -994,7 +1050,8 @@ async function example18(context: common.UIAbilityContext) { // 需确保 contex
 
 
 
-#### constructor(deprecated)
+### constructor(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1003,6 +1060,7 @@ constructor(context: Context)
 **系统能力**：SystemCapability.FileManagement.UserFileService
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1019,7 +1077,7 @@ constructor(context: Context)
 
 ```text
 import { common } from '@kit.AbilityKit';
-import  { picker } from '@kit.CoreFileKit';
+import { picker } from '@kit.CoreFileKit';
 @Entry
 @Component
 struct Index {
@@ -1031,7 +1089,7 @@ struct Index {
         Text(this.message)
           .fontSize(50)
           .fontWeight(FontWeight.Bold)
-          .onClick(()=>{
+          .onClick(() => {
             let context = this.getUIContext().getHostContext() as common.UIAbilityContext; // 请确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
             let photoPicker = new picker.PhotoViewPicker(context);
           })
@@ -1045,7 +1103,8 @@ struct Index {
 
 
 
-#### constructor(deprecated)
+### constructor(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1069,7 +1128,8 @@ let photoPicker = new picker.PhotoViewPicker(); // 不推荐使用无参构造�
 
 
 
-#### select(deprecated)
+### select(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1087,16 +1147,18 @@ select(option?: PhotoSelectOptions): Promise&lt;PhotoSelectResult&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| option | PhotoSelectOptions | 否 | photoPicker选择选项。若无此参数，则默认选择媒体文件类型为图片和视频类型。选择媒体文件数量的默认最大值为50。 |
+| option | PhotoSelectOptions | 否 | photoPicker选择选项，用于配置图片/视频选择的参数（如媒体文件类型、选择数量上限等）。若无此参数，则默认选择媒体文件类型为图片和视频类型。选择媒体文件数量的默认最大值为50。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;PhotoSelectResult&gt; | Promise对象。返回photoPicker选择后的结果集。 注意：此接口返回的PhotoSelectResult对象中的photoUris只能通过临时授权的方式调用接口photoAccessHelper.getAssets去使用，具体使用方式参见用户文件URI介绍中的媒体文件URI的使用方式。 |
+| Promise&lt;PhotoSelectResult&gt; | Promise对象。返回photoPicker选择后的结果集。调用失败时，reject抛出BusinessError错误信息。 注意：此接口返回的PhotoSelectResult对象中的photoUris只能通过临时授权的方式调用接口photoAccessHelper.getAssets去使用，具体使用方式参见用户文件URI介绍中的媒体文件URI的使用方式。 |
 
 
 **示例：**
@@ -1104,7 +1166,7 @@ select(option?: PhotoSelectOptions): Promise&lt;PhotoSelectResult&gt;
 ```json
 import { BusinessError } from '@kit.BasicServicesKit';
 import { common } from '@kit.AbilityKit';
-import  { picker } from '@kit.CoreFileKit';
+import { picker } from '@kit.CoreFileKit';
 async function example01(context: common.UIAbilityContext) { // 需确保 context 由 UIAbilityContext 转换而来
   try {
     let photoSelectOptions = new picker.PhotoSelectOptions();
@@ -1114,18 +1176,19 @@ async function example01(context: common.UIAbilityContext) { // 需确保 contex
     photoPicker.select(photoSelectOptions).then((photoSelectResult: picker.PhotoSelectResult) => {
       console.info('PhotoViewPicker.select successfully, photoSelectResult uri: ' + JSON.stringify(photoSelectResult));
     }).catch((err: BusinessError) => {
-      console.error('PhotoViewPicker.select failed with err: ' + JSON.stringify(err));
+      console.error(`PhotoViewPicker.select failed with err, code is: ${err.code}, message is: ${err.message}`);
     });
   } catch (error) {
     let err: BusinessError = error as BusinessError;
-    console.error('PhotoViewPicker failed with err: ' + JSON.stringify(err));
+    console.error(`PhotoViewPicker failed with err, code is: ${err.code}, message is: ${err.message}`);
   }
 }
 ```
 
 
 
-#### select(deprecated)
+### select(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1143,10 +1206,11 @@ select(option: PhotoSelectOptions, callback: AsyncCallback&lt;PhotoSelectResult&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| option | PhotoSelectOptions | 是 | photoPicker选择选项。 |
-| callback | AsyncCallback&lt;PhotoSelectResult&gt; | 是 | callback返回photoPicker选择后的结果集。 注意：此接口返回的PhotoSelectResult对象中的photoUris只能通过临时授权的方式调用接口photoAccessHelper.getAssets去使用，具体使用方式参见用户文件URI介绍中的媒体文件URI的使用方式。 |
+| option | PhotoSelectOptions | 是 | photoPicker选择选项，用于配置图片/视频选择的参数（如媒体文件类型、选择数量上限等）。 |
+| callback | AsyncCallback&lt;PhotoSelectResult&gt; | 是 | callback 返回photoPicker选择后的结果集。 注意：此接口返回的PhotoSelectResult对象中的photoUris只能通过临时授权的方式调用接口photoAccessHelper.getAssets去使用，具体使用方式参见用户文件URI介绍中的媒体文件URI的使用方式。 |
 
 
 **示例：**
@@ -1154,7 +1218,7 @@ select(option: PhotoSelectOptions, callback: AsyncCallback&lt;PhotoSelectResult&
 ```json
 import { BusinessError } from '@kit.BasicServicesKit';
 import { common } from '@kit.AbilityKit';
-import  { picker } from '@kit.CoreFileKit';
+import { picker } from '@kit.CoreFileKit';
 async function example02(context: common.UIAbilityContext) { // 需确保 context 由 UIAbilityContext 转换而来
   try {
     let photoSelectOptions = new picker.PhotoSelectOptions();
@@ -1163,21 +1227,22 @@ async function example02(context: common.UIAbilityContext) { // 需确保 contex
     let photoPicker = new picker.PhotoViewPicker(context);
     photoPicker.select(photoSelectOptions, (err: BusinessError, photoSelectResult: picker.PhotoSelectResult) => {
       if (err) {
-        console.error('PhotoViewPicker.select failed with err: ' + JSON.stringify(err));
+        console.error(`PhotoViewPicker.select failed with err, code is: ${err.code}, message is: ${err.message}`);
         return;
       }
       console.info('PhotoViewPicker.select successfully, photoSelectResult uri: ' + JSON.stringify(photoSelectResult));
     });
   } catch (error) {
     let err: BusinessError = error as BusinessError;
-    console.error('PhotoViewPicker failed with err: ' + JSON.stringify(err));
+    console.error(`PhotoViewPicker failed with err, code is: ${err.code}, message is: ${err.message}`);
   }
 }
 ```
 
 
 
-#### select(deprecated)
+### select(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1195,9 +1260,10 @@ select(callback: AsyncCallback&lt;PhotoSelectResult&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback&lt;PhotoSelectResult&gt; | 是 | callback返回photoPicker选择后的结果集。 注意：此接口返回的PhotoSelectResult对象中的photoUris只能通过临时授权的方式调用接口photoAccessHelper.getAssets去使用，具体使用方式参见用户文件URI介绍中的媒体文件URI的使用方式。 |
+| callback | AsyncCallback&lt;PhotoSelectResult&gt; | 是 | callback 返回photoPicker选择后的结果集。 注意：此接口返回的PhotoSelectResult对象中的photoUris只能通过临时授权的方式调用接口photoAccessHelper.getAssets去使用，具体使用方式参见用户文件URI介绍中的媒体文件URI的使用方式。 |
 
 
 **示例：**
@@ -1205,27 +1271,28 @@ select(callback: AsyncCallback&lt;PhotoSelectResult&gt;): void
 ```json
 import { BusinessError } from '@kit.BasicServicesKit';
 import { common } from '@kit.AbilityKit';
-import  { picker } from '@kit.CoreFileKit';
+import { picker } from '@kit.CoreFileKit';
 async function example03(context: common.UIAbilityContext) { // 需确保 context 由 UIAbilityContext 转换而来
   try {
     let photoPicker = new picker.PhotoViewPicker(context);
     photoPicker.select((err: BusinessError, photoSelectResult: picker.PhotoSelectResult) => {
       if (err) {
-        console.error('PhotoViewPicker.select failed with err: ' + JSON.stringify(err));
+        console.error(`PhotoViewPicker.select failed with err, code is: ${err.code}, message is: ${err.message}`);
         return;
       }
       console.info('PhotoViewPicker.select successfully, photoSelectResult uri: ' + JSON.stringify(photoSelectResult));
     });
   } catch (error) {
     let err: BusinessError = error as BusinessError;
-    console.error('PhotoViewPicker failed with err: ' + JSON.stringify(err));
+    console.error(`PhotoViewPicker failed with err, code is: ${err.code}, message is: ${err.message}`);
   }
 }
 ```
 
 
 
-#### save(deprecated)
+### save(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1241,16 +1308,18 @@ save(option?: PhotoSaveOptions): Promise<Array&lt;string&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| option | PhotoSaveOptions | 否 | photoPicker保存图片或视频文件选项。若无此参数，则拉起photoPicker界面后需用户自行输入保存的文件名。 |
+| option | PhotoSaveOptions | 否 | photoPicker保存图片或视频文件选项，用于配置图片/视频保存的参数（如保存文件名等）。若无此参数，则拉起photoPicker界面后需用户自行输入保存的文件名。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise<Array&lt;string&gt;> | Promise对象。返回photoPicker保存图片或视频文件后的结果集。 注意：此接口会将文件保存在文件管理器，而不是图库。返回的uri数组的具体使用方式参见用户文件uri介绍中的文档类uri的使用方式。 |
+| Promise<Array&lt;string&gt;> | Promise对象。返回photoPicker保存图片或视频文件后的结果集。调用失败时，reject抛出BusinessError错误信息。 注意：此接口会将文件保存在文件管理器，而不是图库。返回的URI数组的具体使用方式参见用户文件URI介绍中的文档类URI的使用方式。 |
 
 
 **示例：**
@@ -1258,7 +1327,7 @@ save(option?: PhotoSaveOptions): Promise<Array&lt;string&gt;>
 ```json
 import { BusinessError } from '@kit.BasicServicesKit';
 import { common } from '@kit.AbilityKit';
-import  { picker } from '@kit.CoreFileKit';
+import { picker } from '@kit.CoreFileKit';
 async function example04(context: common.UIAbilityContext) { // 需确保 context 由 UIAbilityContext 转换而来
   try {
     let photoSaveOptions = new picker.PhotoSaveOptions();
@@ -1267,18 +1336,19 @@ async function example04(context: common.UIAbilityContext) { // 需确保 contex
     photoPicker.save(photoSaveOptions).then((photoSaveResult: Array<string>) => {
       console.info('PhotoViewPicker.save successfully, photoSaveResult uri: ' + JSON.stringify(photoSaveResult));
     }).catch((err: BusinessError) => {
-      console.error('PhotoViewPicker.save failed with err: ' + JSON.stringify(err));
+      console.error(`PhotoViewPicker.save failed with err, code is: ${err.code}, message is: ${err.message}`);
     });
   } catch (error) {
     let err: BusinessError = error as BusinessError;
-      console.error('PhotoViewPicker failed with err: ' + JSON.stringify(err));
+    console.error(`PhotoViewPicker failed with err, code is: ${err.code}, message is: ${err.message}`);
   }
 }
 ```
 
 
 
-#### save(deprecated)
+### save(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1294,10 +1364,11 @@ save(option: PhotoSaveOptions, callback: AsyncCallback<Array&lt;string&gt;>): vo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| option | PhotoSaveOptions | 是 | photoPicker保存图片或视频文件选项。 |
-| callback | AsyncCallback<Array&lt;string&gt;> | 是 | callback 返回photoPicker保存图片或视频文件后的结果集。 注意：此接口会将文件保存在文件管理器，而不是图库。返回的uri数组的具体使用方式参见用户文件uri介绍中的文档类uri的使用方式。 |
+| option | PhotoSaveOptions | 是 | photoPicker保存图片或视频文件选项，用于配置图片/视频保存的参数（如保存文件名等）。 |
+| callback | AsyncCallback<Array&lt;string&gt;> | 是 | callback 返回photoPicker保存图片或视频文件后的结果集。 注意：此接口会将文件保存在文件管理器，而不是图库。返回的URI数组的具体使用方式参见用户文件URI介绍中的文档类URI的使用方式。 |
 
 
 **示例：**
@@ -1305,29 +1376,30 @@ save(option: PhotoSaveOptions, callback: AsyncCallback<Array&lt;string&gt;>): vo
 ```json
 import { BusinessError } from '@kit.BasicServicesKit';
 import { common } from '@kit.AbilityKit';
-import  { picker } from '@kit.CoreFileKit';
+import { picker } from '@kit.CoreFileKit';
 async function example05(context: common.UIAbilityContext) { // 需确保 context 由 UIAbilityContext 转换而来
   try {
     let photoSaveOptions = new picker.PhotoSaveOptions();
-    photoSaveOptions.newFileNames = ['PhotoViewPicker02.jpg','PhotoViewPicker02.mp4'];
+    photoSaveOptions.newFileNames = ['PhotoViewPicker02.jpg', 'PhotoViewPicker02.mp4'];
     let photoPicker = new picker.PhotoViewPicker(context);
     photoPicker.save(photoSaveOptions, (err: BusinessError, photoSaveResult: Array<string>) => {
       if (err) {
-        console.error('PhotoViewPicker.save failed with err: ' + JSON.stringify(err));
+        console.error(`PhotoViewPicker.save failed with err, code is: ${err.code}, message is: ${err.message}`);
         return;
       }
       console.info('PhotoViewPicker.save successfully, photoSaveResult uri: ' + JSON.stringify(photoSaveResult));
     });
   } catch (error) {
     let err: BusinessError = error as BusinessError;
-    console.error('PhotoViewPicker failed with err: ' + JSON.stringify(err));
+    console.error(`PhotoViewPicker failed with err, code is: ${err.code}, message is: ${err.message}`);
   }
 }
 ```
 
 
 
-#### save(deprecated)
+### save(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1343,9 +1415,10 @@ save(callback: AsyncCallback<Array&lt;string&gt;>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback<Array&lt;string&gt;> | 是 | callback 返回photoPicker保存图片或视频文件后的结果集。 注意：此接口会将文件保存在文件管理器，而不是图库。返回的uri数组的具体使用方式参见用户文件uri介绍中的文档类uri的使用方式。 |
+| callback | AsyncCallback<Array&lt;string&gt;> | 是 | callback 返回photoPicker保存图片或视频文件后的结果集。 注意：此接口会将文件保存在文件管理器，而不是图库。返回的URI数组的具体使用方式参见用户文件URI介绍中的文档类URI的使用方式。 |
 
 
 **示例：**
@@ -1353,27 +1426,28 @@ save(callback: AsyncCallback<Array&lt;string&gt;>): void
 ```json
 import { BusinessError } from '@kit.BasicServicesKit';
 import { common } from '@kit.AbilityKit';
-import  { picker } from '@kit.CoreFileKit';
+import { picker } from '@kit.CoreFileKit';
 async function example06(context: common.UIAbilityContext) { // 需确保 context 由 UIAbilityContext 转换而来
   try {
     let photoPicker = new picker.PhotoViewPicker(context);
     photoPicker.save((err: BusinessError, photoSaveResult: Array<string>) => {
       if (err) {
-        console.error('PhotoViewPicker.save failed with err: ' + JSON.stringify(err));
+        console.error(`PhotoViewPicker.save failed with err, code is: ${err.code}, message is: ${err.message}`);
         return;
       }
       console.info('PhotoViewPicker.save successfully, photoSaveResult uri: ' + JSON.stringify(photoSaveResult));
     });
   } catch (error) {
     let err: BusinessError = error as BusinessError;
-    console.error('PhotoViewPicker failed with err: ' + JSON.stringify(err));
+    console.error(`PhotoViewPicker failed with err, code is: ${err.code}, message is: ${err.message}`);
   }
 }
 ```
 
 
 
-#### PhotoViewMIMETypes(deprecated)
+## PhotoViewMIMETypes(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1387,6 +1461,7 @@ async function example06(context: common.UIAbilityContext) { // 需确保 contex
 
 **系统能力**：SystemCapability.FileManagement.UserFileService
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | IMAGE_TYPE | 'image/*' | 图片类型。 说明：从API version 9开始支持，从API version 18开始废弃。 |
@@ -1396,7 +1471,8 @@ async function example06(context: common.UIAbilityContext) { // 需确保 contex
 
 
 
-#### PhotoSelectOptions(deprecated)
+## PhotoSelectOptions(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1410,15 +1486,17 @@ async function example06(context: common.UIAbilityContext) { // 需确保 contex
 
 **系统能力**：SystemCapability.FileManagement.UserFileService
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | MIMEType | PhotoViewMIMETypes | 否 | 是 | 可选择的媒体文件类型。若无此参数，则默认为图片和视频类型。 说明：从API version 9开始支持，从API version 18开始废弃。 |
-| maxSelectNumber | number | 否 | 是 | 选择媒体文件数量的最大值，默认值为50，最大值为500。 说明：从API version 9开始支持，从API version 18开始废弃。 |
+| maxSelectNumber | number | 否 | 是 | 选择媒体文件数量的最大值，默认值为50，有效值范围[1, 500]。超出该范围时，传入值不生效，使用默认值。 说明：从API version 9开始支持，从API version 18开始废弃。 |
 
 
 
 
-#### PhotoSelectResult(deprecated)
+## PhotoSelectResult(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1432,6 +1510,7 @@ async function example06(context: common.UIAbilityContext) { // 需确保 contex
 
 **系统能力**：SystemCapability.FileManagement.UserFileService
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | photoUris | Array&lt;string&gt; | 否 | 否 | 返回图库选择后的媒体文件的URI数组。此URI数组只能通过临时授权的方式调用接口photoAccessHelper.getAssets去使用，具体使用方式参见用户文件URI介绍中的媒体文件URI的使用方式。 说明：从API version 9开始支持，从API version 18开始废弃。 |
@@ -1440,7 +1519,8 @@ async function example06(context: common.UIAbilityContext) { // 需确保 contex
 
 
 
-#### PhotoSaveOptions(deprecated)
+## PhotoSaveOptions(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1451,6 +1531,7 @@ async function example06(context: common.UIAbilityContext) { // 需确保 contex
 
 
 **系统能力**：SystemCapability.FileManagement.UserFileService
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

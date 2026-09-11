@@ -117,14 +117,14 @@ export class NYWindowDialog {
 将模态弹窗更改为其它类型弹窗，通过创建子窗口的形式，实现弹窗效果，并实现侧滑返回效果：1. 修改EntryAbility页面配置。
 ```json
 onWindowStageCreate(windowStage: window.WindowStage): void {
-  // Main window is created, set main page for this ability
+  <em>// Main window is created, set main page for this ability</em>
   hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
   windowStage.loadContent('pages/PageA', (err) => {
     if (err.code) {
       hilog.error(DOMAIN, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err));
       return;
     }
-    AppStorage.setOrCreate('windowStage', windowStage); // 储存窗口
+    AppStorage.setOrCreate('windowStage', windowStage);<em> </em><em>// 储存窗口</em>
     hilog.info(DOMAIN, 'testTag', 'Succeeded in loading the content.');
   });
 }
@@ -132,9 +132,9 @@ onWindowStageCreate(windowStage: window.WindowStage): void {
 
 2. 主页创建并调用子窗口。
 ```ArkTS
-// PageA.ets页面
+<em>// PageA.ets</em><em>页面</em>
 import window from '@ohos.window';
-import * as subWin from './subWindow'; // 导入命名路由页面(子窗口)
+import * as subWin from './subWindow'; <em>// 导入命名路由页面(子窗口)</em>
 import { BusinessError } from '@kit.BasicServicesKit';
 
 @Entry
@@ -158,11 +158,11 @@ struct PageA {
                   return;
                 }
                 console.info('Succeeded in loading the content.');
-                // 设置子窗口左上角坐标
+              <em>  // 设置子窗口左上角坐标</em>
                 windowClass.moveWindowTo(0, 0);
-                // 展示子窗口
+               <em> // 展示子窗口</em>
                 windowClass.showWindow();
-                // 设置子窗口全屏化布局避让安全区
+              <em>  // 设置子窗口全屏化布局避让安全区</em>
                 windowClass.setWindowLayoutFullScreen(false);
               });
             } catch (exception) {
@@ -179,7 +179,7 @@ struct PageA {
 
 3. 自定义子窗口布局，并重写返回逻辑，侧滑销毁子窗口。
 ```ArkTS
-// subWindow.ets页面
+<em>// subWindow.ets</em><em>页面</em>
 import { window } from '@kit.ArkUI';
 
 export const entryName: string = 'subWindow';
@@ -190,7 +190,7 @@ export struct subWindow {
   @StorageProp('pageInfos') pageInfos: NavPathStack = new NavPathStack();
 
   onBackPress(): boolean | void {
-    // window.findWindow('mySubWindow').destroyWindow(); // 销毁子窗口
+    <em>// window.findWindow('mySubWindow').destroyWindow(); // </em><em>销毁子窗口</em>
   }
 
   build() {
@@ -209,7 +209,7 @@ export struct subWindow {
         });
       Button('点击关闭子窗口')
         .onClick(() => {
-          window.findWindow('mySubWindow').destroyWindow(); // 销毁子窗口
+          window.findWindow('mySubWindow').destroyWindow(); <em>// </em><em>销毁子窗口</em>
         });
     }
     .backgroundColor(Color.White)
@@ -221,7 +221,7 @@ export struct subWindow {
 
 4. 创建跳转测试页面。
 ```ArkTS
-// PageB.ets页面
+<em>// PageB.ets</em><em>页面</em>
 @Entry
 @Component
 struct pageB {

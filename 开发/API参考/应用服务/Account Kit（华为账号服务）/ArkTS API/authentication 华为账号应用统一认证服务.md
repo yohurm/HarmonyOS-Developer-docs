@@ -1,13 +1,14 @@
 # @hms.core.authentication (华为账号应用统一认证服务)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-api-authentication
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 模块概述
+## 模块概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 @hms.core.authentication模块提供华为账号应用统一认证能力，其中[登录华为账号](#登录华为账号)与[获取华为账号用户信息](#获取华为账号用户信息)为核心功能。
 
@@ -29,7 +30,10 @@ AuthenticationController：华为账号服务控制器类，负责接收并执�
 
 
 
-#### 基本概念
+### 基本概念
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
  - **OpenID**：应用维度用户标识符，是华为账号用户在应用/元服务的唯一标识。不同应用/元服务（不管是否在同一个开发者账号下）获取到用户的OpenID不同。OpenID严格区分大小写。
  - **UnionID**：开发者维度用户标识符，华为账号用户在同一开发者账号下的唯一标识。开发者有多个应用/元服务时，同一个开发者账号下的应用/元服务获取到用户的UnionID相同。UnionID严格区分大小写。
@@ -40,7 +44,10 @@ AuthenticationController：华为账号服务控制器类，负责接收并执�
 
 
 
-#### 登录华为账号
+### 登录华为账号
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 @hms.core.authentication模块提供安全、便捷的华为账号登录能力。
 
@@ -60,7 +67,10 @@ code = loginWithHuaweiIDCredential?.authorizationCode; // 由credential可解析
 
 
 
-#### 获取华为账号用户信息
+### 获取华为账号用户信息
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 @hms.core.authentication模块提供了华为账号授权与取消授权能力，用于获取华为账号头像昵称、风险等级、华为账号绑定的匿名手机号等用户信息，以及管理用户与应用的授权关系。
 
@@ -87,7 +97,10 @@ cancelAuthorizationResponse = controller.executeRequest(cancelAuthorizationReque
 
 
 
-#### 获取华为账号登录状态
+### 获取华为账号登录状态
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 @hms.core.authentication模块提供获取华为账号登录状态能力，用于判断当前系统是否已登录华为账号。 开发者获取用户标识（UnionID/OpenID）后，可通过该能力查询华为账号登录状态，不依赖网络连接。
 
@@ -100,7 +113,10 @@ cancelAuthorizationResponse = controller.executeRequest(cancelAuthorizationReque
 
 
 
-#### 获取手机号一致性状态
+### 获取手机号一致性状态
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 @hms.core.authentication模块提供手机号一致性状态校验能力，可校验应用通过[华为账号一键登录](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-phone-unionid-login)获取的手机号是否与华为账号绑定的手机号、本机SIM卡一致。当应用登录后需要进行高风险操作时，可通过该能力查询手机号一致性状态，从而进行相应的安全风控处理。
 
@@ -115,9 +131,10 @@ cancelAuthorizationResponse = controller.executeRequest(cancelAuthorizationReque
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { authentication } from '@kit.AccountKit';
@@ -125,9 +142,10 @@ import { authentication } from '@kit.AccountKit';
 
 
 
-#### HuaweiIDProvider
+## HuaweiIDProvider
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 HuaweiIDProvider为华为账号服务认证工厂类，主要负责创建华为账号登录（[LoginWithHuaweiIDRequest](#loginwithhuaweiidrequest)）、授权（[AuthorizationWithHuaweiIDRequest](#authorizationwithhuaweiidrequest)）、取消授权（[CancelAuthorizationRequest](#cancelauthorizationrequest)）请求对象。开发者可根据业务场景修改对象属性，之后通过[AuthenticationController](#authenticationcontroller)执行请求。
 
@@ -145,9 +163,10 @@ HuaweiIDProvider为华为账号服务认证工厂类，主要负责创建华为�
 
 
 
-#### createLoginWithHuaweiIDRequest
+### createLoginWithHuaweiIDRequest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createLoginWithHuaweiIDRequest(): LoginWithHuaweiIDRequest
 
@@ -165,6 +184,7 @@ createLoginWithHuaweiIDRequest(): LoginWithHuaweiIDRequest
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | LoginWithHuaweiIDRequest | 华为账号登录请求对象。 |
@@ -176,9 +196,10 @@ createLoginWithHuaweiIDRequest(): LoginWithHuaweiIDRequest
 
 
 
-#### createAuthorizationWithHuaweiIDRequest
+### createAuthorizationWithHuaweiIDRequest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAuthorizationWithHuaweiIDRequest(): AuthorizationWithHuaweiIDRequest
 
@@ -196,6 +217,7 @@ createAuthorizationWithHuaweiIDRequest(): AuthorizationWithHuaweiIDRequest
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | AuthorizationWithHuaweiIDRequest | 华为账号授权请求对象。 |
@@ -207,9 +229,10 @@ createAuthorizationWithHuaweiIDRequest(): AuthorizationWithHuaweiIDRequest
 
 
 
-#### createCancelAuthorizationRequest
+### createCancelAuthorizationRequest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createCancelAuthorizationRequest(): CancelAuthorizationRequest
 
@@ -227,6 +250,7 @@ createCancelAuthorizationRequest(): CancelAuthorizationRequest
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | CancelAuthorizationRequest | 华为账号取消授权请求对象。 |
@@ -238,9 +262,10 @@ createCancelAuthorizationRequest(): CancelAuthorizationRequest
 
 
 
-#### getHuaweiIDState
+### getHuaweiIDState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getHuaweiIDState(request: StateRequest): Promise&lt;StateResult&gt;
 
@@ -265,12 +290,14 @@ getHuaweiIDState(request: StateRequest): Promise&lt;StateResult&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | StateRequest | 是 | 获取华为账号登录状态请求对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -280,6 +307,7 @@ getHuaweiIDState(request: StateRequest): Promise&lt;StateResult&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[ArkTS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account-kit)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -320,9 +348,10 @@ function dealAllError(error: BusinessError): void {
 
 
 
-#### getMobileNumberConsistency
+### getMobileNumberConsistency
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 getMobileNumberConsistency(request: ConsistencyRequest): Promise&lt;ConsistencyResult&gt;
 
@@ -349,12 +378,14 @@ getMobileNumberConsistency(request: ConsistencyRequest): Promise&lt;ConsistencyR
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | ConsistencyRequest | 是 | 获取手机号一致性状态请求对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -364,6 +395,7 @@ getMobileNumberConsistency(request: ConsistencyRequest): Promise&lt;ConsistencyR
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account-kit)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -416,9 +448,10 @@ function dealAllError(error: BusinessError): void {
 
 
 
-#### LoginWithHuaweiIDRequest
+## LoginWithHuaweiIDRequest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 华为账号登录请求类。
 
@@ -436,6 +469,7 @@ function dealAllError(error: BusinessError): void {
 
 **继承：** LoginWithHuaweiIDRequest继承自[AuthenticationRequest](#authenticationrequest)。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | forceLogin | boolean | 否 | 是 | 表示当系统未登录华为账号时，是否需要拉起华为账号登录页。 - true：将拉起华为账号登录页。 - false：将返回1001502001 用户未登录华为账号。 如果系统已登录华为账号，则不管该值为true或false，均不会拉起华为账号登录页。 默认值：true。 |
@@ -450,9 +484,10 @@ function dealAllError(error: BusinessError): void {
 
 
 
-#### IdTokenSignAlgorithm
+## IdTokenSignAlgorithm
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ID Token签名算法类型枚举。根据IdTokenSignAlgorithm的不同类型，对ID Token进行不同方式的加密。请应用根据实际安全要求、性能、系统环境兼容性进行选择。
 
@@ -463,6 +498,7 @@ ID Token签名算法类型枚举。根据IdTokenSignAlgorithm的不同类型，�
 **系统能力：** SystemCapability.AuthenticationServices.HuaweiID.Auth
 
 **起始版本：** 4.0.0(10)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -476,9 +512,10 @@ ID Token签名算法类型枚举。根据IdTokenSignAlgorithm的不同类型，�
 
 
 
-#### LoginWithHuaweiIDResponse
+## LoginWithHuaweiIDResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 华为账号登录响应类，包含了属性data和state。属性data为华为账号登录凭据对象，用于获取授权码、用户标识（UnionID/OpenID）等数据；属性state则用于防止跨站攻击。
 
@@ -491,6 +528,7 @@ ID Token签名算法类型枚举。根据IdTokenSignAlgorithm的不同类型，�
 **起始版本：** 4.0.0(10)
 
 **继承：** LoginWithHuaweiIDResponse继承自[AuthenticationResponse](#authenticationresponse)。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -581,9 +619,10 @@ export enum ErrorCode {
 
 
 
-#### LoginWithHuaweiIDCredential
+## LoginWithHuaweiIDCredential
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 华为账号登录凭据。登录成功后返回的凭据结构体，可用于获取授权码Authorization Code、用户标识（UnionID/OpenID）等数据。
 
@@ -596,6 +635,7 @@ export enum ErrorCode {
 **系统能力：** SystemCapability.AuthenticationServices.HuaweiID.Auth
 
 **起始版本：** 4.0.0(10)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -611,9 +651,10 @@ export enum ErrorCode {
 
 
 
-#### AuthorizationWithHuaweiIDRequest
+## AuthorizationWithHuaweiIDRequest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 华为账号授权请求类。
 
@@ -630,6 +671,7 @@ export enum ErrorCode {
 **起始版本：** 4.0.0(10)
 
 **继承：** AuthorizationWithHuaweiIDRequest继承自[AuthenticationRequest](#authenticationrequest)。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -648,9 +690,10 @@ export enum ErrorCode {
 
 
 
-#### AuthorizationWithHuaweiIDResponse
+## AuthorizationWithHuaweiIDResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 华为账号授权响应类，包含了属性data和state。属性data为用户授权凭据对象，用于获取授权码、用户信息等数据；属性state则用于防止跨站攻击。
 
@@ -663,6 +706,7 @@ export enum ErrorCode {
 **起始版本：** 4.0.0(10)
 
 **继承：** AuthorizationWithHuaweiIDResponse继承自[AuthenticationResponse](#authenticationresponse)。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -751,9 +795,10 @@ export enum ErrorCode {
 
 
 
-#### AuthorizationWithHuaweiIDCredential
+## AuthorizationWithHuaweiIDCredential
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 华为账号授权凭据。授权成功后返回的结构体，可用于获取授权码、用户信息（例如头像昵称、邮箱、匿名手机号）等数据。
 
@@ -764,6 +809,7 @@ export enum ErrorCode {
 **系统能力：** SystemCapability.AuthenticationServices.HuaweiID.Auth
 
 **起始版本：** 4.0.0(10)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -784,9 +830,10 @@ export enum ErrorCode {
 
 
 
-#### CancelAuthorizationRequest
+## CancelAuthorizationRequest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 取消授权请求类。该类包含了属性state，用于防止跨站攻击。开发者可将请求类对象作为入参，通过调用[AuthenticationController.executeRequest](#executerequest-1)方法执行取消授权请求，主动解除用户授予应用的用户信息访问权限。
 
@@ -800,6 +847,7 @@ export enum ErrorCode {
 
 **继承：** CancelAuthorizationRequest继承自[AuthenticationRequest](#authenticationrequest)。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | state | string | 否 | 是 | 请求中的state，通过与响应中的state比较，可校验是否是当前请求，用于防止跨站攻击。 支持字符包含0-9、a-z、A-Z、英文点号、英文冒号、斜杠、下划线等，长度限制1-255，校验规则^[0-9a-zA-Z:/\.\-_]{1,255}$。 推荐开发者用随机数并做一致性校验。建议生成方式：util.generateRandomUUID()。 |
@@ -811,9 +859,10 @@ export enum ErrorCode {
 
 
 
-#### CancelAuthorizationResponse
+## CancelAuthorizationResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 取消授权响应类。该类包含了属性state，用于防止跨站攻击。
 
@@ -826,6 +875,7 @@ export enum ErrorCode {
 **起始版本：** 4.0.0(10)
 
 **继承：** CancelAuthorizationResponse继承自[AuthenticationResponse](#authenticationresponse)。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -908,9 +958,10 @@ export enum ErrorCode {
 
 
 
-#### AuthenticationErrorCode
+## AuthenticationErrorCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 华为账号认证服务接口错误码枚举。应用可根据如下错误码进行不同的处理。
 
@@ -919,6 +970,7 @@ export enum ErrorCode {
 **系统能力：** SystemCapability.AuthenticationServices.HuaweiID.Auth
 
 **起始版本：** 4.0.0(10)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -938,9 +990,10 @@ export enum ErrorCode {
 
 
 
-#### AuthenticationController
+## AuthenticationController
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 华为账号服务的控制器类，负责接收并执行华为账号登录（[LoginWithHuaweiIDRequest](#loginwithhuaweiidrequest)）、授权（[AuthorizationWithHuaweiIDRequest](#authorizationwithhuaweiidrequest)）、取消授权（[CancelAuthorizationRequest](#cancelauthorizationrequest)）请求。开发者可将[HuaweiIDProvider](#huaweiidprovider)工厂类创建的请求对象作为入参，调用[executeRequest](#executerequest-1)方法请求华为账号服务。
 
@@ -954,9 +1007,10 @@ export enum ErrorCode {
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(context?: common.Context)
 
@@ -972,6 +1026,7 @@ constructor(context?: common.Context)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 否 | Context上下文，当需要拉起华为账号登录、授权页面时必须传该参数，否则会报401参数检查失败错误码。 应用可支持的Context有：UIAbilityContext和UIExtensionContext。不支持应用在半模态、弹出框、子窗口等非全页面组件中使用UIExtensionContext调用。 元服务可支持的Context有：UIAbilityContext。 说明： - 在4.0.0(10)版本，参数类型为UIAbilityContext。 - 从4.1.0(11)版本开始，参数类型为Context。 |
@@ -983,9 +1038,10 @@ constructor(context?: common.Context)
 
 
 
-#### executeRequest
+### executeRequest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 executeRequest(request: AuthenticationRequest, callback: AsyncCallback<AuthenticationResponse, Record<string, Object>>): void
 
@@ -1007,6 +1063,7 @@ executeRequest(request: AuthenticationRequest, callback: AsyncCallback<Authentic
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | AuthenticationRequest | 是 | 华为账号认证服务请求对象。 |
@@ -1016,6 +1073,7 @@ executeRequest(request: AuthenticationRequest, callback: AsyncCallback<Authentic
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[ArkTS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account-kit)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1115,9 +1173,10 @@ export enum ErrorCode {
 
 
 
-#### executeRequest
+### executeRequest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 executeRequest(request: AuthenticationRequest): Promise&lt;AuthenticationResponse&gt;
 
@@ -1139,12 +1198,14 @@ executeRequest(request: AuthenticationRequest): Promise&lt;AuthenticationRespons
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | AuthenticationRequest | 是 | 华为账号认证服务请求对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1154,6 +1215,7 @@ executeRequest(request: AuthenticationRequest): Promise&lt;AuthenticationRespons
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[ArkTS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account-kit)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1251,9 +1313,10 @@ export enum ErrorCode {
 
 
 
-#### AuthenticationRequest
+## AuthenticationRequest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 华为账号认证请求抽象基类。该类不包含实际业务属性，具体认证请求请参考其派生类。派生类包含[LoginWithHuaweiIDRequest](#loginwithhuaweiidrequest)、[AuthorizationWithHuaweiIDRequest](#authorizationwithhuaweiidrequest)、[CancelAuthorizationRequest](#cancelauthorizationrequest)。
 
@@ -1267,9 +1330,10 @@ export enum ErrorCode {
 
 
 
-#### AuthenticationResponse
+## AuthenticationResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 华为账号认证响应抽象基类。该类不包含实际业务属性，具体响应结果请参考其派生类。派生类包含[LoginWithHuaweiIDResponse](#loginwithhuaweiidresponse)、[AuthorizationWithHuaweiIDResponse](#authorizationwithhuaweiidresponse)、[CancelAuthorizationResponse](#cancelauthorizationresponse)。
 
@@ -1283,9 +1347,10 @@ export enum ErrorCode {
 
 
 
-#### AuthenticationProvider
+## AuthenticationProvider
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 华为账号认证工厂抽象基类。该类不包含实际业务属性，具体实现请参考其派生类。派生类包含[HuaweiIDProvider](#huaweiidprovider)。
 
@@ -1299,9 +1364,10 @@ export enum ErrorCode {
 
 
 
-#### IdType
+## IdType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 华为账号用户标识类型枚举。
 
@@ -1313,6 +1379,7 @@ export enum ErrorCode {
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | USER_ID | 1 | 华为账号用户的UID。 说明： 该参数仅对系统应用开放。 |
@@ -1322,9 +1389,10 @@ export enum ErrorCode {
 
 
 
-#### State
+## State
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 华为账号登录状态类型枚举。标识系统是否已登录华为账号、已登录的华为账号是否与开发者传入的用户标识（UnionID/OpenID）相一致。
 
@@ -1336,6 +1404,7 @@ export enum ErrorCode {
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | UNLOGGED_IN | 0 | 华为账号未登录。 |
@@ -1345,9 +1414,10 @@ export enum ErrorCode {
 
 
 
-#### StateRequest
+## StateRequest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 获取华为账号登录状态请求。请求需包含idType、idValue属性，用于指定华为账号用户标识类型并传入实际的用户标识（UnionID/OpenID）。将该请求对象作为入参，通过调用[getHuaweiIDState](#gethuaweiidstate)方法，即可判断系统是否已登录华为账号、已登录的华为账号是否与开发者传入的用户标识相匹配。
 
@@ -1358,6 +1428,7 @@ export enum ErrorCode {
 **系统能力：** SystemCapability.AuthenticationServices.HuaweiID.Auth
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1371,9 +1442,10 @@ export enum ErrorCode {
 
 
 
-#### StateResult
+## StateResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 获取华为账号登录状态响应。[getHuaweiIDState](#gethuaweiidstate)方法返回值。标识系统是否已登录华为账号、已登录的华为账号是否与开发者传入的用户标识（UnionID/OpenID）相匹配。
 
@@ -1384,6 +1456,7 @@ export enum ErrorCode {
 **系统能力：** SystemCapability.AuthenticationServices.HuaweiID.Auth
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1396,9 +1469,10 @@ export enum ErrorCode {
 
 
 
-#### ConsistencyState
+## ConsistencyState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 手机号一致性状态枚举。标识开发者传入的手机号、华为账号绑定手机号、当前设备SIM卡之间的关系。应用可根据结果进行相应风控处理。
 
@@ -1407,6 +1481,7 @@ export enum ErrorCode {
 **系统能力：** SystemCapability.AuthenticationServices.HuaweiID.Auth
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1417,9 +1492,10 @@ export enum ErrorCode {
 
 
 
-#### ConsistencyRequest
+## ConsistencyRequest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 获取手机号一致性状态请求。请求需包含idType、idValue、mobileNumber属性。用于指定华为账号用户标识类型（UnionID/OpenID）、传入实际的用户标识UnionID/OpenID值以及手机号。将请求对象作为入参，通过调用[getMobileNumberConsistency](#getmobilenumberconsistency)方法，即可获取开发者传入的手机号、华为账号绑定手机号、当前设备SIM卡之间的关系。
 
@@ -1428,6 +1504,7 @@ export enum ErrorCode {
 **系统能力：** SystemCapability.AuthenticationServices.HuaweiID.Auth
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1442,9 +1519,10 @@ export enum ErrorCode {
 
 
 
-#### ConsistencyResult
+## ConsistencyResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 获取手机号一致性状态响应。[getMobileNumberConsistency](#getmobilenumberconsistency)方法返回值。标识开发者传入的手机号、华为账号绑定手机号、当前设备SIM卡之间的关系。应用可根据结果进行相应风控处理。
 
@@ -1453,6 +1531,7 @@ export enum ErrorCode {
 **系统能力：** SystemCapability.AuthenticationServices.HuaweiID.Auth
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

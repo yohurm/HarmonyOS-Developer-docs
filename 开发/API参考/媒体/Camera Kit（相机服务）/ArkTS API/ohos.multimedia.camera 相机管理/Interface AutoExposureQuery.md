@@ -1,9 +1,9 @@
 # Interface (AutoExposureQuery)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-autoexposurequery
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 针对设备的自动曝光特性提供了一系列查询功能。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { camera } from '@kit.CameraKit';
@@ -22,9 +23,10 @@ import { camera } from '@kit.CameraKit';
  
   
 
-#### isExposureModeSupported11+
+## isExposureModeSupported11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isExposureModeSupported(aeMode: ExposureMode): boolean
  
@@ -36,6 +38,7 @@ isExposureModeSupported(aeMode: ExposureMode): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | aeMode | ExposureMode | 是 | 曝光模式。传参为null或者undefined，作为0处理，曝光锁定。 |
@@ -43,6 +46,7 @@ isExposureModeSupported(aeMode: ExposureMode): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 获取是否支持曝光模式，true为支持，false为不支持。接口调用失败会抛出相应错误码并返回undefined，错误码类型CameraErrorCode。 |
@@ -52,6 +56,7 @@ isExposureModeSupported(aeMode: ExposureMode): boolean
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400103 | Session not config, only throw in session usage. |
@@ -77,9 +82,10 @@ function isExposureModeSupported(photoSession: camera.PhotoSession): boolean {
  
   
 
-#### getExposureBiasRange11+
+## getExposureBiasRange11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getExposureBiasRange(): Array&lt;number&gt;
  
@@ -91,6 +97,7 @@ getExposureBiasRange(): Array&lt;number&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;number&gt; | 获取补偿范围的数组。接口调用失败会返回相应错误码，错误码类型CameraErrorCode。 |
@@ -100,6 +107,7 @@ getExposureBiasRange(): Array&lt;number&gt;
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400103 | Session not config, only throw in session usage. |
@@ -125,9 +133,10 @@ function getExposureBiasRange(photoSession: camera.PhotoSession): Array<number> 
  
   
 
-#### isExposureMeteringModeSupported24+
+## isExposureMeteringModeSupported24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isExposureMeteringModeSupported(aeMeteringMode: ExposureMeteringMode): boolean
  
@@ -139,6 +148,7 @@ isExposureMeteringModeSupported(aeMeteringMode: ExposureMeteringMode): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | aeMeteringMode | ExposureMeteringMode | 是 | 曝光测光模式。 |
@@ -146,6 +156,7 @@ isExposureMeteringModeSupported(aeMeteringMode: ExposureMeteringMode): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 是否支持曝光测光模式。true表示支持，false表示不支持 |
@@ -155,6 +166,7 @@ isExposureMeteringModeSupported(aeMeteringMode: ExposureMeteringMode): boolean
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400103 | Session not config, only throw in session usage. |

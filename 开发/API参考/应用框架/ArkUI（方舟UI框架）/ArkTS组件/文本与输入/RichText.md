@@ -1,9 +1,9 @@
 # RichText
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richtext
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 富文本组件，解析并显示HTML格式文本。
  
@@ -32,17 +32,19 @@
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 不包含子组件。
  
   
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 RichText(content:string  |  Resource)
  
@@ -50,6 +52,7 @@ RichText(content:string  |  Resource)
  
 **参数:**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | content | string \| Resource 20+ | 是 | 表示HTML格式的字符串或者本地资源文件。 |
@@ -57,15 +60,17 @@ RichText(content:string  |  Resource)
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### onStart
+### onStart
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onStart(callback: () => void)
  
@@ -73,6 +78,7 @@ onStart(callback: () => void)
  
 **参数:**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | () => void | 是 | 加载网页时触发回调。 |
@@ -80,9 +86,10 @@ onStart(callback: () => void)
  
   
 
-#### onComplete
+### onComplete
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onComplete(callback: () => void)
  
@@ -90,6 +97,7 @@ onComplete(callback: () => void)
  
 **参数:**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | () => void | 是 | 网页加载结束时触发回调。 |
@@ -97,18 +105,21 @@ onComplete(callback: () => void)
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 只支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)中width，height，size，layoutWeight四个属性。由于padding，margin，constraintSize属性使用时与通用属性描述不符，暂不支持。
  
   
 
-#### 支持标签
+## 支持标签
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 | 示例 |
 | --- | --- | --- |
 | &lt;h1&gt;--&lt;h6&gt; | 被用来定义HTML，&lt;h1&gt;定义重要等级最高的标题，&lt;h6&gt;定义重要等级最低的标题。 | &lt;h1&gt;这是一个标题</h1>&lt;h2&gt;这是h2标题</h2> |
@@ -127,9 +138,10 @@ onComplete(callback: () => void)
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 示例效果请以真机运行为准，当前DevEco Studio预览器不支持。
  
@@ -188,7 +200,7 @@ struct RichTextExample {
 ```
  
  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/sbGCJ5qAQLG8Pr7_rRvj1Q/zh-cn_image_0000002628702688.png?HW-CC-KV=V1&HW-CC-Date=20260701T014341Z&HW-CC-Expire=86400&HW-CC-Sign=DCFC6ECA43EA333FE2FA2AF294E773B90538E2FA3C96401DB0990A4361150721)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/8MlRt5zhTvCe3KsWkXO7HA/zh-cn_image_0000002717772788.png?HW-CC-KV=V1&HW-CC-Date=20260911T073106Z&HW-CC-Expire=86400&HW-CC-Sign=54B968ECB2E91D5F536437580CEB48715D781653C508F95643D7A457ACAC8964)
 
  
 加载本地资源文件。
@@ -210,7 +222,7 @@ struct RichTextComponent {
 }
 ```
  
-通过resources协议加载，适用Webview加载带有"#"路由的链接。
+通过resource协议加载，适用Webview加载带有"#"路由的链接。
  
 使用 resource://rawfile/ 协议前缀可以避免常规 \$rawfile 方式在处理带有"#"路由链接时的局限性。当URL中包含"#"号时，"#"后面的内容会被视为锚点（fragment）。
  

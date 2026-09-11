@@ -1,9 +1,9 @@
 # @ohos.util.stream (数据流基类stream)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-stream
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供基本流类型的处理能力，支持数据分块读取或写入，避免一次性加载整个数据到内存。
 
@@ -14,9 +14,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { stream } from '@kit.ArkTS';
@@ -24,21 +25,24 @@ import { stream } from '@kit.ArkTS';
 
 
 
-#### Writable
+## Writable
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 可写入数据的流。可写流允许将数据写入到目标中，这个目标可以是文件、HTTP 响应、标准输出、另一个流等。可写流采用缓冲区机制：数据通过[write()](#write)写入缓冲区，缓冲区数据通过[doWrite()](#dowrite)自动写出到目标，开发者需实现doWrite以定义数据写出的具体行为。
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -53,9 +57,10 @@ import { stream } from '@kit.ArkTS';
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -73,9 +78,10 @@ let writableStream = new stream.Writable();
 
 
 
-#### write
+### write
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 write(chunk?: string | Uint8Array, encoding?: string, callback?: Function): boolean
 
@@ -87,6 +93,7 @@ write(chunk?: string | Uint8Array, encoding?: string, callback?: Function): bool
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | chunk | string \| Uint8Array | 否 | 需要写入的数据。默认值为undefined。当前版本不支持传入null、undefined和空字符串，会抛出异常。 |
@@ -96,6 +103,7 @@ write(chunk?: string | Uint8Array, encoding?: string, callback?: Function): bool
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 可写流的缓冲区中是否还有空间。true表示缓冲区还有空间，false表示流的内部缓冲区数据量已达到设定水位线，不建议继续写入以避免内存溢出。 |
@@ -104,6 +112,7 @@ write(chunk?: string | Uint8Array, encoding?: string, callback?: Function): bool
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -132,9 +141,10 @@ writableStream.write("test", "utf8");
 
 
 
-#### end
+### end
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 end(chunk?: string | Uint8Array, encoding?: string, callback?: Function): Writable
 
@@ -146,6 +156,7 @@ end(chunk?: string | Uint8Array, encoding?: string, callback?: Function): Writab
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | chunk | string \| Uint8Array | 否 | 需要写入的数据。默认值为undefined。 |
@@ -155,6 +166,7 @@ end(chunk?: string | Uint8Array, encoding?: string, callback?: Function): Writab
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Writable | 返回当前可写流对象。 |
@@ -163,6 +175,7 @@ end(chunk?: string | Uint8Array, encoding?: string, callback?: Function): Writab
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -194,9 +207,10 @@ writableStream.end("finish", "utf8", () => {
 
 
 
-#### setDefaultEncoding
+### setDefaultEncoding
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setDefaultEncoding(encoding?: string): boolean
 
@@ -208,12 +222,14 @@ setDefaultEncoding(encoding?: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | encoding | string | 否 | 设置默认字符编码类型。默认值是'utf8'，当前版本支持'utf8'、'gb18030'、'gbk'以及'gb2312'。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -240,9 +256,10 @@ console.info("Writable is result", result); // Writable is result true
 
 
 
-#### cork
+### cork
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cork(): boolean
 
@@ -253,6 +270,7 @@ cork(): boolean
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -279,9 +297,10 @@ console.info("Writable cork result", result); // Writable cork result true
 
 
 
-#### uncork
+### uncork
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 uncork(): boolean
 
@@ -292,6 +311,7 @@ uncork(): boolean
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -324,9 +344,10 @@ writableStream.on("finish", () => {
 
 
 
-#### on
+### on
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(event: string, callback: Callback<emitter.EventData>): void
 
@@ -337,6 +358,7 @@ on(event: string, callback: Callback<emitter.EventData>): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -368,9 +390,10 @@ writableStream.write("hello", "utf8", () => {
 
 
 
-#### off
+### off
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(event: string, callback?: Callback<emitter.EventData>): void
 
@@ -381,6 +404,7 @@ off(event: string, callback?: Callback<emitter.EventData>): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -417,9 +441,10 @@ setTimeout(() => {
 
 
 
-#### doInitialize
+### doInitialize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 doInitialize(callback: Function): void
 
@@ -430,6 +455,7 @@ doInitialize(callback: Function): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -455,9 +481,10 @@ new MyWritable();
 
 
 
-#### doWrite
+### doWrite
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 doWrite(chunk: string | Uint8Array, encoding: string, callback: Function): void
 
@@ -468,6 +495,7 @@ doWrite(chunk: string | Uint8Array, encoding: string, callback: Function): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -496,9 +524,10 @@ writableStream.write("data", "utf8");
 
 
 
-#### doWritev
+### doWritev
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 doWritev(chunks: string[] | Uint8Array[], callback: Function): void
 
@@ -509,6 +538,7 @@ doWritev(chunks: string[] | Uint8Array[], callback: Function): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -541,15 +571,17 @@ writableStream.end();
 
 
 
-#### ReadableOptions
+## ReadableOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Readable构造函数的选项信息。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -558,21 +590,24 @@ Readable构造函数的选项信息。
 
 
 
-#### Readable
+## Readable
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示可读取数据的流。可读流用于从数据源（如文件、网络套接字等）读取数据。
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -587,9 +622,10 @@ Readable构造函数的选项信息。
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -607,9 +643,10 @@ let readableStream = new stream.Readable();
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(options: ReadableOptions)
 
@@ -620,6 +657,7 @@ Readable的构造函数。
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -637,9 +675,10 @@ let readableStream = new stream.Readable(option);
 
 
 
-#### read
+### read
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 read(size?: number): string | null
 
@@ -651,12 +690,14 @@ read(size?: number): string | null
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | size | number | 否 | 读取数据的字节数。默认为undefined。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -666,6 +707,7 @@ read(size?: number): string | null
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -693,9 +735,10 @@ console.info("Readable data is", dataChunk); // Readable data is test
 
 
 
-#### resume
+### resume
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 resume(): Readable
 
@@ -706,6 +749,7 @@ resume(): Readable
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -731,9 +775,10 @@ console.info("Readable test resume", !readableStream.isPaused()); // 切换流�
 
 
 
-#### pause
+### pause
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pause(): Readable
 
@@ -744,6 +789,7 @@ pause(): Readable
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -769,9 +815,10 @@ console.info("Readable test pause", readableStream.isPaused()); // Readable test
 
 
 
-#### setEncoding
+### setEncoding
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setEncoding(encoding?: string): boolean
 
@@ -785,12 +832,14 @@ setEncoding(encoding?: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | encoding | string | 否 | 需要设置的字符编码类型。默认值是'utf8'，当前版本支持'utf8'、'gb18030'、'gbk'以及'gb2312'。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -816,9 +865,10 @@ console.info("Readable result", result); // Readable result true
 
 
 
-#### isPaused
+### isPaused
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isPaused(): boolean
 
@@ -829,6 +879,7 @@ isPaused(): boolean
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -855,9 +906,10 @@ console.info("Readable isPaused", readableStream.isPaused()); // Readable isPaus
 
 
 
-#### pipe
+### pipe
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pipe(destination: Writable, options?: Object): Writable
 
@@ -869,6 +921,7 @@ pipe(destination: Writable, options?: Object): Writable
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | destination | Writable | 是 | 接收数据的可写流。 |
@@ -876,6 +929,7 @@ pipe(destination: Writable, options?: Object): Writable
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -914,9 +968,10 @@ readableStream.pipe(writableStream);
 
 
 
-#### unpipe
+### unpipe
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unpipe(destination?: Writable): Readable
 
@@ -928,12 +983,14 @@ unpipe(destination?: Writable): Readable
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | destination | Writable | 否 | 从当前可写流中移除指定的这个可读流。默认为undefined。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -976,9 +1033,10 @@ readableStream.on("data", () => {
 
 
 
-#### on
+### on
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(event: string, callback: Callback<emitter.EventData>): void
 
@@ -989,6 +1047,7 @@ on(event: string, callback: Callback<emitter.EventData>): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1018,9 +1077,10 @@ readableStream.on("error", () => {
 
 
 
-#### off
+### off
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(event: string, callback?: Callback<emitter.EventData>): void
 
@@ -1031,6 +1091,7 @@ off(event: string, callback?: Callback<emitter.EventData>): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1065,9 +1126,10 @@ readableStream.push("test");
 
 
 
-#### doInitialize
+### doInitialize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 doInitialize(callback: Function): void
 
@@ -1078,6 +1140,7 @@ doInitialize(callback: Function): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1104,9 +1167,10 @@ myReadable.on("data", () => {
 
 
 
-#### doRead
+### doRead
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 doRead(size: number): void
 
@@ -1117,6 +1181,7 @@ doRead(size: number): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1143,9 +1208,10 @@ readableStream.on("data", () => {
 
 
 
-#### push
+### push
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 push(chunk: Uint8Array | string | undefined | null, encoding?: string): boolean
 
@@ -1157,6 +1223,7 @@ push(chunk: Uint8Array | string | undefined | null, encoding?: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | chunk | Uint8Array \| string \| undefined \| null | 是 | 读取的数据。 API version22开始发生兼容性变更，在API version21及之前的版本其类型为：Uint8Array \| string \| null。 |
@@ -1164,6 +1231,7 @@ push(chunk: Uint8Array | string | undefined | null, encoding?: string): boolean
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1190,9 +1258,10 @@ console.info("Readable push test", readableStream.readableLength); // Readable p
 
 
 
-#### Duplex
+## Duplex
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 双工流是一个同时支持可读和可写能力的流。双工流允许数据在两个方向上进行传输，既可以读取数据，又可以写入数据。
 
@@ -1200,13 +1269,15 @@ Duplex类继承[Readable](#readable)，支持Readable中所有的方法。
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1221,9 +1292,10 @@ Duplex类继承[Readable](#readable)，支持Readable中所有的方法。
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -1241,9 +1313,10 @@ let duplex = new stream.Duplex();
 
 
 
-#### write
+### write
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 write(chunk?: string | Uint8Array, encoding?: string, callback?: Function): boolean
 
@@ -1255,6 +1328,7 @@ write(chunk?: string | Uint8Array, encoding?: string, callback?: Function): bool
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | chunk | string \| Uint8Array | 否 | 需要写入的数据。默认值为undefined。当前版本不支持传入null、undefined和空字符串，会抛出异常。 |
@@ -1264,6 +1338,7 @@ write(chunk?: string | Uint8Array, encoding?: string, callback?: Function): bool
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 可写流的缓冲区中是否还有空间。true表示缓冲区还有空间，false表示流的内部缓冲区数据量已达到设定水位线，不建议继续写入，如果连续调用写入函数，数据仍会被添加到缓冲区中，直到内存溢出为止。 |
@@ -1272,6 +1347,7 @@ write(chunk?: string | Uint8Array, encoding?: string, callback?: Function): bool
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1304,9 +1380,10 @@ console.info("duplexStream result", result); // duplexStream result true
 
 
 
-#### end
+### end
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 end(chunk?: string | Uint8Array, encoding?: string, callback?: Function): Writable
 
@@ -1318,6 +1395,7 @@ end(chunk?: string | Uint8Array, encoding?: string, callback?: Function): Writab
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | chunk | string \| Uint8Array | 否 | 需要写入的数据。默认值为undefined。 |
@@ -1327,6 +1405,7 @@ end(chunk?: string | Uint8Array, encoding?: string, callback?: Function): Writab
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Writable | 返回可写流对象。 |
@@ -1335,6 +1414,7 @@ end(chunk?: string | Uint8Array, encoding?: string, callback?: Function): Writab
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1366,9 +1446,10 @@ duplexStream.end("test", "utf8", () => {
 
 
 
-#### setDefaultEncoding
+### setDefaultEncoding
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setDefaultEncoding(encoding?: string): boolean
 
@@ -1380,12 +1461,14 @@ setDefaultEncoding(encoding?: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | encoding | string | 否 | 需要设置的默认字符编码类型。默认值是'utf8'，当前版本支持'utf8'、'gb18030'、'gbk'以及'gb2312'。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1415,9 +1498,10 @@ console.info("duplexStream is result", result); // duplexStream is result true
 
 
 
-#### cork
+### cork
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cork(): boolean
 
@@ -1428,6 +1512,7 @@ cork(): boolean
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1444,9 +1529,10 @@ console.info("duplexStream cork result", result); // duplexStream cork result tr
 
 
 
-#### uncork
+### uncork
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 uncork(): boolean
 
@@ -1457,6 +1543,7 @@ uncork(): boolean
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1491,9 +1578,10 @@ console.info("Duplex test uncork", dataWritten); // Duplex test uncork ab
 
 
 
-#### doWrite
+### doWrite
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 doWrite(chunk: string | Uint8Array, encoding: string, callback: Function): void
 
@@ -1504,6 +1592,7 @@ doWrite(chunk: string | Uint8Array, encoding: string, callback: Function): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1535,9 +1624,10 @@ duplexStream.write("data", "utf8");
 
 
 
-#### doWritev
+### doWritev
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 doWritev(chunks: string[] | Uint8Array[], callback: Function): void
 
@@ -1548,6 +1638,7 @@ doWritev(chunks: string[] | Uint8Array[], callback: Function): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1586,17 +1677,19 @@ duplexStream.end();
 
 
 
-#### Transform
+## Transform
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 转换流是一个特殊的双工流，支持可读和可写能力的流，可以对数据进行转换并输出结果。Transform类继承[Duplex](#duplex)，支持Duplex中所有的方法。
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -1614,9 +1707,10 @@ let transformStream = new stream.Transform();
 
 
 
-#### doTransform
+### doTransform
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 doTransform(chunk: string, encoding: string, callback: Function): void
 
@@ -1627,6 +1721,7 @@ doTransform(chunk: string, encoding: string, callback: Function): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1657,9 +1752,10 @@ transformStream.write("hello");
 
 
 
-#### doFlush
+### doFlush
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 doFlush(callback: Function): void
 
@@ -1670,6 +1766,7 @@ doFlush(callback: Function): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
