@@ -1,6 +1,6 @@
 # ChipGroup
 
-更新时间：2026-09-04 10:41:25
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-chipgroup
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -71,13 +71,13 @@ ChipGroup({
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | items | ChipGroupItemOptions[] | 是 | @Require @Prop | 每个Chip的特定属性，参考ChipGroupItemOptions[]类型。 若为undefined时，ChipGroup默认为空。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| itemStyle | ChipItemStyle | 否 | @Prop | Chip的style属性，如颜色、大小等，参考ChipItemStyle类型。当需要自定义Chip的外观样式（如改变背景色、字体颜色、尺寸）时传入此参数。 默认值： { size: ChipSize.NORMAL, backgroundColor: \$r('sys.color.ohos_id_color_button_normal'), fontColor: \$r('sys.color.ohos_id_color_text_primary'), selectedFontColor: \$r('sys.color.ohos_id_color_text_primary_contrary'), selectedBackgroundColor: \$r('sys.color.ohos_id_color_emphasize') } 值为undefined时，按默认值处理。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| itemStyle | ChipItemStyle | 否 | @Prop | Chip的样式属性，如颜色、大小等，参考ChipItemStyle类型。当需要自定义Chip的外观样式（如改变背景色、字体颜色、尺寸）时传入此参数。 默认值： { size: ChipSize.NORMAL, backgroundColor: \$r('sys.color.ohos_id_color_button_normal'), fontColor: \$r('sys.color.ohos_id_color_text_primary'), selectedFontColor: \$r('sys.color.ohos_id_color_text_primary_contrary'), selectedBackgroundColor: \$r('sys.color.ohos_id_color_emphasize') } 值为undefined时，按默认值处理。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | selectedIndexes | Array&lt;number&gt; | 否 | @Prop | 被选中Chip的索引，索引从0开始计数。 取值范围：索引值为非负整数，且不能超过items数组长度减1。 传入负数、超出数组范围的索引值或非整数时，该索引值不生效。 默认值：[0] 若multiple=false，selectedIndexes为空数组时默认选中第1个；selectedIndexes包含多个元素时仅第一个索引生效。 值为undefined时，按默认值处理。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | multiple | boolean | 否 | @Prop | 是否选中多个Chip。 true：支持多个Chip选中，适用于需要同时选择多个选项的场景（如多标签选择、多条件筛选）；false：仅支持单个Chip选中，适用于单选场景（如单项选择）。 默认值：false 值为undefined时，按默认值处理。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | chipGroupSpace | ChipGroupSpaceOptions | 否 | @Prop | 左右内边距及Chip之间间距。参考ChipGroupSpaceOptions类型。当默认间距无法满足布局要求或需要根据UI设计调整Chip之间的间隔时传入此参数。 默认值：{ itemSpace: 8, startSpace: 16, endSpace: 16 } 单位：vp 值为undefined时，按默认值处理。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | chipGroupPadding | ChipGroupPaddingOptions | 否 | @Prop | 设置ChipGroup的上下内边距，以控制整体高度。类型为ChipGroupPaddingOptions。当需要调整ChipGroup组件的垂直空间占用或匹配特定UI设计要求时传入此参数。 默认值：{ top: 14, bottom: 14 } 单位：vp 值为undefined时，按默认值处理。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| backgroundSystemMaterial | uiMaterial.Material | 否 | @Prop | 设置组件系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏子树，或横向Tabs的底部TabBar子树中，材质效果才会生效。不同材质具有不同的效果，能够影响组件的backgroundColor、border、shadow视觉属性。设置自动反色的系统材质时，fontColor如果使用系统预定义的可反色颜色资源（如\$r('sys.color.font_primary')），颜色自动适配到材质背景色的反色。当设置backgroundSystemMaterial时，应将backgroundColor设为Color.Transparent，否则会与系统材质冲突。 默认值：undefined 值为undefined时，不应用材质样式。 起始版本： 26.0.0 模型约束： 此接口仅可在Stage模型下使用。 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 |
-| selectedBackgroundSystemMaterial | uiMaterial.Material | 否 | @Prop | 设置组件选中状态的系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏子树，或横向Tabs的底部TabBar子树中，材质效果才会生效。不同材质具有不同的效果，能够影响组件选中时的backgroundColor、border、shadow视觉属性。设置自动反色的系统材质时，selectedFontColor如果使用系统预定义的可反色颜色资源（如\$r('sys.color.font_primary')），颜色自动适配到材质背景色的反色。当设置selectedBackgroundSystemMaterial时，应将selectedBackgroundColor设为Color.Transparent，否则会与系统材质冲突。 默认值：undefined 值为undefined时，不应用选中状态的材质样式。 起始版本： 26.0.0 模型约束： 此接口仅可在Stage模型下使用。 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| backgroundSystemMaterial | uiMaterial.Material | 否 | @Prop | 设置组件系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏，或横向Tabs的底部TabBar中，沉浸光感效果才会生效。不同材质具有不同的效果，能够影响组件的backgroundColor、border、shadow视觉属性。设置自动反色的系统材质时，fontColor如果使用系统预定义的可反色颜色资源（如\$r('sys.color.font_primary')），颜色自动适配到材质背景色的反色。当设置backgroundSystemMaterial时，应将backgroundColor设为Color.Transparent，否则会与系统材质冲突。 默认值：undefined 值为undefined时，不应用材质样式。 起始版本： 26.0.0 模型约束： 此接口仅可在Stage模型下使用。 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| selectedBackgroundSystemMaterial | uiMaterial.Material | 否 | @Prop | 设置组件选中状态的系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏，或横向Tabs的底部TabBar中，沉浸光感效果才会生效。不同材质具有不同的效果，能够影响组件选中时的backgroundColor、border、shadow视觉属性。设置自动反色的系统材质时，selectedFontColor如果使用系统预定义的可反色颜色资源（如\$r('sys.color.font_primary')），颜色自动适配到材质背景色的反色。当设置selectedBackgroundSystemMaterial时，应将selectedBackgroundColor设为Color.Transparent，否则会与系统材质冲突。 默认值：undefined 值为undefined时，不应用选中状态的材质样式。 起始版本： 26.0.0 模型约束： 此接口仅可在Stage模型下使用。 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 |
 | onChange | Callback<Array&lt;number&gt;> | 否 | - | Chip状态改变时的回调方法，用于监听Chip选中状态的变更。该回调在selectedIndexes属性更新后触发，开发者可在回调中获取最新的选中状态并执行相应操作，如更新UI、保存选中数据、触发业务逻辑等。当需要监听用户选择Chip的操作并执行相应业务逻辑时传入此参数。不传入时，无法接收Chip状态变化的通知。 若为undefined，不触发该回调。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | suffix | Callback&lt;void&gt; | 否 | @BuilderParam | 支持开发者自定义builder，如需在组件最右侧显示自定义内容可配置suffix属性，使用属性suffix需引用IconGroupSuffix接口。 默认不传入时，没有suffix。 值为undefined时，没有suffix。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
  
@@ -268,7 +268,7 @@ IconGroupSuffix({
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | items | Array<IconItemOptions \| SymbolGlyphModifier \| SymbolItemOptions> | 是 | @Require @Prop | 尾部区域显示的自定义项数组，支持IconItemOptions（Image图标）、SymbolGlyphModifier（Symbol图标）或SymbolItemOptions（Symbol图标配置）类型。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| iconBackgroundSystemMaterial | uiMaterial.Material | 否 | @Prop | 设置组件系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏子树，或横向Tabs的底部TabBar子树中，材质效果才会生效。不同材质具有不同的效果，能够影响组件的backgroundColor、border、shadow视觉属性。设置自动反色的系统材质时，fontColor如果使用系统预定义的可反色颜色资源（如\$r('sys.color.font_primary')），颜色自动适配到材质背景色的反色。 默认值：undefined 值为undefined时，不应用材质样式。 起始版本： 26.0.0 模型约束： 此接口仅可在Stage模型下使用。 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| iconBackgroundSystemMaterial | uiMaterial.Material | 否 | @Prop | 设置组件系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏，或横向Tabs的底部TabBar中，沉浸光感效果才会生效。不同材质具有不同的效果，能够影响组件的backgroundColor、border、shadow视觉属性。设置自动反色的系统材质时，fontColor如果使用系统预定义的可反色颜色资源（如\$r('sys.color.font_primary')），颜色自动适配到材质背景色的反色。 默认值：undefined 值为undefined时，不应用材质样式。 起始版本： 26.0.0 模型约束： 此接口仅可在Stage模型下使用。 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 |
  
  
 > [!NOTE]
@@ -528,7 +528,7 @@ struct Index {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/u2SFJDpiQVyceFvZUJJEuw/zh-cn_image_0000002717613128.png?HW-CC-KV=V1&HW-CC-Date=20260911T073026Z&HW-CC-Expire=86400&HW-CC-Sign=343D96101365CA8D45319A0DA84A1084D95A59D804EFD043BED6D09E4449D86A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/oqM0g0ndQHqLvWOjJS30iA/zh-cn_image_0000002749495082.png?HW-CC-KV=V1&HW-CC-Date=20261009T013036Z&HW-CC-Expire=86400&HW-CC-Sign=20C692C45E7AE106D8FE9AAAF85A62BF6CE9458021D3008D72F9F8221177E360)
 
  
   
@@ -635,7 +635,7 @@ struct Index {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/TMiFWk_aTryY57mufTebmw/zh-cn_image_0000002747293081.png?HW-CC-KV=V1&HW-CC-Date=20260911T073026Z&HW-CC-Expire=86400&HW-CC-Sign=97F6D7C9A179D212CFCABBB1025F8A36918A5195BC0ABDC57D03B7B78E68B274)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/a3XKTI4TQF2q13zGNzXJdg/zh-cn_image_0000002779094139.png?HW-CC-KV=V1&HW-CC-Date=20261009T013036Z&HW-CC-Expire=86400&HW-CC-Sign=E0474625D14E66DCE5928A4587AB4774B98A83B9588248F55A473F41BF3A703A)
 
  
   
@@ -826,6 +826,10 @@ export struct ChipGroupExample2 {
 }
 ```
  
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/uYIvDg0wRVOFqEB4GNAIfw/zh-cn_image_0000002778934283.png?HW-CC-KV=V1&HW-CC-Date=20261009T013036Z&HW-CC-Expire=86400&HW-CC-Sign=FE2490674E8D359B332C291D07AA1F99B283FA9FA74BF6ABEFB376B3DB816DB9)
+
+ 
   
 
 ### 示例5（多选时无障碍朗读）
@@ -983,6 +987,10 @@ export struct ChipGroupExample2 {
 }
 ```
  
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/mUA-h-o-QiuEFatQGuUhEw/zh-cn_image_0000002749335200.png?HW-CC-KV=V1&HW-CC-Date=20261009T013036Z&HW-CC-Expire=86400&HW-CC-Sign=38007F1D3AC8001A016846869C7AA61B21EA2137876E007784D70A4B86C8CC03)
+
+ 
   
 
 ### 示例6（设置系统材质样式）
@@ -1072,8 +1080,10 @@ struct ChipGroupMaterialExample {
 }
 ```
  
+该示例配图为高算力设备强档效果。
+ 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/C41Yim9sR96lpSes70KZ0g/zh-cn_image_0000002747212997.png?HW-CC-KV=V1&HW-CC-Date=20260911T073026Z&HW-CC-Expire=86400&HW-CC-Sign=5046B1CB80FC636AC7180276AFD82AD821E54970EBCB1A9209AE7CCEF6AFDF45)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/SR0AArVSTfyHVtfaBR5gHg/zh-cn_image_0000002749495084.png?HW-CC-KV=V1&HW-CC-Date=20261009T013036Z&HW-CC-Expire=86400&HW-CC-Sign=D9C70182D2AC20250BDDD5056B0C8599ACA7A4E3EC6BB132AC9F9A24C2DC1DEA)
 
  
   
@@ -1171,5 +1181,7 @@ struct ChipGroupMaterialExample {
 }
 ```
  
+该示例配图为高算力设备强档效果。
+ 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/_Tia98GYQZy6Kbk1bH2CDA/zh-cn_image_0000002717773062.png?HW-CC-KV=V1&HW-CC-Date=20260911T073026Z&HW-CC-Expire=86400&HW-CC-Sign=0D6AB22E8824D0276B76AA0E24AD165A329BC584CFC0B3DFD5AF52A862A4BA3B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/_9EWpCLpR8KZW9uC9OoiYg/zh-cn_image_0000002779094141.png?HW-CC-KV=V1&HW-CC-Date=20261009T013036Z&HW-CC-Expire=86400&HW-CC-Sign=121CFDFB75AEF3863279FED24FF706BA22FB4632BC478BB693FCAC5395326CDD)

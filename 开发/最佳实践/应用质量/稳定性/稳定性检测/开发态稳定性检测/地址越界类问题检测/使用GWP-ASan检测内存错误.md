@@ -1,25 +1,25 @@
 # 使用GWP-ASan检测内存错误
 
-更新时间：2026-08-10 06:55:01
+更新时间：2026-09-20 11:26:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-gwpasan-detection
 
 GWP-ASan的能力概述和检测原理可参看[地址越界检测能力概述](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-address-sanitizer-overview)以及[GWP-ASan检测原理](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-address-sanitizer-principle#section555616291854)，适用于运行态商用场景。
  
 
-#### 使用约束
+## 使用约束
 
  
 ASan、TSan、UBSan、HWASan、GWP-ASan不能同时开启，五个只能开启其中一个。
  
 
-#### GWP-ASan使能
+## GWP-ASan使能
 
  
 可通过以下两种方式使能GWP-ASan。
  
 
-#### 方式一 修改app.json5配置文件
+### 方式一 修改app.json5配置文件
 
  
 在app.json5中添加"GWPAsanEnabled": true配置，如下图所示。
@@ -31,11 +31,12 @@ ASan、TSan、UBSan、HWASan、GWP-ASan不能同时开启，五个只能开启�
 开启GWP-ASan检测后，如果应用发生地址越界问题，且该问题正好被GWP-ASan采样监控，GWP-ASan会记录地址越界事件并且使进程崩溃，开发者可以通过订阅地址越界事件来获取相关信息，请参考：[地址越界事件介绍](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-watcher-address-sanitizer-events)。
  
 
-#### 方式二 调用hidebug接口
+### 方式二 调用hidebug接口
 
  
 从API version 20开始，GWP-ASan可通过hidebug接口配置参数。从API version 24开始，新增isRecover参数，用于控制应用在100%开启GWP-ASan时，是否以可恢复模式运行。可配置参数如下：
   
+
 | 名称 | 默认值 | 是否必填 | 说明 |
 | --- | --- | --- | --- |
 | alwaysEnabled | false | 否 | true：100%开启GWP-ASan，与app.json5中GWPAsanEnabled标签功能一致。 false：1/128概率开启GWP-ASan，在应用冷启动时候会判断是否开启。 注意：若在app.json5中设置了 GWPAsanEnabled，将会覆盖该参数。 |
@@ -47,13 +48,13 @@ ASan、TSan、UBSan、HWASan、GWP-ASan不能同时开启，五个只能开启�
 接口具体使用方式，可查看[@ohos.hidebug (Debug调试)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hidebug#hidebugenablegwpasangrayscale20)。
  
 
-#### GWP-ASan异常检测类型
+## GWP-ASan异常检测类型
 
  
 GWP-ASan异常检测类型、代码实例及分析定位思路如下。
  
 
-#### use after free
+### use after free
 
 **背景**
  
@@ -146,7 +147,7 @@ Use After Free at 0x5bb1c2cc00 (0 bytes into a 1024-byte allocation at 0x5bb1c2c
  
  
 
-#### double free
+### double free
 
 **背景**
  
@@ -235,7 +236,7 @@ Double Free at 0x5bb1c1e000 (a 64-byte allocation) by thread 32252 here:
 3. 在接口、多线程和异步场景中明确指针所有权。
  
 
-#### invalid free left
+### invalid free left
 
 **背景**
  
@@ -304,7 +305,7 @@ Invalid (Wild) Free at 0x5bb1c18fef (1 byte to the left of a 16-byte allocation 
  
 确认释放的指针是否位于内存块起始地址左侧，修正指针偏移，确保仅释放原始指针。
  
-**推荐****建议**
+**推荐建议**
  
 1. 确保内存申请与释放配对使用。
  
@@ -314,7 +315,7 @@ Invalid (Wild) Free at 0x5bb1c18fef (1 byte to the left of a 16-byte allocation 
  
  
 
-#### invalid free right
+### invalid free right
 
 **背景**
  
@@ -383,7 +384,7 @@ Invalid (Wild) Free at 0x5bb1c2c001 (1 byte to the right of a 16-byte allocation
  
 确认释放的指针是否位于分配内存块右侧或尾部偏移位置，修正指针递增或越界计算，确保只释放分配函数返回的原始指针。
  
-**推荐****建议**
+**推荐建议**
  
 1. 建议使用智能指针管理生命周期，避免手动管理内存。
  
@@ -391,7 +392,7 @@ Invalid (Wild) Free at 0x5bb1c2c001 (1 byte to the right of a 16-byte allocation
  
  
 
-#### buffer overflow
+### buffer overflow
 
 **背景**
  
@@ -472,7 +473,7 @@ Buffer Overflow at 0x5bb1c23000 (512 bytes to the right of a 512-byte allocation
  
  
 
-#### buffer underflow
+### buffer underflow
 
 **背景**
  
@@ -557,6 +558,6 @@ Buffer Underflow at 0x5bb1c29ffc (4 bytes to the left of a 4096-byte allocation 
  
  
 
-#### 日志规格和日志获取方式
+## 日志规格和日志获取方式
 
 请参看[日志获取方式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/address-sanitizer-guidelines#日志获取方式)和[GWP-ASan日志规格](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/address-sanitizer-guidelines#gwp-asan日志规格)。

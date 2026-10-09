@@ -1,10 +1,10 @@
 # 基于AudioRenderer和AudioCapturer实现音频波形动画
 
-更新时间：2026-04-07 05:56:00
+更新时间：2026-09-20 11:26:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-ripple-animation
 
-#### 概述
+## 概述
 
  
 音频波形动画是音频数据的线性波形显示，其中，水平X轴用于衡量时间，垂直Y轴用于衡量振幅，如下图所示：
@@ -22,7 +22,7 @@
 
  
 
-#### 实现原理
+## 实现原理
 
 dBFS是描述音频信号在数字系统中的幅度的单位，在波形显示中，通常使用dBFS衡量数字音频中的信号强度。其计算公式如下所示：
  
@@ -30,17 +30,17 @@ dBFS是描述音频信号在数字系统中的幅度的单位，在波形显示�
 ![](assets/基于AudioRenderer和AudioCapturer实现音频波形动画/file-20260515114751884-1.png)
 
  
-其中，A表示当前的振幅数值，即当前音频数据的位深。Amax表示振幅数值的最大值，即音频的最大位深。
+其中，A表示当前采样点的振幅值（即该时刻音频数据的瞬时数值）。Amax表示在当前位深下，系统所能表示的最大振幅值。
  
-在计算音频的振幅dBFS后，将振幅高度绘制到画布上，再通过动画向左移动，重复以上步骤后，即可实现音频波形动画。
+在波形动画实现中，首先将音频采样数据转换为dBFS值，然后将这些值映射为画布上的垂直高度，并通过动画逐帧向左平移，重复以上步骤后，即可实现音频波形的动态显示。
  
- 
-
-#### 基于AudioRenderer实现音频播放波形
-
  
 
-#### 场景描述
+## 基于AudioRenderer实现音频播放波形
+
+ 
+
+### 场景描述
 
 开发者在开发录音播放等场景时，为了体现当前播放音量的大小，需要实现音频播放波形，下面将介绍如何基于AudioRenderer实现音频播放波形。
  
@@ -50,13 +50,13 @@ dBFS是描述音频信号在数字系统中的幅度的单位，在波形显示�
  
  
 
-#### 实现原理
+### 实现原理
 
 在基于[AudioRenderer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer)实现音频播放波形场景中，需要定时计算获取音频的dBFS。因为需要定时绘制dBFS，所以需要计算这一段时间内的平均音频位深。然后，根据平均位深计算当前的dBFS，将对应高度的线条绘制到画布上。最后，通过动画移动画布，从而实现音频播放波形。
  
  
 
-#### 开发步骤
+### 开发步骤
 1. 初始化AudioRenderer，在回调函数writeData()中需要计算位深的总数，便于后续计算其平均值。
 
   
@@ -138,27 +138,27 @@ drawOnPlay(): void {
  
  
 
-#### 基于AudioCapturer实现音频录制波形
+## 基于AudioCapturer实现音频录制波形
 
  
 
-#### 场景描述
+### 场景描述
 
 开发者在开发通讯软件的语音录制发送、音乐录制等场景时，为了体现当前录制音量的大小，需要实现音频录制波形。下面将介绍如何基于AudioCapturer实现音频录制波形。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/kc2IOYGBTk-zEpl7KiigWA/zh-cn_image_0000002507968406.gif?HW-CC-KV=V1&HW-CC-Date=20260528T024744Z&HW-CC-Expire=86400&HW-CC-Sign=0335124B8639DDBD04ADD8EA88825B27E2C84187C91A450F9BDB784B94B26CBB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/YGNGAcpPQQKJysZ4zLtyZA/zh-cn_image_0000002507968406.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012641Z&HW-CC-Expire=86400&HW-CC-Sign=7D123D895D09DBC70BDA560D6EA58A75D56F9A22931D97F1A9732AD23EB77856)
 
  
  
 
-#### 实现原理
+### 实现原理
 
-在基于AudioCapturer实现音频播放波形场景中，需要在readData的回调函数中获取对应的位深，再计算对应的dBFS，其他实现步骤与基于AudioRenderer实现音频播放波形类似。
+在基于AudioCapturer实现音频录制波形场景中，需要在readData的回调函数中获取对应的位深，再计算对应的dBFS，其他实现步骤与基于AudioRenderer实现音频播放波形类似。
  
  
 
-#### 开发步骤
+### 开发步骤
 1. 初始化AudioCapturer，在回调函数readData()中需要计算位深的总数，便于后续计算其平均值。
 
   
@@ -167,7 +167,7 @@ this.capturer.on('readData', (buffer: ArrayBuffer) => {
   let options: WriteOptions = { offset: this.writeOffset, length: buffer.byteLength };
   fileIo.writeSync(this.recordFile?.fd, buffer, options);
   this.writeOffset += buffer.byteLength;
-  AppStorage.setOrCreate('RWOffset', this.writeOffset)
+  AppStorage.setOrCreate('RWOffset', this.writeOffset);
   // sum samples
   let samples = new Int16Array(buffer);
   for (let i = 0; i < samples.length; i++) {
@@ -227,6 +227,6 @@ drawOnRecord() {
  
  
 
-#### 示例代码
+## 示例代码
 
-- [实现音频动画](https://gitcode.com/harmonyos_samples/audio-ripple-animation)
+- [实现音频动效](https://gitcode.com/harmonyos_samples/audio-ripple-animation)

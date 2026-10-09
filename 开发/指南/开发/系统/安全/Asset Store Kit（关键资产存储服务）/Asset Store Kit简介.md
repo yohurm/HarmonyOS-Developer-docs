@@ -1,6 +1,6 @@
 # Asset Store Kit简介
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/asset-store-kit-overview
 
@@ -16,7 +16,7 @@ Asset Store Kit（关键资产存储服务，简称ASSET）用于提供用户短
 ASSET数据存储结构如下图所示：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/QtoYy12xRBaafgqI-E_rJw/zh-cn_image_0000002717611128.png?HW-CC-KV=V1&HW-CC-Date=20260911T072517Z&HW-CC-Expire=86400&HW-CC-Sign=4E6988BBA8E6ADA3D5EC4E4EE2341C8F8271A6AC279B7B209BD7340610916071)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/I9V9NjnPT9uJ-KUxNL3vMg/zh-cn_image_0000002749333054.png?HW-CC-KV=V1&HW-CC-Date=20261009T012635Z&HW-CC-Expire=86400&HW-CC-Sign=E90BEEFDFACA39597A2EE3F6F82DFEDF30B7A1A07D2B55D30B8AB6DEFE9511DF)
 
 
 
@@ -93,7 +93,7 @@ ASSET为业务预留了12个关键资产自定义属性，名称以"DATA_LABEL"�
 
   
 ASSET不支持沙箱应用、应用分身存储或访问群组数据。
- - [IS_PERSISTENT](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-asset#tag)属性设置为True的关键资产，不允许设置为群组共享。
+ - [IS_PERSISTENT](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-asset#tag)属性设置为true的关键资产，不允许设置为群组共享。
 
 
 

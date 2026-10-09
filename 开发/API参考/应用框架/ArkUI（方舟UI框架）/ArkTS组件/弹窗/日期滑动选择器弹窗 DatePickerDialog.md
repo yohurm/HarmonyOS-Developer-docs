@@ -1,6 +1,6 @@
 # 日期滑动选择器弹窗 (DatePickerDialog)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-datepicker-dialog
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -583,7 +583,7 @@ struct DatePickerDialogExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/MaQH3aIASW2PnvJrRyFwNQ/zh-cn_image_0000002717773012.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=350386319021EFD0FDF953480C19DFF05A6D66BAD7CA202B53D16F9243D56366)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/KelymuXNTJSFNlhVUaS4ZQ/zh-cn_image_0000002749335150.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013107Z&HW-CC-Expire=86400&HW-CC-Sign=39FC1ACB2009BF83BC6A32561878102C05E59BBAB92EA8B9B73F42F96ACCA6B0)
 
 
 
@@ -634,7 +634,7 @@ struct DatePickerDialogExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/NAx04FBfT0a6zaXCTPI6ig/zh-cn_image_0000002717613082.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=DF65B2A4265FB07DCAFA2CCA7C681D1AC0FE7BCFFAAD73D385FA0589DF573001)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/hJi0ppiTS3yH6EEQuR0bgg/zh-cn_image_0000002749495034.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013107Z&HW-CC-Expire=86400&HW-CC-Sign=5563271DC81AD837C6881CE2D1D127BC3D4D0A5EC0746BA949A910745CE7D9A3)
 
 
 
@@ -681,7 +681,7 @@ struct DatePickerDialogExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/BvzO-QO8T42qjmawu3Ru3Q/zh-cn_image_0000002747293033.png?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=8515E0C268A2848B1A7A8D14A03E9C99C5A8C79E90430EEBA90597BEE1580794)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/27LUibpNQQqv0Bw5Qg7p4g/zh-cn_image_0000002779094091.png?HW-CC-KV=V1&HW-CC-Date=20261009T013107Z&HW-CC-Expire=86400&HW-CC-Sign=E10119570A293D138773F72688A3098A6425E2C1CB0A52AF57300FF03AC270CE)
 
 
 
@@ -729,17 +729,19 @@ struct DatePickerDialogExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/GVr_JF4eQtm3mDe2JfM0mw/zh-cn_image_0000002747212949.png?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=027D98F119CF4C358432D05BBDCF0447B63C7D6D0B4CC4CF6EE63A26677B6648)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/QdZB5eOLQ4KrZT4Tjv_v6g/zh-cn_image_0000002778934235.png?HW-CC-KV=V1&HW-CC-Date=20261009T013107Z&HW-CC-Expire=86400&HW-CC-Sign=05EACB6937A7C226BE4FBB57C3708A0BD338E2EE86297BF02D45F51E41C30FA5)
 
 
 
 
-### 示例12（设置系统材质）
+### 示例12（设置沉浸光感）
 
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-该示例通过配置[systemMaterial](#datepickerdialogoptions对象说明)，实现系统材质效果。
+该示例通过配置[systemMaterial](#datepickerdialogoptions对象说明)，实现沉浸光感效果。
+
+该示例配图为高算力设备强档效果，组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
 
 从API版本26.0.0开始，在DatePickerDialogOptions中新增了systemMaterial属性。
 
@@ -763,10 +765,13 @@ struct DatePickerDialogExample {
             });
           })
       }.width('100%')
+      .height('100%')
+      .backgroundImage($r('app.media.bgImg'))  // $r('app.media.bgImg')需要替换为开发者所需的资源文件
+      .backgroundImageSize(ImageSize.FILL)
     }
   }
 }
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/Vtw-2jo7QPyIbp7I6QDF8Q/zh-cn_image_0000002717773014.png?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=F6D7E1430AAFB680117033BAB234EB0D2DBE04F192EA49B7C452C31BE45B6A83)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/nTL-ViapS6WxGgDhuyVSKg/zh-cn_image_0000002749335152.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013107Z&HW-CC-Expire=86400&HW-CC-Sign=96C26D20BD0EB563DC5C746B87B42838CBAD84BF0C4E84FF7B5C8F8B752C902C)

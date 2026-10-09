@@ -1,20 +1,20 @@
 # @typescript-eslint/promise-function-async
 
-更新时间：2026-01-15 06:51:04
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_promise-function-async
 
 要求任何返回Promise的函数或方法标记为async。
  
-
  
 
-#### 规则配置
+
+## 规则配置
 
 ```json
 // code-linter.json5
 {
-  "rules": {
+  <span style="color: rgb(135,16,148);">"rules"</span>: {
     "@typescript-eslint/promise-function-async": "error"
   }
 }
@@ -22,13 +22,13 @@
  
  
 
-#### 选项
+## 选项
 
 详情请参考[@typescript-eslint/promise-function-async选项](https://typescript-eslint.nodejs.cn/rules/promise-function-async/#options)。
  
  
 
-#### 正例
+## 正例
 
 ```text
 export const arrowFunctionReturnsPromise = async () => Promise.resolve('value');
@@ -51,7 +51,7 @@ export async function functionReturnsUnionWithPromiseImplicitly(p: boolean) {
  
  
 
-#### 反例
+## 反例
 
 ```text
 export const arrowFunctionReturnsPromise = () => Promise.resolve('value');
@@ -67,10 +67,10 @@ export function functionReturnsUnionWithPromiseImplicitly(p: boolean) {
  
  
 
-#### 规则集
+## 规则集
 
 ```text
-plugin:@typescript-eslint/all
+<span style="color: rgb(6,125,23);">plugin:@typescript-eslint/all</span>
 ```
  
 Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-code-linter)。

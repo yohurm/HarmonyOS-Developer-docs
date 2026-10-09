@@ -1,6 +1,6 @@
 # @hw-stylistic/file-naming-convention
 
-更新时间：2026-01-15 06:51:04
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-file-naming-convention
 
@@ -11,12 +11,12 @@
 
  
 
-#### 规则配置
+## 规则配置
 
 ```json
 // code-linter.json5
 {
-  "rules": {
+  <span style="color: rgb(135,16,148);">"rules"</span>: {
     "@hw-stylistic/file-naming-convention": "error"
   }
 }
@@ -24,7 +24,7 @@
  
  
 
-#### 选项
+## 选项
 
 该规则默认检查代码文件和资源文件的命名风格，也可以接受一个对象作为参数{selector: string}，来指定只检查代码文件或者资源文件。"selector"支持配置为"resources"或者"code"。
  
@@ -35,7 +35,7 @@
 ```json
 // code-linter.json5
 {
-  "rules": {
+  <span style="color: rgb(135,16,148);">"rules"</span>: {
     "@hw-stylistic/file-naming-convention": ["error", { "selector": "code" }]
   }
 }
@@ -47,14 +47,14 @@
 ```json
 // code-linter.json5
 {
-  "rules": {
+<span style="color: rgb(135,16,148);">  "rules"</span>: {
     "@hw-stylistic/file-naming-convention": ["error", { "selector": "resources" }]
   }
 }
 ```
  
 
-#### 正例
+## 正例
 
 ```ArkTS
 // 代码文件名：Index.ets、EntryAbility.ets、index.js
@@ -63,7 +63,7 @@
  
  
 
-#### 反例
+## 反例
 
 ```ArkTS
 // 代码文件名：index.ets、ability.ets、Index.js
@@ -72,11 +72,11 @@
  
  
 
-#### 规则集
+## 规则集
 
 ```text
-"plugin:@hw-stylistic/recommended"
-"plugin:@hw-stylistic/all"
+<span style="color: rgb(6,125,23);">"plugin:@hw-stylistic/recommended"</span>
+<span style="color: rgb(6,125,23);">"plugin:@hw-stylistic/all"</span>
 ```
  
 Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-code-linter)。

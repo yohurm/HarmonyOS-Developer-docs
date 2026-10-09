@@ -150,7 +150,6 @@ struct NavPageTwo {
   
 | 无法跳转到NavPageTwo | 正常跳转到NavPageTwo |
 | --- | --- |
-|  |  |
 | RouterPageOne使用NavDestination作为根容器。 | RouterPageOne使用Navigation作为根容器。 |
  
  

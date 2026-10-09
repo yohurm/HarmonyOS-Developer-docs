@@ -1,13 +1,10 @@
 # Grid组件加载丢帧优化
 
-更新时间：2026-03-12 08:45:02
+更新时间：2026-09-15 02:12:10
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-improve_grid_performance
 
-**   
-
-
-#### 概述
+## 概述
 
 网格是应用开发中常见的开发场景。它通过相交的横线和竖线，形成整齐有序的网状布局。网格适用于展示图片、媒体文件、购物商品等多种数据。当网格上下滑动时，子组件会带来测量和绘制的性能消耗。
  
@@ -16,7 +13,8 @@
  
 在实现如下图所示可滚动布局效果时，可能会通过columnStart/columnEnd[设置子组件所占行列数](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-create-grid#设置子组件所占行列数)，实现不规则的布局效果。
  
-图1 **columnStart/columnEnd实现不规则网格布局**
+**图1 **columnStart/columnEnd实现不规则网格布局
+
 ![](assets/Grid组件加载丢帧优化/file-20260515115025583-0.png)
 
  
@@ -27,11 +25,11 @@
 在Grid中存在多个GridItem时，如果使用columnStart/columnEnd或rowStart/rowEnd设置GridItem的大小，可能会导致性能问题。在这种情况下，建议使用GridLayoutOptions来提升性能。使用columnStart/columnEnd或rowStart/rowEnd布局时，如果调用scrollToIndex滑动到指定索引，Grid会遍历所有GridItem以查找位置。而使用GridLayoutOptions布局时，通过计算方式查找位置，效率更高。因此，可以通过设置GridLayoutOptions，并结合rowsTemplate或columnsTemplate来替代使用columnStart/columnEnd控制GridItem占用多列的情况。
  
 
-#### 案例说明
+## 案例说明
 
  
 
-#### 场景示例
+### 场景示例
 
  
 介绍Grid中使用scrollToIndex滑动到指定位置的场景。案例中，columnStart/columnEnd设置不规则宫格布局的反例，与GridLayoutOption的正例对比，示例代码如下：
@@ -227,7 +225,7 @@ struct GridExample2 {
 ```
  
 
-#### 分析步骤
+### 分析步骤
 
  
 正反例采用相同的操作步骤，收集跳转过程中的性能参数并进行对比：
@@ -246,12 +244,12 @@ struct GridExample2 {
 
  
 
-#### 结果对比
+### 结果对比
 
 如图所示，使用columnStart和columnEnd设置GridItem大小的布局方式。从自定义打点标签“H:useColumnStartColumnEndGrid”可以看出，从调用scrollToIndex到查找到指定索引并准备构建GridItem节点耗时447ms。
  
  
-图2 **使用columnStart，columnEnd的打点信息
+**图2 **使用columnStart，columnEnd的打点信息
  
 
 ![](assets/Grid组件加载丢帧优化/file-20260515115025583-5.png)
@@ -267,15 +265,16 @@ struct GridExample2 {
  
 通过详细的trace分析可以发现，在“H:useColumnStartColumnEndGrid”打点标签时间段中，存在大量“H:Builder:BuildLazyItem”标签。这表明Grid在查找指定的Index 1900时，是通过依次遍历Index来实现的。
  
-**图4 **使用columnStart，columnEnd的放大trace标签信息**
+**图4 **使用columnStart，columnEnd的放大trace标签信息
+
 ![](assets/Grid组件加载丢帧优化/file-20260515115025583-7.png)
 
  
 在使用GridLayoutOptions的示例中，“H:useGridLayoutOptions”打点标签时间段内仅出现一个“H:Builder:BuildLazyItem”标签。这表明Grid在查找指定索引1900时，能够直接一次性找到指定索引。
  
-图5 **使用GridLayoutOptions的放大trace标签信息
+**图5 **使用GridLayoutOptions的放大trace标签信息
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/OoLlu_ICSLWPH2D6SKc7_Q/zh-cn_image_0000002229450909.png?HW-CC-KV=V1&HW-CC-Date=20260528T024712Z&HW-CC-Expire=86400&HW-CC-Sign=AADAC6FCA32CA3EA15434F2E3579883756DE60C38F5139FAFC3F44E40515BB87)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/0-fz0MVkQVqAiKYMm7MpSw/zh-cn_image_0000002229450909.png?HW-CC-KV=V1&HW-CC-Date=20261009T012645Z&HW-CC-Expire=86400&HW-CC-Sign=CC3F81C21822FBD1304A6DC680229433A03CCD90C5EE719529ED45DACF7AF5CE)
 
  
 在相同布局情况下，使用columnStart和columnEnd设置GridItem大小时，Grid在使用scrollToIndex查找指定索引时，会依次遍历GridItem节点，导致查找过程耗时较长。而使用GridLayoutOptions设置GridItem大小时，直接一次性计算找到指定索引，查找过程耗时较短。因此，使用GridLayoutOptions设置GridItem大小可以显著减少Grid加载时间，提升应用性能。

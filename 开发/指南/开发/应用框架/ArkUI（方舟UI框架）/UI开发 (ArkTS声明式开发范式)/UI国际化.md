@@ -1,6 +1,6 @@
 # UI国际化
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-internationalization
 
@@ -20,7 +20,7 @@
 
 | 镜像前 | 镜像后 |
 | --- | --- |
-|  |  |
+| ![](assets/UI国际化/file-20260514130722329-0.png) | ![](assets/UI国际化/file-20260514130722329-1.png) |
 
 
 当组件满足以下任意条件时，镜像能力生效：
@@ -52,7 +52,7 @@ ArkUI 如下能力已默认适配镜像：
 
 但如下三种场景还需要进行适配：
 1. 界面布局、边框设置：关于方向类的通用属性，如果需要支持镜像能力，使用泛化的方向指示词 start/end入参类型替换 left/right、x/y等绝对方向指示词的入参类型，来表示自适应镜像能力。
-2. [Canvas](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-canvas-canvas)组件只有限支持文本绘制的镜像能力。
+2. [Canvas](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-canvas-canvas)组件只支持文本绘制的镜像能力。
 3. [XComponent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-xcomponent)组件不支持组件镜像能力。
 
 
@@ -144,7 +144,7 @@ struct CustomizeCanvasComponentDrawing {
   }
 
   drawText(): void {
-    console.error('drawText')
+    console.info('drawText')
     this.context.reset()
     this.context.direction = 'inherit'
     this.context.font = '30px sans-serif'
@@ -170,7 +170,7 @@ struct CustomizeCanvasComponentDrawing {
 
 | 镜像前 | 镜像后 |
 | --- | --- |
-|  |  |
+| ![](assets/UI国际化/file-2026070810385278a5adbd.png) | ![](assets/UI国际化/file-202607081038528807deb3.png) |
 
 
 
@@ -184,7 +184,7 @@ struct CustomizeCanvasComponentDrawing {
 在LTR与RTL文本混排时，如一个英文句子中包含阿拉伯语的单词或短语，显示顺序将变得复杂。下图为数字和维吾尔语混合时对应的字符逻辑顺序。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/XN-xPREzQFaWhekDaX3UNA/zh-cn_image_0000002717610716.png?HW-CC-KV=V1&HW-CC-Date=20260911T072505Z&HW-CC-Expire=86400&HW-CC-Sign=73883198E3DA93B88E0A6DDCB334CDEAD7A3DDD54E7C4EA9A4CEFF6A2B8DB48B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/QXkb-PRfT1CUSiyZTUx7rg/zh-cn_image_0000002749492526.png?HW-CC-KV=V1&HW-CC-Date=20261009T012628Z&HW-CC-Expire=86400&HW-CC-Sign=7D0576F004FC1A5E14AE88E27A5FD929BC9860203C9E250C5DAAD36EBB22545B)
 
 
 此时，文本渲染引擎会采用名为“双向算法”或“Unicode双向算法”（Unicode Bidirectional Algorithm）的方法来确定字符的显示顺序。下图展示了LTR与RTL文本混合时对应的字符显示顺序，确定字符方向的基本原则如下：
@@ -193,4 +193,4 @@ struct CustomizeCanvasComponentDrawing {
 3. 中性字符的方向性：中性字符无固定方向性，它们会继承其最近的强字符的方向；若附近无强字符，则采用全局方向。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/dR50n5XBQNeG55hZnKXi2g/zh-cn_image_0000002747290669.png?HW-CC-KV=V1&HW-CC-Date=20260911T072505Z&HW-CC-Expire=86400&HW-CC-Sign=869409073AD328128757B2E063570925E84C0763785CF854DF891823BD4E87A8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/m9QMR3zmTzy3Ikvv7hWQkw/zh-cn_image_0000002779091585.png?HW-CC-KV=V1&HW-CC-Date=20261009T012628Z&HW-CC-Expire=86400&HW-CC-Sign=A1A1FDEBEB40E8FF583FEB3B7D68E18795B3EAE7C8AB105A2AAB130533D9F9B2)

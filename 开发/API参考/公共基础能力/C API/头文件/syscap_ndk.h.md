@@ -1,8 +1,8 @@
 # syscap_ndk.h
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-24 09:52:23
 
-来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/syscap__ndk_8h
+来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/syscap-ndk-8h
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ## 概述

@@ -1,6 +1,6 @@
 # 绘制几何图形 (Shape)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-geometric-shape-drawing
 
@@ -415,7 +415,7 @@ struct Mesh {
         .height(150)
         .backgroundColor(Color.Grey)
         .onClick(() => {
-          this.meshArray = [0, 0, 50, 0, 410, 0, 0, 180, 50, 180, 410, 180, 0, 360, 50, 360, 410, 360, 0];
+          this.meshArray = [0, 0, 50, 0, 410, 0, 0, 180, 50, 180, 410, 180, 0, 360, 50, 360, 410, 360];
         })
       Button('change mesh')
         .margin(5)
@@ -590,4 +590,4 @@ struct CircleExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/FHlQbCWbTJadPlvTfVs58g/zh-cn_image_0000002717610584.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T072503Z&HW-CC-Expire=86400&HW-CC-Sign=AAC83793EE77C87CCFE455E1A0E3A68D3DBFACB3BAF309A0F99C25BA9440957A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/qG55QqsETIOBCG9qPSekbg/zh-cn_image_0000002749492394.jpg?HW-CC-KV=V1&HW-CC-Date=20261009T012626Z&HW-CC-Expire=86400&HW-CC-Sign=271DD4B40F263C6E26E55A6333A8A6E1881EC19F226C735A4CABB21729068F8A)

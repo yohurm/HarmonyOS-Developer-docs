@@ -1,6 +1,6 @@
 # CPU密集型任务开发指导 (TaskPool和Worker)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cpu-intensive-task-development
 
@@ -102,7 +102,7 @@ let done = false;
 
 // 接收Worker子线程的结果
 workerInstance.onmessage = (() => {
-  console.info('MyWorker.ts onmessage');
+  console.info('MyWorker1.ets onmessage');
   if (!done) {
     // 执行预测，传入预测条件
     workerInstance.postMessage({ 'type': 1, 'area': 80, 'room': 4 });

@@ -1,6 +1,6 @@
 # 支持使用预览器的API清单
 
-更新时间：2026-09-08 02:53:31
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-previewer-api-list
 

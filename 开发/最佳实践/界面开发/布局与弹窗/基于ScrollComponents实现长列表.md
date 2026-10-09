@@ -1,13 +1,10 @@
 # 基于ScrollComponents实现长列表
 
-更新时间：2026-08-10 06:55:01
+更新时间：2026-09-15 02:12:10
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-list-based-on-scrollcomponents
 
-**   
-
-
-#### 概述
+## 概述
 
 列表包含一系列相同宽度的列表项，适合连续、多行展示同类数据，例如图片和文本。List具备动态数据处理能力，可以循环生成列表项，适应数据变化。它采用滚动加载技术，仅渲染可视项目，从而提升长列表的性能。同时，支持自定义交互逻辑与视觉样式，以满足多样化的交互需求。其使用场景广泛，涵盖列表类信息展示（如新闻、商品清单）、导航菜单设计（底部导航、侧边栏）及分页长内容呈现（如社交媒体动态、评论区），是实现高效数据可视化与交互的核心组件。
  
@@ -29,23 +26,24 @@ ScrollComponents三方库基于系统[NodeAdapter](https://developer.huawei.com/
  
  
 
-#### 实现原理
+## 实现原理
 
  
 
-#### 关键技术
+### 关键技术
 
  
 ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdapter、BuildNode和自定义复用池实现懒加载、组件复用、组件预创建等功能。同时，它为开发者提供了WaterFlowManager、ListManager、GridManager等视图管理组件，以支持系统滑动组件的其他各种能力。在满足开发者正常开发需求的前提下，提供高性能的滑动能力，只需传入数据源和viewManager即可快速实现懒加载和组件复用的开发，使开发者能够更加专注于业务实现。
  
 如下图所示，当节点从可视区域移除时，NodeAdapter会通知视图管理器回收组件，经NodeFactory处理后，组件最终被存入复用池。当需要创建节点时，NodeAdapter通知视图管理器开始创建，NodeFactory会从复用池请求复用节点，获取节点后经过一系列更新和组件拼接，最后由NodeAdapter将节点添加到可视区域。
  
-图1 **RecyclerView整体流程图**
+**图1 **RecyclerView整体流程图
+
 ![](assets/基于ScrollComponents实现长列表/file-20260515114455306-0.png)
 
  
 
-#### 开发流程
+### 开发流程
 1. 创建长列表视图管理器。ListManager仅具备基础的视图功能。若开发者需要使用组件复用功能，需定义一个继承自ListManager的类，并实现onWillCreateItem()方法，从复用池中获取组件，以开启复用能力。具体实现可参考[复用子节点模板](#li18448145318540)。
 
   在创建视图管理器的实例对象时，defaultNodeItem属性用于指定默认的列表项模板名称，通常传入唯一标识字符串用于组件复用；context属性用于获取UI上下文，通常传入this.getUIContext()。
@@ -212,7 +210,8 @@ function EasyBlogItemContainer($$: Params) {
 
   当组件即将被销毁时，会从视图容器中移除并进入item复用池。当组件即将被创建时，会从item复用池中获取item节点。如果item节点与目标节点类型存在差异，会先将差异部分，即PartReuse中的组件回收到对应的组件复用池，然后从对应的组件复用池中取出目标组件所需的差异组件，并与item节点拼接，形成目标组件，再进入视图容器中。
 
-  图2 **可拆分组件复用创建流程图**
+  **图2 **可拆分组件复用创建流程图
+
 ![](assets/基于ScrollComponents实现长列表/file-20260515114455306-11.gif)
 
 ```ArkTS
@@ -294,7 +293,8 @@ function GridImageViewContainer($$: Params) {
 
   开发者可以参考下图所示的日志打印内容，以检验是否成功复用，"generateItem reuse" 表示复用。
 
-  图3 **日志效果图**
+  **图3 **日志效果图
+
 ![](assets/基于ScrollComponents实现长列表/file-20260515114455306-12.gif)
 
 
@@ -381,23 +381,24 @@ function HotVideoBlogItemContainer($$: Params) {
  
  
 
-#### 长列表分组布局场景
+## 长列表分组布局场景
 
  
 
-#### 场景描述
+### 场景描述
 
  
 在长列表中支持数据的分组展示，可以使列表结构更加清晰，便于查找，从而提高使用效率。分组列表在实际应用中非常常见，例如下图所示的联系人列表和商品分类展示列表。
  
 在分组场景中，通常会设置Group的header和footer，用于展示组内统一的头部和尾部信息。
  
-图4 **商品分类列表展示效果图**
+**图4 **商品分类列表展示效果图
+
 ![](assets/基于ScrollComponents实现长列表/file-20260515114455306-14.gif)
 
  
 
-#### 开发步骤
+### 开发步骤
 
 1. 定义Item复用的模板
 ```ArkTS
@@ -577,21 +578,22 @@ function GoodItemContainer($$: ParamsGoods) {
 
  
 
-#### 长列表跨页面复用场景
+## 长列表跨页面复用场景
 
  
 
-#### 场景描述
+### 场景描述
 
 开发者可能需要在多个页面间复用List，例如在Tabs切换时。ScrollComponents提供了全局复用的能力。
  
  
-图5 **Tabs组件子页面跨页面复用效果图**
+**图5 **Tabs组件子页面跨页面复用效果图
+
 ![](assets/基于ScrollComponents实现长列表/file-20260515114455306-16.gif)
 
  
 
-#### 开发步骤
+### 开发步骤
 
 1. 定义复用池单例ScrollComponents默认会生成一个RecycledPool对象，通过定义复用池单例存储该pool对象，以便跨页面使用。以下单例仅做参考，开发者可根据需要自行封装。
 
@@ -682,21 +684,22 @@ struct CustomListPage {
 
  
 
-#### 长列表加速首屏渲染场景
+## 长列表加速首屏渲染场景
 
  
 
-#### 场景描述
+### 场景描述
 
 冷启动后首次打开长列表页面时，由于页面包含大量图片或视频等媒体资源，可能会出现白屏或白块，需要等待几秒内容才会逐渐加载出来。ScrollComponents库支持组件预创建，使用后可以在打开页面后立即看到文字和图片的骨架，从而减少卡顿。
  
  
-图6 **加速首屏渲染效果图**
+**图6 **加速首屏渲染效果图
+
 ![](assets/基于ScrollComponents实现长列表/file-20260515114455306-17.gif)
 
  
 
-#### 开发步骤
+### 开发步骤
 
 包括注册模板和复用模板的预创建。重点：必须在注册复用模板之后使用preCreate()接口。
  
@@ -718,23 +721,26 @@ aboutToAppear(): void {
  
  
 
-#### 性能测试
+### 性能测试
 
  
 在冷启动场景下加载相同数据的完成时延情况，通过延迟1s来模拟冷启动后的网络请求场景。
  
 @Reusable：在网络请求期间，主线程有大段空闲时间，请求结束后首屏组件的绘帧耗时较长。
  
-图7 **@Reusable测试结果**
+**图7 **@Reusable测试结果
+
 ![](assets/基于ScrollComponents实现长列表/file-20260515114455306-2.png)
 
  
 在ScrollComponents中，网络请求期间主线程空闲时间较少，请求结束后首屏组件的绘帧耗时较短。
  
-图8 **ScrollComponents测试结果**
+**图8 **ScrollComponents测试结果
+
 ![](assets/基于ScrollComponents实现长列表/file-20260515114455306-3.gif)
 
   
+
 |    | 冷启动完成时延 | 主线程空闲时间 | 首屏组件创建时间 |
 | --- | --- | --- | --- |
 | ScrollComponents | 2.5s | 281ms | 223ms |
@@ -744,21 +750,22 @@ aboutToAppear(): void {
 结论：ScrollComponents在冷启动场景下，完成时延优于原生@Reusable。整体完成时延优化300ms。
  
 
-#### 长列表下拉刷新场景
+## 长列表下拉刷新场景
 
  
 
-#### 场景描述
+### 场景描述
 
 下拉刷新是提升用户体验的关键功能，它既要确保数据无缝加载，又要保持流畅的交互效果。建议采用懒加载方式刷新数据，以避免媒体资源加载导致的UI渲染阻塞。实现逻辑可参考[实现下拉刷新上拉加载更多](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-refresh#示例6实现下拉刷新上拉加载更多)。
  
-图9 **下拉刷新效果图**
+**图9 **下拉刷新效果图
+
 ![](assets/基于ScrollComponents实现长列表/file-20260515114455306-4.gif)
 
  
  
 
-#### 开发步骤
+### 开发步骤
 
 可以通过Refresh组件实现页面下拉操作，并绑定显示刷新Loading动效的容器组件，以达到下拉加载的效果。之后，使用onRefreshing回调重新设置数据，模拟刷新数据的操作。
  
@@ -821,21 +828,22 @@ export class DifferentItemViewModel {
 ```
  
 
-#### 长列表上拉加载场景
+## 长列表上拉加载场景
 
  
 
-#### 场景描述
+### 场景描述
 
  
 在开发涉及大量数据的长列表页面时，需要通过分页请求来加载数据。结合ScrollComponents提供的懒加载功能，可以实现加载更多数据的效果。
  
-图10 **上拉加载效果图**
+**图10 **上拉加载效果图
+
 ![](assets/基于ScrollComponents实现长列表/file-20260515114455306-5.gif)
 
  
 
-#### 开发步骤
+### 开发步骤
 
 可以通过Refresh组件实现页面上拉操作，并绑定显示刷新Loading动效的容器组件，以达到上拉加载的效果。之后，使用onReachEnd回调来新增数据，模拟加载数据的操作。
  
@@ -925,11 +933,11 @@ export class DifferentItemViewModel {
 ```
  
 
-#### 长列表无限滑动场景
+## 长列表无限滑动场景
 
  
 
-#### 场景描述
+### 场景描述
 
  
 为了解决手动上拉加载操作的繁琐问题，在即将下滑到最底端时，提前触发新数据的加载，并将其显示在长列表的最底部，从而实现无限滑动的效果。
@@ -941,12 +949,13 @@ export class DifferentItemViewModel {
  
 以下介绍具体的使用：
  
-图11 **无限滑动效果图**
+**图11 **无限滑动效果图
+
 ![](assets/基于ScrollComponents实现长列表/file-20260515114455306-6.png)
 
  
 
-#### 开发步骤
+### 开发步骤
 
 1. 修改数据体参数，增加位图
 ```ArkTS
@@ -1126,21 +1135,22 @@ struct ObservedImage {
 
  
 
-#### 长列表侧滑删除场景
+## 长列表侧滑删除场景
 
  
 
-#### 场景描述
+### 场景描述
 
 侧滑菜单在许多应用中十分常见。例如，在通讯类应用中，通常会为消息列表提供侧滑删除功能，即用户可以通过向左滑动列表中的某一项，然后点击删除按钮来删除消息。
  
-图12 **侧滑删除效果图**
+**图12 **侧滑删除效果图
+
 ![](assets/基于ScrollComponents实现长列表/file-20260515114455306-7.png)
 
  
  
 
-#### 开发步骤
+### 开发步骤
 1. 标准列表侧滑删除
 ```ArkTS
 @Component
@@ -1247,21 +1257,22 @@ function GroupItemActionEnd(args: [number, GoodsDataModel, ListItemGroupManager]
  
  
 
-#### 长列表多类型列表项场景
+## 长列表多类型列表项场景
 
  
 
-#### 场景描述
+### 场景描述
 
 List组件作为整个首页长列表的容器，通过ListItem对不同模块进行视图界面的定制，常用于门户首页、商城首页等多类型视图展示的列表信息流场景。多类型列表项场景（List+ListHeaderView）参考：[常见列表流开发实践：多类型列表项场景](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-list-flow#多类型列表项场景)。
  
-图13 **ListHeaderView滑动效果图**
+**图13 **ListHeaderView滑动效果图
+
 ![](assets/基于ScrollComponents实现长列表/file-20260515114455306-9.gif)
 
  
  
 
-#### 开发步骤
+### 开发步骤
 
 通过Scroll内部包含HeaderView+RecyclerView的方式实现，并通过nestedScroll()接口设置RecyclerView的嵌套滚动方式，来达到上图所示的效果。
  
@@ -1333,21 +1344,22 @@ export struct ListHeaderView {
  
  
 
-#### 长列表Tabs吸顶场景
+## 长列表Tabs吸顶场景
 
  
 
-#### 场景描述
+### 场景描述
 
 Tabs嵌套List的吸顶效果，常用于新闻和资讯类应用的首页。长列表Tabs吸顶功能参考：[常见列表流开发实践：Tabs吸顶场景](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-list-flow#tabs吸顶场景)
  
-图14 **Tabs的TabBar吸顶效果图**
+**图14 **Tabs的TabBar吸顶效果图
+
 ![](assets/基于ScrollComponents实现长列表/file-20260525085829525-002.gif)
 
  
  
 
-#### 开发步骤
+### 开发步骤
 1. 实现Tabs组件TabContent骨架
 ```ArkTS
 @Component
@@ -1452,23 +1464,24 @@ struct TabsCeilingListPage {
  
  
 
-#### 分组吸顶场景
+## 分组吸顶场景
 
  
 
-#### 场景描述
+### 场景描述
 
 双列表同向联动，左侧分类列表用于快速索引，内容列表依据分类进行分组，常用于商品分类选择、通讯录、城市选择、分组选择等页面。长列表分组吸顶功能参考：[常见列表流开发实践：分组吸顶场景](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-list-flow#分组吸顶场景)。
  
 本案例实现商品分类选择页面列表头部分类吸顶效果，如下图所示。
  
-图15 **分组布局组头吸顶效果图**
+**图15 **分组布局组头吸顶效果图
+
 ![](assets/基于ScrollComponents实现长列表/file-20260525085829525-004.gif)
 
  
  
 
-#### 开发步骤
+### 开发步骤
 1. 实现商品分类页面的分组展示
 ```ArkTS
 class MyListManager extends ListManager {
@@ -1532,23 +1545,24 @@ initView() {
  
  
 
-#### 长列表二级联动场景
+## 长列表二级联动场景
 
  
 
-#### 场景描述
+### 场景描述
 
 通过选择左侧的一级列表，右侧的二级列表数据将相应更新，常用于商品分类选择、编辑风格等二级类别选择页面。长列表二级联动功能参考：[常见列表流开发实践：二级联动场景](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-list-flow#二级联动场景)。
  
 本场景以商品分类列表页面为例，分别使用List组件展示左侧分类导航和右侧导航内容。进入页面后，点击左侧分类导航，右侧将展示对应的分类详情列表数据；滑动右侧列表内容时，列表标题将吸顶显示，同时左侧对应的导航内容高亮显示。
  
-图16 **长列表二级联动效果图**
+**图16 **长列表二级联动效果图
+
 ![](assets/基于ScrollComponents实现长列表/file-20260525085829525-005.png)
 
  
  
 
-#### 开发步骤
+### 开发步骤
 
 1. 通过List组件构建左侧分类导航数据
 ```ArkTS
@@ -1633,21 +1647,22 @@ listChange(index: number, isGoods: boolean) {
 
  
 
-#### 长列表动态切换列数场景
+## 长列表动态切换列数场景
 
  
 
-#### 场景描述
+### 场景描述
 
 当设备在横屏和竖屏之间切换，或折叠屏在小屏、中屏和大屏状态之间切换时，长列表的显示列数将根据当前屏幕宽度进行调整，以展示更合适大小的Item。
  
-图17 **动态切换列数效果图**
+**图17 **动态切换列数效果图
+
 ![](assets/基于ScrollComponents实现长列表/file-20260525085829525-006.png)
 
  
  
 
-#### 开发步骤
+### 开发步骤
 
 首先，设置页面可自由旋转，然后监听屏幕尺寸的变化。当发现宽度大于高度时，设置为2列。
  
@@ -1704,22 +1719,22 @@ struct SameItemListPage {
 
  
 
-#### 设置边缘渐隐场景
+## 设置边缘渐隐场景
 
  
 
-#### 场景描述
+### 场景描述
 
 通过设置[fadingEdge](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scrollable-common#fadingedge14)属性来实现边缘渐隐效果，效果如图所示。
  
-图18 **边缘渐隐效果图
+**图18 **边缘渐隐效果图
 
 ![](assets/基于ScrollComponents实现长列表/file-20260525085829526-008.gif)
 
  
  
 
-#### 开发步骤
+### 开发步骤
 
 可以直接在setViewStyle接口中设置渐隐效果。
  
@@ -1731,6 +1746,6 @@ this.myListManager.setViewStyle({ space: 10, scroller: this.listScroller })
  
  
 
-#### 示例代码
+## 示例代码
 
 [基于ScrollComponents实现长列表](https://gitcode.com/harmonyos_samples/ListScrollComponent)

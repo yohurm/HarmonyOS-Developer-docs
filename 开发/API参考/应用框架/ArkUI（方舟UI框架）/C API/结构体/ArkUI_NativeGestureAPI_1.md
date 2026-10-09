@@ -1,6 +1,6 @@
 # ArkUI_NativeGestureAPI_1
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule-arkui-nativegestureapi-1
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -115,7 +115,7 @@ ArkUI_GestureRecognizer* (*createTapGesture)(int32_t countNum, int32_t fingersNu
 
 | 类型 | 说明 |
 | --- | --- |
-| ArkUI_GestureRecognizer* | 返回创建的长按手势指针，可用于后续绑定节点、注册回调或管理长按手势识别。 |
+| ArkUI_GestureRecognizer* | 返回创建的敲击手势指针，可用于后续绑定节点、注册回调或管理敲击手势识别。 |
  
  
   
@@ -157,7 +157,7 @@ ArkUI_GestureRecognizer* (*createLongPressGesture)(int32_t fingersNum, bool repe
 
 | 类型 | 说明 |
 | --- | --- |
-| ArkUI_GestureRecognizer* | 返回创建的敲击手势指针，可用于后续绑定节点、注册回调或管理敲击手势识别。 |
+| ArkUI_GestureRecognizer* | 返回创建的长按手势指针，可用于后续绑定节点、注册回调或管理长按手势识别。 |
  
  
   

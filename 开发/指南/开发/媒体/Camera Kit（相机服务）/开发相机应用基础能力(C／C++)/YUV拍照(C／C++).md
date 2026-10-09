@@ -1,6 +1,6 @@
 # YUV拍照(C/C++)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera-yuv-shooting
 
@@ -137,7 +137,7 @@ Camera_ErrorCode NDKCamera::CreatePhotoOutputWithoutSurfaceId()
 
 9. 使用完后解注册单段式拍照回调函数。
 
-10. **分段式拍照（PhotoAvailable）开发流程**：
+10. **分段式拍照（PhotoAssetAvailable）开发流程**：
 
   
 在会话[OH_CaptureSession_CommitConfig](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-capture-session-h#oh_capturesession_commitconfig)前注册分段式拍照回调。

@@ -81,15 +81,13 @@ Promise对象，返回模拟点击检测结果，格式为一个JSON Web Signatu
 | version | 检测结果消息格式的版本。默认值为1，当前只支持1。 |
 | riskDecision | 风险检测结果。 |
 | tags | 模拟点击关键特征。 如果tags列表为空，表示未发现关键特征。 |
- 
-  
+
 | riskDecision | 含义 |
 | --- | --- |
 | fake | 当前设备存在作弊风险行为。存在自动化操控行为或设备墙作弊行为，详情见tags。 |
 | likelyReal | 当前操作设备的时真人用户的可能性较高。 |
 | unknown | 未知。未检测到明显特征，无法识别。 |
- 
-  
+
 | tags | 含义 |
 | --- | --- |
 | AbnormalDeviceIntegrity | 设备完整性遭到破坏。 |

@@ -1,6 +1,6 @@
 # 录像(ArkTS)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-recording
 
@@ -152,7 +152,7 @@ videoOutput.on('frameEnd', (err: BusinessError) => {
  - 通过注册固定的error回调函数获取监听录像输出错误结果，callback返回预览输出接口使用错误时对应的错误码，错误码类型参见[CameraErrorCode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-e#cameraerrorcode)。
 
   
-```text
+```ArkTS
 videoOutput.on('error', (error: BusinessError) => {
   console.error(`Video output error code: ${error.code}`);
 });

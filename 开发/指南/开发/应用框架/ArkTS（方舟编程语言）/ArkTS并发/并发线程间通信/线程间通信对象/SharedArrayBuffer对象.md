@@ -1,6 +1,6 @@
 # SharedArrayBuffer对象
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/shared-arraybuffer-object
 
@@ -17,6 +17,7 @@ SharedArrayBuffer内部包含一块Native内存，其JS对象壳被分配在虚�
  
 ```ArkTS
 import { taskpool } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 @Concurrent
 function transferAtomics(arg1: Int32Array) {

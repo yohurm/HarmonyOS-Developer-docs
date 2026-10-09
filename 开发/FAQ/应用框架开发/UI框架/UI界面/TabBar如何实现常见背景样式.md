@@ -30,6 +30,7 @@ TabBar可以帮助用户快速切换核心功能页面，比如“首页、购�
 在不同场景下设置TabBar背景的实现方式及其适用场景内容如下：
   
 | 实现场景 | 实现方式 | 适用场景 |
+| --- | --- | --- |
 | 场景一：TabBar设置背景色。 | barBackgroundColor设置TabBar的背景色，如"#FFFFFF"。 | 需要单一背景色的Tabs页签样式。 |
 | 场景二：TabBar设置背景色透明样式。 | 使用setTabBarOpacity设置TabBar的不透明度，包括背景、图标、文字。 | 在某些动态效果中，如滚动时逐渐改变TabBar的透明度，以实现平滑的过渡效果。 |
 | 场景二：TabBar设置背景色透明样式。 | 利用barBackgroundColor设置透明度，如"#55FFFFFF"，并使用barOverlap设置TabBar背景变模糊并叠加在TabContent之上，展示出透明效果。 | 在某些设计中，希望TabBar与背景内容有一定的融合，但又需要TabBar上的文字及图标内容清晰可见，可使用该方案增强视觉层次感。 |

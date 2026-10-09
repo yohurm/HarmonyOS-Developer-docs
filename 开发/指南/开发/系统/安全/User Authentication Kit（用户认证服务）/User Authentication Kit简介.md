@@ -1,6 +1,6 @@
 # User Authentication Kit简介
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/user-authentication-overview
 
@@ -17,7 +17,7 @@ User Authentication Kit（用户认证服务）提供了基于用户在设备本
 
 
 
-### 单设备场景
+### 单设备场景（口令认证、指纹认证、人脸认证）
 
 
 ![](assets/User%20Authentication%20Kit简介/file-20260514131222810-0.png)
@@ -43,7 +43,7 @@ User Authentication Kit（用户认证服务）提供了基于用户在设备本
 伴随设备代理认证，伴随设备需具备独立认证用户身份的能力。如在多屏协同场景中，PC/2in1设备作为伴随设备，用户可通过PC/2in1设备完成本地人脸或指纹认证，当前该能力仅开放给系统应用。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/YJJ6XdpaT3qklhaz5fNNjQ/zh-cn_image_0000002717771116.png?HW-CC-KV=V1&HW-CC-Date=20260911T073139Z&HW-CC-Expire=86400&HW-CC-Sign=128B08E13675619B90D227A3D8ACBB6E61F99D7D04CB6CE15459066F77D9B336)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/36s57GkfTkeaCtduGnGYBQ/zh-cn_image_0000002778932191.png?HW-CC-KV=V1&HW-CC-Date=20261009T013118Z&HW-CC-Expire=86400&HW-CC-Sign=92BE9B410CE10159D3DC56EEA679A06C36E6C90117269CAC64044EBBA5583C66)
 
 
 
@@ -110,7 +110,7 @@ User Authentication Kit（用户认证服务）提供了基于用户在设备本
 统一用户认证框架架构如下图所示。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/12qmEZj2QiGhRszNXsN95A/zh-cn_image_0000002717611182.png?HW-CC-KV=V1&HW-CC-Date=20260911T073139Z&HW-CC-Expire=86400&HW-CC-Sign=CA45C3A5C06D89F503ADD4DBB6F7FA58D7E656A50E320804052E1BC171772906)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/-a7KlBmtQdKO56Rr2G5_og/zh-cn_image_0000002749333108.png?HW-CC-KV=V1&HW-CC-Date=20261009T013118Z&HW-CC-Expire=86400&HW-CC-Sign=A4A35CB8EE821EE51101C657DC489C8646D727F07A1321389D08C809CE89C363)
 
 
 用户认证框架主要包括四个部分：

@@ -1,6 +1,6 @@
 # @ohos.arkui.dragController (DragController)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-dragcontroller
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -309,7 +309,7 @@ struct DragControllerPage {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/ToXmH5kaR1OOKL8vXO-hIg/zh-cn_image_0000002717612368.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=AA518CD791455F6D3D7B3712AF4791064CED21CFB9AD1A776ACDF45243481223)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/WNTHjPt5QF-4TYoMW1-7Bw/zh-cn_image_0000002749334300.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012847Z&HW-CC-Expire=86400&HW-CC-Sign=5F0D39D9811A2041725BF5A51E90DD9FBD049FEBE8E89DE9C15D10CB1D6352B4)
 
 
 
@@ -622,7 +622,7 @@ struct DragControllerPage {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/LY1hKCyYTjKAHD_AHCrzjA/zh-cn_image_0000002747292321.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=5EBC284E04867E8DACA41D78EC3D6675531C9674BF3BC3C7C04727C181FAC67F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/lNvj_NKKS5G8p_z_CJNHKA/zh-cn_image_0000002749494186.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012847Z&HW-CC-Expire=86400&HW-CC-Sign=80D884A19105BBF8D27578B18009130B4AC87C42D6CD4E6C72D07A1B01B39122)
 
 
 
@@ -914,7 +914,7 @@ struct ImageExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/8afxPWLvQwCDParlpkWs6A/zh-cn_image_0000002747212237.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=E7BC6B7E490FD6CD25C39227222F1B5AD0A9CF6D744FCAF162A4F58CD242D55C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/na5T2ZRpT-KlEloHshp2Pw/zh-cn_image_0000002779093243.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012847Z&HW-CC-Expire=86400&HW-CC-Sign=95D4BB931E748438FB4D665C54BE3ED180AE48911CFF887D287009E34BA3554E)
 
 
 
@@ -1424,7 +1424,7 @@ struct DragControllerPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/W1hKNyz-QzCGheQu6ri2tg/zh-cn_image_0000002717772302.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=0BFF0952A3CD6D03718D263CBB534BC1164310FEDF5419DE7C11DA73A22DE322)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/u_3PbtG6R8mhPyz24KWIZA/zh-cn_image_0000002778933387.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012847Z&HW-CC-Expire=86400&HW-CC-Sign=570856FC73A6F7FD8B37A643E6631FB2129FAF3F6A9489F241242D796AA62F52)
 
 
 
@@ -1487,7 +1487,7 @@ struct DragControllerPage {
 | --- | --- | --- | --- | --- |
 | stillTimeLimit | number | 否 | 是 | 进入悬停检测BEGIN状态所需保持静止的时间，单位：ms。取值范围为[0, 231-1]的整数。输入浮点数时只取整数部分。输入非法值（负数、null、undefined、NaN）时取默认值500。 |
 | updateInterval | number | 否 | 是 | 进入悬停检测UPDATE状态后，更新通知的时间间隔，单位：ms。取值范围为[0, 231-1]的整数。输入浮点数时只取整数部分。输入非法值（负数、null、undefined、NaN）时取默认值100。 |
-| updateNotifyCount | number | 否 | 是 | 进入悬停检测UPDATE状态后，更新通知的最大次数。取值范围为[0, 231-1]的整数。输入浮点数时只取整数部分。输入非法值（负数、null、undefined、NaN）时取默认值3。 |
+| updateNotifyCount | number | 否 | 是 | 进入悬停检测UPDATE状态后，更新通知的最大次数。取值范围为[0, 231-1]的整数。输入浮点数时只取整数部分。输入非法值（负数、null、undefined、NaN）时取默认值3。取值为0时，不发送UPDATE通知，并在BEGIN状态后立即触发END状态。 |
 | updateToFinishInterval | number | 否 | 是 | 从UPDATE状态到END状态的最长等待时间，单位：ms。取值范围为[0, 231-1]的整数。输入浮点数时只取整数部分。输入非法值（负数、null、undefined、NaN）时取默认值100。 |
 
 

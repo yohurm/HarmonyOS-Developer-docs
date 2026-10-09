@@ -1,6 +1,6 @@
-# @ohos.enterprise.telephonyManager（通话管理）
+# @ohos.enterprise.telephonyManager (通话管理)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-telephonymanager
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -8,7 +8,7 @@
 本模块提供通话管理能力。
 
 > [!NOTE]
-> 本模块首批接口从API version 20开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 本模块接口仅适用于Stage模型。 本模块接口仅对设备管理应用开放，调用接口前需激活该应用，详情请参考 MDM Kit开发指南 。 全局通用限制类策略由restrictions提供，若要全局禁用通话，请参考 @ohos.enterprise.restrictions（限制类策略） 。
+> 本模块首批接口从API version 20开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 本模块接口仅适用于Stage模型。 本模块接口仅对设备管理应用开放，调用接口前需激活该应用，详情请参考 MDM Kit开发指南 。 全局通用限制类策略由restrictions提供，若要全局禁用通话，请参考 @ohos.enterprise.restrictions (限制类策略) 。
 
 
 
@@ -32,6 +32,10 @@ setSimDisabled(admin: Want, slotId: number): void
 
 禁用指定卡槽的SIM卡。禁用后，无法使用该卡槽的SIM卡接打电话、收发短信、上网。例如，企业设备管理员可在员工离职或设备丢失时，禁用SIM卡防止未授权使用。适用于企业需要限制员工设备通话能力的场景，例如员工离职或设备遗失时防止SIM卡被滥用，保障企业通信安全和成本控制。
 
+> [!NOTE]
+> 在多个MDM应用场景下，遵循 从严管控 规则。
+
+
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_TELEPHONY
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
@@ -39,8 +43,6 @@ setSimDisabled(admin: Want, slotId: number): void
 **设备行为差异：** 该接口在Phone和Tablet设备中可正常调用，在其他设备中返回801错误码。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** [从严管控](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则1从严管控)。
 
 **参数：**
 
@@ -97,6 +99,10 @@ setSimEnabled(admin: Want, slotId: number): void
 
 解除指定卡槽的SIM卡禁用。使用setSimDisabled禁用SIM卡后，再用setSimEnabled启用SIM卡，需要到设置-移动网络-SIM卡管理界面手动打开SIM卡开关。
 
+> [!NOTE]
+> 在多个MDM应用场景下，遵循 从严管控 规则。
+
+
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_TELEPHONY
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
@@ -104,8 +110,6 @@ setSimEnabled(admin: Want, slotId: number): void
 **设备行为差异：** 该接口在Phone和Tablet设备中可正常调用，在其他设备中返回801错误码。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** [从严管控](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则1从严管控)。
 
 **参数：**
 
@@ -238,6 +242,10 @@ addOutgoingCallPolicyNumbers(admin: Want, policy: adminManager.Policy, numbers: 
 2. 已经通过本接口设置了通话呼出的禁用名单，再通过本接口添加通话呼出允许名单，返回9200010错误码。通过[removeOutgoingCallPolicyNumbers](#telephonymanagerremoveoutgoingcallpolicynumbers)接口将之前设置的通话呼出禁用名单移除后，可解除冲突。
 3. 已经通过本接口设置了通话呼出的允许名单，再通过本接口添加通话呼出禁用名单，返回9200010错误码。通过[removeOutgoingCallPolicyNumbers](#telephonymanagerremoveoutgoingcallpolicynumbers)接口将之前设置的通话呼出允许名单移除后，可解除冲突。
 
+> [!NOTE]
+> 在多个MDM应用场景下，遵循 合并 规则。
+
+
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_TELEPHONY
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
@@ -245,8 +253,6 @@ addOutgoingCallPolicyNumbers(admin: Want, policy: adminManager.Policy, numbers: 
 **设备行为差异：** 该接口在Phone和Tablet设备中可正常调用，在其他设备中返回801错误码。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
 
 **参数：**
 
@@ -317,6 +323,10 @@ removeOutgoingCallPolicyNumbers(admin: Want, policy: adminManager.Policy, number
 
 已经通过[setDisallowedPolicy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-restrictions#restrictionssetdisallowedpolicydeprecated)接口禁用了设备通话能力，再通过本接口移除通话呼出的禁用或允许名单，返回203错误码。通过[setDisallowedPolicy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-restrictions#restrictionssetdisallowedpolicydeprecated)接口解除禁用设备通话能力后，可解除冲突。
 
+> [!NOTE]
+> 在多个MDM应用场景下，遵循 合并 规则。
+
+
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_TELEPHONY
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
@@ -324,8 +334,6 @@ removeOutgoingCallPolicyNumbers(admin: Want, policy: adminManager.Policy, number
 **设备行为差异：** 该接口在Phone和Tablet设备中可正常调用，在其他设备中返回801错误码。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
 
 **参数：**
 
@@ -539,6 +547,10 @@ addIncomingCallPolicyNumbers(admin: Want, policy: adminManager.Policy, numbers: 
 2. 已经通过本接口设置了通话呼入的禁用名单，再通过本接口添加通话呼入允许名单，返回9200010错误码。通过[removeIncomingCallPolicyNumbers](#telephonymanagerremoveincomingcallpolicynumbers)接口将之前设置的通话呼入禁用名单移除后，可解除冲突。
 3. 已经通过本接口设置了通话呼入的允许名单，再通过本接口添加通话呼入禁用名单，返回9200010错误码。通过[removeIncomingCallPolicyNumbers](#telephonymanagerremoveincomingcallpolicynumbers)接口将之前设置的通话呼入允许名单移除后，可解除冲突。
 
+> [!NOTE]
+> 在多个MDM应用场景下，遵循 合并 规则。
+
+
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_TELEPHONY
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
@@ -546,8 +558,6 @@ addIncomingCallPolicyNumbers(admin: Want, policy: adminManager.Policy, numbers: 
 **设备行为差异：** 该接口在Phone和Tablet设备中可正常调用，在其他设备中返回801错误码。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
 
 **参数：**
 
@@ -617,6 +627,10 @@ removeIncomingCallPolicyNumbers(admin: Want, policy: adminManager.Policy, number
 以下情况下，通过本接口移除通话呼入的允许或禁用名单，会报策略冲突：
 1. 已经通过[setDisallowedPolicy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-restrictions#restrictionssetdisallowedpolicydeprecated)接口禁用了设备通话能力，再通过本接口移除通话呼入的禁用或允许名单，返回203错误码。通过[setDisallowedPolicy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-restrictions#restrictionssetdisallowedpolicydeprecated)接口解除禁用设备通话能力后，可解除冲突。
 
+> [!NOTE]
+> 在多个MDM应用场景下，遵循 合并 规则。
+
+
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_TELEPHONY
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
@@ -624,8 +638,6 @@ removeIncomingCallPolicyNumbers(admin: Want, policy: adminManager.Policy, number
 **设备行为差异：** 该接口在Phone和Tablet设备中可正常调用，在其他设备中返回801错误码。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
 
 **参数：**
 

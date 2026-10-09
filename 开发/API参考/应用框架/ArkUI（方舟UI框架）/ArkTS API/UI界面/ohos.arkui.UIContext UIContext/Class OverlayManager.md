@@ -1,6 +1,6 @@
 # Class (OverlayManager)
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-overlaymanager
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -86,18 +86,27 @@ struct OverlayExample {
   @State message: string = 'ComponentContent';
   private uiContext: UIContext = this.getUIContext();
   private overlayNode: OverlayManager = this.uiContext.getOverlayManager();
+  @StorageLink('contentArray') contentArray: ComponentContent<Params>[] = [];
 
   build() {
     Column({ space: 5 }) {
-      Button('打开浮层').onClick(() => {
+      Button('openOrderOverlay').onClick(() => {
         let componentContent = new ComponentContent(
           this.uiContext, wrapBuilder<[Params]>(builderText),
           new Params(this.message, { x: 0, y: 110 })
         );
+        this.contentArray.push(componentContent);
         this.overlayNode.openOrderOverlay(componentContent, {
           levelOrder: LevelOrder.clamp(100),
           levelMode: LevelMode.OVERLAY
         });
+      })
+      Button('close overlay').onClick(() => {
+        if (this.contentArray.length > 0) {
+          this.overlayNode.removeComponentContent(this.contentArray.pop());
+        } else {
+          console.info('arrayIndex有误');
+        }
       })
     }
     .width('100%')
@@ -363,7 +372,7 @@ struct Index {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/Qj0BLUJOSf24XxdaNAMR2g/zh-cn_image_0000002717772312.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072446Z&HW-CC-Expire=86400&HW-CC-Sign=3873590BCB623599C5D051D808D352ECC74453EF6B3359D979EAC3AF5606EEB8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/u01l3mlpQwWuG4A_rvzd1Q/zh-cn_image_0000002778933397.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012613Z&HW-CC-Expire=86400&HW-CC-Sign=D475E7636F4A3AD1FBA83D3C6955716FC7987CE44ED1AD1527DE1A4720D8B2B6)
 
  
   

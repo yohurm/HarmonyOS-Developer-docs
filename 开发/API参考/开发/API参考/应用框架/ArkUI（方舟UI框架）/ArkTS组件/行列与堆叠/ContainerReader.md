@@ -1,6 +1,6 @@
 # ContainerReader
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-containerreader
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -12,6 +12,17 @@ ContainerReader是容器断点组件，用于在动态场景下根据容器尺�
 
 
 **起始版本：** 26.0.0
+
+
+## 导入模块
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+```text
+import { ContainerReader } from '@kit.ArkUI';
+```
+
 
 
 ## 子组件
@@ -410,4 +421,4 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/bLa5bf9zSHKGY-5wLZCmuA/zh-cn_image_0000002717772540.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073112Z&HW-CC-Expire=86400&HW-CC-Sign=2E8D7C2F610DE13FDD0EAF31A1D222F73247FE92F2CC5349F42ABF0B39F6BBD8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/uHTnZi81TMOQjLpoKlOcuw/zh-cn_image_0000002778933657.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013101Z&HW-CC-Expire=86400&HW-CC-Sign=E0595A85E8EFA5C09118036B2979F9B1F79796DC628D8F08F438313242E4C329)

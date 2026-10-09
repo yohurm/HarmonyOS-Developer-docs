@@ -1,6 +1,6 @@
 # 微距能力设置(C/C++)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera-macro
 
@@ -22,7 +22,6 @@
 #include <cstdio>
 #include <fcntl.h>
 #include <map>
-#include <string>
 #include <vector>
 #include <native_buffer/native_buffer.h>
 #include "iostream"

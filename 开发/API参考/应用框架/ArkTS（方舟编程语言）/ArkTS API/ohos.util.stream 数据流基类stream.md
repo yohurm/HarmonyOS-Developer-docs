@@ -1,6 +1,6 @@
 # @ohos.util.stream (数据流基类stream)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-stream
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -1051,7 +1051,7 @@ on(event: string, callback: Callback<emitter.EventData>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| event | string | 是 | 事件回调类型，支持的事件包括：'close' \| 'data' \| 'end' \| 'error' \| 'readable' \| 'pause' \| 'resume' 。 - 'close'：完成push()调用，传入null值，触发该事件。 - 'data'：当流传递给消费者一个数据块时触发该事件。 - 'end'：完成push()调用，传入null值，触发该事件。 - 'error'：流发生异常时触发。 - 'readable'：当有可从流中读取的数据时触发该事件。 - 'pause'：完成pause()调用，触发该事件。 - 'resume'：完成resume()调用，触发该事件。 |
+| event | string | 是 | 事件回调类型，支持的事件包括：'close' \| 'data' \| 'end' \| 'error' \| 'readable' \| 'pause' \| 'resume' 。 - 'close'：可读流关闭，发生error事件或end事件后触发该事件。 - 'data'：当流传递给消费者一个数据块时触发该事件。 - 'end'：完成push()调用，传入null值，触发该事件。 - 'error'：流发生异常时触发。 - 'readable'：当有可从流中读取的数据时触发该事件。 - 'pause'：完成pause()调用，触发该事件。 - 'resume'：完成resume()调用，触发该事件。 |
 | callback | Callback<emitter.EventData> | 是 | 回调函数，返回事件数据。 |
 
 
@@ -1095,7 +1095,7 @@ off(event: string, callback?: Callback<emitter.EventData>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| event | string | 是 | 事件回调类型，支持的事件包括：'close' \| 'data' \|'end' \| 'error'\|'readable'\|'pause'\|'resume' 。 - 'close'：完成push()调用，传入null值，触发该事件。 - 'data'：当流传递给消费者一个数据块时触发该事件。 - 'end'：完成push()调用，传入null值，触发该事件。 - 'error'：流发生异常时触发。 - 'readable'：当有可从流中读取的数据时触发该事件。 - 'pause'：完成pause()调用，触发该事件。 - 'resume'：完成resume()调用，触发该事件。 |
+| event | string | 是 | 事件回调类型，支持的事件包括：'close' \| 'data' \|'end' \| 'error'\|'readable'\|'pause'\|'resume' 。 - 'close'：可读流关闭，发生error事件或end事件后触发该事件。 - 'data'：当流传递给消费者一个数据块时触发该事件。 - 'end'：完成push()调用，传入null值，触发该事件。 - 'error'：流发生异常时触发。 - 'readable'：当有可从流中读取的数据时触发该事件。 - 'pause'：完成pause()调用，触发该事件。 - 'resume'：完成resume()调用，触发该事件。 |
 | callback | Callback<emitter.EventData> | 否 | 指定事件的要注销的回调函数。不传入时注销指定事件的所有回调函数。 |
 
 

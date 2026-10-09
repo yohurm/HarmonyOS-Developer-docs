@@ -1,6 +1,6 @@
-# @ohos.arkui.Prefetcher (Prefetching)
+# @ohos.arkui.Prefetcher (内容预取)
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-prefetcher
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -497,7 +497,7 @@ function create10x10Bitmap(color: number): ArrayBuffer {
 演示效果如下：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/fLGAbOdMQtawWC0nB7m5ng/zh-cn_image_0000002717612370.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072837Z&HW-CC-Expire=86400&HW-CC-Sign=2D91ED87F02FA8B3BED241D47246B153C769408E8AB906A173E34960BEBD5AE7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/6lNzE5r3QNy8VvdkIcNlFQ/zh-cn_image_0000002749334302.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012847Z&HW-CC-Expire=86400&HW-CC-Sign=00320AB1F6AE06E706E7210485D8E10C5914F5BAD142DB367BFE9802C4693876)
 
  
   

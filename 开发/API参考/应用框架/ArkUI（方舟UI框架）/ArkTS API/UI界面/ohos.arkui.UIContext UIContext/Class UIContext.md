@@ -1,6 +1,6 @@
 # Class (UIContext)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -3680,7 +3680,7 @@ updateBindSheet<T extends Object>(bindSheetContent: ComponentContent&lt;T&gt;, s
 **示例：**
 
 ```text
-import { FrameNode, ComponentContent } from "@kit.ArkUI";
+import { FrameNode, ComponentContent } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 class Params {
@@ -4110,7 +4110,7 @@ struct TabsExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/yzPkjF7_T-CN727WjU5euw/zh-cn_image_0000002717772320.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072054Z&HW-CC-Expire=86400&HW-CC-Sign=2652764BC11FA6AC5EAF6580521CFF2B0FBC94245639E7808F9D63E7DD2E922C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/NxZ5B2pCQO-3HHO6MIWSfQ/zh-cn_image_0000002778933405.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012613Z&HW-CC-Expire=86400&HW-CC-Sign=E38043851A52AA0A5386C3954D9F48888E5F634B48FA2CE7B8D870D0A55EED91)
 
 
 
@@ -4835,7 +4835,7 @@ struct Index {
           placeholder: 'TextInput1 bind CustomKeyboardBuilder',
           controller: this.controller,
           text: this.inputValue
-        })// 绑定自定义键盘
+        }) // 绑定自定义键盘
           .customKeyboard(this.CustomKeyboardBuilder(), { supportAvoidance: this.supportAvoidance })
           .margin(10)
           .border({ width: 1 })
@@ -4843,7 +4843,7 @@ struct Index {
           placeholder: 'TextInput2 bind CustomKeyboardBuilder2',
           controller: this.controller2,
           text: this.inputValue2
-        })// 绑定自定义键盘
+        }) // 绑定自定义键盘
           .customKeyboard(this.CustomKeyboardBuilder2(), { supportAvoidance: this.supportAvoidance })
           .margin(10)
           .border({ width: 1 })
@@ -4854,7 +4854,7 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/eHZOPGKvShO3Qvim5Odl2w/zh-cn_image_0000002717612388.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072054Z&HW-CC-Expire=86400&HW-CC-Sign=7858C4D8752BBA3804FB93D60CD79C34419E78E634FE1B81FB7E3E2200E609C9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/JM0cPP4CQ2-ZT56J-qs3hw/zh-cn_image_0000002749334320.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012613Z&HW-CC-Expire=86400&HW-CC-Sign=8FB6B4D0672F89D16371817381E371F8E7A0329E3D3C2798598DC07820FD1894)
 
 
 
@@ -5018,7 +5018,7 @@ export struct PageThree {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/rM4BK7nuR7a0CqbRZ_GAuA/zh-cn_image_0000002747292341.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T072054Z&HW-CC-Expire=86400&HW-CC-Sign=96F49B94BE727815D75F248CF5BE83FEE5BFFB01AEBCE9F8EB597D0F85629571)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/BSOmZDd0QQyVMsOeyh5sPA/zh-cn_image_0000002749494206.jpg?HW-CC-KV=V1&HW-CC-Date=20261009T012613Z&HW-CC-Expire=86400&HW-CC-Sign=82630892272B7599F51B3BC67CB2F5888CEDAF64C0EAEE0FD23C8BD696905574)
 
 
 

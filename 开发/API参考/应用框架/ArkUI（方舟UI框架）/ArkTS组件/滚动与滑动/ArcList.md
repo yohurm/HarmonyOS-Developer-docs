@@ -1,6 +1,6 @@
 # ArcList
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arclist
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -40,7 +40,7 @@ import { ArcList } from '@kit.ArkUI';
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-仅支持[ArcListItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arclistitem)和自定义组件。自定义组件在ArcList下使用时，请使用ArcListItem作为自定义组件的顶层组件，请勿直接给自定义组件设置属性和事件方法，因为ArcList通过ArcListItem管理子组件的布局和事件处理，直接设置可能导致部分功能无法正常生效。
+仅支持[ArcListItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arclistitem)和[自定义组件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-custom-components)。自定义组件在ArcList下使用时，请使用ArcListItem作为自定义组件的顶层组件，请勿直接给自定义组件设置属性和事件方法，因为ArcList通过ArcListItem管理子组件的布局和事件处理，直接设置可能导致部分功能无法正常生效。
 
 > [!NOTE]
 > ArcList的子组件索引值计算规则： 按子组件的顺序依次递增。 if/else 语句中，只有条件成立的分支内的子组件会参与索引值计算，条件不成立的分支内子组件不计算索引值。 ForEach / LazyForEach 语句中，会计算展开所有子组件索引值。 if/else 、 ForEach 和 LazyForEach 发生变化以后，会更新子组件索引值。 ArcList子组件 visibility 属性设置为Hidden或None依然会计算索引值。
@@ -286,7 +286,7 @@ scrollBarWidth(width: Optional&lt;LengthMetrics&gt;)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| width | Optional&lt;LengthMetrics&gt; | 是 | ArcList滚动条在按压态下的宽度。 默认值：LengthMetrics.vp(24) 非按压态宽度：LengthMetrics.vp(4) 设置为负值、undefined等异常值时，按滚动条的普通态宽度处理。 单位：vp |
+| width | Optional&lt;LengthMetrics&gt; | 是 | ArcList滚动条在按压态下的宽度。 默认值：LengthMetrics.vp(24) 非按压态宽度：LengthMetrics.vp(4) 设置为负值、undefined等异常值时，按滚动条的非按压态宽度处理。 单位：vp |
 
 
 
@@ -668,4 +668,4 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/OtOth9ESQRCj4n5AjOZiPw/zh-cn_image_0000002747292579.png?HW-CC-KV=V1&HW-CC-Date=20260911T073111Z&HW-CC-Expire=86400&HW-CC-Sign=6C128BB12726C06D0E90FC291CD4A685412AA41798D01508CFE73E07E41CDD16)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/U2Bu6fGaSGyoFCO7rckQag/zh-cn_image_0000002749494492.png?HW-CC-KV=V1&HW-CC-Date=20261009T013101Z&HW-CC-Expire=86400&HW-CC-Sign=CD2B8F8142CB59B5024D4D33203D8970511279DF08879C4313B6357AAB50C8AE)

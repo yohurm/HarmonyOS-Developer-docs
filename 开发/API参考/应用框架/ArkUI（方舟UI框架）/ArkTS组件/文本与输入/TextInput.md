@@ -1,6 +1,6 @@
 # TextInput
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textinput
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -994,7 +994,7 @@ showCounter(value: boolean, options?: InputCounterOptions)
 
 [示例5（设置计数器）](#示例5设置计数器)展示了设置showCounter的效果。
 
-> [!NOTE]
+> [!TIP]
 > 从API version 12开始，该接口支持在 attributeModifier 中调用。
 
 
@@ -1194,14 +1194,14 @@ fontFeature(value: string)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | string | 是 | 文字特性效果，用于设置OpenType字体高级排版能力（如等宽数字、连字等）。格式为normal或[/topic/body/section/table/tgroup/tbody/row/entry/feature-tag-value {""}) ，例如"ss01" on。 (feature-tag-value] |
+| value | string | 是 | 文字特性效果，用于设置OpenType字体高级排版能力（如等宽数字、连字等）。格式为normal或<feature-tag-value>，例如"ss01" on。 |
 
 
 Font Feature当前支持的属性参见[fontFeature](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#fontfeature12)属性列表。
 
 设置Font Feature属性，Font Feature是OpenType字体的高级排版能力，如支持连字、数字等宽等特性，一般用在自定义字体中，其能力需要字体本身支持。
 
-更多Font Feature能力介绍可参考https://www.w3.org/TR/css-fonts-3/#font-feature-settings-prop和https://sparanoid.com/lab/opentype-features/。
+更多Font Feature能力介绍可参考[font-feature-settings property](https://www.w3.org/TR/css-fonts-3/#font-feature-settings-prop)和[OpenType Features](https://sparanoid.com/lab/opentype-features/)。
 
 > [!NOTE]
 > 设置 密码模式 时，不支持通过fontFeature设置文本样式。
@@ -3493,7 +3493,7 @@ struct TextInputExample {
             console.info('selection change: ', selectionStart, selectionEnd);
             this.lastCaretPosition = selectionStart;
             this.lastCaretPositionEnd = selectionEnd;
-          })// 从API version 10开始支持
+          }) // 从API version 10开始支持
       }
     }
     .width('100%')
@@ -3534,7 +3534,7 @@ struct TextInputExample {
         })
           .margin(10)
           .fontSize(16)
-          .style(TextInputStyle.Inline)// Inline模式
+          .style(TextInputStyle.Inline) // Inline模式
           .wordBreak(WordBreak.NORMAL) // 非Inline模式该属性无效
 
         Text('TextInput为inline模式，英文文本，wordBreak属性为BREAK_ALL的样式：').fontSize(16).fontColor(0xCCCCCC)
@@ -3730,7 +3730,7 @@ struct TextInputExample {
       .width('100%')
       .padding({ bottom: 50 })
 
-      TextInput({ controller: this.controller, text: this.inputValue })// 绑定自定义键盘
+      TextInput({ controller: this.controller, text: this.inputValue }) // 绑定自定义键盘
         .customKeyboard(this.CustomKeyboardBuilder(), { supportAvoidance: this.supportAvoidance })
         .margin(10)
         .border({ width: 1 })
@@ -4171,7 +4171,7 @@ struct TextInputExample {
           .onEditChange((status: boolean) => {
             this.editStatus = status;
           })
-          .defaultFocus(true)// 设置TextInput默认获焦
+          .defaultFocus(true) // 设置TextInput默认获焦
           .enableKeyboardOnFocus(false)
           .selectAll(false)
 
@@ -4323,7 +4323,7 @@ struct TextInputExample {
 
 | 系统字体缩放倍数为2倍 | 系统字体缩放倍数为3.2倍 |
 | --- | --- |
-|  |  |
+| ![](assets/TextInput/file-20260525091212544-020.png) | ![](assets/TextInput/file-20260525091212544-021.png) |
 
 
 
@@ -4900,7 +4900,7 @@ struct TextInputExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/NYjmt7XPSemcEytNoRZc0A/zh-cn_image_0000002717612802.png?HW-CC-KV=V1&HW-CC-Date=20260911T073108Z&HW-CC-Expire=86400&HW-CC-Sign=694E51D26F09CDE19AF5A80F15A9D200A628A0A48F9AD30270A5AE2765F4C7DB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/OmZVkkKdRVeGwl66JQH0Vw/zh-cn_image_0000002749334872.png?HW-CC-KV=V1&HW-CC-Date=20261009T013057Z&HW-CC-Expire=86400&HW-CC-Sign=062D68174E9AC497BA11B3C07E120B69BCFC143AD354F3EB746480B0DB85DBF2)
 
 
 
@@ -4937,7 +4937,7 @@ struct TextInputExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/VHtp8psoS_qqev2TvpIh4Q/zh-cn_image_0000002747292755.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073108Z&HW-CC-Expire=86400&HW-CC-Sign=F1DA0704FD055C433863BD514EFDDBB4CC9F9CE636072B1CB14A263429DEC499)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/YB0mEn0XTd6CdKsxX5IkOQ/zh-cn_image_0000002749494756.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013057Z&HW-CC-Expire=86400&HW-CC-Sign=C37AB524BBEC6400FDBAE6D057994873479EB1D0C396D0776FCBAFB79BF39614)
 
 
 
@@ -4987,13 +4987,13 @@ struct TextExample {
 不开启孤字优化：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/z98gjN27QSG02IUyF8rrOw/zh-cn_image_0000002747212671.png?HW-CC-KV=V1&HW-CC-Date=20260911T073108Z&HW-CC-Expire=86400&HW-CC-Sign=5356863EAD528ABCBE36ADE15DBE98FE251876DDFB8E6ADB2F3540AFB74E7F41)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/qaiX6SAhRTajSOhZigky5w/zh-cn_image_0000002779093813.png?HW-CC-KV=V1&HW-CC-Date=20261009T013057Z&HW-CC-Expire=86400&HW-CC-Sign=D227C2735F2F1B757C47DD2FF1BBBF995AF206A051D5B7AEB39BB76FDD8E9100)
 
 
 开启孤字优化：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/iTAgTTGURvSQFFFRDkBSdw/zh-cn_image_0000002717772736.png?HW-CC-KV=V1&HW-CC-Date=20260911T073108Z&HW-CC-Expire=86400&HW-CC-Sign=BC0232A8E059EB1550E180366BC4ADA78C2CF542F7DAC236DE2A3F5E6666D4AD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/Z-A6E3haST-umK4JG1N-3g/zh-cn_image_0000002778933957.png?HW-CC-KV=V1&HW-CC-Date=20261009T013057Z&HW-CC-Expire=86400&HW-CC-Sign=61B1E55508347DE875A014EE97F979EF739EFDDFF9EBE291434C0E89A42414D8)
 
 
 
@@ -5070,7 +5070,7 @@ struct ShaderColorStyle {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/mkoQYuYgSj2pScPxs6686g/zh-cn_image_0000002717612804.png?HW-CC-KV=V1&HW-CC-Date=20260911T073108Z&HW-CC-Expire=86400&HW-CC-Sign=2B63AB4313F0C176401EDB41A3E7DAD97CA64AB3E7BCAC002F4B21374B311F5B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/f7WjbMDORKyGSi7UZy8Www/zh-cn_image_0000002749334874.png?HW-CC-KV=V1&HW-CC-Date=20261009T013057Z&HW-CC-Expire=86400&HW-CC-Sign=681B1B1F23E259C6BF148CEABEBB57E1AF8866654C6AB8EE82BD93C3F9D67E6B)
 
 
 
@@ -5106,4 +5106,4 @@ struct Demo34 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/hIAGCMy3R-KwO3q5HYcQaA/zh-cn_image_0000002747292757.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073108Z&HW-CC-Expire=86400&HW-CC-Sign=4242A4603297CD33ACE2C49359A0B5DB8606AED9ECCC09552C1DCB3A6AFCFCC5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/DZXGUcDOR8ydRCUwoz-5Jg/zh-cn_image_0000002749494758.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013057Z&HW-CC-Expire=86400&HW-CC-Sign=4298F9714A6AAA7EDAB8E6BDCA5CB4D31150C2D923EC396DB75C42143AAC0EBC)

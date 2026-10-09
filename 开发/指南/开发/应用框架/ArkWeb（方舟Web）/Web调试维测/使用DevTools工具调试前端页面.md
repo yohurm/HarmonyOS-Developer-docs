@@ -1,6 +1,6 @@
 # 使用DevTools工具调试前端页面
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-debugging-with-devtools
 
@@ -48,7 +48,7 @@ struct WebComponent {
 }
 ```
 
-> [!TIP]
+> [!NOTE]
 > 代码中使用的8888端口仅作为示例展示，开发者使用过程中，应保证端口号可以被应用使用。如果因为端口被占用或者应用无权限使用等因素导致端口无法被应用使用，会导致接口抛出异常或者ArkWeb无法开启调试模式。
 
 2. 开启调试功能需要在DevEco Studio应用工程hap模块的module.json5文件中增加如下权限，添加方法请参考[在配置文件中声明权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions#在配置文件中声明权限)。
@@ -450,7 +450,7 @@ hdc fport ls
   ### 开始网页调试
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/ri_VlrHqS-KMZW9S9YqE3A/zh-cn_image_0000002717610958.png?HW-CC-KV=V1&HW-CC-Date=20260911T073147Z&HW-CC-Expire=86400&HW-CC-Sign=3741B67BF34DF0048440FFCB9E5B2D624008F4E289252045733E06DF3BF200BD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/VkBMdH8kTlWMvEIg2L59-g/zh-cn_image_0000002749332884.png?HW-CC-KV=V1&HW-CC-Date=20261009T013123Z&HW-CC-Expire=86400&HW-CC-Sign=FF74EA1A8BE614088AE2AAF6C9D244C38DD8BE49CC5F30E66B527509A8A14707)
 
 
   
@@ -579,21 +579,21 @@ hdc fport ls
  - 请确保设备端的domain socket还存在。
  - 请确保domain socket名称里的进程号与被调试的应用的进程号相同。
  - 请删除hdc里其他不必要的转发任务。
- - 转发成功后，请用电脑端的Chrome浏览器打开网址 [http://localhost:9222/json](http://localhost:9222/json) ，URL里的9222需要改为自己实际配置的TCP端口。
+ - 转发成功后，请用电脑端的Chrome浏览器打开网址http://localhost:9222/json，URL里的9222需要改为自己实际配置的TCP端口。
 
   
 如果网页有内容， 说明端口转发成功，请在Chrome的调试页面[等待被调试页面的出现](#等待发现被调试页面)。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/lje9xSwTQUOG4RXbt-Q1TA/zh-cn_image_0000002747290915.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T073147Z&HW-CC-Expire=86400&HW-CC-Sign=DCF94A25DCF9EB07850A15ABFFE0287739175522EB527CB3526818E07CF0BA9C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/G9vjHjjDTQ-jk13ZH13Qhg/zh-cn_image_0000002749492772.jpg?HW-CC-KV=V1&HW-CC-Date=20261009T013123Z&HW-CC-Expire=86400&HW-CC-Sign=5632E2BF0EC78285A0B19A011FFB9AE6841D69F43F09520A3328ED7D65807EFC)
 
  - 如果展示的是错误网页， 说明端口转发失败， 请参阅[端口转发不成功](#端口转发不成功)中的解决方法。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/_jRsn3W5SeiO9VYyMbFw6A/zh-cn_image_0000002747210833.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T073147Z&HW-CC-Expire=86400&HW-CC-Sign=9114C06CA78FE9B5002184D6EC35D070A03535337060195B606A23DBE834BB8D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/_7pZxr2yQZi-63GJDiz4ww/zh-cn_image_0000002779091831.jpg?HW-CC-KV=V1&HW-CC-Date=20261009T013123Z&HW-CC-Expire=86400&HW-CC-Sign=3CA91DE12CEBCB9B9AA2884C1479F61A2B9B670D4DE567A1BA3F9065A7B167C1)
 
 
-            - 电脑端Chrome浏览器打开 [http://localhost:9222/json](http://localhost:9222/json) 页面有内容，但是Chrome的调试工具界面还是无法发现调试目标。
+            - 电脑端Chrome浏览器打开http://localhost:9222/json页面有内容，但是Chrome的调试工具界面还是无法发现调试目标。
 
   
 请确保Chrome调试工具界面的 "Configure" 中配置的端口号，与端口转发指定的TCP端口号一致。
@@ -659,4 +659,4 @@ ArkWeb开启了无线调试模式后，电脑端Chrome浏览器无法发现被�
  - 方案一，将电脑端Chrome升级到最新版本。
  - 方案二，如果不希望升级浏览器，可以手动拼接调试URL。完整的URL链接为：“devtools://devtools/bundled/inspector.html?ws=localhost:9222/devtools/page/xxx”。       
 该链接由两部分组成：“devtools://devtools/bundled/inspector.html”前半段固定不变。“?ws=localhost:9222/devtools/page/xxx”后半段需要根据实际配置修改。
- - 端口转发成功后，使用Chrome浏览器打开 [http://localhost:9222/json](http://localhost:9222/json) 页面。请注意，URL中的9222应替换为实际配置的TCP端口。然后取“devtoolsFrontendUrl”后的value值“?ws”及其后部分。
+ - 端口转发成功后，使用Chrome浏览器打开http://localhost:9222/json页面。请注意，URL中的9222应替换为实际配置的TCP端口。然后取“devtoolsFrontendUrl”后的value值“?ws”及其后部分。

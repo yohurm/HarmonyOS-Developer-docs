@@ -1,6 +1,6 @@
 # 应用接入AVSession场景介绍
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avsession-access-scene
 
@@ -1023,13 +1023,13 @@ struct Index {
               console.info(`on play , do play task`);
               // ...
               // 如暂不支持该指令，请勿注册；或在注册后但暂不使用时，通过session.off('play')取消监听。
-              // 处理完毕后，请使用setAVPlayState上报播放状态。
+              // 处理完毕后，请使用setAVPlaybackState上报播放状态。
             });
             session.on('pause', () => {
               console.info(`on pause , do pause task`);
               // ...
               // 如暂不支持该指令，请勿注册；或在注册后但暂不使用时，通过session.off('pause')取消监听。
-              // 处理完毕后，请使用setAVPlayState上报播放状态。
+              // 处理完毕后，请使用setAVPlaybackState上报播放状态。
             });
             // ...
           } catch (err) {

@@ -1,6 +1,6 @@
 # Node-API简介
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-introduction
 
@@ -50,7 +50,7 @@ HarmonyOS Node-API是基于Node.js 18.x LTS的[Node-API](https://nodejs.org/docs
 
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/2eQFPCeQRrekvzAWqsB8HA/zh-cn_image_0000002747292257.png?HW-CC-KV=V1&HW-CC-Date=20260911T073018Z&HW-CC-Expire=86400&HW-CC-Sign=4C18B5F49AB86CFAAA1C2DBDDA06D9D96612920B5A2EC8847EFA8D9BF3D51576)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/dP7WQv0pQt6LNYO42I_8Zg/zh-cn_image_0000002749494122.png?HW-CC-KV=V1&HW-CC-Date=20261009T013031Z&HW-CC-Expire=86400&HW-CC-Sign=3081CD91C794E4A406A707FEAD5B02FA989B142DDB17B86670AC55D089A049ED)
 
 
 ArkTS和C++之间的交互流程，主要分为以下两步：

@@ -1,6 +1,6 @@
 # @ohos.app.ability.CompletionHandlerForAtomicService (打开元服务结果的操作类)
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-completionhandlerforatomicservice
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable

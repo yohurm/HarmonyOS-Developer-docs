@@ -52,17 +52,14 @@
  - **Request Header**
  - | 参数 | 是否必选 | 参数类型 | 描述 |
 
-| --- | --- | --- | --- |
-
 | Content-Type | 是 | String | 取值为：application/json; charset=UTF-8 |
-
+| --- | --- | --- | --- |
 | PayMercAuth | 是 | String | 取值为：PayMercAuth的JSON字符串 |
  - **Request path**
  - | 参数 | 是否必选 | 类型 | 说明 |
 
-| --- | --- | --- | --- |
-
 | contractId | 是 | String | 委托代扣协议ID，签约成功后回调接口中返回。 |
+| --- | --- | --- | --- |
 
 
 

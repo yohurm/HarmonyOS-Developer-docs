@@ -1,0 +1,95 @@
+# @performance/hp-arkui-use-row-column-to-replace-flex
+
+更新时间：2026-10-08 09:38:49
+
+来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hp-arkui-use-row-column-to-replace-flex
+
+建议使用Column/Row替代Flex。
+ 
+通用丢帧场景下，建议优先修改。
+ 
+
+## 规则配置
+
+```json
+// code-linter.json5
+{
+  <span style="color: rgb(135,16,148);">"rules"</span>: {
+    <span style="color: rgb(135,16,148);">"@performance/hp-arkui-use-row-column-to-replace-flex"</span>: <span style="color: rgb(6,125,23);">"suggestion"</span>,
+  }
+}
+```
+ 
+ 
+
+## 选项
+
+该规则无需配置选项。
+ 
+ 
+
+## 正例
+
+```text
+@Entry
+@Component
+struct MyComponent {
+  build() {
+    // Replace Flex with Column/Row
+    Column() {
+      Text('Replace Flex with Column/Row')
+        .fontSize(12)
+        .height('16')
+        .margin({
+          top: 5,
+          bottom: 10
+        })
+      Flex().width(300).height(200).backgroundColor(Color.Pink)
+      Flex().width(300).height(200).backgroundColor(Color.Yellow)
+      Flex().width(300).height(200).backgroundColor(Color.Grey)
+      Flex().width(300).height(200).backgroundColor(Color.Pink)
+      Flex().width(300).height(200).backgroundColor(Color.Yellow)
+      Flex().width(300).height(200).backgroundColor(Color.Grey)
+    }.height(200)
+  }
+}
+```
+ 
+ 
+
+## 反例
+
+```text
+@Entry
+@Component
+struct MyComponent {
+  build() {
+    // Flex Nesting
+    Flex({ direction: FlexDirection.Column }) {
+      Text('Replace Flex with Column/Row')
+        .fontSize(12)
+        .height('16')
+        .margin({
+          top: 5,
+          bottom: 10
+        })
+      Flex().width(300).height(200).backgroundColor(Color.Pink)
+      Flex().width(300).height(200).backgroundColor(Color.Yellow)
+      Flex().width(300).height(200).backgroundColor(Color.Grey)
+      Flex().width(300).height(200).backgroundColor(Color.Pink)
+      Flex().width(300).height(200).backgroundColor(Color.Yellow)
+      Flex().width(300).height(200).backgroundColor(Color.Grey)
+    }.height(200)
+  }
+}
+```
+ 
+ 
+
+## 规则集
+
+```text
+<span style="color: rgb(106,135,89);">plugin:@performance/</span>all
+```
+ 
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-code-linter)。

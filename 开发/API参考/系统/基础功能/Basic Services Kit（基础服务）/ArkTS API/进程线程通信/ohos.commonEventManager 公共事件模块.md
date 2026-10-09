@@ -1,6 +1,6 @@
 # @ohos.commonEventManager (公共事件模块)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-commoneventmanager
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -16,7 +16,7 @@
 
 **API 组合使用关系说明：**
 
-本模块的事件通信遵循三条组合调用链：订阅流、发布流与有序事件流。其中订阅流与发布流通过事件名称关联，发布者与订阅者无需感知对方存在。
+本模块的事件通信遵循三条组合调用链：订阅流、发布流与有序事件流。其中订阅流与发布流通过事件名称关联，发布方与订阅者无需感知对方存在。
 
 **订阅流：创建订阅者 → 注册订阅 → 接收事件 → 取消订阅**
 1. 配置订阅者信息，声明订阅的事件名称，可选设置订阅优先级、发布方权限与包名。
@@ -529,7 +529,7 @@ setTimeout(() => {
         console.error(`Failed to unsubscribe. Code is ${err.code}, message is ${err.message}`);
         return;
       }
-      // subscriber不再使用时需要将其置为null，避免内存泄露
+      // subscriber不再使用时需要将其置为null，避免内存泄漏
       subscriber = null;
       console.info(`Succeeded in unsubscribing.`);
     });

@@ -1,6 +1,6 @@
 # @ComponentV2：自定义组件V2
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-custom-component-decorator-componentv2
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -21,11 +21,13 @@
 
 const ComponentV2: ClassDecorator & ((options: ComponentOptions) => ClassDecorator)
 
-**卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
+**卡片能力：** 从API version 23开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
 

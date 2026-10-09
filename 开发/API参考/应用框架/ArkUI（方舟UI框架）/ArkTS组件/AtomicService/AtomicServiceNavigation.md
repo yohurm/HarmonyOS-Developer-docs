@@ -1,6 +1,6 @@
 # AtomicServiceNavigation
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-atomicservice-atomicservicenavigation
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -278,8 +278,8 @@ type NavDestinationBuilder = (name: string, param?: Object) => void
 展示AtomicServiceNavigation的基础样式与渐变色背景。
  
 ```text
-import { AtomicServiceNavigation, MixMode, GradientAlpha, BackgroundTheme } from '@kit.ArkUI';
-import { AtomicServiceTabs, TabBarOptions, TabBarPosition } from '@kit.ArkUI';
+import { AtomicServiceNavigation, MixMode, GradientAlpha, BackgroundTheme, AtomicServiceTabs, TabBarOptions, TabBarPosition } from '@kit.ArkUI';
+
 @Entry
 @Component
 struct Index {
@@ -422,8 +422,7 @@ export struct PageTwo {
 设备宽屏场景（宽度大于600vp）下设置抽屉模式，在标题栏插入自定义布局。
  
 ```text
-import { AtomicServiceNavigation, TitleBarType } from '@kit.ArkUI';
-import { AtomicServiceTabs, TabBarOptions, TabBarPosition } from '@kit.ArkUI';
+import { AtomicServiceNavigation, TitleBarType, AtomicServiceTabs, TabBarOptions, TabBarPosition } from '@kit.ArkUI';
 
 @Entry
 @Component
@@ -569,8 +568,7 @@ export struct PageTwo {
 设置侧边栏：背景色与内容样式。
  
 ```text
-import { AtomicServiceNavigation, TitleBarType } from '@kit.ArkUI';
-import { AtomicServiceTabs, TabBarOptions, TabBarPosition } from '@kit.ArkUI';
+import { AtomicServiceNavigation, TitleBarType, AtomicServiceTabs, TabBarOptions, TabBarPosition } from '@kit.ArkUI';
 
 @Entry
 @Component
@@ -704,4 +702,4 @@ export struct PageTwo {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/E-4KA-2cRBevnYS2N9kV1Q/zh-cn_image_0000002717773040.png?HW-CC-KV=V1&HW-CC-Date=20260911T073030Z&HW-CC-Expire=86400&HW-CC-Sign=2010242E2823B83EE448AF87A3ADE04473A725B5D6128798626B370672DA97C0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/IxAJZ1WhRXuxJ5A2w9T94Q/zh-cn_image_0000002749335176.png?HW-CC-KV=V1&HW-CC-Date=20261009T013039Z&HW-CC-Expire=86400&HW-CC-Sign=A9D6A43E715A5888B84E1BB6075D55DD096FCB87275AE3CD47D0A5E77C7EAA06)

@@ -1,10 +1,12 @@
 # 使用ImageSource获取专有元数据
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-specific-metadata
 
-从API version 23开始，支持使用ImageSource获取GIF、HEIFS、DNG、WebP、PNG、JFIF、TIFF、AVIS多种图像格式的专有元数据。
+从API version 23开始，ImageSource陆续支持获取GIF、HEIFS、DNG、WebP、PNG、JFIF、TIFF、AVIS多种图像格式的专有元数据。
+
+各格式支持的起始API版本如下表所示：
 
 
 ## 支持的元数据类别

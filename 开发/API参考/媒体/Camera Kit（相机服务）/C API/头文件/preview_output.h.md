@@ -1,6 +1,6 @@
 # preview_output.h
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-preview-output-h
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -708,7 +708,7 @@ Camera_ErrorCode OH_PreviewOutput_EnableBandwidthCompression(Camera_PreviewOutpu
 
 | 类型 | 说明 |
 | --- | --- |
-| Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_OPERATION_NOT_ALLOWED: 操作不允许。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：相机会话未配置。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
+| Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_OPERATION_NOT_ALLOWED：操作不允许。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：相机会话未配置。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
 
 
 

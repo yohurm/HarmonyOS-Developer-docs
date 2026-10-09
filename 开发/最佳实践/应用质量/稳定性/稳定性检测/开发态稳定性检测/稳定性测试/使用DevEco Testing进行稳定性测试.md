@@ -1,6 +1,6 @@
 # 使用DevEco Testing进行稳定性测试
 
-更新时间：2026-08-10 06:55:01
+更新时间：2026-09-20 11:26:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-deveco-testing
 
@@ -11,7 +11,7 @@
 
  
 
-#### 稳定性基础质量测试
+## 稳定性基础质量测试
 
  
 **稳定性基础质量测试：**根据应用稳定性建议，检测应用运行过程中是否存在应用崩溃、资源过载、内存泄漏等异常情况。
@@ -69,7 +69,7 @@
 检测不通过或检测异常的规则项，点击查看详情即可查看异常问题详情，包含检测项概览、测试截图、问题列表。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/S8fBk-QcRwiGIa0KJY5ncA/zh-cn_image_0000002475048409.png?HW-CC-KV=V1&HW-CC-Date=20260813T095916Z&HW-CC-Expire=86400&HW-CC-Sign=26EFB704DD1BEBCCC2CE1D36D6C4BFE54A289AE776830D87786911C9E3A5E39E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/A7UyZdc3TLKXyhbyH8dByA/zh-cn_image_0000002475048409.png?HW-CC-KV=V1&HW-CC-Date=20261009T012655Z&HW-CC-Expire=86400&HW-CC-Sign=61AE9C7DBA6A9912DE98AEE7483ED21C8E728B2B122ED4C6B3DA2EFCADBB835F)
 点击查看按钮，支持查看测试过程中的日志，用户可结合问题描述及日志详情进一步分析。
  
 > [!NOTE]
@@ -77,7 +77,7 @@
 
  
 
-#### 探索测试
+## 探索测试
 
  
 请参考：[内存泄漏测试](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/stability-testing#section1896912152183)。

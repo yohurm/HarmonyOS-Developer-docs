@@ -1,6 +1,6 @@
 # 添加Ability
 
-更新时间：2026-08-29 09:41:34
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-add-new-ability
 
@@ -55,8 +55,8 @@ UIAbility组件：包含UI界面，提供展示UI的能力，主要用于和用�
 ![](assets/添加Ability/file-20260514134344351-2.png)
 
  
-
  
+
  
 
 ## FA模型添加Ability

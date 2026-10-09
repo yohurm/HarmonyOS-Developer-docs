@@ -1,6 +1,6 @@
 # OH_CryptoRand
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-cryptorandapi-oh-cryptorand
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -15,7 +15,7 @@ typedef struct OH_CryptoRand OH_CryptoRand
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-定义随机数生成器结构。
+随机数生成器结构体，表示随机数生成器上下文。
  
 **起始版本：** 20
  

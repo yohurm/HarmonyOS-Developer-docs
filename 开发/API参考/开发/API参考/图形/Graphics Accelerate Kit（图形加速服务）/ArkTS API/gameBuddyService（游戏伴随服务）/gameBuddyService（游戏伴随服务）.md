@@ -1,9 +1,9 @@
 # gameBuddyService（游戏伴随服务）
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/graphics-accelerate-gamebuddyservice
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+**支持设备：** Phone | Tablet | TV
 
 本模块提供游戏伴随服务能力。
  
@@ -13,7 +13,7 @@
 ## 导入模块
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+**支持设备：** Phone | Tablet | TV
 
 ```text
 import { gameBuddyService } from '@kit.GraphicsAccelerateKit';
@@ -24,7 +24,7 @@ import { gameBuddyService } from '@kit.GraphicsAccelerateKit';
 ## GameApplicationStatus
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+**支持设备：** Phone | Tablet | TV
 
 此枚举描述游戏应用状态。
  
@@ -48,7 +48,7 @@ import { gameBuddyService } from '@kit.GraphicsAccelerateKit';
 ## GameApplicationStatusInfo
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+**支持设备：** Phone | Tablet | TV
 
 游戏应用状态结构体，描述当前运行的游戏应用状态。
  
@@ -70,7 +70,7 @@ import { gameBuddyService } from '@kit.GraphicsAccelerateKit';
 ## onGameApplicationStatus
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+**支持设备：** Phone | Tablet | TV
 
 onGameApplicationStatus(callback: Callback&lt;GameApplicationStatusInfo&gt;): void
  
@@ -137,7 +137,7 @@ try {
 ## offGameApplicationStatus
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+**支持设备：** Phone | Tablet | TV
 
 offGameApplicationStatus(callback?: Callback&lt;GameApplicationStatusInfo&gt;): void
  
@@ -210,7 +210,7 @@ try {
 ## onGameSnapshot
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+**支持设备：** Phone | Tablet | TV
 
 onGameSnapshot(callback: Callback&lt;number&gt;): void
  
@@ -277,7 +277,7 @@ try {
 ## offGameSnapshot
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+**支持设备：** Phone | Tablet | TV
 
 offGameSnapshot(callback?: Callback&lt;number&gt;): void
  

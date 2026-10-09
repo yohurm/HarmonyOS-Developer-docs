@@ -1,6 +1,6 @@
 # oh_key_code.h
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-key-code-h
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -151,7 +151,7 @@ enum Input_KeyCode
 | KEYCODE_RIGHT_BRACKET = 2060 | 按键']' |
 | KEYCODE_BACKSLASH = 2061 | 按键'\' |
 | KEYCODE_SEMICOLON = 2062 | 按键';' |
-| KEYCODE_APOSTROPHE = 2063 | 按键''' (单引号) |
+| KEYCODE_APOSTROPHE = 2063 | 按键'''（单引号） |
 | KEYCODE_SLASH = 2064 | 按键'/' |
 | KEYCODE_AT = 2065 | 按键'@' |
 | KEYCODE_PLUS = 2066 | 按键'+' |
@@ -238,8 +238,8 @@ enum Input_KeyCode
 | KEYCODE_MACRO = 2610 | 宏键 起始版本： 22 |
 | KEYCODE_NUMPAD_PLUSMINUS = 2611 | 数字键盘上的加号/减号键 起始版本： 22 |
 | KEYCODE_SCALE = 2612 | 扩展键 起始版本： 22 |
-| KEYCODE_HANGUEL = 2613 | 日文韩语键 起始版本： 22 |
-| KEYCODE_HANJA = 2614 | 日文汉语键 起始版本： 22 |
+| KEYCODE_HANGUEL = 2613 | 韩文键 起始版本： 22 |
+| KEYCODE_HANJA = 2614 | 韩文汉字键 起始版本： 22 |
 | KEYCODE_YEN = 2615 | 日元键 起始版本： 22 |
 | KEYCODE_STOP = 2616 | 停止键 起始版本： 22 |
 | KEYCODE_AGAIN = 2617 | 重复键 起始版本： 22 |
@@ -310,10 +310,10 @@ enum Input_KeyCode
 | KEYCODE_VIDEO = 2683 | 视频键 起始版本： 22 |
 | KEYCODE_MEMO = 2684 | 备忘录键 起始版本： 22 |
 | KEYCODE_CALENDAR = 2685 | 日历键 起始版本： 22 |
-| KEYCODE_RED = 2686 | 红色指示器 起始版本： 22 |
-| KEYCODE_GREEN = 2687 | 绿色指示器 起始版本： 22 |
-| KEYCODE_YELLOW = 2688 | 黄色指示器 起始版本： 22 |
-| KEYCODE_BLUE = 2689 | 蓝色指示器 起始版本： 22 |
+| KEYCODE_RED = 2686 | 红色指示器键 起始版本： 22 |
+| KEYCODE_GREEN = 2687 | 绿色指示器键 起始版本： 22 |
+| KEYCODE_YELLOW = 2688 | 黄色指示器键 起始版本： 22 |
+| KEYCODE_BLUE = 2689 | 蓝色指示器键 起始版本： 22 |
 | KEYCODE_CHANNELUP = 2690 | 频道向上键 起始版本： 22 |
 | KEYCODE_CHANNELDOWN = 2691 | 频道向下键 起始版本： 22 |
 | KEYCODE_LAST = 2692 | 末尾键 起始版本： 22 |
@@ -332,16 +332,16 @@ enum Input_KeyCode
 | KEYCODE_PRESENTATION = 2705 | 演示文稿键 起始版本： 22 |
 | KEYCODE_DATABASE = 2706 | 数据库键 起始版本： 22 |
 | KEYCODE_NEWS = 2707 | 新闻键 起始版本： 22 |
-| KEYCODE_VOICEMAIL = 2708 | 语音信箱 起始版本： 22 |
-| KEYCODE_ADDRESSBOOK = 2709 | 通讯簿 起始版本： 22 |
+| KEYCODE_VOICEMAIL = 2708 | 语音信箱键 起始版本： 22 |
+| KEYCODE_ADDRESSBOOK = 2709 | 通讯簿键 起始版本： 22 |
 | KEYCODE_MESSENGER = 2710 | 通信键 起始版本： 22 |
 | KEYCODE_BRIGHTNESS_TOGGLE = 2711 | 亮度切换键 起始版本： 22 |
 | KEYCODE_SPELLCHECK = 2712 | 拼写检查键 起始版本： 22 |
-| KEYCODE_COFFEE = 2713 | 终端锁/屏幕保护程序 起始版本： 22 |
+| KEYCODE_COFFEE = 2713 | 终端锁/屏幕保护程序键 起始版本： 22 |
 | KEYCODE_MEDIA_REPEAT = 2714 | 媒体循环键 起始版本： 22 |
 | KEYCODE_IMAGES = 2715 | 图像键 起始版本： 22 |
 | KEYCODE_BUTTONCONFIG = 2716 | 按键配置键 起始版本： 22 |
-| KEYCODE_TASKMANAGER = 2717 | 任务管理器 起始版本： 22 |
+| KEYCODE_TASKMANAGER = 2717 | 任务管理器键 起始版本： 22 |
 | KEYCODE_JOURNAL = 2718 | 日志按键 起始版本： 22 |
 | KEYCODE_CONTROLPANEL = 2719 | 控制面板键 起始版本： 22 |
 | KEYCODE_APPSELECT = 2720 | 应用程序选择键 起始版本： 22 |
@@ -359,7 +359,7 @@ enum Input_KeyCode
 | KEYCODE_MOUSE_ASSISTANT = 2732 | 鼠标AI助手键 起始版本： 26.0.0 |
 | KEYCODE_MOUSE_INTELLIGENCE_SELECTION = 2733 | 鼠标智慧框选键 起始版本： 26.0.0 |
 | KEYCODE_AOD_SINGLE_CLICK = 2740 | 手机触摸屏单击事件，在熄屏显示状态下使用。 起始版本： 26.0.0 |
-| KEYCODE_FRONT = 2800 | 挡风玻璃除雾器开关 起始版本： 22 |
+| KEYCODE_FRONT = 2800 | 挡风玻璃除雾器开关键 起始版本： 22 |
 | KEYCODE_SETUP = 2801 | 设置键 起始版本： 22 |
 | KEYCODE_WAKEUP = 2802 | 唤醒键 起始版本： 22 |
 | KEYCODE_SENDFILE = 2803 | 发送文件按键 起始版本： 22 |
@@ -389,7 +389,7 @@ enum Input_KeyCode
 | KEYCODE_F24 = 2827 | 按键'F24' 起始版本： 22 |
 | KEYCODE_PROG3 = 2828 | 程序键3 起始版本： 22 |
 | KEYCODE_PROG4 = 2829 | 程序键4 起始版本： 22 |
-| KEYCODE_DASHBOARD = 2830 | 仪表板 起始版本： 22 |
+| KEYCODE_DASHBOARD = 2830 | 仪表板键 起始版本： 22 |
 | KEYCODE_SUSPEND = 2831 | 挂起键 起始版本： 22 |
 | KEYCODE_HP = 2832 | 高阶路径键 起始版本： 22 |
 | KEYCODE_SOUND = 2833 | 音量键 起始版本： 22 |
@@ -401,21 +401,21 @@ enum Input_KeyCode
 | KEYCODE_SWITCHVIDEOMODE = 2841 | 在可用视频之间循环输出（监视器/LCD/TV输出/等）。 起始版本： 22 |
 | KEYCODE_BATTERY = 2842 | 电池按键 起始版本： 22 |
 | KEYCODE_BLUETOOTH = 2843 | 蓝牙按键 起始版本： 22 |
-| KEYCODE_WLAN = 2844 | 无线局域网 起始版本： 22 |
+| KEYCODE_WLAN = 2844 | 无线局域网键 起始版本： 22 |
 | KEYCODE_UWB = 2845 | 超宽带控制键 起始版本： 22 |
 | KEYCODE_WWAN_WIMAX = 2846 | 移动网络控制键 起始版本： 22 |
-| KEYCODE_RFKILL = 2847 | 控制所有收音机的键 起始版本： 22 |
+| KEYCODE_RFKILL = 2847 | 控制所有无线设备的键 起始版本： 22 |
 | KEYCODE_CHANNEL = 3001 | 向上频道键 起始版本： 22 |
-| KEYCODE_BTN_0 = 3100 | 按键0 起始版本： 22 |
-| KEYCODE_BTN_1 = 3101 | 按键1 起始版本： 22 |
-| KEYCODE_BTN_2 = 3102 | 按键2 起始版本： 22 |
-| KEYCODE_BTN_3 = 3103 | 按键3 起始版本： 22 |
-| KEYCODE_BTN_4 = 3104 | 按键4 起始版本： 22 |
-| KEYCODE_BTN_5 = 3105 | 按键5 起始版本： 22 |
-| KEYCODE_BTN_6 = 3106 | 按键6 起始版本： 22 |
-| KEYCODE_BTN_7 = 3107 | 按键7 起始版本： 22 |
-| KEYCODE_BTN_8 = 3108 | 按键8 起始版本： 22 |
-| KEYCODE_BTN_9 = 3109 | 按键9 起始版本： 22 |
+| KEYCODE_BTN_0 = 3100 | 按钮'0' 起始版本： 22 |
+| KEYCODE_BTN_1 = 3101 | 按钮'1' 起始版本： 22 |
+| KEYCODE_BTN_2 = 3102 | 按钮'2' 起始版本： 22 |
+| KEYCODE_BTN_3 = 3103 | 按钮'3' 起始版本： 22 |
+| KEYCODE_BTN_4 = 3104 | 按钮'4' 起始版本： 22 |
+| KEYCODE_BTN_5 = 3105 | 按钮'5' 起始版本： 22 |
+| KEYCODE_BTN_6 = 3106 | 按钮'6' 起始版本： 22 |
+| KEYCODE_BTN_7 = 3107 | 按钮'7' 起始版本： 22 |
+| KEYCODE_BTN_8 = 3108 | 按钮'8' 起始版本： 22 |
+| KEYCODE_BTN_9 = 3109 | 按钮'9' 起始版本： 22 |
 | KEYCODE_DAGGER_CLICK = 3211 | 智能手表智感窗按键单击 起始版本： 22 |
 | KEYCODE_DAGGER_DOUBLE_CLICK = 3212 | 智能手表智感窗按键双击 起始版本： 22 |
 | KEYCODE_DAGGER_LONG_PRESS = 3213 | 智能手表智感窗按键长按 起始版本： 22 |

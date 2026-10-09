@@ -1,10 +1,10 @@
 # ohpm clean错误码
 
-更新时间：2026-01-15 06:51:04
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-clean-errorcode
 
-#### 00626001 清理模块失败
+## 00626001 清理模块失败
 
 **错误信息**
  

@@ -1,6 +1,6 @@
 # 创建懒加载布局 (LazyColumnLayout/LazyVGridLayout/LazyVWaterFlowLayout)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-create-lazy-layout
 
@@ -40,7 +40,7 @@ ArkUI提供了[Scroll](https://developer.huawei.com/consumer/cn/doc/harmonyos-re
 | 监听可视区域子组件索引变化（onVisibleIndexesChange） | 从API版本26.0.0开始支持 | 支持 | 支持 |
 | 嵌套懒加载布局容器 | 不支持 | 不支持 | 支持 |
 | 布局模式 | 垂直网格布局 | 垂直瀑布流布局 | 垂直线性布局 |
-| 示例图 |  |  |  |
+| 示例图 | ![](assets/创建懒加载布局 (LazyVGridLayout／LazyVWaterFlowLayout)/file-202607081036081672ba06.png) | ![](assets/创建懒加载布局 (LazyVGridLayout／LazyVWaterFlowLayout)/file-20260708103608cbbc3222.png) | ![](assets/创建懒加载布局 (LazyVGridLayout／LazyVWaterFlowLayout)/file-20260708103609d88f9720.gif) |
 
 
 
@@ -99,7 +99,7 @@ Scroll() {
   **图1** 列数占比示例图
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/oy8Wy-6eSQODuCO4K6C9jg/zh-cn_image_0000002717770322.png?HW-CC-KV=V1&HW-CC-Date=20260911T072505Z&HW-CC-Expire=86400&HW-CC-Sign=2C2C1821AB72D254621E3399EEA4FC129DAFD540E3F59B5BF7297C4EB262BFB0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/uV6yoY8bRnGV5jPgC94rSw/zh-cn_image_0000002778931317.png?HW-CC-KV=V1&HW-CC-Date=20261009T012628Z&HW-CC-Expire=86400&HW-CC-Sign=53D891A32C901DE3D6B45571F2E892FF4BEF89F7F7C0B595DD59408663052FC0)
 
 
   如上图所示，构建的是一个三行三列的网格布局，其在水平方向上分为四等份，第一列占一份，第二列占两份，第三列占一份。只要将columnsTemplate设置为'1fr 2fr 1fr'，即可实现上述网格布局。
@@ -139,7 +139,7 @@ columnsTemplate还支持通过repeat关键字自动计算列数，格式为'repe
   **图2** 网格的行列间距示例图
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/HvreCG76T_WO1bTj_v1VNg/zh-cn_image_0000002717770308.png?HW-CC-KV=V1&HW-CC-Date=20260911T072505Z&HW-CC-Expire=86400&HW-CC-Sign=1BB98451425F43539DDF23FB7488A1DB453C55BC4765654D6ED82032F461BD18)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/Sb7acUTpRMuQoI8cyL5CjA/zh-cn_image_0000002778931303.png?HW-CC-KV=V1&HW-CC-Date=20261009T012628Z&HW-CC-Expire=86400&HW-CC-Sign=1755E237CC374F1287D3659AD5A97051625A5C84C57678215F01C382D31A3BBB)
 
 
   LazyVGridLayout组件提供了[rowsGap](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-lazyvgridlayout#rowsgap)和[columnsGap](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-lazyvgridlayout#columnsgap)属性分别设置行间距和列间距。默认值均为LengthMetrics.vp(0)，设置为小于0的值时按默认值显示。
@@ -596,7 +596,7 @@ export struct ListNestedLazyLayout {
 **图3** List嵌套懒加载布局容器效果示例图
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/VqiF4cKLQJ21Rzsuvgu0sg/zh-cn_image_0000002717770286.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072505Z&HW-CC-Expire=86400&HW-CC-Sign=4FD1803D2F7208F2A25C929427D563777D7E47A0DBB2AFD5293278C7A193C399)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/2OkoLLFUS-inHFdDwr7afQ/zh-cn_image_0000002778931281.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012628Z&HW-CC-Expire=86400&HW-CC-Sign=A2FCC0AA1478B3A829772CC426A668DE35D5A2B0FAE72966800A515F4385166E)
 
 
  - 通过LazyColumnLayout嵌套组合多种懒加载布局容器
@@ -829,7 +829,7 @@ export struct LazyColumnLayoutNestedLazyLayout {
 **图4** LazyColumnLayout嵌套懒加载布局容器效果示例图
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/AYGsESZkTpW4zw_a53KzzQ/zh-cn_image_0000002717610388.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072505Z&HW-CC-Expire=86400&HW-CC-Sign=162D7AFCB586876938994602FD99D1F143B64E53ADEFECC6E65AEADDE3F6995D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/9Wdw9RHVSD214YGRBd2_Lw/zh-cn_image_0000002749332234.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012628Z&HW-CC-Expire=86400&HW-CC-Sign=EF056DC93D74312A1F19C57AAB9BF21E6AD59E0851C1D063EA48DDB73E71B946)
 
 
 
@@ -936,7 +936,7 @@ build() {
 
 | StickyStyle.Header | StickyStyle.Footer | StickyStyle.BOTH |
 | --- | --- | --- |
-|  |  |  |
+| ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/gb6M8zATSJiYxRexYjqNrg/zh-cn_image_0000002749492118.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012628Z&HW-CC-Expire=86400&HW-CC-Sign=82DB07A271B1A0B478FFAD8CF4731D4774D1B933D6B0CEF788986D934DED0844) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/MH-yi-dYSvihJwlBctzGSw/zh-cn_image_0000002779091175.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012628Z&HW-CC-Expire=86400&HW-CC-Sign=93199A6DEC92850331D86E6A1A45F6A5C709C4C97DE3EA7D636A0684782E2AB5) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/gihxSP5yTdG0avPIgkUJTQ/zh-cn_image_0000002778931319.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012628Z&HW-CC-Expire=86400&HW-CC-Sign=460640BA2E9838D14B9406F5C45B777EFF4C2ED47E65FD14C25FA53837A35FDB) |
 
 
 由于浮点数计算精度，设置sticky后，在滚动过程中小概率产生缝隙，可以通过[pixelRound](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-pixelroundforcomponent#pixelround)指定当前组件向下像素取整解决该问题。
@@ -1151,4 +1151,4 @@ export struct LazyLayoutGroup {
 **图6** 分组展示与粘性标题效果示例图
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/rh0E9EYqSdOc5A0wexSxtw/zh-cn_image_0000002717610390.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072505Z&HW-CC-Expire=86400&HW-CC-Sign=6D7F54A24CD4B63FEC6DAEB7AFCE43C3AC37618C8CC82B80737B7F06134D3956)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/lr6BDdnfQqKzl2aYGRMgfg/zh-cn_image_0000002749332236.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012628Z&HW-CC-Expire=86400&HW-CC-Sign=9F2A3E5FC6FBB5860B362024B7729091CBACC2909509DF54494599801FCFA1F6)

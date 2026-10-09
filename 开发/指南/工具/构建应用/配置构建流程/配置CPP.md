@@ -1,35 +1,35 @@
 # 配置CPP
 
-更新时间：2026-09-08 02:53:31
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-cpp
 
 Hvigor集成CMake、Ninja为cpp代码的构建工具。在初始状态下，无需额外配置，您也可以添加以下自定义配置，定制cpp代码编译。
-
+ 
 CPP配置包含externalNativeOptions和nativeLib，除特殊说明外，在工程级和模块级build-profile.json5文件中均支持配置，工程级配置会与模块级配置进行合并，模块级配置优先，具体合并规则和优先级请参考[合并编译选项规则](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-compilation-options-customizing-guide#section1727865610255)。
-
+ 
 
 ## externalNativeOptions
 
 externalNativeOptions是Native编译配置项。
-
+  
 
 | 字段名称 | 类型 | 可选/必选 | 含义 |
 | --- | --- | --- | --- |
 | path | 字符串 | 可选 | CMake构建脚本地址，即CMakeLists.txt文件地址。 |
-| abiFilters | 字符串数组 | 可选 | HarmonyOS当前支持的ABI编译环境，包括： arm64-v8a x86_64 如不配置该参数，编译时默认为arm64-v8a。 |
+| abiFilters | 字符串数组 | 可选 | HarmonyOS当前支持的ABI编译环境，包括： arm64-v8ax86_64 如不配置该参数，编译时默认为arm64-v8a。 |
 | arguments | 字符串/字符串数组 | 可选 | CMake编译参数。 Hvigor将会把此处的自定义参数传递给CMake构建工具，您可通过CMake官方文档查找您所需的编译参数，同时它也将覆盖默认同名参数。 |
 | cppFlags | 字符串 | 可选 | C++编译器参数。 从DevEco Studio 6.0.1 Beta1版本开始，新增"-iclang"参数，提升编译效率，具体请参考通过IClang提升C++增量编译效率。 |
 | cFlags | 字符串 | 可选 | C编译参数。仅模块级build-profile.json5文件支持配置。 从DevEco Studio 6.0.1 Beta1版本开始，新增"-iclang"参数，提升编译效率，具体请参考通过IClang提升C++增量编译效率。 |
 | targets | 字符串数组 | 可选 | 指定Hvigor应构建的CMake项目中的库和可执行目标。仅模块级build-profile.json5文件支持配置。 |
-
-
-
+ 
+ 
+ 
 
 ## nativeLib
 
 nativeLib是Native库（.so）相关配置。
-
+  
 
 
 > [!NOTE] 说明
@@ -38,12 +38,12 @@ nativeLib是Native库（.so）相关配置。
 
 
 > [!NOTE] 说明
-> 仅针对HSP模块生效。               当HSP模块的工程级或模块级build-profile.json5文件中配置headerPath字段时，excludeSoFromInterfaceHar字段不生效。
+> 仅针对HSP模块生效。  当HSP模块的工程级或模块级build-profile.json5文件中配置headerPath字段时，excludeSoFromInterfaceHar字段不生效。
 
 
 
 > [!NOTE] 说明
-> 仅HAP/HSP模块支持配置该字段。               配置为true时，libs/{ABI}根目录及子目录下不能有重名的.so。
+> 仅HAP/HSP模块支持配置该字段。  配置为true时，libs/{ABI}根目录及子目录下不能有重名的.so。
 
 
 | 字段名称 | 类型 | 可选/必选 | 含义 |
@@ -51,41 +51,41 @@ nativeLib是Native库（.so）相关配置。
 | filter | 对象 | 可选 | Native 库（.so）文件的筛选选项。配置后优先级高于napiLibFilterOption。 |
 | debugSymbol | 对象 | 可选 | 移除.so文件中的符号表、调试信息。 |
 | headerPath | 字符串/字符串数组 | 可选 | 指定要导出的头文件路径。 注意： 请勿将源码等文件放置在该路径下，可能会被打包到产物中，请谨慎配置。 |
-| collectAllLibs | 布尔值 | 可选 | 对libs目录收集打包时，是否收集所有后缀的文件。 true：不限制后缀，即收集所有文件（包括无后缀文件）。 false（缺省默认值）：限制后缀为.so，即只收集后缀为.so的文件。 |
-| excludeFromHar | 布尔值 | 可选 | 构建HAR时，是否排除依赖HAR模块中的.so文件，排除时，依赖HAR模块的.so文件不会被打包到产物中。 true（缺省默认值）：排除。 false：不排除。 |
-| excludeSoFromInterfaceHar | 布尔值 | 可选 | 编译HSP模块时，打包的HAR产物是否排除.so文件，减少.tgz包体积大小。 true：排除。HAR产物不包含.so文件，HSP产物包含.so文件。 false（缺省默认值）：不排除。HAR产物和HSP产物都包含.so文件。 |
+| collectAllLibs | 布尔值 | 可选 | 对libs目录收集打包时，是否收集所有后缀的文件。 true：不限制后缀，即收集所有文件（包括无后缀文件）。false（缺省默认值）：限制后缀为.so，即只收集后缀为.so的文件。 |
+| excludeFromHar | 布尔值 | 可选 | 构建HAR时，是否排除依赖HAR模块中的.so文件，排除时，依赖HAR模块的.so文件不会被打包到产物中。 true（缺省默认值）：排除。false：不排除。 |
+| excludeSoFromInterfaceHar | 布尔值 | 可选 | 编译HSP模块时，打包的HAR产物是否排除.so文件，减少.tgz包体积大小。 true：排除。HAR产物不包含.so文件，HSP产物包含.so文件。false（缺省默认值）：不排除。HAR产物和HSP产物都包含.so文件。 |
 | excludeSoFromBinXO | 字符串数组 | 可选 | 开启BinXO检测时，指定不需要进行二进制插桩的无源码.so文件，支持正则匹配，具体使用方式请参考使用HWASan检测内存错误。 从DevEco Studio 6.1.0 Beta1版本开始支持。 |
 | librariesInfo | 对象数组 | 可选 | 声明.so的透传依赖信息。仅模块级build-profile.json5文件支持配置。 |
-| enableSoDirCollection | 布尔值 | 可选 | ets文件中是否能够加载libs/{ABI}/子目录下的.so文件，其中{ABI}是设备CPU架构类型（如arm64-v8a）。 true：能够加载libs/{ABI}根目录及子目录下的.so文件。 false（缺省默认值）：只能加载libs/{ABI}根目录下的.so文件。 从26.0.0版本开始支持。 |
-
-
-
+| enableSoDirCollection | 布尔值 | 可选 | ets文件中是否能够加载libs/{ABI}/子目录下的.so文件，其中{ABI}是设备CPU架构类型（如arm64-v8a）。 true：能够加载libs/{ABI}根目录及子目录下的.so文件。false（缺省默认值）：只能加载libs/{ABI}根目录下的.so文件。 从26.0.0版本开始支持。 |
+ 
+ 
+ 
 
 ### filter
 
 filter是Native 库（.so）文件的筛选选项。配置后优先级高于[napiLibFilterOption](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-build-profile-app#section1488712919295)。
-
+  
 
 | 字段名称 | 类型 | 可选/必选 | 含义 |
 | --- | --- | --- | --- |
 | excludes | 字符串数组 | 可选 | 根据正则表达式排除匹配到的.so文件，匹配到的.so文件将不会被打包。 |
 | pickFirsts | 字符串数组 | 可选 | 按照.so文件的优先级顺序，打包最高优先级的.so文件。 |
 | pickLasts | 字符串数组 | 可选 | 按照.so文件的优先级顺序，打包最低优先级的.so文件。 |
-| enableOverride | 布尔值 | 可选 | 是否允许当.so文件重名冲突时，使用高优先级的.so文件覆盖低优先级的.so文件： true：允许。 false（缺省默认值）：不允许。 |
+| enableOverride | 布尔值 | 可选 | 是否允许当.so文件重名冲突时，使用高优先级的.so文件覆盖低优先级的.so文件： true：允许。false（缺省默认值）：不允许。 |
 | select | 对象数组 | 可选 | select提供Native产物的精准选择能力，根据包名、版本、产物名称等，选择打包或排除Native产物到HAP/HSP/HAR产物。 select的优先级高于excludes、pickFirsts等配置项。 |
-
-
- - **库文件.so的优先级**       库文件.so的优先级顺序，可以通过pickFirsts，pickLasts选项来选择，其中pickFirsts选择高优先级的库文件，pickLasts选择低优先级的库文件。
+ 
+ 
+- **库文件.so的优先级**库文件.so的优先级顺序，可以通过pickFirsts，pickLasts选项来选择，其中pickFirsts选择高优先级的库文件，pickLasts选择低优先级的库文件。
 
   这个优先级是由本模块的依赖模块或三方包的收集顺序决定的，本模块的依赖在oh-package.json5文件的dependencies配置中声明，优先级顺序如下。
 
   
 三方包（包括远程三方包及本地har包）的优先级高于本地依赖模块的优先级。
- - 按照广度优先的遍历方式来收集依赖，如下图，优先级顺序为current > library0 > library1 > library5 > library2 > library3 > library4。         
+- 按照广度优先的遍历方式来收集依赖，如下图，优先级顺序为current > library0 > library1 > library5 > library2 > library3 > library4。
 ![](assets/配置CPP/file-20260514133104820-0.png)
 
 
-      - **select**
+ - **select**
 
 | 字段名称 | 类型 | 可选/必选 | 含义 |
 
@@ -156,7 +156,7 @@ filter是Native 库（.so）文件的筛选选项。配置后优先级高于[nap
             └── libcurl.so    // 来自har1包
             └── libcurl1.so   // 来自har包
 ```
-**示例二：**har包中存在多个.so文件，需要打包其中的libcurl1.so和libcurl2.so。
+ **示例二：**har包中存在多个.so文件，需要打包其中的libcurl1.so和libcurl2.so。
 
   
 ```json
@@ -188,13 +188,13 @@ filter是Native 库（.so）文件的筛选选项。配置后优先级高于[nap
 ```
 
 
-
-
+ 
+ 
 
 ### debugSymbol
 
 debugSymbol用于移除.so文件中的符号表、调试信息。
-
+  
 
 
 > [!NOTE] 说明
@@ -203,25 +203,25 @@ debugSymbol用于移除.so文件中的符号表、调试信息。
 
 | 字段名称 | 类型 | 可选/必选 | 含义 |
 | --- | --- | --- | --- |
-| strip | 布尔值 | 可选 | 是否移除.so文件中的符号表、调试信息。 true（缺省默认值）：移除。 false：不移除。 |
-| exclude | 字符串数组 | 可选 | 需要排除的.so文件，支持正则表达式写法。 如果strip配置为true，匹配的.so文件将不会执行strip。 如果strip配置为false，只有匹配的.so文件会执行strip。 |
-
-
-
+| strip | 布尔值 | 可选 | 是否移除.so文件中的符号表、调试信息。 true（缺省默认值）：移除。false：不移除。 |
+| exclude | 字符串数组 | 可选 | 需要排除的.so文件，支持正则表达式写法。 如果strip配置为true，匹配的.so文件将不会执行strip。如果strip配置为false，只有匹配的.so文件会执行strip。 |
+ 
+ 
+ 
 
 ### librariesInfo
 
 librariesInfo用于声明.so的透传依赖信息。仅模块级build-profile.json5文件支持配置。
-
+  
 
 | 字段名称 | 类型 | 可选/必选 | 含义 |
 | --- | --- | --- | --- |
 | name | 字符串 | 必选 | 本模块.so库的名称。 |
 | linkLibraries | 字符串数组 | 必选 | .so库的依赖信息，格式为"依赖包名::依赖.so名称"。 |
-
-
+ 
+ 
 如果需要声明库之间的依赖关系，例如entry依赖curl，可在模块内build-profile.json5中配置librariesInfo。
-
+ 
 ```json
 <span style="color: rgb(152,118,170);">"buildOption"</span><span style="color: rgb(204,120,50);">: </span>{
   <span style="color: rgb(152,118,170);">"nativeLib"</span><span style="color: rgb(204,120,50);">: </span>{
@@ -234,26 +234,25 @@ librariesInfo用于声明.so的透传依赖信息。仅模块级build-profile.js
   }
 }
 ```
-
+ 
 当其他模块依赖声明了依赖透传的模块并使用libentry.so时，libentry.so会将依赖curl::curl添加到参数INTERFACE_LINK_LIBRARIES，开发者无需关注它的依赖。
-
+ 
 ```text
 <span style="color: rgb(204,120,50);">add_library</span>(library::library SHARED <span style="color: rgb(104,151,187);">IMPORTED</span>)
 <span style="color: rgb(204,120,50);">set_target_properties</span>(library::library PROPERTIES
     <span style="color: rgb(104,151,187);">IMPORTED_LOCATION </span><span style="color: rgb(106,135,89);">"/path/to/file"</span>
     <span style="color: rgb(104,151,187);">INTERFACE_LINK_LIBRARIES </span><span style="color: rgb(106,135,89);">"curl::curl"</span>)
 ```
-
-
+ 
+ 
 
 ## 配置字段示例
 
 以模块级build-profile.json5为例：
-
-
+ 
+ 
 ```json
 {
-  ...
   "buildOptionSet": [
     {
       "name": "release",
@@ -297,6 +296,5 @@ librariesInfo用于声明.so的透传依赖信息。仅模块级build-profile.js
       },
     },
   ],
-  ...
 }
 ```

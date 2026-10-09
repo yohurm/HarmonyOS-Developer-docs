@@ -1,13 +1,13 @@
 # 使用ASan检测内存错误
 
-更新时间：2026-03-12 08:45:02
+更新时间：2026-09-20 11:26:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-asan-detection
 
 ASan的能力概述和检测原理可参看[地址越界检测能力概述](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-address-sanitizer-overview)以及[ASan检测原理](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-address-sanitizer-principle#section159561141247)，适用于开发态调试压测场景。
  
 
-#### 使用约束
+## 使用约束
 
  
 - 如果应用内的任一模块使能ASan，那么entry模块需同时使能ASan。如果entry模块未使能ASan，该应用在启动时将闪退，出现CPP Crash报错。
@@ -15,7 +15,7 @@ ASan的能力概述和检测原理可参看[地址越界检测能力概述](http
 
  
 
-#### 配置参数
+## 配置参数
 
 ASAN_OPTIONS：在运行时配置ASan的行为，包括设置检测级别、输出格式、内存错误报告的详细程度等。常用参数请查看[表1](#table103859310379)。
  
@@ -23,7 +23,7 @@ ASAN_OPTIONS支持在app.json5中配置，也支持在Run/Debug Configurations�
  
  
 
-#### 在app.json5中配置环境变量
+### 在app.json5中配置环境变量
 
  
 打开AppScope > app.json5文件，添加配置示例如下。
@@ -37,7 +37,7 @@ ASAN_OPTIONS支持在app.json5中配置，也支持在Run/Debug Configurations�
         "value": "log_exe_name=true abort_on_error=0 print_cmdline=true" // 示例仅供参考，具体以实际为准
       },
     ],
-    ...
+<span>    ...</span>
   }
 }
 ```
@@ -63,13 +63,14 @@ handle_sigbus=0
 ```
  
 
-#### 在Run/Debug Configurations中配置环境变量
+### 在Run/Debug Configurations中配置环境变量
 
  
 具体请查看[配置环境变量](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-run-debug-configurations#section9413113717532)。
  
 表1 常用参数
   
+
 | 参数 | 默认值 | 是否必填 | 说明 |
 | --- | --- | --- | --- |
 | log_exe_name | true | 是 | 不可修改。指定内存错误日志中是否包含执行文件的名称。 |
@@ -88,13 +89,13 @@ handle_sigbus=0
 更多可配置参数请参见[asan_flags](https://gitcode.com/openharmony/third_party_llvm-project/blob/master/compiler-rt/lib/asan/asan_flags.inc)。
  
 
-#### ASan使能
+## ASan使能
 
 可通过以下两种方式使能ASan。每种方式分为DevEco Studio场景和流水线场景。
  
  
 
-#### 方式一 调试窗口快速使能
+### 方式一 调试窗口快速使能
 
 **DevEco Studio场景**
  
@@ -116,7 +117,7 @@ hvigorw [taskNames...] ohos-debug-asan=true  <options>
 同上，如果有引用本地library，需在library模块的build-profile.json5文件中，配置arguments字段值为“-DOHOS_ENABLE_ASAN=ON”，表示以ASan模式编译so文件。
  
 
-#### 方式二 配置文件方式使能
+### 方式二 配置文件方式使能
 
  
 **DevEco Studio场景**
@@ -154,7 +155,7 @@ hvigorw [taskNames...] ohos-debug-asan=true  <options>
 
  
 
-#### ASan插桩验证
+## ASan插桩验证
 
  
 当应用依赖未经过ASan插桩的第三方或第四方库时，ASAN无法检测这些库中可能存在的越界错误。因此，对于应用所引用的第三方或第四方动态库，必须单独进行ASan插桩适配处理，以确保内存错误能够被完整捕获。 动态库插桩状态检查方法，可使用llvm-readelf工具检查目标动态库是否已完成ASan插桩，当前默认以动态库的方式链接，查询是否插桩成功命令如下：
@@ -174,7 +175,7 @@ llvm-readelf -s libthird_party.so | grep '__asan_init'
 
  
 
-#### 运行ASan
+## 运行ASan
 
 1. 运行或调试当前应用。
 2. 当程序出现内存错误时，弹出ASan log信息，点击信息中的链接即可跳转至引起内存错误的代码处（非release版本）。release版本本地无工程代码，可以使用[AnalyzeStackTrace功能](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-release-app-stack-analysis)，提供要解析堆栈的so，解析结果为源码地址。
@@ -182,7 +183,7 @@ llvm-readelf -s libthird_party.so | grep '__asan_init'
 
  
 
-#### ASan异常检测类型
+## ASan异常检测类型
 
  
 当前提供案例在[debug版本应用](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/performance-analysis-kit-terminology#debug版本应用)中可产生ASan，[release版本应用](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/performance-analysis-kit-terminology#release版本应用)因为在编译构建期间会进行代码优化，不一定会产生异常。
@@ -191,6 +192,7 @@ llvm-readelf -s libthird_party.so | grep '__asan_init'
 > 对于 release版本应用 ，本地无工程代码，可以使用AnalyzeStackTrace功能，提供要解析堆栈的so，解析结果为源码地址。
 
   
+
 | 常见ASan检测异常码 | 说明 | 可能的Crash信号 |
 | --- | --- | --- |
 | heap-buffer-overflow | 超出堆上分配的缓冲区范围。 | SIGSEGV（段错误）、SIGABRT（异常终止）、SIGILL（非法指令）、SIGFPE（浮点异常）、SIGTRAP（陷阱）。 |
@@ -202,7 +204,7 @@ llvm-readelf -s libthird_party.so | grep '__asan_init'
  
  
 
-#### heap-buffer-overflow
+### heap-buffer-overflow
 
  
 **背景**
@@ -247,7 +249,7 @@ int HeapBufferOverflow()
 已知大小的数组注意访问不要越界，访问已知大小数组前先判断访问位置是否落在边界外
  
 
-#### stack-buffer-overflow
+### stack-buffer-overflow
 
  
 **背景**
@@ -285,7 +287,7 @@ int StackBufferOverflow() {
 访问索引不应大于上界。
  
 
-#### stack-buffer-underflow
+### stack-buffer-underflow
 
  
 **背景**
@@ -323,7 +325,7 @@ int StackBufferUnderflow() {
 访问索引不应小于下界。
  
 
-#### heap-use-after-free
+### heap-use-after-free
 
  
 **背景**
@@ -352,7 +354,7 @@ int HeapUseAfterFree()
 如果有工程代码，直接开启ASan检测，debug模式运行后复现该错误，可以触发ASan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/6H6OTMicS7CEmSyXUSHhEQ/zh-cn_image_0000002505625820.png?HW-CC-KV=V1&HW-CC-Date=20260528T024722Z&HW-CC-Expire=86400&HW-CC-Sign=F0BD963F69314045C8EF6E9BC629E8DC7DD05BA2AF97D7862C9D7F5654F22BF5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/k8qQxT2LS3O00ZqV5QEIHA/zh-cn_image_0000002505625820.png?HW-CC-KV=V1&HW-CC-Date=20261009T012654Z&HW-CC-Expire=86400&HW-CC-Sign=4EC9C0D3324A38C9E4B748F03089AFF52017D73E1650AFF03EA3C3931E9E488E)
 
  
 **修改方法**
@@ -364,7 +366,7 @@ int HeapUseAfterFree()
 使用智能指针，或实现一个free()函数的替代版本或者delete析构器来保证指针的重置。
  
 
-#### stack-use-after-scope
+### stack-use-after-scope
 
  
 **背景**
@@ -397,7 +399,7 @@ int StackUseAfterScope() {
 如果有工程代码，直接开启ASan检测，debug模式运行后复现该错误，可以触发ASan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/pxtSLPLRRz6CQtqE8_995w/zh-cn_image_0000002537425861.png?HW-CC-KV=V1&HW-CC-Date=20260528T024722Z&HW-CC-Expire=86400&HW-CC-Sign=1AB8BEBAF73C898C580E9709785A510A2E20851A5A03C090B34FE5DB87467C64)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/wIpQE6JyTjWeeyPUMfFR_w/zh-cn_image_0000002537425861.png?HW-CC-KV=V1&HW-CC-Date=20261009T012654Z&HW-CC-Expire=86400&HW-CC-Sign=8299CC2B40E2D0FC96903A02FFFCCA3B252CCDB02F34C6631DCD2DB8568482F6)
 
  
 **优化建议**
@@ -405,7 +407,7 @@ int StackUseAfterScope() {
 在作用域内使用该变量。
  
 
-#### attempt-free-nonallocated-memory
+### attempt-free-nonallocated-memory
 
  
 **背景**
@@ -436,7 +438,7 @@ AddressSanitizer: attempting free on address which was not malloc()-ed
 如果有工程代码，直接开启ASan检测，debug模式运行后复现该错误，可以触发ASan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/uaU3foqBQkmJCjthNhq99A/zh-cn_image_0000002505626186.png?HW-CC-KV=V1&HW-CC-Date=20260528T024722Z&HW-CC-Expire=86400&HW-CC-Sign=4AA0DFA84615F12BC9692D9F5509DC6DFE68C597C3490987D3ECA96F96A1E47A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/LUU-xVfXQjic8ILC0_zy0w/zh-cn_image_0000002505626186.png?HW-CC-KV=V1&HW-CC-Date=20261009T012654Z&HW-CC-Expire=86400&HW-CC-Sign=0DC447497029FFE88C975B72EBD80D80F81B6277A4E46769B37D67AFC9700428)
 
  
 **优化建议**
@@ -444,7 +446,7 @@ AddressSanitizer: attempting free on address which was not malloc()-ed
 不要对非堆对象或未分配的内存使用free()函数。
  
 
-#### double-free
+### double-free
 
  
 **背景**
@@ -474,7 +476,7 @@ int DoubleFree() {
 如果有工程代码，直接开启ASan检测，debug模式运行后复现该错误，可以触发ASan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/Ixur8aHERi-u9GvJxQFmgA/zh-cn_image_0000002505466522.png?HW-CC-KV=V1&HW-CC-Date=20260528T024722Z&HW-CC-Expire=86400&HW-CC-Sign=1A6E48DD821386F77069171E9E670E153DFD0E50548CB0086BBB56A230571E85)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/IR0RJ-4XQXOhV5sQ3B_oGQ/zh-cn_image_0000002505466522.png?HW-CC-KV=V1&HW-CC-Date=20261009T012654Z&HW-CC-Expire=86400&HW-CC-Sign=2AB34C6A0031D1C1E9A1BBCCD52B4CE714318C0D5E27207FC18BF3C5346347CC)
 
  
 **修改方法**
@@ -486,12 +488,12 @@ int DoubleFree() {
 变量定义声明时初始化为NULL，释放内存后也应立即将变量重置为NULL，这样每次释放之前都可以通过判断变量是否为NULL来判断是否可以释放。
  
 
-#### Other-categories
+### Other-categories
 
 未知的错误类型，持续更新中。
  
  
 
-#### 日志规格和日志获取方式
+## 日志规格和日志获取方式
 
 请参看[日志获取方式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/address-sanitizer-guidelines#日志获取方式)和[ASan日志规格](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/address-sanitizer-guidelines#asan日志规格)。

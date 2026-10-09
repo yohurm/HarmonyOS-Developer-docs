@@ -1,6 +1,6 @@
 # 折叠电脑应用开发
 
-更新时间：2026-09-09 06:06:31
+更新时间：2026-09-15 02:12:10
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-mate-book-fold
 
@@ -23,7 +23,7 @@ HarmonyOS折叠电脑凭借其独特的折叠设计、全屏触控和[虚拟键�
 
 | 产品名称 | 示意图 |
 | --- | --- |
-| MateBook Fold系列 |  |
+| MateBook Fold系列 | ![](assets/MateBook Fold折叠电脑应用开发/file-20260515114929241-1.png) |
  
  
 > [!NOTE]
@@ -53,7 +53,7 @@ HarmonyOS折叠电脑凭借其独特的折叠设计、全屏触控和[虚拟键�
 | --- | --- | --- | --- | --- |
 | 设备形态 | 半折叠态（唤起全尺寸键盘） | 半折叠态（关闭全尺寸键盘） | NA | NA | NA |
 | --- | --- | --- | --- | --- | --- |
-| 半折叠态效果图 |  |  | NA | NA | NA |
+| 半折叠态效果图 | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/jC_No4EjTTaniPWceEjJ6A/zh-cn_image_0000002615986527.png?HW-CC-KV=V1&HW-CC-Date=20261009T012647Z&HW-CC-Expire=86400&HW-CC-Sign=3F03EF05C0BA29D5A3ECADAE711C143A96A4B7F6E16BEA9B6937BFB2208F49EF) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/GwzlvA5aQ02o4z5797GtDw/zh-cn_image_0000002616066617.png?HW-CC-KV=V1&HW-CC-Date=20261009T012647Z&HW-CC-Expire=86400&HW-CC-Sign=32C63264B527705D76F982750294BFFD0E2C4C8231B80EDEF0A2679C2EDC8D37) | NA | NA | NA |
 | --- | --- | --- | --- | --- | --- |
 | 屏幕方向（Orientation） | 竖屏PORTRAIT | NA | NA | NA |
 | --- | --- | --- | --- | --- |
@@ -78,7 +78,7 @@ HarmonyOS折叠电脑凭借其独特的折叠设计、全屏触控和[虚拟键�
 | --- | --- | --- | --- | --- |
 | 设备形态 | 竖向展开态 | 横向展开态 | NA | 横向展开态 | 外接显示器 |
 | --- | --- | --- | --- | --- | --- |
-| 展开态效果图 |  |  | NA |  |  |
+| 展开态效果图 | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/yZkn3Jk_Sim1kGgy9w5Nfw/zh-cn_image_0000002585466878.png?HW-CC-KV=V1&HW-CC-Date=20261009T012647Z&HW-CC-Expire=86400&HW-CC-Sign=DBB8A9DF9B6C71BCB0B86F2C47C25448D7B257AFC5C337EC1A0C3D0239DD71A3) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/p27m-rHkRu2XeEELAORm5Q/zh-cn_image_0000002585626812.png?HW-CC-KV=V1&HW-CC-Date=20261009T012647Z&HW-CC-Expire=86400&HW-CC-Sign=035723A56403819FBF12B5917AA3114979F4CF55FB07318395A432FBF2BB8F02) | NA | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/mBQQ_LdZQwaPznhZXAJQQA/zh-cn_image_0000002615986529.png?HW-CC-KV=V1&HW-CC-Date=20261009T012647Z&HW-CC-Expire=86400&HW-CC-Sign=715FD577A437D2AC0709BDE5963FDB9A911452E22FE4EB62D7FDC22E98A61DCD) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/MSEzPhXqQUahnqExEnl54w/zh-cn_image_0000002616066621.png?HW-CC-KV=V1&HW-CC-Date=20261009T012647Z&HW-CC-Expire=86400&HW-CC-Sign=351BDA4AFEAE125F8AE028EF88069FC11BFF3699B8609045305DFCFB48F27FEB) |
 | --- | --- | --- | --- | --- | --- |
 | 屏幕方向（Orientation） | 竖屏PORTRAIT | 横屏LANDSCAPE | NA | 反向横屏LANDSCAPE_INVERTED |
 | --- | --- | --- | --- | --- |
@@ -101,7 +101,7 @@ HarmonyOS折叠电脑凭借其独特的折叠设计、全屏触控和[虚拟键�
 - 获取屏幕对象相关接口[Display](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-display#display)对象中包含屏幕宽高，屏幕可用区域宽高等重要信息，对应的Display区域如下图所示。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/z5HBB7TNQJuwXmuHvsi92g/zh-cn_image_0000002585466890.png?HW-CC-KV=V1&HW-CC-Date=20260911T072152Z&HW-CC-Expire=86400&HW-CC-Sign=4469FBFF5D673DEBA65B75BF8FF0DEAFC73C631840C0E015CE148126D1626881)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/F1BL3xz0Q7qQmVPmFIv4CQ/zh-cn_image_0000002585466890.png?HW-CC-KV=V1&HW-CC-Date=20261009T012647Z&HW-CC-Expire=86400&HW-CC-Sign=F0F1CA9B488866EE8BA7758B09A264376A23F23F7CF89D139DF95FB2887332F3)
 
 
 | API | 说明 |
@@ -133,7 +133,7 @@ HarmonyOS折叠电脑凭借其独特的折叠设计、全屏触控和[虚拟键�
 
 | 屏幕旋转角度（rotation） | 0(0度) | 1(90度) | 3(270度) |
 | --- | --- | --- | --- |
-| 示意图 |  |  |  |
+| 示意图 | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/70VwxtdcT3WanOOliqILbw/zh-cn_image_0000002585626824.png?HW-CC-KV=V1&HW-CC-Date=20261009T012647Z&HW-CC-Expire=86400&HW-CC-Sign=406F4213D28E3DB7A7D0D9C16A38A5179B14C4AA1311BCC47E5A85E7A64D8E3C) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/x3kEslVpQIu1w9ShrcY1Zg/zh-cn_image_0000002615986541.png?HW-CC-KV=V1&HW-CC-Date=20261009T012647Z&HW-CC-Expire=86400&HW-CC-Sign=153532EB20C4018823D9763A204C9222F9F9D22BFCC0F6AE1D0A12F5F296216B) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/niU6Rr4KSlSsPBc1iX6oyw/zh-cn_image_0000002616066633.png?HW-CC-KV=V1&HW-CC-Date=20261009T012647Z&HW-CC-Expire=86400&HW-CC-Sign=39F77165963BC0FE6E897B3F49F52BD58841967A48E7B64588000877973E0177) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/-N8ZsraWS_2cZcSCNnE-qw/zh-cn_image_0000002585466892.png?HW-CC-KV=V1&HW-CC-Date=20261009T012647Z&HW-CC-Expire=86400&HW-CC-Sign=14E8620CA4EF072002860705EEFBE844A6A9BE3CFFAB193EEB80611351EC379A) |
 | --- | --- | --- | --- |
 | 前置相机镜头角度 | 270° | 270° | 270° |
 | --- | --- | --- | --- |
@@ -154,7 +154,7 @@ HarmonyOS折叠电脑凭借其独特的折叠设计、全屏触控和[虚拟键�
 
 | 设备形态 | 半折叠态（唤起全尺寸键盘） | 半折叠态（关闭全尺寸键盘） | 横向展开态 | 竖向展开态 |
 | --- | --- | --- | --- | --- |
-| 效果图 |  |  |  |  |
+| 效果图 | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/bH2Fw3TLSyCHFJtZwh5Vfw/zh-cn_image_0000002585626828.png?HW-CC-KV=V1&HW-CC-Date=20261009T012647Z&HW-CC-Expire=86400&HW-CC-Sign=B68528240391CFB4DDD16C5DFF95C3B23D11330C048BDB7B3C02416636FCDA1C) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/1tgLu1feTJWdaoJjG9TDMA/zh-cn_image_0000002615986543.png?HW-CC-KV=V1&HW-CC-Date=20261009T012647Z&HW-CC-Expire=86400&HW-CC-Sign=272E1B47CF510B08EE8EC74F0366A115CFC105AE98DB1923735BD73D242772C7) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/7sxf7t7UT8uBYuqW8prAaw/zh-cn_image_0000002616066635.png?HW-CC-KV=V1&HW-CC-Date=20261009T012647Z&HW-CC-Expire=86400&HW-CC-Sign=A5CE544EE5C66E166833C48ADC258F24CAAD88F576A45C244855D794B732458A) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/7SH6NNRKTruAOPDr4CExFA/zh-cn_image_0000002585466894.png?HW-CC-KV=V1&HW-CC-Date=20261009T012647Z&HW-CC-Expire=86400&HW-CC-Sign=81226BCFE2D3D1F5A5BC61D008D77B4EAEF4B0605EBF9750AF03C9010CD4B795) |
 | --- | --- | --- | --- | --- |
 | isFoldable | true |
 | --- | --- |
@@ -206,7 +206,7 @@ HarmonyOS折叠电脑凭借其独特的折叠设计、全屏触控和[虚拟键�
 悬停态支持设备平稳放置于桌面，实现免手持体验，常用于视频通话、视频播放、拍照、听歌等不需要频繁交互的场景。这种状态下，应用需要对中间折痕区域进行避让，并对上下两个界面进行悬停态布局适配。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/KdaHEz7SQTSksXBxAgCCoA/zh-cn_image_0000002585626830.png?HW-CC-KV=V1&HW-CC-Date=20260911T072152Z&HW-CC-Expire=86400&HW-CC-Sign=931165787BC0AB362D28739AA540EEDB84296F0F0BA51C6D066084BE40575700)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/PxS0UHgpSAqzb-h_U47EnQ/zh-cn_image_0000002585626830.png?HW-CC-KV=V1&HW-CC-Date=20261009T012647Z&HW-CC-Expire=86400&HW-CC-Sign=BFFC42CDD1FE6591031ECB715CC24A2925D1FF694ECE86C842411C43402CF112)
 
  
  

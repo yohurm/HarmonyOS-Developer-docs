@@ -1,6 +1,6 @@
 # ArkUI_LayoutConstraint
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule-arkui-layoutconstraint
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -21,4 +21,4 @@ typedef struct ArkUI_LayoutConstraint ArkUI_LayoutConstraint
  
 **相关模块：** [ArkUI_NativeModule](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule)
  
-**所在头文件：** [native_type.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-type-h)
+**所在头文件：** [common_type.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-common-type-h)

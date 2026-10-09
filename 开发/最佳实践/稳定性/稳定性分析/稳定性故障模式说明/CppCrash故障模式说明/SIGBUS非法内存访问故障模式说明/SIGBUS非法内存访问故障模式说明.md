@@ -1,6 +1,6 @@
 # SIGBUS非法内存访问故障模式说明
 
-更新时间：2026-09-03 02:56:00
+更新时间：2026-09-15 02:12:10
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-cppcrash-sigbus-fault-mode
 
@@ -20,8 +20,8 @@ SIGBUS中BUS_ADRALN表示内存地址对齐错误，该错误发生在尝试访�
  1. 结构体未对齐：使用#pragma pack或手动偏移导致成员未对齐。
 2. 指针强制类型转换：将char*转换为int*等，导致访问地址不满足对齐要求。
  
-
  
+
 问题分析的步骤如下。
  1. 确认类型：确认信号为SIGBUS，错误码为BUS_ADRALN。
 2. 调用栈分析：参考[C++堆栈解析流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)，使用llvm-addr2line工具定位具体访问未对齐地址的代码位置。
@@ -42,7 +42,7 @@ SIGBUS中BUS_ADRALN表示内存地址对齐错误，该错误发生在尝试访�
 
 ### 案例分析
 
-**案例一：主动构造BUS_ADRALN故障**
+**案例一：栈指针未对齐触发BUS_ADRALN故障**
  
 **问题现象**
  
@@ -109,8 +109,8 @@ Tid:<span style="color: rgb(0,0,255);">7875</span>, Name:ppcrashanalysis
 
   str x0, [sp]：尝试访问未对齐地址，直接触发SIGBUS(BUS_ADRALN)。
  
-
  
+
 **案例二：函数地址异常触发BUS_ADRALN**
  
 **问题现象**
@@ -175,15 +175,13 @@ x0(<span style="color: rgb(128,128,128);">/</span>data<span style="color: rgb(12
     <em>0000005ac3b0a970</em> <em>5400656d616e7473</em>   <span style="color: rgb(0,0,255);">"stname</span><span style="color: rgb(181,106,1);">\0</span><span style="color: rgb(0,0,255);">T"</span>
     <em>0000005ac3b0a978</em> <span style="color: rgb(80,160,79);">7341726567676972</span>   <span style="color: rgb(0,0,255);">"riggerAs"</span>
 ```
- 说明3：由于0x0000005ac3b0a96e上是普通字符，无法被当时可执行代码，GetName调用方式异常，触发了异常。
+ 说明3：由于0x0000005ac3b0a96e地址上是普通字符，无法被当成可执行代码，导致GetName调用异常，触发了崩溃。
  
  
 
 ### 常见易错代码预防建议
 
 针对BUS_ADRALN导致的崩溃，可以参考[稳定性编码规范](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-coding-standard)，通过标准化编码降低系统故障率。
- 
-
  
  
 
@@ -204,8 +202,8 @@ SIGBUS BUS_OBJERR类型的Native崩溃，根本原因在于程序访问的内存
 2. 内存映射I/O（MMIO）错误：直接访问硬件寄存器时若方式不当（如读取未就绪的状态寄存器），硬件总线会拒绝访问并触发异常。
 3. 系统资源限制：内核在处理缺页异常时，可能因资源限制而发送BUS_OBJERR信号给进程。
  
-
  
+
 问题分析的步骤如下：
  1. **确认类型：**首先确认崩溃信号是否为SIGBUS，且si_code是否为BUS_OBJERR，这直接指明了问题的性质。重点关注**访问出错的地址** (fault addr) 和**导致崩溃的代码位置**（backtrace)，这是定位问题的物理出发点。
 2. **调用栈分析：**找到异常内存访问的调用栈，根据栈帧崩溃文件名，转到业务代码栈帧去查看崩溃的函数。
@@ -377,8 +375,8 @@ napi_value AccessMmapOverFlow(napi_env env, napi_callback_info info)
  
 文件读写操作要确保访问的偏移地址合法。
  
-
  
+
 **案例二：未判断内存读写合法性导致崩溃**
  
 **问题现象**
@@ -521,14 +519,14 @@ napi_value AccessMemWithoutCheck(napi_env env, napi_callback_info info)
  说明3：此处可以直接定位到具体访问的变量，排查其访问合法性。
 4. 排查访问合法性。一般遵循先确认故障地址，然后计算访问偏移，最后检查文件状态三步进行检查。上述案例确认为文件被截断导致文件大小小于映射大小，实际访问超过文件大小的偏移时触发崩溃。
  
-
  
+
 **问题结论与总结**
  
 由于两个线程没有加任何同步，当写入线程在文件被截断后依然尝试写入原本有效但已被截断的地址时，就会触发SIGBUS BUS_OBJERR崩溃。
  
-
  
+
 **修复建议**
  
 使用一个全局std::mutex保护：
@@ -743,8 +741,8 @@ private:
 };
 ```
  
-
  
+
 **并发场景操作文件需要加锁保护**
  
 使用文件锁并发安全访问。

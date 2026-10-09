@@ -1,13 +1,13 @@
 # ohpm config
 
-更新时间：2026-08-05 02:47:01
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-config
 
 设置ohpm用户级配置项。
  
 
-#### 命令格式
+## 命令格式
 
 ```text
 ohpm config set <key> <value>
@@ -23,12 +23,12 @@ ohpm config encrypt [options]
  
  
 
-#### 功能描述
+## 功能描述
 
 ohpm 从命令行和 .ohpmrc 文件中获取其配置设置。有关更多 .ohpmrc 文件信息和可用配置选项，请参阅 [ohpmrc](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpmrc) 章节。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/MUJ4JWw8QlOubmHlK1mARg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095614Z&HW-CC-Expire=86400&HW-CC-Sign=70370AD2D21DA276F33CE3D71B6DDD6B98438CA9D0ECF14F45AD1DA3D5FE57C1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/bNXknrnESyWg3WKZY1KU3Q/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20261009T012818Z&HW-CC-Expire=86400&HW-CC-Sign=A8EFCC2DD71D92CAA0CA27E58B7C0FA327D012EB17008EB6867D33498B81AB5C)
  
 
 ohpm config 仅支持配置项字段（默认项字段请查阅 [ohpmrc](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpmrc#zh-cn_topic_0000001792216397_默认配置项) 章节），且仅支持修改**用户级目录**下的 .ohpmrc 文件。
@@ -37,11 +37,11 @@ ohpm config 仅支持配置项字段（默认项字段请查阅 [ohpmrc](https:/
  
  
 
-#### 子命令
+## 子命令
 
  
 
-#### set
+### set
 
 ```text
 ohpm config set <key> <value>
@@ -59,7 +59,7 @@ ohpm config set log_level debug
  
  
 
-#### get
+### get
 
 ```text
 ohpm config get <key>
@@ -119,7 +119,7 @@ log_level = "debug"
  
  
 
-#### list
+### list
 
 ```text
 ohpm config list
@@ -154,7 +154,7 @@ log_level = "debug"
  
  
 
-#### delete
+### delete
 
 ```text
 ohpm config delete <key>
@@ -184,7 +184,7 @@ log_level=debug
  
  
 
-#### encrypt
+### encrypt
 
 ```text
 ohpm config encrypt [options]
@@ -246,11 +246,11 @@ security:01:61AE9D3219664B7B785XXXXX:201f713d625daddafcb12198ea9d5121xxxxxx
  
  
 
-#### Options
+## Options
 
  
 
-#### json
+### json
 
 - 默认值：false
 - 类型： Boolean
@@ -268,13 +268,12 @@ ohpm config list -j 或 ohpm config list --json
   "registry": "http://localhost:8088/repos/ohpm", 
   "strict_ssl": false,
   "log_level": "info",
-  ......
 }
 ```
  
  
 
-#### crypto_path
+### crypto_path
 
 - 默认值：无
 - 类型：string
@@ -307,7 +306,7 @@ security:01:61AE9D3219664B7B785XXXXX:201f713d625daddafcb12198ea9d5121xxxxxx
  
  
 
-#### log_level
+### log_level
 
 - 默认值：无
 - 类型：string
@@ -317,7 +316,7 @@ security:01:61AE9D3219664B7B785XXXXX:201f713d625daddafcb12198ea9d5121xxxxxx
  
  
 
-#### debug
+### debug
 
 - 默认值：false
 - 类型：Boolean

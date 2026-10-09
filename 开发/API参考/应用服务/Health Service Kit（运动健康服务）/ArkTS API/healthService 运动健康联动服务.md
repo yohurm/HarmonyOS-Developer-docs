@@ -1,6 +1,6 @@
 # healthService (运动健康联动服务)
 
-更新时间：2026-09-01 03:59:25
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/health-api-healthservice
 **支持设备：** Phone | Tablet | Wearable
@@ -884,7 +884,7 @@ offData(dataType: undefined, listener: Callback<SampleReal[]>): Promise&lt;void&
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| dataType | undefined | 是 | 监听所有联动运动数据类型。 |
+| dataType | undefined | 是 | 取消监听所有联动运动数据类型。 |
 | listener | Callback<SampleReal[]> | 是 | 回调函数，返回联动运动数据。 |
  
  

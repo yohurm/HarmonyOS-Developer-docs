@@ -1,0 +1,131 @@
+# @performance/hp-arkui-use-onAnimationStart-for-swiper-preload
+
+更新时间：2026-10-08 09:38:49
+
+来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hp-arkui-use-onanimationstart-in-swiper
+
+建议Swiper预加载机制搭配 OnAnimationStart 接口回调使用。
+ 
+滑动丢帧场景下，建议优先修改。
+ 
+
+## 规则配置
+
+```json
+// code-linter.json5
+{
+  <span style="color: rgb(135,16,148);">"rules"</span>: {
+    <span style="color: rgb(135,16,148);">"@performance/hp-arkui-use-onAnimationStart-for-swiper-preload"</span>: <span style="color: rgb(6,125,23);">"warn"</span>,
+  }
+}
+```
+ 
+ 
+
+## 选项
+
+该规则无需配置选项。
+ 
+ 
+
+## 正例
+
+```text
+import image from '@ohos.multimedia.image';
+// 源码文件，请以工程实际为准
+import { MyDataSource } from './MyDataSource';
+import { PhotoItem } from './component/ChildComponent';
+import { MyObject } from './data/DataEntry';
+
+@Entry
+@Component
+struct MyComponent {
+  cacheCount: number = 1;
+  swiperController: SwiperController = new SwiperController();
+  private data: MyDataSource = new MyDataSource([]);
+
+  build() {
+    Swiper(this.swiperController) {
+      LazyForEach(this.data, (item: MyObject, index?: number) => {
+        // 源码文件，请以工程实际为准
+        PhotoItem({ myIndex: index, dataSource: this.data })
+      }, (item: MyObject) => item.id) // item唯一id
+    }
+    .cachedCount(this.cacheCount)
+    .indicator(true)
+    .loop(false)
+    // 在OnAnimationStart接口回调中进行预加载资源的操作
+    .onAnimationStart((index: number, targetIndex: number) => {
+      if (targetIndex !== index) {
+        try {
+          // 获取resourceManager资源管理器
+          const resourceMgr = this.getUIContext().getHostContext()?.resourceManager;
+          // 获取rawfile文件夹下icon.png的ArrayBuffer
+          let str = "item" + (targetIndex + this.cacheCount + 2) + ".jpg";
+          resourceMgr?.getRawFileContent(str).then((value) => {
+            // 创建imageSource
+            const imageSource = image.createImageSource(value.buffer);
+            imageSource.createPixelMap().then((value) => {
+              this.data.addData(targetIndex + this.cacheCount + 1, {
+                description: "" + (targetIndex + this.cacheCount + 1),
+                image: value
+              })
+            })
+          })
+        } catch (err) {
+          console.log("error code" + err);
+        }
+      }
+    })
+    .width('100%')
+    .height('100%')
+  }
+}
+```
+ 
+ 
+
+## 反例
+
+```text
+// 源码文件，请以工程实际为准
+import { MyDataSource } from './MyDataSource';
+import { PhotoItem } from './component/ChildComponent';
+import { MyObject } from './data/DataEntry';
+
+
+@Entry
+@Component
+struct MyComponent {
+  cacheCount: number = 1;
+  swiperController: SwiperController = new SwiperController();
+  private data: MyDataSource = new MyDataSource([]);
+  context = getContext(this);
+
+  build() {
+    // Swiper组件没有使用OnAnimationStart进行预加载
+    Swiper(this.swiperController) {
+      LazyForEach(this.data, (item: MyObject, index?: number) => {
+        // 源码文件，请以工程实际为准
+        PhotoItem({ myIndex: index, dataSource: this.data })
+      }, (item: MyObject) => item.id)
+    }
+    .cachedCount(this.cacheCount)
+    .indicator(true)
+    .loop(false)
+    .width('100%')
+    .height('100%')
+  }
+}
+```
+ 
+ 
+
+## 规则集
+
+```json
+<span style="color: rgb(106,135,89);">plugin:@performance/recommended</span>
+plugin:@performance/all
+```
+ 
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-code-linter)。

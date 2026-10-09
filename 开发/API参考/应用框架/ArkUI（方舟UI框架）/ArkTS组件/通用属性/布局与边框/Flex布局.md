@@ -1,6 +1,6 @@
 # Flex布局
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-flex-layout
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -124,6 +124,10 @@ alignSelf(value: ItemAlign): T
  
 子组件在父容器交叉轴（与主轴垂直的方向）的对齐格式，设置后会覆盖父容器的alignItems设置。仅Flex、Column、Row、DynamicLayout和GridRow容器支持此属性。
  
+> [!NOTE]
+> 当父容器为 Flex 时，alignSelf仅在父容器设置FlexWrap.NoWrap时生效；设置FlexWrap.Wrap或FlexWrap.WrapReverse时不生效。
+
+ 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
  
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -243,4 +247,4 @@ struct FlexExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/oWxJ1gTUS-mWa2uXOUzVgQ/zh-cn_image_0000002747212357.png?HW-CC-KV=V1&HW-CC-Date=20260911T073124Z&HW-CC-Expire=86400&HW-CC-Sign=207B9EDC81C45D67B7FB902CBBFAE6C7F8796972AF475D2D83C2813457B919E3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/J0hkp72ITxKOu6tRkrWxWA/zh-cn_image_0000002779093363.png?HW-CC-KV=V1&HW-CC-Date=20261009T013110Z&HW-CC-Expire=86400&HW-CC-Sign=ED6B724A7EB80F58F53B55E46EB52D889DDF3FB2738390D1DEE7F5E5D3C34FE7)

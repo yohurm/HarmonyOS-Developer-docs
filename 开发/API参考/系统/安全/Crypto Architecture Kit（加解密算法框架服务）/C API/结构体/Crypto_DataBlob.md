@@ -1,6 +1,6 @@
 # Crypto_DataBlob
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-cryptocommonapi-crypto-datablob
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
@@ -40,5 +40,5 @@ typedef struct Crypto_DataBlob {...} Crypto_DataBlob
 
 | 名称 | 描述 |
 | --- | --- |
-| uint8_t* data | 数据Blob的内容。 |
-| size_t len | 数据Blob的长度。 |
+| uint8_t *data | 数据缓冲区。 |
+| size_t len | 数据长度。 |

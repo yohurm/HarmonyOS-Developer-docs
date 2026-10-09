@@ -1,6 +1,6 @@
 # SOTER
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/onlineauthentication-soter-api
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -833,7 +833,7 @@ let keyAlias: string = 'keyAlias';
 
 // 使用同步接口获取authKey
 let signedResult: soter.SignedResult = soter.getAuthKeySync(keyAlias, keyType);
-let authKey: Uint8Array = signedResult.message; // 开发者使用结果authKey
+let authKey: Uint8Array = signedResult.signature; // 开发者使用结果authKey
 console.info('Succeeded in doing getAuthKeySync. authKey:', authKey);
 ```
  

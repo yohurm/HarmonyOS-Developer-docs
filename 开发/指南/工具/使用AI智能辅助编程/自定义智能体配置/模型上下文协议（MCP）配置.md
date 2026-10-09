@@ -1,6 +1,6 @@
 # 模型上下文协议（MCP）配置
 
-更新时间：2026-08-29 09:41:34
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-agent-mcp
 
@@ -49,7 +49,7 @@
 4. 在**MCP Tools**列表中，展示所有MCP工具信息，包括名称、连接状态、启用状态。同时，将鼠标悬浮在工具上会显示三个操作按钮：刷新、编辑和删除，方便开发者管理工具。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/tDGbJDP0SymGxCcms7ntEw/zh-cn_image_0000002731542277.png?HW-CC-KV=V1&HW-CC-Date=20260911T072808Z&HW-CC-Expire=86400&HW-CC-Sign=A88F68C8F1C94DFD537AA7CD9E28558B6611A4CFF596EC53BE01006973236CF6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/LP7ehDQ7T0uZWU1gQ0-Oog/zh-cn_image_0000002731542277.png?HW-CC-KV=V1&HW-CC-Date=20261009T012757Z&HW-CC-Expire=86400&HW-CC-Sign=D83B5BA27C1FF44761E4CA70354641383A666DD185A7E9A8815E01AB8E2850C9)
 
 名称：MCP工具名称，如time。
 5. 连接状态：工具连接状态，包括“成功”、“失败”和“连接中”三种状态。

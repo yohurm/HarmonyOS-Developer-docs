@@ -1,6 +1,6 @@
 # 跨设备连接UIAbility开发指南
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/abilityconnectmanager-guidelines
 
@@ -287,12 +287,13 @@ abilityConnectionManager.on("receiveMessage", this.sessionId,(callbackInfo) => {
 ```ArkTS
 import { abilityConnectionManager } from '@kit.DistributedServiceKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-abilityConnectionManager.sendMessage(this.sessionId, "message send success").then(() => {
-  hilog.info(0x0000, 'testTag', "sendMessage success");
-}).catch(() => {
-  hilog.error(0x0000, 'testTag', "connect failed");
-})
+abilityConnectionManager.sendMessage(this.sessionId, 'message send success').then(() => {
+  hilog.info(0x0000, 'testTag', 'sendMessage success');
+}).catch((error: BusinessError) => {
+  hilog.error(0x0000, 'testTag', 'sendMessage failed');
+});
 ```
 
 **2.发送字节流数据**
@@ -308,10 +309,10 @@ let textEncoder = util.TextEncoder.create("utf-8");
 const arrayBuffer  = textEncoder.encodeInto("data send success");
 
 abilityConnectionManager.sendData(this.sessionId, arrayBuffer.buffer).then(() => {
-  hilog.info(0x0000, 'testTag', "sendMessage success");
+  hilog.info(0x0000, 'testTag', 'sendData success');
 }).catch(() => {
-  hilog.info(0x0000, 'testTag', "sendMessage failed");
-})
+  hilog.error(0x0000, 'testTag', 'sendData failed');
+});
 ```
 
 **结束协同**

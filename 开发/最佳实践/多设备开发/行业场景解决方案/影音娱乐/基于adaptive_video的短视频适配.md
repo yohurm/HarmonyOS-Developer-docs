@@ -1,6 +1,6 @@
 # 全屏短视频自适应缩放和沉浸
 
-更新时间：2026-09-02 03:30:31
+更新时间：2026-09-15 02:12:10
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-short-video-base-adaptivevideo
 
@@ -8,7 +8,7 @@
 
 短视频是一种时长较短、内容直观的视频内容形式，单条视频通常为数秒至数分钟。为提升用户的观感体验，短视频页面常采用沉浸式模式展示视频内容。由于设备类型和屏幕尺寸的差异，不同设备短视频页面的沉浸效果、旋转策略可能会有所不同，开发者需额外适配。
  
-对此，[多设备场景库（multidevicelibrary）](https://gitcode.com/HarmonyOS_Samples/MultiDeviceLibrary)提供了完整的适配方案，能够使短视频页面在遵循当前主流沉浸和旋转规则的同时，达到多端一致的观感体验，简化短视频页面开发。下文将介绍多设备场景库（multidevicelibrary）支持的短视频页面开发适配场景，主要内容如下：
+对此，[多设备场景库](https://gitcode.com/HarmonyOS_Samples/MultiDeviceLibrary)提供了完整的适配方案，能够使短视频页面在遵循当前主流沉浸和旋转规则的同时，达到多端一致的观感体验，简化短视频页面开发。下文将介绍多设备场景库支持的短视频页面开发适配场景，主要内容如下：
  1. [短视频自适应沉浸](#section2355143519245)：介绍短视频布局场景层、视频自适应层的规则逻辑。
 2. [短视频自适应旋转](#section1689619568351)：介绍用户改变设备的持握方向时，短视频常规播放及横屏视频全屏播放两种场景的旋转策略。
 3. [开发步骤](#section921165310471)：介绍开发者如何使用多设备场景库，实现短视频的多端自适应缩放和沉浸模式展示。
@@ -27,11 +27,11 @@
 
 | 设备 | 直板机 | 双折叠展开态 |
 | --- | --- | --- |
-| 实现效果图 |  |  |
+| 实现效果图 | ![](assets/基于adaptive_video的短视频适配/file-20260515114937565-0.png) | ![](assets/基于adaptive_video的短视频适配/file-20260515114937565-1.png) |
 | --- | --- | --- |
 | 设备 | 平板 | 电脑 |
 | --- | --- | --- |
-| 实现效果图 |  |  |
+| 实现效果图 | ![](assets/基于adaptive_video的短视频适配/file-20260515114937565-2.png) | ![](assets/基于adaptive_video的短视频适配/file-20260515114937565-3.png) |
 | --- | --- | --- |
  
  
@@ -114,7 +114,7 @@
 | 9:16.1 <= r <= 9:15.9 | 9:18 <= x < 9:14.4 | 320 <= w < 600 | COVER（铺满裁切） |
 | 9:16.1 <= r <= 9:15.9 | x < 9:18 | 320 <= w < 600 | OVERSCAN（微溢裁切） |
 | 9:16.1 <= r <= 9:15.9 | w >= 600 | - | CONTAIN（等比留黑） |
-| r > 9:15.9 或 r < 9:16.1 (非9:16区间的视频) | - | - | CONTAIN（等比留黑） |
+| r > 9:15.9或r < 9:16.1 (非9:16区间的视频) | - | - | CONTAIN（等比留黑） |
  
  
 > [!NOTE]
@@ -124,7 +124,7 @@
 视频宽高比处于9:16区间的短视频在不同可用宽高比区域的显示效果图如下（红色部分为视频显示区域，但超出可用区域即灰色区域时，会发生裁剪）：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/DPQOrlN3QaqrKrvX0BvLxQ/zh-cn_image_0000002724502423.png?HW-CC-KV=V1&HW-CC-Date=20260911T072527Z&HW-CC-Expire=86400&HW-CC-Sign=91CD71D53F17534055FB66BA6C51F3F7553EC2748E5D880B53F94257CD6C43F0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/JytwyvFUTrCpzPtTTR3Ggw/zh-cn_image_0000002724502423.png?HW-CC-KV=V1&HW-CC-Date=20261009T012652Z&HW-CC-Expire=86400&HW-CC-Sign=9636CC02AAB619FA481CFF1E372D1F4D14395B98A213C401E6522DAA19DEFAFB)
 
  
  
@@ -140,17 +140,17 @@
 
 | 设备 | 竖屏 | 横屏 |
 | --- | --- | --- |
-| 直板机 |  | 非全屏播放 全屏播放 |
-| 双折叠展开态 |  |  |
-| 平板 |  |  |
-| 电脑 | 无竖屏效果 |  |
+| 直板机 | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/ie1_w0dmRbO8UcT06Y2POw/zh-cn_image_0000002694742990.png?HW-CC-KV=V1&HW-CC-Date=20261009T012652Z&HW-CC-Expire=86400&HW-CC-Sign=EE3B85897DABD1FA233BA249091494771CF59EA69CB0AA8A00DEDFF7FAC730CA) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/AaYelby3SZSX8m7KmadPsQ/zh-cn_image_0000002694583104.png?HW-CC-KV=V1&HW-CC-Date=20261009T012652Z&HW-CC-Expire=86400&HW-CC-Sign=74F9E1A7B73EC84565884572321F7DD4D97EBC3715B9D1858BED56C440092D6B) 非全屏播放 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/VOWwDDiWSk-XwdLxQJTykw/zh-cn_image_0000002724382499.png?HW-CC-KV=V1&HW-CC-Date=20261009T012652Z&HW-CC-Expire=86400&HW-CC-Sign=79E2CDD997838DA3C771C3A04110624D894D0CF033363BC2081E08DB979F4898) 全屏播放 |
+| 双折叠展开态 | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/KKGc5X1YQ7OGBiQIppFauQ/zh-cn_image_0000002724502425.png?HW-CC-KV=V1&HW-CC-Date=20261009T012652Z&HW-CC-Expire=86400&HW-CC-Sign=86F18F3E1BE6CC280EA8E1BC0C89B3FCBFE3130D908C0C3FFEAB8D41FE8EFFD6) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/NVKjZMsAQ2C9bX_zhfSvyQ/zh-cn_image_0000002694742992.png?HW-CC-KV=V1&HW-CC-Date=20261009T012652Z&HW-CC-Expire=86400&HW-CC-Sign=DC0F75D87F927797E82816918EE595CD153EBAF53B69BFAA3BA8BED097BF2A70) |
+| 平板 | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/SRL3YUHoSaapUpry6DmI4A/zh-cn_image_0000002694583106.png?HW-CC-KV=V1&HW-CC-Date=20261009T012652Z&HW-CC-Expire=86400&HW-CC-Sign=251DED4635C99EBC9A017655C4BA824763E2625C0471EE9FBE26E203B58507AA) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/0NA5hx0XQl2grXXwaCWQ9g/zh-cn_image_0000002724382501.png?HW-CC-KV=V1&HW-CC-Date=20261009T012652Z&HW-CC-Expire=86400&HW-CC-Sign=EAF58E5A7E7D43EE46B8D9162E6659A1914CC72A53444B062EE5ACD8DDC16F7A) |
+| 电脑 | 无竖屏效果 | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/ecK9dD8PRVyajzHtStApSg/zh-cn_image_0000002724502427.png?HW-CC-KV=V1&HW-CC-Date=20261009T012652Z&HW-CC-Expire=86400&HW-CC-Sign=A94E763E43C60CF10F84A11FC04FB19B12640C883ED0BB25654E7D18FC5B40C1) |
  
  
  
 
 ### 规则描述
 
-一般情况下，短视频页应保持与桌面方向一致，进入横屏播放场景时切换到新的旋转策略。[多设备场景库（multidevicelibrary）](https://gitcode.com/HarmonyOS_Samples/MultiDeviceLibrary)为上述两种场景预设了相应的旋转策略。
+一般情况下，短视频页应保持与桌面方向一致，进入横屏播放场景时切换到新的旋转策略。[多设备场景库](https://gitcode.com/HarmonyOS_Samples/MultiDeviceLibrary)为上述两种场景预设了相应的旋转策略。
  
 - 短视频常规播放（SHORT_VIDEO）：使用follow_desktop，即[跟随桌面的旋转策略](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-device-window-direction#section3434202623320)。
 - 横屏视频全屏播放（LANDSCAPE_VIDEO_FULLSCREEN）：根据屏幕长边尺寸（displayLongEdgeVp）、长短边比例（displayLongShortRatio）区分旋转策略。
@@ -178,7 +178,7 @@
 
 ### 场景描述
 
-[多设备场景库（multidevicelibrary）](https://gitcode.com/HarmonyOS_Samples/MultiDeviceLibrary)封装上述两层的实现细节，提供高阶组件AdaptiveShortVideoScene及AdaptiveVideoSurface，帮助开发者高效构建视频播放场景。
+[多设备场景库](https://gitcode.com/HarmonyOS_Samples/MultiDeviceLibrary)封装上述两层的实现细节，提供高阶组件AdaptiveShortVideoScene及AdaptiveVideoSurface，帮助开发者高效构建视频播放场景。
  
  
 

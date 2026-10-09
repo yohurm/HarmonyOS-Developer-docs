@@ -1,6 +1,6 @@
 # 指定二进制数据转换非对称密钥对(ArkTS)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-convert-binary-data-to-asym-key-pair
 
@@ -124,7 +124,7 @@ function convertEccAsyKey() {
 ```ArkTS
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
-function convertECCAsyKeySync() {
+function convertEccAsyKeySync() {
   let pubKeyArray =
     new Uint8Array([48, 89, 48, 19, 6, 7, 42, 134, 72, 206, 61, 2, 1, 6, 8, 42, 134, 72, 206, 61, 3, 1, 7, 3, 66, 0, 4,
       83, 96, 142, 9, 86, 214, 126, 106, 247, 233, 92, 125, 4, 128, 138, 105, 246, 162, 215, 71, 81, 58, 202, 121, 26,

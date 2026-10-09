@@ -1,6 +1,6 @@
 # Router切换Navigation
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-router-to-navigation
 
@@ -16,8 +16,8 @@ Router路由的页面是一个@Entry修饰的Component，每一个页面都需�
 {
   "src": [
     "pages/Index",
-    "pages/pageOne",
-    "pages/pageTwo"
+    "pages/PageOne",
+    "pages/PageTwo"
   ]
 }
 ```
@@ -43,7 +43,7 @@ struct Index {
         Text(this.message)
           .fontSize(50)
           .fontWeight(FontWeight.Bold)
-        Button('router to pageOne', { stateEffect: true, type: ButtonType.Capsule })
+        Button('router to PageOne', { stateEffect: true, type: ButtonType.Capsule })
           .width('80%')
           .height(40)
           .margin(20)
@@ -70,8 +70,8 @@ struct Index {
 ```ArkTS
 @Entry
 @Component
-struct pageOne {
-  @State message: string = 'This is pageOne';
+struct PageOne {
+  @State message: string = 'This is PageOne';
 
   build() {
     Row() {
@@ -113,7 +113,7 @@ struct Index1 {
           .height(40)
           .margin(20)
           .onClick(() => {
-            this.pathStack.pushPathByName('navigation_pageOne', null);
+            this.pathStack.pushPathByName('navigation_PageOne', null);
           })
       }.width('100%').height('100%')
     }
@@ -164,11 +164,11 @@ export struct PageOne {
 {
   "routerMap": [
     {
-      "name": "pageOne",
+      "name": "PageOne",
       "pageSourceFile": "src/main/ets/pages/PageOne.ets",
       "buildFunction": "PageOneBuilder",
       "data": {
-        "description": "this is pageOne"
+        "description": "this is PageOne"
       }
     }
   ]
@@ -183,13 +183,13 @@ Router通过@ohos.router模块提供的方法来操作页面，建议使用[UICo
 
 ```ArkTS
 // push page
-this.getUIContext().getRouter().pushUrl({ url:'pages/pageOne', params: null });
+this.getUIContext().getRouter().pushUrl({ url:'pages/PageOne', params: null });
 
 // pop page
-this.getUIContext().getRouter().back({ url: 'pages/pageOne' });
+this.getUIContext().getRouter().back({ url: 'pages/PageOne' });
 
 // replace page
-this.getUIContext().getRouter().replaceUrl({ url: 'pages/pageOne' });
+this.getUIContext().getRouter().replaceUrl({ url: 'pages/PageOne' });
 
 // clear all page
 this.getUIContext().getRouter().clear();
@@ -223,15 +223,15 @@ struct Index {
 ```ArkTS
 this.pathStack.pop();
 // push page
-this.pathStack.pushPath({ name: 'pageOne' });
+this.pathStack.pushPath({ name: 'PageOne' });
 
 // pop page
 this.pathStack.pop();
 this.pathStack.popToIndex(1);
-this.pathStack.popToName('pageOne');
+this.pathStack.popToName('PageOne');
 
 // replace page
-this.pathStack.replacePath({ name: 'pageOne' });
+this.pathStack.replacePath({ name: 'PageOne' });
 
 // clear all page
 this.pathStack.clear();
@@ -239,8 +239,8 @@ this.pathStack.clear();
 // 获取路由栈大小
 let size: number = this.pathStack.size();
 
-// 删除栈中name为pageOne的所有页面
-this.pathStack.removeByName('pageOne');
+// 删除栈中name为PageOne的所有页面
+this.pathStack.removeByName('PageOne');
 
 // 删除指定索引的页面
 this.pathStack.removeByIndexes([1, 3, 5]);
@@ -251,11 +251,11 @@ this.pathStack.getAllPathName();
 // 获取索引为1的页面参数
 this.pathStack.getParamByIndex(1);
 
-// 获取pageOne页面的参数
-this.pathStack.getParamByName('pageOne');
+// 获取PageOne页面的参数
+this.pathStack.getParamByName('PageOne');
 
-// 获取pageOne页面的索引集合
-this.pathStack.getIndexByName('pageOne');
+// 获取PageOne页面的索引集合
+this.pathStack.getIndexByName('PageOne');
 // ...
 ```
 
@@ -371,7 +371,7 @@ struct CustomNode {
     Row() {
       Button('Method 4: queryNavigationInfo')
         .onClick(() => {
-          this.pathStack.pushPath({ name: 'pageTwo' });
+          this.pathStack.pushPath({ name: 'PageTwo' });
         })
     }
   }
@@ -383,7 +383,7 @@ struct CustomNode {
 ## 生命周期
 
 > [!NOTE]
-> router页面的生命周期和Navigation页面的生命周期关系如下： 1.router页面的跳转会影响其内部Navigation页面的生命周期。 2.Navigation页面的跳转不会影响其所在router页面的生命周期。 3.应用前后台切换会同时触发router页面和Navigation页面的生命周期。
+> router页面的生命周期和Navigation页面的生命周期关系如下： router页面的跳转会影响其内部Navigation页面的生命周期。 Navigation页面的跳转不会影响其所在router页面的生命周期。 应用前后台切换会同时触发router页面和Navigation页面的生命周期。
 
 
 Router页面[生命周期](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-routing#生命周期)为@Entry页面中的通用方法，主要有如下四个生命周期：

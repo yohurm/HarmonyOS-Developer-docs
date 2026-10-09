@@ -1,6 +1,6 @@
 # @typescript-eslint/no-implicit-any-catch
 
-更新时间：2026-01-15 06:51:04
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_no-implicit-any-catch
 
@@ -9,12 +9,12 @@
 该规则仅支持对.js/.ts文件进行检查。
  
 
-#### 规则配置
+## 规则配置
 
 ```json
 // code-linter.json5
 {
-  "rules": {
+  <span style="color: rgb(135,16,148);">"rules"</span>: {
     "@typescript-eslint/no-implicit-any-catch": "error"
   }
 }
@@ -22,7 +22,7 @@
  
  
 
-#### 选项
+## 选项
 
 该规则默认不允许使用隐式any类型。但是可以接受{"allowExplicitAny": true}对象作为规则参数，以允许使用显式的any类型。
  
@@ -31,7 +31,7 @@
 ```json
 // code-linter.json5
 {
-  "rules": {
+  <span style="color: rgb(135,16,148);">"rules"</span>: {
     "@typescript-eslint/no-implicit-any-catch": ["error", {"allowExplicitAny": true}]
   }
 }
@@ -49,7 +49,7 @@ try {
  
  
 
-#### 正例
+## 正例
 
 ```text
 try {
@@ -61,7 +61,7 @@ try {
  
  
 
-#### 反例
+## 反例
 
 ```text
 try {
@@ -74,10 +74,10 @@ try {
  
  
 
-#### 规则集
+## 规则集
 
 ```text
-plugin:@typescript-eslint/all
+<span style="color: rgb(6,125,23);">plugin:@typescript-eslint/all</span>
 ```
  
 Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-code-linter)。

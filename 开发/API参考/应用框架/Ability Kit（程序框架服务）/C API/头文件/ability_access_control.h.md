@@ -1,6 +1,6 @@
 # ability_access_control.h
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ability-access-control-h
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -12,7 +12,7 @@
 
 声明管理进程访问控制的接口。
  
-**库：** ability_access_control.so
+**库：** libability_access_control.so
  
 **引用文件：** <accesstoken/ability_access_control.h>
  

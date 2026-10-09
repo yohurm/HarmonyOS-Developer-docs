@@ -1,11 +1,12 @@
 # DevEco Studio配置参数列表
 
-更新时间：2026-01-15 06:51:04
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-configuration-parameter
 
 DevEco Studio基于IntelliJ平台开发，在原生的IntelliJ参数的基础上新增了部分参数，这些参数可在idea.properties中进行配置，参数列表如下：
   
+
 | 参数 | 参数说明 |
 | --- | --- |
 | grs_url | 设置DevEco Studio连接的云端环境。 |

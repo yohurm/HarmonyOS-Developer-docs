@@ -1,6 +1,6 @@
 # native_avscreen_capture_base.h
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avscreen-capture-base-h
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -849,5 +849,5 @@ typedef void (*OH_AVScreenCapture_OnPrivacyProtect)(OH_AVScreenCapture* capture,
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVScreenCapture* capture | 指向OH_AVScreenCapture实例的指针。 |
-| OH_PrivacyProtectInfo* privacyProtect | 隐私保护信息指针。指向包含隐私保护事件详细信息的结构体，用于处理录屏过程中的隐私保护回调事件。 |
+| OH_PrivacyProtectInfo* privacyProtect | 隐私保护信息指针。指向包含隐私保护事件详细信息的结构体，用于返回录屏过程中隐私保护信息。 |
 | void *userData | 指向应用设置该回调处理方法时提供的自定义数据的指针。 |

@@ -1,58 +1,12 @@
 # TrustedAppService（可信应用服务）
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-taas
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!TIP]
 > 以下仅介绍本模块特有错误码，通用错误码请参考 通用错误码 说明文档。
-
-
-
-## 201 权限校验失败
-
-
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
-
-**错误信息**
-
-permission denied.
-
-**错误描述**
-
-权限校验失败。
-
-**可能原因**
-1. 应用未开通可信应用服务。
-2. 应用未申请必要权限。
-
-**处理步骤**
-1. 开通可信应用服务，请参考“[开通Device Security服务](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurity-deviceverify-activateservice)”。
-2. 申请位置权限，请参考开发指南中安全地理位置[开发步骤](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurity-taas-securelocation#开发步骤)。
-
-
-
-## 401 参数检查失败
-
-
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
-
-**错误信息**
-
-argument is invalid.
-
-**错误描述**
-
-参数检查失败。
-
-**可能原因**
-1. 未使用Kit提供的枚举值。
-2. userData参数长度不符合要求。
-
-**处理步骤**
-1. 使用Kit中提供的枚举值作为传入参数。
-2. 修改userData参数的内容，保证长度在16到127 Bytes之间。
 
 
 
@@ -585,7 +539,7 @@ Image signature calculation failed.
 
 
 
-## 1027200006 证真处理存储不足失败
+## 1027200006 证真签名验证失败
 
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable

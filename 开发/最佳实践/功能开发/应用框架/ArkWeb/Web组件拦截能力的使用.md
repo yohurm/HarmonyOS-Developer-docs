@@ -21,6 +21,7 @@ ArkWeb提供了多种拦截能力，使开发者能够监控、修改和记录�
   
 | 使用场景 | 页面跳转控制 | 网络请求拦截 |
 | --- | --- | --- |
+
 | 方案 | onLoadIntercept | onInterceptRequest | WebSchemeHandler |
 | --- | --- | --- | --- |
 | 典型应用场景 | 应用的跳转与拉起请求重定向页面白名单配置 | 本地资源替换自定义资源加载策略提示恶意请求 | 除支持onInterceptRequest的应用场景外，还支持： 配置公共请求头跨域请求POST请求拦截 |

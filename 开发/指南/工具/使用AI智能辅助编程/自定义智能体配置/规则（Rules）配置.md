@@ -1,6 +1,6 @@
 # 规则（Rules）配置
 
-更新时间：2026-08-29 09:41:34
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-agent-rules
 
@@ -49,4 +49,4 @@ Quality first：生成代码时遵循更多规则，帮助AI获取更准确答�
 4. 管理规则文件。将鼠标悬停在工程文件上，会出现编辑和删除按钮，方便开发者管理工程规则文件。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/9nkUOboSTRqaEdu6UloXrA/zh-cn_image_0000002701662672.png?HW-CC-KV=V1&HW-CC-Date=20260911T072808Z&HW-CC-Expire=86400&HW-CC-Sign=D8A058ECDCE736AF96E051E923F3E05442FA7CAA0535D6D75F3B59B1BB60374F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/wh9vqj3OSHadDZJOR0BbAw/zh-cn_image_0000002701662672.png?HW-CC-KV=V1&HW-CC-Date=20261009T012758Z&HW-CC-Expire=86400&HW-CC-Sign=6BA92EB9701E63FD477197E5B496777AC37BC740E1A0FAA2D0C6FA11DE2AA3EC)

@@ -1,6 +1,6 @@
 # 应用切换到后台后VPN功能保活的解决方案
 
-更新时间：2026-08-26 00:50:37
+更新时间：2026-08-26 00:50:37（官网已下线）
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-network-134
 

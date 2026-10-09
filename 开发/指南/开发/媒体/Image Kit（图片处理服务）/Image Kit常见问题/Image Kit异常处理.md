@@ -1,6 +1,6 @@
 # Image Kit异常处理
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-error-faq
 
@@ -117,7 +117,7 @@ void GetImageInfoExample(OH_PixelmapNative *pixelmap) {
     OH_Pixelmap_ImageInfo *imageInfo;
     Image_ErrorCode errCode = OH_PixelmapImageInfo_Create(&imageInfo);
     if (errCode != IMAGE_SUCCESS) {
-        OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_Create failed, errCode: %{public}d.", errCode);
+        OH_LOG_ERROR(LOG_APP, "OH_PixelmapImageInfo_Create failed, errCode: %{public}d.", errCode);
         return;
     }
     errCode = OH_PixelmapNative_GetImageInfo(pixelmap, imageInfo);

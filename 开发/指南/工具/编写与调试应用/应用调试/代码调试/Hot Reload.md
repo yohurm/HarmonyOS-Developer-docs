@@ -1,31 +1,31 @@
 # Hot Reload
 
-更新时间：2026-09-08 02:53:31
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hot-reload
 
 DevEco Studio提供Hot Reload（热重载）能力，支持开发者在真机或模拟器上运行/调试应用时，修改代码并保存后无需重启应用，在真机或模拟器上即可使用最新的代码，帮助开发者更快速地进行调试。
-
+ 
 针对大多数代码修改场景，热重载均能提供支持，但是一些特殊场景需要通过热重载+重启应用后方可生效，因此，从DevEco Studio 5.1.1 Beta1版本开始，提供基于热重载的增强能力——热重启。[开启热重启开关后](#section1724105718289)，DevEco Studio在遇到热重载不支持的场景时，将自动切换至热重启以获取更强的支持能力。
-
+ 
 热重载和热重启均不支持C++文件和资源文件的修改，针对该问题，从DevEco Studio 6.1.1 Beta1版本开始，提供基于热重启的增强能力——[Apply Changes](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-incremental-debugging)。[开启Apply Changes开关后](#section1724105718289)，并且设备版本在API 24及以上，DevEco Studio在增量调试C++代码及资源文件时，会自动切换至Apply Changes。
-
+ 
 > [!NOTE]
 > Hot Reload不支持卡片，不建议在hotReload模式下执行与卡片相关的操作。
 
-
+ 
 
 ## 热重载、热重启、完全重启的区别
 
- - **热重载**：不重启应用，可保留应用状态，但整个过程会重新运行入口文件内的逻辑。
- - **热重启**：在运行流程上，与热重载相比，主要区别在于会重启应用，不保留应用状态，支持更广泛的ArkTS代码修改快速生效。一旦执行了热重启，后续热重载流程均会被热重启取代。
- - **完全重启**：会完全重新运行应用，该任务较为耗时，因为它会重新全量编译代码和资源文件。
+- **热重载**：不重启应用，可保留应用状态，但整个过程会重新运行入口文件内的逻辑。
+- **热重启**：在运行流程上，与热重载相比，主要区别在于会重启应用，不保留应用状态，支持更广泛的ArkTS代码修改快速生效。一旦执行了热重启，后续热重载流程均会被热重启取代。
+- **完全重启**：会完全重新运行应用，该任务较为耗时，因为它会重新全量编译代码和资源文件。
 
-
-
+ 
+ 
 
 ## 使用约束
-
+ 
 
 | 修改文件 | 热重载 | 热重启 | 说明 |
 | --- | --- | --- | --- |
@@ -39,8 +39,8 @@ DevEco Studio提供Hot Reload（热重载）能力，支持开发者在真机或
 | 启动应用后新增的代码文件 | 不支持 | 不支持 | - |
 | C++、so文件 | 不支持 | 不支持 | - |
 | resource资源文件（如修改string.json文件的内容） | 不支持 | 不支持 | 支持对资源引用的修改，例如把\$r('app.color.greenColor')改成\$r('app.color.redColor')。 |
-
-
+ 
+  
 
 | 代码元素 | 变更行为 | 热重载 | 热重启 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -71,30 +71,30 @@ DevEco Studio提供Hot Reload（热重载）能力，支持开发者在真机或
 | 闭包变量 | 新增、删除 | 部分支持 | 部分支持 | 热重载仅支持顶层闭包变量（不包括this变量）的新增或删除。 从DevEco Studio 6.0.0 Beta3版本开始，热重启不支持首次新增this变量或删除所有this变量。 |
 | 闭包变量 | 修改 | 部分支持 | 支持 | 热重载不支持顶层闭包变量的修改。 |
 | 自定义组件 | 新增、修改、删除 | 部分支持 | 支持 | 热重载：@Entry修饰的文件内仅支持通过import方式引入的自定义组件的新增和修改。 |
-
-
+ 
+  
 
 | 场景 | 热重载 | 热重启 | 说明 |
 | --- | --- | --- | --- |
 | 命中断点时 | 不支持 | 不支持 | 点击Resume Program继续执行后再进行热重载/热重启。 |
 | 修改跳转的其他ability页面 | 不支持 | 支持 | 修改代码并执行热重载后，重新拉起该ability页面可生效。 |
-
-
-
+ 
+ 
+ 
 
 ## 开启热重启/Apply Changes（可选）
 
 如果需要使用热重启或Apply Changes的能力，先打开对应开关：点击菜单栏**File > Settings**（macOS为**DevEco Studio > Preferences/Settings**）** > Build, Execution, Deployment > Hot Reload**，勾选以下选项。
+ 
+- **Enable hot restart**：开启热重启。
+- **Enable Apply Changes**：开启Apply Changes。
 
- - **Enable hot restart**：开启热重启。
- - **Enable Apply Changes**：开启Apply Changes。
-
-
+ 
 
 ![](assets/Hot%20Reload/file-20260514133007458-1.png)
 
-
-
+ 
+ 
 
 ## 操作步骤
 1. 连接真机设备或模拟器。
@@ -109,14 +109,14 @@ DevEco Studio提供Hot Reload（热重载）能力，支持开发者在真机或
 4. 修改代码后，可以通过如下操作，查看设备上修改后的显示效果。
 
   
- - 方式一：点击Hot Reload![icon](assets/Hot%20Reload/file-20260514133007458-4.png)按钮：         
+- 方式一：点击Hot Reload![icon](assets/Hot%20Reload/file-20260514133007458-4.png)按钮：
 ![](assets/Hot%20Reload/file-20260514133007458-5.png)
 
 
-5. 方式二：通过快捷键方式触发Hot Reload：需要先在菜单栏点击**File > Settings**（macOS为**DevEco Studio > Preferences/Settings**），选择**Tools > Actions on Save**，勾选**Perform hot reload**，点击**OK**完成设置。修改代码后通过快捷键**Ctrl + S**即可触发Hot Reload。         方式二不支持Apply Changes，如需使用Apply Changes功能，请使用方式一。
+5. 方式二：通过快捷键方式触发Hot Reload：需要先在菜单栏点击**File > Settings**（macOS为**DevEco Studio > Preferences/Settings**），选择**Tools > Actions on Save**，勾选**Perform hot reload**，点击**OK**完成设置。修改代码后通过快捷键**Ctrl + S**即可触发Hot Reload。方式二不支持Apply Changes，如需使用Apply Changes功能，请使用方式一。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/BNseS-0AQpmdn_JwI9nrQQ/zh-cn_image_0000002701662710.png?HW-CC-KV=V1&HW-CC-Date=20260911T072812Z&HW-CC-Expire=86400&HW-CC-Sign=D9452A0BE5CF4AB17427C375B9DA66B929D46B339F4BF9C3F542535E335F7FE7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/bgyrvn6aRHugihll0DPv9w/zh-cn_image_0000002701662710.png?HW-CC-KV=V1&HW-CC-Date=20261009T012809Z&HW-CC-Expire=86400&HW-CC-Sign=99D81767C5FD40031F7C6FD7486B592A61BCF2E1F2B553B0FFDE3232884AE19F)
 
 
 6. 点击停止按钮终止运行/调试运行，退出Hot Reload模式。
@@ -129,4 +129,4 @@ DevEco Studio提供Hot Reload（热重载）能力，支持开发者在真机或
 
   
 可以不使用build-profile.json5中自动生成的签名信息，而是在hvigorfile.ts中配置签名信息，Hot Reload功能仍可正常使用，具体请参考[修改每个hvigorNode中的build-profile.json5](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-config-ohos-sample#section973053620286)。
- - 可以不使用app.json5中的versionCode，而是在hvigorfile.ts中动态配置应用版本号，Hot Reload功能仍可正常使用，具体请参考[修改app.json5中的配置信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-config-ohos-sample#section9435132933118)。
+- 可以不使用app.json5中的versionCode，而是在hvigorfile.ts中动态配置应用版本号，Hot Reload功能仍可正常使用，具体请参考[修改app.json5中的配置信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-config-ohos-sample#section9435132933118)。

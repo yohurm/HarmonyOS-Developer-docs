@@ -1,10 +1,10 @@
 # NearLink Kit常见问题
 
-更新时间：2026-06-12 06:54:11
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nearlink-faq
 
-#### 连续进行数据传输时数据发送失败的问题
+## 连续进行数据传输时数据发送失败的问题
 
 连续多次调用[writeData](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/nearlink-data-transfer-api#writedata)接口可能会导致发送队列拥塞，从而发送失败。
 
@@ -12,7 +12,7 @@
 
 
 
-#### 星闪标准服务UUID的格式
+## 星闪标准服务UUID的格式
 
 通用唯一标识（UUID）用来指示条目描述的具体内容。标准服务或标准服务成员使用 16 比特通用唯一标识。
 
@@ -22,8 +22,24 @@
 
 
 
-#### 星闪数据传输方式的选择
+## 星闪数据传输方式的选择
 
 星闪提供了基于[SSAP交互](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nearlink-ssap-server-connect)和基于[端口数据传输](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nearlink-start-data-transfer)两种数据传输方式。
 
 其中，对于低功耗、小数据量场景，建议使用基于SSAP的数据传输；对于高吞吐量、大文件传输场景，建议使用基于端口的数据传输。
+
+
+
+## 客户端如何接收属性变化通知
+
+客户端接收属性变化通知（即收到[on('propertyChange')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/nearlink-ssap#on-propertychange)回调）需同时满足以下条件：
+1. 服务端在创建该属性时声明了通知（NOTIFY）操作和客户端属性值配置描述符（CLIENT_PROPERTY_CONFIG）；
+2. 客户端已与服务端成功建立SSAP连接；
+3. 客户端已通过[getServices()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/nearlink-ssap#getservices)获取到该属性；
+4. 客户端已调用[setPropertyNotification()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/nearlink-ssap#setpropertynotification)启用该属性的通知；
+5. 客户端已调用[on('propertyChange')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/nearlink-ssap#on-propertychange)注册属性变化回调。
+
+满足上述条件后，服务端调用[notifyPropertyChanged()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/nearlink-ssap#notifypropertychanged)更新属性值时，会向客户端发送属性变化通知。若上述任一条件不满足，客户端将收不到通知。
+
+> [!NOTE]
+> 连接断开后，已启用的通知会失效，重新连接后需重新调用 setPropertyNotification() 启用。

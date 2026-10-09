@@ -1,6 +1,6 @@
 # Interface (ResultSet)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-data-relationalstore-resultset
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -1580,11 +1580,9 @@ getSendableRow(): sendableRelationalStore.ValuesBucket
 ```ArkTS
 // EntryAbility.ets
 import { window } from '@kit.ArkUI';
-import { UIAbility } from '@kit.AbilityKit';
-import { relationalStore } from '@kit.ArkData';
+import { UIAbility, common } from '@kit.AbilityKit';
+import { relationalStore, sendableRelationalStore } from '@kit.ArkData';
 import { taskpool } from '@kit.ArkTS';
-import { common } from '@kit.AbilityKit';
-import { sendableRelationalStore } from '@kit.ArkData';
 
 @Concurrent
 async function getDataByName(name: string, context: common.UIAbilityContext) {

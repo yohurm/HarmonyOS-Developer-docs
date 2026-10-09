@@ -1,6 +1,6 @@
 # Slider
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-slider
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -81,11 +81,11 @@ Slider(options?: SliderOptions)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 
-| 名称 | 说明 |
-| --- | --- |
-| OutSet | 滑块在滑轨上。 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
-| InSet | 滑块在滑轨内。 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
-| NONE12+ | 无滑块 卡片能力： 从API version 12开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| OutSet | 0 | 滑块在滑轨上。 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| InSet | 1 | 滑块在滑轨内。 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| NONE12+ | 2 | 无滑块 卡片能力： 从API version 12开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 
 
 > [!NOTE]
@@ -1624,7 +1624,7 @@ struct SliderExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/lGEIYrz1QoSb6thzOnMhWw/zh-cn_image_0000002747212615.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073107Z&HW-CC-Expire=86400&HW-CC-Sign=CF7722C454F7758D41DDC78F670332349B65D91D4AE1D18B6AD35D7213498230)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/WfM9TKPXREWIm61lqYMM6g/zh-cn_image_0000002779093757.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013054Z&HW-CC-Expire=86400&HW-CC-Sign=69BD69E06FAA14226D0C5C44BB464B8B75561D453E690D5FC5D9EA6CE0CA7129)
 
 
 
@@ -1714,7 +1714,7 @@ struct SliderExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/KvkhXEjyTI6shKehUU0uUA/zh-cn_image_0000002717772680.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073107Z&HW-CC-Expire=86400&HW-CC-Sign=788E543BF900CF5CA09481BCE5E841109CAACC639C0457C3A179632639CB67CF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/UOwAoTZ-TLGvT6ciU8GcbQ/zh-cn_image_0000002778933901.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013054Z&HW-CC-Expire=86400&HW-CC-Sign=BDA066493D9E6B825165CEECF9196EF3B53A25A17D1C47526DD0C595A450A6B3)
 
 
 
@@ -1938,7 +1938,7 @@ struct SliderExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/fZtPFWFzQFmVNustZRHwnw/zh-cn_image_0000002717612748.jpeg?HW-CC-KV=V1&HW-CC-Date=20260911T073107Z&HW-CC-Expire=86400&HW-CC-Sign=9004021A5B7B4960B8FAC285E86F666D2E7845B015189A75E2FFB04A0C053262)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/QTKOM49YSXy-fau1dEInfw/zh-cn_image_0000002749334818.jpeg?HW-CC-KV=V1&HW-CC-Date=20261009T013054Z&HW-CC-Expire=86400&HW-CC-Sign=1A33281B39F513C99792D8387F0D7702802D958971D3A0EADB4E50137966665E)
 
 
 
@@ -2013,7 +2013,7 @@ struct SliderExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/N2t7-kfpRLqzTYfn-qehxg/zh-cn_image_0000002747292701.png?HW-CC-KV=V1&HW-CC-Date=20260911T073107Z&HW-CC-Expire=86400&HW-CC-Sign=3C2627E0472B5DAE765B07B3D85FECA80C901A8F81DA469110CC53DCA9AB7DFE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/5HpdxqrATDuSesHdlpaXaw/zh-cn_image_0000002749494702.png?HW-CC-KV=V1&HW-CC-Date=20261009T013054Z&HW-CC-Expire=86400&HW-CC-Sign=96025F60A7C1DF1F892675EA7F4DD99859FCD4DA5D6E89789F10867ED2E0AE76)
 
 
 
@@ -2053,7 +2053,7 @@ struct SliderExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/oLc54F12RyOoVWRiYJXRoQ/zh-cn_image_0000002747212617.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073107Z&HW-CC-Expire=86400&HW-CC-Sign=048EAEB985EA8C21FC40774D58838B7EAD33FA88240C74249A3C2D75E3EB2CA4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/pLvw0ji2R0qIfbF38nTFsA/zh-cn_image_0000002779093759.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013054Z&HW-CC-Expire=86400&HW-CC-Sign=59E8BBD794A04A1BEE9E1B9EAE5CC02ACC2164A79E8DF37110372EFB0A74C4AB)
 
 
 
@@ -2179,7 +2179,7 @@ struct SliderExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/eTHW5GuyQJiOYxZ65MTFJQ/zh-cn_image_0000002717772682.png?HW-CC-KV=V1&HW-CC-Date=20260911T073107Z&HW-CC-Expire=86400&HW-CC-Sign=1AC7F8580FB95C638292E65D77DC716DE536DB89FBAAF63773E2B6B16703A894)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/50056eNmQ_u3FhPEth633A/zh-cn_image_0000002778933903.png?HW-CC-KV=V1&HW-CC-Date=20261009T013054Z&HW-CC-Expire=86400&HW-CC-Sign=9C77A50E772CB6B64EFB706F68B6A48EDB4D415C62D92EE00EFAA4E0A3A1506D)
 
 
 
@@ -2230,7 +2230,7 @@ struct SliderExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/3dl4DP_QQV6U878BAilFqQ/zh-cn_image_0000002717612750.png?HW-CC-KV=V1&HW-CC-Date=20260911T073107Z&HW-CC-Expire=86400&HW-CC-Sign=EB84D9393CED5C2D4C60CDD17DE4BBE72705EA038D083E47A2E1A147698A1D68)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/s4UM01kqR7aZkoGW1PV6eQ/zh-cn_image_0000002749334820.png?HW-CC-KV=V1&HW-CC-Date=20261009T013054Z&HW-CC-Expire=86400&HW-CC-Sign=959414AC9B9F3C33B9B34287D7726363A2778DB6225B2292932ED9BC11A6FC80)
 
 
 
@@ -2242,7 +2242,7 @@ struct SliderExample {
 
 该示例通过通用属性[systemMaterial](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-image-effect#systemmaterial)设置滑动条的系统材质，实现沉浸光感效果。设置系统材质后，Slider滑动过程中会产生粒子动画效果。
 
-组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
+该示例配图为高算力设备强档效果，组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
 
 从API版本26.0.0开始，新增systemMaterial接口。
 
@@ -2277,10 +2277,10 @@ struct SliderSystemMaterial {
 未设置系统材质时：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/q20jOLjIQeeaXBgaWUM3GQ/zh-cn_image_0000002747292703.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073107Z&HW-CC-Expire=86400&HW-CC-Sign=6E09C525408B80084A4C5124A5DD01907C00373F0A8027A97E773485518E3765)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/LEqcfz2LTzCu3ObYUE65zg/zh-cn_image_0000002749494704.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013054Z&HW-CC-Expire=86400&HW-CC-Sign=BC278917F38596039DF9804208BE37372D3E4002A64B0D29434D583C92810D78)
 
 
 设置系统材质后：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/N-gjMhN2Rc-OR8EQWO4hlg/zh-cn_image_0000002747212619.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073107Z&HW-CC-Expire=86400&HW-CC-Sign=8936F472B23A3F689B745B9DA8813A3921F43222360AF4ABADE450F3C5263E1C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/d1coBKTcQo-Pl8VdojuqMg/zh-cn_image_0000002779093761.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013054Z&HW-CC-Expire=86400&HW-CC-Sign=C234994CB43D0D3CB1DDBFF6B0F1165DCAA81684A565E9795C39545EC70CD472)

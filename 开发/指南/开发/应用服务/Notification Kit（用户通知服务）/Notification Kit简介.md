@@ -1,6 +1,6 @@
 # Notification Kit简介
 
-更新时间：2026-08-21 10:52:25
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-overview
 
@@ -40,12 +40,9 @@ Notification Kit支持的能力主要包括：
 
 
 使用Notification Kit的主要业务流程如下：
-
-1.请求[通知授权](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-authorization通知授权)。
-
-2.应用发布通知到通知服务。
-
-3.将通知展示到[通知中心](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-center通知中心)。
+1. 请求[通知授权](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-authorization通知授权)。
+2. 应用发布通知到通知服务。
+3. 将通知展示到[通知中心](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-center通知中心)。
 
 
 
@@ -60,10 +57,10 @@ Notification Kit中常用的通知样式如下：
 
 | 类型 | 通知样式 | 规格描述 |
 | --- | --- | --- |
-| 文本 |  | 通知文本内容最多显示三行，超长后以“...”截断。 |
-| 多行文本 |  | 最多可显示三行内容，每行内容超长后以“...”截断。 |
-| 通知角标 |  | 以数字的形式展示在右上角。 |
-| 进度条 |  | 进度类通知。 |
+| 文本 | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/9fZuvgBnSZCFcIQelQwRDw/zh-cn_image_0000002749493752.png?HW-CC-KV=V1&HW-CC-Date=20261009T013036Z&HW-CC-Expire=86400&HW-CC-Sign=DD650ECCEA4E8AEFF70907E7407CF49F13C6C8C7CCBFAFF5C42F4547663E006A) | 通知文本内容最多显示三行，超长后以“...”截断。 |
+| 多行文本 | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/Ieux_eVyRXybPfrEBrFJeA/zh-cn_image_0000002779092807.png?HW-CC-KV=V1&HW-CC-Date=20261009T013036Z&HW-CC-Expire=86400&HW-CC-Sign=A38792CB40571EF98EAD9BE367A070AD5EB91605FF2301DD2BCDDFDD17A42583) | 最多可显示三行内容，每行内容超长后以“...”截断。 |
+| 通知角标 | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/xURKQ8bxSk2WwmCB1eKkhg/zh-cn_image_0000002778932953.png?HW-CC-KV=V1&HW-CC-Date=20261009T013036Z&HW-CC-Expire=86400&HW-CC-Sign=5731380D34165C4BEAF8CC17D257E5B1FB7DBCE9C995B67B096CC633FA035C0D) | 以数字的形式展示在右上角。 |
+| 进度条 | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/epB5H58nSBqbB7mSEVG-eA/zh-cn_image_0000002749333866.png?HW-CC-KV=V1&HW-CC-Date=20261009T013036Z&HW-CC-Expire=86400&HW-CC-Sign=4E8A07828A931469990BAC3B60B4F0F851179BBAA874E0B799D4EA0F6DD94F8D) | 进度类通知。 |
 
 
 

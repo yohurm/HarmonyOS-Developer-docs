@@ -1,12 +1,12 @@
 # DID数字身份
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/onlineauthentication-did
 
 从API版本26.0.0开始，Online Authentication Kit（在线认证服务）新增数字身份特性，提供了基于DID（Decentralized Identifier，去中心化身份）协议的数字身份在移动端的能力。应用部署符合DID协议的服务器之后，结合移动端的数字身份能力，可实现跨平台互通互认的数字身份业务场景。数字身份服务主要提供了以下能力：
 
- - DID密钥创建及使用：应用为用户创建DID时，支持应用创建及使用与用户DID关联的密钥。
+ - DID密钥生成及使用：应用为用户生成DID密钥后，支持应用使用与用户DID关联的密钥。
  - DID导入、查询及删除：应用为用户创建DID时，支持应用导入DID标识、DID文档等信息到设备中。
  - 可验证凭证VC（Verifiable Credentials，可验证凭证）导入、查询及删除：应用为用户颁发数字身份凭证（即VC）时，支持应用导入VC到设备TEE环境中安全存储，保障用户隐私，并支持查询、删除VC。
  - 可验证声明VP（Verifiable Presentation，可验证声明）出示：应用需要请求用户的数字身份凭证VP时，数字身份服务在获取用户同意后，会在TEE中将VC中需要披露的属性组装成VP返回给应用。支持用户生物认证授权出示凭证、凭证的部分披露，保障用户身份凭证的安全与隐私。
@@ -113,20 +113,6 @@ try {
 | queryDigitalCredential(context: common.Context, did?: string, credentialId?: string): Promise&lt;QueryDigitalCredentialResponse&gt; | 查询数字凭证。使用Promise异步回调。 |
 | deleteDigitalCredential(context: common.Context, did?: string, credentialId?: string): Promise&lt;void&gt; | 删除数字凭证。使用Promise异步回调。 |
 | getDigitalCredential(context: common.Context, getDigitalCredentialRequest: GetDigitalCredentialRequest): Promise&lt;GetDigitalCredentialResponse&gt; | 获取数字凭证。使用Promise异步回调。 |
-
-
-
-
-## 开发准备
-
- - 开发者需要部署符合W3C DID协议的服务器。
- - 开发者基于数字身份服务开发时，需要申请如下通行密钥服务权限。在申请权限前，请保证符合[权限使用的基本原则](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-permission-mgmt-overview#权限使用的基本原则)。申请方式请参考：[申请受限权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions-in-acl)。
-
-| 应用能力 | 需要权限 |
-
-| --- | --- |
-
-| 数字身份 | ohos.permission.ACCESS_FIDO2_ONLINEAUTH |
 
 
 

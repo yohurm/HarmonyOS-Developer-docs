@@ -1,6 +1,6 @@
 # @typescript-eslint/unbound-method
 
-更新时间：2026-01-15 06:51:04
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_unbound-method
 
@@ -9,12 +9,12 @@
 类方法作为独立变量传递时，不会保留类作用域，“this”不再指代当前类。解决方法是定义为“this: void”或者使用箭头函数。
  
 
-#### 规则配置
+## 规则配置
 
 ```json
 // code-linter.json5
 {
-  "rules": {
+  <span style="color: rgb(135,16,148);">"rules"</span>: {
     "@typescript-eslint/unbound-method": "error"
   }
 }
@@ -22,13 +22,13 @@
  
  
 
-#### 选项
+## 选项
 
 详情请参考[@typescript-eslint/unbound-method选项](https://typescript-eslint.nodejs.cn/rules/unbound-method/#options)。
  
  
 
-#### 正例
+## 正例
 
 ```text
 class MyClass {
@@ -50,7 +50,7 @@ logBound();
  
  
 
-#### 反例
+## 反例
 
 ```text
 class MyClass {
@@ -72,10 +72,10 @@ logUnbound();
  
  
 
-#### 规则集
+## 规则集
 
 ```text
-plugin:@typescript-eslint/all
+<span style="color: rgb(6,125,23);">plugin:@typescript-eslint/all</span>
 ```
  
 Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-code-linter)。

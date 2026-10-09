@@ -1,6 +1,6 @@
 # PersistenceV2: 持久化存储UI状态
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-persistencev2
 
@@ -73,7 +73,7 @@ struct Page1 {
     // 定义持久化的数据类型
     type: collections.Array<number>,
     // 定义默认构造器，返回时需要调用makeObserved，才能实现自动持久化
-    defaultCreator: () => UIUtils.makeObserved(new collections.Array<number>(1,2))
+    defaultCreator: () => UIUtils.makeObserved(new collections.Array<number>(2, 1))
   })!;
   // 基于collections.Array构建Repeat的数据源
   toArray<T>(array: collections.Array<T>): Array<T> {
@@ -99,53 +99,53 @@ struct Page1 {
           .key((item: number, index: number) => `${index} - ${item}`)
       }
       Divider().width('100%')
-      // 点击'array.push(0)'，重启应用，Repeat数组项是：1, 2, 0
-      Button('array.push(0)')
+      // 以下按钮依次演示对collections.Array的操作；数据已自动持久化，重启应用后保持当前数组状态
+      // 点击后追加元素4，数组项变为：2, 1, 4
+      Button('array.push(4)')
         .onClick(() => {
-          this.array.push(Math.round(0));
+          this.array.push(4);
         })
         .width(300)
         .margin(10)
-      // 点击'array.pop()'，重启应用，Repeat数组项是：1, 2
+      // 点击后对数组升序排序，数组项变为：1, 2, 4
+      Button('array.sort')
+        .onClick(() => {
+          this.array.sort((a, b) => a - b);
+        })
+        .width(300)
+        .margin(10)
+      // 点击后反转数组，数组项变为：4, 2, 1
+      Button('array.reverse')
+        .onClick(() => {
+          this.array.reverse();
+        })
+        .width(300)
+        .margin(10)
+      // 点击后在索引1处插入元素9，数组项变为：4, 9, 2, 1
+      Button('array.splice(1, 0, 9)')
+        .onClick(() => {
+          this.array.splice(1, 0, 9);
+        })
+        .width(300)
+        .margin(10)
+      // 点击后替换前两个元素为7和8，数组项变为：7, 8, 2, 1
+      Button('array.splice(0, 2, 7, 8)')
+        .onClick(() => {
+          this.array.splice(0, 2, 7, 8);
+        })
+        .width(300)
+        .margin(10)
+      // 点击后移除末尾元素，数组项变为：7, 8, 2
       Button('array.pop()')
         .onClick(() => {
           this.array.pop();
         })
         .width(300)
         .margin(10)
-      // 点击'array.splice(0)'，重启应用，Repeat数组项为空
+      // 点击后清空数组，数组项为空
       Button('array.splice(0)')
         .onClick(() => {
           this.array.splice(0);
-        })
-        .width(300)
-        .margin(10)
-      // 点击'splice(1, 0, random)'，重启应用：Repeat组件再次显示相同的数组项
-      Button('array.splice(1, 0, random)')
-        .onClick(() => {
-          this.array.splice(1, 0, Math.round(100*Math.random()));
-        })
-        .width(300)
-        .margin(10)
-      // 点击'array.splice(0, 2, random, random)'，前两个数组项目被替换，记录下来
-      // 重启应用：Repeat组件再次显示数组项
-      Button('array.splice(0, 2, random, random)')
-        .onClick(() => {
-          this.array.splice(0, 2, Math.round(100*Math.random()), Math.round(100*Math.random()));
-        })
-        .width(300)
-        .margin(10)
-      // 点击'array.sort', 对数组项升序排列，重启应用，Repeat组件展示升序数组
-      Button('array.sort')
-        .onClick(() => {
-          this.array.sort((a, b) => a -b);
-        })
-        .width(300)
-        .margin(10)
-      // 点击'array.reverse', 对数组项降序排列，重启应用，Repeat组件展示降序数组
-      Button('array.reverse')
-        .onClick(() => {
-          this.array.reverse();
         })
         .width(300)
         .margin(10)
@@ -155,9 +155,9 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/8JAMzo5uQRCBJCkiZ58VFg/zh-cn_image_0000002717610146.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=27426FA5A82BE8802F5E02397A8766C7E2388339D9CAA87054B74944C2B60448)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/jsDdwuo5SWOZb9BEzLgSGQ/zh-cn_image_0000002749331960.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=93BFF85BC067EB30EC8CA0AB9811BED5B0F845A22E9EE87F6312DF7CFB128E4B)
 
- - globalConnect在持久化多个相同[集合类型](#globalconnect支持集合的类型)时，需要提供不同的key来区分持久化数据。
+ - globalConnect在持久化多个相同[集合类型](#globalconnect支持的集合类型)时，需要提供不同的key来区分持久化数据。
 
   如下展示开发者持久化相同的Array&lt;number&gt;类型的部分示例代码片段：
 
@@ -254,7 +254,7 @@ struct Comp {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/Ho6hu3gETX-gCkEGkEs0OA/zh-cn_image_0000002747290097.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=FA7E121DB01DA345E1D873B5F6CC385F60AE8F441B078DBD4950E1C9E537BB77)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/3cIT_ayYR0iRAxAmAwINZQ/zh-cn_image_0000002749491844.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=9B4F15DC067438CC2D649ADA3B09BE06F88EEF1BDF0B38D2E91BA589EBDB2D02)
 
 
   如下为globalConnect支持Date类型的持久化示例：
@@ -290,7 +290,7 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/uk5ys3b0Tgy3XCC0zvN0Fg/zh-cn_image_0000002747210015.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=180D99C493505F04C434793EA763E2156A672488F8949B9BF4340A2D212457C1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/bRUlaCkhQ6Wa4UDFDEehLg/zh-cn_image_0000002779090901.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=366D93A715091A35677E65ACAFE08BFB83A65CC60B8EBCAE17785A297761EB5F)
 
 
   如下为globalConnect支持Number类型作为class子属性的持久化示例：
@@ -333,7 +333,7 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/k8KR4MM4RBSSRj1mNB1QEw/zh-cn_image_0000002717770082.png?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=546CAE2E9ADB48887E53ACAAEE1D81842AFBDC415FCC3EF6E232398412DC6A4E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/RFLkERqNQ3yu6yNwOuSQaA/zh-cn_image_0000002778931045.png?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=D406766D13CDF6A07849DE8EFC027238761759735EA82C737826BF51DB00E41B)
 
 
 
@@ -406,7 +406,7 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/t4RUqbuzQJ2PU_FVvVSdUQ/zh-cn_image_0000002717610148.png?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=A99BDED857C5B18F8030BB959C2CC60E92CA65F40D83F373CCD1B64DAA9606EC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/5yh8IEc0QBqdJD6ryP58Yg/zh-cn_image_0000002749331962.png?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=F59302110C275A2F5C8EDEEF92339BE5985BFF5C7719B8F923BE76129BC1C3F8)
 
 
 
@@ -450,6 +450,29 @@ onWindowStageCreate(windowStage: window.WindowStage): void {
 
 
 14、不支持在使用connect或globalConnect的类中使用[@Computed](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-computed)。@Computed为只读属性，不支持赋值操作，因此会导致反序列化失败。
+
+15、在使用globalConnect持久化[集合类型](#globalconnect支持的集合类型)（如Array、Map、Set、collections.Array、collections.Map、collections.Set）时，若容器内部元素类型为基础类型（如number、string、boolean），则不应声明defaultSubCreator，否则会导致编辑、编译报错。
+
+ - defaultSubCreator的类型为StorageDefaultCreator&lt;S&gt;，其泛型参数S受S extends object约束，而number、string、boolean等基础类型在ArkTS中不继承自object，无法满足该约束，因此当容器内部元素类型为基础类型时，声明defaultSubCreator将导致编辑、编译报错。
+ - 当容器内部元素类型为自定义class类型（即继承自object的引用类型）时，才需要声明defaultSubCreator，用于通知状态管理框架如何创建容器内的对象项。如下示例以Array&lt;number&gt;为例展示正反用法：
+
+  
+```text
+// 反例：容器内元素类型为基础类型number，声明defaultSubCreator会导致编辑、编译报错
+@Local arr1: Array<number> = PersistenceV2.globalConnect({
+  type: Array<number>,
+  defaultCreator: () => UIUtils.makeObserved(new Array<number>()),
+  defaultSubCreator: () => 10
+})!;
+
+// 正例：容器内元素类型为基础类型number，不声明defaultSubCreator
+@Local arr2: Array<number> = PersistenceV2.globalConnect({
+  type: Array<number>,
+  defaultCreator: () => UIUtils.makeObserved(new Array<number>())
+})!;
+```
+
+
 
 
 
@@ -531,7 +554,7 @@ class PersistClass {
 
 
 
-### globalConnect支持集合的类型
+### globalConnect支持的集合类型
 
 集合类型是指Array&lt;V&gt;、Map<K, V>、Set&lt;V&gt;、collections.Array&lt;V&gt;、collections.Map<K, V>、collections.Set&lt;V&gt;。
 
@@ -548,7 +571,8 @@ import { PersistenceV2, UIUtils } from '@kit.ArkUI';
 
 class ClassA {
   public propA: number = 0;
-  public classAToString() : string {
+
+  public classAToString(): string {
     return this.propA?.toString()
   }
 }
@@ -558,7 +582,13 @@ class ClassA {
 struct Page1 {
   @Local arr: Array<ClassA> = PersistenceV2.globalConnect({
     type: Array<ClassA>,
-    defaultCreator: () => UIUtils.makeObserved(new Array<ClassA>()),
+    defaultCreator: () => {
+      const arr = UIUtils.makeObserved(new Array<ClassA>());
+      const item = new ClassA();
+      item.propA = 2;
+      arr.push(UIUtils.makeObserved(item));
+      return arr;
+    },
     // 添加defaultSubCreator，通知状态管理框架如何创建ClassA对象
     // 另外持久化后的数据需要加上makeObserved，否则会持久化失败
     defaultSubCreator: () => UIUtils.makeObserved(new ClassA())
@@ -573,7 +603,8 @@ struct Page1 {
               Text(`Item: `)
                 .fontSize(20)
                 .margin(10)
-              Text(ri.item?.classAToString ? ri.item?.classAToString(): `classAToString() missing from object, propA: ${ri.item?.propA}`)
+              Text(ri.item?.classAToString ? ri.item?.classAToString() :
+                `classAToString() missing from object, propA: ${ri.item?.propA}`)
                 .fontSize(20)
                 .margin(10)
             }
@@ -583,69 +614,64 @@ struct Page1 {
       .width('100%')
 
       Divider().width('100%')
-      // 点击'array.push(0)'，重启应用，Repeat数组项是：1, 2, 0
-      Button('array.push(0)')
+      // 以下按钮依次演示对Array<ClassA>的操作；数据已自动持久化，重启应用后保持当前数组状态
+      // 点击后追加元素(propA=1)，数组propA序列变为：2, 1
+      Button('array.push(1)')
         .width(300)
         .margin(10)
         .onClick(() => {
           let temp = new ClassA();
-          temp.propA = 0;
+          temp.propA = 1;
           this.arr.push(UIUtils.makeObserved(temp));
         })
-        .fontSize(24)
-      // 点击'array.pop()'，重启应用，Repeat数组项是：1, 2
-      Button('array.pop()')
-        .width(300)
-        .margin(10)
-        .onClick(() => {
-          this.arr.pop();
-        })
-        .fontSize(24)
-      // 点击'array.splice(0)'，重启应用，Repeat数组项为空
-      Button('array.splice(0)')
-        .width(300)
-        .margin(10)
-        .onClick(() => {
-          this.arr.splice(0);
-        })
-        .fontSize(24)
-      // 点击'splice(1, 0, random)'，重启应用：Repeat组件再次显示相同的数组项
-      Button('array.splice(1, 0, random)')
-        .margin(10)
-        .onClick(() => {
-          let temp = new ClassA();
-          temp.propA = Math.round(100 * Math.random());
-          this.arr.splice(1, 0, UIUtils.makeObserved(temp));
-        })
-        .fontSize(24)
-      // 点击'array.splice(0, 2, random, random)'，前两个数组项目被替换，记录下来
-      // 重启应用：Repeat组件再次显示数组项
-      Button('array.splice(0, 2, random, random)')
-        .margin(10)
-        .onClick(() => {
-          let tempA = new ClassA();
-          tempA.propA = Math.round(100 * Math.random());
-          this.arr.splice(0, 2,
-            UIUtils.makeObserved(tempA),
-            UIUtils.makeObserved(tempA));
-        })
-        .fontSize(18)
-      // 点击'array.sort', 对数组项升序排列，重启应用，Repeat组件展示升序数组
+      // 点击后按propA升序排序，数组propA序列变为：1, 2
       Button('array.sort')
         .width(300)
         .margin(10)
         .onClick(() => {
-          this.arr.sort((tempA, tempB)=> tempA?.propA - tempB?.propA);
+          this.arr.sort((tempA, tempB) => tempA?.propA - tempB?.propA);
         })
-        .fontSize(24)
-      // 点击'array.reverse', 对数组项降序排列，重启应用，Repeat组件展示降序数组
+      // 点击后反转数组，数组propA序列变为：2, 1
       Button('array.reverse')
         .width(300)
         .margin(10)
         .onClick(() => {
           this.arr.reverse();
         })
-        .fontSize(24)
+      // 点击后在索引1处插入元素(propA=9)，数组propA序列变为：2, 9, 1
+      Button('array.splice(1, 0, 9)')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          let temp = new ClassA();
+          temp.propA = 9;
+          this.arr.splice(1, 0, UIUtils.makeObserved(temp));
+        })
+      // 点击后替换前两个元素(propA=7、8)，数组propA序列变为：7, 8, 1
+      Button('array.splice(0, 2, 7, 8)')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          let tempA = new ClassA();
+          tempA.propA = 7;
+          let tempB = new ClassA();
+          tempB.propA = 8;
+          this.arr.splice(0, 2, UIUtils.makeObserved(tempA), UIUtils.makeObserved(tempB));
+        })
+      // 点击后移除末尾元素，数组propA序列变为：7, 8
+      Button('array.pop()')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.arr.pop();
+        })
+      // 点击后清空数组，数组为空
+      Button('array.splice(0)')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.arr.splice(0);
+        })
     }
     .width('100%')
   }
@@ -653,7 +679,7 @@ struct Page1 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/k_wQi05nTMqhIh7YQX4FKg/zh-cn_image_0000002747290099.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=BE4A759D751039E6879596B2A97CB8E29B13338800438F4B02C186EE6BC9D784)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/pcmfq8EYTu6_zQOX90HLMA/zh-cn_image_0000002749491846.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=17C82B308B08C4BCFE9E016A1B85890890C16ED2AC7EF9ACB5579FC097A02884)
 
 
 
@@ -847,7 +873,7 @@ struct Page2 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/THJiq9aXQaylmV7-mx9x9A/zh-cn_image_0000002747210017.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=5C97CD03EBCA9630A263AC9CD9396EAF228B62D1C3D87E5F480854819E6485A6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/eFgPpPxYQMyW_lQLr1vIfA/zh-cn_image_0000002779090903.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=D878D9B81ADE7306DEC47B39055AF70DE29AEF8E62B80D0315F800E5D472B38F)
 
 
 
@@ -907,7 +933,7 @@ struct Page1 {
   build() {
     Column() {
       // 显示数据
-      // 被@Trace修饰的数据可以自动持久化进磁盘
+      // 被@Trace装饰的属性可以自动持久化进磁盘
       Text('Key SampleGlobalConnect: ' + this.p.father.childId.toString())
         .onClick(() => {
           this.p.father.childId += 1;
@@ -992,7 +1018,7 @@ struct Page1 {
       // save接口
       Text('not save key SampleGlobalConnect: ' + this.p.father.groupId.toString() + ' refresh: ' + this.refresh)
         .onClick(() => {
-          // 未被@Trace保存的对象无法自动存储
+          // 未被@Trace装饰的属性无法自动存储
           this.p.father.groupId += 1;
           this.refresh += 1;
         })
@@ -1000,7 +1026,7 @@ struct Page1 {
         .margin(5)
       Text('save key SampleGlobalConnect: ' + this.p.father.groupId.toString() + ' refresh: ' + this.refresh)
         .onClick(() => {
-          // 未被@Trace保存的对象无法自动存储，需要调用save存储
+          // 未被@Trace装饰的属性无法自动存储，需要调用save存储
           this.p.father.groupId += 1;
           PersistenceV2.save(SampleGlobalConnect);
           this.refresh += 1;
@@ -1014,7 +1040,7 @@ struct Page1 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/GOt4sks7R4G17jWo50wUKw/zh-cn_image_0000002717770084.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=8F70B16B7564243D8E594BE4A2E5B478C34A173F9B4A0223257352CD5B554AF5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/0FT7P0p8QhOUyriDeTYzkA/zh-cn_image_0000002778931047.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=30AC85FDA4E8137D25567D5B5AE59BFCE1DFB6525F0C2ADB878F777DB696E52D)
 
 
 
@@ -1124,7 +1150,7 @@ struct Page1 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/WNMaMfPkT_6bZdpmQxT4Gg/zh-cn_image_0000002717610150.png?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=C21274100A61B04E2AABF7B6A9ACAD353B1142B7A0B5377B3C47AEC5808CCDC5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/jvJF_GE8SJKplQBlrkbPyw/zh-cn_image_0000002749331964.png?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=C9ADEA5625D4F23E2F70A51370C0E2913B051B5955FC3D18297DC444BF20FDEF)
 
 
 ```ArkTS
@@ -1186,7 +1212,7 @@ struct Page1 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/G3CLLmQTSDGRNR4d9Z5MXA/zh-cn_image_0000002747290101.png?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=8FAFE30ABBB8412A182D8DDA2C7A47E7CDFBA414FAFD461C03C7C805C4155843)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/m-O1RYUiRzCtDp7fJ2g4CA/zh-cn_image_0000002749491848.png?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=DE49DEEFF5A84495AF253F8160EBA0F19B33C2692DD805567E13FCA475E02DF5)
 
 
 当开发者对newModule使用不同启动方式会有以下现象：
@@ -1258,10 +1284,10 @@ struct Index {
         .fontColor(Color.Red)
 
       // save接口
-      // 未被@Trace装饰的变量需要借助状态变量refresh才能刷新
+      // 未被@Trace装饰的属性需要借助状态变量refresh才能刷新
       Text('save key connectSample: ' + this.p.father.groupId.toString() + ' refresh:' + this.refresh)
         .onClick(() => {
-          // 未被@Trace保存的对象无法自动存储，需要调用save存储
+          // 未被@Trace装饰的属性无法自动存储，需要调用save存储
           this.p.father.groupId += 1;
           PersistenceV2.save('connectSample');
           this.refresh += 1;
@@ -1275,7 +1301,7 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/Lw0p1y4CTWSm2iCHBXtTqA/zh-cn_image_0000002747210019.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=CC157A9F0C18334D7006C3560990BA1512B68E6C1F18D27C61EF66FD36530FBA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/9dfxZOmTSb2_n5MbqRg--g/zh-cn_image_0000002779090905.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=D8CFF1DFA5802BB6B90F8DF948A9E982EF33D01782433CBA50696D9EEBBC5F5A)
 
 
 起始时，SampleChild中的childInfo变量类型为SampleInfo，正常存储后，将childInfo变量的类型切换为number，并赋值为1，之后再次启动程序，此时会由于存储数据的结构与当前数据的结构不一致，导致数据反序列化失败。此时会通过notifyOnError中写入的回调，将磁盘中存储的旧的序列化数据打印出来。即在Error日志中显示：
@@ -1338,10 +1364,10 @@ struct Page1 {
         .fontColor(Color.Red)
 
       // save接口
-      // 未被@Trace装饰的变量需要借助状态变量refresh才能刷新
+      // 未被@Trace装饰的属性需要借助状态变量refresh才能刷新
       Text('save key connect3: ' + this.p.father.groupId.toString() + ' refresh:' + this.refresh)
         .onClick(() => {
-          // 未被@Trace保存的对象无法自动存储，需要调用save存储
+          // 未被@Trace装饰的属性无法自动存储，需要调用save存储
           this.p.father.groupId += 1;
           PersistenceV2.save('connect3');
           this.refresh += 1;
@@ -1355,7 +1381,7 @@ struct Page1 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/2fg1ppw1TVaVxsbbz_UpHg/zh-cn_image_0000002717770086.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=C7357683CBF8BA8E0AF557FE49F43FE9F6D429C3EC2C16682CA51DB75BCFB1F2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/vTgfoF3BRfuc9Gk3K6WHMA/zh-cn_image_0000002778931049.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=8C0FE1AD22EA2C7DA5B17BAA1929B1990708522A933AA2DE0BAA51A7C32AAE29)
 
 
 ```ArkTS
@@ -1395,7 +1421,7 @@ function move() {
     let p: Sample = PersistenceV2.connect(Sample, 'connect3', () => new Sample())!;
     PersistenceV2.remove('connect3');
     let p1 = PersistenceV2.globalConnect({ type: Sample, key: 'connect4', defaultCreator: () => p })!; // 使用默认构造函数也可以
-    // 赋值数据，@Trace修饰的会自动保存
+    // 赋值数据，@Trace装饰的属性会自动保存
     p1.father = p.father;
     // 将迁移标志设置为true
     movingState.isCompleteMoving = true;
@@ -1424,10 +1450,10 @@ struct Page1 {
         .fontColor(Color.Red)
 
       // save接口
-      // 未被@Trace装饰的变量需要借助状态变量refresh才能刷新
+      // 未被@Trace装饰的属性需要借助状态变量refresh才能刷新
       Text('save key connect4: ' + this.p.father.groupId.toString() + ' refresh:' + this.refresh)
         .onClick(() => {
-          // 未被@Trace保存的对象无法自动存储，需要调用save存储
+          // 未被@Trace装饰的属性无法自动存储，需要调用save存储
           this.p.father.groupId += 1;
           PersistenceV2.save('connect4');
           this.refresh += 1;
@@ -1441,7 +1467,7 @@ struct Page1 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/-7-VNw9oS8-Cd0vx-6P4Dg/zh-cn_image_0000002717610152.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=92BAE491C4D250CBF06A0AD613869049AFA725D4B718E7C8CDB6AFFF410BF947)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/G0pJ-l_sTF6Arto9UDN0eA/zh-cn_image_0000002749331966.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=38B5028E25D93BEC20E4DF087EEF195FEFED33BA8022C2DAE9C4570666A617C5)
 
 
 connect向globalConnect迁移，需要将key绑定的value赋值给globalConnect进行存储，之后当自定义组件使用globalConnect连接时，globalConnect绑定的数据即为之前使用connect保存的数据，开发者可以自定义move函数，并将其放在合适位置迁移即可。
@@ -1503,7 +1529,7 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/LOrqGwhVRvmAtBpzd4EBNw/zh-cn_image_0000002747290103.png?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=557555EAEE08283E3E490B8253A4A88E8C4E141EDB85724B3939ECF07B35F4A9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/gMDLAG7RSZ2Jc-0AZ9alqw/zh-cn_image_0000002749491850.png?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=40E2E3B9EF5D27803649EFA25A04F4898E5826EFEE8391FE2E301FFC88ABF63A)
 
 
 下表将结合样例，说明在变更数据结构时会触发notifyOnError的情形。

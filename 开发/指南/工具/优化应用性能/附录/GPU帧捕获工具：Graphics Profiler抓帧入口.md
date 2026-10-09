@@ -1,6 +1,6 @@
 # GPU帧捕获工具：Graphics Profiler抓帧入口
 
-更新时间：2026-09-08 02:53:31
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-graphics-profiler
 
@@ -38,4 +38,4 @@ Scope：不可修改，默认为Frame。
 8. 若首次使用，需根据界面提示下载Graphics Profiler执行工具，并在菜单栏**File > Settings**（macOS为**DevEco Studio > Preferences/Settings**）** > Tools > Graphics Profiler**中配置工具路径。默认路径为：工具安装路径/frame_profiler/FrameProfiler.exe（macOS中为工具安装路径/Contents/MacOS/FrameProfiler）。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/o9cLOxiqSrSfyRotyGgCgw/zh-cn_image_0000002731383007.png?HW-CC-KV=V1&HW-CC-Date=20260911T072812Z&HW-CC-Expire=86400&HW-CC-Sign=61D8AF638D0185B91D27F7BBAA1031CAA1991BAFD369F85F85546DE979E76B38)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/ilrwYq2aQ22v59kQwjg-IA/zh-cn_image_0000002731383007.png?HW-CC-KV=V1&HW-CC-Date=20261009T012809Z&HW-CC-Expire=86400&HW-CC-Sign=486D70E09D777BA2DFB3C34FA8A464C43BF2F29A388150D269B47E0C98F48F05)

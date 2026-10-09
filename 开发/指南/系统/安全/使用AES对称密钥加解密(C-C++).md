@@ -1,6 +1,6 @@
 # 使用AES对称密钥加解密(C/C++)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-aes-sym-encrypt-decrypt-ndk
 
@@ -46,7 +46,12 @@ target_link_libraries(entry PUBLIC libohcrypto.so)
 2. 使用[OH_CryptoSymCipherParams_SetParam](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-crypto-sym-cipher-h#oh_cryptosymcipherparams_setparam)设置authTag，作为解密的认证信息。
 3. 调用[OH_CryptoSymCipher_Init](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-crypto-sym-cipher-h#oh_cryptosymcipher_init)，设置模式为解密（CRYPTO_DECRYPT_MODE），指定解密密钥（OH_CryptoSymKey）和GCM模式对应的解密参数（OH_CryptoSymCipherParams），初始化解密Cipher实例。
 4. 调用[OH_CryptoSymCipher_Update](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-crypto-sym-cipher-h#oh_cryptosymcipher_update)，更新数据（密文）。
-5. 调用[OH_CryptoSymCipher_Final](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-crypto-sym-cipher-h#oh_cryptosymcipher_final)，获取解密数据。
+
+  
+当数据量较小时，可以在init完成后直接调用final。
+5. 当数据量较大时，可以多次调用update，即分段解密。
+6. 用户可以根据数据量大小自行决定操作方式。例如，当数据量超过1KB时，使用update。
+7. 调用[OH_CryptoSymCipher_Final](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-crypto-sym-cipher-h#oh_cryptosymcipher_final)，获取解密数据。
 
 **销毁对象**
 
@@ -187,7 +192,7 @@ end:
 6. final输出结果可能为null，访问数据前需先判断结果是否为null。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/1ETjW108RzSerMomgd1ajA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072346Z&HW-CC-Expire=86400&HW-CC-Sign=7FA8F6B7F646C0A7D2A77C924C1FAEE49D7703FEB53B45E13333158CF8D86E67)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/sGbrn_BhS8e7KukuI1ufLw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20261009T012728Z&HW-CC-Expire=86400&HW-CC-Sign=B8097E9C1E68A2487D91FF7684BEA8AA4C3AB2C7C0C86089865F2F446EBC2615)
  
 
   在CCM模式下，final设置authTag作为解密时的初始化认证信息，需要保存。
@@ -205,13 +210,14 @@ end:
 
   
 > [!NOTE]
-> CCM模式不支持分段加解密。
+> CCM模式不支持分段加解密。 当数据量较小时，可以在init完成后直接调用final。
 
 5. 调用[OH_CryptoSymCipher_Final](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-crypto-sym-cipher-h#oh_cryptosymcipher_final)，获取解密后的数据。
 
   
-已使用update传入数据，此处data传入null。
-6. 在访问final输出结果的具体数据前，需要先判断结果是否为null，以避免异常。
+> [!NOTE]
+> 若使用update传入数据，此处data传入null。 在访问final输出结果的具体数据前，需要先判断结果是否为null，以避免异常。
+
 
 **销毁对象**
 
@@ -562,8 +568,7 @@ end:
 
   在GCM模式下，从加密后的数据中取出末尾16字节，作为解密时初始化的认证信息。示例中authTag恰好为16字节。
 3. 调用[OH_CryptoSymCipher_Init](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-crypto-sym-cipher-h#oh_cryptosymcipher_init)，设置模式为解密（CRYPTO_DECRYPT_MODE），指定解密密钥（OH_CryptoSymKey）和GCM模式对应的解密参数（OH_CryptoSymCipherParams），初始化解密Cipher实例。
-4. 将一次传入数据量设置为20字节，多次调用[OH_CryptoSymCipher_Update](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-crypto-sym-cipher-h#oh_cryptosymcipher_update)，更新数据（密文）。
-5. 调用[OH_CryptoSymCipher_Final](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-crypto-sym-cipher-h#oh_cryptosymcipher_final)获取解密数据。
+4. 调用[OH_CryptoSymCipher_Final](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-crypto-sym-cipher-h#oh_cryptosymcipher_final)获取解密数据。
 
 **销毁对象**
 

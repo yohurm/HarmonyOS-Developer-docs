@@ -1,6 +1,6 @@
 # Class (ArrayBuffer)
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-arkts-collections-arraybuffer
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -109,7 +109,7 @@ slice(begin: number, end?: number): ArrayBuffer
 
 | 类型 | 说明 |
 | --- | --- |
-| ArrayBuffer | collections.ArrayBuffer |
+| ArrayBuffer | collections.ArrayBuffer，包含原ArkTS ArrayBuffer指定范围的内容的新的ArkTS ArrayBuffer对象 |
  
  
 **错误码：**

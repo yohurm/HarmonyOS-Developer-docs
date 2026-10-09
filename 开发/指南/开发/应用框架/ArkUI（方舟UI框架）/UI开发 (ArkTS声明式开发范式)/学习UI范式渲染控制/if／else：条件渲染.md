@@ -1,6 +1,6 @@
 # if/else：条件渲染
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse
 
@@ -27,9 +27,9 @@ ArkTS提供了渲染控制能力。条件渲染可根据应用状态，使用if�
 当if、else if后跟随的状态判断中使用的状态变量值变化时，条件渲染语句会进行更新，更新步骤如下：
 1. 评估if和else if的状态判断条件，如果分支没有变化，无需执行以下步骤。如果分支有变化，则执行2、3步骤。
 2. 移除此前构建的所有子组件。
-3. 执行新分支的构造函数，将生成的子组件添加到if父容器中。如果缺少适用的else分支，则不创建任何内容。
+3. 执行新分支的构建函数，将生成的子组件添加到if父容器中。如果缺少适用的else分支，则不创建任何内容。
 
-条件可以包含Typescript表达式。构造函数中的表达式不得更改应用程序状态。
+条件可以包含Typescript表达式。构建函数中的表达式不得更改应用程序状态。
 
 
 
@@ -76,9 +76,9 @@ if语句的每个分支都包含一个构建函数。此类构建函数必须创
 
 每当if或else if条件语句中使用的状态变量发生变化时，条件语句都会更新并重新评估新的条件值。如果条件值评估发生了变化，这意味着需要构建另一个条件分支。此时ArkUI框架将：
 1. 移除所有以前渲染的（早期分支的）组件。
-2. 执行新分支的构造函数，将生成的子组件添加到其父组件中。
+2. 执行新分支的构建函数，将生成的子组件添加到其父组件中。
 
-在以上示例中，当count从0增至1时，if (this.count > 0)更新为true，执行该分支的构造函数，创建一个[Text](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text)组件并添加到父组件Column中。如果后续count更改为0，则Text组件将从[Column](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-column)组件中删除。由于没有else分支，因此不会执行新的构造函数。
+在以上示例中，当count从0增至1时，if (this.count > 0)更新为true，执行该分支的构建函数，创建一个[Text](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text)组件并添加到父组件Column中。如果后续count更改为0，则Text组件将从[Column](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-column)组件中删除。由于没有else分支，因此不会执行新的构建函数。
 
 
 
@@ -193,7 +193,7 @@ struct KeepMainView {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/6dUf_DhbRduuVj2NJZ2OUw/zh-cn_image_0000002717770132.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072255Z&HW-CC-Expire=86400&HW-CC-Sign=9C159845ACD1866BC3C2AFA66082CCEA14EB3B9A0DEC91E4F6BAD7E3E1691334)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/dI5C1uXzQxWj-hw_TdXEQQ/zh-cn_image_0000002778931095.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012632Z&HW-CC-Expire=86400&HW-CC-Sign=C06FBADF17CF6E83A390C98AECEA0FCD51DF1113BAECF245B5DC52210C477C47)
 
 
 此处，@State counter变量归父组件所有。因此，当KeepCounterView组件实例被删除时，该变量不会被销毁。KeepCounterView组件通过[@Link](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-link)装饰器引用状态。状态必须从子级移动到其父级（或父级的父级），以避免在条件内容或重复内容被销毁时丢失状态。
@@ -255,4 +255,4 @@ struct NestedIf {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/bOBXOB0FQOO4KnOPT49DMw/zh-cn_image_0000002717610198.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072255Z&HW-CC-Expire=86400&HW-CC-Sign=43B937590D1B54D93456BAC00A7C08F5D444CEC6A399BDE9A5E45C5574FEC7DB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/Hbsig_O3T4al_10CxC4VBA/zh-cn_image_0000002749332012.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012632Z&HW-CC-Expire=86400&HW-CC-Sign=FA4185300AAFC1CB21CB2E43EFF90D853571E9ED912F64BEA66EA75FBA464A8A)

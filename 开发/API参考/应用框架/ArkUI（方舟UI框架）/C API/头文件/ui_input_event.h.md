@@ -1,6 +1,6 @@
 # ui_input_event.h
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ui-input-event-h
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -476,7 +476,7 @@ enum anonymous6
 
 **描述：**
 
-定义[焦点轴事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-events-focus_axis)的轴类型。
+定义[焦点轴事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-events-focus-axis)的轴类型。
 
 **起始版本：** 15
 

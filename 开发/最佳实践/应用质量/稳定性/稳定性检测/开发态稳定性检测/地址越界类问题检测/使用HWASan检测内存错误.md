@@ -1,13 +1,13 @@
 # 使用HWASan检测内存错误
 
-更新时间：2026-08-10 06:55:01
+更新时间：2026-09-20 11:26:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-hwasan-detection
 
 HWASan的能力概述和检测原理可参考[地址越界检测能力概述](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-address-sanitizer-overview)以及[HWASan检测原理](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-address-sanitizer-principle#section187526511146)，适用于开发态调试压测场景。
  
 
-#### 使用约束
+## 使用约束
 
  
 - ROM版本5.0.0.107及以上支持。
@@ -15,7 +15,7 @@ HWASan的能力概述和检测原理可参考[地址越界检测能力概述](ht
 
  
 
-#### 配置参数
+## 配置参数
 
 HWASAN_OPTIONS：在运行时配置HWASan的行为，包括设置检测级别、输出格式、内存错误报告的详细程度等。常用参数请查看[表1](#table152415255816)。
  
@@ -23,7 +23,7 @@ HWASAN_OPTIONS支持在“app.json5”中配置。
  
  
 
-#### 在app.json5中配置环境变量
+### 在app.json5中配置环境变量
 
 打开AppScope > app.json5文件，添加配置示例如下。
  
@@ -36,7 +36,7 @@ HWASAN_OPTIONS支持在“app.json5”中配置。
         "value": "abort_on_error=0 heap_history_size_main_thread=102300" // 示例仅供参考，具体以实际为准
       },
     ],
-    ...
+<span>    ...</span>
   }
 }
 ```
@@ -44,6 +44,7 @@ HWASAN_OPTIONS支持在“app.json5”中配置。
  
 常用参数如下表所示。
   
+
 | 参数 | 默认值 | 是否必填 | 说明 |
 | --- | --- | --- | --- |
 | log_exe_name | true | 是 | 不可修改。指定内存错误日志中是否包含执行文件的名称。 |
@@ -70,21 +71,21 @@ HWASAN_OPTIONS支持在“app.json5”中配置。
 更多可配置参数请参见[hwasan_flags](https://gitcode.com/openharmony/third_party_llvm-project/blob/master/compiler-rt/lib/hwasan/hwasan_flags.inc)。
  
 
-#### 配置HWASan
+## 配置HWASan
 
 可通过方式一和方式二整体使能HWASan，每种方式分为DevEco Studio场景和流水线场景，还可通过方式三对单个so库使能HWASan。
  
  
 
-#### 方式一 调试窗口快速使能
+### 方式一 调试窗口快速使能
 
-**DevEco Studio****场景**
+**DevEco Studio场景**
  
  
-点击**Run > Edit Configurations >****Diagnostics**，勾选**Hardware-Assisted Address Sanitizer**开启C++源码检测插桩。从DevEco Studio 6.1.0 Beta1版本开始，可以同时勾选**BinXO check**，开启无源码的so文件的HWASan检测插桩。（注意：BinXO只能处理大小在128M以内的so文件）
+点击**Run > Edit Configurations >Diagnostics**，勾选**Hardware-Assisted Address Sanitizer**开启C++源码检测插桩。从DevEco Studio 6.1.0 Beta1版本开始，可以同时勾选**BinXO check**，开启无源码的so文件的HWASan检测插桩。（注意：BinXO只能处理大小在128M以内的so文件）
+ 
  
 
- 
 
 ![](assets/使用HWASan检测内存错误/file-20260515115105953-0.png)
 
@@ -97,14 +98,14 @@ HWASAN_OPTIONS支持在“app.json5”中配置。
  
 ![](assets/使用HWASan检测内存错误/file-20260515115105953-1.png)
 
-2. 在hvigorw命令后加上**-p ****ohos-enable-hwasan=true**的选项，执行hvigorw命令，更多options参考[hvigorw文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-commandline)。
+2. 在hvigorw命令后加上**-p ohos-enable-hwasan=true**的选项，执行hvigorw命令，更多options参考[hvigorw文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-commandline)。
 ```text
 hvigorw [taskNames...] -p ohos-enable-hwasan=true  <options>
 ```
 
  
 
-#### 方式二 配置文件方式使能
+### 方式二 配置文件方式使能
 
 **DevEco Studio场景**
  
@@ -141,7 +142,7 @@ hvigorw [taskNames...] -p ohos-enable-hwasan=true  <options>
 ```
  
 
-#### 方式三 针对单个动态库使能
+### 方式三 针对单个动态库使能
 
  
 **CMAKE编译**
@@ -157,7 +158,7 @@ set(CMAKE_CXX_FLAGS "$CMAKE_CXX_FLAGS -shared-libasan -fsanitize=hwaddress -mllv
 
  
 
-#### 插桩验证
+## 插桩验证
 
 当应用依赖未经过HWASan插桩的第三方或第四方库时，HWASan无法检测这些库中可能存在的越界错误。因此，对于应用所引用的第三方或第四方动态库，必须单独进行HWASan插桩适配处理，以确保内存错误能够被完整捕获。 动态库插桩状态检查方法，可使用llvm-readelf工具检查目标动态库是否已完成HWASan插桩，当前默认以动态库的方式链接，查询是否插桩成功命令如下：
  
@@ -173,7 +174,7 @@ llvm-readelf -s libthird_party.so | grep '__hwasan_init'
  
  
 
-#### 运行HWASan
+## 运行HWASan
 
 1. 运行或调试当前应用。
 2. 当程序出现内存错误时，弹出HWASan log信息，点击信息中的链接即可跳转至引起内存错误的代码处。
@@ -181,11 +182,11 @@ llvm-readelf -s libthird_party.so | grep '__hwasan_init'
 
  
 
-#### HWASan异常检测类型
+## HWASan异常检测类型
 
  
 
-#### stack tag-mismatch
+### stack tag-mismatch
 
  
 **背景**
@@ -257,7 +258,7 @@ stack-buffer-overflow/underflow：访问索引要落在给定的范围内
 stack-use-after-return：在作用域内使用局部变量，如果需要在函数返回后继续使用某些数据，考虑将它们存储在静态或全局变量中
  
 
-#### heap-buffer-overflow
+### heap-buffer-overflow
 
  
 **背景**
@@ -321,7 +322,7 @@ heap-buffer-underflow：访问数组位置不要越下界
 已知大小的数组注意访问不要越界，访问已知大小数组前先判断访问位置是否落在边界外
  
 
-#### Use-after-free
+### Use-after-free
 
  
 **背景**
@@ -384,6 +385,6 @@ heap-use-after-free：使用智能指针，或实现一个free()函数的替代�
 double-free：变量定义声明时初始化为NULL，释放内存后也应立即将变量重置为NULL，这样每次释放之前都可以通过判断变量是否为NULL来判断是否可以释放。
  
 
-#### 日志规格和日志获取方式
+## 日志规格和日志获取方式
 
 请参看[日志获取方式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/address-sanitizer-guidelines#日志获取方式)和[HWASan日志规格](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/address-sanitizer-guidelines#hwasan日志规格)。

@@ -1,0 +1,72 @@
+# @typescript-eslint/no-base-to-string
+
+更新时间：2026-10-08 09:38:49
+
+来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-no-base-to-string
+
+要求当一个对象在字符串化时提供了有用的信息，才能调用“toString()”方法。
+ 
+
+## 规则配置
+
+```json
+// code-linter.json5
+{
+  <span style="color: rgb(135,16,148);">"rules"</span>: {
+    "@typescript-eslint/no-base-to-string": "error"
+  }
+}
+```
+ 
+ 
+
+## 选项
+
+详情请参考[@typescript-eslint/no-base-to-string选项](https://typescript-eslint.nodejs.cn/rules/no-base-to-string/#options)。
+ 
+ 
+
+## 正例
+
+```text
+// These types all have useful .toString()s
+const num = 123;
+export const v1 = 'Text' + true;
+export const v2 = `Value: ${num}`;
+(() => {
+  console.info('arrow function');
+}).toString();
+```
+ 
+ 
+
+## 反例
+
+```text
+interface MyType {
+  name: string;
+}
+// Passing an object or class instance to string concatenation:
+const obj: MyType = {
+  name: 'object'
+};
+export const v1 = '' + obj;
+
+class MyClass {}
+const value = new MyClass();
+export const v2 = value + '';
+
+// Interpolation and manual .toString() calls too:
+export const v3 = `Value: ${value}`;
+export const v4 = obj.toString();
+```
+ 
+ 
+
+## 规则集
+
+```text
+<span style="color: rgb(6,125,23);">plugin:@typescript-eslint/all</span>
+```
+ 
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-code-linter)。

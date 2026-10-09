@@ -1,6 +1,6 @@
 # 预览(ArkTS)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-preview
 
@@ -23,7 +23,7 @@
 基础预览是自定义相机核心的功能，用户打开相机应用后，首先看到的就是实时的预览画面，该功能为画面调整、拍摄等操作提供基础。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/s9L36hD1T_ukDILp6vq_qg/zh-cn_image_0000002717771322.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072530Z&HW-CC-Expire=86400&HW-CC-Sign=0C872A33363DC5606092CD0FDD4167887C55ECF2FF38F01C991A7D3AB9B81F7D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/EXUPQ_ypQ5a2UCYle-LvOg/zh-cn_image_0000002778932397.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012658Z&HW-CC-Expire=86400&HW-CC-Sign=0004A45CCD7CD74E828107C9FA6671DCE524AD22A4D5ADB06B6B384CB806E239)
 
  
   
@@ -45,7 +45,7 @@
 5. 配置相机会话Session并启动。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/d414goLvTZ2CaLdJj3FSJg/zh-cn_image_0000002717611388.png?HW-CC-KV=V1&HW-CC-Date=20260911T072530Z&HW-CC-Expire=86400&HW-CC-Sign=E04ADFF9633DA36BEB2F94B3C86D6031EE1BB6E622514DA967A30F6E00B49C9A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/xfeS2odNRHW8TRnpqqxfxQ/zh-cn_image_0000002749333314.png?HW-CC-KV=V1&HW-CC-Date=20261009T012658Z&HW-CC-Expire=86400&HW-CC-Sign=C8F09AEFF72026A776497C00AD958588B6B1E4B27BCE87521B2E52EB0D94C888)
 
  
   
@@ -73,7 +73,7 @@
   使用[AtManager.requestPermissionsFromUser()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-abilityaccessctrl#requestpermissionsfromuser9)方法拉起弹窗请求用户授权，若用户拒绝则使用[requestPermissionOnSetting()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-abilityaccessctrl#requestpermissiononsetting12)方法拉起权限设置弹窗，二次向用户申请授权。具体授权逻辑可根据业务自行调整，可参考[应用权限申请](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-permission-application)。
 
   
-```text
+```ArkTS
 class PermissionManager {
   private static atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
 
@@ -102,13 +102,13 @@ class PermissionManager {
   使用[camera.getCameraManager()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-f#cameragetcameramanager)方法获取cameraManager实例。
 
   
-```text
+```ArkTS
 this.cameraManager = camera.getCameraManager(context);
 ```
   使用[camera.getSupportedCameras()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-cameramanager#getsupportedcameras)方法获取相机设备列表。通过[camera.CameraPosition](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-e#cameraposition)类型获取对应的相机设备。CAMERA_POSITION_BACK表示后置镜头，CAMERA_POSITION_FRONT表示前置镜头。
 
   
-```text
+```ArkTS
 getCameraDevice(cameraPosition: camera.CameraPosition): camera.CameraDevice | undefined {
   const cameraDevices = this.cameraManager?.getSupportedCameras();
   if (!cameraDevices) {
@@ -125,7 +125,7 @@ getCameraDevice(cameraPosition: camera.CameraPosition): camera.CameraDevice | un
   使用[camera.createCameraInput()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-cameramanager#createcamerainput)方法创建该相机设备的输入流并打开相机。
 
   
-```text
+```ArkTS
 this.cameraInput = this.cameraManager?.createCameraInput(device);
 await this.cameraInput?.open();
 ```
@@ -146,7 +146,7 @@ await this.cameraInput?.open();
 
 
   
-```text
+```ArkTS
 XComponent({
   type: XComponentType.SURFACE,
   controller: this.previewVM.xComponentController
@@ -160,7 +160,7 @@ XComponent({
   })
 ```
 
-```text
+```ArkTS
 setPreviewSize(): void {
   const displaySize: Size = WindowUtil.getMaxDisplaySize(this.getPreviewRatio());
   this.previewSize = displaySize;
@@ -188,7 +188,7 @@ setPreviewSize(): void {
 8. 使用[CameraManager.createPreviewOutput()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-cameramanager#createpreviewoutput)方法创建预览输出流。
 
   
-```text
+```ArkTS
 async createOutput(config: CreateOutputConfig): Promise<camera.PreviewOutput | undefined> {
   const cameraOutputCap = config.cameraManager?.getSupportedOutputCapability(config.device, config.sceneMode);
   const displayRatio = config.profile.size.width / config.profile.size.height;
@@ -221,7 +221,7 @@ async createOutput(config: CreateOutputConfig): Promise<camera.PreviewOutput | u
 
 
   
-```text
+```ArkTS
 public getProfile: (cameraOrientation: number) => camera.Profile = cameraOrientation => {
   const displaySize: Size = WindowUtil.getMaxDisplaySize(this.getPreviewRatio());
   let displayDefault: display.Display | null = null;
@@ -255,7 +255,7 @@ public getProfile: (cameraOrientation: number) => camera.Profile = cameraOrienta
   使用[Session.start()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-session#start11-1)方法启动相机会话。
 
   
-```text
+```ArkTS
 const session = this.cameraManager?.createSession(sceneMode);
 session?.beginConfig();
 session?.addInput(this.cameraInput);
@@ -273,7 +273,7 @@ if (sceneMode === camera.SceneMode.NORMAL_VIDEO && session) {
 await session?.start();
 ```
 
-```text
+```ArkTS
 export interface OutputManager {
   output?: camera.CameraOutput;
   isActive: boolean;
@@ -287,7 +287,7 @@ export interface OutputManager {
   使用[CameraOutput.release()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-cameraoutput#release-1)方法释放预览输出流。
 
   
-```text
+```ArkTS
 async release(): Promise<void> {
   try {
     await this.output?.release();
@@ -300,7 +300,7 @@ async release(): Promise<void> {
   使用[CameraInput.close()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-camerainput#close-1)方法关闭相机，使用[Session.release()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-session#release11-1)方法释放相机会话资源。
 
   
-```text
+```ArkTS
 async release(): Promise<void> {
   try {
     await this.session?.stop();
@@ -322,7 +322,7 @@ async release(): Promise<void> {
   注册[frameStart](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-previewoutput#onframestart)预览帧启动和[frameEnd](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-previewoutput#onframeend)预览帧结束的事件，在事件回调中做对应的业务处理。
 
   
-```text
+```ArkTS
 addFrameStartEventListener(output: camera.PreviewOutput): void {
   output.on('frameStart', (err: BusinessError) => {
     if (err !== undefined && err.code !== 0) {
@@ -358,12 +358,12 @@ addFrameEndEventListener(output: camera.PreviewOutput): void {
 ### 切换前后置镜头
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/RYoVz3AvTYm1AwLgUEWpnw/zh-cn_image_0000002747291341.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072530Z&HW-CC-Expire=86400&HW-CC-Sign=56EE86E1D5BEACCB22FB2F2D91E3FE424186020C6554413ACCB4F65946170E64)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/HwajfC_hQM-L-hNzQ50ZiQ/zh-cn_image_0000002749493198.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012658Z&HW-CC-Expire=86400&HW-CC-Sign=021F30AB259C5B0E146AC5C4C553BC4890BDC9820DDB003E4382DDAA46A655FC)
 
  
 预览页面中用isFront属性标识前置还是后置镜头，根据isFront获取[camera.CameraPosition](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-e#cameraposition)的值。关于折叠屏CameraPosition的选择可参考[相机硬件差异](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-device-camera#section13854163154917)。
  
-```text
+```ArkTS
 public isFront: boolean = false;
 // ...
 getCameraPosition(): camera.CameraPosition {
@@ -379,7 +379,7 @@ getCameraPosition(): camera.CameraPosition {
 > 在本示例中，相机和基础预览的启动流程封装在自定义的CameraManager类的start()方法中，相机资源及输入输出流的释放封装在release()方法中。
 
  
-```text
+```ArkTS
 @Builder
 toggleCameraPositionButton() {
   Image($r('app.media.toggle_position'))
@@ -402,12 +402,12 @@ toggleCameraPositionButton() {
 ### 设置相机焦距
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/8YF7i9UkQOa2NhghKQ61cA/zh-cn_image_0000002747211259.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072530Z&HW-CC-Expire=86400&HW-CC-Sign=AD5CE10AF12534FEFBF9C7A1D82B0896987D725AC2E350F2545145980566EBA0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/b9a0bRYmSii_W-wF5GT2lw/zh-cn_image_0000002779092257.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012658Z&HW-CC-Expire=86400&HW-CC-Sign=DD68B8D2659D8BA992263775C1C9CD58AA8DE31B3A773D95F3A977C86CF1A621)
 
  
 使用[getZoomRatioRange()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-zoomquery#getzoomratiorange11)方法获取当前相机设备支持设置的焦距范围，根据业务需求在页面上生成相应焦距的按钮。
  
-```text
+```ArkTS
 getZoomRange(): number[] {
   try {
     return this.session!.getZoomRatioRange();
@@ -420,7 +420,7 @@ getZoomRange(): number[] {
  
 在点击焦距按钮事件的回调函数中使用[setSmoothZoom()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-zoom#setsmoothzoom11)方法平滑变焦到按钮对应的焦距。
  
-```json
+```ArkTS
 setSmoothZoom(zoom: number): void {
   try {
     this.session?.setSmoothZoom(zoom);
@@ -435,12 +435,12 @@ setSmoothZoom(zoom: number): void {
 ### 设置闪光灯
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/LUJHAjBLQhm-b3SIX_fMew/zh-cn_image_0000002717771324.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072530Z&HW-CC-Expire=86400&HW-CC-Sign=8D4DBAF46CC09FC2F4AF95DE163AE74FCF084D2517FAEE322307E0B509B37470)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/VcZoBONsRQWaNmAux3Be6g/zh-cn_image_0000002778932399.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012658Z&HW-CC-Expire=86400&HW-CC-Sign=7671EF5586A8366A9EA3FF47EAD2A42C134403AC0FD14C00923D6BFEF90C1A6F)
 
  
 使用[setFlashMode()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-flash#setflashmode11)方法设置闪光灯模式，在设置前需使用[isFlashModeSupported()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-flashquery#isflashmodesupported11)方法检测设备是否支持设置所选闪光灯模式。
  
-```json
+```ArkTS
 setFlashMode(flashMode: camera.FlashMode): void {
   try {
     const isSupported = this.session?.isFlashModeSupported(flashMode);
@@ -462,7 +462,7 @@ setFlashMode(flashMode: camera.FlashMode): void {
 点击预览区域，以点击处为焦点进行对焦，并显示对焦框。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/r4G_UjUFT5yn2L4H8qDNxQ/zh-cn_image_0000002717611390.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072530Z&HW-CC-Expire=86400&HW-CC-Sign=BA71EDBC92B50E6089B6951BB94638386D578B0E957BFF7770CEFE2689655780)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/ouSePE2IQMCjEpJGstqHbw/zh-cn_image_0000002749333316.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012658Z&HW-CC-Expire=86400&HW-CC-Sign=AB9D950987FD28075B7663C3B993876BF832FF275E10B64D367B82613B8B4877)
 
  
 设置焦点[camera.Point](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-i#point)的坐标是以充电口在右侧时横向设备方向为基准，该坐标系左上角为{ 0，0 }，右下角为{ 1，1 }。
@@ -475,7 +475,7 @@ setFlashMode(flashMode: camera.FlashMode): void {
 
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/17Kx-XirTyy4zORh51Jddg/zh-cn_image_0000002747291343.png?HW-CC-KV=V1&HW-CC-Date=20260911T072530Z&HW-CC-Expire=86400&HW-CC-Sign=3CD0669D05C4D7B7A12F0696964284F3653218B182CEEFA225531AE91C06C1FA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/XqGsdu2uR8qGFhbI0UiOqw/zh-cn_image_0000002749493200.png?HW-CC-KV=V1&HW-CC-Date=20261009T012658Z&HW-CC-Expire=86400&HW-CC-Sign=B140048733FBD9115AB75AADE4FD1AA3A70DF02E21386651D3A7726C59FA3BA0)
 
  
 同理，其他屏幕旋转方向上焦点坐标同可以计算出：
@@ -485,7 +485,7 @@ setFlashMode(flashMode: camera.FlashMode): void {
 - 屏幕旋转角度为270：焦点坐标为{ x / w, y / h }。
 
  
-```text
+```ArkTS
 export function calCameraPoint(eventX: number, eventY: number, width: number, height: number): camera.Point {
   let displayDefault: display.Display | null = null;
   try {
@@ -509,7 +509,7 @@ export function calCameraPoint(eventX: number, eventY: number, width: number, he
  
 在相机会话启动后，使用[setFocusMode()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-focus#setfocusmode11)方法设置对焦模式为FOCUS_MODE_CONTINUOUS_AUTO，当点击预览画面对焦时，设置对焦模式为FOCUS_MODE_AUTO，以支持对焦点设置。在设置前需检测相机是否支持该对焦模式。手动对焦结束后将对焦模式切换为FOCUS_MODE_CONTINUOUS_AUTO，以获得更好的对焦体验。
  
-```json
+```ArkTS
 setFocusMode(focusMode: camera.FocusMode): void {
   try {
     const isSupported = this.session?.isFocusModeSupported(focusMode);
@@ -526,7 +526,7 @@ setFocusMode(focusMode: camera.FocusMode): void {
  
 使用[setFoucusPoint()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-focus#setfocuspoint11)方法实现点击对焦。
  
-```json
+```ArkTS
 setFocusPoint(point: camera.Point): void {
   try {
     this.session?.setFocusPoint(point);
@@ -538,7 +538,7 @@ setFocusPoint(point: camera.Point): void {
  
 根据预览区域宽高、对焦框宽高以及触碰点的坐标计算对焦框相对预览区域的位置，注意不要超出预览区域的边界。
  
-```text
+```ArkTS
 export function getClampedChildPosition(childSize: Size, parentSize: Size, point: Point): Edges {
   let left = point.x - childSize.width / 2;
   let top = point.y - childSize.height / 2;
@@ -565,12 +565,12 @@ export function getClampedChildPosition(childSize: Size, parentSize: Size, point
 点击预览区域，设置点击处为曝光中心点。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/vhXXGgAxRWe2fWrooHFNtw/zh-cn_image_0000002747211261.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072530Z&HW-CC-Expire=86400&HW-CC-Sign=117848724556D9A177783DC802A5FFEFFBA8ED437BBC97A326F958E7E1F6C6F9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/XaMBaRloRFqRhF4mcZzZgQ/zh-cn_image_0000002779092259.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012658Z&HW-CC-Expire=86400&HW-CC-Sign=49F3380CE2CC0BA374003DCC7080B37D27558B40AA8AD0612A4B1E8FB64D3BCE)
 
  
 在相机会话启动后，使用[setExposureMode()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-autoexposure#setexposuremode11)方法设置曝光模式为EXPOSURE_MODE_CONTINUOUS_AUTO，当点击预览画面时，设置曝光模式为EXPOSURE_MODE_AUTO，以支持曝光区域中心点设置。在设置前需检测相机是否支持该曝光模式。手动设置结束后将曝光模式切换为EXPOSURE_MODE_CONTINUOUS_AUTO，以获得更好的曝光体验。
  
-```json
+```ArkTS
 setExposureMode(exposureMode: camera.ExposureMode): void {
   try {
     const isSupported = this.session?.isExposureModeSupported(exposureMode);
@@ -587,7 +587,7 @@ setExposureMode(exposureMode: camera.ExposureMode): void {
  
 点击屏幕预览区域，使用[setMeteringPoint()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-autoexposure#setmeteringpoint11)方法设置曝光区域中心点。屏幕布局坐标和相机坐标之间的转换逻辑详见[实现点击对焦](#实现点击对焦)小节。
  
-```json
+```ArkTS
 setMeteringPoint(point: camera.Point): void {
   try {
     this.session?.setMeteringPoint(point);
@@ -602,12 +602,12 @@ setMeteringPoint(point: camera.Point): void {
 ### 设置预览帧率
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/nEHStGvZQI-2Q1zUqmr6eQ/zh-cn_image_0000002717771326.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072530Z&HW-CC-Expire=86400&HW-CC-Sign=F290EBE03BBBAD0540062EE3919F63F184229DF1AFA1D34CA576545DAF2BFF28)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/E7Zr5LUQQgOjHMkuPDz52g/zh-cn_image_0000002778932401.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012658Z&HW-CC-Expire=86400&HW-CC-Sign=338AF38750A7CD59D585A6245BC1505115DE517DFF16FDE55BC97DB05AEFB375)
 
  
 使用[PreviewOutput.getSupportedFrameRates()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-previewoutput#getsupportedframerates12)方法获取预览流支持的帧率范围。
  
-```text
+```ArkTS
 getSupportedFrameRates(): camera.FrameRateRange[] | undefined {
   return this.output?.getSupportedFrameRates();
 }
@@ -615,7 +615,7 @@ getSupportedFrameRates(): camera.FrameRateRange[] | undefined {
  
 在帧率切换按钮点击事件的回调函数中，使用[PreviewOutput.setFrameRate()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-previewoutput#setframerate12)方法对预览帧率进行动态调整。
  
-```json
+```ArkTS
 setFrameRate(minFps: number, maxFps: number): void {
   try {
     this.output?.setFrameRate(minFps, maxFps);
@@ -648,14 +648,14 @@ setFrameRate(minFps: number, maxFps: number): void {
 在预览画面进行手势捏合操作，预览画面焦距会随捏合手势进行对应缩放调整。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/H0Bl8d0MS8SPnlkUQaCSsA/zh-cn_image_0000002717611392.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072530Z&HW-CC-Expire=86400&HW-CC-Sign=50E11FB10454D54D0B55A300F24AE03B36B936BBA6313380B97B3E0D29EDF7A7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/12RPHppZRK670QOU1_LXxw/zh-cn_image_0000002749333318.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012658Z&HW-CC-Expire=86400&HW-CC-Sign=5424BCAB2126C6F7D04EB36FCFF69D5191086740316FFCC2D296BD205A65F796)
 
  
 使用[PinchGesture()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-gestures-pinchgesture)接口给预览区域元素绑定捏合事件。
  
 在捏合手势识别成功onActionStart()事件的回调函数中，记录此次捏合前的焦距。在手势移动过程中onActionUpdate()事件的回调函数中，根据捏合前的焦距以及缩放比例计算出当前的焦距，注意限制在当前相机设备的焦距范围内。
  
-```text
+```ArkTS
 XComponent({
   type: XComponentType.SURFACE,
   controller: this.previewVM.xComponentController
@@ -689,12 +689,12 @@ XComponent({
 将相机预览画面划分为9个等比例区域（3×3宫格），为用户提供精准的构图参考框架。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/7B7GFA3-QuS504wkz-T13g/zh-cn_image_0000002747291345.png?HW-CC-KV=V1&HW-CC-Date=20260911T072530Z&HW-CC-Expire=86400&HW-CC-Sign=1735A0A115ADC02F8CA321E2910B37D6166290A7E21BB65543396208C1EA701B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/JMGwsfUMRtWuc6vfhFe49Q/zh-cn_image_0000002749493202.png?HW-CC-KV=V1&HW-CC-Date=20261009T012658Z&HW-CC-Expire=86400&HW-CC-Sign=EEE8C1C1676BD4ECA07B74B1905B9BC019D5E6218C67F1A35631D383D5D230ED)
 
  
 获取预览区域的宽高，通过行数和列数计算出每条网格线的起始坐标，在[Canvas](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-canvas-canvas)上进行绘制。注意设置[hitTestBehavior](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-hit-test-behavior#hittestbehavior)属性为HitTestMode.Transparent，不影响下方预览区域的正常交互。
  
-```text
+```ArkTS
 draw(): void {
   const ctx = this.context;
   ctx.strokeStyle = this.strokeStyle;
@@ -728,7 +728,7 @@ build() {
  
 用[Stack](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-stack)组件将网格线组件堆叠在预览区域上层。
  
-```text
+```ArkTS
 Stack({
   alignContent: Alignment.Center
 }) {
@@ -760,7 +760,7 @@ Stack({
 设备旋转过程中，水平仪指示线始终垂直于重力方向，当设备水平时（x轴或y轴垂直于重力方向），水平仪指示线由虚线变为实线。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/naN91Y_OQPqlLzj88Es6Ug/zh-cn_image_0000002747211263.png?HW-CC-KV=V1&HW-CC-Date=20260911T072530Z&HW-CC-Expire=86400&HW-CC-Sign=7C6BEE2D1095B580D3604B3B4913786F2C14A768B5CBB9237EA3FDE63ED6472A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/lRy7XPt0TwWhGmaMZF4Slg/zh-cn_image_0000002779092261.png?HW-CC-KV=V1&HW-CC-Date=20261009T012658Z&HW-CC-Expire=86400&HW-CC-Sign=33F9261C00D22330A902F21CB083A7F1AF6F2A52CE4795117E036AFCCA59781D)
 
  
 水平仪的实现需要用到重力加速度传感器。通过[sensor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-sensor)模块获取重力加速度在x, y, z轴方向上的分量。以充电口在下的竖屏方向为基准，x, y, z轴的方向如下。
@@ -773,7 +773,7 @@ Stack({
 由下图可知，水平仪指示线与x轴的夹角用θ表示，若要指示线始终垂直重力方向，则tanθ = g(x) / -g(y)。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/C05QhykeSXyPXgwMLYFARg/zh-cn_image_0000002717771328.png?HW-CC-KV=V1&HW-CC-Date=20260911T072530Z&HW-CC-Expire=86400&HW-CC-Sign=A362F7133B613C05F20354D86F8DC34143168C366D4B86072376275C86FF56A7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/wQOHAtBhSC6IXBoA6s7-EA/zh-cn_image_0000002778932403.png?HW-CC-KV=V1&HW-CC-Date=20261009T012658Z&HW-CC-Expire=86400&HW-CC-Sign=677A270653DB7164D64FEACBAEF8492A322B111AB494C638C810E2F3811DEF21)
 
  
 在module.json5中配置加速度传感器权限。
@@ -795,7 +795,7 @@ Stack({
  
 使用[sensor.on()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-sensor#sensoronsensoridaccelerometer9)方法订阅重力加速度传感器数据。
  
-```text
+```ArkTS
 addGravityEventListener(): void {
   try {
     sensor.on(sensor.SensorId.GRAVITY, (data) => {
@@ -809,7 +809,7 @@ addGravityEventListener(): void {
  
 计算指示线的旋转角度，以及设备是否水平。设置[hitTestBehavior](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-hit-test-behavior#hittestbehavior)属性为HitTestMode.Transparent，不影响下层预览区域的正常交互。
  
-```text
+```ArkTS
 @Component
 export struct LevelIndicator {
   @Prop acc: sensor.AccelerometerResponse;
@@ -865,12 +865,12 @@ export struct LevelIndicator {
 若相机在超过特定时间内未进行任何操作，则会暂停预览并显示遮罩。点击遮罩可重新启动预览，避免相机资源长时间浪费，从而降低功耗。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/EtQwGQ1tTy-SSWD8OXygzw/zh-cn_image_0000002717611394.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072530Z&HW-CC-Expire=86400&HW-CC-Sign=512622969D1973F8777ADF2428233E94164C3B544A0637EED4AE188D6A4222D4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/b54HTpFYSIekcJSm-7ot9Q/zh-cn_image_0000002749333320.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012658Z&HW-CC-Expire=86400&HW-CC-Sign=C9DB903CFBD391945E6E9B5FF00B09BE789971D8DE24504C8CE7C54473739B55)
 
  
 实现带刷新方法的定时器类，初始化时传入计时结束的回调函数。需要重置计时时间，调用refresh()方法实现。
  
-```text
+```ArkTS
 class RefreshableTimer {
   private timerId?: number;
   private readonly timeout: number;
@@ -910,7 +910,7 @@ class RefreshableTimer {
  
 预览页面初始化时，启动定时器。使用[UIObserver](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#getuiobserver11)监听[willClick()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uiobserver#onwillclick12)事件，30s内如果有操作，则重置定时器，直到30s内无任何操作，设置控制遮罩显隐的状态变量isSleeping为true，并释放相机资源。
  
-```text
+```ArkTS
 initSleepTimer(): void {
   this.previewVM.sleepTimer = new RefreshableTimer(() => {
     this.previewVM.openPreviewBlur();
@@ -927,7 +927,7 @@ initSleepTimer(): void {
  
 点击遮罩，设置状态变量isSleeping为false并重新启动相机预览。
  
-```text
+```ArkTS
 @Builder
 wakeupMask() {
   Column() {
@@ -952,12 +952,12 @@ wakeupMask() {
 当相机应用在退后台之后由于安全策略会被强制断流。当从后台切换至前台时，需要重启相机设备的预览流、拍照流以及相机会话。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/FU2Qbnw5SPGYclGM1xrU2Q/zh-cn_image_0000002747291347.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072530Z&HW-CC-Expire=86400&HW-CC-Sign=53773875CFFAA3DC7E1BA8F4E81E86F4C74702BA8094DF39A1310A8D093989C2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/4XiKH1KdSeu3SUwfgHPlpw/zh-cn_image_0000002749493204.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012658Z&HW-CC-Expire=86400&HW-CC-Sign=2AD8E060FC18F9B50094C3C08FAD3A61B24A4C1EC7BE0D66713ADDB61B29837B)
 
  
 使用[ApplicationContext.on('applicationStateChange')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-applicationcontext#applicationcontextonapplicationstatechange10)方法注册对当前应用前后台状态变化的监听。在切换至后台触发的[onApplicationBackground()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-applicationstatechangecallback#applicationstatechangecallbackonapplicationbackground)回调函数中释放相机相关资源。在切换至前台触发的[onApplicationForeground()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-applicationstatechangecallback#applicationstatechangecallbackonapplicationforeground)回调函数中重新启动相机及预览。
  
-```text
+```ArkTS
 registerApplicationStateChange(): void {
   this.applicationContext.on('applicationStateChange', {
     onApplicationForeground: async () => {
@@ -979,7 +979,7 @@ registerApplicationStateChange(): void {
 相机拍摄人像时，在预览画面上添加人脸检测框可以辅助对焦和构图。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/uujFhYvzT8KmAKnWEmYtOg/zh-cn_image_0000002747211265.png?HW-CC-KV=V1&HW-CC-Date=20260911T072530Z&HW-CC-Expire=86400&HW-CC-Sign=3194A4C9BCB1F9F56F7860C9D674922324AFFE6727C9405ACF8263784219E3C7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/GrBz8cGhQgKOGeAu-zn4_Q/zh-cn_image_0000002779092263.png?HW-CC-KV=V1&HW-CC-Date=20261009T012658Z&HW-CC-Expire=86400&HW-CC-Sign=693605CA8123162B29FDDF4D6B6001E4E84CB8A9A396C344A0575C5DDDA21C3F)
 
  
 相机的[元数据](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-metadata)输出流携带了人脸检测信息，应用可配置元数据输出流并读取检测信息绘制检测框。相较于[基于Core Vision Kit的人脸检测](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/core-vision-face-detector)能力，元数据输出流在相机预览时返回数据更快，性能更好，具体对比如下：
@@ -995,7 +995,7 @@ registerApplicationStateChange(): void {
  1. 创建相机元数据输出流。
 
   
-```text
+```ArkTS
 async createOutput(config: CreateOutputConfig): Promise<camera.CameraOutput | undefined> {
   const cameraOutputCap = config.cameraManager?.getSupportedOutputCapability(config.device, config.sceneMode);
   if (!cameraOutputCap) {
@@ -1018,7 +1018,7 @@ async createOutput(config: CreateOutputConfig): Promise<camera.CameraOutput | un
 2. 将元数据输出流添加到会话中。
 
   
-```text
+```ArkTS
 for (const outputManager of this.outputManagers) {
   if (outputManager.isActive) {
     const output = await outputManager.createOutput(config);
@@ -1032,7 +1032,7 @@ await session?.start();
 3. 注册[on('metadataObjectsAvailable')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-metadataoutput#onmetadataobjectsavailable)回调，监听元数据流中的人脸信息。
 
   
-```text
+```ArkTS
 addMetadataObjectsAvailableListener(metadataOutput: camera.MetadataOutput): void {
   metadataOutput.on('metadataObjectsAvailable',
     (err: BusinessError, metadataObjectArr: Array<camera.MetadataObject>) => {
@@ -1057,7 +1057,7 @@ addMetadataObjectsAvailableListener(metadataOutput: camera.MetadataOutput): void
 
 
   
-```text
+```ArkTS
 onMetadataObjectsAvailable(faceBoxArr: camera.Rect[]) {
   faceBoxArr.forEach((value) => {
     value.topLeftX *= this.previewVM.getPreviewWidth();
@@ -1072,7 +1072,7 @@ onMetadataObjectsAvailable(faceBoxArr: camera.Rect[]) {
 5. 计算检测框各边的起点和终点位置坐标。
 
   
-```text
+```ArkTS
 export function calFaceBoxLinePoint(faceBoxRect: camera.Rect): LinePoint[] {
   let lineLength: number = Math.min(faceBoxRect.width, faceBoxRect.height) * FACE_BOX_LINE_RATIO;
   let linePoints: LinePoint[] = [];
@@ -1103,7 +1103,7 @@ export function calFaceBoxLinePoint(faceBoxRect: camera.Rect): LinePoint[] {
 6. 使用[Line](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawing-components-line)组件，将人脸检测框绘制到预览画面中。
 
   
-```json
+```ArkTS
 @Builder
 faceBox(faceBoxRect: camera.Rect) {
   ForEach(calFaceBoxLinePoint(faceBoxRect), (linePoint: LinePoint) => {
@@ -1149,7 +1149,7 @@ faceBox(faceBoxRect: camera.Rect) {
 6. 处理并释放帧数据。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/K1B5jpdxT4CuIUhdV_Vtcw/zh-cn_image_0000002717771330.png?HW-CC-KV=V1&HW-CC-Date=20260911T072530Z&HW-CC-Expire=86400&HW-CC-Sign=10CA58A0FD76631C3AE71DFC0DC691F3EC802477C5AAD7017DA34E829D02E557)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/zaWH8mWeQwGWzAfhH1Iy3w/zh-cn_image_0000002778932405.png?HW-CC-KV=V1&HW-CC-Date=20261009T012658Z&HW-CC-Expire=86400&HW-CC-Sign=71A857BDE370EA04C9977FDF44D0B7E629D316E7B6C8F2559BCC7B3A080327CA)
 
  
   
@@ -1158,7 +1158,7 @@ faceBox(faceBoxRect: camera.Rect) {
 1. 创建[ImageReceiver](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-imagereceiver)组件并获取surfaceId。
 
   
-```text
+```ArkTS
 async init(size: Size, format = image.ImageFormat.JPEG, capacity = 8): Promise<string> {
   const receiver = image.createImageReceiver(size, format, capacity);
   const surfaceId = await receiver.getReceivingSurfaceId();
@@ -1171,7 +1171,7 @@ async init(size: Size, format = image.ImageFormat.JPEG, capacity = 8): Promise<s
 3. 使用[ImageReceiver.on()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-imagereceiver#on9)方法，注册imageArrival事件接收图像数据。使用[ImageReceiver.read()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-imagereceiver#readnextimage9-1)方法和[image.getComponent()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-image#getcomponent9-1)方法解析获取图像的Buffer。
 
   
-```text
+```ArkTS
 onImageArrival(receiver: image.ImageReceiver): void {
   receiver.on('imageArrival', () => {
     Logger.info(TAG, 'image arrival');
@@ -1205,7 +1205,7 @@ onImageArrival(receiver: image.ImageReceiver): void {
 
 
   
-```text
+```ArkTS
 async getPixelMap(imgComponent: image.Component, width: number, height: number,
   stride: number): Promise<image.PixelMap> {
   if (stride === width) {
@@ -1230,7 +1230,7 @@ async getPixelMap(imgComponent: image.Component, width: number, height: number,
 5. 使用[PreviewOutput.getPreviewRotation()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-previewoutput#getpreviewrotation12)获取图像旋转角度，使用[PixelMap.rotate()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-pixelmap#rotate9-1)方法对图像数据进行旋转。在使用前置镜头时，存在水平镜像和垂直镜像的差异，为了统一翻转逻辑，在屏幕旋转角度为90度或270度时，需额外旋转180度将图像转正，使用[PixelMap.flip()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-pixelmap#flip9-1)方法将图像数据进行水平翻转，以达到镜像效果。参考[应用自绘制预览角度处理](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-rotation-term#应用自绘制预览角度处理)。
 
   
-```text
+```ArkTS
 nextImage.getComponent(image.ComponentType.JPEG, async (err: BusinessError, imgComponent: image.Component) => {
   if (err || imgComponent === undefined) {
     Logger.error(TAG, 'getComponent failed');
@@ -1271,7 +1271,7 @@ nextImage.getComponent(image.ComponentType.JPEG, async (err: BusinessError, imgC
 6. 对[ImageReceiver](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-imagereceiver)组件获取到的图像数据处理后，需要将对应的图像Buffer释放，以确保Surface的BufferQueue正常轮转，防止出现缓冲区溢出等问题。如果对Buffer进行异步操作，则需要在异步操作结束后，确保当前Buffer没有使用的情况下再释放该资源。
 
   
-```text
+```ArkTS
 nextImage.getComponent(image.ComponentType.JPEG, async (err: BusinessError, imgComponent: image.Component) => {
   // ...
   nextImage.release();

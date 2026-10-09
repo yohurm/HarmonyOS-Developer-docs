@@ -1,11 +1,11 @@
 # @ohos.file.securityLabel (数据标签)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-file-securitylabel
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-该模块提供文件数据安全等级的相关功能：向应用程序提供查询、设置文件数据安全等级的ArkTS接口。
+该模块提供文件数据安全等级的相关功能：向应用程序提供查询、设置文件数据安全等级的ArkTS接口。该功能可以帮助应用实现对不同安全等级文件的分级管理和访问控制，解决数据安全管控的需求，提升应用的数据安全合规性。
 
 > [!NOTE]
 > 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
@@ -28,21 +28,7 @@ import { securityLabel } from '@kit.CoreFileKit';
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-使用该功能模块对文件/目录进行操作前，需要先获取其应用沙箱路径，获取方式及其接口用法请参考：
-
-```text
-import { UIAbility } from '@kit.AbilityKit';
-import { window } from '@kit.ArkUI';
-
-export default class EntryAbility extends UIAbility {
-  onWindowStageCreate(windowStage: window.WindowStage) {
-    let context = this.context;
-    let pathDir = context.filesDir;
-  }
-}
-```
-
-使用该功能模块对文件/目录进行操作前，需要先获取其应用沙箱路径，获取方式及其接口用法请参考：[应用上下文Context-获取应用文件路径](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-context-stage#获取应用文件路径)。
+使用该功能模块对文件/目录进行操作前，需要先获取其应用沙箱路径pathDir，获取沙箱路径的方式及其接口用法可参考：[应用上下文Context-获取应用文件路径](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-context-stage#获取应用文件路径)。
 
 
 
@@ -78,7 +64,7 @@ type DataLevel = 's0' | 's1' | 's2' | 's3' | 's4'
 
 setSecurityLabel(path:string, type:DataLevel):Promise&lt;void&gt;
 
-设置文件或目录的数据安全等级。使用Promise异步回调。
+设置文件或目录的数据安全等级，用于实现文件的分级管理和访问控制。使用Promise异步回调。
 
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
@@ -137,7 +123,7 @@ securityLabel.setSecurityLabel(filePath, "s0").then(() => {
 
 setSecurityLabel(path:string, type:DataLevel, callback: AsyncCallback&lt;void&gt;):void
 
-设置文件或目录的数据安全等级。使用callback异步回调。
+设置文件或目录的数据安全等级，用于实现文件的分级管理和访问控制。使用callback异步回调。
 
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
@@ -191,7 +177,7 @@ securityLabel.setSecurityLabel(filePath, "s0", (err: BusinessError) => {
 
 setSecurityLabelSync(path:string, type:DataLevel):void
 
-以同步方法设置文件或目录的数据安全等级。
+以同步方法设置文件或目录的数据安全等级，用于实现文件的分级管理和访问控制。
 
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
@@ -305,7 +291,7 @@ getSecurityLabel(path:string, callback:AsyncCallback&lt;string&gt;): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 文件或目录的应用沙箱路径。 |
-| callback | AsyncCallback&lt;string&gt; | 是 | 回调函数，返回安全等级。 |
+| callback | AsyncCallback&lt;string&gt; | 是 | 回调函数，返回数据安全等级。 |
 
 
 **错误码：**

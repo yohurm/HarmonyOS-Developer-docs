@@ -1,6 +1,6 @@
 # PopupV2
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-popupv2
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -129,8 +129,7 @@ PopupV2Button定义按钮的相关属性和事件。
 
 ```ArkTS
 // xxx.ets
-import { PopupV2, PopupV2Button } from '@kit.ArkUI';
-import { ImageModifier, TextModifier } from '@kit.ArkUI';
+import { PopupV2, PopupV2Button, ImageModifier, TextModifier } from '@kit.ArkUI';
 
 @Entry
 @ComponentV2
@@ -176,7 +175,7 @@ struct PopupExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/W9V1YEoyTgWKpg8Hd938HA/zh-cn_image_0000002717773094.png?HW-CC-KV=V1&HW-CC-Date=20260911T073029Z&HW-CC-Expire=86400&HW-CC-Sign=D51BC560C34AB24FC99EA26215DADEF7765E93A5E8002EAA8718DBAB863D7E75)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/LenkSKeoRp2nk4zMllElRw/zh-cn_image_0000002778934317.png?HW-CC-KV=V1&HW-CC-Date=20261009T013038Z&HW-CC-Expire=86400&HW-CC-Sign=F150D07CF47D32E893A349D5506FE78FD0605C12EB54ED7A1FAF80DD71600343)
 
 
 
@@ -192,8 +191,7 @@ struct PopupExample {
 
 ```ArkTS
 // xxx.ets
-import { PopupV2, PopupV2Button } from '@kit.ArkUI';
-import { ImageModifier, TextModifier } from '@kit.ArkUI';
+import { PopupV2, PopupV2Button, ImageModifier, TextModifier } from '@kit.ArkUI';
 
 @Entry
 @ComponentV2
@@ -239,7 +237,7 @@ struct PopupExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/Mf98WU7qQR2kMBYeyKtYyQ/zh-cn_image_0000002717613162.png?HW-CC-KV=V1&HW-CC-Date=20260911T073029Z&HW-CC-Expire=86400&HW-CC-Sign=CABD01355DF1024E1FE79A1A393A3A6A9D425495BDF84C0785641FB8200E5C89)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/gqrbDepXSoGxh3cULE9zaw/zh-cn_image_0000002749335234.png?HW-CC-KV=V1&HW-CC-Date=20261009T013038Z&HW-CC-Expire=86400&HW-CC-Sign=6C17CB56C654E49341F1CA29B26F75A457DB27087FD0B21047EE5DA2A5A88192)
 
 
 
@@ -255,8 +253,7 @@ struct PopupExample {
 
 ```ArkTS
 // xxx.ets
-import { PopupV2, PopupV2Button } from '@kit.ArkUI';
-import { ImageModifier, TextModifier } from '@kit.ArkUI';
+import { PopupV2, PopupV2Button, ImageModifier, TextModifier } from '@kit.ArkUI';
 
 @Entry
 @ComponentV2
@@ -303,4 +300,4 @@ struct PopupExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/YszkQRLiTzGbTBUUouL0Pg/zh-cn_image_0000002747293115.png?HW-CC-KV=V1&HW-CC-Date=20260911T073029Z&HW-CC-Expire=86400&HW-CC-Sign=E9D61B4BA685BE20CDC5877E6D275A6D7E4F57C86FA86064A4F8895D2C5F7003)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/P8xmSvddTNWMBqUquMseUw/zh-cn_image_0000002749495118.png?HW-CC-KV=V1&HW-CC-Date=20261009T013038Z&HW-CC-Expire=86400&HW-CC-Sign=19D7D4B483DFAFE2B4B37C7231DB469310CEE3A49349CC546A11AB18E1C607C3)

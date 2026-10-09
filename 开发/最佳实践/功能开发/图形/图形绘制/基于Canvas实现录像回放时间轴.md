@@ -1,22 +1,19 @@
 # 基于Canvas实现录像回放时间轴
 
-更新时间：2026-03-12 08:45:02
+更新时间：2026-09-15 02:12:10
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-implement-timeline-based-on-canvas
 
-**   
-
-
-#### **概述**
+## **概述**
 
 在安防监控、车载回放等场景中，录像回放是核心功能。用户通过滑动时间轴，查看不同时间节点的历史视频。本文基于Canvas绘图能力和视频组件，提供功能完备的录像回放时间轴解决方案，封装了[核心组件TimeBarView](https://gitcode.com/harmonyos_samples/timebar/blob/master/time_bar/src/main/ets/components/TimeBarView.ets)，助力开发者快速实现时间轴功能。该组件集成了时间轴绘制、单指滑动浏览、双指缩放切换时间粒度等功能。
  
-
  
+
 本文主要介绍如何实现TimeBarView时间轴组件，并结合“滑动时间轴控制视频播放”的核心场景，阐述TimeBarView组件的使用方法。
  
-
  
+
 TimeBarView时间轴组件提供以下核心功能：
  
 - 支持自定义时间轴样式，可配置刻度线、中间指示线、视频区域的外观（如颜色、尺寸、位置）。
@@ -27,23 +24,24 @@ TimeBarView时间轴组件提供以下核心功能：
  
  
 
-#### **实现原理**
+## **实现原理**
 
  
 
-#### 关键技术
+### 关键技术
 
 TimeBarView组件采用分层绘制，依次为刻度线、中间线、视频区域及顶层自定义绘制区域。通过滑动和缩放手势事件，实时更新状态并触发时间轴重绘。详细实现参考本章[开发流程](#section42461138131619)。
  
 刻度线绘制主要将时间戳转换为Canvas像素坐标。例如，开发者自定义刻度间隔的宽度为intervalWidth（如intervalWidth = 10vp），相同长度的时间间隔对应10分钟，实现“固定时间对应固定像素”的精准映射，确保任意时间戳均能通过公式计算出唯一的画布坐标。
  
-图1 **时间-像素映射示意图**
+**图1 **时间-像素映射示意图
+
 ![](assets/基于Canvas实现录像回放时间轴/file-20260515114801500-0.png)
 
  
  
 
-#### 开发流程
+### 开发流程
 1. 绘制时间轴
 - 时间刻度绘制**计算基本参数**
 
@@ -115,8 +113,8 @@ this.scheduleRedraw(); // Defer redraw to next frame for smoother visuals.
 this._onTimeBarMoveListener?.onMoveScaleCallback(this._currentTime, PlayStatus.PLAYING);
 ```
  
-
- - 缩放时间轴缩放功能允许通过双指捏合/张开切换时间粒度。核心逻辑如下：
+ 
+- 缩放时间轴缩放功能允许通过双指捏合/张开切换时间粒度。核心逻辑如下：
 
   
 手势监听：通过PinchGesture()回调监听双指缩放事件。
@@ -130,7 +128,8 @@ intervalWidth < 60：小时模式（10分钟/刻度，6个刻度 = 1小时）。
  - 边界限制：设置最小（10vp）和最大（180vp）缩放阈值，避免过度缩放。
 
  
-图2 **缩放时间轴示意图**
+**图2 **缩放时间轴示意图
+
 ![](assets/基于Canvas实现录像回放时间轴/file-20260515114801500-1.png)
 
  
@@ -156,8 +155,8 @@ if (this.intervalWidth < 60) {
 }
 ```
  
-
- - 数据驱动交互为实现时间轴组件与外部（如视频控制器）的数据联动，构建了TimeBarModel类。TimeBarModel封装了时间轴的两个核心数据：timeRange（视频片段集合）和currentTime（当前时间戳）。
+ 
+- 数据驱动交互为实现时间轴组件与外部（如视频控制器）的数据联动，构建了TimeBarModel类。TimeBarModel封装了时间轴的两个核心数据：timeRange（视频片段集合）和currentTime（当前时间戳）。
 
   
 timeRange：当外部传入录像片段时，自动对timeRange排序并计算有效时间边界（minTime/maxTime），确保时间轴仅显示有录像的时段。
@@ -218,24 +217,24 @@ private notifyDataChange(type: 'timeRange' | 'currentTime') {
  
  
 
-#### 时间轴控制视频播放场景
+## 时间轴控制视频播放场景
 
  
 
-#### 场景描述
+### 场景描述
 
 TimeBarView时间轴与视频播放联动，滑动时间轴可快速定位至目标录像片段。
  
 滑动停止时，若时间轴中线对应的时间点在录像片段有效时间内，视频立即跳转并继续播放；若处于两端录像间的空白区域，系统自动跳转至最近的录像起始时间点，避免无画面时段，提高效率。时间轴滑动存在硬性边界限制，用户试图将时间轴向右滑动至所有录像片段的最末端（即最新一段录像的结束时间）时，将无法继续拖动，防止超出录像数据范围导致播放异常。
  
-图3 **效果图
+**图3 **效果图
 
 ![](assets/基于Canvas实现录像回放时间轴/file-20260515114801500-2.gif)
 
  
  
 
-#### 开发步骤
+### 开发步骤
 1. 引入TimeBarView时间轴组件创建TimeBarModel实例作为数据载体，实例对象viewModel通过组件参数传入TimeBarView时间轴组件，即可渲染基本的时间轴。核心代码如下：
 
   
@@ -411,11 +410,11 @@ private performSeek(videoProgressSec: number, willReload: boolean) {
  
  
 
-#### 常见问题
+## 常见问题
 
  
 
-#### **canvas画的时间轴，在手势捏合缩放时画面不停闪烁，是否有解决方案**
+### **canvas画的时间轴，在手势捏合缩放时画面不停闪烁，是否有解决方案**
 
 在Canvas画布进行缩放操作时，尤其是在处理手势缩放时，可能会出现画面闪烁的问题。这是由于缩放操作导致画布上的图形重新计算和绘制，引起视觉上的闪烁效果。为减少这种现象，可采取以下方法：设置临界点，在手势捏合持续回调中，不是每次移动都重新绘制图形，而是设定特定条件，当满足这些条件时才重新绘制。例如，可检查手势移动的距离，当移动超过特定阈值时才更新画面。
  
@@ -430,6 +429,6 @@ this.lastOffsetX = offsetX;
  
  
 
-#### 示例代码
+## 示例代码
 
 - [实现可缩放时间轴功能](https://gitcode.com/harmonyos_samples/timebar)

@@ -1,27 +1,27 @@
 # 性能优化：混合语言工程Sync优化实践
 
-更新时间：2026-08-29 09:41:34
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-mix-language-sync-practice
 
 ## 概述
 
 在包含多个C++模块的大型HarmonyOS工程中，传统的同步（Sync）阶段往往因模块任务串行执行，多次执行ohpm install，导致构建文件生成耗时增加，进而影响开发效率。为提升开发体验，DevEco Studio提供了多项优化机制，通过调整依赖安装逻辑、同步策略、CMake配置刷新方式等，显著降低构建耗时。主要优化措施如下。
-
-
+ 
+ 
 
 ## 优化措施一：优化ohpm依赖安装效率
-1. ohpm提供两个配置开关，开启后可减少ohpm install耗时。在.ohpmrc文件中配置以下字段，关于字段的详细介绍请参考[ohpmrc](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpmrc)。       
- - 启用enable_unified_lockfile，当模块间存在重复依赖时，显著减少ohpm install的耗时，优化构建流程。
+1. ohpm提供两个配置开关，开启后可减少ohpm install耗时。在.ohpmrc文件中配置以下字段，关于字段的详细介绍请参考[ohpmrc](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpmrc)。
+- 启用enable_unified_lockfile，当模块间存在重复依赖时，显著减少ohpm install的耗时，优化构建流程。
 
 2. 启用enable_boost_extraction_speed，ohpm将采用高性能解压与遍历算法，当工程中存在大文件依赖时，可以显著减少ohpm install耗时。
 
-3. 调用[setDependenciesOpt](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-build-expanding-context#section18789410129)、[setOverrides](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-build-expanding-context#section469812496459)等方法动态修改oh-package.json5中的依赖信息后，执行Sync或Build等操作时，DevEco Studio会执行两次ohpm install操作。       从DevEco Studio 6.0.0 Beta3版本开始，新增一个开关，开启后，Hvigor仅执行一次ohpm install，可提升构建效率。
+3. 调用[setDependenciesOpt](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-build-expanding-context#section18789410129)、[setOverrides](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-build-expanding-context#section469812496459)等方法动态修改oh-package.json5中的依赖信息后，执行Sync或Build等操作时，DevEco Studio会执行两次ohpm install操作。从DevEco Studio 6.0.0 Beta3版本开始，新增一个开关，开启后，Hvigor仅执行一次ohpm install，可提升构建效率。
 
   **开启方式：**点击**File > Settings**（macOS为**DevEco Studio > Preferences/Settings**）** > Build, Execution, Deployment > Build Tools > Hvigor**，勾选**Enable ohpm execution by hvigor**。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/73d3JSgbRWmCbWvC3w-zLg/zh-cn_image_0000002731542977.png?HW-CC-KV=V1&HW-CC-Date=20260911T072347Z&HW-CC-Expire=86400&HW-CC-Sign=614509749E72C7004357B77022F42463163D38945376A7BC4FC4E5500300A92C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/nGgRclyRRNey2Lf1Vkhl6A/zh-cn_image_0000002731542977.png?HW-CC-KV=V1&HW-CC-Date=20261009T012816Z&HW-CC-Expire=86400&HW-CC-Sign=C5CA8C113E6A7C4D974CC3A62691C46D6EB780B9AAD18CB45D51CEEB5559B84B)
 
 
   
@@ -37,22 +37,22 @@
   开启后，根据模块之间是否有依赖关系，分为以下两种场景。
 
   
-场景一：多个C++模块之间无依赖关系，则是并行编译，构建窗口中只有一个syncNative的Tab页，对应了多个模块的编译日志，如下所示：       
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/DsKwLGB7T3-_b7GyZGruxw/zh-cn_image_0000002701663782.png?HW-CC-KV=V1&HW-CC-Date=20260911T072347Z&HW-CC-Expire=86400&HW-CC-Sign=DF477EFBF3A2F0CC06E417CD26113C74FA4803406FC61099C9B747A973B03034)
+场景一：多个C++模块之间无依赖关系，则是并行编译，构建窗口中只有一个syncNative的Tab页，对应了多个模块的编译日志，如下所示：
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/Xzw7UIJWR_KLH0n9J3ZZJw/zh-cn_image_0000002701663782.png?HW-CC-KV=V1&HW-CC-Date=20261009T012816Z&HW-CC-Expire=86400&HW-CC-Sign=F6ECCAC4F1E1261E04838382C5EDB61C05EC4E4C1C97D037796E561EC5D0BA41)
 
- - 场景二：多个C++模块之间有依赖关系，比如entry依赖hsp1，hsp1依赖hsp，hsp依赖har和har1模块，则会先执行被依赖的模块，如下所示：       
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/piZOMBorQDaZmaI4JN4cfQ/zh-cn_image_0000002701823706.png?HW-CC-KV=V1&HW-CC-Date=20260911T072347Z&HW-CC-Expire=86400&HW-CC-Sign=F1AC93340E29DAA3820132F9C53D31D3D61530671D197330647A6B1F5D9ECB98)
+- 场景二：多个C++模块之间有依赖关系，比如entry依赖hsp1，hsp1依赖hsp，hsp依赖har和har1模块，则会先执行被依赖的模块，如下所示：
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/Dgevt3QSSiefxXyjCf-Vqw/zh-cn_image_0000002701823706.png?HW-CC-KV=V1&HW-CC-Date=20261009T012816Z&HW-CC-Expire=86400&HW-CC-Sign=CB8B96D39CBEC0256981747F98D4B1259588722148217FD3AE25B0CB8A86182D)
 
 
-
+ 
 **可能影响**：如果在hvigorfile.ts脚本的compileNative任务阶段有自定义插件或任务，开启开关后，由于compileNative任务不会被执行，会导致自定义插件或任务未执行。
-
-
+ 
+ 
 
 ## 优化措施三：动态刷新C++项目配置
 
 在包含C++模块的工程中，开发者常在CMakeLists.txt中使用FILE(GLOB)动态收集源码文件，如下所示：
-
+ 
 ```cpp
 #当前CMakeLists.txt文件同目录下的文件
 FILE(GLOB SRC_LIST "test/*.cpp")
@@ -65,19 +65,19 @@ list(APPEND PROJECT_SOURCE
 #创建共享库
 add_library(MyProject SHARED ${PROJECT_SOURCE})
 ```
-
+ 
 当开发者在test目录下新增或修改.cpp源码文件后，直接执行Sync或Build操作时，往往会出现编译报错。根本原因是CMake默认采用静态缓存机制。使用FILE(GLOB)时，CMake仅在配置阶段（Configure）扫描一次文件。如果源码文件发生增删改，CMake可能无法及时识别这些变更，导致构建系统仍引用旧的缓存状态。此时，清理.cxx缓存可以修复该问题，但频繁清理缓存会显著降低开发效率。
-
+ 
 从26.0.0版本开始，新增Refresh C++ Project功能，允许开发者主动触发CMake重新配置项目，确保动态生成的源码列表与当前文件系统状态同步。
+ 
 
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/sUEkMKqbRz20rWcoG-eJ1g/zh-cn_image_0000002731383005.png?HW-CC-KV=V1&HW-CC-Date=20261009T012816Z&HW-CC-Expire=86400&HW-CC-Sign=EF11BCF09E4351BDC43EC3A1D680A7AA7903E6DA74842C35313B2A88E96A2012)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/Ax-xLfdXSWedq722740V4w/zh-cn_image_0000002731383005.png?HW-CC-KV=V1&HW-CC-Date=20260911T072347Z&HW-CC-Expire=86400&HW-CC-Sign=2B4138574A535792A721F4CD33F73FFB7E034D4FC86C726E79462355503841F4)
-
-
-
+ 
+ 
 
 ## 优化措施四：修改代码索引模式
 
 在开发大型C/C++工程时，代码索引（Code Indexing）往往是影响启动速度和日常开发流畅度的关键因素。传统的全量索引虽然能提供完整的代码导航能力，但在处理代码量巨大的项目时，往往会导致索引耗时较长，并持续占用较高的CPU和内存资源，迫使开发者等待较长时间才能进入编码状态。
-
+ 
 从26.0.0版本开始，DevEco Studio支持切换C/C++代码索引模式，可以根据当前工程的规模、硬件性能以及具体的开发需求，灵活选择最适合的索引策略，在“开发体验”与“资源消耗”之间找到最佳平衡点，具体支持的代码索引模式和切换方式请参考[代码索引（clangd）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-clangd)。

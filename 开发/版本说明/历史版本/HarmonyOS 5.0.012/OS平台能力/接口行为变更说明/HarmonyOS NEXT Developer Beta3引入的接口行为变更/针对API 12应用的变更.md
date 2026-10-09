@@ -1,14 +1,14 @@
 # 针对API 12应用的变更
 
-更新时间：2026-06-27 01:41:31
+更新时间：2026-10-08 10:09:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-targeting-api12-b035
 
-#### ArkTS
+## ArkTS
 
  
 
-#### JSON.parse解析非法字符串行为变更
+### JSON.parse解析非法字符串行为变更
 
 **变更原因**
  
@@ -42,7 +42,7 @@ JSON.parse/ASON.parse/util.json.parse
  
  
 
-#### JSON.parse解析浮点数下溢或-0行为变更
+### JSON.parse解析浮点数下溢或-0行为变更
 
 **变更原因**
  
@@ -78,7 +78,7 @@ JSON.parse/ASON.parse/util.json.parse
  
  
 
-#### Sendable及共享模块语法规则编译检查完善
+## Sendable及共享模块语法规则编译检查完善
 
 **变更原因**
  
@@ -86,8 +86,8 @@ Sendable对象需要遵循[使用规则](https://developer.huawei.com/consumer/c
  
 **变更影响**
  
-
  
+
 变更前：
  1. 当在共享模块中使用export default someVariable方式导出，并且someVariable是Non-sendable类型时，DevEco编辑界面有错误提示，编译没有错误，程序运行时会崩溃。
 2. 当在共享模块中使用export type someType = someNonSendableType方式导出Non-sendable类型的别名时，DevEco编辑界面没有提示，编译没有异常。
@@ -202,11 +202,11 @@ ArkTS Sendable语法检查从API 12起启用。
  
  
 
-#### ArkUI
+## ArkUI
 
  
 
-#### 命令式渲染节点RenderNode属性clipToFrame行为变更
+### 命令式渲染节点RenderNode属性clipToFrame行为变更
 
 **变更原因**
  
@@ -279,7 +279,7 @@ struct Index {
  
  
 
-#### 使用局部@Builder方法引用传参时，使用bind(this)后，状态管理的父子关系和组件的父子关系不一致，比如使用@ohos.arkui.advanced.ChipGroup高级组件崩溃解决方法
+### 使用局部@Builder方法引用传参时，使用bind(this)后，状态管理的父子关系和组件的父子关系不一致，比如使用@ohos.arkui.advanced.ChipGroup高级组件崩溃解决方法
 
 **变更原因**
  
@@ -396,7 +396,7 @@ struct Index {
  
  
 
-#### RichEditor设置预设样式的接口传入默认值时，文本样式效果变更
+### RichEditor设置预设样式的接口传入默认值时，文本样式效果变更
 
 **变更原因**
  
@@ -465,7 +465,7 @@ struct Index {
  
  
 
-#### RichEditor占位文本接口中文本样式属性传入异常值/默认值时，占位文本样式的效果变更
+### RichEditor占位文本接口中文本样式属性传入异常值/默认值时，占位文本样式的效果变更
 
 **变更原因**
  1. RichEditor设置占位文本的接口placeholder，其占位文本样式属性PlaceHolderStyle为异常值"{}"时，组件未将占位文本样式属性设置为默认效果。
@@ -540,7 +540,7 @@ struct Index {
  
  
 
-#### 自定义MenuItem的onChange触发逻辑变更
+### 自定义MenuItem的onChange触发逻辑变更
 
 **变更原因**
  
@@ -568,7 +568,7 @@ MenuItem组件。
  
  
 
-#### Repeat设置totalCount属性行为变更
+### Repeat设置totalCount属性行为变更
 
 **变更原因**
  
@@ -651,7 +651,7 @@ struct TestPage {
  
  
 
-#### Refresh组件promptText参数设置为undefined时清空文本内容
+### Refresh组件promptText参数设置为undefined时清空文本内容
 
 **变更原因**
  
@@ -665,9 +665,10 @@ Refresh组件通过promptText参数可传入文本字符串显示在刷新区域
  
 变更后，promptText参数设置为undefined时会清空当前文本内容，刷新区域不显示文本内容。
   
+
 | 变更前 | 变更后 |
 | --- | --- |
-|  |  |
+| ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/sa7dmD5-Rp6YREninERwHg/zh-cn_image_0000001971251450.png?HW-CC-KV=V1&HW-CC-Date=20261009T012725Z&HW-CC-Expire=86400&HW-CC-Sign=78890C2B403866C6914D77D7E5991B52DF4565C2A7B17F570B264238B1CE4A3F) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/fN0FWew6RbqqHfapkcvPpQ/zh-cn_image_0000001971091674.png?HW-CC-KV=V1&HW-CC-Date=20261009T012725Z&HW-CC-Expire=86400&HW-CC-Sign=AC5A268FEF3B27BA9E34F4E10803D7287D5CF5E74E3553EABC5BD04017699066) |
  
  
 **起始API Level**
@@ -718,11 +719,11 @@ struct RefreshExample {
  
  
 
-#### ArkWeb
+## ArkWeb
 
  
 
-#### onBeforeUnload接口行为变更
+### onBeforeUnload接口行为变更
 
 **变更原因**
  

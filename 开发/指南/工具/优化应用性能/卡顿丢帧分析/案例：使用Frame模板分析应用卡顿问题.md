@@ -1,6 +1,6 @@
 # 案例：使用Frame模板分析应用卡顿问题
 
-更新时间：2026-07-28 12:07:32
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-frame-case
 
@@ -9,7 +9,7 @@
 应用卡顿分析基础功能请参考[Frame分析](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-insight-session-frame)。
  
 
-#### 分析步骤
+## 分析步骤
 
 分析应用卡顿类问题步骤如下：
  1. 确认是否存在卡顿帧。
@@ -17,11 +17,11 @@
  
  
 
-#### 分析Frame数据
+## 分析Frame数据
 
  
 
-#### 分析应用是否存在卡顿
+### 分析应用是否存在卡顿
 
 1. 框选Frame泳道，窗口下方的**Statistics**区域中会以进程维度对选定时间段内的Frame信息进行统计，当Jank Count大于0时，说明存在卡顿帧。
 
@@ -51,7 +51,7 @@ Expected Duration：一帧绘制的期望耗时。与fps的大小有关，如fps
 6. 框选该异常帧时间范围，结合**ArkTS Callstack**泳道、**Callstack**泳道和**Trace**等信息进一步分析异常点。
  
 
-#### 案例：分析应用卡顿原因
+### 案例：分析应用卡顿原因
 
 1. 找到并框选要分析的异常帧，查看**ArkTS Callstack**泳道分析ArkTS侧耗时函数。优先查看主线程调用栈，即线程号与进程号一致的ArkVM子泳道。可以看到ArkTS侧一些方法的耗时。
 2. 查看下图调用栈，除(program)外，其他调用栈耗时小于一帧绘制的期望耗时8.3ms（被调优的设备fps为120），因此该卡顿帧主要分析调用栈(program)的耗时。
@@ -79,12 +79,12 @@ Expected Duration：一帧绘制的期望耗时。与fps的大小有关，如fps
 5. 窗口下方详情区可查看到Trace统计信息列表，逐层展开耗时最长的Trace，定位到主要耗时是在3次H:CreateImagePixelMap。接下来进一步分析这3次H:CreateImagePixelMap耗时的原因。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/_t5AuThtQQ2sED20qDMUmg/zh-cn_image_0000002647917486.png?HW-CC-KV=V1&HW-CC-Date=20260730T071823Z&HW-CC-Expire=86400&HW-CC-Sign=05AEB784695DC7AA3DF013417AA5C2C4E8BC6536B159A62EB17016D9CCD898AC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/4D-wv5s6R0OTnxuWAx4Ytw/zh-cn_image_0000002731382955.png?HW-CC-KV=V1&HW-CC-Date=20261009T012809Z&HW-CC-Expire=86400&HW-CC-Sign=3D4FB529851B98C9D8C8F9D1A24510D86C4846503AEECB7AB738675E11AB6473)
 
 6. H:CreateImagePixelMap和图片加载相关，再结合业务代码查看，可以看到是因为同步加载网络图片，建议修改为异步加载。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/UMiBS0rsRxOQwiTs5RYIBg/zh-cn_image_0000002678157107.png?HW-CC-KV=V1&HW-CC-Date=20260730T071823Z&HW-CC-Expire=86400&HW-CC-Sign=7C59AE775CCB399EDF33793E8B4660EE4A851EF7B9A59B1CB4CB168CC3110E50)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/DQShVZkwSR-riDfbr8KF8g/zh-cn_image_0000002731382959.png?HW-CC-KV=V1&HW-CC-Date=20261009T012809Z&HW-CC-Expire=86400&HW-CC-Sign=FF144A5721C7B9A106C390911DDDFCE5EF60FEA9BD8851881342597F223D362D)
 
 
   

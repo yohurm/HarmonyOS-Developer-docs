@@ -1,6 +1,6 @@
 # @hms.security.confidentialSpace (机密空间服务)
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/confidentialspace-confidentialspace
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -453,6 +453,7 @@ runApp(appPath: string, argv: string[]): Promise&lt;DataAppHandle&gt;
 | 1028700005 | Access permission denied. |
 | 1028700006 | Call limit reached. |
 | 1028700007 | Operation timed out. |
+| 1028700009 | Communication between client and data manager failed. |
 | 1028700012 | The profile contains invalid configuration items. |
 | 1028700015 | Internal error on the client side. |
 | 1028700016 | Internal error on the confidential space manager side. |

@@ -1,6 +1,6 @@
 # 相机API调用时序问题
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-api-faq
 
@@ -30,7 +30,7 @@
 
 
 ## 解决措施
-1. 创建的输出流与输入流前，将两者的profile中的分辨率进行比较，保证分辨率一致。
+1. 创建输出流与输入流前，将两者的profile中的分辨率进行比较，保证分辨率一致。
 2. 大部分的set方法建议在commitConfig之后进行调用，比如白平衡相关的set接口。
 3. 大部分监听相关接口，需要在addInput之后调用，保证镜头打开并添加到session中后，数据可通过监听返回。
 

@@ -1,6 +1,6 @@
 # ArkWeb进程
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-09 06:54:05（官网已下线）
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web_component_process
 

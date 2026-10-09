@@ -1,122 +1,129 @@
 [
   {
-    "slug": "navigation-0000001957075737",
-    "name": "导航条",
     "file": "系统特性/导航条.md",
+    "name": "导航条",
+    "slug": "navigation-0000001957075737",
     "url": "https://developer.huawei.com/consumer/cn/doc/design-guides/navigation-0000001957075737"
   },
   {
-    "slug": "system-features-notification-0000001793074217",
-    "name": "通知",
     "file": "系统特性/通知.md",
+    "name": "通知",
+    "slug": "system-features-notification-0000001793074217",
     "url": "https://developer.huawei.com/consumer/cn/doc/design-guides/system-features-notification-0000001793074217"
   },
   {
-    "slug": "system-features-live-view-0000001955186861",
-    "name": "实况窗",
     "file": "系统特性/实况窗.md",
+    "name": "实况窗",
+    "slug": "system-features-live-view-0000001955186861",
     "url": "https://developer.huawei.com/consumer/cn/doc/design-guides/system-features-live-view-0000001955186861"
   },
   {
-    "slug": "system-features-multi-window-interaction-0000001795392917",
-    "name": "多窗口交互",
     "file": "系统特性/多窗口交互.md",
+    "name": "多窗口交互",
+    "slug": "system-features-multi-window-interaction-0000001795392917",
     "url": "https://developer.huawei.com/consumer/cn/doc/design-guides/system-features-multi-window-interaction-0000001795392917"
   },
   {
-    "slug": "system-features-service-widget-0000002087671904",
-    "name": "服务卡片",
     "file": "系统特性/服务卡片.md",
+    "name": "服务卡片",
+    "slug": "system-features-service-widget-0000002087671904",
     "url": "https://developer.huawei.com/consumer/cn/doc/design-guides/system-features-service-widget-0000002087671904"
   },
   {
-    "slug": "pip-0000001927422624",
-    "name": "画中画",
     "file": "系统特性/画中画.md",
+    "name": "画中画",
+    "slug": "pip-0000001927422624",
     "url": "https://developer.huawei.com/consumer/cn/doc/design-guides/pip-0000001927422624"
   },
   {
-    "slug": "dark-mode-0000001823255497",
-    "name": "深色模式",
     "file": "系统特性/深色模式.md",
+    "name": "深色模式",
+    "slug": "dark-mode-0000001823255497",
     "url": "https://developer.huawei.com/consumer/cn/doc/design-guides/dark-mode-0000001823255497"
   },
   {
-    "slug": "status-bar-0000001776775568",
-    "name": "状态栏",
     "file": "系统特性/状态栏.md",
+    "name": "状态栏",
+    "slug": "status-bar-0000001776775568",
     "url": "https://developer.huawei.com/consumer/cn/doc/design-guides/status-bar-0000001776775568"
   },
   {
-    "slug": "broadcasting-control-0000001957017133",
-    "name": "播控中心",
     "file": "系统特性/播控中心.md",
+    "name": "播控中心",
+    "slug": "broadcasting-control-0000001957017133",
     "url": "https://developer.huawei.com/consumer/cn/doc/design-guides/broadcasting-control-0000001957017133"
   },
   {
-    "slug": "share-0000001957076313",
-    "name": "分享",
     "file": "系统能力/分享.md",
+    "name": "分享",
+    "slug": "share-0000001957076313",
     "url": "https://developer.huawei.com/consumer/cn/doc/design-guides/share-0000001957076313"
   },
   {
-    "slug": "id-0000001880001344",
-    "name": "华为账号开放登录",
     "file": "系统能力/华为账号开放登录.md",
+    "name": "华为账号开放登录",
+    "slug": "id-0000001880001344",
     "url": "https://developer.huawei.com/consumer/cn/doc/design-guides/id-0000001880001344"
   },
   {
-    "slug": "huaweipay-0000002054558905",
-    "name": "华为支付",
     "file": "系统能力/华为支付.md",
+    "name": "华为支付",
+    "slug": "huaweipay-0000002054558905",
     "url": "https://developer.huawei.com/consumer/cn/doc/design-guides/huaweipay-0000002054558905"
   },
   {
-    "slug": "preview-0000001957112409",
-    "name": "预览",
     "file": "系统能力/预览.md",
+    "name": "预览",
+    "slug": "preview-0000001957112409",
     "url": "https://developer.huawei.com/consumer/cn/doc/design-guides/preview-0000001957112409"
   },
   {
-    "slug": "system-capabilities-launch-page-0000002311335748",
-    "name": "启动页",
     "file": "系统能力/启动页.md",
+    "name": "启动页",
+    "slug": "system-capabilities-launch-page-0000002311335748",
     "url": "https://developer.huawei.com/consumer/cn/doc/design-guides/system-capabilities-launch-page-0000002311335748"
   },
   {
-    "slug": "onehop-0000002354602581",
-    "name": "碰一碰",
     "file": "系统能力/碰一碰.md",
+    "name": "碰一碰",
+    "slug": "onehop-0000002354602581",
     "url": "https://developer.huawei.com/consumer/cn/doc/design-guides/onehop-0000002354602581"
   },
   {
-    "slug": "i-connect-0000002354482789",
-    "name": "靠近发现",
     "file": "系统能力/靠近发现.md",
+    "name": "靠近发现",
+    "slug": "i-connect-0000002354482789",
     "url": "https://developer.huawei.com/consumer/cn/doc/design-guides/i-connect-0000002354482789"
   },
   {
-    "slug": "smart-reachability-0000002556657823",
-    "name": "智感握姿",
     "file": "系统能力/智感握姿.md",
+    "name": "智感握姿",
+    "slug": "smart-reachability-0000002556657823",
     "url": "https://developer.huawei.com/consumer/cn/doc/design-guides/smart-reachability-0000002556657823"
   },
   {
-    "slug": "floatview-0000002624640357",
-    "name": "闪控球和闪控窗",
     "file": "系统特性/闪控球和闪控窗.md",
+    "name": "闪控球和闪控窗",
+    "slug": "floatview-0000002624640357",
     "url": "https://developer.huawei.com/consumer/cn/doc/design-guides/floatview-0000002624640357"
   },
   {
-    "slug": "parallel_view-0000002588655180",
-    "name": "平行视界",
     "file": "系统能力/平行视界.md",
+    "name": "平行视界",
+    "slug": "parallel_view-0000002588655180",
     "url": "https://developer.huawei.com/consumer/cn/doc/design-guides/parallel_view-0000002588655180"
   },
   {
-    "slug": "shortcat-0000002550987962",
-    "name": "桌面快捷方式",
     "file": "系统特性/桌面快捷方式.md",
+    "name": "桌面快捷方式",
+    "slug": "shortcat-0000002550987962",
     "url": "https://developer.huawei.com/consumer/cn/doc/design-guides/shortcat-0000002550987962"
+  },
+  {
+    "file": "系统特性/鸿蒙卡片.md",
+    "name": "鸿蒙卡片",
+    "slug": "harmonyos-widget2-0000002731312633",
+    "title": "鸿蒙卡片",
+    "url": "https://developer.huawei.com/consumer/cn/doc/design-guides/harmonyos-widget2-0000002731312633"
   }
 ]

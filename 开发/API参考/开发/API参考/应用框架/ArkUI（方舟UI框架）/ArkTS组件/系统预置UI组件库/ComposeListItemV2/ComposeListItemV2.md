@@ -1,6 +1,6 @@
 # ComposeListItemV2
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-composelistitemv2
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -72,6 +72,13 @@ ComposeListItemV2({ contentItemV2?: ContentItemV2, operateItemV2?: OperateItemV2
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 列表左侧显示的图标、图标大小以及中间元素文字内容。
+
+
+
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 **起始版本：** 26.0.0
 
@@ -196,6 +203,13 @@ ContentItemV2构造函数的参数选项。
 
 列表项右侧显示的元素类型。
 
+
+
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
+
 **起始版本：** 26.0.0
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -295,6 +309,13 @@ OperateItemV2构造函数的参数选项。
 
 列表项右侧图标元素的类型。
 
+
+
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
+
 **起始版本：** 26.0.0
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -386,6 +407,13 @@ OperateIconV2构造函数的参数选项。
 
 列表项右侧按钮元素的类型。
 
+
+
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
+
 **起始版本：** 26.0.0
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -472,6 +500,13 @@ OperateButtonV2构造函数的参数选项。
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 列表项右侧元素为Switch、CheckBox、Radio的类型。当列表项右侧元素需要使用Switch、CheckBox、Radio时，可通过该类型配置对应属性。
+
+
+
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 **起始版本：** 26.0.0
 
@@ -667,7 +702,7 @@ struct ComposeListItemV2Example {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/_oAy9m3KQ8SOzkWlKyXhUQ/zh-cn_image_0000002717773066.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T073027Z&HW-CC-Expire=86400&HW-CC-Sign=264D65E3B4077FDFF666AD3175BF42C9B9D44B50C7AB23BC6730B5C7CE3B2C6D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/qEDbdg8ERUuF7j3tADqY7w/zh-cn_image_0000002778934289.jpg?HW-CC-KV=V1&HW-CC-Date=20261009T013037Z&HW-CC-Expire=86400&HW-CC-Sign=0BFC359887C09A9420703E498C6219C354EE739A2402A00279427298DE9F595C)
 
 
 
@@ -766,7 +801,7 @@ struct ComposeListItemV2Example {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/TPIKjdc8Q9uRIgJQI_8yeQ/zh-cn_image_0000002717613134.png?HW-CC-KV=V1&HW-CC-Date=20260911T073027Z&HW-CC-Expire=86400&HW-CC-Sign=5F282C36F09F7458609EE11B142E5592B460E3F1E219DC94F97BAD50A9B74E4C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/OlWxTJpKS6-KKrRgWn4hjw/zh-cn_image_0000002749335206.png?HW-CC-KV=V1&HW-CC-Date=20261009T013037Z&HW-CC-Expire=86400&HW-CC-Sign=9D91A9DE11BAEE05A0C88D00F8130C710498A7BE615D76674C51D50F00EEEBB6)
 
 
 
@@ -856,4 +891,4 @@ struct ComposeListItemV2Example {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/SLqApwpxRdee3Siukfty6g/zh-cn_image_0000002747293087.png?HW-CC-KV=V1&HW-CC-Date=20260911T073027Z&HW-CC-Expire=86400&HW-CC-Sign=8BBB3D4F84B30729FCA2569677E82A270C26A7C7B304DEE4A5733C57EF160F71)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/k50uusQ6Sgeu3_uL8kgVUA/zh-cn_image_0000002749495090.png?HW-CC-KV=V1&HW-CC-Date=20261009T013037Z&HW-CC-Expire=86400&HW-CC-Sign=B200C21AB938B581505C068EA86FC3CD553761DCF00DD39C6ABCA254EB02A1FF)

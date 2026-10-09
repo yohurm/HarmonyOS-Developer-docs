@@ -1,6 +1,6 @@
 # OS新增和增强特性
 
-更新时间：2026-09-09 06:41:01
+更新时间：2026-10-08 10:09:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-2600
 
@@ -92,12 +92,6 @@ JS Crash检测新增支持NativeModuleErrorInfo，可记录最早的20条so加�
 - 新增自动填充请求信息的定义能力，应用可定义自动填充的信息类型。（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-autofillrequest)）
 - 包管理新增pluginBundleManager模块，提供应用对自分发插件的管理能力，包括安装、卸载本地插件。（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-pluginbundlemanager)）
 
- 
- 
-
-### Account Kit
-
-新增支持华为账号亲密圈服务，实现用户添加和选择亲友的能力。（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-intimate#模块概述)）
  
  
 
@@ -387,7 +381,7 @@ HiDebug新增支持注册内存导出监听器，用于在内存占用较高或�
 - 新增颜色选择与收藏管理功能，支持网格、光谱和滑块三种颜色选择模式，支持用户将常用颜色添加到收藏列表。（[指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-color-picker-favorites)、[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdscolorpicker)）
 
  
-- HdsSnackBar组件新增新增支持左侧图标（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdssnackbar#snackbariconoptions)）、中间文本的标题和内容（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdssnackbar#snackbarmessageoptions)）、右侧操作区关闭按钮的图标（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdssnackbar#snackbaroperationoptions)）的样式修改。
+- HdsSnackBar组件新增支持左侧图标（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdssnackbar#snackbariconoptions)）、中间文本的标题和内容（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdssnackbar#snackbarmessageoptions)）、右侧操作区关闭按钮的图标（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdssnackbar#snackbaroperationoptions)）的样式修改。
 - HdsListItem组件新增多态样式的设置功能。（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdslistitem#hdslistitemstatestylesoptions)）
 - HdsListItemCard组件单选框支持样式选择。（[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdslistitemcard#hdsradiostyle)）
 

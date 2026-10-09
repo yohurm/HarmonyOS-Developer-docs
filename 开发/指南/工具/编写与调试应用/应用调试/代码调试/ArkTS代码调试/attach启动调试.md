@@ -1,6 +1,6 @@
 # attach启动调试
 
-更新时间：2026-07-28 12:07:32
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-arkts-attach
 
@@ -9,13 +9,13 @@
 Attach Debugger和Debug的区别在于，Attach Debugger to Process可以先运行应用/元服务，然后再启动调试，或者直接启动设备上已安装的应用/元服务进行调试；而Debug是直接运行应用/元服务后立即启动调试。
  
 
-#### 前提条件
+## 前提条件
 
 当前设备上被attach的应用代码和本地代码一致，且已提前构建生成必要的sourceMap文件。
  
  
 
-#### 使用约束
+## 使用约束
 
 attach不支持的场景：
  
@@ -27,10 +27,8 @@ attach不支持的场景：
  
  
 
-#### 操作步骤
-1. 在工具栏中，选择调试的设备，并单击**Attach Debugger to Process**
-![](assets/attach启动调试/file-20260514132952399-1.png)
-启动调试。
+## 操作步骤
+1. 在工具栏中，选择调试的设备，并单击**Attach Debugger to Process**![icon](assets/attach启动调试/file-20260514132952399-1.png)启动调试。
 
   
 ![](assets/attach启动调试/file-20260514132952399-2.png)
@@ -62,4 +60,4 @@ attach不支持的场景：
 5. 点击**OK**开始attach调试。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/Nm6bgHwBSuy3I6F8bQRRkQ/zh-cn_image_0000002647917188.png?HW-CC-KV=V1&HW-CC-Date=20260730T071817Z&HW-CC-Expire=86400&HW-CC-Sign=E2E1CA622492EE8E002FBFCA8444CB68BCFEBFE3EABD4E641F104EC18F7792CC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/fjxeePMJQnWib0hOZWmOFg/zh-cn_image_0000002731382897.png?HW-CC-KV=V1&HW-CC-Date=20261009T012803Z&HW-CC-Expire=86400&HW-CC-Sign=89748265A32BE202FD3A3F8202A15FB8781ADF255865BA216AFBFDC04D566102)

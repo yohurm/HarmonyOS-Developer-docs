@@ -1,6 +1,6 @@
 # 异步并发 (Promise和async/await)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/async-concurrency-overview
 
@@ -58,7 +58,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
   promise.then((result: number) => {
     console.info(`Succeeded in getting number, number is ${result}`); // 成功时执行
   }, (error: BusinessError) => {
-    console.error(error.message); // 失败时执行
+    console.error(`Failed to get number. Code: ${error.code}, message: ${error.message}`); // 失败时执行
   }
   );
 
@@ -66,7 +66,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
   promise.then((result: number) => {
     console.info(`Succeeded in getting number, number is ${result}`); // 成功时执行
   }).catch((error: BusinessError) => {
-    console.error(error.message); // 失败时执行
+    console.error(`Failed to get number. Code: ${error.code}, message: ${error.message}`); // 失败时执行
   });
 ```
 
@@ -109,7 +109,7 @@ struct PromiseAsyncAwait {
           .fontSize(50)
           .fontWeight(FontWeight.Bold)
           .onClick(async () => {
-            let res = await myAsyncFunction();
+            let res: string = await myAsyncFunction();
             console.info(`Result is:  ${res}`);
             this.message = 'success';
           })

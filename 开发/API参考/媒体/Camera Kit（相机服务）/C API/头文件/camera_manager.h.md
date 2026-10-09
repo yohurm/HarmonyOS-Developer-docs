@@ -1,6 +1,6 @@
 # camera_manager.h
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-camera-manager-h
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -1463,7 +1463,7 @@ Camera_ErrorCode OH_CameraManager_GetCameraConcurrentInfos(Camera_Manager* camer
 | --- | --- |
 | Camera_Manager* cameraManager | 相机管理器实例。 |
 | const Camera_Device* camera | 用于查询的Camera_Device相机设备列表，推荐设置为包含OH_CameraManager_GetCameraDevice获取的前置与后置两个相机设备的相机设备列表。 |
-| uint32_t deviceSize | 用于查询的相机设备列表长度, 必须设置为2（表示前置与后置两个用于并发的相机设备）。 |
+| uint32_t deviceSize | 用于查询的相机设备列表长度，必须设置为2（表示前置与后置两个用于并发的相机设备）。 |
 | Camera_ConcurrentInfo** cameraConcurrentInfo | 查询到的相机并发能力数组Camera_ConcurrentInfo，作为入参应当默认设置为空。 如果相机支持并发，cameraConcurrentInfo会被赋值为查询到的相机并发能力数组Camera_ConcurrentInfo。 如果相机不支持并发，不会对cameraConcurrentInfo进行更改，并且返回错误码Camera_ErrorCode.CAMERA_SERVICE_FATAL_ERROR。 |
 | uint32_t* infoSize | 查询到的相机并发能力数组长度，作为入参应当默认设置为0。 如果相机支持并发，infoSize会被赋值为查询到的相机并发能力数组长度。 如果相机不支持并发，不会对infoSize进行更改，并且返回错误码Camera_ErrorCode.CAMERA_SERVICE_FATAL_ERROR。 |
  

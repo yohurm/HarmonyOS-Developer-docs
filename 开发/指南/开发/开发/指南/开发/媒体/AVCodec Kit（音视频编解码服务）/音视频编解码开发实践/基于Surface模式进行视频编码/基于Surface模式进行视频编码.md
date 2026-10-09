@@ -1,6 +1,6 @@
 # 基于Surface模式进行视频编码
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-encoding-surface
 
@@ -29,7 +29,7 @@ Surface分为生产者ProducerSurface和消费者ConsumerSurface。NativeWindow�
 Surface轮转流程如下所示，生产者先申请到一块Buffer，填充数据后将Buffer返回给BufferQueue。在触发回调函数后，通知消费者Buffer已经被生产者填充好数据。之后，消费者可以获取填充好数据的Buffer，直到不再需要该Buffer后，释放对应的Buffer。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/BCp_Jx0TRI-sIlHDhtIyrQ/zh-cn_image_0000002717611372.png?HW-CC-KV=V1&HW-CC-Date=20260911T073142Z&HW-CC-Expire=86400&HW-CC-Sign=603E7FB8C3A40AAB3336F3F4526FF2801BB409B6CDAEC69C8AC1CFB0908BEF80)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/S3hyZu2iQy6AUbXUu-lcRg/zh-cn_image_0000002749333298.png?HW-CC-KV=V1&HW-CC-Date=20261009T013119Z&HW-CC-Expire=86400&HW-CC-Sign=5B3B74E1D4913FFC940E7AC86195DB06E0C3588B75640BCCC690FD94C3D9BFEB)
 
  
 视频编码器提供了获取NativeWindow的接口，通过NativeWindow可以将相机产生的数据与视频编码器进行对接。视频编码器作为消费者，将Buffer数据进行消费编码，从而实现视频编码的操作。下面我们将通过相机录制和屏幕录制，介绍基于Surface模式进行视频编码。
@@ -58,7 +58,7 @@ Surface模式是通过NativeWindow包含的Surface传递录屏数据进行视频
 7. 将从编码器中获取的NativeWindow对象设置给AVScreenCapture，启动屏幕录制。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/XQwrEcVST1SizLvfe8Wcrg/zh-cn_image_0000002747291325.png?HW-CC-KV=V1&HW-CC-Date=20260911T073142Z&HW-CC-Expire=86400&HW-CC-Sign=F039AEEB1AE969CF465E8F0C261B7C651D12C8A605B1E638A08EFC5B73471B80)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/pdgfWWxcQmWpfYIilgVVdg/zh-cn_image_0000002749493182.png?HW-CC-KV=V1&HW-CC-Date=20261009T013119Z&HW-CC-Expire=86400&HW-CC-Sign=8568DD00DBBB796EEF2E5413DE96C41DD4BFEA797A21286A1BC60F5859F66AC2)
 
  
   
@@ -67,7 +67,7 @@ Surface模式是通过NativeWindow包含的Surface传递录屏数据进行视频
 1. 初始化视频封装器，创建并配置视频封装器。
 
   
-```text
+```cpp
 int32_t Muxer::Create(int32_t fd) {
     muxer_ = OH_AVMuxer_Create(fd, AV_OUTPUT_FORMAT_MPEG_4);
     if (muxer_ == nullptr) {
@@ -106,7 +106,7 @@ int32_t Muxer::Config(SampleInfo &sampleInfo) {
 2. 初始化视频编码器，创建并配置视频编码器，并从编码器中获取NativeWindow对象。
 
   
-```text
+```cpp
 int32_t VideoEncoder::Create(const std::string &videoCodecMime) {
     encoder_ = OH_VideoEncoder_CreateByMime(videoCodecMime.c_str());
     if (encoder_ == nullptr) {
@@ -148,7 +148,7 @@ int32_t VideoEncoder::Config(SampleInfo &sampleInfo, CodecUserData *codecUserDat
 3. 初始化AVScreenCapture，创建并配置AVScreenCapture。
 
   
-```text
+```cpp
 void CAVScreenCaptureToStream::InitAVScreenCapture(int32_t videoWidth,
                                                  int32_t videoHeight) {
     if (g_avCapture != nullptr) {
@@ -199,7 +199,7 @@ void CAVScreenCaptureToStream::InitAVScreenCapture(int32_t videoWidth,
 4. 启动视频封装器。
 
   
-```text
+```cpp
 int32_t Muxer::Start() {
     int ret = OH_AVMuxer_Start(muxer_);
     return ret;
@@ -209,7 +209,7 @@ int32_t Muxer::Start() {
 5. 启动视频编码器。
 
   
-```text
+```cpp
 int32_t VideoEncoder::Start() {
     int ret = OH_VideoEncoder_Start(encoder_);
     return ret;
@@ -219,7 +219,7 @@ int32_t VideoEncoder::Start() {
 6. 创建并启动编码输出子线程。
 
   
-```text
+```cpp
 void CAVScreenCaptureToStream::EncOutputThread() {
     while (true) {
         if (!isStarted_) {
@@ -278,7 +278,7 @@ void CAVScreenCaptureToStream::EncOutputThread() {
 7. 将从编码器中获取的NativeWindow对象设置给AVScreenCapture，启动屏幕录制。
 
   
-```text
+```cpp
 void CAVScreenCaptureToStream::StartScreenCapture(int32_t outputFd, int32_t videoWidth, int32_t videoHeight) {
     InitMuxerAndEncoder(outputFd, videoWidth, videoHeight);
 
@@ -321,7 +321,7 @@ void CAVScreenCaptureToStream::StartScreenCapture(int32_t outputFd, int32_t vide
 6. 创建并启动编码输出子线程。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/GMaC-1EUSbiK0zaWNBA9dA/zh-cn_image_0000002747211243.png?HW-CC-KV=V1&HW-CC-Date=20260911T073142Z&HW-CC-Expire=86400&HW-CC-Sign=9F7418875598C262B5E210F16B4B96FED1C2B65C31A01D30D1107B61EA30C391)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/WCLOuMfxT666CnxE1i1vRw/zh-cn_image_0000002779092241.png?HW-CC-KV=V1&HW-CC-Date=20261009T013119Z&HW-CC-Expire=86400&HW-CC-Sign=935B430FFDAE1B4818C5BA54F4CE1EE21E91E25AADC68E09444DE4CB62DE34A6)
 
  
   
@@ -331,7 +331,7 @@ void CAVScreenCaptureToStream::StartScreenCapture(int32_t outputFd, int32_t vide
 2. 初始化视频编码器，创建并配置视频编码器，从编码器中获取NativeWindow对象。
 
   
-```text
+```cpp
 int32_t VideoEncoder::GetSurface(SampleInfo &sampleInfo) {
     int32_t ret = OH_VideoEncoder_GetSurface(encoder_, &sampleInfo.window);
     CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK && sampleInfo.window, AVCODEC_SAMPLE_ERR_ERROR,
@@ -342,7 +342,7 @@ int32_t VideoEncoder::GetSurface(SampleInfo &sampleInfo) {
   从NativeWindow对象获取对应的surfaceId。
 
   
-```text
+```cpp
 void NativeInit(napi_env env, void *data) {
     AsyncCallbackInfo *asyncCallbackInfo = static_cast<AsyncCallbackInfo *>(data);
     int32_t ret = Recorder::GetInstance().Init(asyncCallbackInfo->sampleInfo);
@@ -363,7 +363,7 @@ void NativeInit(napi_env env, void *data) {
 3. 初始化相机配置，并通过createVideoOutput接口创建相机输出流。
 
   
-```json
+```ArkTS
 try {
   videoSession.addOutput(encoderVideoOutput);
 } catch (error) {
@@ -374,7 +374,7 @@ try {
   点击相机录制时，启动相机输出流。
 
   
-```json
+```ArkTS
 encoderVideoOutput.start((err: BusinessError) => {
   if (err) {
     Logger.error(TAG, `Failed to start the encoder video output. error: ${JSON.stringify(err)}`);
@@ -387,7 +387,7 @@ encoderVideoOutput.start((err: BusinessError) => {
 4. 在开启相机时，启动视频封装器。
 
   
-```text
+```cpp
 int32_t Muxer::Start() {
     CHECK_AND_RETURN_RET_LOG(muxer_ != nullptr, AVCODEC_SAMPLE_ERR_ERROR, "Muxer is null");
 
@@ -400,7 +400,7 @@ int32_t Muxer::Start() {
 5. 启动视频编码器。
 
   
-```text
+```cpp
 int32_t VideoEncoder::Start() {
     CHECK_AND_RETURN_RET_LOG(encoder_ != nullptr, AVCODEC_SAMPLE_ERR_ERROR, "Encoder is null");
 
@@ -413,7 +413,7 @@ int32_t VideoEncoder::Start() {
 6. 创建并启动编码输出子线程。
 
   
-```text
+```cpp
 void Recorder::EncOutputThread() {
     while (true) {
         CHECK_AND_BREAK_LOG(isStarted_, "Work done, thread out");

@@ -1,6 +1,6 @@
 # 创建异步线程执行AVTranscoder视频转码(ArkTS)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avtranscoder-practice
 
@@ -224,7 +224,7 @@ export class AVTranscoderDemo {
 
 ## 使用异步线程的方式进行转码
 
-本示例使用的是worker线程的方式来实现异步线程进行转码，worker线程的详细使用方式，可以参见文档:
+本示例使用的是worker线程的方式来实现异步线程进行转码，worker线程的详细使用方式，可以参见文档：
 
  - [@ohos.worker (启动一个Worker)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-worker)
  - [Worker简介](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/worker-introduction)

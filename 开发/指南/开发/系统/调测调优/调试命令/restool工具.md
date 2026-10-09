@@ -1,6 +1,6 @@
 # restool工具
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/restool
 
@@ -26,8 +26,8 @@ restool工具存放在SDK安装目录下的toolchains文件夹中。
 | -o/--outputPath | 不可缺省 | 带参数 | 指定已编译资源的输出路径。 |
 | -p/--packageName | 不可缺省 | 带参数 | 指定编译资源的bundle名称。 |
 | -r/--resHeader | 不可缺省 | 带参数 | 指定资源的头文件生成路径，文件内容为资源名称与资源ID的映射表，支持4种格式：“.txt”、“.js”、“.h”、“.ts”。 说明： - “.txt”、“.js”、“.h”格式的文件包含-i指定的所有资源目录下的资源映射表。 - 从API version 23开始，支持“.ts”格式，文件内容仅包含-i指定的HAR编译产物的资源目录下的资源映射表。 |
-| -e/--startId | 可缺省 | 带参数 | 指定生成资源的起始ID值，例如：0x01000000,范围[0x01000000, 0x06FFFFFF),[0x08000000, 0xFFFFFFFF)。 |
-| -f/--forceWrite | 可缺省 | 不带参数 | 如果输出路径已经存在。强制删除，重新生成。 |
+| -e/--startId | 可缺省 | 带参数 | 指定生成资源的起始ID值，例如：0x01000000，范围[0x01000000, 0x06FFFFFF) 或 [0x08000000, 0xFFFFFFFF)。 |
+| -f/--forceWrite | 可缺省 | 不带参数 | 如果输出路径已经存在，强制删除，重新生成。 |
 | -h/--help | 可缺省 | 不带参数 | 查看工具帮助信息。 |
 | -m/--modules | 可缺省 | 带参数 | 多模块联合编译时，指定多个模块名。用“,”连接。 |
 | -x/--append | 可缺省 | 带参数 | 指定生成中间文件的资源目录或单个资源路径。同一个命令可以多次指定。 |
@@ -54,12 +54,9 @@ restool工具存放在SDK安装目录下的toolchains文件夹中。
 MccMnc匹配规则：Mcc（国家码）必须相同；Mnc（网络码）不存在时默认匹配，否则Mnc须相同才匹配。
 
 Locale匹配规则：Locale匹配需满足以下三条规则。
-
-1、语言须相同。
-
-2、脚本（文字）不存在时默认匹配，否则必须相同。
-
-3、国家或地区不存在时默认匹配，否则必须相同。
+1. 语言须相同。
+2. 脚本（文字）不存在时默认匹配，否则必须相同。
+3. 国家或地区不存在时默认匹配，否则必须相同。
 
 参数举例说明：Locale[zh_CN,en_US];Device[phone]，该参数过滤其他语言，保留能匹配上zh_CN和en_US的语言；过滤其他设备，保留phone；其他参数（如MccMnc、Orientation等）配置不过滤均保留。
 
@@ -228,33 +225,36 @@ entry/src/main
 ### 编译资源
 
 编译资源的方式有三种，分别是全量资源编译、增量资源编译和叠加资源编译。其中增量编译仅预览模式可用，用于预览开发阶段的组件效果；全量编译用于构建工程的资源文件；叠加编译支持将工程中的资源叠加进已有的HAP模板资源中，复用已编译的资源项。
+1. 全量资源编译，命令如下：
 
-1、全量资源编译，命令如下：
-
+  
 ```json
 restool -i entry/src/main -j entry/src/main/module.json -p com.ohos.demo -o out -r out/ResourceTable.txt -f
 ```
 
-2、增量资源编译，具体步骤如下：
+2. 增量资源编译，具体步骤如下：
 
-步骤一：生成资源中间件，命令如下:
+  步骤一：生成资源中间件，命令如下:
 
+  
 ```text
 restool -x entry/src/main/resource -o out
 ```
-
 步骤二：编译资源中间件，命令如下:
 
+  
 ```json
 restool -i out1 -i out2 -o out -p com.ohos.demo -r out/ResourceTable.txt -j entry/src/main/module.json -f -z
 ```
 
-3、叠加资源编译，命令如下：
+3. 叠加资源编译，命令如下：
 
+  
 ```json
 # hapResource为解压后的HAP包路径
 restool -i entry/src/main -i hapResource -j entry/src/main/module.json -p com.ohos.demo -o out -r out/ResourceTable.txt -f
 ```
+
 
 
 
@@ -1123,7 +1123,7 @@ The output path exists. Specify option -f/--forceWrite to overwrite.
 
 **可能原因**
 
-通过-o/--output指定的输出路径下已存在文件，无法直接覆盖。
+通过-o/--outputPath指定的输出路径下已存在文件，无法直接覆盖。
 
 **处理步骤**
 

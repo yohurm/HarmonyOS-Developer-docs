@@ -1,6 +1,6 @@
 # FAQ
 
-更新时间：2026-09-03 01:18:31
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos-clouddev-faq
 
@@ -10,8 +10,8 @@
  
 开发者使用DevEco Studio打开端云一体化项目文件夹，左侧的项目列表不显示云侧工程“CloudProgram”。
  
-
  
+
 **解决措施**
  
 端云一体化工程根目录下只允许有“Application”与“CloudProgram”文件夹，不能有其他文件。否则，DevEco Studio会把该工程当成纯端侧工程，不显示云侧工程“CloudProgram”。
@@ -28,8 +28,8 @@
  
 部署云数据库失败，提示“clouddb deploy failed. Reason is the number of CloudDBZone exceeds the limit.”
  
-
  
+
 **解决措施**
  
 出现此错误，表示AGC云端的存储区数量超过最大限制。
@@ -50,8 +50,8 @@
 ![](assets/FAQ/file-20260514134411372-1.png)
 
  
-
  
+
 **解决措施**
  
 出现此错误，可能是您在本地对象类型内做了与云端不兼容的修改。
@@ -60,8 +60,8 @@
  
 **需要注意的是，删除云端对象类型，对象类型内添加的数据也将一并删除，且不可恢复。**
  
-
  
+
  
 
 ## 体验端云一体化模板APP功能时，云存储上传图片失败，Hilog中打印“on response {"version":"HTTP/1.1","statusCode":403,"reason":"Forbidden","headers":{}}”
@@ -70,8 +70,8 @@
  
 体验端云一体化模板APP功能时，云存储上传图片失败，Hilog中打印“on response {"version":"HTTP/1.1","statusCode":403,"reason":"Forbidden","headers":{}}”。
  
-
  
+
 **解决措施**
  
 出现此错误，原因是访问权限不足，可采用以下任一方法解决：
@@ -88,8 +88,8 @@
  
 体验端云一体化模板APP功能时，云数据库界面不展示数据，Hilog中打印“schemaJson_ is empty”。
  
-
  
+
 **解决措施**
  
 请检查resources/rawfile目录下是否存在schema文件。schema文件是云数据库功能依赖的必要文件，部署云数据库成功时会自动产生。如schema文件不存在，请重新部署云数据库，或[从AGC控制台导出](https://developer.huawei.com/consumer/cn/doc/AppGallery-connect-Guides/agc-clouddb-agcconsole-objecttypes-0000001127675459#section1558018208151)。
@@ -98,8 +98,8 @@
 ![](assets/FAQ/file-20260514134411372-2.png)
 
  
-
  
+
  
 
 ## 云数据库无法新建数据条目，Hilog中打印“2001015:permission denied”
@@ -108,8 +108,8 @@
  
 云数据库无法新建数据条目，Hilog中打印“2001015:permission denied”。
  
-
  
+
 **解决措施**
  
 出现此错误，是因为APP操作者的角色权限不足，请检查[操作的对象类型的权限配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos-clouddev-objecttype#li01856582915)。
@@ -122,8 +122,8 @@
  
 云函数调用失败，error message包含“404:160404:Trigger not exist”。
  
-
  
+
 **解决措施**
  
 出现此错误，是因为云函数未部署。error message中的404是服务端返回的HTTP状态码，表示找不到对应的函数。
@@ -136,8 +136,8 @@
  
 云函数调用失败，error message包含“hmos auth app doesn't have permission”。
  
-
  
+
 **解决措施**
  
 出现此错误，是因为选择的签名方式有误。推荐您使用[关联注册应用进行签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing-auto#section6333421192714)方式，或者使用[手动签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing-manual)。

@@ -1,6 +1,6 @@
 # 网络诊断：Network分析
 
-更新时间：2026-08-29 09:41:34
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-profiler-network
 
@@ -69,6 +69,6 @@ DevEco Profiler的Network分析任务，提供了启动过程网络问题分析�
 
  
  
-具体操作方法为：在任务列表中单击Network任务后的![icon](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/v2Q14M0LTBqHJ72QeRbu-g/zh-cn_image_0000002701662854.png?HW-CC-KV=V1&HW-CC-Date=20260911T072819Z&HW-CC-Expire=86400&HW-CC-Sign=2447561360D5C23D1D8092DDAB0CC012F368C99C1CFDA4B1042B683B37013441)按钮。
+具体操作方法为：在任务列表中单击Network任务后的![icon](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/bIhGRvEyTt6b2tzSSE3kcg/zh-cn_image_0000002701662854.png?HW-CC-KV=V1&HW-CC-Date=20261009T012824Z&HW-CC-Expire=86400&HW-CC-Sign=DC110545A7D5EFBDB16D4A756F211227DC1AD0F4D38E83338960A4C3D32222F7)按钮。
  
 在分析结束后，呈现出的数据类型以及相应的处理方法，与非启动过程的分析相同。

@@ -1,13 +1,13 @@
 # @typescript-eslint/prefer-for-of
 
-更新时间：2026-08-29 09:41:34
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_prefer-for-of
 
 强制使用“for-of”循环而不是标准“for”循环。
  
-
  
+
 
 ## 规则配置
 

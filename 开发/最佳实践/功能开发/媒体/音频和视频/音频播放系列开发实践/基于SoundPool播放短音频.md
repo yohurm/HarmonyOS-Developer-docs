@@ -1,6 +1,6 @@
 # 基于SoundPool播放短音频
 
-更新时间：2026-09-09 06:06:31
+更新时间：2026-09-15 02:12:10
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-playing-short-audio-based-soundpool
 
@@ -145,7 +145,7 @@ async playSoundPool() {
 }
 ```
  
-7. 开发者可以通过配置播放参数PlayParameters实现不同的播放效果，也可以通过单独调用[setLoop](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-multimedia-soundpool#setloop)、[setPriority](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-multimedia-soundpool#setpriority)、[setVolume](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-multimedia-soundpool#setvolume)、[setRate](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-multimedia-soundpool#setrate-1)等函数来实现不同的播放效果。下面以设置短音频的循环模式为例，其他设置方法的调用方式相同。
+7. 开发者可以通过配置播放参数PlayParameters实现不同的播放效果，也可以通过单独调用[setLoop](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-multimedia-soundpool#setloop)、[setPriority](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-multimedia-soundpool#setpriority)、[setVolume](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-multimedia-soundpool#setvolume)、[setRate](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-multimedia-soundpool#setrate-1)等函数来实现不同的播放效果。下面以设置短音频的循环模式、播放速率为例，其他设置方法的调用方式相同。
  
 ```ArkTS
 if (!this.soundPool) {
@@ -154,6 +154,15 @@ if (!this.soundPool) {
 }
 // ...
 await this.soundPool.setLoop(this.streamId, 2);
+```
+ 
+```ArkTS
+if (!this.soundPool) {
+  hilog.error(0x0000, 'SoundPool', `soundPool is undefined`);
+  return;
+}
+await this.playSoundPool();
+await this.soundPool.setRate(this.streamId, audio.AudioRendererRate.RENDER_RATE_DOUBLE)
 ```
  
 8. 停止播放，取消监听，释放SoundPool实例。

@@ -66,7 +66,6 @@
 | 属性变更 | 类名：SubHeaderV2SelectOptions； API声明：selectedContent?: string; 差异内容：string | 类名：SubHeaderV2SelectOptions； API声明：selectedContent?: ResourceStr; 差异内容：ResourceStr | api/@ohos.arkui.advanced.SubHeaderV2.d.ets |
 | 属性变更 | 类名：SubHeaderV2Select； API声明：@Trace selectedContent?: string; 差异内容：string | 类名：SubHeaderV2Select； API声明：@Trace selectedContent?: ResourceStr; 差异内容：ResourceStr | api/@ohos.arkui.advanced.SubHeaderV2.d.ets |
 | 属性变更 | 类名：SwipeRefresher； API声明：@Prop content?: string; 差异内容：string | 类名：SwipeRefresher； API声明：@Prop content?: ResourceStr; 差异内容：ResourceStr | api/@ohos.arkui.advanced.SwipeRefresher.d.ets |
-|    |    |    |    |
 | 属性变更 | 类名：BadgeStyle； API声明：fontSize?: number \| string; 差异内容：number,string | 类名：BadgeStyle； API声明：fontSize?: number \| ResourceStr; 差异内容：number,ResourceStr | component/badge.d.ts |
 | 属性变更 | 类名：BadgeStyle； API声明：badgeSize?: number \| string; 差异内容：number,string | 类名：BadgeStyle； API声明：badgeSize?: number \| ResourceStr; 差异内容：number,ResourceStr | component/badge.d.ts |
 | 属性变更 | 类名：BadgeStyle； API声明：fontWeight?: number \| FontWeight \| string; 差异内容：number,FontWeight,string | 类名：BadgeStyle； API声明：fontWeight?: number \| FontWeight \| ResourceStr; 差异内容：number,FontWeight,ResourceStr | component/badge.d.ts |

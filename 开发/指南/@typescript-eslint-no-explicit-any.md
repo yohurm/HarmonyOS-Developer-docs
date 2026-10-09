@@ -1,0 +1,98 @@
+# @typescript-eslint/no-explicit-any
+
+更新时间：2026-10-08 09:38:49
+
+来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-no-explicit-any
+
+不允许使用“any”类型。
+ 
+该规则仅支持对.js/.ts文件进行检查。
+ 
+
+## 规则配置
+
+```json
+// code-linter.json5
+{
+  <span style="color: rgb(135,16,148);">"rules"</span>: {
+    "@typescript-eslint/no-explicit-any": "error"
+  }
+}
+```
+ 
+ 
+
+## 选项
+
+详情请参考[@typescript-eslint/no-explicit-any选项](https://typescript-eslint.nodejs.cn/rules/no-explicit-any#options)。
+ 
+ 
+
+## 正例
+
+```text
+export const age1 = 17;
+export const age2 = [age1];
+export const age3 = [age1];
+
+export function greet1(): string {
+  return 'greet';
+}
+
+export function greet2(): string[] {
+  return ['greet'];
+}
+
+export function greet4(): string[][] {
+  return [['greet']];
+}
+
+export function greet5(param: readonly string[]): string {
+  return param[age1];
+}
+
+export function greet6(param: readonly string[]): string[] {
+  return [...param];
+}
+```
+ 
+ 
+
+## 反例
+
+```text
+export const age1: any = 17;
+export const age2: any = [age1];
+export const age3: any = [age1];
+
+export function greet1(): any {
+  return 'greet';
+}
+
+export function greet2(): any[] {
+  return ['greet'];
+}
+
+export function greet4(): any[][] {
+  return [['greet']];
+}
+
+export function greet5(param: readonly any[]): any {
+  return param[age1];
+}
+
+export function greet6(param: readonly any[]): any[] {
+  return [...param];
+}
+```
+ 
+ 
+
+## 规则集
+
+```text
+<span style="color: rgb(6,125,23);">plugin:@typescript-eslint/recommended</span>
+<span style="color: rgb(6,125,23);">plugin:@typescript-eslint/all</span>
+```
+ 
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-code-linter)。

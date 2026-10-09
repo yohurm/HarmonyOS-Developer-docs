@@ -1,6 +1,6 @@
 # GridObjectSortComponent
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-gridobjectsortcomponent
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -206,11 +206,11 @@ struct Index {
           select: Array<GridObjectSortComponentItem>,
           unselect: Array<GridObjectSortComponentItem>
         ) => {
-          // save ToDo
+          // 实现保存数据的逻辑
         },
         // 取消保存数据的回调。
         onCancel: () =>{
-          // cancel ToDo
+          // 实现取消编辑的逻辑
         }
       })
     }
@@ -219,4 +219,4 @@ struct Index {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/EG3kiy5mQMelf08thmDFFQ/zh-cn_image_0000002717773092.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073029Z&HW-CC-Expire=86400&HW-CC-Sign=9BF2BEDC380A4E892A262809CDFA7CCD2F16EFB7517E80A1FD99CDB22E3A04FC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/OIauXCIbRoOM6HTTrwTaRg/zh-cn_image_0000002778934315.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013037Z&HW-CC-Expire=86400&HW-CC-Sign=58FD91F02A3B0D16ADE8D1C12507A9DF5A26EB297A180F0C7F39541D0943A52D)

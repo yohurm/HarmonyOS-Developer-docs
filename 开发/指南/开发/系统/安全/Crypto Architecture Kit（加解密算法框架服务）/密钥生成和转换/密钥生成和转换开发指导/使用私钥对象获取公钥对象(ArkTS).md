@@ -1,6 +1,6 @@
 # 使用私钥对象获取公钥对象(ArkTS)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-prikey-to-get-pubkey
 
@@ -15,7 +15,7 @@
 1. 调用[cryptoFramework.createAsyKeyGenerator](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#cryptoframeworkcreateasykeygenerator)，指定字符串参数'RSA1024'，创建RSA密钥类型为RSA1024、素数个数为2的非对称密钥生成器（AsyKeyGenerator）。
 
   生成RSA非对称密钥时，默认素数为2，此处省略了参数PRIMES_2。
-2. 调用[AsyKeyGenerator.generateKeyPair](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#generatekeypair-1)，随机生成非对称密钥对象（KeyPair）。
+2. 调用[AsyKeyGenerator.convertKeySync](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#convertkeysync12-1)，传入私钥的二进制数据，生成非对称密钥对象（KeyPair）。
 
   KeyPair对象中包括公钥PubKey、私钥PriKey。
 3. 调用[PubKey.getEncoded](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#getencoded)获取KeyPair中公钥对象的二进制数据。
@@ -83,8 +83,8 @@ async function prikeyGetPubKeyAsync() {
   try {
     let keyPair = rsaGenerator.convertKeySync(null, skDataBlob);
     let priKey = keyPair.priKey;
-    let pubkey = await priKey.getPubKey();
-    let pkBlob = pubkey.getEncoded();
+    let pubKey = await priKey.getPubKey();
+    let pkBlob = pubKey.getEncoded();
     console.info('pk1 bin data: ' + pkBlob.data);
     let ret: boolean = compareUint8Array(pkBlob.data, expectPkdata);
     console.info('result: ' + ret);
@@ -154,8 +154,8 @@ function generateAsyKey() {
   try {
     let keyPair = rsaGenerator.convertKeySync(null, skDataBlob);
     let priKey = keyPair.priKey;
-    let pubkey = priKey.getPubKeySync();
-    let pkBlob = pubkey.getEncoded();
+    let pubKey = priKey.getPubKeySync();
+    let pkBlob = pubKey.getEncoded();
     console.info('pk1 bin data: ' + pkBlob.data);
     let ret: boolean = compareUint8Array(pkBlob.data, expectPkdata);
     console.info('result: ' + ret);

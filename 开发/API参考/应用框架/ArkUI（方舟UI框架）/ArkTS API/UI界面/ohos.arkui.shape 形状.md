@@ -1,6 +1,6 @@
 # @ohos.arkui.shape (形状)
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-shape
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -258,7 +258,7 @@ radiusWidth(rWidth: number | string): RectShape
 
 | 类型 | 说明 |
 | --- | --- |
-| RectShape | 返回设置圆角半径后的RectShape对象，可用于链式调用继续配置矩形形状。 |
+| RectShape | 返回设置圆角半径宽度后的RectShape对象，可用于链式调用继续配置矩形形状。 |
  
  
   
@@ -324,7 +324,7 @@ radius(radius: number | string | Array<number  |  string>): RectShape
 
 | 类型 | 说明 |
 | --- | --- |
-| RectShape | 返回设置圆角半径宽度后的RectShape对象，可用于链式调用继续配置矩形形状。 |
+| RectShape | 返回设置圆角半径后的RectShape对象，可用于链式调用继续配置矩形形状。 |
  
  
   
@@ -702,4 +702,4 @@ struct ShapeExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/iFnGWPt5TJ-AxCJu8Pz5Aw/zh-cn_image_0000002747292323.png?HW-CC-KV=V1&HW-CC-Date=20260911T072837Z&HW-CC-Expire=86400&HW-CC-Sign=B992787A66C3172743BC38E48538263E4D9C07FC1425F81E83F84F7175E7DCA5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/eoLPcfaKRbq51CIinszzuA/zh-cn_image_0000002749494188.png?HW-CC-KV=V1&HW-CC-Date=20261009T012847Z&HW-CC-Expire=86400&HW-CC-Sign=79320E1D1A8DD49243DF7F6D07543C1ADF47410C61534DDF1394239C332F3117)

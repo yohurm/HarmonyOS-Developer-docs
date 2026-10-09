@@ -1,6 +1,6 @@
 # 数据防泄漏服务开发指导(C/C++)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/dlp-guidelines-ndk
 
@@ -55,7 +55,7 @@ target_link_libraries(entry PUBLIC libace_napi.z.so libohdlp_permission.so)
 2. 导入数据防泄漏服务的头文件和NAPI相关头文件。
 
   
-```text
+```cpp
 #include "napi/native_api.h"
 #include <cstdint>
 #include <cstdlib>
@@ -65,7 +65,7 @@ target_link_libraries(entry PUBLIC libace_napi.z.so libohdlp_permission.so)
 3. 查询当前DLP沙箱的权限信息。
 
   
-```text
+```cpp
 static napi_value GetDlpPermissionInfo(napi_env env, napi_callback_info info)
 {
     DLP_FileAccess dlpFileAccess = NO_PERMISSION; // 表示DLP文件授权类型
@@ -86,7 +86,7 @@ static napi_value GetDlpPermissionInfo(napi_env env, napi_callback_info info)
 4. 获取指定DLP文件名的原始文件名。
 
   
-```text
+```cpp
 static napi_value GetOriginalFileName(napi_env env, napi_callback_info info)
 {
     const char *fileName = "test.txt.dlp"; // 表示DLP文件名，用以获取原始文件名
@@ -107,7 +107,7 @@ static napi_value GetOriginalFileName(napi_env env, napi_callback_info info)
 5. 查询当前应用是否运行在DLP沙箱环境。
 
   
-```text
+```cpp
 static napi_value IsInSandbox(napi_env env, napi_callback_info info)
 {
     bool isInSandbox = false; // true表示当前应用在沙箱中，false表示应用不在沙箱
@@ -126,7 +126,7 @@ static napi_value IsInSandbox(napi_env env, napi_callback_info info)
 6. 设置沙箱应用配置信息。
 
   
-```json
+```cpp
 static napi_value SetSandboxAppConfig(napi_env env, napi_callback_info info)
 {
     const char *configInfo = "configInfo"; // 沙箱应用配置信息，用户可将配置信息json化后传入
@@ -141,7 +141,7 @@ static napi_value SetSandboxAppConfig(napi_env env, napi_callback_info info)
 7. 获取沙箱应用配置信息。
 
   
-```json
+```cpp
 static napi_value GetSandboxAppConfig(napi_env env, napi_callback_info info)
 {
     char *configInfo = nullptr; // 输出json化后的沙箱应用配置信息
@@ -161,7 +161,7 @@ static napi_value GetSandboxAppConfig(napi_env env, napi_callback_info info)
 8. 清理沙箱应用配置信息。
 
   
-```text
+```cpp
 static napi_value CleanSandboxAppConfig(napi_env env, napi_callback_info info)
 {
     DLP_ErrCode ret = OH_DLP_CleanSandboxAppConfig();

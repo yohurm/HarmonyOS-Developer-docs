@@ -1,20 +1,21 @@
 # edm工具
 
-更新时间：2026-03-09 02:50:43
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/edm-tool
 
 Enterprise Device Manager（企业设备管理工具，简称为edm），为设备管理应用提供调试和测试能力，例如激活企业设备管理拓展能力、解除激活企业设备管理拓展能力。
   
 
-#### 环境要求
+## 环境要求
 
 在使用本工具前，开发者需要先获取hdc工具，执行hdc shell。
  
   
 
-#### edm工具命令列表
+## edm工具命令列表
  
+
 | 命令 | 描述 |
 | --- | --- |
 | help | 帮助命令，用于查询edm支持的命令信息。 |
@@ -24,7 +25,7 @@ Enterprise Device Manager（企业设备管理工具，简称为edm），为设�
  
   
 
-#### 帮助命令（help）
+## 帮助命令（help）
 
 ```bash
 # 显示帮助信息
@@ -33,7 +34,7 @@ edm help
  
   
 
-#### 激活命令（enable-admin）
+## 激活命令（enable-admin）
 
 ```bash
 # 显示帮助信息
@@ -44,6 +45,7 @@ edm enable-admin -n <bundleName> -a <abilityName> [-t <adminType>]
  
 **激活命令参数列表**
   
+
 | 参数 | 参数说明 |
 | --- | --- |
 | -h/--help | 帮助信息。 |
@@ -63,7 +65,7 @@ enable-admin success.
  
   
 
-#### 解除激活命令（disable-admin）
+## 解除激活命令（disable-admin）
 
 ```bash
 # 显示帮助信息
@@ -74,6 +76,7 @@ edm disable-admin -n <bundleName>
  
 **解除激活命令参数列表**
   
+
 | 参数 | 参数说明 |
 | --- | --- |
 | -h/--help | 帮助信息。 |
@@ -91,11 +94,11 @@ disable-admin success.
  
   
 
-#### edm工具错误信息
+## edm工具错误信息
 
   
 
-#### error: command requires option
+### error: command requires option
 
 **错误描述**
  
@@ -106,14 +109,12 @@ disable-admin success.
 未传入bundleName和abilityName。
  
 **处理步骤**
- 
-1、如果当前使用的命令是enable-admin，请补充-n <bundle-name>和-a <ability-name>参数。
- 
-2、如果当前使用的命令是disable-admin，请补充-n <bundle-name>参数。
+ 1. 如果当前使用的命令是enable-admin，请补充-n <bundle-name>和-a <ability-name>参数。
+2. 如果当前使用的命令是disable-admin，请补充-n <bundle-name>参数。
  
   
 
-#### error: -n, --bundle-name option requires an argument
+### error: -n, --bundle-name option requires an argument
 
 **错误描述**
  
@@ -129,7 +130,7 @@ disable-admin success.
  
   
 
-#### error: -a, --ability-name option requires an argument
+### error: -a, --ability-name option requires an argument
 
 **错误描述**
  
@@ -145,7 +146,7 @@ disable-admin success.
  
   
 
-#### error: unknown option
+### error: unknown option
 
 **错误描述**
  
@@ -161,7 +162,7 @@ disable-admin success.
  
   
 
-#### error: -n <bundle-name> is expected
+### error: -n <bundle-name> is expected
 
 **错误描述**
  
@@ -177,7 +178,7 @@ disable-admin success.
  
   
 
-#### error: -a <ability-name> is expected
+### error: -a <ability-name> is expected
 
 **错误描述**
  
@@ -193,19 +194,16 @@ disable-admin success.
  
   
 
-#### 9200003 error: the administrator ability component is invalid
+### 9200003 error: the administrator ability component is invalid
 
 **错误描述**
  
 传入的bundleName或者abilityName不正确或者不是enterpriseAdmin类型的ExtensionAbility。
  
 **可能原因**
- 
-1、传入的bundleName不正确。
- 
-2、传入的abilityName不正确。
- 
-3、传入的不是enterpriseAdmin类型的ExtensionAbility。
+ 1. 传入的bundleName不正确。
+2. 传入的abilityName不正确。
+3. 传入的不是enterpriseAdmin类型的ExtensionAbility。
  
 **处理步骤**
  
@@ -213,41 +211,33 @@ disable-admin success.
  
   
 
-#### 9200004 error: failed to enable the administrator application of the device
+### 9200004 error: failed to enable the administrator application of the device
 
 **错误描述**
  
 激活失败。
  
 **可能原因**
- 
-1、传入的bundleName不正确。
- 
-2、传入的不是enterpriseAdmin类型的ExtensionAbility。
- 
-3、存在已激活的正式的enterpriseAdmin类型的ExtensionAbility。
+ 1. 传入的bundleName不正确。
+2. 传入的不是enterpriseAdmin类型的ExtensionAbility。
+3. 存在已激活的正式的enterpriseAdmin类型的ExtensionAbility。
  
 **处理步骤**
- 
-1、查询应用的bundleName和enterpriseAdmin类型的ExtensionAbility的abilityName，并将其传入到参数中。
- 
-2、请使用未被管控的设备进行调试。
+ 1. 查询应用的bundleName和enterpriseAdmin类型的ExtensionAbility的abilityName，并将其传入到参数中。
+2. 请使用未被管控的设备进行调试。
  
   
 
-#### 9200005 error: failed to disable the administrator application of the device
+### 9200005 error: failed to disable the administrator application of the device
 
 **错误描述**
  
 解除激活失败。
  
 **可能原因**
- 
-1、此组件未被激活。
- 
-2、此组件不是通过hdc命令被激活的。
- 
-3、解除激活失败。
+ 1. 此组件未被激活。
+2. 此组件不是通过hdc命令被激活的。
+3. 解除激活失败。
  
 **处理步骤**
  

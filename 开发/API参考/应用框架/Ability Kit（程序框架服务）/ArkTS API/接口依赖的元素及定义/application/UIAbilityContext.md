@@ -1,6 +1,6 @@
 # UIAbilityContext
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -4083,7 +4083,7 @@ restartApp(want: Want): Promise&lt;void&gt;
 | 801 | Capability not supported. |
 | 16000011 | The context does not exist. |
 | 16000050 | Connect to system server error. |
-| 16000063 | The target to restart does not belong to the caller or is not a UIAbility. |
+| 16000063 | The target to restart does not belong to the current application or is not a UIAbility. |
 | 16000064 | Restart too frequently. |
 | 16000065 | The API can be called only when the ability is focused. |
 

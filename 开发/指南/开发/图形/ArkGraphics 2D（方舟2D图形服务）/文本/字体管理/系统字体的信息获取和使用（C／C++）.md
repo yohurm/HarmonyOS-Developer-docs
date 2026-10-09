@@ -28,8 +28,6 @@
 | OH_Drawing_SetTextStyleFontFamilies(OH_Drawing_TextStyle* style, int fontFamiliesNumber, const char *fontFamilies[]) | 设置指定文本样式的字体家族类型。 |
 | void OH_Drawing_DisableFontCollectionSystemFont(OH_Drawing_FontCollection* fontCollection) | 禁用系统字体。 |
 
-
-
 | 结构体名 | 描述 |
 | --- | --- |
 | OH_Drawing_FontConfigInfo | 系统字体配置信息结构体。 |

@@ -1,6 +1,6 @@
 # 高性能JSON解析
 
-更新时间：2026-08-17 09:32:31
+更新时间：2026-09-15 02:12:10
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-high-performance-json-parsing
 
@@ -272,8 +272,8 @@ const obj: ESObject = await jsonNode.toPlainObjectAsync();
 ![](assets/高性能JSON解析/file-20260515115041384-1.png)
 
  
-
  
+
 **反序列化性能对比**
   
 
@@ -286,7 +286,7 @@ const obj: ESObject = await jsonNode.toPlainObjectAsync();
  
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/QFSklI0wTWikawQD5GMPKw/zh-cn_image_0000002501330544.png?HW-CC-KV=V1&HW-CC-Date=20260911T072524Z&HW-CC-Expire=86400&HW-CC-Sign=60C1EAB28A431459BE0AFBA14EF8C0A8922F0D354533DD3AC9E19593615D3DE4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/WT3zQz-rQeiwUAJn1ezswg/zh-cn_image_0000002501330544.png?HW-CC-KV=V1&HW-CC-Date=20261009T012644Z&HW-CC-Expire=86400&HW-CC-Sign=52C4B932F30D0EE85217E133190B92F240EF2A1683EB0C9451ED27DFF6271BD9)
 
  
 通过上述比对数据发现：

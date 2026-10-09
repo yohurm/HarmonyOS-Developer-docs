@@ -1,6 +1,6 @@
 # 能耗诊断：Energy分析
 
-更新时间：2026-08-29 09:41:34
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-profiler-energy
 
@@ -25,8 +25,8 @@ Energy模板支持的泳道包括：Energy Anomaly、Temperature、Energy、Fram
 
 录制结束等待处理数据完成。默认包含Energy Anomaly、Temperature以及Energy三条能耗相关泳道。
  
-
  
+
 **Energy Anomaly泳道**
  
 用于展示能耗相关的异常帧信息。该泳道暂不支持在Wearable设备和2in1设备上进行应用性能分析。其中，从26.0.0版本开始，不支持2in1设备。
@@ -44,8 +44,8 @@ Energy模板支持的泳道包括：Energy Anomaly、Temperature、Energy、Fram
 
 
  
-
  
+
 **Temperature泳道**
  
 用于展示整机的温度信息。该泳道暂不支持在2in1设备上进行应用性能分析。
@@ -55,12 +55,12 @@ Energy模板支持的泳道包括：Energy Anomaly、Temperature、Energy、Fram
 
 
  
-
  
+
 **Energy泳道**
  
 用于展示各器件的能耗信息及整机电流信息。
  
 - 可在Energy泳道中查看录制范围内具体器件消耗的电量，器件包含：CPU、*Display（屏幕显示耗电量）、GPU、Location（定位模块耗电量）、Camera（相机耗电量）、Bluetooth（蓝牙功能耗电量）、Flashlight（闪光灯功能耗电量）、Audio（声音模块耗电量）、Wifi（无线功能耗电量）、Modem（信号模块耗电量）。*Device表示整机电流消耗情况。
 - 框选Energy泳道数据，**Energy Detail**中呈现框选时间段内的详情信息，根据不同器件的消耗可结合Callstack泳道的调用栈信息进行进一步分析。
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/aLZZP2OGRwemDWAeqoUR5Q/zh-cn_image_0000002701822854.png?HW-CC-KV=V1&HW-CC-Date=20260911T072818Z&HW-CC-Expire=86400&HW-CC-Sign=3B4CF7F22B6A2D8596B579DF31F0790438E9F960C33550C79FF297B558348381)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/DB8IjCqWQsGTrQr678mApw/zh-cn_image_0000002701822854.png?HW-CC-KV=V1&HW-CC-Date=20261009T012823Z&HW-CC-Expire=86400&HW-CC-Sign=EDF5730C9CF0731673303C8079FC091BF4085FB7157F3782AA6B465C41C7457D)

@@ -1,6 +1,6 @@
 # 图片区域解码与下采样(C/C++)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-region-and-downsampling-c
 
@@ -148,7 +148,7 @@ napi_value DownsampleDecode(napi_env env, napi_callback_info info)
 | IMAGE_CROP_AND_SCALE_STRATEGY_CROP_FIRST | 2 | 先裁剪，再缩放。 | 推荐使用，可减少解码峰值内存。 |
 
 
-**推荐使用CROP_FIRST**：先裁剪再缩放可精确控制裁剪区域，保证不同格式解码效果一致。
+**推荐使用IMAGE_CROP_AND_SCALE_STRATEGY_CROP_FIRST**：先裁剪再缩放可精确控制裁剪区域，保证不同格式解码效果一致。
 
 参数详情请参考[Image_CropAndScaleStrategy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-source-native-h#image_cropandscalestrategy)。
 

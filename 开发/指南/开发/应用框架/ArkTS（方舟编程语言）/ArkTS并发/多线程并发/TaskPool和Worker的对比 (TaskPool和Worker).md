@@ -1,6 +1,6 @@
 # TaskPool和Worker的对比
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/taskpool-vs-worker
 
@@ -54,7 +54,7 @@ Worker拥有独立的运行环境，每个Worker线程和主线程一样拥有�
 **图 1** Worker工作原理
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/QH8qbiHmR_a1eu3V_jf0Bg/zh-cn_image_0000002747289891.png?HW-CC-KV=V1&HW-CC-Date=20260911T073101Z&HW-CC-Expire=86400&HW-CC-Sign=3C8D687FD8D00B9C211DFB409DC41C93F71FC3086D7EDF865E96BC03C4EF01BB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/RoFK0wzFQCujMxgMHK1OBg/zh-cn_image_0000002749491638.png?HW-CC-KV=V1&HW-CC-Date=20261009T013052Z&HW-CC-Expire=86400&HW-CC-Sign=2B25ADE34446607383DA5EEEBC5BBEA1A6A3818DAD12CB405183D0E2910C741D)
 
  
 在多核的情况下（下图中的CPU 1和CPU 2能同时工作），多个Worker线程（下图中的Worker thread1和Worker thread2）可以同时执行，因此Worker线程做到了真正的并发，如下图所示：
@@ -62,7 +62,7 @@ Worker拥有独立的运行环境，每个Worker线程和主线程一样拥有�
 **图 2** 多核CPU下Worker并发原理图
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/mOK_DPZ-TOSQLrUImQmEBA/zh-cn_image_0000002747209809.png?HW-CC-KV=V1&HW-CC-Date=20260911T073101Z&HW-CC-Expire=86400&HW-CC-Sign=C9A734BA4688895964041DAACAA864002F4FE6DFF4A47BCA99CFF58D3A734868)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/CdzceZyITuyHNfXLkjaYGw/zh-cn_image_0000002779090695.png?HW-CC-KV=V1&HW-CC-Date=20261009T013052Z&HW-CC-Expire=86400&HW-CC-Sign=7912F807539827A5B74E4C7C9051E473E6D9AB30A6D07591AE633E6E62DAF053)
 
  
   
@@ -74,7 +74,7 @@ TaskPool在Worker之上实现了调度器和Worker线程池，无需管理生命
 **图 3** TaskPool工作原理图
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/jfDEi28qT9WU2PTpHFQfLw/zh-cn_image_0000002717769876.png?HW-CC-KV=V1&HW-CC-Date=20260911T073101Z&HW-CC-Expire=86400&HW-CC-Sign=DB60F19ECD1D5359248AB752EA6071ED0F43DE2C4EE227903835BC0F04B3CE47)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/OECNewQpS_eZzkKU8y2fPg/zh-cn_image_0000002778930839.png?HW-CC-KV=V1&HW-CC-Date=20261009T013052Z&HW-CC-Expire=86400&HW-CC-Sign=14D638C0B880B10CAE0D0E3A142737ED0C05C8089918C5DCAEC3CF663B80D53F)
 
  
   
@@ -140,7 +140,7 @@ Worker适用于需要长时间占据线程，并由开发者主动管理线程�
 **图 4** ArkTS图片编辑效果
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/wANEXVyxQaGyYjJLi-6rCQ/zh-cn_image_0000002717609942.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073101Z&HW-CC-Expire=86400&HW-CC-Sign=6AD4C5B52B0EB4C03F039FDA11934A734640F60A396D7C022491CAB373202B18)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/tKOPuC7TQdimZg7fwEvQZQ/zh-cn_image_0000002749331756.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013052Z&HW-CC-Expire=86400&HW-CC-Sign=5F5F307A9016ADFF26B7A8C68C0554691A58F4021EDC16945CAC838699F85399)
 
  
 > [!NOTE]
@@ -159,7 +159,7 @@ Worker适用于需要长时间占据线程，并由开发者主动管理线程�
  1. 根据任务数创建Worker实例，由于Worker最多同时运行的子线程数量为64个（API12新增支持，旧版本为8个），所以当任务数超过64时需要做相应限制，示例代码如下。
 
   
-```text
+```ArkTS
 let taskNum: number = 14; // The number of concurrent tasks is controlled, which can be adjusted according to the demand.
 let curTaskNum: number = taskNum <= 64 ? taskNum : 64; // Control allows up to 64 Worker instances to run at the same time.
 let Workers: worker.ThreadWorker[] = [];
@@ -172,7 +172,7 @@ for (let i = 0; i < curTaskNum; i++) { // Control the number of instantiations o
 2. 根据任务数将图片像素字节数进行拆分，并分配给已创建的Worker实例进行计算处理。
 
   
-```text
+```ArkTS
 // Split the picture pixel data ArrayBuffer according to the number of tasks N.
 function splitArrayBuffer(buffer: ArrayBuffer, taskCount: number): ArrayBuffer[] {
   const BYTES_PER_PIXEL = 4; // RGBA
@@ -210,7 +210,7 @@ function splitArrayBuffer(buffer: ArrayBuffer, taskCount: number): ArrayBuffer[]
 3. 接收到任务的Worker子线程会进行像素计算，并将计算结果返回给主线程。
 
   
-```text
+```ArkTS
 // The child thread receives the task and calculates it.
 WorkerPort.onmessage = (event: MessageEvents) => {
   let bufferArray: ArrayBuffer = event.data.buf;
@@ -248,7 +248,7 @@ function execColorInfo(bufferArray: ArrayBuffer, last: number, cur: number, hsvI
 4. 当主线程接收到子线程的计算结果时，如果还有剩余任务没有处理，就会复用该Worker子线程继续处理剩余任务；当所有任务都处理完成时，销毁所有子线程，并将所有任务处理结果进行合并进而更新UI。
 
   
-```text
+```ArkTS
 let num = 0; // Number of tasks processed
   let newBuffers: ArrayBuffer[] = [];
   for (let i = 0; i < taskNum; i++) {
@@ -340,7 +340,7 @@ async sliderChange(value: number, mode: SliderChangeMode) {
 2. 根据任务数拆分任务，并把任务放进任务组里面，调用TaskPool的execute()接口将TaskGroup任务组中的每个任务放入线程池中，系统会根据第二个参数任务优先级进行调度执行。TaskGroup任务组内的每个任务的执行顺序会与执行结果数组中的顺序保持一致。将任务组的执行结果（数组内多个任务的处理结果）合并并返回给主线程。
 
   
-```json
+```ArkTS
 private async execImageProcessing(buffer: ArrayBuffer, type: AdjustId, value: number): Promise<ArrayBuffer> {
     const buffers = splitArrayBuffer(buffer, 240);
     const group = splitTask(buffers, type, value);
@@ -431,13 +431,13 @@ TaskPool与Worker都具有转移控制权、深拷贝两种方式，Worker不支
 **图 5** 中载模型下Worker与TaskPool耗时对比
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/v7Vo90G_QrupuB6QBU-8BQ/zh-cn_image_0000002747289893.png?HW-CC-KV=V1&HW-CC-Date=20260911T073101Z&HW-CC-Expire=86400&HW-CC-Sign=B20E3EFFAB3E4A3975ADB6210BD305047E9C8947C322E93331E4E8DCCD4F712D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/essDM8BBR_6ca-1R_UbvBA/zh-cn_image_0000002749491640.png?HW-CC-KV=V1&HW-CC-Date=20261009T013052Z&HW-CC-Expire=86400&HW-CC-Sign=FBA4F9F07B6CA405FCABE5B735F010DE25A9A887519BC8404CED59EB2004B86A)
 
  
 **图 6** 重载模型下TaskPool与Worker耗时对比
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/AZvxlgHKT5KYTklqk_EpRw/zh-cn_image_0000002747209811.png?HW-CC-KV=V1&HW-CC-Date=20260911T073101Z&HW-CC-Expire=86400&HW-CC-Sign=91E60B7387FC6F0AC182CE25C9410C4E5C59C33181AC8B7DFCFD29266AE60503)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/fdiwXEMuQ1mmtX9qmtC8uA/zh-cn_image_0000002779090697.png?HW-CC-KV=V1&HW-CC-Date=20261009T013052Z&HW-CC-Expire=86400&HW-CC-Sign=DAFEAF62846403283145CD0C8EF3BB47BC43D2AF9E88291B59A63E037D2404C5)
 
  
 从模型实验数据可以看出：
@@ -463,13 +463,13 @@ TaskPool与Worker都具有转移控制权、深拷贝两种方式，Worker不支
 **图 7** 中载模型下TaskPool与Worker运行时内存占用对比
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/lUc3cVhLTqeGro33umIPzw/zh-cn_image_0000002717769878.png?HW-CC-KV=V1&HW-CC-Date=20260911T073101Z&HW-CC-Expire=86400&HW-CC-Sign=9268FF735D0AD38AE0B3AD6E3EC10CB56C8F33344B24375A6A97E76BDF8C6321)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/l7t7omyfT_-d0Kc3nIG9UA/zh-cn_image_0000002778930841.png?HW-CC-KV=V1&HW-CC-Date=20261009T013052Z&HW-CC-Expire=86400&HW-CC-Sign=8E7E8E792C0C4E1B9ADCD890A08FE31CE2CD91A024B0E7001305DAB2C0AAD401)
 
  
 **图 8** 重载模型下TaskPool与Worker运行时内存占用对比
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/f3_NQsYlQYKt7DDBOIed-A/zh-cn_image_0000002717609944.png?HW-CC-KV=V1&HW-CC-Date=20260911T073101Z&HW-CC-Expire=86400&HW-CC-Sign=3E8E0BC719FF98DB4821B8BC9A095E62ADFECCA4A125E3C66507ECAA2ADFDCA6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/qQEJ7Fv_RgqyVpQIMJ2dFw/zh-cn_image_0000002749331758.png?HW-CC-KV=V1&HW-CC-Date=20261009T013052Z&HW-CC-Expire=86400&HW-CC-Sign=0D01A1C702B8D85D8DDE5133E8684B09999427682889F442D065BC03E372357A)
 
  
 从以上实验数据可以看出：

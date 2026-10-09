@@ -1,6 +1,6 @@
 # lowpower_video_sink_base.h
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-lowpower-video-sink-base-h
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -39,8 +39,8 @@
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
-| OH_LowPowerVideoSink | OH_LowPowerVideoSink | LowPowerVideoSink声明。 |
-| OH_LowPowerVideoSinkCallback | OH_LowPowerVideoSinkCallback | 包含了LowPowerVideoSink回调函数指针的集合。 应用需注册此实例结构体到OH_LowPowerVideoSink实例中，并对回调上报的信息进行处理，保证LowPowerVideoSink的正常运行。 |
+| OH_LowPowerVideoSink | OH_LowPowerVideoSink | OH_LowPowerVideoSink是低功耗视频输出场景中使用的数据结构，开发者通过该结构体实现低功耗视频输出功能。 |
+| OH_LowPowerVideoSinkCallback | OH_LowPowerVideoSinkCallback | 包含了OH_LowPowerVideoSink回调函数指针的集合。 应用需注册此实例结构体到OH_LowPowerVideoSink实例中，并对回调上报的信息进行处理，保证LowPowerVideoSink的正常运行。 |
  
  
   

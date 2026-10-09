@@ -1,6 +1,6 @@
 # 嵌入ArkTS组件
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-embed-arkts-components
 
@@ -17,7 +17,7 @@ ArkUI在Native侧提供的能力作为ArkTS的子集，部分能力不会在Nati
 **图1** Refresh组件挂载文本列表
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/Uo6-rUKSRwOJLLI4_AwqbA/zh-cn_image_0000002747210617.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073021Z&HW-CC-Expire=86400&HW-CC-Sign=6EDC54B914EF29C025B13CD42DA29567DD068FAFAF47A2B4FE1F71F5B6DE7CC1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/oaOIO3EZQliIDsVBP7ja8Q/zh-cn_image_0000002778931757.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013034Z&HW-CC-Expire=86400&HW-CC-Sign=972E39215A74A41D194C41060E0515D83C79624B46F42F5C78E8995BF2158F55)
 
 1. 注册ArkTS组件创建函数给Native侧，以便Native侧调用，创建函数使用ComponentContent能力进行封装。
 
@@ -723,7 +723,7 @@ napi_value ArkUIMixedRefresh::RegisterUpdateRefresh(napi_env env, napi_callback_
 6. 定时器模块相关简单实现。
 
   
-```cpp
+```text
 // UITimer.h
 // 定时器模块。
 

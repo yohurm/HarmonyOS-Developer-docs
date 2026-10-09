@@ -1,6 +1,6 @@
 # 关系型数据库跨设备数据同步 (ArkTS)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-sync-of-rdb-store
 
@@ -410,7 +410,7 @@ tableName：表名，string类型，必填字段。
  - deviceSyncFields：指定端端同步对应的列，array[string]，必填字段。其中字段必须在fields中，且必须在数据库表中，否则不会同步；未填写该字段时设置分布式表失败。
  - cloudType: 表类型，为enum类型，取值范围为[ "Local", "Cloud DB", "Device DB" ]。
 
-  "Local"表示本端表。"Cloud_DB"表示端云表。"Device DB"表示设备表。
+  "Local"表示本端表。"Cloud DB"表示端云表。"Device DB"表示设备表。
 
   从API版本12开始，新增支持此字段，且此字段必填。从API版本26.0.0开始，此字段变为可选字段，不填时默认为"Local"。
  - fields：数据库表字段详细信息，array[field]。
@@ -805,7 +805,7 @@ columnName：字段名，string类型，必填字段。
 
             - 单版本表模式下，表中所有UNIQUE列必须同步。
 
-  错误示例："AGE"为UNIQUE列，但是未指定该字段同步
+  错误示例："AGE"为UNIQUE列，但是未指定该字段同步。
 
   
 建表语句：'CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL UNIQUE, AGE INTEGER UNIQUE, SALARY REAL, CODES BLOB)'。

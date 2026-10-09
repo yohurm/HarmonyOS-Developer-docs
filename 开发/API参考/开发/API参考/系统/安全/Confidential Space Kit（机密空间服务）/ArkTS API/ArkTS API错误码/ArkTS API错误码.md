@@ -1,6 +1,6 @@
 # ArkTS API错误码
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-confidentialspace
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -45,7 +45,7 @@ Invalid argument.
 
 
 
-## 1028700002 数据应用签名不合法
+## 1028700002 数据应用签名文件不存在
 
 
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -220,12 +220,12 @@ Communication between client and data manager failed.
 应用与数据管理服务间通信失败。
 
 **可能原因**
-
-由于应用与数据管理服务间通信的socket发生异常，导致通信无法进行。
+1. [runApp](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/confidentialspace-confidentialspace#confidentialspacerunapp)方法抛出此错误，表明应用与机密空间管理服务之间的通信失败。
+2. [sendData](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/confidentialspace-confidentialspace#senddata)方法抛出此错误，表明由于应用与数据管理服务间通信的socket发生异常，导致通信无法进行。
 
 **处理步骤**
-
-避免过于高频地发送数据。
+1. 若runApp抛出此错误，请尝试重试。
+2. 若sendData抛出此错误，请避免过于高频地发送数据。
 
 
 

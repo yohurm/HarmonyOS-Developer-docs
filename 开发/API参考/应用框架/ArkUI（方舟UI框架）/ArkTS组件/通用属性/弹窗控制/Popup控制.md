@@ -1,6 +1,6 @@
 # Popup控制
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-popup
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -200,11 +200,11 @@ bindPopup(show: boolean, popup: PopupOptions | CustomPopupOptions): T
 | shadow11+ | ShadowOptions \| ShadowStyle | 否 | 是 | 设置气泡阴影。 默认值：ShadowStyle.OUTER_DEFAULT_MD 元服务API： 从API version 12开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | backgroundBlurStyle11+ | BlurStyle | 否 | 是 | 设置气泡模糊背景参数。 默认值：BlurStyle.COMPONENT_ULTRA_THICK 元服务API： 从API version 12开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | focusable11+ | boolean | 否 | 是 | 设置气泡弹出后是否获焦。 true：气泡可以获焦；false：气泡不会获焦。 默认值：false 元服务API： 从API version 12开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
-| transition12+ | TransitionEffect | 否 | 是 | 自定义设置Popup气泡显示和退出的动画效果。 说明： 如果不设置，则使用默认的显示/退出动效。 2. 显示动效中按back键，打断显示动效，执行退出动效，动画效果为显示动效与退出动效的曲线叠加后的效果。 3. 退出动效中按back键，不会打断退出动效，退出动效继续执行，back键不被响应。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
+| transition12+ | TransitionEffect | 否 | 是 | 自定义设置Popup气泡显示和退出的动画效果。 说明： 1. 如果不设置，则使用默认的显示/退出动效。 2. 显示动效中按back键，打断显示动效，执行退出动效，动画效果为显示动效与退出动效的曲线叠加后的效果。 3. 退出动效中按back键，不会打断退出动效，退出动效继续执行，back键不被响应。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | onWillDismiss12+ | boolean \| Callback&lt;DismissPopupAction&gt; | 否 | 是 | 设置Popup交互式关闭拦截开关及拦截回调函数，默认值为true，Popup响应点击、侧滑（左滑/右滑）、三键back。 1. 当为boolean类型时，如果设置为false，则不响应点击、侧滑（左滑/右滑）、三键back、路由跳转或键盘ESC退出事件，仅当设置“气泡显示状态”参数show值为false时才退出；如果设置为true，则正常响应退出事件； 2. 如果设置为函数类型，则拦截退出事件且执行回调函数。侧滑（左滑/右滑）、三键back、路由跳转或键盘ESC在回调函数中返回的reason为PRESS_BACK，点击为TOUCH_OUTSIDE。 说明： 在onWillDismiss回调中，不能再做onWillDismiss拦截。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | followTransformOfTarget13+ | boolean | 否 | 是 | 气泡绑定的宿主组件或其宿主组件的父容器添加了旋转、缩放等变换时，气泡是否跟随宿主组件变换。 true：气泡可以拿到变换后宿主的位置，显示到相应位置；false：气泡拿不到宿主变换后的位置，可能显示异常。 默认值：false 元服务API： 从API version 13开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | keyboardAvoidMode15+ | KeyboardAvoidMode | 否 | 是 | 气泡是否避让软键盘，默认不避让。设置为避让后，气泡显示空间不足时，由原先居中覆盖父组件的方式改为平移覆盖父组件，且气泡箭头不指向宿主时，不再显示箭头。 默认值：KeyboardAvoidMode.NONE 元服务API： 从API version 15开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
-| enableHoverMode18+ | boolean | 否 | 是 | Popup组件是否响应悬停态（半折叠状态）变化，即在悬停态下是否触发避让折痕区域。 默认值：false，2in1设备默认为true。未设置或者值为非法值时，生效默认值。 说明： 1. 如果Popup的弹出位置在悬停态折痕区域，Popup组件不会响应悬停态。 2. 2in1设备从API version 20开始生效。 3. 2in1设备仅在窗口瀑布模式下生效。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
+| enableHoverMode18+ | boolean | 否 | 是 | Popup组件是否响应悬停态（半折叠状态）变化，即在悬停态下是否触发避让折痕区域。 true：响应悬停态变化；false：不响应悬停态变化。 默认值：false，2in1设备默认为true。未设置或者值为非法值时，生效默认值。 说明： 1. 如果Popup的弹出位置在悬停态折痕区域，Popup组件不会响应悬停态。 2. 2in1设备从API version 20开始生效。 3. 2in1设备仅在窗口瀑布模式下生效。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | outlineWidth20+ | Dimension | 否 | 是 | 设置Popup组件外描边的宽度。 默认值：1 单位：vp 说明： 1. 不支持设置百分比，设置百分比时按0处理。 2. 在没有设置Popup组件外描边的情况下，该接口需要和outlineLinearGradient配合使用。 3. 当设置双描边时，建议外描边宽度不超过10vp。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | borderWidth20+ | Dimension | 否 | 是 | 设置Popup组件内描边的宽度。 默认值：1 单位：vp 说明： 1. 不支持设置百分比，设置百分比时按0处理。 2. 在没有设置Popup组件内描边的情况下，该接口需要和borderLinearGradient配合使用。 3. 当设置双描边时，建议内描边宽度不超过10vp。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | outlineLinearGradient20+ | PopupBorderLinearGradient | 否 | 是 | 设置Popup组件外描边线性渐变的颜色。 说明： 1. outlineLinearGradient不设置或者设置为null、undefined时，外描边没有线性渐变效果。 2. outlineLinearGradient设置时，direction默认值是：GradientDirection.Bottom。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
@@ -254,7 +254,7 @@ bindPopup(show: boolean, popup: PopupOptions | CustomPopupOptions): T
 | transition | TransitionEffect | 否 | 是 | 自定义设置Popup气泡显示和退出的动画效果。 说明： 1. 如果不设置，则使用默认的显示/退出动效。 2. 显示动效中按back键，打断显示动效，执行退出动效，动画效果为显示动效与退出动效的曲线叠加后的效果。 3. 退出动效中按back键，不会打断退出动效，退出动效继续执行，back键不被响应。 4.不支持通过updatePopup进行更新。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
 | onWillDismiss | boolean\|Callback&lt;DismissPopupAction&gt; | 否 | 是 | 设置Popup交互式关闭拦截开关及拦截回调函数，默认值为true，Popup响应点击、侧滑（左滑/右滑）、三键back。 1. 当为boolean类型时，如果设置为false，则不响应点击、侧滑（左滑/右滑）、三键back、路由跳转或键盘ESC退出事件，仅当设置“气泡显示状态”参数show值为false时才退出；如果设置为true，则正常响应退出事件； 2. 如果设置为函数类型，则拦截退出事件且执行回调函数。侧滑（左滑/右滑）、三键back、路由跳转或键盘ESC在回调函数中返回的reason为PRESS_BACK，点击为TOUCH_OUTSIDE。 说明： 1. 在onWillDismiss回调中，不能再做onWillDismiss拦截。 2. 不支持通过updatePopup进行更新。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
 | followTransformOfTarget | boolean | 否 | 是 | 气泡绑定的宿主组件或其宿主组件的父容器添加了旋转、缩放等变换时，气泡是否跟随宿主组件变换。 true：气泡可以拿到变换后宿主的位置，显示到相应位置；false：气泡拿不到宿主变换后的位置，可能显示异常。 默认值：false 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
-| enableHoverMode | boolean | 否 | 是 | Popup组件是否响应悬停态（半折叠状态）变化，即在悬停态下是否触发避让折痕区域。 默认值：false，2in1设备默认为true。未设置或者值为非法值时，生效默认值。 说明： 1. 如果Popup的弹出位置在悬停态折痕区域，Popup组件不会响应悬停态。 2. 2in1设备从API version 20开始生效。 3. 2in1设备仅在窗口瀑布模式下生效。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
+| enableHoverMode | boolean | 否 | 是 | Popup组件是否响应悬停态（半折叠状态）变化，即在悬停态下是否触发避让折痕区域。 true：响应悬停态变化；false：不响应悬停态变化。 默认值：false，2in1设备默认为true。未设置或者值为非法值时，生效默认值。 说明： 1. 如果Popup的弹出位置在悬停态折痕区域，Popup组件不会响应悬停态。 2. 2in1设备从API version 20开始生效。 3. 2in1设备仅在窗口瀑布模式下生效。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
 | outlineWidth20+ | Dimension | 否 | 是 | 设置Popup组件外描边的宽度。 默认值：1 单位：vp 说明： 1. 不支持设置百分比，设置百分比时按0处理。 2. 在没有设置Popup组件外描边的情况下，该接口需要和outlineLinearGradient配合使用。 3. 当设置双描边时，建议外描边宽度不超过10vp。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | borderWidth20+ | Dimension | 否 | 是 | 设置Popup组件内描边的宽度。 默认值：1 单位：vp 说明： 1. 不支持设置百分比，设置百分比时按0处理。 2. 在没有设置Popup组件内描边的情况下，该接口需要和borderLinearGradient配合使用。 3. 当设置双描边时，建议内描边宽度不超过10vp。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | outlineLinearGradient20+ | PopupBorderLinearGradient | 否 | 是 | 设置Popup组件外描边线性渐变的颜色。 说明： 1. outlineLinearGradient不设置或者设置为null、undefined时，外描边没有线性渐变效果。 2. outlineLinearGradient设置时，direction默认值是：GradientDirection.Bottom。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
@@ -923,7 +923,7 @@ struct PopupExample {
 
 该示例通过[PopupOptions](#popupoptions类型说明)中的systemMaterial属性设置组件的系统材质，实现了Popup的沉浸光感视效。
 
-组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
+该示例配图为高算力设备强档效果，组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
 
 从API版本26.0.0开始，在PopupOptions中新增了systemMaterial属性。
 
@@ -1054,7 +1054,7 @@ struct PopupExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/9mP3Cu_GTfOZ_rShgrRHaQ/zh-cn_image_0000002747292501.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073127Z&HW-CC-Expire=86400&HW-CC-Sign=4E271317DB2A13C524B5D8E952B2F8526F15475E7575120C3F9C187F44102A1E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/gxhHqVyiTJmdyS1raXJsKg/zh-cn_image_0000002749494366.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013111Z&HW-CC-Expire=86400&HW-CC-Sign=0B65E51FE0919984BEF5039285D4CA81A12A016EBE29F279F296ECAB408A027F)
 
 
 
@@ -1123,4 +1123,4 @@ struct PageTwo {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/nIWo6yeERC6f_nv8q1lHIw/zh-cn_image_0000002747212417.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073127Z&HW-CC-Expire=86400&HW-CC-Sign=6AC23574EF4FB34E9052E1368FDABFD3D79B1602A5696BA4DDB9ED717E8D0C9F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/a2eiAPCeSbiK9bxjlgYeAw/zh-cn_image_0000002779093423.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013111Z&HW-CC-Expire=86400&HW-CC-Sign=0EFBB0B758D02D1BB437DB5C54A7D04E8C57C63085C5C2588346DF809AE9845C)

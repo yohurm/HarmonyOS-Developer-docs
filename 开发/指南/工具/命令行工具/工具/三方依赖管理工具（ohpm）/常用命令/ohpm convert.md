@@ -1,13 +1,13 @@
 # ohpm convert
 
-更新时间：2026-07-15 09:00:31
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-convert
 
 将npm三方库转换为ohpm三方库。因为语法差异，转换时仅对文件进行格式转换，不修改原npm包的代码逻辑。若HAR包在转换后出现代码不兼容的报错，开发者需修改原npm包的代码做适配。
  
 
-#### 命令格式
+## 命令格式
 
 ```text
 ohpm convert [[<@group>/]<pkg>[@<version> | @tag:<tag>]] --registry <string> [--publish]
@@ -20,7 +20,7 @@ ohpm convert <node_modules_path> [--publish]
  
  
 
-#### 功能描述
+## 功能描述
 
 将指定npm仓库中的某个包或者本地node_modules目录下的包转换成满足ohpm格式要求的HAR包，并保存至当前工作目录，转换后的包将支持上传至ohpm-repo私仓或OpenHarmony三方库中心仓。
  
@@ -46,11 +46,11 @@ ohpm convert ./xxxx/node_modules
 
  
 
-#### Options
+## Options
 
  
 
-#### registry
+### registry
 
 - 默认值：无
 - 类型：URL
@@ -60,7 +60,7 @@ ohpm convert ./xxxx/node_modules
  
  
 
-#### publish
+### publish
 
 - 默认值：false
 - 类型：Boolean
@@ -70,7 +70,7 @@ ohpm convert ./xxxx/node_modules
  
  
 
-#### log_level
+### log_level
 
 - 默认值：无
 - 类型：String
@@ -80,7 +80,7 @@ ohpm convert ./xxxx/node_modules
  
  
 
-#### debug
+### debug
 
 - 默认值：false
 - 类型：Boolean
@@ -90,7 +90,7 @@ ohpm convert ./xxxx/node_modules
  
  
 
-#### 示例
+## 示例
 
 **转换远程npm三方库中的包**
  
@@ -117,14 +117,14 @@ ohpm INFO: Converted packages are saved to the "C:\Users\xxxxx\Desktop\convert_1
 ![](assets/ohpm%20convert/file-20260514134427148-2.png)
 
  
-
  
+
 **转换本地node_modules目录中的包**
  
 执行npm install uuid后，转换本地node_modules目录中的包，执行以下命令：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/eeTzVUOyRuK1sg9Pe0AUsg/zh-cn_image_0000002594475138.png?HW-CC-KV=V1&HW-CC-Date=20260723T012116Z&HW-CC-Expire=86400&HW-CC-Sign=6C991EA0947B8FE870D47A68809ECAEBDDC229EFF823DF7789693772D5C1BFBA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/6wUyVAFPTdiHNzZ-HM__Cg/zh-cn_image_0000002731542991.png?HW-CC-KV=V1&HW-CC-Date=20261009T012818Z&HW-CC-Expire=86400&HW-CC-Sign=8845C0CBDE9443C030BA5758B1D4C8E571F263A667FD8CECC8E59570B6E42130)
 
  
 ```text
@@ -142,4 +142,4 @@ ohpm INFO: Converted packages are saved to the "C:\Users\xxxxx\Desktop\convert_1
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/vKcC_o6jThii3UKgTBnMMA/zh-cn_image_0000002594635060.png?HW-CC-KV=V1&HW-CC-Date=20260723T012116Z&HW-CC-Expire=86400&HW-CC-Sign=14526A8F827EDC182D7036C98E25E204FF9F28AEF0FBE9CEFC2FA139B7D24B5A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/YYN5CFIHS5mwdZysZG4Zaw/zh-cn_image_0000002701823718.png?HW-CC-KV=V1&HW-CC-Date=20261009T012818Z&HW-CC-Expire=86400&HW-CC-Sign=530BA184255EAC5662D224202B80FB06BC0CF9527FA61E5D0829873888EB8B9C)

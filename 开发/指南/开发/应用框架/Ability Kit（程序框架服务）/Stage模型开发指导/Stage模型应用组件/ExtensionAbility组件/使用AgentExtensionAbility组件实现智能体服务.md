@@ -1,6 +1,6 @@
 # 使用AgentExtensionAbility组件实现智能体服务
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agent-extension-ability
 
@@ -101,7 +101,7 @@ export default class AgentExtAbility extends AgentExtensionAbility {
         "metadata": [
           {
             "name": "ohos.extension.agent",
-            "resource": "$profile:agent_config",
+            "resource": "$profile:agent_config"
           }
         ]
       }
@@ -162,7 +162,7 @@ export default class AgentExtAbility extends AgentExtensionAbility {
     } catch (err) {
       let code = (err as BusinessError).code;
       let msg = (err as BusinessError).message;
-      console.error(`sendData failed, err code: ${code}, err msg: ${msg}.`);
+      console.error(`authorize failed, err code: ${code}, err msg: ${msg}.`);
     }
   }
   // ...

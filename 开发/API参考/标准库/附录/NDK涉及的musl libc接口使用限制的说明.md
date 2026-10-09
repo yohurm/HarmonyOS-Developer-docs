@@ -1,6 +1,6 @@
 # NDK涉及的musl libc接口使用限制的说明
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-09 06:54:05（官网已下线）
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/guidance-on-ndk-libc-interfaces-affected-by-permissions
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable

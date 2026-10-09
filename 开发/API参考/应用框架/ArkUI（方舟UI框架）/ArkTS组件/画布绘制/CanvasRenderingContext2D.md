@@ -1,6 +1,6 @@
 # CanvasRenderingContext2D
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-canvasrenderingcontext2d
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -240,7 +240,7 @@ on(type: 'onAttach', callback: Callback&lt;void&gt;): void
 
 
 > [!NOTE]
-> CanvasRenderingContext2D对象在同一时间只能与一个Canvas组件绑定。 当CanvasRenderingContext2D对象和Canvas组件发生绑定时，会触发'onAttach'回调，表示可以获取到 canvas 。 避免在'onAttach'中执行绘制方法，应保证Canvas组件已经' onReady '再进行绘制。 触发'onAttach'回调的一般场景： 1、Canvas组件创建时绑定CanvasRenderingContext2D对象； 2、CanvasRenderingContext2D对象新绑定一个Canvas组件时。
+> CanvasRenderingContext2D对象在同一时间只能与一个Canvas组件绑定。 当CanvasRenderingContext2D对象和Canvas组件发生绑定时，会触发'onAttach'回调，表示可以获取到 canvas 。 避免在'onAttach'中执行绘制方法，应保证Canvas组件已经' onReady '再进行绘制。 触发'onAttach'回调的一般场景： Canvas组件创建时绑定CanvasRenderingContext2D对象； CanvasRenderingContext2D对象新绑定一个Canvas组件时。
 
 
 
@@ -280,7 +280,7 @@ on(type: 'onDetach', callback: Callback&lt;void&gt;): void
 
 
 > [!NOTE]
-> 当CanvasRenderingContext2D对象和Canvas组件解除绑定时，会触发'onDetach'回调，表示应停止绘制行为。 触发'onDetach'回调的一般场景： 1、Canvas组件销毁时解除绑定CanvasRenderingContext2D对象； 2、CanvasRenderingContext2D对象新绑定一个Canvas组件，会先解除已有的绑定。
+> 当CanvasRenderingContext2D对象和Canvas组件解除绑定时，会触发'onDetach'回调，表示应停止绘制行为。 触发'onDetach'回调的一般场景： Canvas组件销毁时解除绑定CanvasRenderingContext2D对象； CanvasRenderingContext2D对象新绑定一个Canvas组件，会先解除已有的绑定。
 
 
 

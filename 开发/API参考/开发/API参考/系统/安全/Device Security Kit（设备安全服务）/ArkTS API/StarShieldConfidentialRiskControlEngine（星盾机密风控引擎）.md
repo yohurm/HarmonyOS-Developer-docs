@@ -1,9 +1,9 @@
 # RiskControlEngine（星盾机密风控引擎）
 
-更新时间：2026-09-04 10:41:25
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesecurity-riskcontrolengine-api
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+**支持设备：** Phone | PC/2in1 | Tablet
 
 本模块提供基于应用风险因子的风险控制检测能力。通过接收应用侧采集的多维度风险因子数据，结合预定义的风控策略进行综合风险评估，帮助应用实现设备安全风险识别和防控。
  
@@ -13,7 +13,7 @@
 ## 导入模块
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 import { riskControlEngine  } from '@kit.DeviceSecurityKit';
@@ -24,7 +24,7 @@ import { riskControlEngine  } from '@kit.DeviceSecurityKit';
 ## ValueType
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+**支持设备：** Phone | PC/2in1 | Tablet
 
 type ValueType = number | boolean | string
  
@@ -51,7 +51,7 @@ type ValueType = number | boolean | string
 ## AppFactorData
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+**支持设备：** Phone | PC/2in1 | Tablet
 
 应用风险因子数据。
  
@@ -75,7 +75,7 @@ type ValueType = number | boolean | string
 ## ImportData
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+**支持设备：** Phone | PC/2in1 | Tablet
 
 导入应用风险因子数据。
  
@@ -99,7 +99,7 @@ type ValueType = number | boolean | string
 ## RiskControlDetectionRequest
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+**支持设备：** Phone | PC/2in1 | Tablet
 
 风控评分的请求参数。
  
@@ -123,7 +123,7 @@ type ValueType = number | boolean | string
 ## RiskControlDetectionResponse
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+**支持设备：** Phone | PC/2in1 | Tablet
 
 风控评分请求的返回对象。
  
@@ -146,7 +146,7 @@ type ValueType = number | boolean | string
 ## riskControlEngine.importRiskFactors
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+**支持设备：** Phone | PC/2in1 | Tablet
 
 importRiskFactors(data: ImportData): Promise&lt;void&gt;
  
@@ -231,7 +231,7 @@ try {
 ## riskControlEngine.getRiskControlResult
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+**支持设备：** Phone | PC/2in1 | Tablet
 
 getRiskControlResult(req: RiskControlDetectionRequest): Promise&lt;RiskControlDetectionResponse&gt;
  

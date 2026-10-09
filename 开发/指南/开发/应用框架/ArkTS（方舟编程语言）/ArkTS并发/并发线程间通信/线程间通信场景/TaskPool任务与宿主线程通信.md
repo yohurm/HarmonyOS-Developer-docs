@@ -1,6 +1,6 @@
 # TaskPool任务与宿主线程通信
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/taskpool-communicates-with-mainthread
 
@@ -25,6 +25,7 @@ export class IconItemSource {
 ```ArkTS
 import { taskpool } from '@kit.ArkTS';
 import { IconItemSource } from './IconItemSource';
+import { BusinessError } from '@kit.BasicServicesKit';
 // 实现接收Task消息的方法
 function notice(data: number): void {
   console.info('子线程已加载数据，共加载图片: ', data);

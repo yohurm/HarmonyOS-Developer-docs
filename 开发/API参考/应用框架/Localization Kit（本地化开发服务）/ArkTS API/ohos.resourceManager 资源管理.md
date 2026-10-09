@@ -1,6 +1,6 @@
 # @ohos.resourceManager (资源管理)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-resource-manager
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -4674,7 +4674,7 @@ getRawFdSync(path: string): RawFileDescriptor
 获取resources/rawfile目录下rawfile文件所在HAP的文件描述符（fd），使用同步方式返回。
 
 > [!NOTE]
-> 文件描述符（fd）使用完毕后需调用 closeRawFdSync 或 closeRawFd 关闭fd，避免资源泄露。
+> 文件描述符（fd）使用完毕后需调用 closeRawFdSync 或 closeRawFd 关闭fd，避免资源泄漏。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -4740,7 +4740,7 @@ getRawFd(path: string, callback: _AsyncCallback&lt;RawFileDescriptor&gt;): void
 获取resources/rawfile目录下对应rawfile文件所在HAP的文件描述符（fd）。使用callback异步回调。
 
 > [!NOTE]
-> 文件描述符（fd）使用完毕后需调用 closeRawFdSync 或 closeRawFd 关闭fd，避免资源泄露。
+> 文件描述符（fd）使用完毕后需调用 closeRawFdSync 或 closeRawFd 关闭fd，避免资源泄漏。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -4808,7 +4808,7 @@ getRawFd(path: string): Promise&lt;RawFileDescriptor&gt;
 获取resources/rawfile目录下rawfile文件所在HAP的文件描述符（fd）。使用Promise异步回调。
 
 > [!NOTE]
-> 文件描述符（fd）使用完毕后需调用 closeRawFdSync 或 closeRawFd 关闭fd，避免资源泄露。
+> 文件描述符（fd）使用完毕后需调用 closeRawFdSync 或 closeRawFd 关闭fd，避免资源泄漏。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -7921,7 +7921,7 @@ try {
   // 在资源文件中用quantity字段表示单复数类别，因此会获取quantity为other的字符串
   let pluralStr = this.context.resourceManager.getDoublePluralStringValueSync(resource, 2.1, 2, "basket", 0.6);
   console.info(`getDoublePluralStringValueSync, result: ${pluralStr}`);
-  // 打印输出结果: getIntPluralStringValueSync, result: There are 2 apples in the basket, the total amount is 0.6 kg.
+  // 打印输出结果: getDoublePluralStringValueSync, result: There are 2 apples in the basket, the total amount is 0.6 kg.
 } catch (error) {
   let code = (error as BusinessError).code;
   let message = (error as BusinessError).message;

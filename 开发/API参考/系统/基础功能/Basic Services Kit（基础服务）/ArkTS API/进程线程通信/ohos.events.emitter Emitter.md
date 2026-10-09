@@ -1,6 +1,6 @@
 # @ohos.events.emitter (Emitter)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-emitter
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -1410,7 +1410,7 @@ getListenerCount(eventId: string): number
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| eventId | string | 是 | 事件ID。 不可为空字符串，大小不超过10240字节，超出部分会被截断。。 |
+| eventId | string | 是 | 事件ID。 不可为空字符串，大小不超过10240字节，超出部分会被截断。 |
 
 
 **返回值：**

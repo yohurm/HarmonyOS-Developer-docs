@@ -1,6 +1,6 @@
 # 产品特性按需分发(ArkTS)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-moduleinstall_arkts
 
@@ -167,7 +167,7 @@ try {
 }
 ```
 
-4. 调用[fetchModules](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/store-moduleinstallmanager#moduleinstallmanagerfetchmodules)方法，将步骤3中的myModuleInstallRequest传入模块中的fetchModules方法。
+4. 调用[fetchModules](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/store-moduleinstallmanager#moduleinstallmanagerfetchmodules)方法请求按需加载模块。
 
   
 ```json
@@ -564,6 +564,6 @@ hdc install entry.hap
 3. [访问设备沙箱路径](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-device-file-explorer#section48216711204)，在[应用el2级别加密数据目录](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-sandbox-directory#应用沙箱路径和真实物理路径的对应关系)下，创建cache/moduleinstall/&lt;ModuleName&gt;目录（这里&lt;ModuleName&gt;是AModulelib），将模块调试包AModulelib.hsp上传至对应模块目录下（请确保模块调试包文件应有读写权限）。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/AiUdw82HTyK3DS7x9Um0fw/zh-cn_image_0000002747291601.png?HW-CC-KV=V1&HW-CC-Date=20260911T073059Z&HW-CC-Expire=86400&HW-CC-Sign=70B2DEEA8232638BAD7BA1C822CAA875ECFD4D6A1B83683A87C8AF1055375077)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/xP5zn-jYTAGQT2tqSKOKbA/zh-cn_image_0000002749493460.png?HW-CC-KV=V1&HW-CC-Date=20261009T013050Z&HW-CC-Expire=86400&HW-CC-Sign=3D2EBD667F0C4531823F2F0FE9A8AD6238A4EE66C5F5291B09760E1DBC061C2F)
 
 4. 按照[创建按需加载的请求实例](#创建按需加载的请求实例)、[请求按需加载的接口](#请求按需加载模块)、[取消下载任务](#取消下载任务)、[恢复下载任务](#恢复下载任务)和[使用动态模块](#使用动态模块)，无需改动参数即可安装好模块调试包，实现取消及恢复下载任务。监听到安装成功后，对应模块目录下的文件会被自动删除。

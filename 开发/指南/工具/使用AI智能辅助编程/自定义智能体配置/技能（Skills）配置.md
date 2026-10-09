@@ -1,6 +1,6 @@
 # 技能（Skills）配置
 
-更新时间：2026-08-29 09:41:34
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-skills
 
@@ -49,4 +49,4 @@ Skills实际是一个包含SKILL.md文件（区分大小写）的文件夹，在
 4. 返回CodeGenie对话框调用Skills，在对话框输入时需要带有技能的name（如openharmony-build）。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/vPxcA4DaQsCDo2lYtdsiAg/zh-cn_image_0000002731542639.png?HW-CC-KV=V1&HW-CC-Date=20260911T072819Z&HW-CC-Expire=86400&HW-CC-Sign=5DA0FACD2E9A662C88C90FAF3E4C33AC2FC7E73020A0404B6F65AAA52B5DCC14)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/srGmVWEcRQOp1uHDxeEY7Q/zh-cn_image_0000002731542639.png?HW-CC-KV=V1&HW-CC-Date=20261009T012825Z&HW-CC-Expire=86400&HW-CC-Sign=52218E190F9D4FCF1ED0A0B17A428315D0F95CC6562CF59386DBF863E23F78D2)

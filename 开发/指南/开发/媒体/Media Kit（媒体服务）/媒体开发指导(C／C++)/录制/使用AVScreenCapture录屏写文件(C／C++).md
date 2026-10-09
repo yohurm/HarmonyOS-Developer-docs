@@ -1,6 +1,6 @@
 # 使用AVScreenCapture录屏写文件(C/C++)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-avscreencapture-for-file
 

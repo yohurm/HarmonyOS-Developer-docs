@@ -1,6 +1,6 @@
 # TextArea
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -976,7 +976,7 @@ fontFeature(value: string)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | string | 是 | 文字特性效果，用于设置文字的特殊显示效果，如数字等宽等。格式为：normal \| [/topic/body/section/table/tgroup/tbody/row/entry/feature-tag-value {""}) 。 (feature-tag-value] |
+| value | string | 是 | 文字特性效果，用于设置文字的特殊显示效果，如数字等宽等。格式为：normal \| <feature-tag-value>。 |
 
 
 Font Feature当前支持的属性参见[fontFeature](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#fontfeature12)属性列表。
@@ -2972,7 +2972,7 @@ struct TextAreaExample {
       .width('100%')
       .padding({ bottom: 50 })
 
-      TextArea({ controller: this.controller, text: this.inputValue })// 绑定自定义键盘
+      TextArea({ controller: this.controller, text: this.inputValue }) // 绑定自定义键盘
         .height(100)
         .customKeyboard(this.CustomKeyboardBuilder(), { supportAvoidance: this.supportAvoidance })
         .margin(10)
@@ -3474,7 +3474,7 @@ struct TextAreaExample {
         .maxFontScale(2)
         .enablePreviewText(true)
         .enableHapticFeedback(true)
-        .stopBackPress(false)// 返回键交给其他组件处理
+        .stopBackPress(false) // 返回键交给其他组件处理
         .width(336)
         .height(56)
         .margin(20)
@@ -4484,7 +4484,7 @@ struct ShaderColorStyle {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/anI2rI6NQl2Q-SgZStUw1w/zh-cn_image_0000002747292739.png?HW-CC-KV=V1&HW-CC-Date=20260911T073108Z&HW-CC-Expire=86400&HW-CC-Sign=B6CBC4421E374DC438CEFE683CC01BEEAE1F2810C5A60721D24241306D0DAF84)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/pwq50GZxRMi9REfeeYiEgA/zh-cn_image_0000002749494740.png?HW-CC-KV=V1&HW-CC-Date=20261009T013057Z&HW-CC-Expire=86400&HW-CC-Sign=CD6F4D04817ADDC55E1DF2721440E34419E88133F08C7C65671E6BA8ECF86332)
 
 
 
@@ -4520,4 +4520,4 @@ struct Demo36 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/OvI1Z14kRimdfaAMYNC9xQ/zh-cn_image_0000002747212655.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073108Z&HW-CC-Expire=86400&HW-CC-Sign=5B88EFC2517D7AD29B52E4F9D26A115906EAD316180F21A578D1BFF22D71B623)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/PcKaic5XRUiXpAVyH8d97A/zh-cn_image_0000002779093797.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013057Z&HW-CC-Expire=86400&HW-CC-Sign=9AAAFCD9A33C00D34771BD04528D0FD0580BD5454CFE55EB6918D066487F89D9)

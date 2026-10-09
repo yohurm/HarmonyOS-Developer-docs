@@ -17,5 +17,12 @@
     "slug": "plugin-package",
     "title": "开发与使用应用插件（PC/2in1）",
     "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/plugin-package"
+  },
+  {
+    "file": "开发基础知识/典型场景的开发指导/配置应用右键扩展菜单（PC-2in1）.md",
+    "name": "配置应用右键扩展菜单（PC/2in1）",
+    "slug": "right-click-menu",
+    "title": "配置应用右键扩展菜单（PC/2in1）",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/right-click-menu"
   }
 ]

@@ -1,6 +1,6 @@
 # @ohos.taskpool (启动任务池)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-taskpool
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -2304,7 +2304,6 @@ onExecutionFailed(callback: CallbackFunctionWithError): void
 ```text
 import { taskpool } from '@kit.ArkTS';
 import { BusinessError } from '@kit.BasicServicesKit';
-import { HashMap } from '@kit.ArkTS';
 
 @Concurrent
 function hashMapFunc(args: number) {

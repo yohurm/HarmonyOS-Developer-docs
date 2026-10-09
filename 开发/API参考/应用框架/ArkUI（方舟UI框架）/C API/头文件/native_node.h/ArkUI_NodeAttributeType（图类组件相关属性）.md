@@ -1,6 +1,6 @@
 # ArkUI_NodeAttributeType（图类组件相关属性）
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-node-h-nodeattributetype-image
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -383,7 +383,7 @@ NODE_IMAGE_FILL_COLOR = 4010
 
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].u32 | 填充色数值，0xargb格式，形如 0xFFFF0000 表示红色。 |
+| .value[0].u32 | 填充色数值，0xARGB格式，形如 0xFFFF0000 表示红色。 |
 
 
 **返回：**
@@ -391,7 +391,7 @@ NODE_IMAGE_FILL_COLOR = 4010
 
 | 类型 | 说明 |
 | --- | --- |
-| .value[0].u32 | 填充色数值，0xargb格式。 |
+| .value[0].u32 | 填充色数值，0xARGB格式。 |
 
 
 

@@ -1,6 +1,6 @@
 # ArkUI_NativeModule
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -39,6 +39,7 @@
 | 名称 | 描述 |
 | --- | --- |
 | common_attributes.h | 提供NativeModule通用属性和事件的类型定义。 |
+| common_type.h | 定义ArkUI Native API的公共类型。 |
 | embedded_component.h | EmbeddedComponent组件相关的结构体和方法定义。 |
 | image.h | 为NativeNode API提供Image节点类型定义。 |
 | image_animator.h | 为NativeNode API提供ImageAnimator节点类型定义。 |

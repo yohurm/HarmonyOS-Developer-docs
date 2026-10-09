@@ -1,6 +1,6 @@
 # ForEach：循环渲染
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-foreach
 
@@ -635,7 +635,7 @@ struct ForEachSort {
 
 ### 渲染结果非预期
 
-在本示例中，通过设置ForEach的第三个参数KeyGenerator函数，自定义键值生成规则为数据源的索引index的字符串类型值。当点击父组件ForEachAbnormal中“Insert Item After First Item”文本组件后，界面会出现非预期的结果。
+在本示例中，通过设置ForEach的第三个参数keyGenerator函数，自定义键值生成规则为数据源的索引index的字符串类型值。当点击父组件ForEachAbnormal中“Insert Item After First Item”文本组件后，界面会出现非预期的结果。
 
 ```ArkTS
 @Entry
@@ -694,7 +694,7 @@ ForEach依次遍历新数据源，遍历数据项"one"时生成键值"0"，存�
 
 ### 渲染性能降低
 
-在本示例中，ForEach的第三个参数KeyGenerator函数缺省。根据上述[键值生成规则](#键值生成规则)，此例使用框架默认的键值，即最终键值为字符串index + '__' + JSON.stringify(item)。点击文本组件“在第1项后插入新项”后，ForEach将为第2个数组项及后面的所有数据项重新创建组件。
+在本示例中，ForEach的第三个参数keyGenerator函数缺省。根据上述[键值生成规则](#键值生成规则)，此例使用框架默认的键值，即最终键值为字符串index + '__' + JSON.stringify(item)。点击文本组件“Insert Item After First Item”后，ForEach将为第2个数组项及后面的所有数据项重新创建组件。
 
 ```ArkTS
 import { hilog } from '@kit.PerformanceAnalysisKit';
@@ -763,7 +763,7 @@ struct ReducedChildItem {
 2. 插入新项后，数据源simpleList变为['one', 'new item', 'two', 'three']，ArkUI框架监听到@State装饰的数据源长度变化触发ForEach重新渲染。
 3. ForEach依次遍历新数据源，遍历数据项one时生成键值0__one，键值已存在，因此不创建新组件。继续遍历数据项new item时生成键值1__new item，不存在相同键值，创建内容为new item的新组件并渲染。继续遍历数据项two生成键值2__two，不存在相同键值，创建内容为two的新组件并渲染。最后遍历数据项three时生成键值3__three，不存在相同键值，创建内容为three的新组件并渲染。
 
-尽管本例中界面渲染结果符合预期，但在每次向数组中间插入新数组项时，ForEach会为该数组项及其后面的所有数组项重新创建组件。当数据源数据量较大或组件结构复杂时，组件无法复用会导致性能下降。因此，不建议省略第三个参数KeyGenerator函数，也不建议在键值中使用数据项索引index。
+尽管本例中界面渲染结果符合预期，但在每次向数组中间插入新数组项时，ForEach会为该数组项及其后面的所有数组项重新创建组件。当数据源数据量较大或组件结构复杂时，组件无法复用会导致性能下降。因此，不建议省略第三个参数keyGenerator函数，也不建议在键值中使用数据项索引index。
 
 正确渲染并保证效率的ForEach写法是：
 
@@ -773,7 +773,7 @@ ForEach(this.simpleList, (item: string) => {
 }, (item: string) => item) // 需要保证key唯一
 ```
 
-提供了第三个参数KeyGenerator，在这个例子中，对数据源的不同数据项生成不同的key，并且对同一个数据项每次生成相同的key。
+提供了第三个参数keyGenerator，在这个例子中，对数据源的不同数据项生成不同的key，并且对同一个数据项每次生成相同的key。
 
 
 
@@ -966,7 +966,7 @@ struct NonNecessaryMemory {
 **图15** 自定义键值生成函数下的内存占用
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/TrIsPKQZTSaezwJc3qHpkw/zh-cn_image_0000002717770140.png?HW-CC-KV=V1&HW-CC-Date=20260911T072511Z&HW-CC-Expire=86400&HW-CC-Sign=22BBE11E3B74DE474FFAC148EE0D183A67521A54144ED675F3C5B9E055E5B9EC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/53_YdWKSSBO_2IvtpNltjQ/zh-cn_image_0000002778931103.png?HW-CC-KV=V1&HW-CC-Date=20261009T012632Z&HW-CC-Expire=86400&HW-CC-Sign=513108DD575884AEEA7F030635C923BAC8A1C449E7C57D1226652634D456FC56)
 
 
 
@@ -1024,7 +1024,7 @@ struct GenerationKeyChildItem {
 **图16** 键值生成失败
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/XVXE1Wh3QtuyJuuPQtAfog/zh-cn_image_0000002717610206.png?HW-CC-KV=V1&HW-CC-Date=20260911T072511Z&HW-CC-Expire=86400&HW-CC-Sign=A80925D024D1AADF37E9F55B2969B26D120EE9BD23A9B1D6816F1B223B9A24A8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/SZaF-EyJQRGnxTUCTRJEsA/zh-cn_image_0000002749332020.png?HW-CC-KV=V1&HW-CC-Date=20261009T012632Z&HW-CC-Expire=86400&HW-CC-Sign=A1C6699EF761361BCF4BC8907A80E647689CA7C83987BC3A6AC9045348132913)
 
 
 使用默认的键值生成函数，应用发生jscrash：

@@ -1,6 +1,6 @@
 # Matrix2D
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-canvas-matrix2d
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -368,9 +368,13 @@ rotate(degree: number, rx?: number, ry?: number): Matrix2D
  
 以旋转点为中心，对当前矩阵进行左乘旋转运算。常用于图形旋转动画或图片旋转处理等场景。
  
+**模型约束：** 此接口仅可在Stage模型下使用。
+ 
 **卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
  
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+ 
+**模型约束：** 此接口仅可在Stage模型下使用。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
  
@@ -429,7 +433,7 @@ struct Rotate {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/8Ezv7nGwSES8chjk8Ov9bg/zh-cn_image_0000002747212847.png?HW-CC-KV=V1&HW-CC-Date=20260911T073111Z&HW-CC-Expire=86400&HW-CC-Sign=87989B572C1733895A42096661FCE54EDEE1EB36A1A46FB7931F309BC91E3F9E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/VM4-R01_Qq-unVx21kxgdQ/zh-cn_image_0000002778934133.png?HW-CC-KV=V1&HW-CC-Date=20261009T013100Z&HW-CC-Expire=86400&HW-CC-Sign=A78F00467AF0050A85640CAF8CC79E700E1033758317A6E1E61FD65D0F7F0289)
 
  
   
@@ -503,7 +507,7 @@ struct Translate {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/MPcb3805QNqC8xaEs-SKZg/zh-cn_image_0000002717772912.png?HW-CC-KV=V1&HW-CC-Date=20260911T073111Z&HW-CC-Expire=86400&HW-CC-Sign=CD6FD081C601840A9C95206AAAE149972464C59B046F875EE4427E49A0D17AAA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/IXFZdDfHR-udK9Cnj5etqA/zh-cn_image_0000002749335050.png?HW-CC-KV=V1&HW-CC-Date=20261009T013100Z&HW-CC-Expire=86400&HW-CC-Sign=C8C534D92C80B00A266E725614238AB13BE3103A07086EA0CD4DCBD949670393)
 
  
   
@@ -577,4 +581,4 @@ struct Scale {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/KAr9yfs2SgODBuuTtSPJMw/zh-cn_image_0000002717612980.png?HW-CC-KV=V1&HW-CC-Date=20260911T073111Z&HW-CC-Expire=86400&HW-CC-Sign=D4B3B8F15DA6C88E804B3983FA4318CCB5EC0DA5AF02D0D326DB40AAED645D3A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/YrasOvFLTOOsQwbz23F-dw/zh-cn_image_0000002749494934.png?HW-CC-KV=V1&HW-CC-Date=20261009T013100Z&HW-CC-Expire=86400&HW-CC-Sign=70947DEBE95F6B20D2539B1AB68017289EBC8F4CDCC7C2026366FECB66C61CC7)

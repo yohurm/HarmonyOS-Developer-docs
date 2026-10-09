@@ -1,6 +1,6 @@
 # @ohos.app.ability.AppServiceExtensionAbility (应用后台服务扩展组件)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-appserviceextensionability
 **支持设备：** PC/2in1
@@ -32,7 +32,7 @@ AppServiceExtensionAbility模块提供后台服务相关扩展能力，包括后
 AppServiceExtensionAbility提供了[onCreate()](#oncreate)、[onRequest()](#onrequest)、[onConnect()](#onconnect)、[onDisconnect()](#ondisconnect)和[onDestroy()](#ondestroy)生命周期回调，开发者可根据需要重写对应的回调方法。下图展示了AppServiceExtensionAbility的生命周期。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/IzkKOju0QYyuZMDEIniybA/zh-cn_image_0000002717772290.png?HW-CC-KV=V1&HW-CC-Date=20260911T072829Z&HW-CC-Expire=86400&HW-CC-Sign=96A8950C01FEAAD687A8C48EDD946D5333F46721E26349495DFB6D30F663EEE3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/0k1l5q6UT6G8pUX4SPm5QA/zh-cn_image_0000002778933375.png?HW-CC-KV=V1&HW-CC-Date=20261009T012840Z&HW-CC-Expire=86400&HW-CC-Sign=FCA7A5CBEDC78A47799AEDAFA5B16D68DACBD10083E9BA2A6CB1BC1627F849A2)
 
 
  - **onCreate**

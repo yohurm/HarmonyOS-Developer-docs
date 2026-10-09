@@ -30,7 +30,6 @@ UX规格变更。
   
 | 变更前 | 变更后 |
 | --- | --- |
-|  |  |
  
  
 场景2：半模态底部弹窗样式
@@ -41,7 +40,6 @@ UX规格变更。
   
 | 变更前 | 变更后 |
 | --- | --- |
-|  |  |
  
  
 **起始API Level**
@@ -82,7 +80,6 @@ bindSheet的preferType属性
   
 | 变更前 | 变更后 |
 | --- | --- |
-|  |  |
  
  
 **起始API Level**
@@ -142,7 +139,6 @@ export default class AtomicServiceAbility extends EmbeddableUIAbility {
   
 | 变更前 | 变更后placementOnTarget为true | 变更后placementOnTarget为false |
 | --- | --- | --- |
-|  |  |  |
  
  
 **起始API Level**

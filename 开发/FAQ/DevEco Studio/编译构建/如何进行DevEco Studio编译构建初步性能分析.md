@@ -28,6 +28,7 @@ Build Analyzer工具显示编译构建的重要信息，帮助开发者分析和
 事件信息：
   
 | 事件 | 子事件 | 业务 |
+| --- | --- | --- |
 | CompileResource |    | 资源编译 |
 | PackageHap |    | 打包工具 |
 | SignHap |    | 签名工具 |

@@ -1,14 +1,14 @@
 # Image
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-image
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-Image为图片组件，常用于在应用中显示图片。Image支持加载[PixelMap](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-pixelmap)、[ResourceStr](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcestr)和[DrawableDescriptor](#drawabledescriptor10)类型的数据源，支持png、jpg、jpeg、bmp、svg、webp、gif、heif和tiff类型的图片格式，不支持apng和svga格式。
+Image为图片组件，常用于在应用中显示图片。Image支持加载[PixelMap](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-pixelmap)、[ResourceStr](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcestr)和[DrawableDescriptor](#drawabledescriptor10)类型的数据源，支持svg格式，其他需要解码的图片格式请参考[ImageSource](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-imagesource#属性)的supportedFormats属性说明。
 
 > [!TIP]
-> 该组件从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。 从API version 23开始，图片类型新增支持tiff格式。 该组件从API版本26.0.0开始支持 WithTheme 。 使用快捷组合键对Image组件复制时，Image组件必须处于获焦状态，如何获焦请参考 设置组件是否可获焦 。Image组件默认不获焦，需将 focusable 属性设置为true，即可使用Tab键将焦点切换到组件上，再将 focusOnTouch 属性设置为true，即可实现点击获焦。 图片格式支持SVG图源，SVG标签文档请参考 SVG标签说明 。 动图的播放依赖于Image节点的可见性变化，其默认行为是不播放的。当节点可见时，通过回调启动动画，当节点不可见时，停止动画。可见性状态的判断是通过 onVisibleAreaChange 事件触发的，当可见阈值ratios大于0时，表明Image处于可见状态。 Image组件播放GIF动图时，帧时长取自GIF文件中各帧的delay time字段。当某帧的时长值小于等于0时，系统会将其修正为100ms；当某帧的时长值大于0时，系统直接使用该原始值，不做最小帧时长限制。 如果图片加载过程中出现白色块，请参考 Image白块问题解决方案 。如果图片加载时间过长，请参考 预置图片资源加载优化 。
+> 该组件从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。 该组件从API版本26.0.0开始支持 WithTheme 。 使用快捷组合键对Image组件复制时，Image组件必须处于获焦状态，如何获焦请参考 设置组件是否可获焦 。Image组件默认不获焦，需将 focusable 属性设置为true，即可使用Tab键将焦点切换到组件上，再将 focusOnTouch 属性设置为true，即可实现点击获焦。 图片格式支持SVG图源，SVG标签文档请参考 SVG标签说明 。 动图的播放依赖于Image节点的可见性变化，其默认行为是不播放的。当节点可见时，通过回调启动动画，当节点不可见时，停止动画。可见性状态的判断是通过 onVisibleAreaChange 事件触发的，当可见阈值ratios大于0时，表明Image处于可见状态。 Image组件播放GIF动图时，帧时长取自GIF文件中各帧的delay time字段。当某帧的时长值小于等于0时，系统会将其修正为100ms；当某帧的时长值大于0时，系统直接使用该原始值，不做最小帧时长限制。 如果图片加载过程中出现白色块，请参考 Image白块问题解决方案 。如果图片加载时间过长，请参考 预置图片资源加载优化 。
 
 
 
@@ -221,7 +221,7 @@ alt(value: string | Resource | PixelMap)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | string \| Resource \| PixelMap12+ | 是 | 设置图片加载过程中显示的占位图，支持本地图片（png、jpg、bmp、svg、gif和heif类型），支持PixelMap类型图片，不支持网络图片。 - 支持Base64字符串。 - 支持file://路径前缀的字符串，应用沙箱URI：file://&lt;bundleName&gt;/&lt;sandboxPath&gt;。应用沙箱路径URI构造可参考constructor。沙箱路径需要使用fileUri.getUriFromPath(path)方法将路径转换为应用沙箱URI，然后传入显示。同时需要保证目录包路径下的文件有可读权限。 默认值：null 由有效值（可正常解析并加载的图片资源）切换为无效值（无法解析或加载的图片路径）时，组件保持显示此前成功加载的图片内容，不进行清除或重置操作。 |
+| value | string \| Resource \| PixelMap12+ | 是 | 设置图片加载过程中显示的占位图，支持svg格式，其他需要解码的图片格式请参考ImageSource的supportedFormats属性说明，支持PixelMap类型图片，不支持网络图片。 - 支持Base64字符串。 - 支持file://路径前缀的字符串，应用沙箱URI：file://&lt;bundleName&gt;/&lt;sandboxPath&gt;。应用沙箱路径URI构造可参考constructor。沙箱路径需要使用fileUri.getUriFromPath(path)方法将路径转换为应用沙箱URI，然后传入显示。同时需要保证目录包路径下的文件有可读权限。 默认值：null 由有效值（可正常解析并加载的图片资源）切换为无效值（无法解析或加载的图片路径）时，组件保持显示此前成功加载的图片内容，不进行清除或重置操作。 |
 
 
 
@@ -256,7 +256,7 @@ alt(src: ResourceStr | PixelMap | ImageAlt)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| src | ResourceStr \| PixelMap\| ImageAlt | 是 | 设置图片加载过程中和加载失败时的占位图，支持本地图片（png、jpg、bmp、svg、gif和heif类型），支持PixelMap类型图片，不支持网络图片。 - 支持Base64字符串。 - 支持file://路径前缀的字符串，应用沙箱URI：file://&lt;bundleName&gt;/&lt;sandboxPath&gt;。应用沙箱路径URI构造可参考constructor。沙箱路径需要使用fileUri.getUriFromPath(path)方法将路径转换为应用沙箱URI，然后传入显示。同时需要保证目录包路径下的文件有可读权限。 |
+| src | ResourceStr \| PixelMap\| ImageAlt | 是 | 设置图片加载过程中和加载失败时的占位图，支持svg格式，其他需要解码的图片格式请参考ImageSource的supportedFormats属性说明，支持PixelMap类型图片，不支持网络图片。 - 支持Base64字符串。 - 支持file://路径前缀的字符串，应用沙箱URI：file://&lt;bundleName&gt;/&lt;sandboxPath&gt;。应用沙箱路径URI构造可参考constructor。沙箱路径需要使用fileUri.getUriFromPath(path)方法将路径转换为应用沙箱URI，然后传入显示。同时需要保证目录包路径下的文件有可读权限。 |
 
 
 
@@ -590,7 +590,7 @@ autoResize(value: boolean)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | boolean | 是 | 图片解码过程中是否对图源自动缩放。设置为true时，组件会根据显示区域的尺寸决定用于绘制的图源尺寸，有利于减少内存占用。如原图大小为800x1200，而显示区域大小为200x200，则图片会降采样解码到200x300的尺寸（实际计算过程中会依赖缩放和填充类型的配置，从而得到的计算结果会有差异），从而大幅度节省图片占用的内存。 默认值：false，false表示关闭图源自动缩放，true表示开启图源自动缩放。 |
+| value | boolean | 是 | 图片解码过程中是否对图源自动缩放。设置为true时，组件会根据显示区域的尺寸决定用于绘制的图源尺寸，有利于减少内存占用。如原图大小为800x1200，而显示区域大小为200x200，则图片会降采样解码到200x300的尺寸（实际计算过程中会依赖缩放和填充类型的配置，从而得到的计算结果会有差异），从而大幅度节省图片占用的内存。 默认值：false。 从API版本26.0.0开始，当图片解码后的宽×高像素乘积超过5000万时，默认值为true，即图片解码过程中开启降采样解码。该判断仅与图片像素尺寸相关，与图片文件大小及图片格式无关。 false表示关闭图源自动缩放，true表示开启图源自动缩放。 |
 
 
 
@@ -1187,15 +1187,15 @@ antialiased(isAntialiased: Optional&lt;boolean&gt;)
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| AUTO | 0 | 读取图片携带的EXIF元数据作为显示方向，支持旋转和镜像。 PixelMap和DrawableDescriptor类型的图片不包含头信息，调用该接口时图片显示效果不变化。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| AUTO | 0 | 读取图片携带的EXIF元数据作为显示方向，支持旋转和镜像。 PixelMap和DrawableDescriptor类型的图片不包含头信息，调用该接口时图片显示效果不变化。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 ![](assets/Image/file-20260514164047152-18.png) |
 | UP | 1 | 默认按照当前图片的像素数据进行显示，不做任何处理。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
-| RIGHT | 2 | 将当前图片顺时针旋转90度后显示。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
-| DOWN | 3 | 将当前图片顺时针旋转180度后显示。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
-| LEFT | 4 | 将当前图片顺时针旋转270度后显示。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
-| UP_MIRRORED20+ | 5 | 将当前图片水平翻转后显示。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
-| RIGHT_MIRRORED20+ | 6 | 将当前图片水平翻转再顺时针旋转90度后显示。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
-| DOWN_MIRRORED20+ | 7 | 将当前图片垂直翻转后显示。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
-| LEFT_MIRRORED20+ | 8 | 将当前图片水平翻转再顺时针旋转270度后显示。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
+| RIGHT | 2 | 将当前图片顺时针旋转90度后显示。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 ![](assets/Image/file-20260514164047152-19.png) |
+| DOWN | 3 | 将当前图片顺时针旋转180度后显示。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 ![](assets/Image/file-20260514164047152-2.png) |
+| LEFT | 4 | 将当前图片顺时针旋转270度后显示。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 ![](assets/Image/file-20260514164047152-20.png) |
+| UP_MIRRORED20+ | 5 | 将当前图片水平翻转后显示。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 ![](assets/Image/file-20260514164047152-21.png) |
+| RIGHT_MIRRORED20+ | 6 | 将当前图片水平翻转再顺时针旋转90度后显示。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 ![](assets/Image/file-20260514164047152-22.png) |
+| DOWN_MIRRORED20+ | 7 | 将当前图片垂直翻转后显示。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 ![](assets/Image/file-20260514164047152-23.gif) |
+| LEFT_MIRRORED20+ | 8 | 将当前图片水平翻转再顺时针旋转270度后显示。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 ![](assets/Image/file-20260514164047152-24.png) |
 
 
 

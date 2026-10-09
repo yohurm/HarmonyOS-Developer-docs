@@ -1,6 +1,6 @@
 # HarmonyOS下VPN的DNS解析顺序及域名拦截失效的处理方案
 
-更新时间：2026-07-30 01:55:38
+更新时间：2026-07-30 01:55:38（官网已下线）
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-network-126
 

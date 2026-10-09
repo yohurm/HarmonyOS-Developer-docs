@@ -1,17 +1,14 @@
 # 基于AVRecorder录制格式化音频（C++）
 
-更新时间：2026-03-12 08:45:02
+更新时间：2026-09-20 11:26:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-record-base-on-avrecorder
 
-**   
+## 概述
 
-
-#### 概述
-
-AVRecorder提供了Native API，可以快速实现音频录制，支持m4a、mp3等格式。本文适用于音频录制类应用的开发，针对市场上主流音频录制类应用的常见场景，介绍了在C/C++侧基于AVRecorder如何录制格式化音频，指导开发者实现基础录制。
+[AVRecorder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avrecorder)提供了Native API，可以快速实现音频录制，支持m4a、mp3等格式。本文适用于音频录制类应用的开发，针对市场上主流音频录制类应用的常见场景，介绍了在C/C++侧基于[AVRecorder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avrecorder)如何录制格式化音频，指导开发者实现基础录制。
  
-基于AVRecorder录制格式化音频（C++）实现的功能效果如下：
+基于[AVRecorder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avrecorder)录制格式化音频（C++）实现的功能效果如下：
  
 
 ![](assets/基于AVRecorder录制格式化音频（C++）/file-20260515114724672-0.gif)
@@ -19,19 +16,19 @@ AVRecorder提供了Native API，可以快速实现音频录制，支持m4a、mp3
  
 本文的主要内容如下：
  
-[基础录制](#section20569101215108)：介绍了在C/C++侧基于AVRecorder录制格式化音频，包括开始录制、暂停录制和结束录制。
+[基础录制](#section20569101215108)：介绍了在C/C++侧基于[AVRecorder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avrecorder)录制格式化音频，包括开始录制、暂停录制和结束录制。
  
  
 
-#### 基础录制
+## 基础录制
 
  
 
-#### 实现原理
+### 实现原理
 
-除了ArkTS语言版本外，HarmonyOS还提供了C/C++语言版本的AVRecorder录制器，用于在C/C++侧进行音频数据采集、音频编码以及音频文件封装等端到端一体化音频录制。C/C++侧AVRecorder的功能和开发流程与ArkTS侧基本一致。
+除了ArkTS语言版本外，HarmonyOS还提供了C/C++语言版本的[AVRecorder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avrecorder)录制器，用于在C/C++侧进行音频数据采集、音频编码以及音频文件封装等端到端一体化音频录制。C/C++侧[AVRecorder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avrecorder)的功能和开发流程与ArkTS侧基本一致。
  
-图1 **录制状态变化示意图
+**图1 **录制状态变化示意图
 
 ![](assets/基于AVRecorder录制格式化音频（C++）/file-20260515114724672-1.jpg)
 
@@ -39,7 +36,7 @@ AVRecorder提供了Native API，可以快速实现音频录制，支持m4a、mp3
  
  
 
-#### 开发步骤
+### 开发步骤
 
 1.在CMake脚本中链接动态库libavrecorder.so、libnative_media_core.so等。
  
@@ -47,11 +44,11 @@ AVRecorder提供了Native API，可以快速实现音频录制，支持m4a、mp3
 target_link_libraries(entry PUBLIC libace_napi.z.so libavrecorder.so libnative_media_core.so libhilog_ndk.z.so)
 ```
  
-2.在Native侧，配置AVRecorder。
+2.在Native侧，配置[AVRecorder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avrecorder)。
  
 - 创建OH_AVRecorder_Config对象，并设置音频录制的相关配置，包括音频采样率、音频格式、采样通道等。
-- 根据实际需要，设置音频录制的回调函数，如错误回调函数OH_AVRecorder_SetErrorCallback()等。
-- 调用OH_AVRecorder_Prepare()接口，让AVRecorder进入prepare状态。
+- 根据实际需要，设置音频录制的回调函数，如错误回调函数[OH_AVRecorder_SetErrorCallback()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avrecorder-h#oh_avrecorder_seterrorcallback)等。
+- 调用[OH_AVRecorder_Prepare()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avrecorder-h#oh_avrecorder_prepare)接口，让[AVRecorder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avrecorder)进入prepared状态。
 
  
 ```cpp
@@ -103,7 +100,7 @@ napi_value AVRecorder::PrepareAVRecorder(napi_env env, napi_callback_info info) 
     // Prepare
     int result = OH_AVRecorder_Prepare(g_avRecorder, config);
     if (result != AV_ERR_OK) {
-        OH_LOG_ERROR(LOG_APP, " AVRecorder Prepare failed %{public}d", result);
+        OH_LOG_ERROR(LOG_APP, "AVRecorder Prepare failed %{public}d", result);
     }
     napi_value res;
     napi_create_int32(env, result, &res);
@@ -117,10 +114,10 @@ napi_value AVRecorder::PrepareAVRecorder(napi_env env, napi_callback_info info) 
 // Start AVRecorder
 napi_value AVRecorder::StartAVRecorder(napi_env env, napi_callback_info info) {
     (void)info;
-    OH_LOG_INFO(LOG_APP, " g_avRecorder start: %{public}p", g_avRecorder);
+    OH_LOG_INFO(LOG_APP, "g_avRecorder start: %{public}p", g_avRecorder);
     int result = OH_AVRecorder_Start(g_avRecorder);
     if (result != AV_ERR_OK) {
-        OH_LOG_ERROR(LOG_APP, " AVRecorder Start failed %{public}d", result);
+        OH_LOG_ERROR(LOG_APP, "AVRecorder Start failed %{public}d", result);
     }
     napi_value res;
     napi_create_int32(env, result, &res);
@@ -136,7 +133,7 @@ napi_value AVRecorder::PauseAVRecorder(napi_env env, napi_callback_info info) {
     (void)info;
     int result = OH_AVRecorder_Pause(g_avRecorder);
     if (result != AV_ERR_OK) {
-        OH_LOG_ERROR(LOG_APP, " AVRecorder Pause failed %{public}d", result);
+        OH_LOG_ERROR(LOG_APP, "AVRecorder Pause failed %{public}d", result);
     }
     napi_value res;
     napi_create_int32(env, result, &res);
@@ -152,7 +149,7 @@ napi_value AVRecorder::ResumeAVRecorder(napi_env env, napi_callback_info info) {
     (void)info;
     int result = OH_AVRecorder_Resume(g_avRecorder);
     if (result != AV_ERR_OK) {
-        OH_LOG_ERROR(LOG_APP, " AVRecorder Resume failed %{public}d", result);
+        OH_LOG_ERROR(LOG_APP, "AVRecorder Resume failed %{public}d", result);
     }
     napi_value res;
     napi_create_int32(env, result, &res);
@@ -168,7 +165,7 @@ napi_value AVRecorder::StopAVRecorder(napi_env env, napi_callback_info info) {
     (void)info;
     int result = OH_AVRecorder_Stop(g_avRecorder);
     if (result != AV_ERR_OK) {
-        OH_LOG_ERROR(LOG_APP, " AVRecorder Stop failed %{public}d", result);
+        OH_LOG_ERROR(LOG_APP, "AVRecorder Stop failed %{public}d", result);
     }
     close(g_outputFd);
     napi_value res;
@@ -184,7 +181,7 @@ napi_value AVRecorder::StopAVRecorder(napi_env env, napi_callback_info info) {
 napi_value AVRecorder::ReleaseAVRecorder(napi_env env, napi_callback_info info) {
     (void)info;
     if (g_avRecorder == nullptr) {
-        OH_LOG_ERROR(LOG_APP, " g_avRecorder is nullptr!");
+        OH_LOG_ERROR(LOG_APP, "g_avRecorder is nullptr!");
         napi_value res;
         napi_create_int32(env, AV_ERR_INVALID_VAL, &res);
         return res;
@@ -194,7 +191,7 @@ napi_value AVRecorder::ReleaseAVRecorder(napi_env env, napi_callback_info info) 
     g_avRecorder = nullptr;
 
     if (result != AV_ERR_OK) {
-        OH_LOG_ERROR(LOG_APP, " AVRecorder Release failed %{public}d", result);
+        OH_LOG_ERROR(LOG_APP, "AVRecorder Release failed %{public}d", result);
     }
     napi_value res;
     napi_create_int32(env, result, &res);
@@ -204,22 +201,22 @@ napi_value AVRecorder::ReleaseAVRecorder(napi_env env, napi_callback_info info) 
  
  
 
-#### 常见问题
+## 常见问题
 
  
 
-#### 设置静音打断模式
+### 设置静音打断模式
 
 通过调用[OH_AVRecorder_SetWillMuteWhenInterrupted()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avrecorder-h#oh_avrecorder_setwillmutewheninterrupted)接口设置是否开启静音打断模式。
  
  
 
-#### 设置回声消除
+### 设置回声消除
 
 通过将[OH_AVRecorder_AudioSourceType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avrecorder-base-h#oh_avrecorder_audiosourcetype)值指定为AVRECORDER_VOICE_COMMUNICATION即可。
  
  
 
-#### 示例代码
+## 示例代码
 
 - [基于AVRecorder录制音频（C++）](https://gitcode.com/HarmonyOS_Samples/avrecorder-record-formatted-audio-cpp)

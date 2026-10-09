@@ -1,14 +1,12 @@
 # UI组件性能优化
 
-更新时间：2026-08-10 06:55:01
+更新时间：2026-09-15 02:12:10
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-ui-component-performance-optimization
 
-**   
-
 应用启动到UI页面展示过程包含框架初始化、页面加载和布局渲染三个步骤。其中页面加载和布局渲染的主要流程如下：
  
-图1 **页面首次加载过程流程图
+**图1 **页面首次加载过程流程图
  
 
 ![](assets/UI组件性能优化/file-20260515115017809-0.png)
@@ -28,7 +26,7 @@
 
  
 
-#### 避免在自定义组件的生命周期内执行高耗时操作
+## 避免在自定义组件的生命周期内执行高耗时操作
 
 **图2 **自定义组件生命周期流程图
  
@@ -194,12 +192,13 @@ struct Index {
  
 可以通过[冷启动分析：Launch分析](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-launch-overview)工具抓取Trace，根据hiTraceMeter性能打点，查看耗时为0.071ms。
  
-
  
+
 
 ![](assets/UI组件性能优化/file-20260515115017809-11.png)
 
   
+
 | 写法 | 耗时情况 |
 | --- | --- |
 | 资源信息为参数：getStringSync(\$r('app.string.app_name')) | 1.956ms |
@@ -209,7 +208,7 @@ struct Index {
 可得出结论：参数为资源信息时比参数为资源ID值时耗时更多。所以当需要使用类似方法时，使用资源ID值作为参数更优，可有效减少自定义组件生命周期耗时。
  
 
-#### 按需注册组件属性
+## 按需注册组件属性
 
 在使用组件开发应用UI界面时，会为每个组件设置属性，进行UI样式、行为等逻辑处理。当应用中单个组件设置了大量属性且该组件在应用中被大量使用时，单个组件的设置对应用的整体性能会产生较大影响。比如，在RN框架开发中，单个组件需要设置21个属性，且该组件在ForEach循环中使用。在该场景下，由于不知道应用实际需要使用哪些属性，因此把所有的属性通过属性方法的方式设置到组件上。而在实际使用中，大部分应用只会用到其中很少的几个属性，其他属性均维持默认值，这导致了大量属性的冗余设置。该场景示例代码片段如下：
  
@@ -424,6 +423,7 @@ struct Avatar {
  
 对于上述两种方案，逐渐增加注册的属性个数，通过DevEco Studio提供的Launch场景分析能力获取两个方案的页面加载耗时（PageRouterManager::LoadPage）和应用侧首帧耗时（First Frame - App Phase），对比如下：
   
+
 |    | 静态注册属性 | 动态注册属性 |
 | --- | --- | --- |
 | 注册的属性个数 | 6个 | 12个 | 18个 | 24个 | 6个 | 12个 | 18个 | 24个 |
@@ -431,11 +431,13 @@ struct Avatar {
 | First Frame - App Phase | 45ms554μs | 45ms638μs | 52ms918μs | 52ms643μs | 44ms603μs | 43ms923μs | 46ms709μs | 46ms355μs |
  
  
-**图4 **静态注册属性和动态注册属性在不同属性数量下LoadPage耗时**
+**图4 **静态注册属性和动态注册属性在不同属性数量下LoadPage耗时
+
 ![](assets/UI组件性能优化/file-20260515115017809-3.png)
 
  
-图5 **静态注册属性和动态注册属性在不同属性数量下First Frame - App Phase耗时**
+**图5 **静态注册属性和动态注册属性在不同属性数量下First Frame - App Phase耗时
+
 ![](assets/UI组件性能优化/file-20260515115017809-4.png)
 
  
@@ -443,16 +445,17 @@ struct Avatar {
  
  
 
-#### 优先使用@Builder方法代替自定义组件
+## 优先使用@Builder方法代替自定义组件
 
 在ArkUI中使用自定义组件时，在build阶段将在后端FrameNode树创建一个相应的CustomNode节点，在渲染阶段时也会创建对应的RenderNode节点，如下图所示。
  
-图6 **前后端UI组件树关系图**
+**图6 **前后端UI组件树关系图
+
 ![](assets/UI组件性能优化/file-20260515115017809-5.png)
 
  
-
  
+
 - 前端UI描述结构会在后端创建相应的FrameNode节点树；
 - FrameNode节点树主要用于处理UI组件属性更新、布局测算、事件处理等业务逻辑；
 - CustomNode作为FrameNode的子类，用于处理自定义组件相关业务逻辑，比如执行build函数。
@@ -473,10 +476,10 @@ struct Avatar {
  
 例如，在使用ForEach循环展示卡片列表信息时，界面展示如下：
  
-图7 **卡片列表界面
+**图7 **卡片列表界面
+ 
  
 
- 
 
 ![](assets/UI组件性能优化/file-20260515115017809-7.png)
 
@@ -611,11 +614,12 @@ export struct UserCardList {
  
 将组件数量从30个递增到3000个，通过profiler获取页面加载标签PageRouterManager::LoadPage和页面UI刷新任务标签UITaskScheduler::FlushTask的耗时，对比两种方案的耗时如下：
  
-**图8 **两种方案LoadPage标签耗时对比**
+**图8 **两种方案LoadPage标签耗时对比
+
 ![](assets/UI组件性能优化/file-20260515115017809-8.png)
 
  
-图9 **两种方案UITaskSchedule标签耗时对比
+**图9 **两种方案UITaskSchedule标签耗时对比
 
 ![](assets/UI组件性能优化/file-20260515115017809-9.png)
 
@@ -624,12 +628,12 @@ export struct UserCardList {
  
  
 
-#### 合理使用布局容器组件
+## 合理使用布局容器组件
 
 对于需要展示大量组件的场景，通常会使用布局容器组件，以达到快速实现页面布局的需求。在使用布局容器组件时，由于一次需要展示多个组件，可能出现首帧耗时过长甚至掉帧问题。此时可以考虑对容器组件内的子组件进行按需加载或懒加载等处理，对于相同结构的组件也可以使用组件复用能力。针对每个布局容器组件的性能优化可以参考[布局优化指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-optimization-guidance)。
  
  
 
-#### 示例代码
+## 示例代码
 
 - [UI组件性能优化同源示例代码](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/tree/master/ArkUI/UI_Component_Performance_Optimization)

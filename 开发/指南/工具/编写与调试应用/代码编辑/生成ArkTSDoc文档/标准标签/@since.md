@@ -1,19 +1,19 @@
 # @since
 
-更新时间：2026-01-15 06:51:04
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-arktsdoc-since
 
 @since标签表示在特定版本中添加了类、方法或其他符号。
  
 
-#### 语法
+## 语法
 
 @since &lt;versionDescription&gt;
  
  
 
-#### 示例
+## 示例
 
 使用 @since：
  

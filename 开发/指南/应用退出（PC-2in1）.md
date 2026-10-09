@@ -13,22 +13,22 @@ PC/2in1设备上常见的应用退出场景主要包括：
  - **关闭按钮退出**：用户点击主窗口三键区中的关闭按钮，关闭当前应用窗口。这是最常见的窗口退出方式。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/Y4t5o9_dSqK-Nr5DLZPzVw/zh-cn_image_0000002717609898.png?HW-CC-KV=V1&HW-CC-Date=20260911T072340Z&HW-CC-Expire=86400&HW-CC-Sign=943E186A8D94EED03B142934D3E4BFB48BD3A2A957BD51D36E047787113611FD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/bbC9soBxSGKKLUdwKk1blA/zh-cn_image_0000002749331712.png?HW-CC-KV=V1&HW-CC-Date=20261009T012521Z&HW-CC-Expire=86400&HW-CC-Sign=89CF7167AC0E33B467EEC7D7F3419D753717E92B5400436DFE737E27F4927F47)
 
  - **快捷栏退出**：用户在快捷栏右键点击应用图标，并选择“退出”或“关闭所有窗口”，触发应用级别的关闭流程。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/3VNgaLA4SEe8-3og09jHkg/zh-cn_image_0000002747289849.png?HW-CC-KV=V1&HW-CC-Date=20260911T072340Z&HW-CC-Expire=86400&HW-CC-Sign=63480E0ACD68D9F4B6D966578704873DFF7748298D25C6D3884CAF34C65A2FC4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/_rePEHzJR4qTBAA71JE_2A/zh-cn_image_0000002749491596.png?HW-CC-KV=V1&HW-CC-Date=20261009T012521Z&HW-CC-Expire=86400&HW-CC-Sign=4ADB61FA38E719B97641353B9DE4E5B95F57BE853DFA26517921B0F772B37192)
 
  - **托盘退出**：用户在系统托盘区域右键点击应用图标，并选择“退出”，触发应用级别的关闭流程。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/qzDiS6vuQpG1bzj3muyyvA/zh-cn_image_0000002747209767.png?HW-CC-KV=V1&HW-CC-Date=20260911T072340Z&HW-CC-Expire=86400&HW-CC-Sign=4B59C553D4B26F2827BD4C096A97F9BFA940268EFFCA0C0C32315885DF3730A4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/mVPNyug4QNK4DsYWYXyg8A/zh-cn_image_0000002779090653.png?HW-CC-KV=V1&HW-CC-Date=20261009T012521Z&HW-CC-Expire=86400&HW-CC-Sign=6E9FB809346B74AA4F2D486C0D60ACD3B897DD1BD2E97A5EE956461C0183367D)
 
  - **关机退出**：用户执行系统关机、重启等操作时，系统会依次关闭所有应用，并触发应用退出流程。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/G8DGwIkpTQOszBkBWyhlAQ/zh-cn_image_0000002717769834.png?HW-CC-KV=V1&HW-CC-Date=20260911T072340Z&HW-CC-Expire=86400&HW-CC-Sign=DBE4421F26BC9BD6B2B18AAE412A489CD986BD36A83B101CCE9C304E2C607BFB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/RFW-nFrQTI6YymMt2ysQOA/zh-cn_image_0000002778930797.png?HW-CC-KV=V1&HW-CC-Date=20261009T012521Z&HW-CC-Expire=86400&HW-CC-Sign=873F873D2ACDD768C972B315D1F8C69D52EBB2FAD27DE7E915FA563B92052DC3)
 
 
 

@@ -1,6 +1,6 @@
 # OH_AudioSuite_PureVoiceChangeOption
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-09 06:54:05（官网已下线）
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohaudiosuite-oh-audiosuite-purevoicechangeoption
 **支持设备：** Phone | PC/2in1 | Tablet

@@ -74,16 +74,14 @@
 | --- | --- |
 | 关键词触发 | “帮我接入推送服务” |
 | Skill名称触发 | “使用hmos-push-kit，帮我接入推送服务” |
- 
-  
+
 | 客户端技能 | Skill名称 | 关键词 | 说明 |
 | --- | --- | --- | --- |
 | 推送服务集成助手Skill | hmos-push-kit | 帮我接入推送服务 | 若使用该关键词正确触发主skill，AI编码工具会向开发者询问具体接入哪种场景。目前支持接入以下三种场景。 |
 | 通知消息Skill | hmos-push-kit-notification | 帮我接入通知消息 | 通知消息场景子skill。还可以触发的关键词，如：接入notification、接入push推送通知消息等相似语义。 |
 | 后台消息Skill | hmos-push-kit-background | 帮我接入后台消息 | 后台消息场景子skill。还可以触发的关键词，如：接入background、添加后台消息功能等相似语义。 |
 | 应用内通话消息Skill | hmos-push-kit-voip | 帮我接入应用内通话 | 应用内通话场景子skill。还可以触发的关键词，如：接入voip、添加应用内通话等相似语义。 |
- 
-  
+
 | 服务端技能 | Skill名称 | 关键词 | 说明 |
 | --- | --- | --- | --- |
 | Push Kit服务端Skill | hmos-push-kit-server-integration | 帮我生成Push消息发送服务端java代码 | 服务端Skill目前支持通知消息的发送与撤回，以及应用内通话消息的发送。 |

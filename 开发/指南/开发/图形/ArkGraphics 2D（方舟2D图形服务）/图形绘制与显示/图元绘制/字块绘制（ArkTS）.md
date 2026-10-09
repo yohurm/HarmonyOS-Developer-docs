@@ -200,7 +200,6 @@ canvas.drawTextBlob(textBlob, VALUE_200, VALUE_300);
 
 | 未跟随主题字体的效果图 | 跟随主题字体的效果图（不同主题字体显示效果不同，此处仅示意） |
 | --- | --- |
-|  |  |
 
 
 > [!NOTE]

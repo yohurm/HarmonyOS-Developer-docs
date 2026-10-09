@@ -1,10 +1,10 @@
 # 马良GPU渲染优化
 
-更新时间：2026-03-19 08:43:01
+更新时间：2026-09-15 02:12:10
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-maleoon-gpu-best-practices
 
-#### 概述
+## 概述
 
 本文档主要指导开发者如何在马良（Maleoon）GPU上达到最佳的性能表现，只针对Maleoon GPU的优化实践，帮助开发者高效完成渲染任务，如果想要达成该目标，首先需要通过[Graphics Profiler](https://developer.huawei.com/consumer/cn/doc/Tools-Guides/overview-0000001050741459)等GPU分析工具，找到当前的能效瓶颈点，并遵循以下两个基本优化原则进行性能调优。本文所有优化建议，都将围绕这两个基本优化原则展开。
  1. 结合Maleoon GPU的软硬件架构，让驱动和硬件各模块并发执行，使芯片能力充分释放出来。
@@ -22,11 +22,11 @@
  
  
 
-#### CPU优化
+## CPU优化
 
  
 
-#### Memory
+### Memory
 
 **1. Device Memory分配与释放**
 > [!NOTE]
@@ -53,7 +53,7 @@ vkAllocateMemory为了避免分配的内存没有真正被渲染线程使用，�
  
 频繁使用vkAllocateMemory。设备内存申请次数支持的最大数量可以通过maxMemoryAllocationCount limits属性获取。
  
-**2. D****evice Memory访问**
+**2. Device Memory访问**
  
  
 > [!NOTE]
@@ -102,7 +102,7 @@ Protected device memory只对device（即GPU）可见，对host（即CPU）不�
 从CPU non-cache的内存中频繁回读数据，会影响性能。
  
 
-#### Pipeline
+### Pipeline
 
 > [!NOTE]
 > 仅适用于 Vulkan 。
@@ -163,7 +163,7 @@ for (int i = 0; i < 4; i++) {
 使能multisample，消耗多倍GPU运行资源，降低执行效率。
  
 
-#### Shader编译
+### Shader编译
 
 > [!NOTE]
 > 仅适用于 OpenGL ES 。
@@ -181,7 +181,7 @@ Shader的首次编译（glCompileShader，glLinkProgram）耗时长，若在应�
  
  
 
-#### Command Buffer
+### Command Buffer
 
 Command buffer usage flags会影响command buffer的执行性能。当使用了SIMULTANEOUS_USE_BIT时，会降低command buffer的执行性能。如果在renderpass内使用secondary command buffer，flags不会有影响。
  
@@ -195,7 +195,7 @@ Command buffer usage flags会影响command buffer的执行性能。当使用了S
  
  
 
-#### Draw Call Batching
+### Draw Call Batching
 
 游戏下发的draw call数量越多，带来的CPU开销越多，整体的性能越差，建议合并draw call来降低CPU侧的开销。
  
@@ -220,11 +220,11 @@ Command buffer usage flags会影响command buffer的执行性能。当使用了S
  
  
 
-#### GPU优化
+## GPU优化
 
  
 
-#### Vertex shading
+### Vertex shading
 
 **1. 精度**
  
@@ -290,7 +290,7 @@ Maleoon GPU是Tile-Based架构的GPU，对于Tile-Based架构的GPU，有一个�
 将顶点相关的属性存储在独立buffer中。
  
 
-#### Per-Fragment Test
+### Per-Fragment Test
 
 **Overdraw**
  
@@ -319,7 +319,7 @@ Renderpass整体的CompareOp是以第一次满足“可进行深度剔除”时�
  
  
 
-#### Fragment Shading
+### Fragment Shading
 
 **1. Renderpass**
  
@@ -410,8 +410,13 @@ shader中texture prefetch需要满足以下条件：
 - 以下采样函数支持texture prefetch。
 
 | gvec4 texture(gsampler2D sampler, vec2 P, [float bias]); bias is imm value or some other uniform variable |
+
+| --- |
+
 | gvec4 textureLod(gsampler2D sampler, vec2 P, float lod); lod is imm value or some other uniform variable |
+
 | gvec4 textureProj(gsampler2D sampler, vec4(or vec3) P, [float bias]); bias = 0.0 (or no bias parameter) |
+
 | gvec4 textureLodOffset(gsampler2D sampler, vec2 P, float lod, ivec2 offset); lod is imm value or some other uniform variable |
 
  
@@ -449,8 +454,8 @@ void main() {
 }
 ```
  
-
  
+
 推荐shader：
  
 ```text
@@ -582,7 +587,7 @@ vec4 min_enable = min(min(min(t0, t1), t2), t3);
  
  
 
-#### Blend
+### Blend
 
 Maleoon GPU上，Blend可以通过Fixed Function（硬件加速）的方式，或者软件shader的方式实现，具体的影响因素包括采用的blend mode和进行blend的color attachment的format。
  
@@ -639,7 +644,7 @@ R32_SFLOAT
  
  
 
-#### Transfer
+### Transfer
 
 > [!NOTE]
 > 仅适用于 Vulkan 。
@@ -656,7 +661,7 @@ R32_SFLOAT
  
  
 
-#### Compute
+### Compute
 
 **1. Compute Shading**
  
@@ -758,7 +763,7 @@ half_sqrt();
 
  
 
-#### Window System Integration
+### Window System Integration
 
 > [!NOTE]
 > 仅适用于 Vulkan 。
@@ -779,7 +784,7 @@ half_sqrt();
  
  
 
-#### Resource
+### Resource
 
 **1. Texture**
  
@@ -804,60 +809,115 @@ IMAGE_USAGE_COLOR_ATTACHMENT_BIT
  - image可支持的format列表如下：
 
 | 序号 | 可支持的format |
+
 | --- | --- |
+
 | 1 | FORMAT_A4B4G4R4_UNORM=2 |
+
 | 2 | FORMAT_A4R4G4B4_UNORM=3 |
+
 | 3 | FORMAT_B5G6R5_UNORM=4 |
+
 | 4 | FORMAT_R5G6B5_UNORM=5 |
+
 | 5 | FORMAT_A1B5G5R5_UNORM=6 |
+
 | 6 | FORMAT_A1R5G5B5_UNORM=7 |
+
 | 7 | FORMAT_B5G5R5A1_UNORM=8 |
+
 | 8 | FORMAT_R8_UNORM=9 |
+
 | 9 | FORMAT_R8_UINT=13 |
+
 | 10 | FORMAT_R8_SINT=14 |
+
 | 11 | FORMAT_R8G8_UNORM=16 |
+
 | 12 | FORMAT_R8G8_UINT=20 |
+
 | 13 | FORMAT_R8G8_SINT=21 |
+
 | 14 | FORMAT_R8G8B8_UNORM=23 |
+
 | 15 | FORMAT_R8G8B8_UINT=27 |
+
 | 16 | FORMAT_R8G8B8_SINT=28 |
+
 | 17 | FORMAT_R8G8B8_SRGB=29 |
+
 | 18 | FORMAT_B8G8R8_UNORM=30 |
+
 | 19 | FORMAT_B8G8R8_UINT=34 |
+
 | 20 | FORMAT_B8G8R8_SINT=35 |
+
 | 21 | FORMAT_B8G8R8_SRGB=36 |
+
 | 22 | FORMAT_R8G8B8A8_UNORM=37 |
+
 | 23 | FORMAT_R8G8B8A8_UINT=41 |
+
 | 24 | FORMAT_R8G8B8A8_SINT=42 |
+
 | 25 | FORMAT_R8G8B8A8_SRGB=43 |
+
 | 26 | FORMAT_B8G8R8A8_UNORM=44 |
+
 | 27 | FORMAT_B8G8R8A8_UINT=48 |
+
 | 28 | FORMAT_B8G8R8A8_SINT=49 |
+
 | 29 | FORMAT_B8G8R8A8_SRGB=50 |
+
 | 30 | FORMAT_B10G10R10A2_UNORM=58 |
+
 | 31 | FORMAT_B10G10R10A2_UINT=62 |
+
 | 32 | FORMAT_R10G10B10A2_UNORM=64 |
+
 | 33 | FORMAT_R10G10B10A2_UINT=68 |
+
 | 34 | FORMAT_R16_UINT=74 |
+
 | 35 | FORMAT_R16_SINT=75 |
+
 | 36 | FORMAT_R16_SFLOAT=76 |
+
 | 37 | FORMAT_R16G16_UINT=81 |
+
 | 38 | FORMAT_R16G16_SINT=82 |
+
 | 39 | FORMAT_R16G16_SFLOAT=83 |
+
 | 40 | FORMAT_R16G16B16_UINT=88 |
+
 | 41 | FORMAT_R16G16B16_SINT=89 |
+
 | 42 | FORMAT_R16G16B16_SFLOAT=90 |
+
 | 43 | FORMAT_R16G16B16A16_UINT=95 |
+
 | 44 | FORMAT_R16G16B16A16_SINT=96 |
+
 | 45 | FORMAT_R16G16B16A16_SFLOAT=97 |
+
 | 46 | FORMAT_R32_UINT=98 |
+
 | 47 | FORMAT_R32_SINT=99 |
+
 | 48 | FORMAT_R32_SFLOAT=100 |
+
 | 49 | FORMAT_R11G11B10_UFLOAT=122 |
+
 | 50 | FORMAT_D16_UNORM=124 |
+
 | 51 | FORMAT_D24_X8_UNORM=125 |
+
 | 52 | FORMAT_D32_SFLOAT=126 |
+
 | 53 | FORMAT_D24_UNORM_S8_UINT=129 |
+
 | 54 | FORMAT_D32_SFLOAT_S8_UINT=130 |
 
  
@@ -869,30 +929,55 @@ IMAGE_USAGE_COLOR_ATTACHMENT_BIT
 - 支持压缩的纹理internal format如下：
 
 | 序号 | 可支持的format |
+
 | --- | --- |
+
 | 1 | GL_RGB8_OES |
+
 | 2 | GL_RGBA8_OES |
+
 | 3 | GL_BGRA8_EXT |
+
 | 4 | GL_RGBA4 |
+
 | 5 | GL_RGB565 |
+
 | 6 | GL_RGB5_A1 |
+
 | 7 | GL_DEPTH_COMPONENT16 |
+
 | 8 | GL_DEPTH_COMPONENT24_OES |
+
 | 9 | GL_DEPTH24_STENCIL8_OES |
+
 | 10 | GL_DEPTH_COMPONENT32F |
+
 | 11 | GL_DEPTH32F_STENCIL8 |
+
 | 12 | GL_RGB10_EXT |
+
 | 13 | GL_RGB10_A2_EXT |
+
 | 14 | GL_R8_EXT |
+
 | 15 | GL_RG8_EXT |
+
 | 16 | GL_R16F |
+
 | 17 | GL_RG16F |
+
 | 18 | GL_RGBA16F |
+
 | 19 | GL_R11F_G11F_B10F |
+
 | 20 | GL_SRGB8_ALPHA8 |
+
 | 21 | GL_RGB10_A2UI |
+
 | 22 | GL_RGBA16UI |
+
 | 23 | GL_RGBA8UI |
+
 | 24 | GL_RGBA16IGL_RGBA8I |
 
  
@@ -955,7 +1040,7 @@ IMAGE_USAGE_COLOR_ATTACHMENT_BIT
 不能保证buffer没有任何的读写依赖，调用glMapBufferRange时不要包含MAP_UNSYNCHRONIZED_BIT标记位，否则会有数据错误的风险。
  
 
-#### Synchronization
+### Synchronization
 
 > [!NOTE]
 > 仅适用于 Vulkan 。
@@ -990,7 +1075,7 @@ vkCmdEndRenderPass()；
 Job的执行顺序如下图所示，可见graphics jobs之间存在较大空隙，compute和graphics jobs为串行执行。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/29cHdY9rTCenttlrYczg6w/zh-cn_image_0000002194010276.jpg?HW-CC-KV=V1&HW-CC-Date=20260528T024752Z&HW-CC-Expire=86400&HW-CC-Sign=95481D0379CED38F529BAAB0DC2867E180BE59A59A74509C0874FA67484CAF32)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/7FEjmBydSVqZhTSr7qPLAg/zh-cn_image_0000002194010276.jpg?HW-CC-KV=V1&HW-CC-Date=20261009T012647Z&HW-CC-Expire=86400&HW-CC-Sign=D1C9BD71773C92251D1020568AF07ED70F5DDB3E6FB65713518DF7AE846A15DD)
 
  
 为了避免以上情况出现，compute执行时，尽量让可以并行的graphics任务与compute同时执行。API序列如下所示：
@@ -1013,7 +1098,7 @@ vkCmdEndRenderPass();
 Job的执行顺序如下图所示，此时compute和graphics jobs可以并发执行。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/o7KqJ_K8QzuRMyY5cxSe5w/zh-cn_image_0000002193850692.jpg?HW-CC-KV=V1&HW-CC-Date=20260528T024752Z&HW-CC-Expire=86400&HW-CC-Sign=476557C93C7341A880BE74C4B16E3B955DF769DAEF18B01A1E2AD65286AFB232)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/Up5jiS4BRFW1HH7xsZ-8OA/zh-cn_image_0000002193850692.jpg?HW-CC-KV=V1&HW-CC-Date=20261009T012647Z&HW-CC-Expire=86400&HW-CC-Sign=BED0D88617ADDBF8C293E71E2E4387558A9443FFE6F431954E894D8AF5C9AB37)
 
  
 **【不推荐】**
@@ -1028,7 +1113,7 @@ Job的执行顺序如下图所示，此时compute和graphics jobs可以并发执
  
  
 
-#### Subpass Merge
+### Subpass Merge
 
 > [!NOTE]
 > 仅适用于 Vulkan 。
@@ -1072,11 +1157,11 @@ INPUT_ATTACHMENT_READ_BIT
  
  
 
-#### Shader编码优化
+## Shader编码优化
 
  
 
-#### 不要使用较复杂shader
+### 不要使用较复杂shader
 
 相比于CPU优化，在做GPU优化时，需要特别关注shader并发执行的情况，发挥GPU并行计算的能力，这个比做好单个shader的优化更加重要。这种并发分两个层面，一方面是不同的shader之间，如果无依赖，要尽量并发的执行，另一方面是同一个shader，不同的线程（vertex/pixel…）要尽可能的并发执行。
  
@@ -1088,7 +1173,7 @@ Shader执行所需的资源，在GPC/EU等层级上可能会有独占的情况�
  
  
 
-#### 内存访问向量化
+### 内存访问向量化
 
 Maleoon GPU在内存访问操作上使用向量化是更加高效的行为，向量化的内存访问可以减少访问cycle和带宽。
  
@@ -1136,7 +1221,7 @@ void main() {
  
  
 
-#### 尽量使用低精度
+### 尽量使用低精度
 
 Maleoon GPU同时支持高精度和低精度，并且在软硬件上对低精度运算进行了深度优化。
  
@@ -1176,7 +1261,7 @@ vec2 var2 = (var0 + var1) / 2.0f;
  
  
 
-#### 生成优化的SPIR-V
+### 生成优化的SPIR-V
 
 如果使用HLSL/GLSL开发vulkan应用，一般需要通过工具转换生成SPIR-V格式的shader，但是转换过程中可能与原本HLSL/GLSL有差异。
  
@@ -1186,7 +1271,7 @@ vec2 var2 = (var0 + var1) / 2.0f;
  
  
 
-#### Uniforms
+### Uniforms
 
 Maleoon GPU可以将部分uniform data转换成shader core的register，从而减少频繁的uniform data load。
  
@@ -1207,7 +1292,7 @@ Maleoon GPU可以将部分uniform data转换成shader core的register，从而�
  
  
 
-#### Uniform Expressions
+### Uniform Expressions
 
 Maleoon GPU通过协处理器，可以在draw call执行前，在协处理器上完成一部分标量运算，主要包括了uniform和立即数相关表达式的计算，计算结果提供给整个draw call使用。因此，在Maleoon GPU上uniform expressions不会占用GPU运行的时间。
  
@@ -1217,7 +1302,7 @@ Maleoon GPU通过协处理器，可以在draw call执行前，在协处理器上
  
  
 
-#### Uniform Relative Indexing
+### Uniform Relative Indexing
 
 Maleoon GPU对于Uniform relative indexing的一般做法为将动态索引的完整uniform buffer放在mem中，再通过运行时计算出来的index从mem中load出对应的uniform value。
  
@@ -1260,7 +1345,7 @@ if (_61.x) {
  
  
 
-#### Branch
+### Branch
 
 分支（branching）在GPU上代价较大，原因如下：
  
@@ -1337,7 +1422,7 @@ vec4 UniformArrayDynamicIndex(int i) {
  
  
 
-#### Loop
+### Loop
 
 Loop运行过程中，会产生较多的分叉，且会有大量的分支指令，性能在GPU上较差。
  

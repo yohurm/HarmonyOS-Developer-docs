@@ -1,6 +1,6 @@
 # @ohos.distributedsched.abilityConnectionManager (应用多端协同管理)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-distributed-abilityconnectionmanager
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -10,7 +10,7 @@ abilityConnectionManager模块提供了应用协同接口管理能力。设备�
 多端协同的逻辑分层架构视图如下：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/X4Cyqzv0QzmQ9TVcVskhnQ/zh-cn_image_0000002717773522.png?HW-CC-KV=V1&HW-CC-Date=20260911T072854Z&HW-CC-Expire=86400&HW-CC-Sign=27D3AD063AABD0E8A7C907470E44FAE28EB914BBDF89D5F970F901C26EDA2D5A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/zXRJjRwOQFeSiTf2yyOQ4w/zh-cn_image_0000002749495544.png?HW-CC-KV=V1&HW-CC-Date=20261009T012853Z&HW-CC-Expire=86400&HW-CC-Sign=41546AE9029117ED464687597871A69DBA5403850A8A4263E3DDD11A3C5070CE)
 
 
 逻辑分层架构视图的关键原理说明如下：

@@ -1,6 +1,6 @@
 # FaultLog
 
-更新时间：2026-08-29 09:41:34
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-fault-log
 
@@ -71,4 +71,4 @@ FaultLog故障信息左侧按照**应用/元服务包名 > 故障类型 > 故障
 ![](assets/FaultLog/file-20260514133024924-6.png)
 
 
- - 保存所有日志：点击Export FaultLog按钮![icon](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/i-WeQfcUTxGLvyTwcGnETA/zh-cn_image_0000002731382907.png?HW-CC-KV=V1&HW-CC-Date=20260911T072812Z&HW-CC-Expire=86400&HW-CC-Sign=4CC6FE1A561FFC71F3DA837AF0AF383C7725D31E7962CA794B284AD33493DACF)，弹出子选项后进一步点击**Export All FaultLog**。
+ - 保存所有日志：点击Export FaultLog按钮![icon](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/0xhKdL_pT6CPPhHQfG-8Dg/zh-cn_image_0000002731382907.png?HW-CC-KV=V1&HW-CC-Date=20261009T012808Z&HW-CC-Expire=86400&HW-CC-Sign=68FEB7D540A1532102D48E64BA93D14D26DAD0FF30BB85685E807914D44C255B)，弹出子选项后进一步点击**Export All FaultLog**。

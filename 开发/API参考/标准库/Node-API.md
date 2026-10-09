@@ -1,6 +1,6 @@
 # Node-API
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/napi
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -52,7 +52,7 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 从Node-API标准库导出的接口，其使用方法及行为基于[Node.js](https://nodejs.org/docs/latest-v18.x/api/n-api.html)。部分接口存在差异，请参考[已导出符号列表与标准库对应符号的差异](#已导出符号列表与标准库对应符号的差异)。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/xaWmHclNRbakVSDNw1ft0A/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T073017Z&HW-CC-Expire=86400&HW-CC-Sign=ED44797FEDE25AB66A2F3F00690A815201E0495F1A48D8160C6E554348460A33)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/-CN5o4SQQOG_Q63tzvSCuw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20261009T013029Z&HW-CC-Expire=86400&HW-CC-Sign=0D785D256DC1BE3F786CD8D9C539B9D99F9432E0B7A4FF8D27857AF4D4986F22)
 
 
 使用 NAPI 接口时，应确保环境、对象和值有效且符合规格；无效或跨生命周期使用可能导致失败、崩溃或未定义行为。开发过程常见问题可参考[Node-API常见问题](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-faqs)。
@@ -257,6 +257,18 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 
 
+### napi_throw
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+**参数：**
+
+ - error: HarmonyOS中仅支持Error对象。当传入非Error对象时，该导出接口返回napi_invalid_arg。
+
+
+
+
 ### napi_create_error
 
 
@@ -313,6 +325,30 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 
 
+### napi_reference_ref
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+**返回：**
+
+ - 当引用对应的对象已被垃圾回收（弱引用已回收）时，标准库中不增加引用计数并返回0，而HarmonyOS中仍会增加引用计数并返回非零值。
+
+
+
+
+### napi_reference_unref
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+**返回：**
+
+ - 当引用计数已经为0时，标准库中返回napi_generic_failure且不修改result，而HarmonyOS中返回napi_ok并将result写为0。
+
+
+
+
 ### napi_create_reference
 
 
@@ -333,6 +369,58 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 **说明：**
 
  - 在HarmonyOS中，如果创建强引用时注册了napi_finalize回调函数，调用该接口的时候会触发该napi_finalize回调。
+
+
+
+
+### napi_create_string_latin1
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+**参数：**
+
+ - str: HarmonyOS中该参数为必填，即使length为0也不允许为nullptr。
+
+
+**返回：**
+
+ - HarmonyOS中该导出接口按UTF-8编码解码输入数据。当输入包含0x80～0xFF范围的数据时，两端可能产生不同的字符串结果。
+ - HarmonyOS中未校验显式length是否超过INT_MAX，标准库中当length不为NAPI_AUTO_LENGTH且超过INT_MAX时返回napi_invalid_arg。
+
+
+
+
+### napi_create_string_utf8
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+**参数：**
+
+ - str: HarmonyOS中该参数为必填，即使length为0也不允许为nullptr。
+
+
+**返回：**
+
+ - HarmonyOS中未校验显式length是否超过INT_MAX，标准库中当length不为NAPI_AUTO_LENGTH且超过INT_MAX时返回napi_invalid_arg。
+
+
+
+
+### napi_create_string_utf16
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+**参数：**
+
+ - str: HarmonyOS中该参数为必填，即使length为0也不允许为nullptr。
+
+
+**返回：**
+
+ - 当传入显式length时，HarmonyOS仍会通过扫描NUL终止符计算字符串长度，标准库中直接使用显式length，不要求输入缓冲区以NUL结尾。若传入恰好为length个UTF-16单元且末尾无NUL的缓冲区，可能导致越界读取。
 
 
 
@@ -428,6 +516,30 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 
 
+### napi_is_array
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+**参数：**
+
+ - value: 该导出接口额外支持array类型Sendable Array（SharedArray）。
+
+
+
+
+### napi_get_array_length
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+**参数：**
+
+ - value: 该导出接口额外支持array类型Sendable Array（SharedArray）。
+
+
+
+
 ### napi_get_property_names
 
 
@@ -496,6 +608,11 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 **返回：**
 
  - 当参数object不是Object或Function对象时，该导出接口返回napi_object_expected。
+
+
+**说明：**
+
+ - 该接口与napi_has_property行为一致，用于检查对象中是否存在指定的属性，避免访问不存在属性导致的异常。
 
 
 
@@ -622,6 +739,35 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 
 
+### napi_create_function
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+**参数：**
+
+ - utf8name: 当该参数为nullptr时，HarmonyOS中会将函数名设置为"defaultName"，标准库中不设置函数名。
+
+
+**返回：**
+
+ - HarmonyOS中该导出接口完全忽略length参数，使用NUL终止符截取utf8name。标准库中使用显式length，可包含嵌入NUL的函数名。若传入非NUL结尾的名称，可能导致越界读取。
+
+
+
+
+### napi_get_cb_info
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+**返回：**
+
+ - 当argv不为空而argc为空时，HarmonyOS中静默忽略并返回napi_ok。标准库中当argv不为空时要求argc也不为空，否则返回napi_invalid_arg。
+
+
+
+
 ### napi_call_function
 
 
@@ -631,6 +777,11 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
  - 该导出接口不会去校验参数recv是否为nullptr。
  - 当参数func不是Function对象时，该导出接口返回napi_function_expected。
+
+
+**说明：**
+
+ - 该函数执行后会触发微任务执行。
 
 
 
@@ -645,6 +796,11 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
  - 当参数constructor不是Function对象时，该导出接口返回napi_function_expected。
 
 
+**说明：**
+
+ - 该函数执行后会触发微任务执行。
+
+
 
 
 ### napi_define_class
@@ -655,6 +811,7 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 **返回：**
 
  - 当length不为NAPI_AUTO_LENGTH且大于INT_MAX时，该导出接口返回napi_object_expected。
+ - HarmonyOS中使用min(length, strlen(utf8name))对名称进行截断，显式length范围内的嵌入NUL无法保留。标准库中使用显式length直接创建字符串，可保留嵌入NUL。
 
 
 
@@ -673,6 +830,7 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 **返回：**
 
  - 参数js_object不为Object或Function对象时，该导出接口返回napi_object_expected。
+ - 当对同一个js_object重复调用napi_wrap时，HarmonyOS中后者会覆盖前者的包装，标准库中返回napi_invalid_arg。
 
 
 
@@ -716,6 +874,7 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
  - 该导出接口暂时不支持async_hooks资源管理机制。
  - 该导出接口不校验async_resource_name参数类型，建议传入String对象描述异步工作对象。String类型参数会在trace信息中显示，null或undefined则不会显示，其他类型将导致崩溃。
  - 由于当前暂不支持async_hooks资源管理机制，入参async_resource暂时也不做处理。
+ - complete: HarmonyOS中该参数为必填，为nullptr时返回napi_invalid_arg。
 
 
 
@@ -740,6 +899,11 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 **参数：**
 
  - 该导出接口暂时不支持async_hooks资源管理机制。
+
+
+**返回：**
+
+ - 当底层任务入队失败时，HarmonyOS中仍返回napi_ok，并打印失败日志，execute和complete回调函数不会执行。标准库中入队失败时会终止进程。
 
 
 
@@ -772,6 +936,11 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+**参数：**
+
+ - recv: HarmonyOS中要求该参数是Object对象，否则返回napi_object_expected。
+
 
 **说明：**
 
@@ -812,6 +981,7 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 **说明：**
 
  - promise的then方法的resolve或者reject回调中出现异常时，如果promise没有catch块，代码会继续执行不会崩溃；如果promise有catch块，则异常会被该catch块捕获。
+ - 该函数执行后会触发微任务执行。
 
 
 
@@ -824,6 +994,19 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 **说明：**
 
  - promise的then方法的resolve或者reject回调中出现异常时，如果promise没有catch块，代码会继续执行不会崩溃；如果promise有catch块，则异常会被该catch块捕获。
+ - 该函数执行后会触发微任务执行。
+
+
+
+
+### napi_acquire_threadsafe_function
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+**返回：**
+
+ - 当线程安全函数处于关闭中（closing）状态时，标准库中返回napi_closing，而HarmonyOS中统一返回napi_generic_failure。
 
 
 
@@ -961,6 +1144,7 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
  - HarmonyOS中，length小于等于0时返回napi_invalid_arg。
  - HarmonyOS中，length大于2097152时返回napi_invalid_arg并打印错误日志。
  - HarmonyOS中，data为nullptr时返回napi_invalid_arg。
+ - HarmonyOS中，result_data为必填参数，为nullptr时返回napi_invalid_arg。
  - 标准库中，进入或退出接口前若有异常将直接返回napi_pending_exception，HarmonyOS中没有对此做校验。
 
 
@@ -986,6 +1170,11 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
+**参数：**
+
+ - HarmonyOS中data和length参数均不可为空，若任一为nullptr会导致进程崩溃。
+
+
 **返回：**
 
  - HarmonyOS会对value是否属于buffer进行判断，若不属于则返回napi_arraybuffer_expected。
@@ -1001,6 +1190,18 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 **返回：**
 
  - 当入参arraybuffer不为Object对象时，该导出接口返回napi_object_expected；当arraybuffer是Object对象但不为ArrayBuffer对象时，该导出接口返回napi_invalid_arg。
+
+
+
+
+### napi_is_detached_arraybuffer
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+**返回：**
+
+ - 当入参arraybuffer不为ArrayBuffer对象时，HarmonyOS中返回napi_invalid_arg且不写result。若调用方使用未初始化的result值，可能导致后续行为异常。
 
 
 
@@ -1032,6 +1233,18 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
  - HarmonyOS在强引用delete的时候直接回调，标准库是在对象析构时候才会回调。
  - 回调主动抛出异常时，HarmonyOS会触发JSCrash，标准库不会触发crash。
  - HarmonyOS在result非空时创建强引用，标准库则创建弱引用。
+
+
+
+
+### napi_get_and_clear_last_exception
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+**返回：**
+
+ - 当没有待处理异常时，HarmonyOS中返回napi_ok但不修改result。若调用方使用未初始化的result值，可能导致后续行为异常。
 
 
 
@@ -1077,9 +1290,53 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
+**参数：**
+
+ - data: HarmonyOS中该参数为必填，为nullptr时返回napi_invalid_arg。
+
+
 **返回：**
 
  - 当length数值过大时，标准库中会直接抛出异常并中断进程，HarmonyOS中会尝试分配内存，若分配失败则抛出异常并返回undefined。
+
+
+
+
+### napi_create_external_arraybuffer
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+**参数：**
+
+ - external_data: HarmonyOS中该参数为必填，为nullptr时返回napi_invalid_arg。
+ - finalize_cb: HarmonyOS中该参数为必填，为nullptr时返回napi_invalid_arg。
+
+
+
+
+### napi_get_arraybuffer_info
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+**参数：**
+
+ - byte_length: HarmonyOS中该参数为必填，为nullptr时返回napi_invalid_arg。
+ - data: HarmonyOS中该参数为可选，为nullptr时不写数据地址。
+ - arraybuffer: 该导出接口额外识别SendableArrayBuffer。
+
+
+
+
+### napi_is_arraybuffer
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+**参数：**
+
+ - value: 该导出接口额外识别SendableArrayBuffer。
 
 
 

@@ -1,6 +1,6 @@
 # @ohos.promptAction (弹窗)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-promptaction
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -182,7 +182,7 @@ Toast的选项。
 | message | string \| Resource | 否 | 否 | 显示的文本信息。 说明： 默认字体为'Harmony Sans'，不支持设置其他字体。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | duration | number | 否 | 是 | 设置Toast弹出的持续时间。 单位：ms 默认值：1500ms 取值范围：[1500, 10000]。若小于1500ms则取默认值，若大于10000ms则取上限值10000ms。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | bottom | string \| number | 否 | 是 | 设置Toast底部边框距离导航条的高度。软键盘拉起时，若bottom值过小且Toast会被遮挡，则自动避让至距离软键盘80vp处。 默认值：80vp 说明： 当底部没有导航条时，bottom为设置弹窗底部边框距离窗口底部的高度。 设置对齐方式alignment后，bottom不生效。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
-| alignment12+ | Alignment | 否 | 是 | 对齐方式。默认值：undefined，当未设置alignment且存在导航条或软键盘时，Toast会自动根据导航条或软键盘位置进行调整，可参考bottom的说明。 说明： 不同alignment下，Toast位置对齐效果，如下图所示。 Toast的文本显示默认自左向右，不支持其他对齐方式。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
+| alignment12+ | Alignment | 否 | 是 | 对齐方式。默认值：undefined，当未设置alignment且存在导航条或软键盘时，Toast会自动根据导航条或软键盘位置进行调整，可参考bottom的说明。 说明： 不同alignment下，Toast位置对齐效果，如下图所示。 ![](assets/ohos.promptAction 弹窗/file-20260514163842117-2.gif) Toast的文本显示默认自左向右，不支持其他对齐方式。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | offset12+ | Offset | 否 | 是 | 在对齐方式上的偏移。 默认值：{ dx: 0, dy: 0 }，默认没有偏移。 说明： 仅支持设置px类型的数值。如需设置其他类型的数值，应将其他类型转换为px类型后传入。例如，若需设置vp，应将其转换为px后传入。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | showMode11+ | ToastShowMode | 否 | 是 | 设置Toast层级。 默认值：ToastShowMode.DEFAULT，默认显示在应用内。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | backgroundColor12+ | ResourceColor | 否 | 是 | Toast的背板颜色。 默认值：Color.Transparent 说明： backgroundColor会与模糊属性backgroundBlurStyle叠加产生效果，如果不符合预期，可将backgroundBlurStyle设置为BlurStyle.NONE，即可取消模糊。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
@@ -1092,7 +1092,7 @@ promptAction.showDialog({
     console.info('showDialog success, click button: ' + data.index);
   })
   .catch((err: Error) => {
-    console.info('showDialog error: ' + err);
+    console.error('showDialog error: ' + err);
   })
 ```
 
@@ -1161,7 +1161,7 @@ try {
     ]
   }, (err, data) => {
     if (err) {
-      console.info('showDialog err: ' + err);
+      console.error('showDialog err: ' + err);
       return;
     }
     console.info('showDialog success callback, click button: ' + data.index);
@@ -1174,7 +1174,7 @@ try {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/GcazvyOcRYaGFzc2dLzNmQ/zh-cn_image_0000002717612412.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072931Z&HW-CC-Expire=86400&HW-CC-Sign=920221A85F34E32AB445B49F5657B0D3B7259A61BB62F1E9F0DD97C9DB49954D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/IyzIApX2R8qAnvylNPXtLw/zh-cn_image_0000002749334344.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012951Z&HW-CC-Expire=86400&HW-CC-Sign=41241403BB27548D557756760B596E043B391DB2154D828188AF43A520FBFFB8)
 
 
 当弹窗的showInSubWindow属性为true时，弹窗可显示在窗口外。
@@ -1201,7 +1201,7 @@ try {
     ]
   }, (err, data) => {
     if (err) {
-      console.info('showDialog err: ' + err);
+      console.error('showDialog err: ' + err);
       return;
     }
     console.info('showDialog success callback, click button: ' + data.index);
@@ -1214,7 +1214,7 @@ try {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/KXpXm5I2SJOfEW3rzwblnA/zh-cn_image_0000002747292365.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T072931Z&HW-CC-Expire=86400&HW-CC-Sign=22974031C13C599E8DFAAEEFB40F5F213807B01A46446AD399291489121957F1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/DDt04-lCRVihi1Cy_pKGyw/zh-cn_image_0000002749494230.jpg?HW-CC-KV=V1&HW-CC-Date=20261009T012951Z&HW-CC-Expire=86400&HW-CC-Sign=B38ED51ED9CF99944F2731567BD1D532EE8C49F647D9B4E5DDE059A42D90AD5F)
 
 
 从API version 19开始，该示例通过调用[ShowDialogOptions](#showdialogoptions)中的onDidAppear、onDidDisappear、onWillAppear和onWillDisappear属性展示了弹窗生命周期的相关接口的使用方法。
@@ -1279,7 +1279,7 @@ struct DialogExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/MsIcSlXoQg-ouAWq-apyCg/zh-cn_image_0000002747212281.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072931Z&HW-CC-Expire=86400&HW-CC-Sign=F94493B14C60BA412BC5E6FC2C5A776A0572B36D13713C7A05D5E6D449048139)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/83DLluJ6QvapuMMSHGyWDA/zh-cn_image_0000002779093287.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012951Z&HW-CC-Expire=86400&HW-CC-Sign=44FBA65A889E3AD3C9D46E7283FD65D6395C80AB07556EF84EBAA802C42BFFC9)
 
 
 
@@ -1342,7 +1342,7 @@ try {
     ]
   }, (err, data) => {
     if (err) {
-      console.info('showActionMenu err: ' + err);
+      console.error('showActionMenu err: ' + err);
       return;
     }
     console.info('showActionMenu success callback, click button: ' + data.index);
@@ -1355,7 +1355,7 @@ try {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/twMzxdumS0aK8TAxIPhQCw/zh-cn_image_0000002717772346.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072931Z&HW-CC-Expire=86400&HW-CC-Sign=1DB8DD233C7D79F3B903F59E16CF67940024CA2A429603C76E9B7BFCD8401091)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/3AcDWCCERVydnr0m9AEt4w/zh-cn_image_0000002778933431.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012951Z&HW-CC-Expire=86400&HW-CC-Sign=AC4DA188E9BCC4424D340E1098E71960D66414FBBAD2A2B0A4811280585B3548)
 
 
 **示例：2**
@@ -1422,7 +1422,7 @@ struct Index {
               console.info('showActionMenu success, click button: ' + data.index);
             })
             .catch((err: Error) => {
-              console.info('showActionMenu error: ' + err);
+              console.error('showActionMenu error: ' + err);
             })
         })
     }
@@ -1432,7 +1432,7 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/jJIN4QhWRO2IRl7VcN7V6w/zh-cn_image_0000002717612414.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072931Z&HW-CC-Expire=86400&HW-CC-Sign=CB1D62412798ABB10B7D69411647079D16812FD80AAA33F7CD0DFE60B69DCDC4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/lozdxJHUSqWpKcp80YPiBA/zh-cn_image_0000002749334346.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012951Z&HW-CC-Expire=86400&HW-CC-Sign=8D54DF1E73CA1E4CEEE7553D3C3D990CF3422EF25AB902F37633D1F611BC6C0C)
 
 
 
@@ -1503,12 +1503,12 @@ promptAction.showActionMenu({
     console.info('showActionMenu success, click button: ' + data.index);
   })
   .catch((err: Error) => {
-    console.info('showActionMenu error: ' + err);
+    console.error('showActionMenu error: ' + err);
   })
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/d3NR70r1RK-t849jH2v2NQ/zh-cn_image_0000002747292367.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072931Z&HW-CC-Expire=86400&HW-CC-Sign=E8BFF34C3BCE28F8ACD02FF8BC52D2A532B02C73267259062B162949ED873632)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/5tlLilkJSri1wzt2j94_JA/zh-cn_image_0000002749494232.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012951Z&HW-CC-Expire=86400&HW-CC-Sign=9207130076B676721680390AD85AC1D85F13508D1965809DD072B7360B804C8B)
 
 
 
@@ -1716,7 +1716,7 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/Uo3ZtcgxRZ2_ZcYh6qi63w/zh-cn_image_0000002747212283.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072931Z&HW-CC-Expire=86400&HW-CC-Sign=8F544F2E306892999341F2F1B0C84E8A102D282739E63B1BC6BE3620BDE033F3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/6jVlIvKnTKOIJDjrAN3pyA/zh-cn_image_0000002779093289.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012951Z&HW-CC-Expire=86400&HW-CC-Sign=BA2B7162153FA1C4E57EF62823B9F051110EB68FE5C925D2AAAC3FB4688E79CD)
 
 
 该示例实现了一个页面内的弹窗。
@@ -1808,7 +1808,7 @@ struct Next {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/SnQW6E3jSwOBslIp-DrVgg/zh-cn_image_0000002717772348.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072931Z&HW-CC-Expire=86400&HW-CC-Sign=6AFA8FCC7251ECD3B42468EB7672481FF06E43A65E2FAB7F9140E76151896ABA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/V87nO_yDS2e7AdOyOV5J4A/zh-cn_image_0000002778933433.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012951Z&HW-CC-Expire=86400&HW-CC-Sign=D992CF857649F621BC8F654D5AB7C82D097C2E8A45D87A5D1432FC1AD39493FD)
 
 
 

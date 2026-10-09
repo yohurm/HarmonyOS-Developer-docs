@@ -31274,5 +31274,19 @@
     "slug": "ide-ohpm-repo-releasenote",
     "title": "版本说明",
     "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo-releasenote"
+  },
+  {
+    "file": "开发/使用JSVM-API接口进行任务队列相关开发.md",
+    "name": "使用JSVM-API接口进行任务队列相关开发",
+    "slug": "use-jsvm-execute-tasks",
+    "title": "使用JSVM-API接口进行任务队列相关开发",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-execute-tasks"
+  },
+  {
+    "file": "开发/Node-API接口返回状态码介绍.md",
+    "name": "Node-API接口返回状态码介绍",
+    "slug": "napi-status-introduction",
+    "title": "Node-API接口返回状态码介绍",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-status-introduction"
   }
 ]

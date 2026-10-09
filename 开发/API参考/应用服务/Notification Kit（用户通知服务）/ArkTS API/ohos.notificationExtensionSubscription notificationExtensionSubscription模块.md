@@ -1,6 +1,6 @@
 # @ohos.notificationExtensionSubscription (notificationExtensionSubscription模块)
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-notificationextensionsubscription
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -77,7 +77,7 @@ try {
   notificationExtensionSubscription.openSubscriptionSettings(context).then(() => {
     console.info(`openSubscriptionSettings success`);
   }).catch((e: Error) => {
-    let error = e as BusinessError
+    let error = e as BusinessError;
     console.error(`failed to call openSubscriptionSettings, code is ${error.code}, message is ${error.message}`)
   });
 } catch (error) {
@@ -94,7 +94,7 @@ try {
 
 openSubscriptionSettingsWithResult(context: UIAbilityContext): Promise&lt;UserGrantSetting&gt;
 
-打开应用的通知扩展订阅授权页面，以半模态弹窗形式显示。用户可在该页面授权“允许获取本机通知”开关与“已获取的本机通知”应用开关。使用Promise异步回调，当半模态窗口关闭时返回用户设置的授权的结果。
+打开应用的通知扩展订阅授权页面，以半模态弹窗形式显示。用户可在该页面授权“允许获取本机通知”开关与“已获取的本机通知”应用开关。使用Promise异步回调，当半模态窗口关闭时返回用户设置的授权结果。
 
 **起始版本**：26.0.0
 
@@ -117,7 +117,7 @@ openSubscriptionSettingsWithResult(context: UIAbilityContext): Promise&lt;UserGr
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;UserGrantSetting&gt; | Promise对象，返回用户设置的授权的结果。 |
+| Promise&lt;UserGrantSetting&gt; | Promise对象，返回用户设置的授权结果。 |
 
 
 **错误码：**
@@ -144,7 +144,7 @@ try {
   notificationExtensionSubscription.openSubscriptionSettingsWithResult(context).then((data) => {
     console.info(`openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
   }).catch((e: Error) => {
-    let error = e as BusinessError
+    let error = e as BusinessError;
     console.error(`failed to call openSubscriptionSettingsWithResult, code is ${error.code}, message is ${error.message}`)
   });
 } catch (error) {

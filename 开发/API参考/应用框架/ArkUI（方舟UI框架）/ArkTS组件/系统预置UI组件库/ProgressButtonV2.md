@@ -1,6 +1,6 @@
 # ProgressButtonV2
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-progressbuttonv2
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -30,7 +30,7 @@ import { ColorMetrics, LengthMetrics, ProgressButtonV2, ProgressButtonV2Color } 
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-ProgressButtonV2({progress: number, content: ResourceStr, progressButtonWidth?: LengthMetrics, onClicked: ClickCallback, isEnabled: boolean, colorOptions?: ProgressButtonColorOptions, progressButtonRadius?: LengthMetrics})
+ProgressButtonV2({progress: number, content: ResourceStr, progressButtonWidth?: LengthMetrics, onClicked: ClickCallback, isEnabled: boolean, colorOptions?: ProgressButtonV2Color, progressButtonRadius?: LengthMetrics})
 
 文本下载按钮，可显示具体下载进度。
 
@@ -221,4 +221,4 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/b-XXnAYITvOo-uDAORCKtg/zh-cn_image_0000002747213031.png?HW-CC-KV=V1&HW-CC-Date=20260911T073029Z&HW-CC-Expire=86400&HW-CC-Sign=565DB9AD718306719399BF9FD60763CA4045750C8053962E3D13ADDDDFA7AF88)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/QrJY87BLTdyqV6YJAgd2Gg/zh-cn_image_0000002779094175.png?HW-CC-KV=V1&HW-CC-Date=20261009T013038Z&HW-CC-Expire=86400&HW-CC-Sign=D016F98AF82343F8193DA9AB0EB285BA02E86ECE0F9E33E67C92A65B51F3BBE0)

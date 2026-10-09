@@ -1,6 +1,6 @@
 # Navigation页面路由
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-navigation-jump
 
@@ -212,7 +212,7 @@ this.pageInfo.pushPathByName('temp4-pageTwo', 'temp4-pageTwo Param', (popInfo) =
 const DOMAIN = 0x0000;
 this.pageStack.pushDestination({
   name: 'pageTwo', param: 'PageTwo Param'}).catch((error: BusinessError) => {
-  hilog.info(DOMAIN, 'testTag', '[pushDestination]failed', 'error code = ', error.code,
+  hilog.error(DOMAIN, 'testTag', '[pushDestination]failed', 'error code = ', error.code,
     'error.message = ', error.message);
 }).then(() => {
   hilog.info(DOMAIN, 'testTag', '[pushDestination]success.');
@@ -222,7 +222,7 @@ this.pageStack.pushDestination({
 ```ArkTS
 const DOMAIN = 0x0000;
 this.pageStack.pushDestinationByName('pageTwo', 'PageTwo Param').catch((error: BusinessError) => {
-  hilog.info(DOMAIN, 'testTag', '[pushDestinationByName]failed', 'error code = ', error.code,
+  hilog.error(DOMAIN, 'testTag', '[pushDestinationByName]failed', 'error code = ', error.code,
     'error.message = ', error.message);
 }).then(() => {
   hilog.info(DOMAIN, 'testTag', '[pushDestinationByName]success.');
@@ -269,7 +269,7 @@ const DOMAIN = 0x0000;
 // 带错误码的替换，跳转结束会触发异步回调，返回错误码信息
 this.pageStack.replaceDestination({ name: 'pageTwo', param: 'PageTwo Param' })
   .catch((error: BusinessError) => {
-    hilog.info(DOMAIN, 'testTag', '[replaceDestination]failed', 'error code = ', error.code,
+    hilog.error(DOMAIN, 'testTag', '[replaceDestination]failed', 'error code = ', error.code,
       'error.message = ', error.message);
   }).then(() => {
   hilog.info(DOMAIN, 'testTag', '[replaceDestination]success.');
@@ -728,4 +728,4 @@ export struct PageTwo {
 2. 工程配置文件[module.json5](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)中配置{"routerMap": "$profile:router_map"}。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/NgVN1csnTMeWddQAtLsmUA/zh-cn_image_0000002717770182.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072507Z&HW-CC-Expire=86400&HW-CC-Sign=BCBB6BB1512CBB5914A4B551B23F6DC902CBDE09DF00A5777837E165E19E158C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/M2IAW6ZMQaGuf39F2c93yw/zh-cn_image_0000002778931171.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012630Z&HW-CC-Expire=86400&HW-CC-Sign=AF29957F897EC96F004B55F3E41E57C6B69F4AA0B185E4B97A68A55D11554647)

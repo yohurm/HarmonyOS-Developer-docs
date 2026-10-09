@@ -1,6 +1,6 @@
 # @hms.enterpriseSpaceService.fileTransfer(空间数据传输)
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/enterprisespace-spacedatatransfer
 **支持设备：** PC/2in1
@@ -271,7 +271,7 @@ policyPush(policyContext: string): void
 | 参数名 | 说明 | 示例 |
 | --- | --- | --- |
 | allow | 放通动作配置，通过表达式配置。 | "VirusCheck.Result == 0" |
-| approval | 审批动作配置，个人空间向企业空间发送文件时的审批不生效，不需要配置。 | "VirusCheck.Result == 10" |
+| approval | 审批动作配置，个人空间向企业空间发送文件时的审批不生效，不需要配置。 | "" |
 | check_point | 检测点类型。 SecurityCheck：安全检查 VirusCheck：病毒检查 | "SecurityCheck" |
 | check_point_name | 检测点名称。由用户自定义，无长度限制。 | "VirusCheck_in" |
 | is_enable | 配置个人空间向企业空间发送文件时检测的规则是否生效。可选参数。 true：生效 false：不生效 默认值：true | "true" |

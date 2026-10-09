@@ -1,6 +1,6 @@
 # USB控制传输
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/controltransfer
 
@@ -185,6 +185,11 @@ try {
   }
   // 打开设备，获取数据传输通道。
   let pipe: usbManager.USBDevicePipe = usbManager.connectDevice(deviceList[0]);
+  if (!pipe) {
+    console.error('connectDevice failed, pipe is undefined');
+    this.logInfo_ += '\n[ERROR] connectDevice failed, pipe is undefined';
+    return;
+  }
   if (!deviceList?.[0]?.configs?.[0]?.interfaces?.[0]) {
     console.error('invalid interface');
     this.logInfo_ += '\n[ERROR] invalid interface';

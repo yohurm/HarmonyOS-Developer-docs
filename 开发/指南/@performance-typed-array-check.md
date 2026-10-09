@@ -1,0 +1,63 @@
+# @performance/typed-array-check
+
+更新时间：2026-10-08 09:38:49
+
+来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-typed-array-check
+
+数值数组推荐使用TypedArray。
+ 
+根据[ArkTS高性能编程实践](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-high-performance-programming)，建议修改。
+ 
+
+## 规则配置
+
+```json
+// code-linter.json5
+{
+  <span style="color: rgb(135,16,148);">"rules"</span>: {
+    <span style="color: rgb(135,16,148);">"@performance/typed-array-check"</span>: <span style="color: rgb(6,125,23);">"suggestion"</span>,
+  }
+}
+```
+ 
+ 
+
+## 选项
+
+该规则无需配置选项。
+ 
+ 
+
+## 正例
+
+```text
+<span style="color: rgb(0,0,255);">const</span> typedArray1 = <span style="color: rgb(0,0,255);">new</span> <span style="color: rgb(0,128,128);">Int8Array</span>([<span style="color: rgb(9,134,88);">1</span>, <span style="color: rgb(9,134,88);">2</span>, <span style="color: rgb(9,134,88);">3</span>]); 
+<span style="color: rgb(0,0,255);">const</span> typedArray2 = <span style="color: rgb(0,0,255);">new</span> <span style="color: rgb(0,128,128);">Int8Array</span>([<span style="color: rgb(9,134,88);">4</span>, <span style="color: rgb(9,134,88);">5</span>, <span style="color: rgb(9,134,88);">6</span>]);  
+<span style="color: rgb(0,0,255);">let</span> res = <span style="color: rgb(0,0,255);">new</span> <span style="color: rgb(0,128,128);">Int8Array</span>(<span style="color: rgb(9,134,88);">3</span>);
+<span style="color: rgb(0,0,255);">for</span> (<span style="color: rgb(0,0,255);">let</span> i = <span style="color: rgb(9,134,88);">0</span>; i < <span style="color: rgb(9,134,88);">3</span>; i++) {
+     res[i] = typedArray1[i] + typedArray2[i];
+}
+```
+ 
+ 
+
+## 反例
+
+```text
+<span style="color: rgb(0,0,255);">const</span> typedArray1: <span style="color: rgb(0,0,255);">number</span>[] = <span style="color: rgb(0,0,255);">new</span> <span style="color: rgb(0,128,128);">Array</span>(<span style="color: rgb(9,134,88);">1</span>, <span style="color: rgb(9,134,88);">2</span>, <span style="color: rgb(9,134,88);">3</span>);
+<span style="color: rgb(0,0,255);">const</span> typedArray2: <span style="color: rgb(0,0,255);">number</span>[] = <span style="color: rgb(0,0,255);">new</span> <span style="color: rgb(0,128,128);">Array</span>(<span style="color: rgb(9,134,88);">4</span>, <span style="color: rgb(9,134,88);">5</span>, <span style="color: rgb(9,134,88);">6</span>);
+<span style="color: rgb(0,0,255);">let</span> res: <span style="color: rgb(0,0,255);">number</span>[] = <span style="color: rgb(0,0,255);">new</span> <span style="color: rgb(0,128,128);">Array</span>(<span style="color: rgb(9,134,88);">3</span>);
+<span style="color: rgb(0,0,255);">for</span> (<span style="color: rgb(0,0,255);">let</span> i = <span style="color: rgb(9,134,88);">0</span>; i < <span style="color: rgb(9,134,88);">3</span>; i++) {
+     res[i] = typedArray1[i] + typedArray2[i];
+}
+```
+ 
+ 
+
+## 规则集
+
+```text
+<span style="color: rgb(106,135,89);">plugin:@performance/all</span>
+```
+ 
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-code-linter)。

@@ -1,6 +1,6 @@
 # SSAP服务端
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nearlink-ssap-server-connect
 
@@ -40,7 +40,7 @@
 1. 导入相关模块。
 
   
-```text
+```ArkTS
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { ssap, advertising, dataTransfer, constant, manager } from '@kit.NearLinkKit';
@@ -49,7 +49,7 @@ import { ssap, advertising, dataTransfer, constant, manager } from '@kit.NearLin
 2. 创建ssap服务端实例。
 
   
-```text
+```ArkTS
 let server: ssap.Server;
 try {
   server = ssap.createServer();
@@ -62,7 +62,7 @@ try {
 3. 添加服务端支持的服务，其中server对象在步骤2创建，后续步骤中使用的server对象也是一样，不再赘述。
 
   
-```text
+```ArkTS
 let property1: ssap.Property;
 let property2: ssap.Property;
 const SERVICE_UUID: string = 'FFFFFFFF-1234-5678-ABCD-000000001234';
@@ -130,7 +130,7 @@ try {
 4. 订阅连接状态变化事件。
 
   
-```json
+```ArkTS
 let connectionStateChangeCallback = (data: ssap.ConnectionChangeState) => {
   hilog.info(this.domainId, this.logTag, `Connection state change: ${JSON.stringify(data)}`);
   // ...
@@ -146,7 +146,7 @@ try {
 5. 订阅客户端读属性请求事件。
 
   
-```json
+```ArkTS
 let onReceivePropertyReadEvent:(data: ssap.PropertyReadRequest) => void = (data: ssap.PropertyReadRequest) => {
   hilog.info(this.domainId, this.logTag, `Property data received: ${JSON.stringify(data)}`);
   // ...
@@ -162,7 +162,7 @@ try {
 6. 订阅客户端写属性请求事件，并在收到写属性请求事件后通知客户端属性值更新。
 
   
-```json
+```ArkTS
 let onReceivePropertyWriteEvent:(data: ssap.PropertyWriteRequest) => void = (data: ssap.PropertyWriteRequest) => {
   hilog.info(this.domainId, this.logTag, `PropertyWriteRequest: ${JSON.stringify(data)}`);
   let property: ssap.Property = {

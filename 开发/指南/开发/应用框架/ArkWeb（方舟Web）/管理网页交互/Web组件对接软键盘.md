@@ -1,6 +1,6 @@
 # Web组件对接软键盘
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-docking-softkeyboard
 
@@ -153,127 +153,23 @@ struct WebComponent {
 在移动设备上，支持设置Web页面的软键盘避让模式。
 1. 在应用代码中设置[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)的软键盘避让模式[setKeyboardAvoidMode()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-expand-safe-area#setkeyboardavoidmode11)。ArkWeb组件支持Resize和Offset两种模式。
 
+  
  - Resize模式下，应用窗口高度可缩小避开软键盘，ArkWeb组件跟随ArkUI重新布局。
- - Offset模式下（以及默认模式），应用窗口高度不变，ArkWeb组件根据自身的避让模式进行避让。
 
+2. Offset模式下（以及默认模式），应用窗口高度不变，ArkWeb组件根据自身的避让模式进行避让。
 
-（1）设置UIContext的软键盘避让模式。
+3. 在UIContext的键盘避让模式为Offset模式时，应用可通过[WebKeyboardAvoidMode()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-e#webkeyboardavoidmode12)设置ArkWeb组件的键盘避让模式。Web组件的[WebKeyboardAvoidMode()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-e#webkeyboardavoidmode12)接口优先级高于W3C侧virtualKeyboard.overlayContent。
 
-```ArkTS
-import { KeyboardAvoidMode } from '@kit.ArkUI';
-import { hilog } from '@kit.PerformanceAnalysisKit';
+  
+RESIZE_VISUAL：仅调整可视视口的大小，而不调整布局视口的大小。
 
-// ···
-onWindowStageCreate(windowStage: window.WindowStage) {
-  hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
+4. RESIZE_CONTENT：调整可视视口和布局视口的大小。
 
-  windowStage.loadContent('pages/Index', (err, data) => {
-    let keyboardAvoidMode = windowStage.getMainWindowSync().getUIContext().getKeyboardAvoidMode();
-    // 设置虚拟键盘抬起时压缩页面大小为减去键盘的高度
-  windowStage.getMainWindowSync().getUIContext().setKeyboardAvoidMode(KeyboardAvoidMode.RESIZE);
-    if (err.code) {
-      hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
-      return;
-    }
-    hilog.info(0x0000, 'testTag', 'Succeeded in loading the content. Data: %{public}s', JSON.stringify(data) ?? '');
-  });
-}
-```
+5. OVERLAYS_CONTENT：不调整任何视口的大小，获焦input元素没有滚动到可视区域的行为。
 
-（2）在Web组件中调起软键盘。
+6. 在软键盘弹出时，为使Web组件不发生避让行为，可通过调用[expandSafeArea()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-expand-safe-area#expandsafearea)设置Web组件扩展安全区域。更多详细示例可参考[网页中安全区域计算和避让适配](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-safe-area-insets)。
 
-```text
-<!-- index.html -->
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>测试网页</title>
-  </head>
-  <body>
-    <h1>DEMO</h1>
-    <input type="text" id="input_a">
-  </body>
-</html>
-```
-
-```ArkTS
-// Index.ets
-import { webview } from '@kit.ArkWeb';
-
-@Entry
-@Component
-struct KeyboardAvoidExample {
-  controller: webview.WebviewController = new webview.WebviewController();
-  build() {
-    Column() {
-      Row().height("50%").width("100%").backgroundColor(Color.Gray)
-      Web({ src: $rawfile("index.html"),controller: this.controller})
-      Text("I can see the bottom of the page").width("100%").textAlign(TextAlign.Center).backgroundColor(Color.Pink).layoutWeight(1)
-    }.width('100%').height("100%")
-  }
-}
-```
-
-ArkWeb组件将跟随ArkUI重新布局，效果如图1和图2所示。
-
-**图1** Web组件网页默认软键盘避让模式
-
-
-![](assets/Web组件对接软键盘/file-20260514130837310-1.png)
-
-
-**图2** Web组件网页跟随ArkUI软键盘避让模式
-
-
-![](assets/Web组件对接软键盘/file-20260514130837310-2.png)
-
-
-2.在UIContext的键盘避让模式为Offset模式时，应用可通过[WebKeyboardAvoidMode()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-e#webkeyboardavoidmode12)设置ArkWeb组件的键盘避让模式。Web组件的[WebKeyboardAvoidMode()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-e#webkeyboardavoidmode12)接口优先级高于W3C侧virtualKeyboard.overlayContent。
-
- - RESIZE_VISUAL：仅调整可视视口的大小，而不调整布局视口的大小。
- - RESIZE_CONTENT：调整可视视口和布局视口的大小。
- - OVERLAYS_CONTENT：不调整任何视口的大小，获焦input元素没有滚动到可视区域的行为。
-
-
-> [!NOTE]
-> 可视视口指用户正在看到的网站的区域，该区域的宽度等于移动设备的浏览器窗口的宽度。 布局视口指网页本身的宽度。
-
-
-在应用代码中设置ArkWeb的软键盘避让模式。
-
-```ArkTS
-// Index.ets
-import { webview } from '@kit.ArkWeb';
-
-@Entry
-@Component
-struct KeyboardAvoidExample {
-  controller: webview.WebviewController = new webview.WebviewController();
-  build() {
-    Column() {
-      Row().height('50%').width('100%').backgroundColor(Color.Gray)
-      Web({ src: $rawfile('index.html'),controller: this.controller})
-        .keyboardAvoidMode(WebKeyboardAvoidMode.OVERLAYS_CONTENT) // 此时ArkWeb组件不会调整任何视口的大小。
-      Text('I can see the bottom of the page')
-        .width('100%')
-        .textAlign(TextAlign.Center)
-        .backgroundColor(Color.Pink)
-        .layoutWeight(1)
-    }.width('100%').height('100%')
-  }
-}
-```
-
-ArkWeb组件根据避让模式进行避让，效果见图3。
-
-**图3** Web组件网页自身软键盘避让模式
-
-
-![](assets/Web组件对接软键盘/file-20260514130837310-4.png)
-
-
-3.在软键盘弹出时，为使Web组件不发生避让行为，可通过调用[expandSafeArea()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-expand-safe-area#expandsafearea)设置Web组件扩展安全区域。更多详细示例可参考[网页中安全区域计算和避让适配](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-safe-area-insets)。
-
+  
 ```ArkTS
 // xxx.ets
 import { webview } from '@kit.ArkWeb';
@@ -293,26 +189,33 @@ struct WebComponent {
 }
 ```
 
-与其他Web组件行为的交互场景：
 
+  与其他Web组件行为的交互场景：
 
 | 交叉场景 | 规格 |
+
 | --- | --- |
+
 | 同层渲染 | 同层Web：软键盘避让方式与普通场景相同。 同层系统组件：由ArkUI负责软键盘避让模式。 |
+
 | 离屏创建组件 | 默认使用与非离屏创建一致的软键盘避让模式，在添加至组件树前设置其他避让模式即可生效。 |
+
 | customDialog | customDialog自身避让。 |
+
 | 折叠屏 | 软键盘避让行为与普通场景行为一致。屏幕软键盘将根据屏幕开合状态进行调整。 |
+
 | 软键盘托管 | 软键盘避让行为与普通场景行为一致。 |
+
 | Web嵌套滚动 | 在嵌套滚动场景下，建议不要使用Web软键盘避让，包括RESIZE_VISUAL和RESIZE_CONTENT。 |
 
+  
 
+  ## 拦截系统软键盘与自定义软键盘输入
 
+  应用可以通过监听[onInterceptKeyboardAttach](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-events#oninterceptkeyboardattach12)回调，在软键盘拉起前，控制软键盘的显示，包括系统默认软键盘、带有特定Enter键的软键盘，或完全自定义软键盘。借助这一功能，开发者能够实现对软键盘的灵活管理。
 
-## 拦截系统软键盘与自定义软键盘输入
-
-应用可以通过监听[onInterceptKeyboardAttach](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-events#oninterceptkeyboardattach12)回调，在软键盘拉起前，控制软键盘的显示，包括系统默认软键盘、带有特定Enter键的软键盘，或完全自定义软键盘。借助这一功能，开发者能够实现对软键盘的灵活管理。
-
- - 使用系统默认软键盘
+  
+使用系统默认软键盘
  - 使用带有定制Enter键的系统软键盘
  - 使用完全由应用程序自定义的软键盘
 
@@ -489,10 +392,10 @@ ArkWeb自定义键盘的示例效果如图4、图5和图6所示。
 **图5** ArkWeb自定义键盘字母键盘
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/RY7d3j7LRtqepRYA9LidYA/zh-cn_image_0000002747290871.png?HW-CC-KV=V1&HW-CC-Date=20260911T073147Z&HW-CC-Expire=86400&HW-CC-Sign=D11A8270F7E99C9127798F8D9F3C723BAB1672B300E7801850D620E521B075F2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/Q3spVk1EQY-P6BFVA4sOKg/zh-cn_image_0000002749492728.png?HW-CC-KV=V1&HW-CC-Date=20261009T013123Z&HW-CC-Expire=86400&HW-CC-Sign=ACFC287995492AA536760359593DC1B6C2F9CAA48FA819258918EB70371E762F)
 
 
 **图6** ArkWeb自定义键盘符号键盘
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/yz3dTu-zQE-XEDlKQjPWLw/zh-cn_image_0000002747210789.png?HW-CC-KV=V1&HW-CC-Date=20260911T073147Z&HW-CC-Expire=86400&HW-CC-Sign=EB1B6972164F246BC97CE167BFF7C4116394E3E190821BA03568F626234D9373)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/4mmsUzsuRTuyP978Exsn2w/zh-cn_image_0000002779091787.png?HW-CC-KV=V1&HW-CC-Date=20261009T013123Z&HW-CC-Expire=86400&HW-CC-Sign=A7BCB850C72602C3E8FECEBA7C638F111614DC4B906AF8916EF4E49DB0329CBD)

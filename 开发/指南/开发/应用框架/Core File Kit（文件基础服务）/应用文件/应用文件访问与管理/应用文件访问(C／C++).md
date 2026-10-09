@@ -1,6 +1,6 @@
 # 应用文件访问(C/C++)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-fileio-guidelines
 
@@ -54,7 +54,8 @@ target_link_libraries(sample PUBLIC libohfileio.so)
 void GetFileLocationExample(char *uri)
 {
     FileIO_FileLocation location;
-    FileManagement_ErrCode ret = OH_FileIO_GetFileLocation(uri, strlen(uri), &location);
+    int uriLength = static_cast<int>(strlen(uri));
+    FileManagement_ErrCode ret = OH_FileIO_GetFileLocation(uri, uriLength, &location);
     if (ret == 0) {
         if (location == FileIO_FileLocation::LOCAL) {
             printf("Succeeded in getting file location, this file is on local.");

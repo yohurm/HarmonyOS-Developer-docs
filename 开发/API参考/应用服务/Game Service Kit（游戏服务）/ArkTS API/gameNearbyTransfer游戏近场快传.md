@@ -1,6 +1,6 @@
 # gameNearbyTransfer（游戏近场快传）
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservice-nearbytransfer
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -1139,7 +1139,7 @@ try {
   gameNearbyTransfer.onRemoteInstallationInfoNotify(remoteCallBack);
 } catch (error) {
   let err = error as BusinessError;
-  hilog.error(0x0000, 'nearby', `Failed to subscribe offRemoteInstallationInfoNotify error. Code: ${err.code}, message: ${err.message}`);
+  hilog.error(0x0000, 'nearby', `Failed to subscribe onRemoteInstallationInfoNotify error. Code: ${err.code}, message: ${err.message}`);
 }
 
 function remoteCallBack(callback: gameNearbyTransfer.RemoteInstallationInfo) {
@@ -1170,7 +1170,7 @@ offRemoteInstallationInfoNotify(callback?: Callback&lt;RemoteInstallationInfo&gt
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | Callback&lt;RemoteInstallationInfo&gt; | 否 | 回调函数，返回远程安装包结果信息对象。 如果该参数不为空，则取消当前callback订阅。如果该参数为空，则取消'offRemoteInstallationInfoNotify'事件的所有callback订阅。 |
+| callback | Callback&lt;RemoteInstallationInfo&gt; | 否 | 回调函数，返回远程安装包结果信息对象。 如果该参数不为空，则取消当前callback订阅。如果该参数为空，则取消'onRemoteInstallationInfoNotify'事件的所有callback订阅。 |
 
 
 **错误码：**

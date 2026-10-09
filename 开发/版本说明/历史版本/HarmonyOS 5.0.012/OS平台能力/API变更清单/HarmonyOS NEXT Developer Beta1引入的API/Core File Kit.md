@@ -1,6 +1,6 @@
 # Core File Kit
 
-更新时间：2026-06-27 01:41:31
+更新时间：2026-10-08 10:09:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-corefilekit-hdc
 

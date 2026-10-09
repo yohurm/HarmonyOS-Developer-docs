@@ -1,6 +1,6 @@
 # @ohos.advertising.AutoAdComponent (轮播广告展示组件)
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-autoadcomponent
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -56,8 +56,28 @@ AutoAdComponent({
 | interactionListener | advertising.AdInteractionListener | 是 | - | 广告状态变化回调。 |
  
  
-**示例：**
+  
+
+### build
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
+
+build(): void
  
+用于创建AutoAdComponent对象的构造函数。
+ 
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+ 
+**系统能力：** SystemCapability.Advertising.Ads
+ 
+  
+
+## 示例
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
+
 ```text
 import { advertising, AutoAdComponent } from '@kit.AdsKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
@@ -121,18 +141,3 @@ struct Index {
   }
 }
 ```
- 
-  
-
-### build
-
-
-**支持设备：** Phone | PC/2in1 | Tablet
-
-build(): void
- 
-用于创建AutoAdComponent对象的构造函数。
- 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
- 
-**系统能力：** SystemCapability.Advertising.Ads

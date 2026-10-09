@@ -1,6 +1,6 @@
 # Interfaces (其他)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-i
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -201,7 +201,7 @@ media.createAVPlayer((err: BusinessError, player: media.AVPlayer) => {
 | audioSourceType | AudioSourceType | 否 | 是 | 选择录制的音频源类型。选择音频录制时必填。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | videoSourceType | VideoSourceType | 否 | 是 | 选择录制的视频源类型。选择视频录制时必填。 |
 | profile | AVRecorderProfile | 否 | 否 | 录制的profile，必要参数。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| url | string | 否 | 否 | 录制输出URL：fd://xx (fd number) ，必要参数。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| url | string | 否 | 否 | 录制输出URL：fd://xx (fd number) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/YsHHfQZXS9O3Gov3gtrsaw/zh-cn_image_0000002749335980.png?HW-CC-KV=V1&HW-CC-Date=20261009T012611Z&HW-CC-Expire=86400&HW-CC-Sign=6411657FDFFE7DD3BA90CB299D9AA7C9DB5E578564768BD937BEE3546F293780)，必要参数。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | fileGenerationMode12+ | FileGenerationMode | 否 | 是 | 创建媒体文件的模式，配合on('photoAssetAvailable')监听使用。 |
 | rotation(deprecated) | number | 否 | 是 | 录制的视频旋转角度，单位为度（°）。mp4格式支持0°、90°、180°和270°，默认值为0°。 从API version 6开始支持，从API version 12开始废弃。建议使用AVMetadata.videoOrientation替代。 如果同时设置两个值，将会采用AVMetadata.videoOrientation。 |
 | location(deprecated) | Location | 否 | 是 | 录制的地理位置，默认不记录地理位置信息。 从API version 6开始支持，从API version 12开始废弃。建议使用 AVMetadata.location。 如果同时设置两个值，将会采用AVMetadata.location。 |
@@ -216,7 +216,7 @@ media.createAVPlayer((err: BusinessError, player: media.AVPlayer) => {
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-音视频录制的配置文件。
+音视频录制配置参数。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
 
@@ -725,7 +725,7 @@ async function setupPlayer() {
 | numberOfChannels | number | 否 | 是 | 音频采集声道数，默认值为2。 说明： 从API version 6开始支持，从API version 9开始废弃，建议使用AVRecorderProfile中的audioChannels替代。 |
 | format | AudioOutputFormat | 否 | 是 | 音频输出封装格式，默认设置为MPEG_4。 说明： 从API version 6开始支持，从API version 8开始废弃，建议使用fileFormat替代。 |
 | location | Location | 否 | 是 | 音频采集的地理位置。 说明： 从API version 6开始支持，从API version 9开始废弃，建议使用AVMetadata中的location替代。 |
-| uri | string | 否 | 否 | 音频输出URI：fd://xx (fd number) 文件需要由调用者创建，并赋予适当的权限。 说明： 从API version 6开始支持，从API version 9开始废弃，建议使用AVRecorderConfig中的url替代。 |
+| uri | string | 否 | 否 | 音频输出URI：fd://xx (fd number) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/aNetyViPSU2c-vuWP0pYHw/zh-cn_image_0000002749335980.png?HW-CC-KV=V1&HW-CC-Date=20261009T012611Z&HW-CC-Expire=86400&HW-CC-Sign=7D74E3D9ECBF163E041C01A98E913B9E5D007EC7530BF2989DA84BDD1CCC8BA2) 文件需要由调用者创建，并赋予适当的权限。 说明： 从API version 6开始支持，从API version 9开始废弃，建议使用AVRecorderConfig中的url替代。 |
 | audioEncoderMime8+ | CodecMimeType | 否 | 是 | 音频编码格式。 说明： 从API version 8开始支持，从API version 9开始废弃，建议使用AVRecorderProfile中的audioCodec替代。 |
 | fileFormat8+ | ContainerFormatType | 否 | 是 | 文件容器格式。 说明： 从API version 8开始支持，从API version 9开始废弃，建议使用AVRecorderProfile中的fileFormat替代。 |
 

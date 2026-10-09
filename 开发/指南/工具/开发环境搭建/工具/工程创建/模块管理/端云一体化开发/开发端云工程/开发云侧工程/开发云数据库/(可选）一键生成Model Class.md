@@ -1,13 +1,13 @@
 # (可选）一键生成Model Class
 
-更新时间：2026-07-15 09:00:31
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos-clouddev-modelclass
 
 云数据库支持从端侧或者云侧云函数（含云对象）访问云数据库，代码涉及调用云数据库时，需引入对应云数据库对象类型的Model Class。当前支持为对象类型一键生成Server Model与Client Model，供您在端侧及云侧云函数（含云对象）开发时引用。
  
 
-#### 生成Server Model
+## 生成Server Model
 1. 右击需要调用的对象类型文件（以“Post.json”为例），选择“Generate Server Model”。
 ![](assets/(可选）一键生成Model%20Class/file-20260514134405664-0.png)
 
@@ -61,7 +61,7 @@ export class IdGenerator {
  
  
 
-#### 生成Client Model
+## 生成Client Model
 1. 右击需要调用的对象类型文件（以“Post.json”为例），选择“Generate Client Model”。
 ![](assets/(可选）一键生成Model%20Class/file-20260514134405664-5.png)
 

@@ -1,6 +1,6 @@
 # Shape
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawing-components-shape
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -10,10 +10,8 @@
 Shape组件通过定义视口、填充、边框等属性，支持矢量图形的绘制和组合。Shape作为容器组件，可包含Rect、Circle、Path等绘制子组件，实现类似SVG（Scalable Vector Graphics，可缩放矢量图形）的矢量图形绘制能力。
 
 Shape组件的两种使用方式：
-
-1、绘制组件使用Shape作为父组件，实现类似SVG的矢量图形的组合绘制。
-
-2、绘制组件单独使用，用于在页面上绘制指定的图形。
+1. 绘制组件使用Shape作为父组件，实现类似SVG的矢量图形的组合绘制。
+2. 绘制组件单独使用，用于在页面上绘制指定的图形。
 
 > [!NOTE]
 > 该组件从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 该组件从API version 20开始支持使用 AttributeUpdater 类的 updateConstructorParams 接口更新构造参数。
@@ -416,7 +414,7 @@ struct ShapeTypeExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/cHUVdmSPQVup6whCBhTcbg/zh-cn_image_0000002717772968.png?HW-CC-KV=V1&HW-CC-Date=20260911T073117Z&HW-CC-Expire=86400&HW-CC-Sign=2E3FEB2A8934655D836C03E95029D4567216DF60314019C604EE1E8F4A888D51)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/2LB_mZtBQGqWoPvAMXYRtA/zh-cn_image_0000002778934189.png?HW-CC-KV=V1&HW-CC-Date=20261009T013105Z&HW-CC-Expire=86400&HW-CC-Sign=544DC8A1AFCF5362D744731ADA0BE20E7D71BA7D6977F0BB141C777377742E83)
 
 
 
@@ -467,7 +465,7 @@ struct ShapeModifierDemo {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/86NM-1oDTPOgoshgEGGPxA/zh-cn_image_0000002717613036.png?HW-CC-KV=V1&HW-CC-Date=20260911T073117Z&HW-CC-Expire=86400&HW-CC-Sign=71A26F35556F3011C3E58BB5B8F17B89FE3D7DC703E585320389C9584C12E7E0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/6Gp7c_vdSqKEDgfTJHmneQ/zh-cn_image_0000002749335106.png?HW-CC-KV=V1&HW-CC-Date=20261009T013105Z&HW-CC-Expire=86400&HW-CC-Sign=04B8FE02304E69DC50E9A6CB1305130593AABE71671F3991389755079E4B8A21)
 
 
 
@@ -518,4 +516,4 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/oNUrlnIpS-e8XtBXS7D97w/zh-cn_image_0000002747292989.png?HW-CC-KV=V1&HW-CC-Date=20260911T073117Z&HW-CC-Expire=86400&HW-CC-Sign=FF80C7071CB74A5C91B1A6B306679C11E00B7B75D48B35D1C0E4D3BE536882C0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/pWZF_spxTeuMxBolzaHS-Q/zh-cn_image_0000002749494990.png?HW-CC-KV=V1&HW-CC-Date=20261009T013105Z&HW-CC-Expire=86400&HW-CC-Sign=2D7988E88968119EACE228DA1EC68E039B3FE261782083609F2DB779E4D22E6A)

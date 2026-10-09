@@ -1,6 +1,6 @@
 # @ohos.wifiManager (WLAN)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-wifimanager
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -765,7 +765,7 @@ preSharedKey传参为路由器上设置的密码；
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-Wi-Fi功能。
+Wi-Fi支持的能力。
 
 **起始版本：** 26.0.0
 
@@ -3135,7 +3135,11 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 p2pConnect(config: WifiP2PConfig): void
 
-执行P2P连接。调用此方法连接后，如需取消可调用[p2pCancelConnect](#wifimanagerp2pcancelconnect)。
+执行P2P连接。调用此方法后，如需取消连接可调用[p2pCancelConnect](#wifimanagerp2pcancelconnect)。
+
+当WifiP2PConfig中deviceAddressType为1（真实MAC地址）时，若设备MAC地址通过[wifiManager.on('p2pPeerDeviceChange')](#wifimanageronp2ppeerdevicechange)获取，需具备ohos.permission.GET_WIFI_PEERS_MAC权限。
+
+从API版本26.0.0开始，支持通过WifiP2PConfig传入passphrase和groupName进行密钥连接，此时需将deviceAddress参数设置为"00:00:00:00:00:00"。
 
 **需要权限：**
 

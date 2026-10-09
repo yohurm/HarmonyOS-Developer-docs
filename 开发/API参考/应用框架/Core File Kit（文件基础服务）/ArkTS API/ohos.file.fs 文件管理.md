@@ -1,11 +1,20 @@
 # @ohos.file.fs (文件管理)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-file-fs
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-该模块为基础文件操作API，提供基础文件操作能力，包括文件基本管理、文件目录管理、文件信息统计、文件流式读写等常用功能。
+本模块是Core File Kit的核心模块，提供基础文件操作API，用于对应用沙箱内的文件和目录进行创建、打开、读写、拷贝、移动、删除、查询属性等操作。
+
+模块提供了多种文件访问模式，开发者可根据场景选择：
+
+ - **基于文件描述符（fd）**：通过open获取File对象，再使用read/write进行读写，适用于通用文件读写场景。
+ - **基于流（Stream）**：通过createStream/fdopenStream创建Stream，或通过createReadStream/createWriteStream创建ReadStream/WriteStream，适用于流式数据处理或大文件分块读写等场景。
+ - **基于RandomAccessFile**：通过createRandomAccessFile创建RandomAccessFile对象，支持独立的偏移指针和随机读写，适用于需要频繁跳转读写位置的场景。
+
+
+此外，模块还提供文件监听（Watcher）、内存映射（FileMapping）、安全原子写入（AtomicFile）等其他能力。
 
 > [!NOTE]
 > 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
@@ -28,23 +37,9 @@ import { fileIo } from '@kit.CoreFileKit';
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-使用该功能模块对文件/目录进行操作前，需要先获取其应用沙箱路径，获取方式及其接口用法请参考：
+使用该功能模块对文件/目录进行操作前，需要先获取其应用沙箱路径pathDir，获取沙箱路径的方式及其接口用法可参考：[应用上下文Context-获取应用文件路径](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-context-stage#获取应用文件路径)。
 
-```text
-import { UIAbility } from '@kit.AbilityKit';
-import { window } from '@kit.ArkUI';
-
-export default class EntryAbility extends UIAbility {
-  onWindowStageCreate(windowStage: window.WindowStage) {
-    let context = this.context;
-    let pathDir = context.filesDir;
-  }
-}
-```
-
-获取沙箱路径的方式及其接口用法也可参考：[应用上下文Context-获取应用文件路径](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-context-stage#获取应用文件路径)。
-
-将指向资源的字符串称为URI。对于只支持沙箱路径作为入参的接口，可以使用构造fileUri对象并获取其沙箱路径的属性的方式将URI转换为沙箱路径，然后使用文件接口。URI定义及其转换方式请参考：[文件URI](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-file-fileuri)。
+指向资源的字符串称为URI。对于只支持沙箱路径作为入参的接口，可以使用构造fileUri对象并获取其沙箱路径的属性的方式将URI转换为沙箱路径，然后使用文件接口。URI定义及其转换方式请参考：[文件URI](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-file-fileuri)。
 
 
 
@@ -55,7 +50,7 @@ export default class EntryAbility extends UIAbility {
 
 stat(file: string | number): Promise&lt;Stat&gt;
 
-获取文件或目录详细属性信息。使用Promise异步回调。
+获取文件或目录详细属性信息，返回包含文件大小、权限模式、访问时间、修改时间等属性的Stat对象。使用Promise异步回调。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -103,7 +98,7 @@ fileIo.stat(filePath).then((stat: fileIo.Stat) => {
 
 stat(file: string | number, callback: AsyncCallback&lt;Stat&gt;): void
 
-获取文件或目录的详细属性信息。使用callback异步回调。
+获取文件或目录的详细属性信息，返回包含文件大小、权限模式、访问时间、修改时间等属性的Stat对象。使用callback异步回调。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -145,7 +140,7 @@ fileIo.stat(pathDir, (err: BusinessError, stat: fileIo.Stat) => {
 
 statSync(file: string | number): Stat
 
-以同步方法获取文件或目录详细属性信息。
+以同步方法获取文件或目录详细属性信息，返回包含文件大小、权限模式、访问时间、修改时间等属性的Stat对象。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -200,7 +195,7 @@ access(path: string, mode?: AccessModeType): Promise&lt;boolean&gt;
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | 是 | 文件或目录应用沙箱路径。 |
+| path | string | 是 | 文件或目录的应用沙箱路径。 |
 | mode12+ | AccessModeType | 否 | 文件或目录校验的权限。不填该参数则默认校验文件是否存在。 |
 
 
@@ -253,7 +248,7 @@ access(path: string, mode: AccessModeType, flag: AccessFlagType): Promise&lt;boo
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | 是 | 文件或目录应用沙箱路径。 |
+| path | string | 是 | 文件或目录的应用沙箱路径。 |
 | mode | AccessModeType | 是 | 文件或目录校验的权限。 |
 | flag | AccessFlagType | 是 | 文件或目录校验的位置。 |
 
@@ -307,7 +302,7 @@ access(path: string, callback: AsyncCallback&lt;boolean&gt;): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | 是 | 文件或目录应用沙箱路径。 |
+| path | string | 是 | 文件或目录的应用沙箱路径。 |
 | callback | AsyncCallback&lt;boolean&gt; | 是 | 异步检查文件或目录是否存在的回调。如果存在，回调返回true；否则返回false。 |
 
 
@@ -356,7 +351,7 @@ accessSync(path: string, mode?: AccessModeType): boolean
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | 是 | 文件或目录应用沙箱路径。 |
+| path | string | 是 | 文件或目录的应用沙箱路径。 |
 | mode12+ | AccessModeType | 否 | 文件或目录校验的权限。不填该参数则默认校验文件或目录是否存在。 |
 
 
@@ -411,7 +406,7 @@ accessSync(path: string, mode: AccessModeType, flag: AccessFlagType): boolean
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | 是 | 文件应用沙箱路径。 |
+| path | string | 是 | 文件或目录的应用沙箱路径。 |
 | mode | AccessModeType | 是 | 文件或目录校验的权限。 |
 | flag | AccessFlagType | 是 | 文件或目录校验的位置。 |
 
@@ -456,7 +451,7 @@ try {
 
 close(file: number | File): Promise&lt;void&gt;
 
-关闭文件或目录。使用Promise异步回调。
+关闭文件或目录，关闭后文件描述符fd失效，不可再用于读写等操作。使用Promise异步回调。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -505,7 +500,7 @@ fileIo.close(file).then(() => {
 
 close(file: number | File, callback: AsyncCallback&lt;void&gt;): void
 
-关闭文件或目录。使用callback异步回调。
+关闭文件或目录，关闭后文件描述符fd失效，不可再用于读写等操作。使用callback异步回调。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -549,7 +544,7 @@ fileIo.close(file, (err: BusinessError) => {
 
 closeSync(file: number | File): void
 
-以同步方法关闭文件或目录。
+以同步方法关闭文件或目录，关闭后文件描述符fd失效，不可再用于读写等操作。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -950,7 +945,7 @@ fileIo.copyFileSync(srcPath, dstPath);
 
 copyDir(src: string, dest: string, mode?: number): Promise&lt;void&gt;
 
-复制源目录至目标路径下。使用Promise异步回调。
+复制源目录及其内容至目标路径下，可设置冲突处理模式。使用Promise异步回调。
 
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
@@ -1000,7 +995,7 @@ fileIo.copyDir(srcPath, destPath, 0).then(() => {
 
 copyDir(src: string, dest: string, mode: number, callback: AsyncCallback&lt;void&gt;): void
 
-复制源目录至目标路径下，可设置复制模式。使用callback异步回调。
+复制源目录及其内容至目标路径下，可设置冲突处理模式。使用callback异步回调。
 
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
@@ -1045,7 +1040,7 @@ fileIo.copyDir(srcPath, destPath, 0, (err: BusinessError) => {
 
 copyDir(src: string, dest: string, mode: number, callback: AsyncCallback<void, Array&lt;ConflictFiles&gt;>): void
 
-复制源目录至目标路径下，可设置复制模式。使用callback异步回调。
+复制源目录及其内容至目标路径下，可设置冲突处理模式。使用callback异步回调。
 
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
@@ -1095,7 +1090,7 @@ fileIo.copyDir(srcPath, destPath, 0, (err: BusinessError<Array<ConflictFiles>>) 
 
 copyDir(src: string, dest: string, callback: AsyncCallback&lt;void&gt;): void
 
-复制源目录至目标路径下。使用callback异步回调。
+复制源目录及其内容至目标路径下。使用callback异步回调。
 
 如果目标目录下有与源目录名冲突的目录，且冲突目录下有同名文件，则抛出异常。源目录下未冲突的文件全部拷贝至目标目录下，目标目录下未冲突文件将继续保留。
 
@@ -1589,7 +1584,7 @@ try {
 
 mkdir(path: string): Promise&lt;void&gt;
 
-创建目录。使用Promise异步回调。
+创建单层目录，若父目录不存在则会报错。使用Promise异步回调。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -1686,7 +1681,7 @@ fileIo.mkdir(dirPath, true).then(() => {
 
 mkdir(path: string, callback: AsyncCallback&lt;void&gt;): void
 
-创建目录。使用callback异步回调。
+创建单层目录，若父目录不存在则会报错。使用callback异步回调。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -1773,7 +1768,7 @@ fileIo.mkdir(dirPath, true, (err: BusinessError) => {
 
 mkdirSync(path: string): void
 
-以同步方法创建目录。
+以同步方法创建单层目录，若父目录不存在则会报错。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -1842,7 +1837,7 @@ fileIo.mkdirSync(dirPath, true);
 
 open(path: string, mode?: number): Promise&lt;File&gt;
 
-打开文件或目录。使用Promise异步回调。支持使用URI打开文件。
+打开文件或目录，支持使用URI打开文件。使用Promise异步回调。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -2028,7 +2023,7 @@ fileIo.closeSync(file);
 
 read(fd: number, buffer: ArrayBuffer, options?: ReadOptions): Promise&lt;number&gt;
 
-读取文件数据。使用Promise异步回调。
+从文件读取数据，返回实际读取的字节数。使用Promise异步回调。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -2039,7 +2034,7 @@ read(fd: number, buffer: ArrayBuffer, options?: ReadOptions): Promise&lt;number&
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| fd | number | 是 | 已打开的文件描述符。 |
+| fd | number | 是 | 已打开的文件描述符fd。 |
 | buffer | ArrayBuffer | 是 | 用于保存读取到的文件数据的缓冲区。 |
 | options | ReadOptions | 否 | 支持如下选项： - offset，number类型，表示期望读取文件的位置，单位为Byte。可选，默认从当前位置开始读。 - length，number类型，表示期望读取数据的长度，单位为Byte。可选，默认缓冲区长度。 |
 
@@ -2084,7 +2079,7 @@ fileIo.read(file.fd, arrayBuffer).then((readLen: number) => {
 
 read(fd: number, buffer: ArrayBuffer, callback: AsyncCallback&lt;number&gt;): void
 
-从文件读取数据。使用callback异步回调。
+从文件读取数据，返回实际读取的字节数。使用callback异步回调。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -2095,7 +2090,7 @@ read(fd: number, buffer: ArrayBuffer, callback: AsyncCallback&lt;number&gt;): vo
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| fd | number | 是 | 已打开的文件描述符。 |
+| fd | number | 是 | 已打开的文件描述符fd。 |
 | buffer | ArrayBuffer | 是 | 用于保存读取到的文件数据的缓冲区。 |
 | callback | AsyncCallback&lt;number&gt; | 是 | 回调函数。返回实际读取的数据长度，单位为Byte。 |
 
@@ -2133,7 +2128,7 @@ fileIo.read(file.fd, arrayBuffer, (err: BusinessError, readLen: number) => {
 
 read(fd: number, buffer: ArrayBuffer, options: ReadOptions, callback: AsyncCallback&lt;number&gt;): void
 
-从文件读取数据，支持配置读取选项。使用callback异步回调。
+从文件读取数据，支持配置读取选项（如偏移位置和读取长度），返回实际读取的字节数。使用callback异步回调。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -2144,7 +2139,7 @@ read(fd: number, buffer: ArrayBuffer, options: ReadOptions, callback: AsyncCallb
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| fd | number | 是 | 已打开的文件描述符。 |
+| fd | number | 是 | 已打开的文件描述符fd。 |
 | buffer | ArrayBuffer | 是 | 用于保存读取到的文件数据的缓冲区。 |
 | options | ReadOptions | 是 | 支持如下选项： - offset，number类型，表示期望读取文件的位置，单位为Byte。可选，默认从当前位置开始读。 - length，number类型，表示期望读取数据的长度，单位为Byte。可选，默认缓冲区长度。 |
 | callback | AsyncCallback&lt;number&gt; | 是 | 回调函数，返回实际读取的数据长度，单位为Byte。 |
@@ -2188,7 +2183,7 @@ fileIo.read(file.fd, arrayBuffer, readOption, (err: BusinessError, readLen: numb
 
 readSync(fd: number, buffer: ArrayBuffer, options?: ReadOptions): number
 
-以同步方法从文件读取数据。
+以同步方法从文件读取数据，返回实际读取的字节数。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -2199,7 +2194,7 @@ readSync(fd: number, buffer: ArrayBuffer, options?: ReadOptions): number
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| fd | number | 是 | 已打开的文件描述符。 |
+| fd | number | 是 | 已打开的文件描述符fd。 |
 | buffer | ArrayBuffer | 是 | 用于保存读取到的文件数据的缓冲区。 |
 | options | ReadOptions | 否 | 支持如下选项： - offset，number类型，表示期望读取文件的位置，单位为Byte。可选，默认从当前位置开始读。 - length，number类型，表示期望读取数据的长度，单位为Byte。可选，默认缓冲区长度。 |
 
@@ -2372,7 +2367,7 @@ fileIo.rmdirSync(dirPath);
 
 unlink(path: string): Promise&lt;void&gt;
 
-删除单个文件。使用Promise异步回调。
+删除单个文件，仅适用于文件，不可用于删除目录。使用Promise异步回调。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -2420,7 +2415,7 @@ fileIo.unlink(filePath).then(() => {
 
 unlink(path: string, callback: AsyncCallback&lt;void&gt;): void
 
-删除文件。使用callback异步回调。
+删除单个文件，仅适用于文件，不可用于删除目录。使用callback异步回调。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -2463,7 +2458,7 @@ fileIo.unlink(filePath, (err: BusinessError) => {
 
 unlinkSync(path: string): void
 
-以同步方法删除文件。
+以同步方法删除单个文件，仅适用于文件，不可用于删除目录。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -2497,7 +2492,7 @@ fileIo.unlinkSync(filePath);
 
 write(fd: number, buffer: ArrayBuffer | string, options?: WriteOptions): Promise&lt;number&gt;
 
-将数据写入文件。使用Promise异步回调。
+将数据写入文件，返回实际写入的字节数。使用Promise异步回调。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -2508,7 +2503,7 @@ write(fd: number, buffer: ArrayBuffer | string, options?: WriteOptions): Promise
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| fd | number | 是 | 已打开的文件描述符。 |
+| fd | number | 是 | 已打开的文件描述符fd。 |
 | buffer | ArrayBuffer \| string | 是 | 待写入文件的数据，可来自缓冲区或字符串。 |
 | options | WriteOptions | 否 | 支持如下选项： - offset，number类型，表示期望写入文件的位置，单位为Byte。可选，默认从当前位置开始写入。 - length，number类型，表示期望写入数据的长度，单位为Byte。可选，默认缓冲区长度。 - encoding，string类型，当数据是string类型时有效，表示数据的编码方式，默认 'utf-8'。当前仅支持 'utf-8'。 |
 
@@ -2551,7 +2546,7 @@ fileIo.write(file.fd, str).then((writeLen: number) => {
 
 write(fd: number, buffer: ArrayBuffer | string, callback: AsyncCallback&lt;number&gt;): void
 
-将数据写入文件。使用callback异步回调。
+将数据写入文件，返回实际写入的字节数。使用callback异步回调。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -2562,7 +2557,7 @@ write(fd: number, buffer: ArrayBuffer | string, callback: AsyncCallback&lt;numbe
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| fd | number | 是 | 已打开的文件描述符。 |
+| fd | number | 是 | 已打开的文件描述符fd。 |
 | buffer | ArrayBuffer \| string | 是 | 待写入文件的数据，可来自缓冲区或字符串。 |
 | callback | AsyncCallback&lt;number&gt; | 是 | 回调函数，返回实际写入的数据长度，单位为Byte。 |
 
@@ -2598,7 +2593,7 @@ fileIo.write(file.fd, str, (err: BusinessError, writeLen: number) => {
 
 write(fd: number, buffer: ArrayBuffer | string, options: WriteOptions, callback: AsyncCallback&lt;number&gt;): void
 
-将数据写入文件，支持配置写入选项。使用callback异步回调。
+将数据写入文件，支持配置写入选项（如偏移位置和写入长度），返回实际写入的字节数。使用callback异步回调。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -2609,7 +2604,7 @@ write(fd: number, buffer: ArrayBuffer | string, options: WriteOptions, callback:
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| fd | number | 是 | 已打开的文件描述符。 |
+| fd | number | 是 | 已打开的文件描述符fd。 |
 | buffer | ArrayBuffer \| string | 是 | 待写入文件的数据，可来自缓冲区或字符串。 |
 | options | WriteOptions | 是 | 支持如下选项： - offset，number类型，表示期望写入文件的位置，单位为Byte。可选，默认从当前位置开始写。 - length，number类型，表示期望写入数据的长度，单位为Byte。可选，默认缓冲区长度。 - encoding，string类型，当数据是string类型时有效，表示数据的编码方式，默认 'utf-8'。当前仅支持 'utf-8'。 |
 | callback | AsyncCallback&lt;number&gt; | 是 | 回调函数，返回实际写入的数据长度，单位为Byte。 |
@@ -2651,7 +2646,7 @@ fileIo.write(file.fd, str, writeOptions, (err: BusinessError, writeLen: number) 
 
 writeSync(fd: number, buffer: ArrayBuffer | string, options?: WriteOptions): number
 
-以同步方法将数据写入文件。
+以同步方法将数据写入文件，返回实际写入的字节数。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -2662,7 +2657,7 @@ writeSync(fd: number, buffer: ArrayBuffer | string, options?: WriteOptions): num
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| fd | number | 是 | 已打开的文件描述符。 |
+| fd | number | 是 | 已打开的文件描述符fd。 |
 | buffer | ArrayBuffer \| string | 是 | 待写入文件的数据，可来自缓冲区或字符串。 |
 | options | WriteOptions | 否 | 支持如下选项： - offset，number类型，表示期望写入文件的位置，单位为Byte。可选，默认从当前位置开始写。 - length，number类型，表示期望写入数据的长度，单位为Byte。可选，默认缓冲区长度。 - encoding，string类型，当数据是string类型时有效，表示数据的编码方式，默认 'utf-8'。当前仅支持 'utf-8'。 |
 
@@ -2699,7 +2694,7 @@ fileIo.closeSync(file);
 
 truncate(file: string | number, len?: number): Promise&lt;void&gt;
 
-截断文件。使用Promise异步回调。
+截断文件，将文件大小调整为指定长度，超出部分的内容将被删除。使用Promise异步回调。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -2749,7 +2744,7 @@ fileIo.truncate(filePath, len).then(() => {
 
 truncate(file: string | number, callback: AsyncCallback&lt;void&gt;): void
 
-截断文件。使用callback异步回调。
+截断文件，删除文件内容。使用callback异步回调。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -2792,7 +2787,7 @@ fileIo.truncate(filePath, (err: BusinessError) => {
 
 truncate(file: string | number, len: number, callback: AsyncCallback&lt;void&gt;): void
 
-截断文件，支持配置文件截断后的长度。使用callback异步回调。
+截断文件，将文件大小调整为指定长度，超出部分的内容将被删除。使用callback异步回调。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -2837,7 +2832,7 @@ fileIo.truncate(filePath, len, (err: BusinessError) => {
 
 truncateSync(file: string | number, len?: number): void
 
-以同步方法截断文件内容。
+以同步方法截断文件内容，将文件大小调整为指定长度，超出部分的内容将被删除。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -3126,10 +3121,10 @@ fileIo.readLines(filePath, options).then((readerIterator: fileIo.ReaderIterator)
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
 
-| 名称 | 类型 | 只读 | 可选 | 说明 |
-| --- | --- | --- | --- | --- |
-| done | boolean | 否 | 否 | 迭代器是否已完成迭代。true：已完成迭代；false：未完成迭代。 |
-| value | string | 否 | 否 | 逐行读取的文件文本内容。 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| done | boolean | 迭代器是否已完成迭代。true：已完成迭代；false：未完成迭代。 |
+| value | string | 逐行读取的文件文本内容。 |
 
 
 
@@ -3337,7 +3332,7 @@ console.info(`Succeeded in reading text, text is: ${str}`);
 
 lstat(path: string): Promise&lt;Stat&gt;
 
-获取符号链接文件信息。使用Promise异步回调。
+获取符号链接文件信息，返回符号链接本身的属性而非目标文件的属性。使用Promise异步回调。
 
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
@@ -3383,7 +3378,7 @@ fileIo.lstat(filePath).then((stat: fileIo.Stat) => {
 
 lstat(path: string, callback: AsyncCallback&lt;Stat&gt;): void
 
-获取符号链接文件信息。使用callback异步回调。
+获取符号链接文件信息，返回符号链接本身的属性而非目标文件的属性。使用callback异步回调。
 
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
@@ -3424,7 +3419,7 @@ fileIo.lstat(filePath, (err: BusinessError, stat: fileIo.Stat) => {
 
 lstatSync(path: string): Stat
 
-以同步方法获取符号链接文件信息。
+以同步方法获取符号链接文件信息，返回符号链接本身的属性而非目标文件的属性。
 
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
@@ -3480,8 +3475,8 @@ rename(oldPath: string, newPath: string): Promise&lt;void&gt;
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| oldPath | string | 是 | 文件的应用沙箱原路径。 |
-| newPath | string | 是 | 文件的应用沙箱新路径。 |
+| oldPath | string | 是 | 文件或目录的应用沙箱原路径。 |
+| newPath | string | 是 | 文件或目录的应用沙箱新路径。 |
 
 
 **返回值：**
@@ -3534,8 +3529,8 @@ rename(oldPath: string, newPath: string, callback: AsyncCallback&lt;void&gt;): v
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| oldPath | string | 是 | 文件的应用沙箱原路径。 |
-| newPath | string | 是 | 文件的应用沙箱新路径。 |
+| oldPath | string | 是 | 文件或目录的应用沙箱原路径。 |
+| newPath | string | 是 | 文件或目录的应用沙箱新路径。 |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当重命名文件成功，err为undefined，否则为错误对象。 |
 
 
@@ -3583,8 +3578,8 @@ renameSync(oldPath: string, newPath: string): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| oldPath | string | 是 | 文件的应用沙箱原路径。 |
-| newPath | string | 是 | 文件的应用沙箱新路径。 |
+| oldPath | string | 是 | 文件或目录的应用沙箱原路径。 |
+| newPath | string | 是 | 文件或目录的应用沙箱新路径。 |
 
 
 **错误码：**
@@ -3617,7 +3612,7 @@ fsync(fd: number): Promise&lt;void&gt;
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| fd | number | 是 | 已打开的文件描述符。 |
+| fd | number | 是 | 已打开的文件描述符fd。 |
 
 
 **返回值：**
@@ -3666,7 +3661,7 @@ fsync(fd: number, callback: AsyncCallback&lt;void&gt;): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| fd | number | 是 | 已打开的文件描述符。 |
+| fd | number | 是 | 已打开的文件描述符fd。 |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当文件系统缓存数据写入磁盘成功，err为undefined，否则为错误对象。 |
 
 
@@ -3709,7 +3704,7 @@ fsyncSync(fd: number): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| fd | number | 是 | 已打开的文件描述符。 |
+| fd | number | 是 | 已打开的文件描述符fd。 |
 
 
 **错误码：**
@@ -3743,7 +3738,7 @@ fdatasync(fd: number): Promise&lt;void&gt;
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| fd | number | 是 | 已打开的文件描述符。 |
+| fd | number | 是 | 已打开的文件描述符fd。 |
 
 
 **返回值：**
@@ -3792,7 +3787,7 @@ fdatasync(fd: number, callback: AsyncCallback&lt;void&gt;): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| fd | number | 是 | 已打开的文件描述符。 |
+| fd | number | 是 | 已打开的文件描述符fd。 |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当文件内容数据同步成功，err为undefined，否则为错误对象。 |
 
 
@@ -3835,7 +3830,7 @@ fdatasyncSync(fd: number): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| fd | number | 是 | 已打开的文件描述符。 |
+| fd | number | 是 | 已打开的文件描述符fd。 |
 
 
 **错误码：**
@@ -3997,7 +3992,7 @@ fileIo.symlinkSync(srcFile, dstFile);
 
 listFile(path: string, options?: ListFileOptions): Promise<string[]>
 
-默认列出当前目录下所有文件名和目录名。支持过滤。使用promise异步回调。
+默认列出当前目录下所有文件名和目录名，返回文件名数组，支持按后缀、文件名等条件过滤。使用Promise异步回调。
 
 可通过配置ListFileOptions中recursion参数实现递归列出所有文件的相对路径，相对路径以“/”开头。
 
@@ -4060,7 +4055,7 @@ fileIo.listFile(pathDir, listFileOption).then((filenames: Array<string>) => {
 
 listFile(path: string, callback: AsyncCallback<string[]>): void
 
-默认列出当前目录下所有文件名和目录名。使用callback异步回调。
+默认列出当前目录下所有文件名和目录名，返回文件名数组。使用callback异步回调。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -4105,7 +4100,7 @@ fileIo.listFile(pathDir, (err: BusinessError, filenames: Array<string>) => {
 
 listFile(path: string, options: ListFileOptions, callback: AsyncCallback<string[]>): void
 
-默认列出当前目录下所有文件名和目录名。支持过滤。使用callback异步回调。
+默认列出当前目录下所有文件名和目录名，返回文件名数组，支持按后缀、文件名等条件过滤。使用callback异步回调。
 
 可通过配置ListFileOptions中recursion参数实现递归列出所有文件的相对路径，相对路径以“/”开头。
 
@@ -4163,7 +4158,7 @@ fileIo.listFile(pathDir, listFileOption, (err: BusinessError, filenames: Array<s
 
 listFileSync(path: string, options?: ListFileOptions): string[]
 
-默认以同步方式列出当前目录下所有文件名和目录名。支持过滤。
+默认以同步方式列出当前目录下所有文件名和目录名，返回文件名数组，支持按后缀、文件名等条件过滤。
 
 可通过配置ListFileOptions中recursion参数实现递归列出所有文件的相对路径，相对路径以“/”开头。
 
@@ -4253,6 +4248,15 @@ listFileExt(path: string, options?: ListFileExtOptions): Promise<string[]>
 
 接口抛出错误码的详细介绍请参见[基础文件IO错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement#基础文件io错误码)。
 
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 13900002 | No such file or directory. |
+| 13900011 | Out of memory. |
+| 13900018 | Not a directory. |
+| 13900020 | Invalid argument. |
+
+
 **示例：**
 
 ```text
@@ -4319,6 +4323,15 @@ listFileExtSync(path: string, options?: ListFileExtOptions): string[]
 **错误码：**
 
 接口抛出错误码的详细介绍请参见[基础文件IO错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement#基础文件io错误码)。
+
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 13900002 | No such file or directory. |
+| 13900011 | Out of memory. |
+| 13900018 | Not a directory. |
+| 13900020 | Invalid argument. |
+
 
 **示例：**
 
@@ -4402,7 +4415,7 @@ fileIo.closeSync(file);
 
 moveDir(src: string, dest: string, mode?: number): Promise&lt;void&gt;
 
-移动源目录至目标路径下。使用Promise异步回调。
+移动源目录及其内容至目标路径下。使用Promise异步回调。
 
 > [!NOTE]
 > 该接口不支持在分布式文件路径下操作。
@@ -4455,7 +4468,7 @@ fileIo.moveDir(srcPath, destPath, 1).then(() => {
 
 moveDir(src: string, dest: string, mode: number, callback: AsyncCallback&lt;void&gt;): void
 
-移动源目录至目标路径下，支持设置移动模式。使用callback异步回调。
+移动源目录及其内容至目标路径下，支持设置冲突处理模式。使用callback异步回调。
 
 > [!NOTE]
 > 该接口不支持在分布式文件路径下操作。
@@ -4470,7 +4483,7 @@ moveDir(src: string, dest: string, mode: number, callback: AsyncCallback&lt;void
 | --- | --- | --- | --- |
 | src | string | 是 | 源目录的应用沙箱路径。 |
 | dest | string | 是 | 目标目录的应用沙箱路径。 |
-| mode | number | 是 | 移动模式。 - mode为0，目录级别抛异常。若目标目录下存在与源目录名冲突的目录，则抛出异常。 - mode为1，文件级别抛异常。目标目录下存在与源目录名冲突的目录，若冲突目录下存在同名文件，则抛出异常。源目录下未冲突的文件全部移动至目标目录下，目标目录下未冲突文件将继续保留。 - mode为2，文件级别强制覆盖。目标目录下存在与源目录名冲突的目录，若冲突目录下存在同名文件，则强制覆盖冲突目录下所有同名文件，未冲突文件将继续保留。 - mode为3，目录级别强制覆盖。移动源目录至目标目录下，目标目录下移动的目录内容与源目录完全一致。若目标目录下存在与源目录名冲突的目录，该目录下所有原始文件将被删除。 |
+| mode | number | 是 | 移动模式。 - mode为0，目录级别抛异常。若目标目录下存在与源目录名冲突的非空目录，则抛出异常。 - mode为1，文件级别抛异常。目标目录下存在与源目录名冲突的目录，若冲突目录下存在同名文件，则抛出异常。源目录下未冲突的文件全部移动至目标目录下，目标目录下未冲突文件将继续保留。 - mode为2，文件级别强制覆盖。目标目录下存在与源目录名冲突的目录，若冲突目录下存在同名文件，则强制覆盖冲突目录下所有同名文件，未冲突文件将继续保留。 - mode为3，目录级别强制覆盖。移动源目录至目标目录下，目标目录下移动的目录内容与源目录完全一致。若目标目录下存在与源目录名冲突的目录，该目录下所有原始文件将被删除。 |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当移动目录成功，err为undefined，否则为错误对象。 |
 
 
@@ -4503,7 +4516,7 @@ fileIo.moveDir(srcPath, destPath, 1, (err: BusinessError) => {
 
 moveDir(src: string, dest: string, mode: number, callback: AsyncCallback<void, Array&lt;ConflictFiles&gt;>): void
 
-移动源目录至目标路径下，支持设置移动模式。使用callback异步回调。
+移动源目录及其内容至目标路径下，支持设置冲突处理模式。使用callback异步回调。
 
 > [!NOTE]
 > 该接口不支持在分布式文件路径下操作。
@@ -4518,7 +4531,7 @@ moveDir(src: string, dest: string, mode: number, callback: AsyncCallback<void, A
 | --- | --- | --- | --- |
 | src | string | 是 | 源目录的应用沙箱路径。 |
 | dest | string | 是 | 目标目录的应用沙箱路径。 |
-| mode | number | 是 | 移动模式。 - mode为0，目录级别抛异常。若目标目录下存在与源目录名冲突的目录，则抛出异常。 - mode为1，文件级别抛异常。目标目录下存在与源目录名冲突的目录，若冲突目录下存在同名文件，则抛出异常。源目录下未冲突的文件全部移动至目标目录下，目标目录下未冲突文件将继续保留，且冲突文件信息将在抛出异常的data属性中以Array&lt;ConflictFiles&gt;形式提供。 - mode为2，文件级别强制覆盖。目标目录下存在与源目录名冲突的目录，若冲突目录下存在同名文件，则强制覆盖冲突目录下所有同名文件，未冲突文件将继续保留。 - mode为3，目录级别强制覆盖。移动源目录至目标目录下，目标目录下移动的目录内容与源目录完全一致。若目标目录下存在与源目录名冲突的目录，该目录下所有原始文件将被删除。 |
+| mode | number | 是 | 移动模式。 - mode为0，目录级别抛异常。若目标目录下存在与源目录名冲突的非空目录，则抛出异常。 - mode为1，文件级别抛异常。目标目录下存在与源目录名冲突的目录，若冲突目录下存在同名文件，则抛出异常。源目录下未冲突的文件全部移动至目标目录下，目标目录下未冲突文件将继续保留，且冲突文件信息将在抛出异常的data属性中以Array&lt;ConflictFiles&gt;形式提供。 - mode为2，文件级别强制覆盖。目标目录下存在与源目录名冲突的目录，若冲突目录下存在同名文件，则强制覆盖冲突目录下所有同名文件，未冲突文件将继续保留。 - mode为3，目录级别强制覆盖。移动源目录至目标目录下，目标目录下移动的目录内容与源目录完全一致。若目标目录下存在与源目录名冲突的目录，该目录下所有原始文件将被删除。 |
 | callback | AsyncCallback<void, Array&lt;ConflictFiles&gt;> | 是 | 回调函数。当移动目录成功，err为undefined，否则为错误对象。 |
 
 
@@ -4556,9 +4569,9 @@ fileIo.moveDir(srcPath, destPath, 1, (err: BusinessError<Array<ConflictFiles>>) 
 
 moveDir(src: string, dest: string, callback: AsyncCallback&lt;void&gt;): void
 
-移动源目录至目标路径下。使用callback异步回调。
+移动源目录及其内容至目标路径下。使用callback异步回调。
 
-移动模式为目录级别抛异常。当目标目录下存在与源目录名冲突的目录，则抛出异常。
+移动模式为目录级别抛异常。当目标目录下存在与源目录名冲突的非空目录，则抛出异常。
 
 > [!NOTE]
 > 该接口不支持在分布式文件路径下操作。
@@ -4605,9 +4618,9 @@ fileIo.moveDir(srcPath, destPath, (err: BusinessError) => {
 
 moveDir(src: string, dest: string, callback: AsyncCallback<void, Array&lt;ConflictFiles&gt;>): void
 
-移动源目录至目标路径下。使用callback异步回调。
+移动源目录及其内容至目标路径下。使用callback异步回调。
 
-移动模式为目录级别抛异常。当目标目录下存在与源目录名冲突的目录，则抛出异常。
+移动模式为目录级别抛异常。当目标目录下存在与源目录名冲突的非空目录，则抛出异常。
 
 > [!NOTE]
 > 该接口不支持在分布式文件路径下操作。
@@ -4659,7 +4672,7 @@ fileIo.moveDir(srcPath, destPath, (err: BusinessError<Array<ConflictFiles>>) => 
 
 moveDirSync(src: string, dest: string, mode?: number): void
 
-以同步方法移动源目录至目标路径下。
+以同步方法移动源目录及其内容至目标路径下。
 
 > [!NOTE]
 > 该接口不支持在分布式文件路径下操作。
@@ -4674,7 +4687,7 @@ moveDirSync(src: string, dest: string, mode?: number): void
 | --- | --- | --- | --- |
 | src | string | 是 | 源目录的应用沙箱路径。 |
 | dest | string | 是 | 目标目录的应用沙箱路径。 |
-| mode | number | 否 | 移动模式，默认值为0。 - mode为0，目录级别抛异常。若目标目录下存在与源目录名冲突的目录，则抛出异常。 - mode为1，文件级别抛异常。目标目录下存在与源目录名冲突的目录，若冲突目录下存在同名文件，则抛出异常。源目录下未冲突的文件全部移动至目标目录下，目标目录下未冲突文件将继续保留，且冲突文件信息将在抛出异常的data属性中以Array&lt;ConflictFiles&gt;形式提供。 - mode为2，文件级别强制覆盖。目标目录下存在与源目录名冲突的目录，若冲突目录下存在同名文件，则强制覆盖冲突目录下所有同名文件，未冲突文件将继续保留。 - mode为3，目录级别强制覆盖。移动源目录至目标目录下，目标目录下移动的目录内容与源目录完全一致。若目标目录下存在与源目录名冲突的目录，该目录下所有原始文件将被删除。 |
+| mode | number | 否 | 移动模式，默认值为0。 - mode为0，目录级别抛异常。若目标目录下存在与源目录名冲突的非空目录，则抛出异常。 - mode为1，文件级别抛异常。目标目录下存在与源目录名冲突的目录，若冲突目录下存在同名文件，则抛出异常。源目录下未冲突的文件全部移动至目标目录下，目标目录下未冲突文件将继续保留，且冲突文件信息将在抛出异常的data属性中以Array&lt;ConflictFiles&gt;形式提供。 - mode为2，文件级别强制覆盖。目标目录下存在与源目录名冲突的目录，若冲突目录下存在同名文件，则强制覆盖冲突目录下所有同名文件，未冲突文件将继续保留。 - mode为3，目录级别强制覆盖。移动源目录至目标目录下，目标目录下移动的目录内容与源目录完全一致。若目标目录下存在与源目录名冲突的目录，该目录下所有原始文件将被删除。 |
 
 
 **错误码：**
@@ -4713,7 +4726,7 @@ try {
 
 moveFile(src: string, dest: string, mode?: number): Promise&lt;void&gt;
 
-移动文件。使用Promise异步回调。
+移动文件至目标路径。使用Promise异步回调。
 
 > [!NOTE]
 > 该接口不支持在分布式文件路径下操作。
@@ -4766,7 +4779,7 @@ fileIo.moveFile(srcPath, destPath, 0).then(() => {
 
 moveFile(src: string, dest: string, mode: number, callback: AsyncCallback&lt;void&gt;): void
 
-移动文件，支持设置移动模式。使用callback异步回调。
+移动文件至目标路径，支持设置冲突处理模式。使用callback异步回调。
 
 > [!NOTE]
 > 该接口不支持在分布式文件路径下操作。
@@ -4861,7 +4874,7 @@ fileIo.moveFile(srcPath, destPath, (err: BusinessError) => {
 
 moveFileSync(src: string, dest: string, mode?: number): void
 
-以同步方式移动文件。
+以同步方式移动文件至目标路径。
 
 > [!NOTE]
 > 该接口不支持在分布式文件路径下操作。
@@ -4986,7 +4999,7 @@ fileIo.mkdtemp(pathDir + "/XXXXXX", (err: BusinessError, res: string) => {
 
 mkdtempSync(prefix: string): string
 
-以同步的方法创建临时目录。
+以同步方法创建临时目录。
 
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
@@ -5510,7 +5523,7 @@ fdopenStream(fd: number, mode: string): Promise&lt;Stream&gt;
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| fd | number | 是 | 已打开的文件描述符。 |
+| fd | number | 是 | 已打开的文件描述符fd。 |
 | mode | string | 是 | - r：打开只读文件，该文件必须存在。 - r+：打开可读写的文件，该文件必须存在。 - w：打开只写文件，若文件存在则文件长度清0，即该文件内容会消失。若文件不存在则建立该文件。 - w+：打开可读写文件，若文件存在则文件长度清0，即该文件内容会消失。若文件不存在则建立该文件。 - a：以附加的方式打开只写文件。若文件不存在，则会建立该文件，如果文件存在，写入的数据会被加到文件尾，即文件原先的内容会被保留。 - a+：以附加方式打开可读写的文件。若文件不存在，则会建立该文件，如果文件存在，写入的数据会被加到文件尾后，即文件原先的内容会被保留。 |
 
 
@@ -5544,7 +5557,7 @@ fileIo.fdopenStream(file.fd, "r+").then((stream: fileIo.Stream) => {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/VjPSZzasT0WxgohWWFEEUQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072902Z&HW-CC-Expire=86400&HW-CC-Sign=178FAD69702180B080C07886C70B3F1D04B23E8F16167DA16E2CC61389EBB43B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/bzmvJDvPScCDeWlxsg9m9Q/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20261009T012907Z&HW-CC-Expire=86400&HW-CC-Sign=55A40D6B261446D0F6D91669D7CF220446489A4865EBDC28930BFC2CBC129CE7)
 
 
 使用文件描述符创建的文件流时，文件描述符的生命周期将由文件流对象管理。调用文件流的close()函数后，初始的文件描述符也会被关闭。
@@ -5571,7 +5584,7 @@ fdopenStream(fd: number, mode: string, callback: AsyncCallback&lt;Stream&gt;): v
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| fd | number | 是 | 已打开的文件描述符。 |
+| fd | number | 是 | 已打开的文件描述符fd。 |
 | mode | string | 是 | - r：打开只读文件，该文件必须存在。 - r+：打开可读写的文件，该文件必须存在。 - w：打开只写文件，若文件存在则文件长度清0，即该文件内容会消失。若文件不存在则建立该文件。 - w+：打开可读写文件，若文件存在则文件长度清0，即该文件内容会消失。若文件不存在则建立该文件。 - a：以附加的方式打开只写文件。若文件不存在，则会建立该文件，如果文件存在，写入的数据会被加到文件尾，即文件原先的内容会被保留。 - a+：以附加方式打开可读写的文件。若文件不存在，则会建立该文件，如果文件存在，写入的数据会被加到文件尾后，即文件原先的内容会被保留。 |
 | callback | AsyncCallback&lt;Stream&gt; | 是 | 回调函数，返回Stream对象。 |
 
@@ -5600,7 +5613,7 @@ fileIo.fdopenStream(file.fd, "r+", (err: BusinessError, stream: fileIo.Stream) =
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/E1-6eo2ySNGkt_aEO_HR-A/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072902Z&HW-CC-Expire=86400&HW-CC-Sign=BFBDAEBF05ACD49157ED3A8A09D405F589B28F1D4A1EDBCD1096EB7AE658C26E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/dcHDuDihTFmI61m1SBNLQw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20261009T012907Z&HW-CC-Expire=86400&HW-CC-Sign=E085E8E67A81EAFC400B9C7DBF008CA73C3AA78933AD972E2A2A7AE898B5225C)
 
 
 使用文件描述符创建的文件流，文件描述符的生命周期也交由文件流对象，在调用文件流的close()函数后，初始的文件描述符也会被关闭。
@@ -5627,7 +5640,7 @@ fdopenStreamSync(fd: number, mode: string): Stream
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| fd | number | 是 | 已打开的文件描述符。 |
+| fd | number | 是 | 已打开的文件描述符fd。 |
 | mode | string | 是 | - r：打开只读文件，该文件必须存在。 - r+：打开可读写的文件，该文件必须存在。 - w：打开只写文件，若文件存在则文件长度清0，即该文件内容会消失。若文件不存在则建立该文件。 - w+：打开可读写文件，若文件存在则文件长度清0，即该文件内容会消失。若文件不存在则建立该文件。 - a：以附加的方式打开只写文件。若文件不存在，则会建立该文件，如果文件存在，写入的数据会被加到文件尾，即文件原先的内容会被保留。 - a+：以附加方式打开可读写的文件。若文件不存在，则会建立该文件，如果文件存在，写入的数据会被加到文件尾后，即文件原先的内容会被保留。 |
 
 
@@ -5653,7 +5666,7 @@ stream.closeSync();
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/xz8N5mZLSHWr2VB0Bj5thw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072902Z&HW-CC-Expire=86400&HW-CC-Sign=AAC2CE49CC05398B791C8C6528ADEAE01C5773C4F363D9CCE4F32AB45B1D6252)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/lJCtp8kiT5axDwxiJCgwyg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20261009T012907Z&HW-CC-Expire=86400&HW-CC-Sign=FCF28D7ECAB2DEFFADA294577FC563F797ACA51D2629097FEF5C8DB90C761F3E)
 
 
 使用文件描述符创建的文件流，文件描述符的生命周期也交由文件流对象，在调用文件流的close()函数后，初始的文件描述符也会被关闭。
@@ -5769,7 +5782,7 @@ rs.on('readable', () => {
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-AtomicFile是一个用于对文件进行原子读写操作的类。
+AtomicFile是一个用于对文件进行原子读写等操作的类。
 
 在写操作时，通过写入临时文件，并在写入成功后将其重命名到原始文件位置来确保写入文件的完整性；而在写入失败时删除临时文件，不修改原始文件内容。
 
@@ -5786,7 +5799,7 @@ AtomicFile是一个用于对文件进行原子读写操作的类。
 
 constructor(path: string)
 
-对于给定路径的文件创建一个AtomicFile实例。
+对于给定路径的文件创建一个AtomicFile类。
 
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
@@ -6089,7 +6102,7 @@ try {
 
 delete(): void
 
-删除AtomicFile类，会删除原始文件和临时文件。
+删除AtomicFile对应的原始文件和临时文件。
 
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
@@ -6134,7 +6147,7 @@ try {
 
 createWatcher(path: string, events: number, listener: WatchEventListener): Watcher
 
-创建Watcher对象，监听文件或目录变动。
+创建Watcher对象，用于监听文件或目录的创建、删除、修改等变动事件。
 
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
@@ -6143,7 +6156,7 @@ createWatcher(path: string, events: number, listener: WatchEventListener): Watch
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | 是 | 监听文件或目录的沙箱路径。 |
+| path | string | 是 | 监听文件或目录的应用沙箱路径。 |
 | events | number | 是 | 监听变动的事件集，多个事件通过或(\|)的方式进行集合。 - 0x1: IN_ACCESS， 文件被访问。 - 0x2: IN_MODIFY，文件内容被修改。 - 0x4: IN_ATTRIB，文件元数据被修改。 - 0x8: IN_CLOSE_WRITE，文件在打开时进行了写操作，然后被关闭。 - 0x10: IN_CLOSE_NOWRITE，文件或目录在打开时未进行写操作，然后被关闭。 - 0x20: IN_OPEN，文件或目录被打开。 - 0x40: IN_MOVED_FROM，监听目录中文件被移动走。 - 0x80: IN_MOVED_TO，监听目录中文件被移动过来。 - 0x100: IN_CREATE，监听目录中文件或子目录被创建。 - 0x200: IN_DELETE，监听目录中文件或子目录被删除。 - 0x400: IN_DELETE_SELF，监听的目录被删除，删除后监听停止。 - 0x800: IN_MOVE_SELF，监听的文件或目录被移动，移动后监听继续。 - 0xfff: IN_ALL_EVENTS，监听以上所有事件。 |
 | listener | WatchEventListener | 是 | 监听事件发生后的回调。监听事件每发生一次，回调一次。 |
 
@@ -6193,7 +6206,7 @@ watcher.stop();
 
 (event: WatchEvent): void
 
-事件监听类。
+事件监听接口，当监听的文件或目录发生变动事件时触发回调。
 
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
@@ -6212,7 +6225,7 @@ watcher.stop();
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-事件类
+事件接口。
 
 
 
@@ -6381,18 +6394,14 @@ copySignal.onCancel();
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-type ProgressListener = (progress: Progress) => void
-
 拷贝进度监听。
 
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
-**参数：**
 
-
-| 参数名 | 类型 | 必填 | 说明 |
-| --- | --- | --- | --- |
-| progress | Progress | 是 | 拷贝进度监听 |
+| 类型 | 说明 |
+| --- | --- |
+| (progress: Progress) => void | 拷贝进度监听 |
 
 
 **示例：**
@@ -6417,7 +6426,7 @@ let copyOption: fileIo.CopyOptions = {
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-文件具体信息，在调用Stat的方法前，需要先通过[stat()](#fileiostat)方法（同步或异步）构建一个Stat实例。
+文件具体信息，包含文件大小、权限模式、访问时间、修改时间等属性。在调用Stat的方法前，需要先通过[stat()](#fileiostat)方法（同步或异步）构建一个Stat实例。
 
 
 
@@ -6432,7 +6441,7 @@ let copyOption: fileIo.CopyOptions = {
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | ino | bigint | 是 | 否 | 标识该文件。通常同设备上的不同文件的INO不同。 |
-| mode | number | 是 | 否 | 表示文件权限，各特征位的含义如下： 说明：以下值为八进制，取得的返回值为十进制，请换算后查看。 - 0o400：用户读。对于普通文件，所有者可读取文件；对于目录，所有者可读取目录项。 - 0o200：用户写。对于普通文件，所有者可写入文件；对于目录，所有者可创建/删除目录项。 - 0o100：用户执行。对于普通文件，所有者可执行文件；对于目录，所有者可在目录中搜索给定路径名。 - 0o040：用户组读。对于普通文件，所有用户组可读取文件；对于目录，所有用户组可读取目录项。 - 0o020：用户组写。对于普通文件，所有用户组可写入文件；对于目录，所有用户组可创建/删除目录项。 - 0o010：用户组执行。对于普通文件，所有用户组可执行文件；对于目录，所有用户组是否可在目录中搜索给定路径名。 - 0o004：其他读。对于普通文件，其余用户可读取文件；对于目录，其他用户组可读取目录项。 - 0o002：其他写。对于普通文件，其余用户可写入文件；对于目录，其他用户组可创建/删除目录项。 - 0o001：其他执行。对于普通文件，其余用户可执行文件；对于目录，其他用户组可在目录中搜索给定路径名。 元服务API：从API version 11开始，该接口支持在元服务中使用。 |
+| mode | number | 是 | 否 | 表示文件权限，各特征位的含义如下： 说明：以下值为八进制，取得的返回值为十进制，请换算后查看。 - 0o400：用户读。对于普通文件，所有者可读取文件；对于目录，所有者可读取目录项。 - 0o200：用户写。对于普通文件，所有者可写入文件；对于目录，所有者可创建/删除目录项。 - 0o100：用户执行。对于普通文件，所有者可执行文件；对于目录，所有者可在目录中搜索给定路径名。 - 0o040：用户组读。对于普通文件，所有用户组可读取文件；对于目录，所有用户组可读取目录项。 - 0o020：用户组写。对于普通文件，所有用户组可写入文件；对于目录，所有用户组可创建/删除目录项。 - 0o010：用户组执行。对于普通文件，所有用户组可执行文件；对于目录，所有用户组可在目录中搜索给定路径名。 - 0o004：其他读。对于普通文件，其余用户可读取文件；对于目录，其他用户组可读取目录项。 - 0o002：其他写。对于普通文件，其余用户可写入文件；对于目录，其他用户组可创建/删除目录项。 - 0o001：其他执行。对于普通文件，其余用户可执行文件；对于目录，其他用户组可在目录中搜索给定路径名。 元服务API：从API version 11开始，该接口支持在元服务中使用。 |
 | uid | number | 是 | 否 | 文件所有者的ID。 |
 | gid | number | 是 | 否 | 文件所有组的ID。 |
 | size | number | 是 | 否 | 文件的大小，单位为Byte。仅对普通文件有效。 元服务API：从API version 11开始，该接口支持在元服务中使用。 |
@@ -6684,7 +6693,7 @@ let isSymbolicLink = fileIo.statSync(filePath).isSymbolicLink();
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-文件流，在调用Stream的方法前，需要先通过[fileIo.createStream](#fileiocreatestream)方法或者[fileIo.fdopenStream](#fileiofdopenstream)（同步或异步）来构建一个Stream实例。
+文件流，提供流式读写文件数据的能力，使用完毕后需调用close关闭。在调用Stream的方法前，需要先通过[fileIo.createStream](#fileiocreatestream)方法或者[fileIo.fdopenStream](#fileiofdopenstream)（同步或异步）来构建一个Stream实例。
 
 
 
@@ -6695,7 +6704,7 @@ let isSymbolicLink = fileIo.statSync(filePath).isSymbolicLink();
 
 close(): Promise&lt;void&gt;
 
-关闭文件流。使用Promise异步回调。
+关闭文件流，关闭后不可再用于读写等操作。使用Promise异步回调。
 
 **元服务API**：从API version 20开始，该接口支持在元服务中使用。
 
@@ -6736,7 +6745,7 @@ stream.close().then(() => {
 
 close(callback: AsyncCallback&lt;void&gt;): void
 
-异步关闭文件流。使用callback异步回调。
+关闭文件流，关闭后不可再用于读写等操作。使用callback异步回调。
 
 **元服务API**：从API version 20开始，该接口支持在元服务中使用。
 
@@ -6779,7 +6788,7 @@ stream.close((err: BusinessError) => {
 
 closeSync(): void
 
-同步关闭文件流。
+同步关闭文件流，关闭后不可再用于读写等操作。
 
 **元服务API**：从API version 20开始，该接口支持在元服务中使用。
 
@@ -6920,7 +6929,7 @@ stream.close();
 
 write(buffer: ArrayBuffer | string, options?: WriteOptions): Promise&lt;number&gt;
 
-将数据写入流文件。使用Promise异步回调。
+将数据写入流文件，返回实际写入的字节数。使用Promise异步回调。
 
 **元服务API**：从API version 20开始，该接口支持在元服务中使用。
 
@@ -6977,7 +6986,7 @@ stream.write("hello, world", writeOption).then((number: number) => {
 
 write(buffer: ArrayBuffer | string, callback: AsyncCallback&lt;number&gt;): void
 
-将数据写入流文件。使用callback异步回调。
+将数据写入流文件，返回实际写入的字节数。使用callback异步回调。
 
 **元服务API**：从API version 20开始，该接口支持在元服务中使用。
 
@@ -7024,7 +7033,7 @@ stream.write("hello, world", (err: BusinessError, bytesWritten: number) => {
 
 write(buffer: ArrayBuffer | string, options: WriteOptions, callback: AsyncCallback&lt;number&gt;): void
 
-将数据写入流文件，支持配置写入选项。使用callback异步回调。
+将数据写入流文件，支持配置写入选项，返回实际写入的字节数。使用callback异步回调。
 
 **元服务API**：从API version 20开始，该接口支持在元服务中使用。
 
@@ -7078,7 +7087,7 @@ stream.write("hello, world", writeOption, (err: BusinessError, bytesWritten: num
 
 writeSync(buffer: ArrayBuffer | string, options?: WriteOptions): number
 
-以同步方法将数据写入流文件。
+以同步方法将数据写入流文件，返回实际写入的字节数。
 
 **元服务API**：从API version 20开始，该接口支持在元服务中使用。
 
@@ -7130,7 +7139,7 @@ stream.close();
 
 read(buffer: ArrayBuffer, options?: ReadOptions): Promise&lt;number&gt;
 
-从流文件读取数据。使用Promise异步回调。
+从流文件读取数据，返回实际读取的字节数。使用Promise异步回调。
 
 **元服务API**：从API version 20开始，该接口支持在元服务中使用。
 
@@ -7189,7 +7198,7 @@ stream.read(arrayBuffer, readOption).then((readLen: number) => {
 
 read(buffer: ArrayBuffer, callback: AsyncCallback&lt;number&gt;): void
 
-从流文件读取数据。使用callback异步回调。
+从流文件读取数据，返回实际读取的字节数。使用callback异步回调。
 
 **元服务API**：从API version 20开始，该接口支持在元服务中使用。
 
@@ -7237,7 +7246,7 @@ stream.read(arrayBuffer, (err: BusinessError, readLen: number) => {
 
 read(buffer: ArrayBuffer, options: ReadOptions, callback: AsyncCallback&lt;number&gt;): void
 
-从流文件读取数据，支持配置读取选项。使用callback异步回调。
+从流文件读取数据，支持配置读取选项，返回实际读取的字节数。使用callback异步回调。
 
 **元服务API**：从API version 20开始，该接口支持在元服务中使用。
 
@@ -7291,7 +7300,7 @@ stream.read(arrayBuffer, readOption, (err: BusinessError, readLen: number) => {
 
 readSync(buffer: ArrayBuffer, options?: ReadOptions): number
 
-以同步方法从流文件读取数据。
+以同步方法从流文件读取数据，返回实际读取的字节数。
 
 **元服务API**：从API version 20开始，该接口支持在元服务中使用。
 
@@ -7341,7 +7350,7 @@ stream.close();
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-由open接口打开的File对象。
+由open接口打开的File对象，持有文件描述符fd，提供文件锁和获取父目录等能力。
 
 
 
@@ -7355,7 +7364,7 @@ stream.close();
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| fd | number | 是 | 否 | 打开的文件描述符。 元服务API：从API version 11开始，该接口支持在元服务中使用。 |
+| fd | number | 是 | 否 | 已打开的文件描述符fd。 元服务API：从API version 11开始，该接口支持在元服务中使用。 |
 | path10+ | string | 是 | 否 | 文件路径。 |
 | name10+ | string | 是 | 否 | 文件名。 |
 
@@ -7369,7 +7378,7 @@ stream.close();
 
 getParent(): string
 
-获取File对象对应文件父目录。
+获取File对象对应文件的父目录路径。
 
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
@@ -8411,7 +8420,7 @@ fileIo.closeSync(file);
 
 
 
-## DfsListeners12+
+## fileIo.DfsListeners12+
 
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -8449,7 +8458,7 @@ onStatus(networkId: string, status: number): void;
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-随机读写文件流。在调用RandomAccessFile的方法前，需要先通过createRandomAccessFile()方法（同步或异步）来构建一个RandomAccessFile实例。
+随机读写文件流，提供基于偏移指针的随机读写能力。在调用RandomAccessFile的方法前，需要先通过createRandomAccessFile()方法（同步或异步）来构建一个RandomAccessFile实例。
 
 
 
@@ -8463,8 +8472,8 @@ onStatus(networkId: string, status: number): void;
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| fd | number | 是 | 否 | 打开的文件描述符。 |
-| filePointer | number | 是 | 否 | RandomAccessFile对象的偏移指针，单位为Byte。 |
+| fd | number | 是 | 否 | 已打开的文件描述符fd。 |
+| filePointer | number | 是 | 否 | RandomAccessFile对象的偏移指针，表示当前读写位置，单位为Byte。 |
 
 
 
@@ -8476,7 +8485,7 @@ onStatus(networkId: string, status: number): void;
 
 setFilePointer(filePointer:number): void
 
-设置文件偏移指针。
+设置文件偏移指针，用于指定后续读写等操作的起始位置。
 
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
@@ -8510,7 +8519,7 @@ randomAccessFile.close();
 
 close(): void
 
-以同步方式关闭RandomAccessFile对象。
+以同步方式关闭RandomAccessFile对象，关闭后不可再用于读写等操作。
 
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
@@ -8750,7 +8759,7 @@ randomAccessFile.close();
 
 read(buffer: ArrayBuffer, options?: ReadOptions): Promise&lt;number&gt;
 
-从文件读取数据。使用Promise异步回调。
+从文件读取数据，返回实际读取的字节数。使用Promise异步回调。
 
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
@@ -8809,7 +8818,7 @@ randomAccessFile.read(arrayBuffer, readOption).then((readLength: number) => {
 
 read(buffer: ArrayBuffer, callback: AsyncCallback&lt;number&gt;): void
 
-从文件读取数据。使用callback异步回调。
+从文件读取数据，返回实际读取的字节数。使用callback异步回调。
 
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
@@ -8859,7 +8868,7 @@ randomAccessFile.read(arrayBuffer, (err: BusinessError, readLength: number) => {
 
 read(buffer: ArrayBuffer, options: ReadOptions, callback: AsyncCallback&lt;number&gt;): void
 
-从文件读取数据，支持配置读取选项。使用callback异步回调。
+从文件读取数据，支持配置读取选项，返回实际读取的字节数。使用callback异步回调。
 
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
@@ -8914,7 +8923,7 @@ randomAccessFile.read(arrayBuffer, readOption, (err: BusinessError, readLength: 
 
 readSync(buffer: ArrayBuffer, options?: ReadOptions): number
 
-以同步方法从文件读取数据。
+以同步方法从文件读取数据，返回实际读取的字节数。
 
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
@@ -8961,7 +8970,7 @@ fileIo.closeSync(file);
 
 getReadStream(): ReadStream
 
-获取当前 RandomAccessFile 的一个 ReadStream 实例。
+获取当前RandomAccessFile的一个ReadStream实例，用于流式读取文件数据。
 
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
@@ -8996,7 +9005,7 @@ randomAccessFile.close();
 
 getWriteStream(): WriteStream
 
-获取当前 RandomAccessFile 的一个 WriteStream 实例。
+获取当前RandomAccessFile的一个WriteStream实例，用于流式写入文件数据。
 
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
@@ -9040,7 +9049,7 @@ randomAccessFile.close();
 
 start(): void
 
-开启监听。
+开启监听文件或目录变动事件。
 
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
@@ -9066,7 +9075,7 @@ watcher.stop();
 
 stop(): void
 
-停止监听并移除Watcher对象。
+停止监听文件或目录变动事件并移除Watcher对象。
 
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
@@ -9090,7 +9099,7 @@ watcher.stop();
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-open接口flags参数常量。文件打开标签。
+open接口flags参数常量，用于指定文件打开模式（如只读、只写、读写、创建等）。
 
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
@@ -9217,10 +9226,10 @@ filter(name: string): boolean
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
 
-| 名称 | 类型 | 只读 | 可选 | 说明 |
-| --- | --- | --- | --- | --- |
-| srcFile | string | 否 | 否 | 源冲突文件路径。 |
-| destFile | string | 否 | 否 | 目标冲突文件路径。 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| srcFile | string | 源冲突文件路径。 |
+| destFile | string | 目标冲突文件路径。 |
 
 
 
@@ -9235,9 +9244,9 @@ filter(name: string): boolean
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
 
-| 名称 | 类型 | 只读 | 可选 | 说明 |
-| --- | --- | --- | --- | --- |
-| encoding | string | 否 | 是 | 文件编码方式。可选项。 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| encoding | string | 文件编码方式。可选项。 |
 
 
 
@@ -9273,8 +9282,8 @@ filter(name: string): boolean
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| LOCAL | 1 << 0 | 文件在本地存在。 |
-| CLOUD | 1 << 1 | 文件在云端存在。 |
+| LOCAL | 1 | 文件在本地存在。 |
+| CLOUD | 2 | 文件在云端存在。 |
 
 
 
@@ -9343,13 +9352,15 @@ filter(name: string): boolean
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-可选项类型，支持readText接口使用，ReadTextOptions继承自[ReadOptions](#readoptions11)。
+可选项类型，支持readText接口使用，ReadTextOptions继承至[ReadOptions](#readoptions11)。
 
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
+| offset | number | 否 | 是 | 期望读取文件的位置，单位为Byte。可选，默认从当前位置开始读取。 |
+| length | number | 否 | 是 | 期望读取数据的长度，单位为Byte。可选，默认文件长度。 |
 | encoding | string | 否 | 是 | 当数据是 string 类型时有效，表示数据的编码方式，默认 'utf-8'，仅支持 'utf-8'。 元服务API：从API version 11开始，该接口支持在元服务中使用。 |
 
 
@@ -9360,7 +9371,7 @@ filter(name: string): boolean
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-可选项类型，支持write接口使用，WriteOptions继承自[Options](#options11)。
+可选项类型，支持write接口使用，WriteOptions继承至[Options](#options11)。
 
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
@@ -9369,6 +9380,7 @@ filter(name: string): boolean
 | --- | --- | --- | --- | --- |
 | offset | number | 否 | 是 | 期望写入文件位置，单位为Byte。可选，默认从当前位置开始写。 元服务API：从API version 11开始，该接口支持在元服务中使用。 |
 | length | number | 否 | 是 | 期望写入数据的长度，单位为Byte。可选，默认缓冲区长度。 元服务API：从API version 11开始，该接口支持在元服务中使用。 |
+| encoding | string | 否 | 是 | 当数据是string类型时有效，表示数据的编码方式。默认 'utf-8'。仅支持 'utf-8'。 |
 
 
 
@@ -9423,6 +9435,8 @@ filter(name: string): boolean
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文件可读流，需要先通过[fileIo.createReadStream](#fileiocreatereadstream12)方法来构建一个ReadStream实例。ReadStream继承自数据流基类[stream.Readable](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-stream#readable)。
+
+**系统能力**：SystemCapability.FileManagement.File.FileIO
 
 **规格**：ReadStream读到的数据为解码后的字符串，其编码格式当前仅支持'utf-8'。
 
@@ -9534,7 +9548,7 @@ rs.close();
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-seek(offset: number, whence?: WhenceType): number
+seek(offset: number, whence?: WhenceType): number;
 
 调整可写流的偏移指针位置。
 
@@ -9610,7 +9624,7 @@ ws.close();
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| start | number | 否 | 是 | 表示文件的起始偏移位置，单位为Byte。可选，默认从当前位置开始读。 |
+| start | number | 否 | 是 | 表示文件的起始偏移位置，单位为Byte。可选，默认当前位置。 |
 | end | number | 否 | 是 | 表示文件的结束偏移位置，单位为Byte。可选，默认文件末尾。 |
 
 

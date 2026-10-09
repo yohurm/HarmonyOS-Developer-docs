@@ -1,6 +1,6 @@
 # IPC与RPC通信开发指导(C/C++)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ipc-capi-development-guideline
 
@@ -48,10 +48,7 @@ IPC CAPI接口不直接提供获取通信代理对象的能力，该功能由[Ab
 CMakeLists.txt中添加以下lib。
 
 ```text
-# ipc capi
-libipc_capi.so
-# 元能力，ability capi
-libchild_process.so
+target_link_libraries(childprocesssample libipc_capi.so libchild_process.so)
 ```
 
 **头文件**

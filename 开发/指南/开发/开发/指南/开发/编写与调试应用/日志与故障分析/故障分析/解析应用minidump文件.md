@@ -1,6 +1,6 @@
 # 解析应用minidump/coredump文件
 
-更新时间：2026-08-29 09:41:34
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-analyze-dump
 
@@ -33,13 +33,13 @@
 ![](assets/解析应用minidump文件/file-2026070810342725eaa7b7.png)
 
 2. 等待解析成功后，默认会展示异常线程和对应的堆栈，展开堆栈可查看变量信息，支持切换查看不同线程的堆栈，点击堆栈中的超链接可以跳转到对应的源码。
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/91B_ld4GThysyb1rUFoFLw/zh-cn_image_0000002731542987.png?HW-CC-KV=V1&HW-CC-Date=20260911T072808Z&HW-CC-Expire=86400&HW-CC-Sign=BBE7366E1D453A9AD02E0817BFCC8299F63860C75F724F0FCF0A52CB885E19C0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/eVVWFQgPRUCWcJq-AgIABw/zh-cn_image_0000002731542987.png?HW-CC-KV=V1&HW-CC-Date=20261009T012758Z&HW-CC-Expire=86400&HW-CC-Sign=A3F45A9DD8AA69A804D290DB49BB4FDD9EB30E7B9FDBB42474F4DBE0425EA706)
 
 3. 支持查看指定地址的内存，填写内存地址，点击**View**即可查看。也可以直接右键点击变量查看内存。
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/NgnaTS73Q7m7NlZNjYOifA/zh-cn_image_0000002731383011.png?HW-CC-KV=V1&HW-CC-Date=20260911T072808Z&HW-CC-Expire=86400&HW-CC-Sign=8F1CED3240615DED63B4D0DBF42A6329F32F6A778CD30721DFFE8832C63BFE66)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/UFnk_HexQOWPGTBsLcpenQ/zh-cn_image_0000002731383011.png?HW-CC-KV=V1&HW-CC-Date=20261009T012758Z&HW-CC-Expire=86400&HW-CC-Sign=C349A7C48A36255D8261A1C89BDF5ECCF8F0D2466A27B15B79B4168EC478199A)
 
 
   点击**Settings**，可设置进制、偏移量和展示的内存字节数量。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/cbSEKeepQfy1uIltbCDv5Q/zh-cn_image_0000002701663790.png?HW-CC-KV=V1&HW-CC-Date=20260911T072808Z&HW-CC-Expire=86400&HW-CC-Sign=03E08B23961F02A9A76A4679248BFBFB5C3AD30A222C94F85263E5D8B418F847)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/7CXnQgsDTOidyJZhOiAeLg/zh-cn_image_0000002701663790.png?HW-CC-KV=V1&HW-CC-Date=20261009T012758Z&HW-CC-Expire=86400&HW-CC-Sign=BCAE50AAF1DD69903F7CD615B76E3B188AECD5A5F799595E963D75B3B3D2B8F5)

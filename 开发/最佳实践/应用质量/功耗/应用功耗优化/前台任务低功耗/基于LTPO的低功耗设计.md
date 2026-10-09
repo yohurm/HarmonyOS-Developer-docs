@@ -1,20 +1,20 @@
 # 基于LTPO的低功耗设计
 
-更新时间：2026-03-12 08:45:02
+更新时间：2026-09-15 02:12:10
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-ltpo-description
 
-#### 概述
+## 概述
 
  
 
-#### LTPO技术简介
+### LTPO技术简介
 
 LTPO的全称是“Low Temperature Polycrystalline Oxide”，中文译为“低温多晶氧化物”。这是OLED屏背板的一种驱动技术。通过将OLED驱动电路中的TFT换成IGZO TFT，降低显示功耗。LTPO屏支持1~120Hz的自适应刷新率，使应用在需要高刷新率的场景下提升流畅性，而在视频、静止等场景中使用低刷新率降低显示功耗，延长电池续航。通常，用“LTPO”指代自适应刷新率技术。
  
  
 
-#### 特性介绍
+### 特性介绍
 
 LTPO是自适应刷新率技术，按需调整显示刷新率，优化性能和功耗。
  
@@ -24,7 +24,7 @@ LTPO是自适应刷新率技术，按需调整显示刷新率，优化性能和�
  
  
 
-#### 场景策略建议
+### 场景策略建议
 
 实现控件级帧率控制，降低系统因突发负载增加导致的卡顿，同时在高刷新率场景下主动适配，确保流畅体验。
  
@@ -39,7 +39,9 @@ LTPO是自适应刷新率技术，按需调整显示刷新率，优化性能和�
  
 **策略建议**
   
+
 | 类型 | 类型描述 | 帧率建议（案例） |
+| --- | --- | --- |
 | 高帧率场景 | 基本全屏的非持续动效 | 应用启动，退出，窗口转场动效，拖动窗口移动动效：90~120Hz |
 | 中等帧率场景 | 变化区域大的持续型动效，非全屏的手势动效与转场动效 | 视频内弹幕，小说自动翻页动效：60Hz QQ首页左滑某一行消息动效:60Hz 微信右上角点击“+”号弹出应用内子窗口动效:60~120Hz 抖音内滑动切换视频，图库滑动切换图片动效：60Hz |
 | 低帧率场景 | 小区域动效，微动效 | 小视频右下角转盘动效：15~30Hz 页面刷新加载转圈动效:20~30Hz 滑动列表右侧拖动条消失动效:15~30Hz 复杂微动效，根据实际效果调整帧率 |
@@ -48,11 +50,11 @@ LTPO是自适应刷新率技术，按需调整显示刷新率，优化性能和�
  
  
 
-#### 功耗测试工具
+## 功耗测试工具
 
  
 
-#### 显示手机实时刷新率
+### 显示手机实时刷新率
 
 打开开发者模式中的"显示刷新频率"开关。具体操作：设置中搜索"开发者" ->  "显示刷新频率"。
  
@@ -64,7 +66,7 @@ LTPO是自适应刷新率技术，按需调整显示刷新率，优化性能和�
  
  
 
-#### Profiler工具测试手机功耗
+### Profiler工具测试手机功耗
 
 1. 启动程序，并将其部署安装到真实手机上。
  
@@ -88,13 +90,13 @@ LTPO是自适应刷新率技术，按需调整显示刷新率，优化性能和�
  
  
 
-#### 使用场景
-
+## 使用场景
 
  
+
  
 
-#### 场景说明
+### 场景说明
 
 在具备LTPO屏幕的设备上，基于显示内容的可变帧率能力，可以达到性能体验和功耗间的平衡。HarmonyOS支持可变帧率能力，开发者通过使用可变帧率接口，进行相关业务开发，可以享受可变帧率特性带来的功耗收益。
  
@@ -111,13 +113,13 @@ LTPO是自适应刷新率技术，按需调整显示刷新率，优化性能和�
 > 设置的期望帧率值可能无法完全实现，因为会受到系统能力和屏幕刷新率的限制。
 
  
-
  
 
  
+
  
 
-#### 基于LTPO实现循环动画
+### 基于LTPO实现循环动画
 
  
 针对无限循环的动画效果，如转盘动画，需要特别注意设置动画的可变帧率。长时间保持高帧率可能导致手机发热。
@@ -137,7 +139,7 @@ LTPO是自适应刷新率技术，按需调整显示刷新率，优化性能和�
 打开手机屏幕刷新率设置，可以查看刷新率变化。使用Profiler工具，可以查看功耗变化。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/w8SrZ0R7S7-2sGxS5OG9Jw/zh-cn_image_0000002229450069.png?HW-CC-KV=V1&HW-CC-Date=20260528T024724Z&HW-CC-Expire=86400&HW-CC-Sign=FBA6A7B54EEB54D1934229506AD79E2485C8B391C7242A05175BFB585A1072F7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/1N_4V29uQPSMdA_eAIHu7A/zh-cn_image_0000002229450069.png?HW-CC-KV=V1&HW-CC-Date=20261009T012646Z&HW-CC-Expire=86400&HW-CC-Sign=8C9FD2792C57E7698043D1C7510123F36AD56BB873530D54B6831CA25756F6DE)
 
  
 从图中可以发现，当屏幕刷新率降低时，功耗也会降低。
@@ -287,13 +289,13 @@ struct Index {
 
  
 
-#### 基于LTPO实现滑动条
+### 基于LTPO实现滑动条
 
 **效果展示**
  
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/L4osA-wlSaewq-1QScW76g/zh-cn_image_0000002193850184.png?HW-CC-KV=V1&HW-CC-Date=20260528T024724Z&HW-CC-Expire=86400&HW-CC-Sign=259C0797EB1DA03299DD27056CB95FB48CB51B44A548EDC87224B336F4615865)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/1fkpTQT6Qfq4whmAF9Nr9g/zh-cn_image_0000002193850184.png?HW-CC-KV=V1&HW-CC-Date=20261009T012646Z&HW-CC-Expire=86400&HW-CC-Sign=3273E5ADEECA85D4E5B488A41030B7E2699BFA895F647603D514BEDACA1B0874)
 
  
 **功耗对比**
@@ -304,10 +306,10 @@ struct Index {
  
 开启手机帧率设置，查看帧率变化；使用Profiler工具，查看功耗变化。
  
-
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/_uyMzAolSACKF9BykZBkxA/zh-cn_image_0000002229450057.png?HW-CC-KV=V1&HW-CC-Date=20260528T024724Z&HW-CC-Expire=86400&HW-CC-Sign=C2E58D36E99C580305543E165DF030BF1B496124729741410C4EF35AB0FCE5A6)
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/qO2auDouR-2ybBeTeHNKHg/zh-cn_image_0000002229450057.png?HW-CC-KV=V1&HW-CC-Date=20261009T012646Z&HW-CC-Expire=86400&HW-CC-Sign=9F9417B844D638B0E0ADB960CF84A207DC813516DBA16E2DC17B8DE21CD486BA)
 
  
 屏幕刷新率降低时，功耗也会降低。
@@ -349,12 +351,12 @@ Slider({ value: this.curTime, min: 0, max: 100 })
 ```
  
 
-#### 总结
+## 总结
 
 综上所述，使用LTPO技术可以控制动效刷新率，降低屏幕功耗，延长续航时间，提升使用体验。开发时推荐使用可变帧率接口，享受功耗优化。
  
  
 
-#### 示例代码
+## 示例代码
 
 - [实现流畅刷文章功能](https://gitcode.com/harmonyos_samples/fluent-blog)

@@ -1,6 +1,6 @@
 # ohpm-repo export_userinfo
 
-更新时间：2026-08-29 09:41:34
+更新时间：2026-09-14 03:29:10
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo-export-userinfo
 
@@ -43,8 +43,8 @@ ohpm-repo export_userinfo
  
 结果示例：
  
-
  
+
 
 ![](assets/ohpm-repo%20export_userinfo/file-20260514134325121-0.png)
 

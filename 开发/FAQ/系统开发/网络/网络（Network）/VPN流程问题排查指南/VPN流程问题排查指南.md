@@ -42,6 +42,7 @@ VPN，即虚拟专用网络（Virtual Private Network），是在公用网络上
 ```
  |
 | 排查方向 | 1. 检查系统属性: hdc shell param get persist.edm.vpn_disable，若为true则被EDM策略禁用 2. 联系设备管理员解除VPN禁用策略 |
+| --- | --- |
  
  
 **场景3：AbilityManagerClient启动Extension失败**
@@ -137,6 +138,7 @@ VPN，即虚拟专用网络（Virtual Private Network），是在公用网络上
 ```
  |
 | 排查方向 | 1. 等待分布式VPN共享结束 2. 检查分布式VPN的连接状态 |
+| --- | --- |
  
  
 **场景7：多VPN IP地址冲突**
@@ -218,6 +220,7 @@ VPN，即虚拟专用网络（Virtual Private Network），是在公用网络上
 ```
  |
 | 排查方向 | 1. 系统内部调用出现错误 |
+| --- | --- |
  
  
 **阶段五：DestroyVpn销毁VPN**
@@ -253,6 +256,7 @@ VPN，即虚拟专用网络（Virtual Private Network），是在公用网络上
 ```
  |
 | 排查方向 | 1. 系统内部调用出现错误 |
+| --- | --- |
  
  
 **阶段六：StopVpnExtensionAbility销毁VPN Extension进程**
@@ -269,6 +273,7 @@ VPN，即虚拟专用网络（Virtual Private Network），是在公用网络上
 ```
  |
 | 排查方向 | 1. 系统内部调用出现错误 |
+| --- | --- |
  
  
 **场景2：权限校验失败**
@@ -292,3 +297,4 @@ VPN，即虚拟专用网络（Virtual Private Network），是在公用网络上
 ```
  |
 | 排查方向 | 1. 系统内部调用出现错误 |
+| --- | --- |

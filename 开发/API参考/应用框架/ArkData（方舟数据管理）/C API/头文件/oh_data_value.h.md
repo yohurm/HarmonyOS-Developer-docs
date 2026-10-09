@@ -1,6 +1,6 @@
 # oh_data_value.h
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-data-value-h
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -665,7 +665,7 @@ int OH_Value_GetText(OH_Data_Value *value, const char **val)
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Data_Value *value | 表示指向OH_Data_Value实例的指针。 |
-| const char **val | 一个输出参数，表示指向字符串类型数据的指针。 无需申请内存和释放内存。 val的生命周期遵循value中index的值。 |
+| const char **val | 一个输出参数，表示指向字符串类型数据的指针。 无需申请内存和释放内存。 val的生命周期遵循value的生命周期。 |
  
  
 **返回：**

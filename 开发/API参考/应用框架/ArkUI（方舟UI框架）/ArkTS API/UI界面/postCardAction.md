@@ -1,6 +1,6 @@
 # postCardAction
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-postcardaction
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -41,7 +41,7 @@ postCardAction(component: Object, action: Object): void
 action参数说明：
 
 
-| 参数名 | 类型 | 必填 | 取值说明 |
+| 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | action | string | 是 | action的类型，支持三种预定义的类型： - router：跳转到提供方应用的指定UIAbility，只允许在点击事件中触发。 - message：自定义消息，触发后会调用提供方FormExtensionAbility的onFormEvent()生命周期回调。 - call：后台启动提供方应用。触发后会拉起提供方应用的指定UIAbility（仅支持launchType为singleton的UIAbility，即启动模式为单实例的UIAbility），但不会调度到前台。提供方应用需要具备后台运行权限(ohos.permission.KEEP_BACKGROUND_RUNNING)。 |
 | bundleName | string | 否 | action为router / call 类型时跳转的包名。 |

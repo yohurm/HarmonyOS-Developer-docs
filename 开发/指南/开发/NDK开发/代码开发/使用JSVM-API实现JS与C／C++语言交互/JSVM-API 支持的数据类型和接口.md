@@ -1,6 +1,6 @@
 # JSVM-API支持的数据类型和接口
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/jsvm-data-types-interfaces
 
@@ -2686,7 +2686,7 @@ static napi_value GetInstanceData(napi_env env1, napi_callback_info info)
  
 场景示例：
  
-[使用JSVM-API接口进行任务队列相关开发](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-execute_tasks)
+[使用JSVM-API接口进行任务队列相关开发](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-execute-tasks)
  
   
 

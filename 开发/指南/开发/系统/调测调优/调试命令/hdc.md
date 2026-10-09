@@ -1,6 +1,6 @@
 # hdc
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hdc
 
@@ -28,10 +28,8 @@ hdc包含三部分：
 ## 环境准备
 
 hdc可以选择以下任意一种方式获取：
-
-1.通过HarmonyOS SDK获取hdc工具。HarmonyOS SDK已嵌入[DevEco Studio](https://developer.huawei.com/consumer/cn/deveco-studio/)中，无需额外下载配置。hdc默认安装在DevEco Studio/sdk/default/openharmony/toolchains路径下，MacOS系统的sdk位于DevEco Studio/Contents目录下。
-
-2.通过[Command Line Tools](https://developer.huawei.com/consumer/cn/download/)工具中的sdk目录获取相关工具。hdc程序默认安装在Command Line Tools/sdk/default/openharmony/toolchains路径下。
+1. 通过HarmonyOS SDK获取hdc工具。HarmonyOS SDK已嵌入[DevEco Studio](https://developer.huawei.com/consumer/cn/deveco-studio/)中，无需额外下载配置。hdc默认安装在DevEco Studio/sdk/default/openharmony/toolchains路径下，MacOS系统的sdk位于DevEco Studio/Contents目录下。
+2. 通过[Command Line Tools](https://developer.huawei.com/consumer/cn/download/)工具中的sdk目录获取相关工具。hdc程序默认安装在Command Line Tools/sdk/default/openharmony/toolchains路径下。
 
 hdc支持USB和无线两种连接调试方式。在设备的设置>系统>开发者选项中开启或关闭调试开关 ，无需重启设备即可生效。如果设备未启用“开发者选项”，可参考[开发者选项](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-developer-mode#section530763213432)进行启用。具体调试连接方式及操作步骤请参考[USB连接场景](#usb连接场景)和[TCP连接场景](#tcp连接场景)。
 
@@ -455,6 +453,12 @@ TCP调试功能尚未稳定，建议仅在测试环境中使用。
 hdc tconn IP:port
 ```
 命令执行返回“Connect OK”表示连接成功。
+
+  
+![](assets/hdc/file-20260514131422576-7.png)
+ 
+
+  最多支持16个连接，若超过16个连接会导致连接阻塞，需等待已有连接释放之后再连接新的设备。
 4. 查看已连接设备，执行以下命令：
 
   
@@ -475,7 +479,7 @@ hdc list targets
 远程连接场景指客户端（通常是开发者使用的本地电脑）通过网络与服务器（通常是连接了调试设备的服务器或开发机）建立连接，实现客户端对目标设备的远程调试，控制和管理。
 
 
-![](assets/hdc/file-20260514131422576-8.png)
+![](assets/hdc/file-20260514131422576-9.png)
 
 
 远程连接使用-s参数来指定服务器的网络参数，包括地址和端口号，该设置只在当前命令执行期间有效，命令格式如下：
@@ -601,7 +605,7 @@ Set device run mode successful.
 ```
 
 
-![](assets/hdc/file-20260708103747b568dc60.png)
+![](assets/hdc/file-20260708103747e7f448b4.png)
 
 
 切换前，请确保条件满足：远端设备与近端电脑处于同一网络，可通过ping命令检查：
@@ -793,7 +797,7 @@ hdc install [-cwd path|-r|-s|-w waitingTime|-u userId|-p|-g|-h] src
 **使用方法**：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/hXQ0omNSSwyWO7ibiKIj6Q/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072754Z&HW-CC-Expire=86400&HW-CC-Sign=33E2380F352A1723D8ED29A8B59EC9E35D59A2479B74558AF9E7019B6AE56B77)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/JuediSb-SE6-8gBft11uhw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20261009T012745Z&HW-CC-Expire=86400&HW-CC-Sign=1FA39656F1D2437088E9D8B2E3C5ACF9452C1CA620329ADB8D3E3D72424F03D9)
 
 
 执行install命令使用bm模块命令参数，对-w和-u参数需参数值组合使用的情况，需将参数变量和参数值放在引号内使用，如"-w 180"，"-u 100"，防止参数解析异常导致命令执行失败。
@@ -1965,7 +1969,7 @@ Kill subservers finish
 
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/CNuiOQGdStayjOdC2-7aEg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072754Z&HW-CC-Expire=86400&HW-CC-Sign=ECDDCDD6875CA5F12697FDB8728FB10270784D66F175DFC9648B98FCCB7CA112)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/LuYdFpThTWqfTDEcR2y_ZQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20261009T012745Z&HW-CC-Expire=86400&HW-CC-Sign=F21C08F5CD86367B7D2681162F6CED91ED92484BE85B5B89D23E9A1D7E4748BD)
 
 
 如果开发者当前运行的hdc版本较低，某些功能存在兼容性问题，需要根据功能特性提升版本时，可参考对应API版本说明下载最新版本。
@@ -2148,7 +2152,7 @@ sudo udevadm control --reload
 
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/Hor8GF9yQ6qQkw61iymTjw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072754Z&HW-CC-Expire=86400&HW-CC-Sign=BE5AB002D82A1114F43A391AA51A4FE018D58A199E174C20BF38EC619C48FAA5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/pheQkJa7RD2PWnQpkxVvuw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20261009T012745Z&HW-CC-Expire=86400&HW-CC-Sign=4B1A92049916486812066009D64DCD3CECC2E5133FA49F79179406546AAB8238)
 
 
 开启非管理员角色的USB设备操作权限可以解决在Linux环境在非管理员权限下使用hdc因权限不足无法找到设备的情况。但权限最大化可能存在潜在安全问题，请开发者根据使用场景自行评估是否开启此权限。
@@ -2182,7 +2186,7 @@ sudo udevadm control --reload
 hdc文件传输命令执行出现乱码，如使用file recv从设备端发送带有中文名称的文件到本地，报错提示[Fail]Error opening file: no such file or directory, path:XXXXX，其中path显示中文乱码。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/TwTYDy0bS7CBpsE9uVu7Dw/zh-cn_image_0000002717771236.png?HW-CC-KV=V1&HW-CC-Date=20260911T072754Z&HW-CC-Expire=86400&HW-CC-Sign=3032E544B2D70EA8F347A0578E2489A4BDA8D35A021C1A0FCF34D5D88ACBF130)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/9zj3btI5QuikXuyFJr43pQ/zh-cn_image_0000002778932311.png?HW-CC-KV=V1&HW-CC-Date=20261009T012745Z&HW-CC-Expire=86400&HW-CC-Sign=097767E3AF2E0CFB7433FB1E0CFAAD69B3F6D1D1D6C549209B059D435A26B62E)
 
 
 **可能原因&解决方法**
@@ -2200,7 +2204,7 @@ API版本12开始，文件传输命令支持参数路径中包含中文，版本
 使用hdc list targets命令查询已连接设备，连接设备标识后显示Unauthorized。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/7uKq483PRYKAoVozW_a-Qw/zh-cn_image_0000002717611302.png?HW-CC-KV=V1&HW-CC-Date=20260911T072754Z&HW-CC-Expire=86400&HW-CC-Sign=E0BA0808C29621531AF3C002F3B8A49B094A01D9DA3EDE060FAE188A2D481555)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/eRCp68oZS9iFwC3sGjDVFw/zh-cn_image_0000002749333228.png?HW-CC-KV=V1&HW-CC-Date=20261009T012745Z&HW-CC-Expire=86400&HW-CC-Sign=756E1A345F55B747714C44C5C6AD8BC09BA256451A3EF9D93C14F0F0DD86B7FA)
 
 
 **可能原因&解决方法**

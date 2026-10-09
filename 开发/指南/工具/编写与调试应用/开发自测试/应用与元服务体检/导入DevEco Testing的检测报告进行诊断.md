@@ -1,6 +1,6 @@
 # 导入DevEco Testing的检测报告进行诊断
 
-更新时间：2026-09-08 02:53:31
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-app-analyzer-testing
 

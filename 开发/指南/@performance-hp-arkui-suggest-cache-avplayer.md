@@ -1,0 +1,144 @@
+# @performance/hp-arkui-suggest-cache-avplayer
+
+更新时间：2026-10-08 09:38:49
+
+来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hp-arkui-suggest-cache-avplayer
+
+建议缓存AVPlayer实例减少起播时延。
+ 
+音视频起播速度慢的场景下，建议优先修改。
+ 
+
+## 规则配置
+
+```json
+// code-linter.json5
+{
+  <span style="color: rgb(135,16,148);">"rules"</span>: {
+    <span style="color: rgb(135,16,148);">"@performance/hp-arkui-suggest-cache-avplayer"</span>: <span style="color: rgb(6,125,23);">"warn"</span>,
+  }
+}
+```
+ 
+ 
+
+## 选项
+
+该规则无需配置选项。
+ 
+ 
+
+## 正例
+
+```text
+import media from '@ohos.multimedia.media';
+
+@Entry
+@Component
+struct MyComponent{
+  private avPlayer: media.AVPlayer | undefined = undefined;
+  private avPlayerManager: AVPlayerManager = AVPlayerManager.getInstance();
+
+  aboutToAppear(): void {
+    this.avPlayerManager.switchPlayer();
+    this.avPlayer = this.avPlayerManager.getCurrentPlayer();
+  }
+
+  aboutToDisappear(): void {
+    this.avPlayerManager.resetCurrentPlayer();
+    this.avPlayer = undefined;
+  }
+
+  build() {
+    // 组件布局
+  }
+}
+
+class AVPlayerManager {
+  private static instance?: AVPlayerManager;
+
+  private player1?: media.AVPlayer;
+  private player2?: media.AVPlayer;
+  private currentPlayer?: media.AVPlayer;
+
+  public static getInstance(): AVPlayerManager {
+    if (!AVPlayerManager.instance) {
+      AVPlayerManager.instance = new AVPlayerManager();
+    }
+    return AVPlayerManager.instance;
+  }
+
+  async AVPlayerManager() {
+    this.player1 = await media.createAVPlayer();
+    this.player2 = await media.createAVPlayer();
+  }
+
+  /**
+   * 切换页面时切换AVPlayer实例
+   */
+  switchPlayer(): void {
+    if (this.currentPlayer === this.player1) {
+      this.currentPlayer = this.player2;
+    } else {
+      this.currentPlayer = this.player1;
+    }
+  }
+
+  getCurrentPlayer(): media.AVPlayer | undefined {
+    return this.currentPlayer;
+  }
+
+  /**
+   * 使用reset方法重置AVPlayer实例
+   */
+  resetCurrentPlayer(): void {
+    this.currentPlayer?.pause(() => {
+      this.currentPlayer?.reset();
+    });
+  }
+}
+```
+ 
+ 
+
+## 反例
+
+```text
+import media from '@ohos.multimedia.media';
+
+@Entry
+@Component
+struct MyComponent{
+  private avPlayer: media.AVPlayer | undefined = undefined;
+
+  aboutToAppear(): void {
+    // 页面创建时初始化AVPlayer实例
+    media.createAVPlayer().then((ret) => {
+      this.avPlayer = ret;
+    });
+  }
+
+  aboutToDisappear(): void {
+    // 离开页面时销毁AVPlayer实例
+    if (this.avPlayer) {
+      this.avPlayer.release();
+    }
+    this.avPlayer = undefined;
+  }
+
+  build() {
+    // 组件布局
+  }
+}
+```
+ 
+ 
+
+## 规则集
+
+```json
+<span style="color: rgb(106,135,89);">plugin:@performance/recommended</span>
+plugin:@performance/all
+```
+ 
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-code-linter)。

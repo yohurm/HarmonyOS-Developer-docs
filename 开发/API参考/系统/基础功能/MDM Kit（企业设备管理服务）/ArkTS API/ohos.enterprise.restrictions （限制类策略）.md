@@ -1,6 +1,6 @@
-# @ohos.enterprise.restrictions（限制类策略）
+# @ohos.enterprise.restrictions (限制类策略)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-restrictions
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -55,7 +55,7 @@ setDisallowedPolicy(admin: Want, feature: string, disallow: boolean): void
 设置禁用/启用某特性。
 
 > [!NOTE]
-> 本接口为设备级禁用策略，影响设备所有用户。如需针对特定用户设置禁用策略，请使用 setDisallowedPolicyForAccount 接口。
+> 本接口为设备级禁用策略，影响设备所有用户。如需针对特定用户设置禁用策略，请使用 setDisallowedPolicyForAccount 接口。 在多个MDM应用场景下，遵循 从严管控 规则。
 
 
 **起始版本：** 12
@@ -75,8 +75,6 @@ setDisallowedPolicy(admin: Want, feature: string, disallow: boolean): void
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** [从严管控](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则1从严管控)。
 
 **参数：**
 
@@ -106,7 +104,7 @@ setDisallowedPolicy(admin: Want, feature: string, disallow: boolean): void
 | camera14+ | 设备相机能力。 | ohos.permission.ENTERPRISE_MANAGE_RESTRICTIONS 或 ohos.permission.PERSONAL_MANAGE_RESTRICTIONS |
 | mtpClient18+ | MTP客户端能力（包含读取和写入），当前仅支持PC/2in1设备使用。在配置此特性之前，此设备必须通过HEM商用部署。MTP（Media Transfer Protocol，媒体传输协议），该协议允许用户在移动设备上线性访问媒体文件。当已经通过setDisallowedPolicyForAccount设置了某用户禁用MTP客户端写入能力时，再通过本接口禁用MTP客户端能力，会报策略冲突。 | ohos.permission.ENTERPRISE_MANAGE_RESTRICTIONS |
 | mtpServer18+ | MTP服务端能力，当前仅支持手机、平板设备使用。 | API版本26.0.0之前：ohos.permission.ENTERPRISE_MANAGE_RESTRICTIONS，API版本26.0.0开始：ohos.permission.ENTERPRISE_MANAGE_RESTRICTIONS 或 ohos.permission.PERSONAL_MANAGE_RESTRICTIONS |
-| sambaClient20+ | samba客户端能力，当前仅支持PC/2in1设备使用。samba是在Linux和UNIX系统上实现SMB协议的一个免费软件，由服务器及客户端程序构成。SMB（Server Message Block，信息服务块）是一种在局域网上共享文件和打印机的一种通信协议，它为局域网内的不同计算机之间提供文件及打印机等资源的共享服务。SMB协议是客户机/服务器型协议，客户机通过该协议可以访问服务器上的共享文件系统、打印机及其他资源。 | ohos.permission.ENTERPRISE_MANAGE_RESTRICTIONS |
+| sambaClient20+ | samba客户端能力，当前仅支持PC/2in1设备使用。samba是在Linux和UNIX系统上实现SMB协议的一个免费软件，由服务器及客户端程序构成。SMB（Server Message Block，信息服务块）是一种在局域网上共享文件和打印机的一种通信协议，它为局域网内的不同计算机之间提供文件及打印机等资源的共享服务。SMB协议是客户机/服务器型协议，客户机通过该协议可以访问服务器上的共享文件系统、打印机及其他资源。管控策略在文件管理器初始化时加载，文件管理器运行时下发策略需重启文件管理器生效。 | ohos.permission.ENTERPRISE_MANAGE_RESTRICTIONS |
 | sambaServer20+ | samba服务端能力，当前仅支持PC/2in1设备使用。 | ohos.permission.ENTERPRISE_MANAGE_RESTRICTIONS |
 | backupAndRestore20+ | 备份和恢复能力，禁用后设备的"设置--系统--备份和恢复"、"设置--云空间"置灰，当前仅支持手机、平板使用。如果要完全禁用设备的备份和恢复能力，建议同时调用applicationManager.addDisallowedRunningBundlesSync接口禁止具备备份和恢复能力的应用运行，如备份和恢复、手机助手、云空间应用。 | ohos.permission.ENTERPRISE_MANAGE_RESTRICTIONS |
 | maintenanceMode20+ | 设备维修模式能力。 | ohos.permission.ENTERPRISE_MANAGE_RESTRICTIONS |
@@ -316,13 +314,15 @@ setDisallowedPolicyForAccount(admin: Want, feature: string, disallow: boolean, a
 
 **替代接口：** [restrictions.setDisallowedPolicyForAccount](#restrictionssetdisallowedpolicyforaccount)
 
+> [!NOTE]
+> 在多个MDM应用场景下，遵循 从严管控 规则。
+
+
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_RESTRICTIONS
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** [从严管控](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则1从严管控)。
 
 **参数：**
 
@@ -454,13 +454,15 @@ addDisallowedListForAccount(admin: Want, feature: string, list: Array&lt;string&
 
 为指定用户添加禁止使用某特性的应用名单。指定用户下，添加到名单中的应用不允许使用指定的特性能力。
 
+> [!NOTE]
+> 在多个MDM应用场景下，遵循 合并 规则。
+
+
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_RESTRICTIONS
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
 
 **参数：**
 
@@ -519,13 +521,15 @@ removeDisallowedListForAccount(admin: Want, feature: string, list: Array&lt;stri
 
 为指定用户移除禁止使用某特性的应用名单。
 
+> [!NOTE]
+> 在多个MDM应用场景下，遵循 合并 规则。
+
+
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_RESTRICTIONS
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
 
 **参数：**
 
@@ -659,13 +663,15 @@ setUserRestriction(admin: Want, settingsItem: string, restricted: boolean): void
 
 **替代接口：** [restrictions.setUserRestriction](#restrictionssetuserrestriction)
 
+> [!NOTE]
+> 在多个MDM应用场景下，遵循 从严管控 规则。
+
+
 **需要权限：** ohos.permission.ENTERPRISE_SET_USER_RESTRICTION
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** [从严管控](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则1从严管控)。
 
 **参数：**
 
@@ -800,13 +806,15 @@ setUserRestrictionForAccount(admin: Want, settingsItem: string, accountId: numbe
 
 **替代接口：** [restrictions.setUserRestrictionForAccount](#restrictionssetuserrestrictionforaccount)
 
+> [!NOTE]
+> 在多个MDM应用场景下，遵循 从严管控 规则。
+
+
 **需要权限：** ohos.permission.ENTERPRISE_SET_USER_RESTRICTION
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** [从严管控](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则1从严管控)。
 
 **参数：**
 
@@ -942,13 +950,15 @@ setDisallowedPolicy(admin: Want, feature: FeatureForDevice, disallow: boolean): 
 
 设置禁用/启用指定设备特性，禁用后相关设备特性无法被使用。
 
+> [!NOTE]
+> 在多个MDM应用场景下，遵循 从严管控 规则。
+
+
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_RESTRICTIONS 或 ohos.permission.PERSONAL_MANAGE_RESTRICTIONS
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** [从严管控](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则1从严管控)。
 
 **参数：**
 
@@ -1075,13 +1085,15 @@ setDisallowedPolicyForAccount(admin: Want, feature: FeatureForAccount, disallow:
 
 **起始版本：** 26.0.0
 
+> [!NOTE]
+> 在多个MDM应用场景下，遵循 从严管控 规则。
+
+
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_RESTRICTIONS
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** [从严管控](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则1从严管控)。
 
 **参数：**
 
@@ -1560,7 +1572,7 @@ try {
 | SUPER_HUB | 2 | 中转站。当前仅支持手机、平板设备使用，禁用后无法使用中转站功能。若中转站已开启，本次使用不受影响，但关闭后将无法再次使用。 |
 | FINGERPRINT | 3 | 设备指纹认证能力，当前仅支持PC/2in1设备使用。使用时有以下规则： 1. 禁用设备指纹认证能力（FeatureForDevice.FINGERPRINT）后，再禁用某用户的设备指纹认证能力，会报策略冲突。 2. 禁用/启用指定用户的设备指纹认证能力后，再禁用设备指纹认证能力（FeatureForDevice.FINGERPRINT）时，后者会覆盖前者的策略。此后再启用设备指纹认证能力（FeatureForDevice.FINGERPRINT），则所有用户都允许使用设备指纹认证能力。 |
 | PRINT | 4 | 设备打印能力。如果禁用了指定用户的设备打印能力，再启用设备打印能力（FeatureForDevice.PRINTER），该用户下的设备打印能力仍然被禁用。 |
-| MTP_CLIENT | 5 | MTP客户端能力（仅包含写入），当前仅支持PC/2in1设备使用。MTP（Media Transfer Protocol，媒体传输协议），该协议允许用户在移动设备上线性访问媒体文件。当已禁用设备MTP客户端能力（FeatureForDevice.MTP_CLIENT）时，再禁用某用户MTP客户端写入能力，会报策略冲突。 |
+| MTP_CLIENT | 5 | MTP客户端能力（仅包含写入），当前仅支持PC/2in1设备使用。MTP（Media Transfer Protocol，媒体传输协议），该协议允许用户在移动设备上线性访问媒体文件。以手机为例，针对文件操作，手机可以拖动到电脑，电脑无法拖动到手机。当已禁用设备MTP客户端能力（FeatureForDevice.MTP_CLIENT）时，再禁用某用户MTP客户端写入能力，会报策略冲突。 |
 | USB_STORAGE_DEVICE_WRITE | 6 | USB存储设备写入能力，当前仅支持PC/2in1企业设备使用。 以下三种情况再禁用某用户USB存储设备写入能力，会报策略冲突。 1）已禁用设备USB能力（FeatureForDevice.USB）。 2）通过setUsbStorageDeviceAccessPolicy接口设置了USB存储设备访问策略为只读/禁用。 3）通过addDisallowedUsbDevices接口添加了存储类型的USB设备禁用。 |
 | DISK_RECOVERY_KEY | 7 | 恢复密钥导出能力，当前仅支持PC/2in1设备使用。 |
 | SUDO | 8 | superuser do，表示以超级用户执行，当前仅支持PC/2in1设备使用。禁用后企业空间或个人空间不能以超级用户执行。 |

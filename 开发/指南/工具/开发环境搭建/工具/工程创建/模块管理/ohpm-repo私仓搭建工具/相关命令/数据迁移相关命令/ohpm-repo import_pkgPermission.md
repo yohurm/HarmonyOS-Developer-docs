@@ -1,6 +1,6 @@
 # ohpm-repo import_pkgPermission
 
-更新时间：2026-09-08 02:53:31
+更新时间：2026-09-14 03:29:10
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo-import-pkgpermission
 

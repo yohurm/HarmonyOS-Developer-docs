@@ -1,6 +1,6 @@
 # 同步任务开发指导 (TaskPool和Worker)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/sync-task-development
 
@@ -49,6 +49,9 @@ async function mainFunc(): Promise<void> {
   console.info(`taskpool: task res1 is: ${res1}`);
   console.info(`taskpool: task res2 is: ${res2}`);
 }
+
+const MSG_SET = 0;
+const MSG_GET = 1;
 
 @Entry
 @Component
@@ -107,9 +110,9 @@ struct Index {
               }
             }
             // 向Worker子线程发送Set消息
-            w.postMessage({'type': 0, 'data': 10});
+            w.postMessage({'type': MSG_SET, 'data': 10});
             // 向Worker子线程发送Get消息
-            w.postMessage({'type': 1});
+            w.postMessage({'type': MSG_GET});
           })
       }
       .width('100%')
@@ -142,6 +145,9 @@ import { worker, ThreadWorkerGlobalScope, MessageEvents } from '@kit.ArkTS';
 // 导入句柄类型
 import Handle from './handle';
 
+const MSG_SET = 0;
+const MSG_GET = 1;
+
 let workerPort : ThreadWorkerGlobalScope = worker.workerPort;
 
 // 无法传输的句柄，所有操作依赖此句柄
@@ -150,12 +156,12 @@ let handler: Handle = new Handle();
 // Worker线程的onmessage逻辑
 workerPort.onmessage = (e : MessageEvents): void => {
   switch (e.data.type as number) {
-    case 0:
+    case MSG_SET:
       let result: boolean = handler.syncSet(e.data.data);
       console.info('worker: result is ' + result);
       workerPort.postMessage({'message': 'the result of syncSet() is ' + result, 'isTerminate': false});
       break;
-    case 1:
+    case MSG_GET:
       let num: number = handler.syncGet();
       console.info('worker: num is ' + num);
       workerPort.postMessage({'message': 'the result of syncGet() is ' + num, 'isTerminate': true});

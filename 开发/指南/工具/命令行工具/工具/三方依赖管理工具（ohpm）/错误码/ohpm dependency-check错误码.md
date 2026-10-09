@@ -1,10 +1,10 @@
 # ohpm dependency-check错误码
 
-更新时间：2026-05-28 02:54:30
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-dependency-check-errorcode
 
-#### 00680001 更新信息查询失败
+## 00680001 更新信息查询失败
 
 **错误信息**
  
@@ -24,7 +24,7 @@ querying update information from remote repository failed.
  
  
 
-#### 00680002 指定模块下不存在oh-package.json5文件
+## 00680002 指定模块下不存在oh-package.json5文件
 
 **错误信息**
  
@@ -44,7 +44,7 @@ Specified module path or json file not exist.
  
  
 
-#### 00680003 指定包查询失败
+## 00680003 指定包查询失败
 
 **错误信息**
  

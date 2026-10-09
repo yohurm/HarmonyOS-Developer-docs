@@ -1,6 +1,6 @@
 # @ohos.arkui.uiMaterial (系统材质)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uimaterial
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -32,8 +32,10 @@ import { uiMaterial } from '@kit.ArkUI';
 
 组件上设置ImmersiveMaterial时，
 
- - 弹窗类组件（AlertDialog、ActionSheet、CustomDialog、CalendarPickerDialog、DatePickerDialog、TimePickerDialog、TextPickerDialog、SelectionMenu、AlphabetIndexer弹窗、Text设置copyOption后长按或双击触发的文本菜单）和弹窗类接口（PromptAction、ArkUI_NativeDialog、@ohos.promptAction (弹窗)、Popup控制、Tips控制、菜单控制、半模态转场）以及按钮与选择类组件（Slider、Toggle、Select）可在页面内全部区域生效。
- - 其他组件仅在Navigation/NavDestination标题栏或横向Tab中barPosition为BarPosition.End的底部TabBar中生效。在其他区域中设置沉浸光感效果不生效。
+ - 指定弹窗类组件（[AlertDialog](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-alert-dialog-box)、[ActionSheet](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-action-sheet)、[CustomDialog](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-custom-dialog-box)、[CalendarPickerDialog](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-calendarpicker-dialog)、[DatePickerDialog](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-datepicker-dialog)、[TimePickerDialog](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-timepicker-dialog)、[TextPickerDialog](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-textpicker-dialog)、[SelectionMenu](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-selectionmenu)、[AlphabetIndexer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-alphabet-indexer)弹窗、[Text](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text)设置[copyOption](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#copyoption9)后长按或双击触发的文本菜单）的沉浸光感效果可在全页面生效。
+ - 指定弹窗类接口（[PromptAction](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-promptaction)、[ArkUI_NativeDialog](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule-arkui-nativedialog)、[@ohos.promptAction (弹窗)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-promptaction)、[Popup控制](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-popup)、[Tips控制](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-tips)、[菜单控制](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-menu)、[半模态转场](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-sheet-transition)）的沉浸光感效果可在全页面生效。
+ - [Slider](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-slider)、[Toggle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-toggle)、[Select](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-select)的沉浸光感效果可在全页面生效。
+ - 其他组件仅在Navigation/NavDestination标题栏或横向Tabs中barPosition为BarPosition.End的底部TabBar中生效。在其他区域中设置沉浸光感效果不生效。
 
 
 沉浸式材质根据设备是否支持沉浸式材质和设备算力有分档表现，可通过[isImmersiveMaterialSupported](#uimaterialisimmersivematerialsupported)判断设备是否支持沉浸式材质，通过[getGlobalMaterialLevel](#uimaterialgetglobalmateriallevel)获取设备的材质等级。在不支持沉浸式材质的设备上可设置沉浸式材质但无效果。在支持沉浸式材质的高算力和中算力设备上，通过材质层滤镜属性[materialFilter](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-filter-effect#materialfilter23)和阴影[shadow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-image-effect#shadow)属性实现材质效果，当[systemMaterial](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-image-effect#systemmaterial)属性生效后，已设置的背景色属性[backgroundColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-background#backgroundcolor)会被恢复为透明色，已设置的边框宽度[borderWidth](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-border#borderwidth)属性会被恢复为无边框效果。在支持沉浸式材质的低算力设备上，通过背景色[backgroundColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-background#backgroundcolor)、边框颜色[borderColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-border#bordercolor)、边框宽度[borderWidth](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-border#borderwidth)、阴影[shadow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-image-effect#shadow)属性实现材质效果。同一材质的效果，会受到系统设置应用中沉浸光感配置项的影响，不同强弱程度的沉浸光感配置下，材质的参数和效果存在差异。
@@ -157,7 +159,7 @@ static get empty(): Material
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DEFAULT | 0 | 默认模式。弹出框Dialog、即时反馈（Toast）、AlphabetIndexer在组件本身未设置背景颜色、模糊参数和阴影参数时默认开启沉浸式系统材质；Text设置copyOption后长按或双击触发的文本菜单默认开启沉浸式系统材质；其他组件由应用主动设置。 |
-| ENABLE | 1 | 使能模式。弹出框Dialog、即时反馈（Toast）、AlphabetIndexer、ChipGroup、Chip、Select、菜单控制、Toggle、SegmentButton、SegmentButtonV2、Slider、SelectionMenu、Navigation、NavDestination组件默认开启沉浸式系统材质；Text设置copyOption后长按或双击触发的文本菜单默认开启沉浸式系统材质；Tabs设置barFloatingStyle并生效悬浮样式，页签栏Tabbar默认开启沉浸式系统材质。此模式下，沉浸式系统材质样式生效的优先级高于组件本身设置的背景色、模糊、阴影和边框样式。其他组件需开发者主动设置。 |
+| ENABLE | 1 | 使能模式。弹出框Dialog、即时反馈（Toast）、AlphabetIndexer、ChipGroup、ChipGroupV2、Chip、ChipV2、Select、菜单控制、Toggle、SegmentButton、SegmentButtonV2、Slider、SelectionMenu、Navigation、NavDestination组件默认开启沉浸式系统材质；Text设置copyOption后长按或双击触发的文本菜单默认开启沉浸式系统材质；Tabs设置barFloatingStyle并生效悬浮样式，页签栏Tabbar默认开启沉浸式系统材质。此模式下，沉浸式系统材质样式生效的优先级高于组件本身设置的背景色、模糊、阴影和边框样式。其他组件需开发者主动设置。 |
 | DISABLE | 2 | 禁用模式。所有组件禁止开启沉浸式系统材质，即使主动为组件设置沉浸式系统材质参数也不会生效。 |
 
 
@@ -363,7 +365,7 @@ isImmersiveMaterialSupported(): boolean
 | --- | --- | --- | --- | --- |
 | style | ImmersiveStyle | 否 | 是 | 材质样式。不同样式对应不同的材质参数，影响材质的厚度。 说明：该参数仅对支持沉浸式材质的高算力和中算力设备的显示效果生效。 默认值：uiMaterial.ImmersiveStyle.REGULAR |
 | materialColor | ResourceColor | 否 | 是 | 材质层赋色。对于支持沉浸式材质的高算力和中算力设备，若不设置该参数或该参数为undefined，不额外混合纯色效果；若设置该参数为有效颜色值，该参数会为材质层滤镜再混合一层纯色效果，若该颜色为纯不透明的颜色，会遮挡材质层滤镜效果。对于支持沉浸式材质的低算力设备，若不设置该参数或该参数为undefined，生效低算力设备材质自带的背景色效果；若设置该参数为有效颜色值，该参数作为背景色backgroundColor属性值。 说明：该参数对支持沉浸式材质的所有档位的算力设备的显示效果生效。 默认值：undefined |
-| colorInvert | boolean | 否 | 是 | 设置了材质对象的节点的子树是否自动将颜色适配为材质背景色的反色。 若为false，则不会自动反色。 若为true，则当材质样式满足系统定义的反色条件时才会自动反色。具体的使用限制如下： - 自动反色仅在高算力和中算力设备上生效，低算力设备上设置colorInvert不会产生视觉效果差异。 - 自动反色与系统沉浸光感的强弱配置相关，沉浸式系统材质越薄、沉浸光感越强，越容易符合反色要求。 - 自动反色能力使用硬编码的颜色值（如Color.White、'#FFFFFFFF'）不会触发自动反色，仅对以下属性接口设置特殊资源（见下表1）值时生效： Text组件的fontColor，Button组件的fontColor，SymbolGlyph组件的fontColor，Image组件的fillColor，Search组件的placeholderColor、fontColor，searchIcon中的图标颜色、cancelButton中的图标颜色、caretStyle中的光标颜色，searchButton 中的按钮颜色，TabContent组件的tabBar属性使用BottomTabBarStyle，Chip组件的prefixIcon、suffixIcon属性的fillColor，label属性的fontColor，ChipGroup组件的itemStyle的fontColor，TextArea组件的fontColor、placeholderColor，TextInput组件的fontColor、placeholderColor，SegmentButton组件的fontColor，Swiper组件的fontColor。 默认值：false |
+| colorInvert | boolean | 否 | 是 | 设置了材质对象的节点的子树是否自动将颜色适配为材质背景色的反色。 若为false，则不会自动反色。 若为true，则当材质样式满足系统定义的反色条件时才会自动反色。具体的使用限制如下： - 自动反色仅在高算力和中算力设备上生效，低算力设备上设置colorInvert不会产生视觉效果差异。 - 自动反色与系统沉浸光感的强弱配置相关，沉浸式系统材质越薄、沉浸光感越强，越容易符合反色要求。 - 自动反色能力使用硬编码的颜色值（如Color.White、'#FFFFFFFF'）不会触发自动反色，仅对以下属性接口设置特殊资源（见下表1）值时生效： Text组件的fontColor，Button组件的fontColor，SymbolGlyph组件的fontColor，Image组件的fillColor，Search组件的placeholderColor、fontColor，searchIcon中的图标颜色、cancelButton中的图标颜色、caretStyle中的光标颜色，searchButton 中的按钮颜色，TabContent组件的tabBar属性使用BottomTabBarStyle，Chip组件的prefixIcon、suffixIcon属性的fillColor，label属性的fontColor，ChipGroup组件的itemStyle的fontColor，TextArea组件的fontColor、placeholderColor，TextInput组件的fontColor、placeholderColor，SegmentButton组件的fontColor、selectedFontColor，SegmentButtonV2组件的itemFontColor、itemSelectedFontColor、itemIconFillColor、itemSelectedIconFillColor、itemSymbolFontColor、itemSelectedSymbolFontColor，Swiper组件的fontColor。 默认值：false |
 | applyShadow | boolean | 否 | 是 | 是否添加材质的阴影效果。 当该参数为true时，材质中的阴影效果固定生效，优先于shadow通用属性。当该参数为false时，shadow通用属性生效，材质的阴影效果不生效。 说明：该参数对支持沉浸式材质的所有档位的算力设备的显示效果生效。 默认值：true |
 | interactive | boolean | 否 | 是 | 是否启用交互形变效果。交互形变效果是指组件在用户交互时产生形变的视觉反馈效果。 当该参数为true时，启用交互形变效果。当该参数为false时，不启用交互形变效果。 说明：该参数对支持沉浸式材质的所有档位的算力设备的显示效果生效。 默认值：false |
 | lightEffect | LightEffectOptions \| null | 否 | 是 | 光感交互反馈效果参数。传入LightEffectOptions对象时启用光感交互反馈；传入null时显式禁用光感交互反馈效果；不传入时默认为undefined，取决于组件是否默认有交互光感效果。 说明：该参数仅对支持沉浸式材质的高算力和中算力设备的显示效果生效。 默认值：undefined，不设置光感交互反馈效果。 |
@@ -489,6 +491,7 @@ struct SystemMaterialPage {
           .iconStyle({ selectedColor: $r('sys.color.brand'), unselectedColor: $r('sys.color.font_primary') })
         )
       }
+      .animationDuration(400)
       .barFloatingStyle({
         systemMaterial: new uiMaterial.ImmersiveMaterial({
           style: this.currentStyle,
@@ -563,13 +566,13 @@ REGULAR样式：
 THICK样式：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/YgJ-T1u5SNa4b4XDS7MT9A/zh-cn_image_0000002717612394.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T072447Z&HW-CC-Expire=86400&HW-CC-Sign=7A8F2F479808CE933897919D262D0C1C2FA69FBA4EEC16692DEAE93787441D24)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/8q1CZTArSiq32r8lrGMtLg/zh-cn_image_0000002749334326.jpg?HW-CC-KV=V1&HW-CC-Date=20261009T012614Z&HW-CC-Expire=86400&HW-CC-Sign=426648E33862B349F50856539FD4C3752FCCF5A318929CFFFC4FB46820C6985B)
 
 
 ULTRA_THICK样式：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/3NzrW7HyRgufAN9mcFFR8A/zh-cn_image_0000002747292347.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T072447Z&HW-CC-Expire=86400&HW-CC-Sign=AA47C77714E2C6A8685DECB61064D93744056E5288EA6DC2F2299B3D98D6C871)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/znTJNiwdS1m27zWlzJYDkw/zh-cn_image_0000002749494212.jpg?HW-CC-KV=V1&HW-CC-Date=20261009T012614Z&HW-CC-Expire=86400&HW-CC-Sign=F7D59E08AA21D0D304BA440DF74733488C03C8AB90AF408F1BC03D96335958F3)
 
 
 在支持沉浸式材质的高算力设备上表现：
@@ -577,31 +580,31 @@ ULTRA_THICK样式：
 ULTRA_THIN样式：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/gcsdsV9cSWa04LQ_9SXN7A/zh-cn_image_0000002747212263.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T072447Z&HW-CC-Expire=86400&HW-CC-Sign=3769FDD3DB4ACAA7F5E4985890A59626CECE1BF04E127C7ED08A3584FC8208A7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/ctsgACpXR7GsqWofWlu-Sg/zh-cn_image_0000002779093269.jpg?HW-CC-KV=V1&HW-CC-Date=20261009T012614Z&HW-CC-Expire=86400&HW-CC-Sign=21E3075EBFCB9CF70A538D66BAB0F9E2A7D76B0A2B3C247863E9CAD490AE8EC6)
 
 
 THIN样式：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/jLS0g36LSZW3ySzHlk_8dw/zh-cn_image_0000002717772328.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T072447Z&HW-CC-Expire=86400&HW-CC-Sign=4A4D850E1567265D48B949626C6A2BD758989EE5927782543F8403129BCE0594)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/f3JjMwIxQOGQnUTpVAoBoA/zh-cn_image_0000002778933413.jpg?HW-CC-KV=V1&HW-CC-Date=20261009T012614Z&HW-CC-Expire=86400&HW-CC-Sign=D9E46001615889058802D9CDC0F16B7D9BD22CF4E82DF60922E5A800A7F9658D)
 
 
 REGULAR样式：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/paWhkJfwSYm4ddDW2s5Zhg/zh-cn_image_0000002717612396.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T072447Z&HW-CC-Expire=86400&HW-CC-Sign=AC889CE618E6AB6155C3CA697F64CC93E9F9860D44FD621E476BA914D7CB6BFA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/AUEQH5spQlOT39AK6qI8nw/zh-cn_image_0000002749334328.jpg?HW-CC-KV=V1&HW-CC-Date=20261009T012614Z&HW-CC-Expire=86400&HW-CC-Sign=DC6C9DF5DCE9260661986B2CEB7A186E68EC9E0BAB8D29A8320E45AED2C74C27)
 
 
 THICK样式：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/EpbgOK94RSaLzDkAbx_y1A/zh-cn_image_0000002747292349.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T072447Z&HW-CC-Expire=86400&HW-CC-Sign=8DDBE108C8EB86961DD3931C4AF03E7B5C414C7DA1E5B26ED6E7866B4C9A9DD9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/7gfb6L0VSN-BnJsx4j9Ulw/zh-cn_image_0000002749494214.jpg?HW-CC-KV=V1&HW-CC-Date=20261009T012614Z&HW-CC-Expire=86400&HW-CC-Sign=2B7AC63B84E82729174301C5C352FD09B3F1C597152C077A702124AC8DDEE3E9)
 
 
 ULTRA_THICK样式：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/o9aSnKeQTgGve_qPv37RuQ/zh-cn_image_0000002747212265.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T072447Z&HW-CC-Expire=86400&HW-CC-Sign=23D1BB56371670DB85CEC9CB3D3F281EF50544EB34F5F7D0678A8FADE4D24E90)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/7zdvBfbORJOxPRyEjHfUYA/zh-cn_image_0000002779093271.jpg?HW-CC-KV=V1&HW-CC-Date=20261009T012614Z&HW-CC-Expire=86400&HW-CC-Sign=01E18A9500ECFB8CFAE464F90382CB9FD9785E80FECEB32EC2EC8278085FCCA7)
 
 
 
@@ -682,19 +685,19 @@ struct MaterialInfoPage {
 在支持沉浸式材质的高算力设备上表现：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/CGUPo0SMSLikRMfMTfGHug/zh-cn_image_0000002717772330.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T072447Z&HW-CC-Expire=86400&HW-CC-Sign=02F97366E4C5414C143A2E45BEF4D0572629CE8BB0E3C0577D2C13E4C30A5AEF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/hNRrQJYvSYG9uoCwQoEDRQ/zh-cn_image_0000002778933415.jpg?HW-CC-KV=V1&HW-CC-Date=20261009T012614Z&HW-CC-Expire=86400&HW-CC-Sign=96B0D9C458CB21ADD5D5DD7D756881ECB36D8918F9FE1B4470AC248F6555EB01)
 
 
 在支持沉浸式材质的中算力设备上表现：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/KKywIiatRSeAkVT6WwM2bw/zh-cn_image_0000002717612398.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T072447Z&HW-CC-Expire=86400&HW-CC-Sign=80FA1648CFB010BA35F81D4DA4F8F12F33B95B46B6E719CD9990781871C8BAFA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/kQz_PFQLQlOzb_Zi9-E8zQ/zh-cn_image_0000002749334330.jpg?HW-CC-KV=V1&HW-CC-Date=20261009T012614Z&HW-CC-Expire=86400&HW-CC-Sign=F0C5F24ECEC2E75A25104D86166224C1420F3423EDD57ED4262835D853497AB4)
 
 
 在支持沉浸式材质的低算力设备上表现：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/oGU8aByPRKWtFi_0OXJnnQ/zh-cn_image_0000002747292351.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T072447Z&HW-CC-Expire=86400&HW-CC-Sign=D20A3CAA743618B39D0EC19459C1DEB45FAF53A04B3202FD3BE426E0683F3293)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/tRN1hu78R9qDJq5I-woy3g/zh-cn_image_0000002749494216.jpg?HW-CC-KV=V1&HW-CC-Date=20261009T012614Z&HW-CC-Expire=86400&HW-CC-Sign=0CE2B642C9E8DA29A4CF671A1930A3494FDB528C899BE10F9AE058642BC3F0F8)
 
 
 
@@ -747,19 +750,19 @@ struct Index {
 在支持沉浸式材质的高算力设备上表现：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/sFqheg76RFa-wzgxF54KPw/zh-cn_image_0000002747212267.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072447Z&HW-CC-Expire=86400&HW-CC-Sign=1CC67A8193BFEFDADEEBD24C91DE4C8CC39A55E1FE555AF4BB3A130877957EAB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/_05580B3RSmFtxSIYeoIqA/zh-cn_image_0000002779093273.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012614Z&HW-CC-Expire=86400&HW-CC-Sign=25DE43ABAD35CC89E0B3AC6AF91BD0DFC6FAA16B495316EC3463D950A4EEAABE)
 
 
 在支持沉浸式材质的中算力设备上表现：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/BObMUZecS7mcFUOmq2ZqAg/zh-cn_image_0000002717772332.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072447Z&HW-CC-Expire=86400&HW-CC-Sign=BBE1067DEF4675D6DA97D299BD1B6F384ED418177434853349A66E22CBFABF73)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/JGYakCCRTLmrKgRXl2U8Hg/zh-cn_image_0000002778933417.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012614Z&HW-CC-Expire=86400&HW-CC-Sign=190D618F7A070E6CB63647E3A86AEB9DCF3C0907B79285F6372523C037E4C23F)
 
 
 在支持沉浸式材质的低算力设备上表现：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/xqOMIUQfSPKJB7bd-psT_Q/zh-cn_image_0000002717612400.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072447Z&HW-CC-Expire=86400&HW-CC-Sign=ED56F62E808D279FC6F1235BD322DC26941F73F60BC0A96B2E0D228C154A391C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/bdqphCiNQxCHBVdojpy6eg/zh-cn_image_0000002749334332.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012614Z&HW-CC-Expire=86400&HW-CC-Sign=C3AEC05D562E12800C896FED67B2F2673021779F29B4CA30C70F4ED44C606C6C)
 
 
 
@@ -793,6 +796,7 @@ struct NavigationTitleMaterialDemo {
     interactive: true,
     lightEffect: {},
   });
+  @State titleHeight: number = 100;
 
   @Builder
   CustomMenuBuilder() {
@@ -821,7 +825,7 @@ struct NavigationTitleMaterialDemo {
       .justifyContent(FlexAlign.End)
     }
     .width('100%')
-    .height(100)
+    .height(this.titleHeight)
   }
 
   build() {
@@ -831,7 +835,7 @@ struct NavigationTitleMaterialDemo {
       Navigation() {
         // 页面内容
       }
-      .title(this.CustomMenuBuilder())
+      .title({ builder: this.CustomMenuBuilder(), height: this.titleHeight })
     }
     .width('100%')
     .height('100%')
@@ -842,19 +846,19 @@ struct NavigationTitleMaterialDemo {
 在支持沉浸式材质的高算力设备上表现：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/006JYYOySICPg1R8O4Z_Xw/zh-cn_image_0000002747292353.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072447Z&HW-CC-Expire=86400&HW-CC-Sign=7140AFC2F96C79C6B55C4EBDD8AE3395363FD0C2E729937AAD1313C0594845F7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/j4L3b-Y5Tiu0-qR3pDA8Nw/zh-cn_image_0000002749494218.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012614Z&HW-CC-Expire=86400&HW-CC-Sign=FA25EE567972AE2A1F6FE8C4D481AB6F9FB25BEE1A9172826E18FD8B8F637A63)
 
 
 在支持沉浸式材质的中算力设备上表现：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/hyxI4c33R9mNvv0CoIF5cw/zh-cn_image_0000002747212269.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072447Z&HW-CC-Expire=86400&HW-CC-Sign=982D8463D0E4E20D2C3524D5BF09C022DBF5F2122A993288817AC4F8E5ACBE53)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/gywYDw8gTuayTSSLqceFfw/zh-cn_image_0000002779093275.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012614Z&HW-CC-Expire=86400&HW-CC-Sign=15A134292ADC229C2BB57701BE73DCA74594ABE90989DBDEB41242E43492873D)
 
 
 在支持沉浸式材质的低算力设备上表现：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/b9eZ4H5_RqCnRwnnZ4da4Q/zh-cn_image_0000002717772334.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072447Z&HW-CC-Expire=86400&HW-CC-Sign=2E0622979376D3A6B6B94AC800E609FF07716B6B42A2BB5C223CF77FC6FD99C6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/hhw9MlLGSHGuzUoLUqoSZA/zh-cn_image_0000002778933419.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012614Z&HW-CC-Expire=86400&HW-CC-Sign=A16EA169B4D0C61D359BA45CFCC9B735AB7C984CC41CA567E45B7520D5F3C43B)
 
 
 
@@ -885,6 +889,7 @@ function systemMaterialStyle() {
 struct NavigationTitleMaterialDemo {
   private materialLevel: uiMaterial.MaterialLevel = uiMaterial.getGlobalMaterialLevel(); // 材质档位由设备决定，应用运行后不会改变
   private isSupported: boolean = uiMaterial.isImmersiveMaterialSupported(); // 是否支持沉浸式材质由设备决定，应用运行后不会改变
+  @State titleHeight: number = 100;
 
   @Builder
   CustomMenuBuilder() {
@@ -931,7 +936,7 @@ struct NavigationTitleMaterialDemo {
     }
     .backgroundColor('#99000000')
     .width('100%')
-    .height(100)
+    .height(this.titleHeight)
   }
 
   build() {
@@ -951,7 +956,7 @@ struct NavigationTitleMaterialDemo {
         .margin({ top: 100 })
         .padding(15)
       }
-      .title(this.CustomMenuBuilder())
+      .title({ builder: this.CustomMenuBuilder(), height: this.titleHeight })
     }
     .width('100%')
     .height('100%')
@@ -962,22 +967,22 @@ struct NavigationTitleMaterialDemo {
 在支持沉浸式材质的高算力设备上表现：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/D-QAkGoAT3qdi2Gb1CeHow/zh-cn_image_0000002717612402.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T072447Z&HW-CC-Expire=86400&HW-CC-Sign=6945BE95CDDDFD2E56CD7A331A59969A2E3E0A4F9491AF71C3D0C82E142A6A2E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/SpkOLKduQOW6Ko9SxGc4Wg/zh-cn_image_0000002749334334.jpg?HW-CC-KV=V1&HW-CC-Date=20261009T012614Z&HW-CC-Expire=86400&HW-CC-Sign=F2F5193D16AB7A352024D1C444AA1C044A0841A442A4724E2F12476751765B34)
 
 
 在支持沉浸式材质的中算力设备上表现：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/Svq7wvUZQJGTmLrrJYYWFQ/zh-cn_image_0000002747292355.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T072447Z&HW-CC-Expire=86400&HW-CC-Sign=C7EC6F713A04990918ED4F94E681F4C9B9C53F8FDFA72634371D968E26883944)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/qpfe2MTKSw-kCz9aES0FrQ/zh-cn_image_0000002749494220.jpg?HW-CC-KV=V1&HW-CC-Date=20261009T012614Z&HW-CC-Expire=86400&HW-CC-Sign=C6CCB70DBAEB4390AD1C3D9B2FD50243DBC2461F8F0B71A7763AF68FE5500575)
 
 
 在支持沉浸式材质的低算力设备上表现：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/Sk6x8bJGTDiPIzMUo8wf2w/zh-cn_image_0000002747212271.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T072447Z&HW-CC-Expire=86400&HW-CC-Sign=D9FAB427021C40EC484058F949A6E0037F4A26A70CE2DF19CD3CC32830AAABF4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/sSpYaBPjRUWJzt3EIRwbZw/zh-cn_image_0000002779093277.jpg?HW-CC-KV=V1&HW-CC-Date=20261009T012614Z&HW-CC-Expire=86400&HW-CC-Sign=948CCC220BD1A6E4FD82B7F267E724E373EAB4C2605DAE6E4DC8316D9EDAADBF)
 
 
 在不支持沉浸式材质的设备上表现：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/-qTvG-xCSV-DTZkP8QagKw/zh-cn_image_0000002717772336.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T072447Z&HW-CC-Expire=86400&HW-CC-Sign=CC865EFAF07A3B62B20BA3E32E1EC319EC4903719EFE53ACFD9E988D3FC0C8FE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/-nNRU2g2QiSJR2xFW8bHCw/zh-cn_image_0000002778933421.jpg?HW-CC-KV=V1&HW-CC-Date=20261009T012614Z&HW-CC-Expire=86400&HW-CC-Sign=3756F2EBD4D3DDEDCC7D9518169DE8EB2D4CB2ABFA9045F0899330A1DD6500DC)

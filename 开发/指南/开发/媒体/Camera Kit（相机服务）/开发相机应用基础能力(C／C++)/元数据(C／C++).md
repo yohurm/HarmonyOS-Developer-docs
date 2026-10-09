@@ -1,6 +1,6 @@
 # 元数据(C/C++)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera-metadata
 
@@ -24,7 +24,6 @@ Metadata主要是通过一个TAG（Key），去找对应的Data（Value），用
 #include <cstdio>
 #include <fcntl.h>
 #include <map>
-#include <string>
 #include <vector>
 #include <native_buffer/native_buffer.h>
 #include "iostream"
@@ -183,7 +182,7 @@ void OnMetadataObjectAvailable(Camera_MetadataOutput *metadataOutput, Camera_Met
 ```cpp
 void OnMetadataOutputError(Camera_MetadataOutput *metadataOutput, Camera_ErrorCode errorCode)
 {
-    OH_LOG_INFO(LOG_APP, "OnMetadataOutput errorCode = %{public}d", errorCode);
+    OH_LOG_ERROR(LOG_APP, "OnMetadataOutput errorCode = %{public}d", errorCode);
 }
 ```
 

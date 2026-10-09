@@ -1,6 +1,6 @@
 # 关键帧动画 (keyframeAnimateTo)
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-keyframeanimateto
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -108,7 +108,7 @@ struct KeyframeDemo {
         .scale({ x: this.myScale, y: this.myScale })
         .onClick(() => {
           if (!this.uiContext) {
-            console.info('no uiContext, keyframe failed');
+            console.error('no uiContext, keyframe failed');
             return;
           }
           this.myScale = 1;
@@ -150,4 +150,4 @@ struct KeyframeDemo {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/W15GCP9kQv-XVp0ooTliMA/zh-cn_image_0000002717613044.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=B2A65135A12E71AEE1A18D7E9C1051940F95E08EC9705E75797BD02A106D5361)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/5BZKB6ZmRxaRmnFhKRBk3g/zh-cn_image_0000002749335114.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013106Z&HW-CC-Expire=86400&HW-CC-Sign=4FF11304FDD8F234F0568BA6FBCCA4F6A306955D0E6CF9E0D25B2B1E4F15F31F)

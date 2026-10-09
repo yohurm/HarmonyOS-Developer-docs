@@ -458,8 +458,6 @@ hilog.info(0x0001, "testTag", 'this is an info level log, id: %{public}d', 5);
 | private | 隐私参数类型，不打印明文参数。 |
 | public | 明文显示参数。 |
 
-
-
 | 格式说明符（specifier） | 说明 | 示例 |
 | --- | --- | --- |
 | d/i | 支持打印number和bigint类型。 | 123 |

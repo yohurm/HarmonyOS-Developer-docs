@@ -1,6 +1,6 @@
 # ohpm dist-tags
 
-更新时间：2026-08-29 09:41:34
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-dist-tags
 
@@ -179,7 +179,5 @@ ohpm dist-tags add @ohos/axios@1.0.0 beta
     // 标签引入，引入标签为"beta"对应的版本号1.0.0
     "@ohos/axios": "tag:beta"
   }
-  ...
-  ...
 }
 ```

@@ -168,13 +168,9 @@ OH_Drawing_DestroyTypography(typography);
 
 | BREAK_ALL | BREAK_WORD |
 | --- | --- |
-|  |  |
-
-
 
 | BREAK_HYPHEN（locale：未设置） | BREAK_HYPHEN（locale：en-gb） | BREAK_HYPHEN（locale：en-us） |
 | --- | --- | --- |
-|  |  |  |
 
 
 

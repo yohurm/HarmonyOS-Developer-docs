@@ -1,6 +1,6 @@
 # Environment：设备环境查询
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-environment
 
@@ -109,7 +109,7 @@ struct UiEnvironment {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/pb6OEJa6S5-sajVMgNQ7KQ/zh-cn_image_0000002747290051.png?HW-CC-KV=V1&HW-CC-Date=20260911T072216Z&HW-CC-Expire=86400&HW-CC-Sign=D75AB8AA395CBFE3BFDBBA0F942C454A729B3144F406577449A56BCCDC567DD3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/iWIxCi5rQPm3SVY3pXHRKg/zh-cn_image_0000002749491798.png?HW-CC-KV=V1&HW-CC-Date=20261009T012626Z&HW-CC-Expire=86400&HW-CC-Sign=432A929F79762E36E9EC6FB732F8741545680A1290BD5274FCCF672ABD776825)
 
 
 

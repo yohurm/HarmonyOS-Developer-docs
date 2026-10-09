@@ -1,6 +1,6 @@
 # Background Tasks Kit接入规范
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bgtask-design-formula
 
@@ -53,7 +53,7 @@
 
 ### 违规分类、违规行为及违规处罚标准
 
-当您的应用存在违规行为时，Background Task Kit会向应用的开发者账号发送违规通知邮件或短信，请您按照邮件或者短信中提供的步骤查看违规处罚详情。
+当您的应用存在违规行为时，Background Tasks Kit会向应用的开发者账号发送违规通知邮件或短信，请您按照邮件或者短信中提供的步骤查看违规处罚详情。
 
 
 | 违规分类及违规行为 | 违规处罚标准 |

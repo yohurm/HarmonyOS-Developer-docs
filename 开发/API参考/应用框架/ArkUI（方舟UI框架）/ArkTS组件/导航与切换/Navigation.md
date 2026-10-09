@@ -1,6 +1,6 @@
 # Navigation
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navigation
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -1066,7 +1066,7 @@ Navigation导航控制器，以栈的数据结构管理Navigation中所有的子
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 > [!NOTE]
-> 1.连续调用多个导航控制器操作方法时，中间过程会被忽略，显示最终的栈操作结果。 例如：在Page1页面先pop再push一个Page1，系统会认为操作前和操作后的结果一致而不进行任何操作，如果需要强行push一个Page1实例，可以设置 NavigationOption 中的launchMode属性值为LaunchMode.NEW_INSTANCE模式。 2.不建议开发者通过监听页面生命周期的方式管理自己的导航控制器。 3.在应用处于后台状态下，调用NavPathStack的栈操作方法，会在应用再次回到前台状态时触发刷新。
+> 连续调用多个导航控制器操作方法时，中间过程会被忽略，显示最终的栈操作结果。 例如：在Page1页面先pop再push一个Page1，系统会认为操作前和操作后的结果一致而不进行任何操作，如果需要强行push一个Page1实例，可以设置 NavigationOption 中的launchMode属性值为LaunchMode.NEW_INSTANCE模式。 不建议开发者通过监听页面生命周期的方式管理自己的导航控制器。 在应用处于后台状态下，调用NavPathStack的栈操作方法，会在应用再次回到前台状态时触发刷新。
 
 
 
@@ -4723,7 +4723,7 @@ struct PageOne {
         this.paramNum = (ctx?.pathInfo?.param as PageParam)?.num;
         this.stack = ctx.pathStack;
       } catch (err) {
-        console.error(`testTag onReady catch exception.Code:${err.Code}, message: ${err.message}`);
+        console.error(`testTag onReady catch exception.code:${err.code}, message: ${err.message}`);
       }
     })
   }
@@ -4852,7 +4852,7 @@ struct PageOneComponent {
         this.eventStr += '<onReady>';
         this.stack = ctx.pathStack;
       } catch (err) {
-        console.error(`testTag onReady catch exception.Code:${err.code}, message:${err.message}`);
+        console.error(`testTag onReady catch exception.code:${err.code}, message:${err.message}`);
       }
     })
   }
@@ -4929,7 +4929,7 @@ struct NavigationExample {
           Scroll(this.scrollerForScroll) {
             Column() {
               // $r('app.media.image_1')需要替换为开发者所需的资源文件
-              Image($r('app.media.image_1'))// 设置与标题栏高度一致，以便观察STACK效果
+              Image($r('app.media.image_1')) // 设置与标题栏高度一致，以便观察STACK效果
                 .height(138)
                 .width('100%')
               Button('BarStyle.STANDARD')
@@ -6399,7 +6399,7 @@ export struct PageTwo {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/naP8CC09QvqJqtDD41AdQQ/zh-cn_image_0000002747212551.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073105Z&HW-CC-Expire=86400&HW-CC-Sign=6DE8986D83A6241CE75C309EB101CB59AFF37EBCF42910C14E63D6D1170931F8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/Sy0j5mxjTa-xsI5NiMCVKQ/zh-cn_image_0000002779093657.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013054Z&HW-CC-Expire=86400&HW-CC-Sign=387BFD373AEFB923480BF1392B71A87EE8277864D5F7F55F3AE9D48C75DFD204)
 
 
 
@@ -6569,7 +6569,7 @@ export struct NavigationMenu {
 
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/2eg_SOupS4qmoy4R4czogA/zh-cn_image_0000002717772616.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073105Z&HW-CC-Expire=86400&HW-CC-Sign=D24DEA3E6533FB6BB7C6371B8EEF840213BFE58FA4BFB6D159014A785F4F9B73)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/izzk_f6KRUu509vKQsUe9A/zh-cn_image_0000002778933803.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013054Z&HW-CC-Expire=86400&HW-CC-Sign=A740D2168CB5D319070DA68FA24BC6737018BC50AADD7859A07FCF2CD4BD9B3D)
 
 
 
@@ -6646,7 +6646,7 @@ struct NavigationExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/YZbqa6HeQZWpD_K3HeUjkA/zh-cn_image_0000002717612684.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073105Z&HW-CC-Expire=86400&HW-CC-Sign=4358253A8E2B9A63720D03744FBFDCECB2739ABE016520308BD4B816D221C48F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/nusrVkDBTjSIP9pJKGfrNw/zh-cn_image_0000002749334718.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013054Z&HW-CC-Expire=86400&HW-CC-Sign=3E6C66F574BDBE6CA6A6184DA4BEF9B4754EDC5D515D258A9D09FCC856DB1719)
 
 
 
@@ -6790,5 +6790,7 @@ struct NavigationTitleMaterialDemo {
 }
 ```
 
+该示例配图为高算力设备强档效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/kPRCEVnGQwWcjPPLSZaBYw/zh-cn_image_0000002747292637.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073105Z&HW-CC-Expire=86400&HW-CC-Sign=96C87DD2CB1F7BAA84B2E4C62D48EC5AE78E806FFF2D795D8988F7AF4C9D4B2A)
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/lkOCaHSaQAOotjcEtZBOog/zh-cn_image_0000002749494604.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013054Z&HW-CC-Expire=86400&HW-CC-Sign=ABD11B56D768D0D1EEB396363178283BCCD031B360808049062C1BCC8043C0E3)

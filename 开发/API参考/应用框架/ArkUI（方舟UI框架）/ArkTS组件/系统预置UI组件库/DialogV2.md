@@ -1,6 +1,6 @@
 # DialogV2
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-dialogv2
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -164,11 +164,11 @@ AlertDialogV2({primaryTitle?: ResourceStr, secondaryTitle?: ResourceStr, content
 
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
-| primaryTitle | ResourceStr | 否 | @Param | 确认弹出框标题。 默认不显示。 说明： 标题超过两行会显示“...”。 |
-| secondaryTitle | ResourceStr | 否 | @Param | 确认弹出框辅助文本。 默认不显示。 说明： 辅助文本超过两行会显示“...”。 |
-| content | ResourceStr | 是 | @Param @Require | 确认弹出框内容。 |
-| primaryButton | AdvancedDialogV2Button | 否 | @Param | 确认弹出框左侧按钮。 默认不显示。 |
-| secondaryButton | AdvancedDialogV2Button | 否 | @Param | 确认弹出框右侧按钮。 默认不显示。 |
+| primaryTitle | ResourceStr | 否 | @Param | 警告弹出框标题。 默认不显示。 说明： 标题超过两行会显示“...”。 |
+| secondaryTitle | ResourceStr | 否 | @Param | 警告弹出框辅助文本。 默认不显示。 说明： 辅助文本超过两行会显示“...”。 |
+| content | ResourceStr | 是 | @Param @Require | 警告弹出框内容。 |
+| primaryButton | AdvancedDialogV2Button | 否 | @Param | 警告弹出框左侧按钮。 默认不显示。 |
+| secondaryButton | AdvancedDialogV2Button | 否 | @Param | 警告弹出框右侧按钮。 默认不显示。 |
 
 
 
@@ -201,7 +201,7 @@ LoadingDialogV2({content?: ResourceStr})
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-CustomContentDialogV2({contentBuilder: () => void, primaryTitle?: ResourceStr, secondaryTitle?: ResourceStr, contentAreaPadding?: LocalizedPadding, buttons?: AdvancedDialogV2Button[]})
+CustomContentDialogV2({contentBuilder: CustomBuilder, primaryTitle?: ResourceStr, secondaryTitle?: ResourceStr, contentAreaPadding?: LocalizedPadding, buttons?: AdvancedDialogV2Button[]})
 
 自定义内容区弹出框，同时支持定义操作区按钮样式。适用于需要展示复杂或自定义内容的场景，如用户协议确认、表单输入等。
 
@@ -799,7 +799,7 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/AkGcoUQkQDuKIQtPmA-PaQ/zh-cn_image_0000002747213007.png?HW-CC-KV=V1&HW-CC-Date=20260911T073028Z&HW-CC-Expire=86400&HW-CC-Sign=FFE4627D5E5CBC12B08F96DB052387A2973D83C260ABBF88099AF7185B88BB3A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/qLZjI2f7T3ifBKZSKYDpIg/zh-cn_image_0000002779094151.png?HW-CC-KV=V1&HW-CC-Date=20261009T013037Z&HW-CC-Expire=86400&HW-CC-Sign=025D07F6894009A809F312D8916AF78A9BD6BE08C92203AC8521046DA08CA0C4)
 
 
 
@@ -867,7 +867,7 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/Na2Yk4XqSAibesITz02EqA/zh-cn_image_0000002717773072.png?HW-CC-KV=V1&HW-CC-Date=20260911T073028Z&HW-CC-Expire=86400&HW-CC-Sign=F4809B600B82CFB355A505A95E58904E59CEFA93DFE4B0FD48BDEAB63A34862C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/uu7mm5BkTUylgqqQ0N7Lbg/zh-cn_image_0000002778934295.png?HW-CC-KV=V1&HW-CC-Date=20261009T013037Z&HW-CC-Expire=86400&HW-CC-Sign=EA0379A24287FD421E8B2379063FDC753E082AF464E2F9B0A25202F6BC52EF80)
 
 
 
@@ -932,4 +932,4 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/tpCnq_8ITdCBe-Or114UAA/zh-cn_image_0000002717613140.png?HW-CC-KV=V1&HW-CC-Date=20260911T073028Z&HW-CC-Expire=86400&HW-CC-Sign=816E607B0AD795EC8908FCD89D891C1C4133B283D9381EA350F80C0A6D9651BC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/q3bDdxe7QY6zOc_ypE53GQ/zh-cn_image_0000002749335212.png?HW-CC-KV=V1&HW-CC-Date=20261009T013037Z&HW-CC-Expire=86400&HW-CC-Sign=7E3A16C18DE532CEA72EB8B8E7088AD66BC71982C60F4C06755CB600CD029865)

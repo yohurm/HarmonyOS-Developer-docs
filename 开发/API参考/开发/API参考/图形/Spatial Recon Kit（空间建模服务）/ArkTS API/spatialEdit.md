@@ -1,9 +1,9 @@
 # spatialEdit
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/spatial-recon-spatialedit
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+**支持设备：** Phone | PC/2in1 | Tablet
 
 spatialEdit模块提供了编辑3DGS（3D Gaussian Splatting）模型的能力，支持选择、变换、上色和删除高斯点等操作。
  
@@ -17,7 +17,7 @@ spatialEdit模块提供了编辑3DGS（3D Gaussian Splatting）模型的能力�
 ## 导入模块
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 import { spatialEdit } from '@kit.SpatialReconKit';
@@ -28,7 +28,7 @@ import { spatialEdit } from '@kit.SpatialReconKit';
 ## PaintMode
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+**支持设备：** Phone | PC/2in1 | Tablet
 
 定义颜色混合模式的枚举类型。
  
@@ -51,7 +51,7 @@ import { spatialEdit } from '@kit.SpatialReconKit';
 ## GSEdit
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+**支持设备：** Phone | PC/2in1 | Tablet
 
 3DGS模型编辑句柄类，提供对高斯模型的各种编辑操作。
  
@@ -66,7 +66,7 @@ import { spatialEdit } from '@kit.SpatialReconKit';
 ### editGSNode
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+**支持设备：** Phone | PC/2in1 | Tablet
 
 static editGSNode(node: spatialRender.GSNode): GSEdit | undefined
  
@@ -119,7 +119,7 @@ function EditGSNode() : void {
 ### selectBy2DBox
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+**支持设备：** Phone | PC/2in1 | Tablet
 
 selectBy2DBox(rect: Rect): void
  
@@ -167,7 +167,7 @@ function SelectBy2DBox() : void {
 ### selectBy3DBox
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+**支持设备：** Phone | PC/2in1 | Tablet
 
 selectBy3DBox(aabb: Aabb): void
  
@@ -218,7 +218,7 @@ function SelectBy3DBox() : void {
 ### selectByIndex
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+**支持设备：** Phone | PC/2in1 | Tablet
 
 selectByIndex(indices: number[]): void
  
@@ -269,7 +269,7 @@ function SelectByIndex() : void {
 ### selectBy2DMask
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+**支持设备：** Phone | PC/2in1 | Tablet
 
 selectBy2DMask(mask: image.PixelMap): void
  
@@ -326,7 +326,7 @@ function SelectBy2DMask(context : Context) : void {
 ### invertSelection
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+**支持设备：** Phone | PC/2in1 | Tablet
 
 invertSelection(): void
  
@@ -368,7 +368,7 @@ function InvertSelection() : void {
 ### clearSelection
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+**支持设备：** Phone | PC/2in1 | Tablet
 
 clearSelection(): void
  
@@ -410,7 +410,7 @@ function ClearSelection() : void {
 ### transform
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+**支持设备：** Phone | PC/2in1 | Tablet
 
 transform(matrix: Mat4x4): void
  
@@ -466,7 +466,7 @@ function Transform() : void {
 ### paint
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+**支持设备：** Phone | PC/2in1 | Tablet
 
 paint(color: Color, mode: PaintMode): void
  
@@ -523,7 +523,7 @@ function Paint() : void {
 ### remove
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+**支持设备：** Phone | PC/2in1 | Tablet
 
 remove(): void
  
@@ -565,7 +565,7 @@ function Remove() : void {
 ### undo
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+**支持设备：** Phone | PC/2in1 | Tablet
 
 undo(): void
  
@@ -609,7 +609,7 @@ function undo() : void {
 ### getRecommended3DBox
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+**支持设备：** Phone | PC/2in1 | Tablet
 
 getRecommended3DBox(ori: Vec3, dir: Vec3): Aabb
  
@@ -666,7 +666,7 @@ function getRecommended3DBox() : void {
 ### saveToPLY
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+**支持设备：** Phone | PC/2in1 | Tablet
 
 saveToPLY(uri: string): Promise&lt;boolean&gt;
  
@@ -733,7 +733,7 @@ function SaveToPLY(context: Context) : void {
 ### extract3DMainBody
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+**支持设备：** Phone
 
 extract3DMainBody(pressPoint: Vec2): Promise&lt;boolean&gt;
  

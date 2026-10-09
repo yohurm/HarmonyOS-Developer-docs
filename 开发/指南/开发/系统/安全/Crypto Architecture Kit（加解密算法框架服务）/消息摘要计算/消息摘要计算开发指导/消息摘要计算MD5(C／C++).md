@@ -1,6 +1,6 @@
 # 消息摘要计算MD5(C/C++)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-generate-message-digest-md5-ndk
 
@@ -75,10 +75,9 @@ OH_Crypto_ErrCode doTestMd5Md()
 4. 调用[OH_CryptoDigest_GetLength](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-crypto-digest-h#oh_cryptodigest_getlength)，获取摘要计算长度，单位为字节。
 5. 调用[OH_DigestCrypto_Destroy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-crypto-digest-h#oh_digestcrypto_destroy)，销毁摘要实例（OH_CryptoDigest）。
 
- - 以下使用分段传入数据，获取摘要计算结果为例：
+以下使用分段传入数据，获取摘要计算结果为例：
 
-
-```text
+```cpp
 #include <cstdlib>
 #include "CryptoArchitectureKit/crypto_common.h"
 #include "CryptoArchitectureKit/crypto_digest.h"

@@ -1,13 +1,13 @@
 # ohpm help
 
-更新时间：2026-01-15 06:51:04
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-help
 
 获取有关 ohpm 的帮助。
  
 
-#### 命令格式
+## 命令格式
 
 ```text
 ohpm help [command]
@@ -21,7 +21,7 @@ alias: -h
 
  
 
-#### 功能描述
+## 功能描述
 
 如果提供了命令名称，则显示相应命令的帮助信息。
  
@@ -29,7 +29,7 @@ alias: -h
  
  
 
-#### 示例
+## 示例
 
 执行以下命令：
  
@@ -40,4 +40,4 @@ ohpm -h
 结果示例：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/nAt0erf2Tvqct73lbZEwCg/zh-cn_image_0000002571387298.png?HW-CC-KV=V1&HW-CC-Date=20260528T030634Z&HW-CC-Expire=86400&HW-CC-Sign=AD3C7A03CF429531B50691ECF0C62D59564EE891F7A4D63AD1077F4B41CE12EE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/t5Qn1_fETJGVEvN0YXkD3A/zh-cn_image_0000002701823568.png?HW-CC-KV=V1&HW-CC-Date=20261009T012819Z&HW-CC-Expire=86400&HW-CC-Sign=68A4538C318E8DB49E0329F530ED0DF7AB8E9AB0601C483F2E043F4D5ECF6B4F)

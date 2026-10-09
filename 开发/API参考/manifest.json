@@ -29747,5 +29747,54 @@
     "slug": "js-apis-distributedextensioncontext",
     "title": "@ohos.application.DistributedExtensionContext (协同Extension上下文)",
     "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-distributedextensioncontext"
+  },
+  {
+    "file": "媒体/Media Kit（媒体服务）/C API/结构体/OH_LowPowerAVSink_Capability.md",
+    "name": "OH_LowPowerAVSink_Capability",
+    "slug": "capi-avsinkbase-oh-lowpoweravsinkcapability",
+    "title": "OH_LowPowerAVSink_Capability",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avsinkbase-oh-lowpoweravsinkcapability"
+  },
+  {
+    "file": "媒体/Audio Kit（音频服务）/C API/结构体/OH_AudioAccessoryCapabilities.md",
+    "name": "OH_AudioAccessoryCapabilities",
+    "slug": "capi-ohaudio-oh-audioaccessorycapabilities",
+    "title": "OH_AudioAccessoryCapabilities",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohaudio-oh-audioaccessorycapabilities"
+  },
+  {
+    "file": "媒体/Audio Kit（音频服务）/C API/结构体/OH_AudioAccessoryNoiseReductionCapability.md",
+    "name": "OH_AudioAccessoryNoiseReductionCapability",
+    "slug": "capi-ohaudio-oh-audioaccessorynoisereductioncapability",
+    "title": "OH_AudioAccessoryNoiseReductionCapability",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohaudio-oh-audioaccessorynoisereductioncapability"
+  },
+  {
+    "file": "应用框架/ArkUI（方舟UI框架）/错误码/UI编译/编译错误码.md",
+    "name": "编译错误码",
+    "slug": "errorcode-arkui-compile",
+    "title": "编译错误码",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-arkui-compile"
+  },
+  {
+    "file": "应用框架/Ability Kit（程序框架服务）/ArkTS API/Stage模型能力的接口/@ohos.app.ability.appMemoryOptimizer (应用内存优化器).md",
+    "name": "@ohos.app.ability.appMemoryOptimizer (应用内存优化器)",
+    "slug": "js-apis-app-ability-appmemoryoptimizer",
+    "title": "@ohos.app.ability.appMemoryOptimizer (应用内存优化器)",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-appmemoryoptimizer"
+  },
+  {
+    "file": "应用框架/ArkUI（方舟UI框架）/ArkTS组件/通用事件/基础输入事件/焦点轴事件.md",
+    "name": "焦点轴事件",
+    "slug": "ts-universal-events-focus-axis",
+    "title": "焦点轴事件",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-events-focus-axis"
+  },
+  {
+    "file": "公共基础能力/C API/头文件/syscap_ndk.h.md",
+    "name": "syscap_ndk.h",
+    "slug": "syscap-ndk-8h",
+    "title": "syscap_ndk.h",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-references/syscap-ndk-8h"
   }
 ]

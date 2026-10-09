@@ -1,6 +1,6 @@
 # @ohos.app.agent.AgentExtensionAbility (智能体扩展组件)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-agent-agentextensionability
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -33,7 +33,7 @@ import { AgentExtensionAbility } from '@kit.AbilityKit';
 **图1** AgentExtensionAbility生命周期
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/2OjNgDR5QxKPV1XYoMtHrA/zh-cn_image_0000002747212227.png?HW-CC-KV=V1&HW-CC-Date=20260911T072831Z&HW-CC-Expire=86400&HW-CC-Sign=EDC8A59276635AD0B10C42888FEAC61A9082364AB82DC6AB5A8823DBDD45BB05)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/nrSbEw4EQ-6PeO-zqZW_6Q/zh-cn_image_0000002779093233.png?HW-CC-KV=V1&HW-CC-Date=20261009T012846Z&HW-CC-Expire=86400&HW-CC-Sign=C847EC7F4AEF31236E52D0AC7FCBFEFFDE8E70D29ED5670219BA67C6BF9659D9)
 
 
  - **onCreate**

@@ -1,6 +1,6 @@
 # Tips控制
 
-更新时间：2026-09-01 03:59:25
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-tips
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -134,7 +134,7 @@ struct TipsExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/l6_AhROJQ0eGkoQ1Mb_A1w/zh-cn_image_0000002717772482.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073127Z&HW-CC-Expire=86400&HW-CC-Sign=9FABCDA097CC6E61D45CF7ABB101F8A1DC9B3AF4103D87AFAF8A9A7D4F855D16)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/W2mRISSKSzG8zy4qoBqE2Q/zh-cn_image_0000002778933567.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013112Z&HW-CC-Expire=86400&HW-CC-Sign=D7A15130110ADAEA54F7273A5200C9E43203F10F63C5D0B4671AB059772DB8A7)
 
  
   
@@ -181,7 +181,7 @@ struct TipsExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/VadoooTwSkG-kJOsVX_Vlw/zh-cn_image_0000002717612550.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073127Z&HW-CC-Expire=86400&HW-CC-Sign=6B5BED1F0BE97A714419254195E803C51A148293D025BEB384997D6A46A97A7C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/7mp5gShAST2uxetIx7qavw/zh-cn_image_0000002749334482.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013112Z&HW-CC-Expire=86400&HW-CC-Sign=C6A482450BA74DBB0DD86C66233AA4E797EA09510DDFBD4CF961A94421EB8F9A)
 
  
   
@@ -193,7 +193,7 @@ struct TipsExample {
 
 该示例通过[TipsOptions](#tipsoptions类型说明)中的systemMaterial属性设置组件的系统材质，实现了bindTips的沉浸光感视效。
  
-组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
+该示例配图为高算力设备强档效果，组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
  
 从API版本26.0.0开始，在TipsOptions中新增了systemMaterial属性。
  
@@ -225,10 +225,10 @@ struct TipsExample {
 未设置系统材质时：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/9H0VO5LgRK2C-I-8vx7JKA/zh-cn_image_0000002747292503.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073127Z&HW-CC-Expire=86400&HW-CC-Sign=1B4310D9419BECFC5C12561BFCEF68F74E48BAEF1C17FF9FAE79C35A31136EA7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/13o1tazfTU2e2ylWGeRmfA/zh-cn_image_0000002749494368.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013112Z&HW-CC-Expire=86400&HW-CC-Sign=87EE0E9A7C6633CFD95544C69C63C90FC803B94E347200C2AE5F269560D1FBDF)
 
  
 设置系统材质后：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/mIlsamgTTlS2NBn8lBnTBA/zh-cn_image_0000002747212419.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073127Z&HW-CC-Expire=86400&HW-CC-Sign=DB373375556AC95AFBCF4236F998BD6373A0BA6CB425E64179765E30BD2AA745)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/FT-BuXhlSlysn3B1XbM5ig/zh-cn_image_0000002779093425.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013112Z&HW-CC-Expire=86400&HW-CC-Sign=E65C6907AC6D92FAD992847CE4255AAED9095E42042B75EC7CC8EF8CC84B2460)

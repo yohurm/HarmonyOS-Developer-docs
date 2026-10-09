@@ -1,6 +1,6 @@
 # 应用程序包集成bin文件（PC/2in1）
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hap-bin
 
@@ -158,7 +158,7 @@ objcopy --add-section .permission=module.json EXAMPLE EXAMPLE_OUT
 例如，需要将HAP部署在abi类型为arm64-v8a的PC/2in1设备上时，bin文件EXAMPLE应放置在如下目录：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/OgDdCpt_SoKjmbyGbbzqYg/zh-cn_image_0000002717609866.png?HW-CC-KV=V1&HW-CC-Date=20260911T072754Z&HW-CC-Expire=86400&HW-CC-Sign=E633F12B0C5EA5E18F7B5AD222F1F4CE1167C573FD1686203337D2BF3B7E2FB2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/OnlmoCoiSsCc3xRwwyQ_Pw/zh-cn_image_0000002749331680.png?HW-CC-KV=V1&HW-CC-Date=20261009T012744Z&HW-CC-Expire=86400&HW-CC-Sign=2D7207BFD84906A7A9B78E48AA86437DCA165802DE67AC9EF980E1F206F0B001)
 
 
 在[module.json5](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)中配置[executablebinarypaths标签](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#executablebinarypaths标签)，用于声明HAP中包含的可执行bin文件。该标签配置bin文件的路径，为相对路径，必须以libs/{abi}/为前缀，其中{abi}为设备CPU架构类型（如arm64-v8a、x86_64、armeabi-v7a）：
@@ -269,7 +269,7 @@ hvigor.nodesEvaluated(async () => {
 
 ## 安装含bin文件的HAP
 
-集成bin的HAP包无独立安装包，依托标准HAP包完成安装部署。其内嵌的二进制程序、脚本资源随HAP包一并安装至设备，安装流程与常规应用一致。应用安装后，bin文件文件自动解压至应用安装目录：
+集成bin的HAP包无独立安装包，依托标准HAP包完成安装部署。其内嵌的二进制程序、脚本资源随HAP包一并安装至设备，安装流程与常规应用一致。应用安装后，bin文件自动解压至应用安装目录：
 
 ```text
 /data/app/el1/bundle/public/<bundleName>

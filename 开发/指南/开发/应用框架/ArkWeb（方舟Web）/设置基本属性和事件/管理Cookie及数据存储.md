@@ -1,6 +1,6 @@
 # 管理Cookie及数据存储
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-cookie-and-data-storage-mgmt
 
@@ -41,7 +41,7 @@ struct WebComponent {
 }
 ```
 
-从API version 22开始，开发者可以通过[setLazyInitializeWebEngine()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webcookiemanager#setlazyinitializewebengine22)，为“www.example.com”设置单个Cookie的值“value=test”时跳过初始化ArkWeb内核，以节省[configCookieSync()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webcookiemanager#configcookiesync11)接口耗时。其他Cookie的相关功能及使用，请参考[WebCookieManager()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webcookiemanager)接口文档。
+从API version 22开始，开发者可以通过[setLazyInitializeWebEngine()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webcookiemanager#setlazyinitializewebengine22)延后初始化ArkWeb内核，在调用configCookieSync()为“www.example.com”设置单个Cookie的值“value=test”时跳过初始化ArkWeb内核，以节省[configCookieSync()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webcookiemanager#configcookiesync11)接口耗时。其他Cookie的相关功能及使用，请参考[WebCookieManager()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webcookiemanager)接口文档。
 
 ```ArkTS
 import { webview } from '@kit.ArkWeb';

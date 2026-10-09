@@ -1,6 +1,6 @@
 # Grid网格元素拖拽
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-grid-element-drag-exchange
 
@@ -11,7 +11,7 @@ Grid网格元素拖拽交换功能在应用中经常会被使用，如当编辑�
 Grid网格布局一般由[Grid](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid)容器组件和子组件[GridItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-griditem)构建组成，Grid用于设置网格布局相关参数，GridItem定义子组件相关特征。网格布局中含有网格元素，当给Grid容器组件设置[editMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid#editmode8)属性为true时，可开启Grid组件的编辑模式。首先，开启编辑模式。然后，给[GridItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-griditem)组件绑定[长按](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-gestures-longpressgesture)、[拖拽](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-gestures-pangesture)等手势。最后，需要添加动画属性[animateTo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#animateto)，并设置相应的动画效果。最终，呈现出网格元素拖拽交换的动效过程，如下示意图。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/rM4EKl3XTVm2TFl-c2L1-Q/zh-cn_image_0000002717610376.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072504Z&HW-CC-Expire=86400&HW-CC-Sign=E8FE3AA4683249842D0623B4F68535C5AA0E7F1067BE83330B6C245B2FA0CB8F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/XwQDlVyISQq7K618cL05tw/zh-cn_image_0000002749332222.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012627Z&HW-CC-Expire=86400&HW-CC-Sign=2DE071F01C8EC04FCC1FC34DBF60FE2ED608DD34EAFDFB50E784A087B62A5F54)
 
  
   
@@ -57,7 +57,7 @@ Grid网格元素拖拽交换功能实现是通过[Grid](https://developer.huawei
 示意效果图如下。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/sxH6o0m0RMavZkSkFqsxkw/zh-cn_image_0000002747290327.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072504Z&HW-CC-Expire=86400&HW-CC-Sign=F5257E6B4CDE0C1668A7A33F66E20B1AB3D89CB8995FCC2337A70F628AD821F4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/Bkol376oR5m2OU2kApz3yg/zh-cn_image_0000002749492106.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012627Z&HW-CC-Expire=86400&HW-CC-Sign=6A8023740FFC2E506C7D8C574AF06E79BAFA7CCBC533E6817E172FC9C3DDCD53)
 
  
   
@@ -66,7 +66,7 @@ Grid网格元素拖拽交换功能实现是通过[Grid](https://developer.huawei
 1. Grid布局及相同大小的GridItem界面开发。其中，[scrollBar](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid#scrollbar)可设置滚动条状态，值为BarState.Off时，表示不显示滚动条；[columnsTemplate](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid#columnstemplate)可设置当前网格布局列的数量、固定列宽或最小列宽值；[columnsGap](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid#columnsgap)可设置列与列的间距；[rowsGap](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid#rowsgap)可设置行与行的间距。
 
   
-```text
+```ArkTS
 Grid() {
   ForEach(this.numbers, (item: number) => {
     GridItem() {
@@ -89,7 +89,7 @@ Grid() {
 2. 给Grid组件设置[editMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid#editmode8)为true，即Grid进入编辑模式，进入编辑模式可以拖拽Grid组件内部[GridItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-griditem)。设置[supportAnimation](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid#supportanimation8)为true，即Grid拖拽元素时支持动画。
 
   
-```text
+```ArkTS
 .editMode(true)
 .supportAnimation(true)
 ```
@@ -97,7 +97,7 @@ Grid() {
 3. 定义拖拽过程中的数组交换逻辑。
 
   
-```text
+```ArkTS
 changeIndex(index1: number, index2: number) {
   let tmp = this.numbers.splice(index1, 1);
   this.numbers.splice(index2, 0, tmp[0])
@@ -109,7 +109,7 @@ changeIndex(index1: number, index2: number) {
   [onItemDragStart](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid#onitemdragstart8)回调在开始拖拽网格元素时触发，[onItemDrop](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid#onitemdrop8)回调当在网格元素内停止拖拽时触发。
 
   
-```text
+```ArkTS
 .onItemDragStart((_, itemIndex: number) => {
   this.imageNum = this.numbers[itemIndex];
   return this.pixelMapBuilder();
@@ -136,7 +136,7 @@ changeIndex(index1: number, index2: number) {
 示意效果图如下。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/yp38dm2hRICn9ghb26U1dA/zh-cn_image_0000002747210245.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072504Z&HW-CC-Expire=86400&HW-CC-Sign=CB6E4ABF36DDE4B4D78976C5005C4F27158EE3D331FAD418585C7B2B2F66AE21)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/yM7WOjh1Q0K75sZVQvAS5w/zh-cn_image_0000002779091163.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012627Z&HW-CC-Expire=86400&HW-CC-Sign=5C11743FE14A53FA03617E6DB373A32E29828F511068E1A2699544E3B131725B)
 
  
 > [!NOTE]
@@ -149,7 +149,7 @@ changeIndex(index1: number, index2: number) {
 1. Grid布局及不同大小的GridItem界面开发。
 
   
-```text
+```ArkTS
 Grid() {
   ForEach(this.numbers, (item: number) => {
     GridItem() {
@@ -185,7 +185,7 @@ Grid() {
 2. 定义网格元素移动过程中的相关计算函数，其中itemMove()方法是实现元素交换重新排序的方法。
 
   
-```text
+```ArkTS
 itemMove(index: number, newIndex: number): void {
   if (!this.isDraggable(newIndex)) {
     return;
@@ -296,7 +296,7 @@ isDraggable(index: number): boolean {
 3. GridItem绑定组合手势：长按，拖拽。并在手势的回调函数中设置显式动画。
 
   
-```text
+```ArkTS
 .gesture(
   GestureGroup(GestureMode.Sequence,
     LongPressGesture({ repeat: true })
@@ -372,7 +372,7 @@ isDraggable(index: number): boolean {
 示意效果图如下。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/khThdtH3RLy3KclpIYPzIw/zh-cn_image_0000002717770312.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072504Z&HW-CC-Expire=86400&HW-CC-Sign=235478FBF1E3B6EF120AA3EA0036C9FBE020AD5129EBF84BCDB29DDBBECCAFBC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/OJQrAWCxRQqQkoCbwZD8RA/zh-cn_image_0000002778931307.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012627Z&HW-CC-Expire=86400&HW-CC-Sign=A297B669D6BAAA20C3FD49414AB145E98CA928DF557BE98EEC0A51FE494FE712)
 
  
   
@@ -381,7 +381,7 @@ isDraggable(index: number): boolean {
 1. 使用Grid布局及GridItem界面开发。
 
   
-```text
+```ArkTS
 Grid() {
   ForEach(this.numbers, (item: number) => {
     GridItem() {
@@ -420,7 +420,7 @@ Grid() {
 2. 定义网格元素移动过程中的相关计算函数。
 
   
-```text
+```ArkTS
 itemMove(index: number, newIndex: number): void {
   if (!this.isDraggable(newIndex)) {
     return;
@@ -526,7 +526,7 @@ isDraggable(index: number): boolean {
 3. GridItem绑定拖拽手势，并在手势的回调函数中设置显式动画。
 
   
-```text
+```ArkTS
 .gesture(
   PanGesture({ fingers: 1, direction: null, distance: 0 })
     .onActionStart(() => {
@@ -595,7 +595,7 @@ isDraggable(index: number): boolean {
 示意效果图如下。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/iAFvzcYfQtGq5x1WgItjOg/zh-cn_image_0000002717610378.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072504Z&HW-CC-Expire=86400&HW-CC-Sign=08DE80BD2AD0A80054129DE61101D5E4C8B158778A21D716E7DC351D74842A20)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/veTs9979Rfumzsd9eXxMig/zh-cn_image_0000002749332224.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012627Z&HW-CC-Expire=86400&HW-CC-Sign=ECC38FFC54F16C03B1AFC0DABD09BD964AAB4A7566CC93C0D0E2D4D7E4440A91)
 
  
   
@@ -604,7 +604,7 @@ isDraggable(index: number): boolean {
 1. 使用Grid布局及GridItem界面开发。
 
   
-```text
+```ArkTS
 Grid() {
   ForEach(this.numbers, (item: number) => {
     GridItem() {
@@ -674,7 +674,7 @@ Grid() {
 2. 添加抖动动画。
 
   
-```text
+```ArkTS
 private jumpWithSpeed(speed: number) {
   if (this.isEdit) {
     this.rotateZ = -1;
@@ -697,7 +697,7 @@ private jumpWithSpeed(speed: number) {
 3. 定义stopJump()方法，执行后，能使网格元素停止抖动。
 
   
-```text
+```ArkTS
 private stopJump() {
   this.getUIContext().animateTo({
     delay: 0,
@@ -715,7 +715,7 @@ private stopJump() {
 4. GridItem绑定组合手势：长按、拖拽。并在手势的回调函数中设置显式动画。
 
   
-```text
+```ArkTS
 .gesture(
   GestureGroup(GestureMode.Sequence,
     LongPressGesture({ repeat: true })

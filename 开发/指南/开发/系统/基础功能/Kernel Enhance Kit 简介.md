@@ -1,10 +1,10 @@
 # Kernel Enhance Kit 简介
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/kernel-enhance-overview
 
-#### 功能介绍
+## 功能介绍
 
 Kernel Enhance Kit 为开发者提供内核增强能力，包括服务质量（QoS）调度、Purgeable Memory 管理和格物服务，帮助开发者优化应用性能、资源管理和用户体验。
  
@@ -15,16 +15,17 @@ Kernel Enhance Kit 为开发者提供内核增强能力，包括服务质量（Q
  
   
 
-#### 基本概念
+## 基本概念
 
   
 
-#### QoS
+### QoS
 
 QoS（Quality of Service）即服务质量，在 HarmonyOS 中主要指任务的优先调度属性。开发者可以利用 QoS 对要执行的工作进行分类，以指示其与用户交互的关联程度；系统则根据任务设置的 QoS 安排各任务的运行时间和运行次序。
  
 HarmonyOS 系统定义了 6 个 QoS 等级，从低到高与用户交互的关联程度依次递增。表中的 QOS_* 为接口枚举项名称：
   
+
 | QoS 等级 | 使用场景 | 负载特征 |
 | --- | --- | --- |
 | QOS_BACKGROUND | 后台且用户不可见任务，例如数据同步、备份。 | 任务完成需要几分钟甚至几小时。 |
@@ -37,23 +38,23 @@ HarmonyOS 系统定义了 6 个 QoS 等级，从低到高与用户交互的关�
  
   
 
-#### Purgeable Memory
+### Purgeable Memory
 
 Purgeable Memory 指可以随时丢弃的内存区域，用于存放那些很容易通过重新计算构建出来的数据。该数据在系统低内存时可以被直接释放，用户访问的时候再重新构建。Purgeable Memory 适用于存放大块（至少 4KB）且恢复代价较小的数据，它在系统压力较大时优先回收（对匿名页采用类似文件页的 drop 形式，而不是压缩），再次使用时需要用户自己恢复数据再使用。
  
   
 
-#### 格物服务
+### 格物服务
 
 格物服务是针对端侧推理场景的 QoS 感知推理加速和资源管理优化服务。端侧推理场景具有保障用户数据隐私、部署成本低、时延低、不受网络影响的高可用性等优点，但也面临着内存资源受限、算力受限、对功耗敏感等挑战。格物服务通过动态按需加载资源、QoS 感知调度等优化手段，在保障用户体验的同时实现高效推理。
  
   
 
-#### 功能效果
+## 功能效果
 
   
 
-#### QoS 优化效果
+### QoS 优化效果
 
 合理使用 QoS 可以显著提升应用性能：
  
@@ -63,7 +64,7 @@ Purgeable Memory 指可以随时丢弃的内存区域，用于存放那些很容
  
   
 
-#### Purgeable Memory 优化效果
+### Purgeable Memory 优化效果
 
 Purgeable Memory 在系统压力较大时优先回收，可以有效缓解内存压力：
  
@@ -74,7 +75,7 @@ Purgeable Memory 在系统压力较大时优先回收，可以有效缓解内存
  
   
 
-#### 格物服务优化效果
+### 格物服务优化效果
 
 格物服务针对端侧推理场景提供以下优化：
  
@@ -85,18 +86,18 @@ Purgeable Memory 在系统压力较大时优先回收，可以有效缓解内存
  
   
 
-#### 约束与限制
+## 约束与限制
 
   
 
-#### QoS 使用限制
+### QoS 使用限制
 
 - QoS 接口只能设置当前任务的 QoS 等级，不能设置其他任务的 QoS 等级。
 
  
   
 
-#### Purgeable Memory 使用限制
+### Purgeable Memory 使用限制
 
 - 适用于存放大块（至少 4KB）且恢复代价较小的数据。
 - 再次使用时需要用户自己恢复数据再使用。
@@ -104,7 +105,7 @@ Purgeable Memory 在系统压力较大时优先回收，可以有效缓解内存
  
   
 
-#### 格物服务使用限制
+### 格物服务使用限制
 
 - 格物服务从 API version 20 开始支持。
 - 需要依赖相关的动态链接库：libqos.so。
@@ -112,8 +113,15 @@ Purgeable Memory 在系统压力较大时优先回收，可以有效缓解内存
  
   
 
-#### 相关文档
+## 相关文档
 
 - [QoS 开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/qos-guidelines)
 - [Purgeable Memory 开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/purgeable-memory-guidelines)
 - [格物服务开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gewu-ndk-api-guidelines)
+
+ 
+  
+
+## 模拟器支持情况
+
+本Kit暂不支持模拟器。

@@ -1,6 +1,6 @@
 # @ohos.graphics.uiEffect (效果级联)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-uieffect
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -149,7 +149,7 @@ struct UIEffectFilterExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/NDTATeKoQgyI62ytXspeIg/zh-cn_image_0000002747293905.png?HW-CC-KV=V1&HW-CC-Date=20260911T072945Z&HW-CC-Expire=86400&HW-CC-Sign=5D8AB0B40992036412A0905605B4D3970187672371B5B12039341BCDDE9E77B2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/TbuoLLjMTgGq5A-1n1pL4g/zh-cn_image_0000002778935109.png?HW-CC-KV=V1&HW-CC-Date=20261009T013005Z&HW-CC-Expire=86400&HW-CC-Sign=14795E6053780B6F90E4CD53CDA91841BC19457DABCAFD9B9524FDCEF1224B5D)
 
 
 
@@ -215,3 +215,5 @@ filter.hdrBrightnessRatio(2.0)
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 VisualEffect效果类，用于将相应的效果添加到指定的组件上。在调用VisualEffect的方法前，需要先通过[createEffect](#uieffectcreateeffect)创建一个VisualEffect实例。
+
+**系统能力：** SystemCapability.Graphics.Drawing

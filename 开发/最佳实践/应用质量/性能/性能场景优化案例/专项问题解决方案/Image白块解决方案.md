@@ -1,13 +1,10 @@
 # Image白块解决方案
 
-更新时间：2026-07-28 03:34:01
+更新时间：2026-09-15 02:12:10
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-image-white-lump-solution
 
-**   
-
-
-#### 概述
+## 概述
 
 在通过Image组件加载网络图片时，整个过程可分为四个关键阶段：组件创建、图片资源下载、图片解码和最终刷新显示。当加载的图片资源过大时，组件需等待下载与解码完成后才进行刷新。由于下载阶段耗时较长（尤其在网络波动或大文件场景下），图片在完全渲染前会显示为空白或浅色占位图，这种现象被称为“Image白块”。它不仅影响视觉体验，还可能降低用户对应用性能的感知。
  
@@ -17,7 +14,8 @@
 - 缓存复用阶段：当Image组件加载时，首先检查应用沙箱是否存在缓存。若存在，则直接读取缓存数据；若不存在，再发起网络请求。非首次请求时，该机制可避免重复下载，从而缩短白块持续时间。
 
  
-图1 **Image加载网络图片两种方式对比**
+**图1 **Image加载网络图片两种方式对比
+
 ![](assets/Image白块解决方案/file-20260515115040984-0.png)
 
  
@@ -29,7 +27,7 @@
  
  
 
-#### 场景案例
+## 场景案例
 
 开发者使用Navigation组件时，通常会在主页引入子页面组件，在按钮中添加方法实现跳转子页面组件。当子页面中需展示一张较大的网络图片时，而Image未设置占位图时，会出现点击按钮后，子组件的Image组件位置出现长时间的Image白块现象。
  
@@ -37,7 +35,7 @@
  
  
 
-#### 【优化前】：使用Image组件直接加载网络地址
+### 【优化前】：使用Image组件直接加载网络地址
 
 使用Image组件直接加载网络地址。
  
@@ -78,11 +76,11 @@ export struct PageOne {
 
  
 
-#### 【优化后】：通过预下载的方式
+### 【优化后】：通过预下载的方式
 
 子页面PageOne中需展示一张较大的网络图片，在父组件的aboutToAppear()中提前发起网络请求，并做判断文件是否存在，已下载的不再重复请求，存储在应用沙箱中。当父页面点击按钮跳转子页面PageOne，此时触发读取应用沙箱中已缓存解码的网络图片请求并存储，通过在子页面的Image中传入被[@LocalStorageLink](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-localstorage#localstoragelink)修饰的变量imageData进行数据刷新，图片送显。
  
-图2 **使用预下载的方式，由开发者灵活地处理网络图片，减少白块出现时长
+**图2 **使用预下载的方式，由开发者灵活地处理网络图片，减少白块出现时长
 
 ![](assets/Image白块解决方案/file-20260515115040984-3.png)
 
@@ -263,7 +261,7 @@ export struct PageOne {
  
  
 
-#### 性能分析
+## 性能分析
 
 下面使用trace对优化前后性能进行对比分析。开发者可以通过使用[DevEco Profiler](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-optimization-overview#section2012922312284)工具来抓捕trace图并识别分析应用中的性能问题。
  
@@ -293,20 +291,22 @@ export struct PageOne {
 
  
 
-#### 效果对比
+## 效果对比
  
+
 | （优化前）直接使用Image加载网络数据，未使用预下载 | （优化后）使用预下载 |
 | --- | --- |
-|  |  |
+| ![](assets/Image白块解决方案/file-20260525085643692-004.png) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/q0gj-YreRvOzWM2_LKWFuQ/zh-cn_image_0000002651406704.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012645Z&HW-CC-Expire=86400&HW-CC-Sign=683561B7A00DD7F1EC2E9800F7825CB47656F75F4ED5A420A9ABEF22DDBDF47C) |
  
  
  
 
-#### 性能对比
+## 性能对比
 
 对比数据如下：
  
   
+
 | 方案 | 白块出现时长(毫秒) | 白块出现时长 |
 | --- | --- | --- |
 | （优化前）直接使用Image加载网络数据，未使用预下载 | 1300 | 图片位置白块出现时间较长 |
@@ -320,6 +320,6 @@ export struct PageOne {
 由此可见，加载网络图片时，使用预下载，提前处理网络请求并从应用沙箱中读取缓存数据的方式，可以减少用户可见Image白屏或白块出现时长，提升用户体验。
  
 
-#### 示例代码
+## 示例代码
 
 - [Image白块解决指导](https://gitcode.com/HarmonyOS_Samples/PreHttpRequestUseFiles/tree/master)

@@ -1,6 +1,6 @@
 # crypto_asym_cipher.h
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-crypto-asym-cipher-h
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -106,8 +106,8 @@ enum CryptoSm2CiphertextSpec_item
 | --- | --- |
 | CRYPTO_SM2_CIPHERTEXT_C1_X = 0 | 公钥x，也称为C1x。 |
 | CRYPTO_SM2_CIPHERTEXT_C1_Y = 1 | 公钥y，也称为C1y。 |
-| CRYPTO_SM2_CIPHERTEXT_C2 = 2 | 哈希值，也称为C2。 |
-| CRYPTO_SM2_CIPHERTEXT_C3 = 3 | 密文数据，也称为C3。 |
+| CRYPTO_SM2_CIPHERTEXT_C2 = 2 | 密文数据，也称为C2。 |
+| CRYPTO_SM2_CIPHERTEXT_C3 = 3 | 消息摘要（哈希值），也称为C3。 |
  
  
   

@@ -1,6 +1,6 @@
 # @ohos.net.netFirewall (网络防火墙)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-net-netfirewall
 **支持设备：** PC/2in1
@@ -624,7 +624,7 @@ netFirewall.getNetFirewallRule(100, 1).then((rule: netFirewall.NetFirewallRule) 
 | appUid | number | 否 | 是 | 应用程序或服务UID。 |
 | localIps | Array&lt;NetFirewallIpParams&gt; | 否 | 是 | 本地IP地址。当type=RULE_IP时有效，否则将被忽略，最多10个。 |
 | remoteIps | Array&lt;NetFirewallIpParams&gt; | 否 | 是 | 远端IP地址。当type=RULE_IP时有效，否则将被忽略，最多10个。 |
-| protocol | number | 否 | 是 | 协议，包含TCP：6，UDP：17。当type=RULE_IP时有效。 |
+| protocol | number | 否 | 是 | 协议，包含TCP：6，UDP：17，ICMP：1，ICMPv6：58。当type=RULE_IP时有效。 |
 | localPorts | Array&lt;NetFirewallPortParams&gt; | 否 | 是 | 本地端口。当type=RULE_IP时有效，否则将被忽略，最多10个。 |
 | remotePorts | Array&lt;NetFirewallPortParams&gt; | 否 | 是 | 远端端口。当type=RULE_IP时有效，否则将被忽略。最多10个。 |
 | domains | Array&lt;NetFirewallDomainParams&gt; | 否 | 是 | 域名列表，当type=RULE_DOMAIN时有效，否则将被忽略，目前不支持中文域名。 |

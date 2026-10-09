@@ -1,6 +1,6 @@
 # Interfaces (其他)
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-i
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -440,7 +440,7 @@
 音频监听事件传入的参数。
  
 > [!NOTE]
-> 从API version 7开始支持，从API version 9开始废弃，无替代接口。
+> 从API version 7开始支持，从API version 9开始废弃。 申请音频焦点时，建议使用 AudioRendererOptions .rendererInfo替代， StreamUsage 决定音频流的焦点策略。 建议使用 on('audioInterrupt') 接口监听音频焦点事件 InterruptEvent ，替代音频中断事件。 使用已废弃的接口 on('interrupt') 不会打断新机制的音频流，也不会收到焦点中断事件。
 
  
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
@@ -448,9 +448,9 @@
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| streamUsage | StreamUsage | 否 | 否 | 音频流使用类型。 |
-| contentType | ContentType | 否 | 否 | 音频打断媒体类型。 |
-| pauseWhenDucked | boolean | 否 | 否 | 音频打断时是否可以暂停音频播放。true表示音频播放可以在音频打断期间暂停，false表示音频播放不可以在音频打断期间暂停。 |
+| streamUsage | StreamUsage | 否 | 否 | 音频流使用类型。 说明： 从API version 7开始支持，从API version 9开始废弃，建议使用AudioRendererOptions.rendererInfo替代。 |
+| contentType | ContentType | 否 | 否 | 音频打断媒体类型。 说明： 从API version 7开始支持，从API version 9开始废弃，建议使用AudioRendererOptions.rendererInfo替代。 |
+| pauseWhenDucked | boolean | 否 | 否 | 音频打断时是否可以暂停音频播放。true表示音频播放可以在音频打断期间暂停，false表示音频播放不可以在音频打断期间暂停。 说明： 从API version 7开始支持，从API version 9开始废弃，建议使用InterruptEvent.hintType替代。 |
  
  
   

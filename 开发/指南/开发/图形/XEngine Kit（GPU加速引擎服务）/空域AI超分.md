@@ -1,6 +1,6 @@
 # 空域AI超分
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xengine-kit-ai-spatial-upscaling
 
@@ -45,7 +45,7 @@ XEngine Kit提供空域AI超分特性，基于单帧图像使用AI推理生成�
 | --- | --- |
 | VKAPI_ATTR VkResult VKAPI_CALL HMS_XEG_EnumerateDeviceExtensionProperties(VkPhysicalDevice physicalDevice, uint32_t *pPropertyCount, XEG_ExtensionProperties *pProperties) | XEngine Vulkan扩展特性查询接口。 |
 | VKAPI_ATTR VkResult VKAPI_CALL HMS_XEG_CreateNeuralUpscale(VkDevice device, const XEG_NeuralUpscaleCreateInfo *pCreateInfo, XEG_NeuralUpscale *pNeuralUpscale) | 创建XEG_NeuralUpscale对象。 |
-| VKAPI_ATTR VkResult VKAPI_CALL HMS_XEG_CmdRenderNeuralUpscale(VkCommandBuffer commandBuffer, XEG_NeuralUpscale neuralUpscale, const XEG_NeuralUpscaleDescription *pDescription) | 执行空域AI超分渲染命令。 |
+| VKAPI_ATTR VkResult VKAPI_CALL HMS_XEG_CmdRenderNeuralUpscale(VkCommandBuffer commandBuffer, XEG_NeuralUpscale neuralUpscale, const XEG_NeuralUpscaleDescription *pDescription) | 录制空域AI超分渲染命令。 |
 | VKAPI_ATTR void VKAPI_CALL HMS_XEG_DestroyNeuralUpscale(XEG_NeuralUpscale neuralUpscale) | 销毁XEG_NeuralUpscale对象。 |
 
 
@@ -71,7 +71,7 @@ XEngine Kit提供空域AI超分特性，基于单帧图像使用AI推理生成�
  - 下面是基于Vulkan图形API平台集成空域AI超分的主要业务流程
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/m0cmHMiQRN6LPXQwEUu2SQ/zh-cn_image_0000002717771536.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T073151Z&HW-CC-Expire=86400&HW-CC-Sign=6BC6AA65EF09A661B5FF697767BA269020F19C0A32EB6CA37CA3684CC3B76415)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/M6mGtOXNQSa3SyM8wBUgmQ/zh-cn_image_0000002778932611.jpg?HW-CC-KV=V1&HW-CC-Date=20261009T013124Z&HW-CC-Expire=86400&HW-CC-Sign=EE60E8A501057B63DAC454FA1E2F2D37357AE34D7506A4A76C2D5CE5CEC4DE0B)
 
 
 1. 当用户进入游戏场景时，调用[HMS_XEG_EnumerateDeviceExtensionProperties](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-kit-xengine#hms_xeg_enumeratedeviceextensionproperties)接口查询XEngine Kit支持的特性列表。
@@ -397,8 +397,8 @@ XEG_NeuralUpscaleCreateInfo createInfo;
 createInfo.sType = XEG_STRUCTURE_TYPE_NEURAL_UPSCALE_CREATE_INFO;
 createInfo.pNext = nullptr;
 createInfo.inputRegion = srcRect2D;
-createInfo.inputSize = {lowResWidth, lowResHeight};
-createInfo.outputSize = {highResWidth, highResHeight};
+createInfo.inputSize = VkExtent2D{lowResWidth, lowResHeight};
+createInfo.outputSize = VkExtent2D{highResWidth, highResHeight};
 createInfo.outputRegion = dstRect2D;
 createInfo.outputFormat = VK_FORMAT_R8G8B8A8_UNORM;
 // device逻辑设备，用户需进行初始化

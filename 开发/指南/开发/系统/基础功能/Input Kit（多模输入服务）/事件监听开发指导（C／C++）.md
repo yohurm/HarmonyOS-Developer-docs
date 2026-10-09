@@ -1,6 +1,6 @@
 # 事件监听开发指导（C/C++）
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/monitor-guidelines
 
@@ -12,7 +12,7 @@
 
 ## 接口说明
 
-创建和删除事件监听相关接口如下表所示，接口详细介绍请参考[input](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-input)。
+创建和删除事件监听相关接口如下表所示，接口详细介绍请参考[oh_input_manager.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-input-manager-h)。
 
 
 | 接口名称 | 描述 |
@@ -37,7 +37,7 @@
 
 ### 链接动态库
 
-调用创建和删除事件监听前，需链接相关动态库。链接动态库的方法是，在CMakeList.txt文件中新增如下配置：
+调用创建和删除事件监听前，需链接相关动态库。链接动态库的方法是，在CMakeLists.txt文件中新增如下配置：
 
 ```text
 target_link_libraries(entry PUBLIC libohinput.so)

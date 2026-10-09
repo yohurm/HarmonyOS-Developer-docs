@@ -1,6 +1,6 @@
 # @ohos.arkui.StateManagement (状态管理)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-statemanagement
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -281,7 +281,7 @@ type: ConnectOptionsCollections<T, S> | ConnectOptions&lt;T&gt;
 
 ): T | undefined
 
-将键值对数据存储在应用磁盘中。支持集合类型[Array，Map，Set，collections.Array，collections.Map，collections.Set类型的持久化](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-persistencev2#globalconnect支持集合的类型)。注意在持久化Array&lt;ClassA&gt;类型的数据时，需要调用[makeObserved](#makeobserved)使返回的对象被观察到。不支持多个嵌套集合，例如不支持Array<Array&lt;ClassA&gt;>的持久化。
+将键值对数据存储在应用磁盘中。支持集合类型[Array，Map，Set，collections.Array，collections.Map，collections.Set类型的持久化](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-persistencev2#globalconnect支持的集合类型)。注意在持久化Array&lt;ClassA&gt;类型的数据时，需要调用[makeObserved](#makeobserved)使返回的对象被观察到。不支持多个嵌套集合，例如不支持Array<Array&lt;ClassA&gt;>的持久化。
 
 > [!TIP]
 > 1、若未指定key，使用默认构造器defaultCreator返回数据的类名作为key存入PersistenceV2中。 2、key建议使用有意义的值，可由字母、数字、下划线组成，长度不超过255，使用非法字符或空字符的行为是未定义的。 3、connect和globalConnect不建议混用，因为数据副本路径不同，如果混用，则key不可以一样，否则会crash。 其他通用条件详见globalConnect 18+ 的说明。

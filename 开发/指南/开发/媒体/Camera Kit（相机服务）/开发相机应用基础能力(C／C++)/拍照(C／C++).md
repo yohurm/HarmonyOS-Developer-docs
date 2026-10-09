@@ -1,6 +1,6 @@
 # 拍照(C/C++)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera-shooting
 
@@ -31,7 +31,6 @@
 #include <cstdio>
 #include <fcntl.h>
 #include <map>
-#include <string>
 #include <vector>
 #include <native_buffer/native_buffer.h>
 #include "iostream"
@@ -90,7 +89,7 @@ target_link_libraries(entry PUBLIC
 ```cpp
 Camera_ErrorCode NDKCamera::CreatePhotoOutputWithoutSurfaceId()
 {
-    OH_LOG_ERROR(LOG_APP, "CreatePhotoOutputWithoutSurfaceId enter.");
+    OH_LOG_INFO(LOG_APP, "CreatePhotoOutputWithoutSurfaceId enter.");
     profile_ = cameraOutputCapability_->photoProfiles[0];
     Camera_Profile* profile = cameraOutputCapability_->photoProfiles[0];
     profile->size.width = NUM_1920;

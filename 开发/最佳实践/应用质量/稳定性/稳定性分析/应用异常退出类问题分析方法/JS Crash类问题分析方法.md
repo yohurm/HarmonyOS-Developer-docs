@@ -1,28 +1,28 @@
 # JS Crash类问题分析方法
 
-更新时间：2026-07-22 06:05:01
+更新时间：2026-09-15 02:12:10
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-app-crash-js-way
 
-当未处理的JS异常导致应用意外退出时，应用会在抛出未处理的异常时崩溃并且会生成对应的JS Crash崩溃日志文件。开发者可通过错误日志查看引起崩溃的代码位置及分析应用崩溃的原因，可参看[JS Crash日志规格](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/jscrash-guidelines#日志规格)。
+当未处理的JS异常导致应用意外退出时，应用会在抛出未处理的异常时崩溃并且会生成对应的JS Crash崩溃日志文件。开发者可通过错误日志查看引起崩溃的代码位置及分析应用崩溃的原因，可参看[日志规格](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/jscrash-guidelines#日志规格)。
  
 
-#### 问题定位思路
+## 问题定位思路
 
  
 
-#### 获取日志
+### 获取日志
 
 进程崩溃日志是一种故障日志，具体可参考[日志获取](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/jscrash-guidelines#日志获取)。
  
  
 
-#### 根因分析
+### 根因分析
 
  
-分析JS Crash问题通过异常场景，结合错误信息和调用栈定位源码，从而得出基本的分析结论。调用栈的分析有以下几种情况：
+分析JS Crash问题通过异常场景，结合错误信息和调用栈定位源码，从而得出基本的分析结论。
  
-**StackTrace 场景分类**
+**StackTrace场景分类**
  
 JS Crash故障日志中的StackTrace字段存放了JS Crash异常的调用栈信息，StackTrace的显示分为以下几种场景。
  1. JS调用栈可直接通过超链接跳转到对应错误代码行，栈顶即为问题第一现场，如下样例所示。

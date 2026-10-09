@@ -1,6 +1,6 @@
 # 字块绘制（C/C++）
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/textblock-drawing-c
 
@@ -236,7 +236,7 @@ OH_Drawing_FontDestroy(font);
 
 | 未跟随主题字体的效果图 | 跟随主题字体的效果图（不同主题字体显示效果不同，此处仅示意） |
 | --- | --- |
-|  |  |
+| ![](assets/字块绘制（C／C++）/file-20260514131641047-4.jpg) | ![](assets/字块绘制（C／C++）/file-20260514131641047-5.png) |
 
 
 > [!NOTE]
@@ -275,7 +275,7 @@ OH_Drawing_FontDestroy(font);
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/iGsN_KgHTTeMcG-PAnKX7w/zh-cn_image_0000002717771448.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T073102Z&HW-CC-Expire=86400&HW-CC-Sign=C2C8700CBA2617D0C466C036B8585B6AF4F32688F0F20778990A1633B8186730)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/IO99gsOOT1uoP1r-Ne_krQ/zh-cn_image_0000002778932523.jpg?HW-CC-KV=V1&HW-CC-Date=20261009T013052Z&HW-CC-Expire=86400&HW-CC-Sign=A5539443E4C32A04C084C8028E909806E3552AD314D3F889D4A6A15682EB26E7)
 
 
 进阶场景：绘制带字体特征的字符。
@@ -309,7 +309,7 @@ OH_Drawing_FontDestroy(font);
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/yj1lUnvfQZq5wFOy8o9c1A/zh-cn_image_0000002717611516.png?HW-CC-KV=V1&HW-CC-Date=20260911T073102Z&HW-CC-Expire=86400&HW-CC-Sign=82E7937721E4494640825549B611702F7F838706E462376E23D190F868A12EC4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/UjK9Or2wRbeiadVP8etL3w/zh-cn_image_0000002749333442.png?HW-CC-KV=V1&HW-CC-Date=20261009T013052Z&HW-CC-Expire=86400&HW-CC-Sign=E164735C73D1BB7D5FE0119C0756014D965A5821A50975C7354BAD978FBF0DF1)
 
 
 > [!NOTE]

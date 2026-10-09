@@ -1,6 +1,6 @@
 # CryptoKdfApi
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-cryptokdfapi
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -10,7 +10,7 @@
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-为应用提供密钥派生函数(KDF)接口。
+描述HarmonyOS为应用提供的密钥派生(KDF)接口。
  
 **起始版本：** 20
  

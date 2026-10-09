@@ -1,6 +1,6 @@
 # @ohos.reminderAgent (后台代理提醒)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-reminderagent
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -738,7 +738,7 @@ reminderAgent.removeNotificationSlot(notification.SlotType.CONTENT_INFORMATION).
 | --- | --- | --- | --- | --- |
 | hour | number | 否 | 否 | 指明提醒的目标时刻。 |
 | minute | number | 否 | 否 | 指明提醒的目标分钟。 |
-| daysOfWeek | Array&lt;number&gt; | 否 | 是 | 指明每周哪几天需要重复提醒。范围为周一到周末，对应数字为1到7。 |
+| daysOfWeek | Array&lt;number&gt; | 否 | 是 | 指明每周哪几天需要重复提醒。范围为周一到周日，对应数字为1到7。 |
 
 
 

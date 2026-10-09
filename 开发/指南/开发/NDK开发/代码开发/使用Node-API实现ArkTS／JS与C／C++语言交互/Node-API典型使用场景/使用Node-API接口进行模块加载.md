@@ -1,18 +1,19 @@
 # 使用Node-API接口进行模块加载
 
-更新时间：2026-03-09 02:50:43
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-load-module-with-info
 
 Node-API中的napi_load_module_with_info接口的功能是进行模块的加载，当模块加载出来之后，可以使用函数napi_get_property获取模块导出的变量，也可以使用napi_get_named_property获取模块导出的函数，该函数可以在[新创建的ArkTS基础运行时环境](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-ark-runtime)中使用，即napi_create_ark_runtime接口创建的运行时环境。
   
 
-#### 函数说明
+## 函数说明
 
 ```text
 napi_status napi_load_module_with_info(napi_env env, const char* path, const char* module_info, napi_value* result);
 ```
   
+
 | 参数 | 说明 |
 | --- | --- |
 | env | 当前的虚拟机环境 |
@@ -31,8 +32,9 @@ napi_status napi_load_module_with_info(napi_env env, const char* path, const cha
  
   
 
-#### napi_load_module_with_info支持的场景
+## napi_load_module_with_info支持的场景
  
+
 | 场景 | 详细分类 | 说明 |
 | --- | --- | --- |
 | 本地工程模块 | 加载模块内文件路径 | 要求路径以moduleName开头 |
@@ -55,7 +57,7 @@ napi_status napi_load_module_with_info(napi_env env, const char* path, const cha
  
   
 
-#### 异常场景
+## 异常场景
 1. 在模块加载过程中，若出现包内未找到对应文件或build-profile.json5配置错误等问题，返回错误码napi_generic_failure，并打印报错日志。
 
   
@@ -65,7 +67,7 @@ napi_status napi_load_module_with_info(napi_env env, const char* path, const cha
  
   
 
-#### 使用示例
+## 使用示例
 
 - **加载模块内文件路径**
 
@@ -113,27 +115,27 @@ export {value, test};
   
 ```text
 static napi_value loadModule(napi_env env, napi_callback_info info) {
-     napi_value result;
-     // 1. 使用napi_load_module_with_info加载Test文件中的模块
-     napi_status status = napi_load_module_with_info(env, "entry/src/main/ets/Test", "com.example.application/entry", &result);
-     if (status != napi_ok) {
-         return nullptr;
-     }
+    napi_value result;
+    // 1. 使用napi_load_module_with_info加载Test文件中的模块
+    napi_status status = napi_load_module_with_info(env, "entry/src/main/ets/Test", "com.example.application/entry", &result);
+    if (status != napi_ok) {
+        return nullptr;
+    }
 
-     napi_value testFn;
-     // 2. 使用napi_get_named_property获取test函数
-     napi_get_named_property(env, result, "test", &testFn);
-     // 3. 使用napi_call_function调用函数test
-     napi_call_function(env, result, testFn, 0, nullptr, nullptr);
+    napi_value testFn;
+    // 2. 使用napi_get_named_property获取test函数
+    napi_get_named_property(env, result, "test", &testFn);
+    // 3. 使用napi_call_function调用函数test
+    napi_call_function(env, result, testFn, 0, nullptr, nullptr);
 
-     napi_value value;
-     napi_value key;
-     std::string keyStr = "value";
-     napi_create_string_utf8(env, keyStr.c_str(), keyStr.size(), &key);
-     // 4. 使用napi_get_property获取变量value
-     napi_get_property(env, result, key, &value);
-     return result;
- }
+    napi_value value;
+    napi_value key;
+    std::string keyStr = "value";
+    napi_create_string_utf8(env, keyStr.c_str(), keyStr.size(), &key);
+    // 4. 使用napi_get_property获取变量value
+    napi_get_property(env, result, key, &value);
+    return result;
+}
 ```
 
 

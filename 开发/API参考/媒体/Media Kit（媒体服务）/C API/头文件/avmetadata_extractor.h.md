@@ -1,6 +1,6 @@
 # avmetadata_extractor.h
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avmetadata-extractor-h
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -10,7 +10,7 @@
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-定义AVMetadataExtractor接口。使用其Native API从媒体资源中获取元数据。
+定义AVMetadataExtractor接口。使用其C API从媒体资源中获取元数据。
  
 **引用文件：** <multimedia/player_framework/avmetadata_extractor.h>
  
@@ -238,7 +238,7 @@ OH_AVErrCode OH_AVMetadataExtractor_FetchFramesByTimes(OH_AVMetadataExtractor *e
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMetadataExtractor *extractor | 指向OH_AVMetadataExtractor实例的指针。 |
-| int64_t timesUs[] | 从视频源提取图像时的时间点数组（单位：微秒）。 |
+| int64_t timesUs[] | 从视频源提取图像时的时间点数组，单位为微秒（μs）。 |
 | uint16_t timesUsSize | 输入时间点数组的长度。 |
 | OH_AVMedia_SeekMode seekMode | 定义每个给定时间与关键帧之间关系的跳转选项，详见OH_AVMedia_SeekMode。 |
 | const OH_AVMetadataExtractor_OutputParam* outputParam | 图像的输出参数，例如图像的高度或者宽度。详见OH_AVMetadataExtractor_OutputParam。若该参数为空指针，则获取的帧使用视频原始尺寸。 |

@@ -1,6 +1,6 @@
 # backgroundProcessManager错误码
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-backgroundprocessmanager
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -41,7 +41,7 @@ Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 
 
 **错误信息**
 
-Setup error, This setting is overridden by setting in Task Manager.
+Setup error, This setting is overridden by settings in Task Manager.
 
 **错误描述**
 

@@ -1,6 +1,6 @@
 # lowpower_avsink_base.h
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-lowpower-avsink-base-h
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -40,6 +40,7 @@
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_AVSamplesBuffer | OH_AVSamplesBuffer | LowPowerAVSink输入数据的结构体。应用在收到DataNeeded回调后需要将数据打包装进OH_AVSamplesBuffer实例中送给对应的LowPowerAVSink。 |
+| OH_LowPowerAVSink_Capability | OH_LowPowerAVSink_Capability | OH_LowPowerAVSink_Capability的前向声明。 |
  
  
   
@@ -155,4 +156,4 @@ OH_LowPowerAVSink_Capability *OH_LowPowerAVSink_GetCapability()
 
 | 类型 | 说明 |
 | --- | --- |
-| OH_LowPowerAVSink_Capability * | OH_LowPowerAVSink_Capability：支持LPP播放器。 nullptr：不支持LPP播放器或者获取失败。 |
+| OH_LowPowerAVSink_Capability * | 返回OH_LowPowerAVSink_Capability表示支持LPP播放器。 返回nullptr表示不支持LPP播放器或者获取失败。 |

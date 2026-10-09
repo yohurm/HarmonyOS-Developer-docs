@@ -1,6 +1,6 @@
 # @ohos.application.DistributedExtensionAbility (协同Extension)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-distributedextensionability
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -17,7 +17,7 @@ DistributedExtensionAbility（分布式扩展能力）模块提供了面向多�
 协同Extension的核心类结构及其与上下文、自定义子类的关系如下图所示。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/6QQcgCn9R8WU6rUxdSsEcg/zh-cn_image_0000002717613590.png?HW-CC-KV=V1&HW-CC-Date=20260911T072854Z&HW-CC-Expire=86400&HW-CC-Sign=7FF1E9004F8E58027943D7A42194A426EC5A1858D183B94DC2E829D38FA02507)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/BZXpcddrRe2QOikD7aElTA/zh-cn_image_0000002779094601.png?HW-CC-KV=V1&HW-CC-Date=20261009T012855Z&HW-CC-Expire=86400&HW-CC-Sign=4A657B6DF2954997CFE63E0E89BC8DB1AA00EBC602BC0DE4DAB3ABC01CA9203C)
 
 
 如上图所示：
@@ -150,11 +150,10 @@ import { AbilityConstant } from '@kit.AbilityKit';
 export default class DistributedExtension extends DistributedExtensionAbility {
   onCollaborate(wantParam: Record<string, Object>) {
     console.info(`DistributedExtension onCollabRequest Accept to the result of Ability collaborate`);
-    let sessionId = -1;
     const collaborationValues = wantParam["CollaborationValues"] as abilityConnectionManager.CollaborationValues;
     if (!collaborationValues) {
       console.error('Failed to get collaborationValues.');
-      return sessionId;
+      return AbilityConstant.CollaborateResult.REJECT;
     }
     console.info(`onCollab, collaborationValues: ${JSON.stringify(collaborationValues)}`);
     return AbilityConstant.CollaborateResult.ACCEPT;

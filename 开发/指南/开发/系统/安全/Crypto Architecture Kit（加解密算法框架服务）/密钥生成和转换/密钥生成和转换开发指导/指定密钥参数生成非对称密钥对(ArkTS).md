@@ -1,6 +1,6 @@
 # 指定密钥参数生成非对称密钥对(ArkTS)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-generate-asym-key-pair-from-key-spec
 
@@ -281,7 +281,7 @@ function testEccUseCommKeySpecGet() {
   try {
     let commKeySpec = genEccCommonSpec(); // 使用参数属性，构造ECC公私钥公共密钥参数对象
     let generatorBySpec = cryptoFramework.createAsyKeyGeneratorBySpec(commKeySpec); // 使用密钥参数对象创建生成器
-    let keyPairPromise = generatorBySpec.generateKeyPair(); // Generate an ECC key pair.
+    let keyPairPromise = generatorBySpec.generateKeyPair(); // 生成ECC密钥对。
     keyPairPromise.then(keyPair => { // 使用生成器创建ECC密钥对
       showEccSpecDetailInfo(keyPair.priKey, 'priKey'); // 对私钥获取相关密钥参数属性
       showEccSpecDetailInfo(keyPair.pubKey, 'pubKey'); // 对公钥获取相关密钥参数属性
@@ -384,7 +384,7 @@ function testEccUseCommKeySpecGetSync() {
   try {
     let commKeySpec = genEccCommonSpec(); // 使用参数属性，构造ECC公私钥公共密钥参数对象
     let generatorBySpec = cryptoFramework.createAsyKeyGeneratorBySpec(commKeySpec); // 使用密钥参数对象创建生成器
-    let keyPair = generatorBySpec.generateKeyPairSync(); // Generate an ECC key pair.
+    let keyPair = generatorBySpec.generateKeyPairSync(); // 生成ECC密钥对。
     if (keyPair != null) {
       showEccSpecDetailInfo(keyPair.priKey, 'priKey'); // 对私钥获取相关密钥参数属性
       showEccSpecDetailInfo(keyPair.pubKey, 'pubKey'); // 对公钥获取相关密钥参数属性

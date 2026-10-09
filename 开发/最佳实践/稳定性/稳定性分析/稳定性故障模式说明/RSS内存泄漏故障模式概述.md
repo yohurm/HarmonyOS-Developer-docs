@@ -1,6 +1,6 @@
 # RSS内存泄漏故障模式概述
 
-更新时间：2026-09-03 02:56:00
+更新时间：2026-09-15 02:12:10
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-rssleak-fault-mode-overreview
 
@@ -61,8 +61,8 @@ RssShmem:             12 kB
 VmSwap:     1484 kB
 ```
  
-
  
+
 **方法二：**通过PerformanceAnalysisKit中[hidebug.getRssInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hidebug#hidebuggetrssinfo24)()方法获取当前RSS和Swap内存占用。
  
 
@@ -284,7 +284,7 @@ Size         Rss        Swap                Category      Counts    Name
  - 单击③处Call Trees查看内存申请调用栈。
 - 单击④处选择Created & Existing，筛选申请并且未释放的内存及其调用栈。
 - 找到内存申请异常的内存及其调用栈，如下图⑤、⑥处框选的内容。
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/ZUKtoo9iQm6kBGhvJaOBEw/zh-cn_image_0000002680624004.png?HW-CC-KV=V1&HW-CC-Date=20260911T072344Z&HW-CC-Expire=86400&HW-CC-Sign=2303ECDFB4A0AA50D29812D0C4657161E990E616BAFAAB5C952BD22ECB593B07)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/DNn_in8OT6WujADukDx8JA/zh-cn_image_0000002680624004.png?HW-CC-KV=V1&HW-CC-Date=20261009T012655Z&HW-CC-Expire=86400&HW-CC-Sign=BDB542F688B769377DE633AF68F7165053606961409406784D04D1FC8B15DCB3)
 
 - 结合调用栈对代码进行分析，找到泄漏根因。
 
@@ -391,12 +391,12 @@ Size        Rss         Pss         Clean       Dirty       Clean       Dirty   
 ### 故障分析方法
 
 - 开发者在调试过程中，如果遇到应用闪退问题，可以在DevEco Studio中找到日志组件如下图①处，再选择应用终止如下图②处，单击③选择应用进程名，筛选出调试应用的历史退出原因，如果原因为“RssThresholdKiller”如下图④所示，说明应用在调试过程中发生了RSS内存泄漏故障。
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/IUpWWn0ESDepE9Ryric0Cg/zh-cn_image_0000002710303775.png?HW-CC-KV=V1&HW-CC-Date=20260911T072344Z&HW-CC-Expire=86400&HW-CC-Sign=A8DBB3057627A3282025B0040476B5E73A2FE518B488A67C5817E6B7715AF283)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/IIhLSl5FTwO5LQ8cNxg9aQ/zh-cn_image_0000002710303775.png?HW-CC-KV=V1&HW-CC-Date=20261009T012655Z&HW-CC-Expire=86400&HW-CC-Sign=0D9E866147F3ED0A66D9A28C55A088B704B25F20306F94E1FC26AB68C9D36850)
 
 - 确认问题为RSS内存泄漏后，开发者可以使用DevEco Studio中Profiler工具的Allocation功能进行分析，使用方法可参考[基础内存：Allocation分析](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-insight-session-allocations)。如果发现应用内存占用超出开发者预期，那么可以初步断定存在内存泄漏问题。
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/4ygAlPtkQcCi_R0UWjc3cg/zh-cn_image_0000002680464136.png?HW-CC-KV=V1&HW-CC-Date=20260911T072344Z&HW-CC-Expire=86400&HW-CC-Sign=C845A2BFF9157915B5DC6AA3A9C9B2FCC9A0BCDCDE41C7246E4C8231995E5936)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/p0iUkKamTaeZAgyrWBlQ6g/zh-cn_image_0000002680464136.png?HW-CC-KV=V1&HW-CC-Date=20261009T012655Z&HW-CC-Expire=86400&HW-CC-Sign=2BA1D749D159A47E45A4BC0FE8953221FFEA2B9AF36199DB63C66A364FEEF759)
 
 - 展开Memory泳道，如果发现Native Heap、AnonPage Other、Dev、Guard、.so、.ttf、Stack等泳道增长明显，那么可以初步定界为RSS内存泄漏问题，并且能精确到是哪种二级根因。
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/e574dRwxTDyYcGAKugXaqQ/zh-cn_image_0000002710143951.png?HW-CC-KV=V1&HW-CC-Date=20260911T072344Z&HW-CC-Expire=86400&HW-CC-Sign=8F0D18AC90A0FC1A5D37CD6111D72CF452C144EAE1214A30F6CCFDFB0ABBB33C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/Q3qzjXPRSZSLKw_vJJQ2NQ/zh-cn_image_0000002710143951.png?HW-CC-KV=V1&HW-CC-Date=20261009T012655Z&HW-CC-Expire=86400&HW-CC-Sign=EA20DE739F88912AA10207E7B88D5C1647D3B0B15E06897603911927A3873E39)
 
 - 最后根据二级根因，结合[内存栈日志分析方法](#section94641340515)定位内存泄漏点。

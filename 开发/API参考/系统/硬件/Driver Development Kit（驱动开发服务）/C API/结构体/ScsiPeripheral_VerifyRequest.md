@@ -1,6 +1,6 @@
 # ScsiPeripheral_VerifyRequest
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-08-29 09:41:17（官网已下线）
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-scsiperipheralddk-scsiperipheral-verifyrequest
 **支持设备：** PC/2in1

@@ -1,6 +1,6 @@
 # SegmentButtonV2
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-segmentbuttonv2
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -136,7 +136,7 @@ TabSegmentButtonV2({
 | itemSelectedSymbolFontColor | ColorMetrics | 否 | @Param | 配置分段按钮选中选项的HM Symbol类型图标颜色。 默认值：\$r('sys.color.font_primary') 值为undefined时，按默认值处理。 说明： items设置symbolModifier/fontColor属性值时，itemSelectedSymbolFontColor不生效。 backgroundSystemMaterial设置自动反色的系统材质时，该属性使用支持反色的特殊系统资源，颜色自动适配到材质背景色的反色。 该成员只读，不支持更改。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
 | languageDirection | Direction | 否 | @Param | 配置分段按钮的布局方向。 默认值：Direction.Auto 超出取值范围按默认值处理。 该成员只读，不支持更改。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
 | enableStateAnimation24+ | boolean | 否 | @Param | 设置当通过变量修改selectedIndex值时，是否开启分段按钮的属性动画。 true表示开启分段按钮的属性动画；未配置该属性或值为false时表示不开启分段按钮的属性动画，使用组件默认的切换动画效果。 默认值：false 该成员只读，不支持更改。 元服务API： 从API version 24开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
-| backgroundSystemMaterial | uiMaterial.Material | 否 | @Param | 分段按钮组件的背景板的系统材质。需要将组件放置在Navigation或NavDestination的标题栏子树，或横向Tabs的底部TabBar子树中，材质效果才会生效。不同系统材质包含不同的属性影响效果。传入材质后，SegmentButtonV2的动效发生改变。 分段按钮在使用系统材质时支持选中项的背景跟随手指拖拽的能力，分段按钮被选中的选项下标在跟随手指拖拽过程中保持不变、在拖拽结束时更新。 默认值：无材质效果。 该成员只读，不支持更改。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
+| backgroundSystemMaterial | uiMaterial.Material | 否 | @Param | 分段按钮组件的背景板的系统材质。需要将组件放置在Navigation或NavDestination的标题栏，或横向Tabs的底部TabBar中，沉浸光感效果才会生效。不同系统材质包含不同的属性影响效果。传入材质后，SegmentButtonV2的动效发生改变。 分段按钮在使用系统材质时支持选中项的背景跟随手指拖拽的能力，分段按钮被选中的选项下标在跟随手指拖拽过程中保持不变、在拖拽结束时更新。 默认值：无材质效果。 该成员只读，不支持更改。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 
 
 > [!NOTE]
@@ -231,7 +231,7 @@ CapsuleSegmentButtonV2({
 | itemSelectedSymbolFontColor | ColorMetrics | 否 | @Param | 配置分段按钮选中的选项中HM Symbol类型图标颜色。 默认值：\$r('sys.color.font_on_primary') 值为undefined时，按默认值处理。 说明： items设置symbolModifier/fontColor属性值时，itemSelectedSymbolFontColor不生效。 backgroundSystemMaterial设置自动反色的系统材质时，该属性使用支持反色的特殊系统资源，颜色自动适配到材质背景色的反色。 该成员只读，不支持更改。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
 | languageDirection | Direction | 否 | @Param | 配置分段按钮的布局方向。 默认值：Direction.Auto 超出取值范围按默认值处理。 该成员只读，不支持更改。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
 | enableStateAnimation24+ | boolean | 否 | @Param | 设置当通过变量修改selectedIndex值时，是否开启分段按钮的属性动画。 true表示开启分段按钮的属性动画；未配置该属性或值为false时表示不开启分段按钮的属性动画，使用组件默认的切换动画效果。 默认值：false 该成员只读，不支持更改。 元服务API： 从API version 24开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
-| backgroundSystemMaterial | uiMaterial.Material | 否 | @Param | 分段按钮组件的背景板的系统材质。需要将组件放置在Navigation或NavDestination的标题栏子树，或横向Tabs的底部TabBar子树中，材质效果才会生效。不同系统材质包含不同的属性影响效果。传入材质后，SegmentButtonV2的动效发生改变。 分段按钮在使用系统材质时支持选中项的背景跟随手指拖拽的能力，分段按钮被选中的选项下标在跟随手指拖拽过程中保持不变、在拖拽结束时更新。 默认值：无材质效果。 该成员只读，不支持更改。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
+| backgroundSystemMaterial | uiMaterial.Material | 否 | @Param | 分段按钮组件的背景板的系统材质。需要将组件放置在Navigation或NavDestination的标题栏，或横向Tabs的底部TabBar中，沉浸光感效果才会生效。不同系统材质包含不同的属性影响效果。传入材质后，SegmentButtonV2的动效发生改变。 分段按钮在使用系统材质时支持选中项的背景跟随手指拖拽的能力，分段按钮被选中的选项下标在跟随手指拖拽过程中保持不变、在拖拽结束时更新。 默认值：无材质效果。 该成员只读，不支持更改。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 
 
 > [!NOTE]
@@ -1308,8 +1308,10 @@ export struct VCard {
 }
 ```
 
+该示例配图为高算力设备强档效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/ahlYxabgSWanyXrUczb0Jw/zh-cn_image_0000002747213039.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073029Z&HW-CC-Expire=86400&HW-CC-Sign=CC21C69C9B089D0CE6DD324DB314F8E280163D0E2E28FE8B89F018317AC93249)
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/AuHSYXB7RDegDm2_Za_KBA/zh-cn_image_0000002778934327.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013038Z&HW-CC-Expire=86400&HW-CC-Sign=8F474A25F764EAF5D4086D0F030AC23EE60EB5174BB12AD439DC0D483B9CB029)
 
 
 
@@ -1363,4 +1365,4 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/NbVl4fQMQoG5r0BbnL3cOA/zh-cn_image_0000002717773104.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073029Z&HW-CC-Expire=86400&HW-CC-Sign=336B18A75F65A24C73EA850BF6D522CCC1B59C0533B4138CC0D0676EAD47AC7A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/GEigC0YeTUqy0J-sKT5FCQ/zh-cn_image_0000002749335244.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013038Z&HW-CC-Expire=86400&HW-CC-Sign=E76A7D4E5CA4ACCACF1B6EBD37335E58E1C6A3D9C98FC604B404A68141C52697)

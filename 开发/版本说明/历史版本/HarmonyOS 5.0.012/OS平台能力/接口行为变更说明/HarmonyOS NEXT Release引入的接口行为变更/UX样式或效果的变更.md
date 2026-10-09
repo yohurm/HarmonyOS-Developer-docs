@@ -1,10 +1,10 @@
 # UX样式或效果的变更
 
-更新时间：2026-06-27 01:41:31
+更新时间：2026-10-08 10:09:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-ux-b071
 
-#### showToast接口TOP_MOST模式行为变更
+## showToast接口TOP_MOST模式行为变更
 
 **变更原因**
  
@@ -23,19 +23,22 @@ API version 12及以后，TOP_MOST模式弹出的Toast的层级发生改变，�
 2. Toast在系统敏感内容显示时不显示或被覆盖。
 3. 在画中画窗口和悬浮窗中不支持创建TOP_MOST模式的Toast。
   
+
 | 变更前 | 变更后 |
 | --- | --- |
-|  |  |
+| ![](assets/UX样式或效果的变更/file-20260515134951220-0.gif) | ![](assets/UX样式或效果的变更/file-20260515134951220-1.gif) |
  
   
+
 | 变更前 | 变更后 |
 | --- | --- |
-|  |  |
+| ![](assets/UX样式或效果的变更/file-20260515134951220-2.png) | ![](assets/UX样式或效果的变更/file-20260515134951220-3.png) |
  
   
+
 | 变更前 | 变更后 |
 | --- | --- |
-|  |  |
+| ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/WGFfGlspSC6VuGJup9HaAA/zh-cn_image_0000002087445941.png?HW-CC-KV=V1&HW-CC-Date=20261009T012725Z&HW-CC-Expire=86400&HW-CC-Sign=4F4175E7FA67E978FAD011CF5502467F348CE5802B9804FDFF6F1A2842ABA532) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/vSIUZiaKRF2O9wb_6uaY5g/zh-cn_image_0000002051328530.png?HW-CC-KV=V1&HW-CC-Date=20261009T012725Z&HW-CC-Expire=86400&HW-CC-Sign=E4C14DE827C3375D7064298BC709E35B1C2A6CAAC28F56AC0851D6454F82CDE1) |
  
  
 **起始API Level**
@@ -53,7 +56,7 @@ showToast接口
  
  
 
-#### 模态UIExtension创建默认行为变更
+## 模态UIExtension创建默认行为变更
 
 **访问级别**
  
@@ -75,6 +78,7 @@ showToast接口
  
 变更前后行为如下表所示：
   
+
 | 变更前 | 变更后 |
 | --- | --- |
 | 允许不安全窗口遮挡，允许三方应用组件遮挡 | 不允许不安全窗口遮挡，不允许三方应用组件遮挡 |
@@ -82,6 +86,7 @@ showToast接口
  
 不安全窗口的定义新增宿主创建的Dialog窗口，变更前后不安全窗口包含的窗口类型如下表所示。
   
+
 | 变更前 | 变更后 |
 | --- | --- |
 | 非系统全局悬浮窗 宿主创建的非系统子窗 | 非系统全局悬浮窗 宿主创建的非系统子窗 宿主创建的非系统Dialog窗口 |
@@ -92,7 +97,7 @@ showToast接口
 图中的分享框就是一个模态UIExtension，该组件弹出后，带有"Sub Window"字样的子窗不会被隐藏，并且盖在分享框的上面。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/iWSMswWcRDq6tHmdvelF0g/zh-cn_image_0000002078063544.gif?HW-CC-KV=V1&HW-CC-Date=20260701T015422Z&HW-CC-Expire=86400&HW-CC-Sign=D9EB194A23CD1A283781BE3478EABE07B53B9FC81BC4A67ED87C813BA767A7BB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/y6D8a3LrTgu4yoo7VKKdzw/zh-cn_image_0000002078063544.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012725Z&HW-CC-Expire=86400&HW-CC-Sign=DCAEA4592D5CB9964445D50C7D9EA02E8B7986A3AB8A0F49A4258B48A5EE0B96)
 
  
 **变更后**：
@@ -100,17 +105,18 @@ showToast接口
 图中的分享框就是一个模态UIExtension，该组件弹出后，带有"Sub Window"字样的子窗被隐藏，关闭分享框后这个子窗重新展示。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/_NJac6q_QxmQ9wWQcN7mCw/zh-cn_image_0000002113588317.gif?HW-CC-KV=V1&HW-CC-Date=20260701T015422Z&HW-CC-Expire=86400&HW-CC-Sign=775010ADC024FEB8090AE56A7014FD61651EBCA320440F9CC67E301198AD142F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/YAwB0x4_SC6OowHE-sodIg/zh-cn_image_0000002113588317.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012725Z&HW-CC-Expire=86400&HW-CC-Sign=CCA1B2E6AF5B42729F9423C6FEEFFF2A428A8EFE70F287668A7258FAEB842CF9)
 
  
-
  
+
 **起始API Level**
  
 11
  
 **变更的接口/组件**
   
+
 | kit名称 | 接口名/组件名 |
 | --- | --- |
 | Core File Kit | DocumentViewPicker组件 |
@@ -130,7 +136,7 @@ showToast接口
  
  
 
-#### 安全控件offset属性设置行为变更
+## 安全控件offset属性设置行为变更
 
 **变更原因**
  
@@ -153,7 +159,7 @@ showToast接口
 安全控件设置offset属性后被父组件裁剪不能完整显示时，安全控件仍可响应点击授权。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/HRLchR87Rwu_oK9AKfE5EA/zh-cn_image_0000002087445945.png?HW-CC-KV=V1&HW-CC-Date=20260701T015422Z&HW-CC-Expire=86400&HW-CC-Sign=B66DAE8648F4841A8CD46EC46523BC6704395D11D5F93F2A48E64C038231E6F6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/7nDfhWznQOGp47BBahLc4Q/zh-cn_image_0000002087445945.png?HW-CC-KV=V1&HW-CC-Date=20261009T012725Z&HW-CC-Expire=86400&HW-CC-Sign=4FD69D2CF46DFB567D20846E53B45296F76528177682C63BF88A5C14C41281E6)
 
  
 变更后：
@@ -181,4 +187,4 @@ showToast接口
 安全控件设置offset属性后被父组件裁剪不能完整显示时，可通过调整offset({x: value, y: value})中x或y值，使得安全控件完整显示。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/dzpTCc8ETjytO3EwqAfSFQ/zh-cn_image_0000002051328534.png?HW-CC-KV=V1&HW-CC-Date=20260701T015422Z&HW-CC-Expire=86400&HW-CC-Sign=9FBA24C34C030E9BA3A712D46994256B9C3513AC41943F084B3EACE3DF1E910B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/5SwriCQ1Q1uKReUbCB58Ww/zh-cn_image_0000002051328534.png?HW-CC-KV=V1&HW-CC-Date=20261009T012725Z&HW-CC-Expire=86400&HW-CC-Sign=35EF0C5BE0C653BB010A66D78D8D1C4BFF4D9ECC5067A56D13238D8EAE391358)

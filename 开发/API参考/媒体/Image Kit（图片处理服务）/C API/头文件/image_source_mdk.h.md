@@ -1,6 +1,6 @@
 # image_source_mdk.h
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-source-mdk-h
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -609,7 +609,7 @@ int32_t OH_ImageSource_GetImageInfo(const ImageSourceNative* native, int32_t ind
 | 参数项 | 描述 |
 | --- | --- |
 | const ImageSourceNative* native | 表明native层ImageSourceNative值的指针。 |
-| int32_t index | 表明帧计数的指针。 |
+| int32_t index | 表明图片的帧序号。 |
 | struct OhosImageSourceInfo* info | 表明图像源信息OhosImageSourceInfo的指针。 |
 
 

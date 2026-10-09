@@ -1,6 +1,6 @@
 # @ohos.multimodalInput.keyEvent (按键输入事件)
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-keyevent
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -30,9 +30,9 @@ import { Action, Key, KeyEvent } from '@kit.InputKit';
 
 按键事件类型。
  
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+**元服务API**：从API version 12开始，该接口支持在元服务中使用。
  
-**系统能力：** SystemCapability.MultimodalInput.Input.Core
+**系统能力**：SystemCapability.MultimodalInput.Input.Core
   
 
 | 名称 | 值 | 说明 |
@@ -51,9 +51,9 @@ import { Action, Key, KeyEvent } from '@kit.InputKit';
 
 按键。
  
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+**元服务API**：从API version 12开始，该接口支持在元服务中使用。
  
-**系统能力：** SystemCapability.MultimodalInput.Input.Core
+**系统能力**：SystemCapability.MultimodalInput.Input.Core
   
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
@@ -72,9 +72,9 @@ import { Action, Key, KeyEvent } from '@kit.InputKit';
 
 按键事件。
  
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+**元服务API**：从API version 12开始，该接口支持在元服务中使用。
  
-**系统能力：** SystemCapability.MultimodalInput.Input.Core
+**系统能力**：SystemCapability.MultimodalInput.Input.Core
   
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |

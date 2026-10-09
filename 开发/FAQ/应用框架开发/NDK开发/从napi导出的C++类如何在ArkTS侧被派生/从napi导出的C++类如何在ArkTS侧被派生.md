@@ -1,32 +1,32 @@
 # 从napi导出的C++类如何在ArkTS侧被派生
 
-更新时间：2026-06-26 07:47:42
+更新时间：2026-09-23 01:27:56
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-development-11
 
-#### 问题现象
+## 问题现象
 
-从napi导出的C++类，支持在ArkTS侧被派生吗?
- 
-如果支持的话，如何在ArkTS侧派生使用从napi导出的C++类，并提供示例Demo。
+- 场景一：从napi导出的C++类，支持在ArkTS侧被派生吗?如果支持的话，如何在ArkTS侧派生使用从napi导出的C++类，并提供示例Demo。
+- 场景二：在.ts文件中继承从.so导入的C++类时，编译报错"Property 'test' does not exist on type 'BB'"。
+
  
  
 
-#### 解决方案
+## 解决方案
 
-napi导出的C++类，支持被派生。
- 
-在index.d.ts中，已经提供了ts层的c++接口，所以需要将ArkTS需要使用的C++类，在index.d.ts中声明，才能转为ArkTS侧的父类。
- 
-**方法一：使用[AKI](https://gitcode.com/openharmony-sig/aki)的JSBIND_CLASS接口将C++类绑定到JavaScript环境，再在ArkTS侧用extends继承****：**
- 1. C++侧：akiusepractice.cpp中定义使用的类结构。
+- 场景一：napi导出的C++类，支持被派生。
+
+  在index.d.ts中，已经提供了ts层的c++接口，所以需要将ArkTS需要使用的C++类，在index.d.ts中声明，才能转为ArkTS侧的父类。
+
+  
+**方法一：使用[AKI](https://gitcode.com/openharmony-sig/aki)的JSBIND_CLASS接口将C++类绑定到JavaScript环境，再在ArkTS侧用extends继承**：1. C++侧：akiusepractice.cpp中定义使用的类结构。
 ```text
 #include <aki/jsbind.h>
 #include <hilog/log.h>
 #undef LOG_DOMAIN
 #undef LOG_TAG
 #define LOG_DOMAIN 0x3200  <em>// 全局domain宏，标识业务领域</em>
-#define LOG_TAG "MY_TAG" <em>  // 全局tag宏，标识模块日志tag</em>
+#define LOG_TAG "MY_TAG"  <em> // 全局tag宏，标识模块日志tag</em>
 
 <em>// 类/结构体</em>
 struct Person {
@@ -71,6 +71,7 @@ JSBIND_CLASS(Person)
 JSBIND_ADDON(akiusepractice)
 ```
 
+
 2. 桥接层：index.d.ts中声明使用的C++类。
 ```text
 export class Person {
@@ -84,11 +85,13 @@ export class Person {
 export const MakePerson: () => Person;
 ```
 
+
 3. 在指定路径下（如：项目根路径/entry），输入如下命令安装ohpm har包依赖，该命令会自动将AKI依赖添加到build-profile.json5中。
 ```bash
 cd entry
 ohpm install @ohos/aki
 ```
+
 
 4. 在CMakeLists.txt中链接AKI库。
 ```cpp
@@ -100,9 +103,10 @@ set(CMAKE_MODULE_PATH ${AKI_ROOT_PATH})
 find_package(Aki REQUIRED)
 <em># 创建并编译一个akiusepractice库</em>
 add_library(akiusepractice SHARED pluginPlan.cpp)
-<em># 将Aki::libjsbind库链接到akiusepractice</em>
-target_link_libraries(akiusepractice PUBLIC Aki::libjsbind libhilog_ndk.z.so)
+<em># 将Aki::libJSbind库链接到akiusepractice</em>
+target_link_libraries(akiusepractice PUBLIC Aki::libJSbind libhilog_ndk.z.so)
 ```
+
 
 5. ArkTS侧：index.ets中使用派生类。
 ```text
@@ -148,15 +152,14 @@ struct Index {
 }
 ```
 
- 
-- **方案二****：****通过napi_define_class建立ArkTS类与C++侧的映射关系，并将对应的对象挂载到export上导出，后用extends继承。**1. C++侧：napi_init.cpp中定义使用的类结构。
+- **方法二：通过napi_define_class建立ArkTS类与C++侧的映射关系，并将对应的对象挂载到export上导出，后用extends继承。**1. C++侧：napi_init.cpp中定义使用的类结构。
 ```text
 <em>/*</em>
 <em> * Copyright (c) Huawei Technologies Co., Ltd. 2025-2025. All rights reserved.</em>
 <em> */</em>
-#include "napi/native_api.h"
-#include <hilog/log.h>
-#include <string>
+<em>#include "napi/native_api.h"</em>
+<em>#include <hilog/log.h></em>
+<em>#include <string></em>
 
 <em>// 定义C++的类</em>
 class MyDemo {
@@ -186,22 +189,22 @@ double MyDemo::Sub(double a, double b)
 <em>// ArkTS对象构造器</em>
 static napi_value JsConstructor(napi_env env, napi_callback_info info)
 {
-   <em> // 创建Napi对象</em>
+  <em>  // 创建Napi对象</em>
     napi_value jDemo = nullptr;
     size_t argc = 0;
     napi_value args[1] = {0};
- <em>   // 获取构造函数的入参</em>
+   <em> // 获取构造函数的入参</em>
     napi_get_cb_info(env, info, &argc, args, &jDemo, nullptr);
   <em>  // 参数通过args[0]获取</em>
     char name[50];
     size_t result = 0;
     napi_get_value_string_utf8(env, args[0], name, sizeof(name) + 1, &result);
-   <em> // 创建C对象</em>
+    <em>// 创建C对象</em>
     MyDemo *cDemo = new MyDemo(name);
     OH_LOG_INFO(LOG_APP, "%{public}s", (cDemo->m_name).c_str());
    <em> // 设置JS对象name属性</em>
     napi_set_named_property(env, jDemo, "name", args[0]);
-  <em>  // 将JS对象与C++对象绑定</em>
+ <em>   // 将JS对象与C++对象绑定</em>
     napi_wrap(
         env, jDemo, cDemo,
       <em>  // 定义回调函数，用于回收JS对象，用于销毁C++对象并防止内存泄漏</em>
@@ -222,7 +225,7 @@ static napi_value JsAdd(napi_env env, napi_callback_info info)
     napi_value jDemo = nullptr;
     napi_get_cb_info(env, info, &argc, args, &jDemo, nullptr);
     MyDemo *cDemo = nullptr;
-   <em> // 将ArkTS对象转换为C对象</em>
+    <em>// 将ArkTS对象转换为C对象</em>
     napi_unwrap(env, jDemo, (void **)&cDemo);
    <em> // 获取ArkTS传递的参数</em>
     int value0;
@@ -243,9 +246,9 @@ static napi_value JsSub(napi_env env, napi_callback_info info)
     napi_value jDemo = nullptr;
     napi_get_cb_info(env, info, &argc, args, &jDemo, nullptr);
     MyDemo *cDemo = nullptr;
-    <em>// 将ArkTS对象转换为C对象</em>
+   <em> // 将ArkTS对象转换为C对象</em>
     napi_unwrap(env, jDemo, (void **)&cDemo);
-   <em> // 获取ArkTS传递的参数</em>
+  <em>  // 获取ArkTS传递的参数</em>
     int value0;
     napi_get_value_int32(env, args[0], &value0);
     int value1;
@@ -310,7 +313,7 @@ static napi_value Init(napi_env env, napi_value exports)
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
 
-  <em>  // 通过napi_fine_class建立ArkTS类和C++端的映射关系，然后将相应的对象挂载到export上</em>
+  <em>  // 通过napi_define_class建立ArkTS类和C++端的映射关系，然后将相应的对象挂载到export上</em>
     napi_property_descriptor classProp[] = {{"add", nullptr, JsAdd, nullptr, nullptr, nullptr, napi_default, nullptr},
                                             {"sub", nullptr, JsSub, nullptr, nullptr, nullptr, napi_default, nullptr}};
     napi_value jDemo = nullptr;
@@ -393,9 +396,11 @@ struct Index {
 ```
 
 
+ - 场景二：在[build-profile.json5](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-build-profile#section511142752919)中设置tsImportSoCheck字段为true，开启IDE对.ts文件中来自.so符号的解析支持。该功能从7.0Beta1版本开始支持。
+
  
  
 
-#### 总结
+## 总结
 
 napi导出的C++类，支持被派生。

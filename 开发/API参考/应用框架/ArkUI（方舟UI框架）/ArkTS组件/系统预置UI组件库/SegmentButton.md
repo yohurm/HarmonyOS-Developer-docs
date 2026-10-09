@@ -1,6 +1,6 @@
 # SegmentButton
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-segmentbutton
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -73,8 +73,8 @@ SegmentButton({ options: SegmentButtonOptions, selectedIndexes: number[], onItem
 | options | SegmentButtonOptions | 是 | @ObjectLink | 分段按钮的配置选项，用于设置按钮的类型（页签类或胶囊类）、外观样式（颜色、字体、尺寸等）、按钮内容和选中状态等属性。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | selectedIndexes | number[] | 是 | @Link | 分段按钮的选中项编号，第一项的编号为0，之后顺序增加。 说明： selectedIndexes使用@Link装饰器：父子双向同步，仅支持有效的按钮编号（第一个按钮编号为0，之后按顺序累加，最大编号为按钮数量减1），传入无效编号时该编号不生效。如没有选中项可传入空数组[]。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | onItemClicked13+ | Callback&lt;number&gt; | 否 | - | 当分段按钮选项被点击时，触发的回调函数接收被点击的选项下标作为参数。若不传入此参数，则点击时不触发回调。 元服务API： 从API version 13开始，该接口支持在元服务中使用。 |
-| maxFontScale14+ | number \| Resource | 否 | @Prop | 分段按钮选项文字的最大字体放大倍数，用于限制字体缩放上限。当需要控制字体放大倍数以适应特定UI布局或避免文字过大时传入此参数。 取值范围：[1, 2] 当设置的值小于1时，按值为1处理，设置的值大于2时，按值为2处理。 默认值：1 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
-| enableStateAnimation24+ | boolean | 否 | @Prop | 设置当通过变量修改selectedIndexes值时，是否开启分段按钮的属性动画。 true表示开启分段按钮的属性动画；false表示不开启分段按钮的属性动画。 默认值：false 元服务API： 从API version 24开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
+| maxFontScale14+ | number \| Resource | 是 | @Prop | 分段按钮选项文字的最大字体放大倍数，用于限制字体缩放上限。当需要控制字体放大倍数以适应特定UI布局或避免文字过大时传入此参数。 取值范围：[1, 2] 当设置的值小于1时，按值为1处理，设置的值大于2时，按值为2处理。 默认值：1 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| enableStateAnimation24+ | boolean | 是 | @Prop | 设置当通过变量修改selectedIndexes值时，是否开启分段按钮的属性动画。 true表示开启分段按钮的属性动画；false表示不开启分段按钮的属性动画。 默认值：false 元服务API： 从API version 24开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 
 
 
@@ -127,7 +127,7 @@ SegmentButton({ options: SegmentButtonOptions, selectedIndexes: number[], onItem
 | borderRadiusMode20+ | BorderRadiusMode | 否 | 是 | 边框圆角模式，用于控制圆角计算方式。 默认值：BorderRadiusMode.DEFAULT 值为undefined时，按默认值处理。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
 | backgroundBorderRadius20+ | LengthMetrics | 否 | 是 | 分段按钮整体容器的边框圆角半径。 说明： 此属性仅在borderRadiusMode为BorderRadiusMode.CUSTOM时生效。 对于胶囊类多选分段按钮（type为"capsule"且multiply为true），此属性不生效，需要用itemBorderRadius配置圆角。 圆角大小受组件尺寸限制，最大值为组件宽或高的一半，不支持百分比设置。超出最大值时自动修正为最大值，使用百分比时按默认值处理。 默认值：\$r('sys.float.segmentbutton_container_shape') 值为undefined时，按默认值处理。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
 | itemBorderRadius20+ | LengthMetrics | 否 | 是 | 分段按钮中按钮项的边框圆角半径。 说明： 此属性仅在borderRadiusMode为BorderRadiusMode.CUSTOM时生效。 对于胶囊类多选分段按钮（type为"capsule"且multiply为true），只能控制两端的选项圆角。 圆角大小受组件尺寸限制，最大值为组件宽或高的一半，不支持百分比设置。超出最大值时自动修正为最大值，使用百分比时按默认值处理。 默认值：\$r('sys.float.segmentbutton_selected_background_shape') 值为undefined时，按默认值处理。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
-| backgroundSystemMaterial | uiMaterial.Material | 否 | 是 | 分段按钮组件的背景板的系统材质。需要将组件放置在Navigation或NavDestination的标题栏子树，或横向Tabs的底部TabBar子树中，材质效果才会生效。不同系统材质具有不同的属性，产生不同的效果。传入材质后，SegmentButton的动效发生改变。 对于胶囊类多选分段按钮（即type为"capsule"且multiply为true），该属性不生效。 默认值：无材质效果。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
+| backgroundSystemMaterial | uiMaterial.Material | 否 | 是 | 分段按钮组件的背景板的系统材质。需要将组件放置在Navigation或NavDestination的标题栏，或横向Tabs的底部TabBar中，沉浸光感效果才会生效。不同系统材质具有不同的属性，产生不同的效果。传入材质后，SegmentButton的动效发生改变。 对于胶囊类多选分段按钮（即type为"capsule"且multiply为true），该属性不生效。 默认值：无材质效果。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 
 
 > [!TIP]
@@ -286,7 +286,7 @@ type DimensionNoPercentage = PX | VP | FP | LPX | Resource
 | borderRadiusMode20+ | BorderRadiusMode | 否 | 是 | 边框圆角模式，用于控制圆角计算方式。 默认值：BorderRadiusMode.DEFAULT 值为undefined时，按默认值处理。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
 | backgroundBorderRadius20+ | LengthMetrics | 否 | 是 | 分段按钮整体容器的边框圆角半径。 说明： 此属性仅在borderRadiusMode为BorderRadiusMode.CUSTOM时生效。 对于胶囊类多选分段按钮（type为"capsule"且multiply为true），此属性不生效，需要用itemBorderRadius配置圆角。 圆角大小受组件尺寸限制，最大值为组件宽或高的一半，不支持百分比设置。超出最大值时自动修正为最大值，使用百分比时按默认值处理。 默认值：\$r('sys.float.segmentbutton_container_shape') 值为undefined时，按默认值处理。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
 | itemBorderRadius20+ | LengthMetrics | 否 | 是 | 分段按钮中按钮项的边框圆角半径。 说明： 此属性仅在borderRadiusMode为BorderRadiusMode.CUSTOM时生效。 对于胶囊类多选分段按钮（type为"capsule"且multiply为true），只能控制两端的选项圆角。 圆角大小受组件尺寸限制，最大值为组件宽或高的一半，不支持百分比设置。超出最大值时自动修正为最大值，使用百分比时按默认值处理。 默认值：\$r('sys.float.segmentbutton_selected_background_shape') 值为undefined时，按默认值处理。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
-| backgroundSystemMaterial | uiMaterial.Material | 否 | 是 | 分段按钮组件的背景板的系统材质。需要将组件放置在Navigation或NavDestination的标题栏子树，或横向Tabs的底部TabBar子树中，材质效果才会生效。不同系统材质具有不同的属性，产生不同的效果。传入材质后，SegmentButton的动效发生改变。 对于胶囊类多选分段按钮（即type为"capsule"且multiply为true），该属性不生效。 默认值：无材质效果。 从API版本26.0.0开始，除胶囊类多选分段按钮（即type为"capsule"且multiply为true）外，backgroundSystemMaterial设置自动反色的系统材质时，fontColor和selectedFontColor使用支持反色的特殊系统资源，颜色自动适配到材质背景色的反色。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
+| backgroundSystemMaterial | uiMaterial.Material | 否 | 是 | 分段按钮组件的背景板的系统材质。需要将组件放置在Navigation或NavDestination的标题栏，或横向Tabs的底部TabBar中，沉浸光感效果才会生效。不同系统材质具有不同的属性，产生不同的效果。传入材质后，SegmentButton的动效发生改变。 对于胶囊类多选分段按钮（即type为"capsule"且multiply为true），该属性不生效。 默认值：无材质效果。 从API版本26.0.0开始，除胶囊类多选分段按钮（即type为"capsule"且multiply为true）外，backgroundSystemMaterial设置自动反色的系统材质时，fontColor和selectedFontColor使用支持反色的特殊系统资源，颜色自动适配到材质背景色的反色。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 
 
 
@@ -1008,7 +1008,7 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/Ce0fV-mpR1K9SN9x_wi4Yg/zh-cn_image_0000002747293117.png?HW-CC-KV=V1&HW-CC-Date=20260911T073029Z&HW-CC-Expire=86400&HW-CC-Sign=575833109569A450E86D4372B0F5BFBC3F11EAD57DF4AD91733E75EE60B48C63)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/eA8KS60nTESxVfvJ8RDrBQ/zh-cn_image_0000002749495120.png?HW-CC-KV=V1&HW-CC-Date=20261009T013038Z&HW-CC-Expire=86400&HW-CC-Sign=C9874CB985F3841216D487E4D95F187DB5C391FB329FE78FDE16068E4AB2E109)
 
 
 
@@ -1123,7 +1123,7 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/Pr1Tr_bvRu2hLHmbBW_LLw/zh-cn_image_0000002747213033.png?HW-CC-KV=V1&HW-CC-Date=20260911T073029Z&HW-CC-Expire=86400&HW-CC-Sign=4342E7D88422768BDE0523D64B4A3F3FF9463D4B3951086A98360919E44FB264)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/BXZN6X-uSceLQ7M9JdIKsw/zh-cn_image_0000002779094177.png?HW-CC-KV=V1&HW-CC-Date=20261009T013038Z&HW-CC-Expire=86400&HW-CC-Sign=E83FB230B6F088AF1568EA71B53E55FF60F616DA0CC9E839416841ABE005822A)
 
 
 
@@ -1207,7 +1207,7 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/xP-TUSX2SzG4tTfEi3qplg/zh-cn_image_0000002717773098.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073029Z&HW-CC-Expire=86400&HW-CC-Sign=E0C9098F97309792C23B7EF4BBE066E80E56BA9494606EDE1A1A978F5CAED649)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/NfsVisjbThS-rT2ww65R2w/zh-cn_image_0000002778934321.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013038Z&HW-CC-Expire=86400&HW-CC-Sign=DB7B9E9DBBD999D38EB8411A6A6FBE73D9224F854E958F3C952748873F845A71)
 
 
 
@@ -1324,7 +1324,7 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/n5inZI19SByyObChJLTjmA/zh-cn_image_0000002717613166.png?HW-CC-KV=V1&HW-CC-Date=20260911T073029Z&HW-CC-Expire=86400&HW-CC-Sign=A60255CA05A26DC43EBE9A7E973D76094342CC5D29251EDF528B7B508AE72428)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/NhiRw81wRFSGI54OoqWlEQ/zh-cn_image_0000002749335238.png?HW-CC-KV=V1&HW-CC-Date=20261009T013038Z&HW-CC-Expire=86400&HW-CC-Sign=2713A2D0629550C548ABA988255492DEEC815BA9CDE0423A72A0E462531CBAFD)
 
 
 
@@ -1478,6 +1478,10 @@ struct Index {
 ```
 
 
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/t7MfHmXJTXmx-CEx7EF_hg/zh-cn_image_0000002749495122.png?HW-CC-KV=V1&HW-CC-Date=20261009T013038Z&HW-CC-Expire=86400&HW-CC-Sign=54B3CE8E29EB22ECF39A61761599F71B89D8E6985C52E950CC63752AE3AC0CE0)
+
+
+
 
 ### 示例6（设置自定义圆角）
 
@@ -1526,7 +1530,7 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/Xz9eWg8mR8qsW8d7W_3EzA/zh-cn_image_0000002747293119.png?HW-CC-KV=V1&HW-CC-Date=20260911T073029Z&HW-CC-Expire=86400&HW-CC-Sign=C1B98D1B01D269301A315761739A61BD1EE383A358818A410F8D87B1C455A4AE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/sPjDU8lbQ4KDr4c_bwXHEw/zh-cn_image_0000002779094179.png?HW-CC-KV=V1&HW-CC-Date=20261009T013038Z&HW-CC-Expire=86400&HW-CC-Sign=B1583CD1362F246F490700384B272316A2042008B80A8F2862BAE96E395CF78D)
 
 
 
@@ -1609,7 +1613,7 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/kFgHvP5STPG-mcapgMn6Ew/zh-cn_image_0000002747213035.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073029Z&HW-CC-Expire=86400&HW-CC-Sign=BD4F1E2EA53FE284AE1F278802FAEC574C20053384D791DFDC653C742D82D745)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/mkW22z3_QdiBi86Jr45AZQ/zh-cn_image_0000002778934323.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013038Z&HW-CC-Expire=86400&HW-CC-Sign=524B6089A0F639DBBD993C3EB4885BEC5B405A4DE92F37698E228F263E7BE675)
 
 
 
@@ -1685,8 +1689,10 @@ struct Index {
 }
 ```
 
+该示例配图为高算力设备强档效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/YW701XsySpGwx98OTXAKLQ/zh-cn_image_0000002717773100.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073029Z&HW-CC-Expire=86400&HW-CC-Sign=C7D6C491083615D48CC96CD92D7798EFD6E70671992939EA30C7CC269E83F95A)
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/Q67o02XESg2BtFT_TrMH5Q/zh-cn_image_0000002749335240.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013038Z&HW-CC-Expire=86400&HW-CC-Sign=E48F2C81DFCBE80A3DE2EC5390D32DA22E80D337C559966A528B7A9A58AD0429)
 
 
 
@@ -1757,4 +1763,4 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/lEuT5zd1QpqOPg2PpVGQLQ/zh-cn_image_0000002717613168.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073029Z&HW-CC-Expire=86400&HW-CC-Sign=2B7D167C0193BAF50A14C88B79D24517BDC161C55394306A2545F3E1E3636500)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/KlEqFxCBQ4ag9Q6N-IEiRA/zh-cn_image_0000002749495124.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013038Z&HW-CC-Expire=86400&HW-CC-Sign=64481DE88F8B0105A1FB3091A17403D852D26D288895A58B74AB1F973D7D2CFD)

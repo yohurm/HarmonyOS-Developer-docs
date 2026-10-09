@@ -1,6 +1,6 @@
 # 列表选择弹窗 (ActionSheet)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-action-sheet
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -37,7 +37,7 @@
 | showInSubWindow11+ | boolean | 否 | 是 | 当弹窗需要显示在主窗口之外时，是否在子窗口显示此弹窗。值为true表示在子窗口显示弹窗。 默认值：false，弹窗显示在应用内，而非独立子窗口。 说明： showInSubWindow为true的弹窗无法触发显示另一个showInSubWindow为true的弹窗。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | isModal11+ | boolean | 否 | 是 | 弹窗是否为模态窗口，模态窗口有蒙层，非模态窗口无蒙层。值为false时，弹窗为非模态窗口，无蒙层。 默认值：true，此时弹窗有蒙层。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | backgroundColor11+ | ResourceColor | 否 | 是 | 弹窗背板颜色。 默认值：Color.Transparent 说明： backgroundColor会与模糊属性backgroundBlurStyle叠加产生效果，如果不符合预期，可将backgroundBlurStyle设置为BlurStyle.NONE，即可取消模糊。当设置了backgroundBlurStyle为非NONE值时，不要设置backgroundColor，否则颜色显示将不符合预期效果。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
-| backgroundBlurStyle11+ | BlurStyle | 否 | 是 | 弹窗背板模糊材质。 默认值：从API版本26.0.0开始，为BlurStyle.NONE；API版本26.0.0之前，为BlurStyle.COMPONENT_ULTRA_THICK。 说明： 设置为BlurStyle.NONE即可关闭背景虚化。当设置了backgroundBlurStyle为非NONE值时，则不要设置backgroundColor，否则颜色显示将不符合预期效果。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
+| backgroundBlurStyle11+ | BlurStyle | 否 | 是 | 弹窗背板模糊材质。 默认值：BlurStyle.COMPONENT_ULTRA_THICK。 说明： 设置为BlurStyle.NONE即可关闭背景虚化。当设置了backgroundBlurStyle为非NONE值时，则不要设置backgroundColor，否则颜色显示将不符合预期效果。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | backgroundBlurStyleOptions19+ | BackgroundBlurStyleOptions | 否 | 是 | 背景模糊效果。默认值请参考BackgroundBlurStyleOptions类型说明。 元服务API： 从API version 19开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | backgroundEffect19+ | BackgroundEffectOptions | 否 | 是 | 背景效果参数。默认值请参考BackgroundEffectOptions类型说明。 元服务API： 从API version 19开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | onWillDismiss12+ | Callback&lt;DismissDialogAction&gt; | 否 | 是 | 交互式关闭回调函数。 说明： 1.当用户执行点击遮障层关闭、侧滑（左滑/右滑）、三键back、键盘ESC关闭交互操作时，如果注册该回调函数，则不会立刻关闭弹窗。在回调函数中可以通过reason得到阻拦关闭弹窗的操作类型，从而根据原因选择是否能关闭弹窗。如需关闭弹窗，在回调中调用DismissDialogAction的dismiss方法即可。当前组件返回的reason中，暂不支持CLOSE_BUTTON的枚举值。 2.在onWillDismiss回调中，不能再做onWillDismiss拦截。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
@@ -644,7 +644,7 @@ struct ActionSheetExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/GdBFozEAR_2LrPwpualEWA/zh-cn_image_0000002717772994.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=9C7C1C36B88E57172C7107857FC1141E40FA5F809E12A9AD0A552E824F32FA0F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/I4xzB7B4SAmZh-YG9POHQQ/zh-cn_image_0000002749335132.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013106Z&HW-CC-Expire=86400&HW-CC-Sign=04D7CBC872440772A7C4B4BDEA9E668D52CFA807BF5457950662F3DAEE31AE2D)
 
 
 
@@ -729,7 +729,7 @@ struct Example1 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/VxZ2idJJRkyczSCs6aOubQ/zh-cn_image_0000002717613062.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=92E49A7556F06A857258CBFDB84062655739E2FE47ADF275612B934A2AD9DD5C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/vJB2VGBVTUOIjk8fkHxLcg/zh-cn_image_0000002749495016.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013106Z&HW-CC-Expire=86400&HW-CC-Sign=08732DF59D474135BB3685B740D29914C7AE353C50EADCBAD13BB6D23159B72C)
 
 
 
@@ -796,7 +796,7 @@ struct ActionSheetExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/CG-PDGH4QZSgc6EjCulTcQ/zh-cn_image_0000002747293015.png?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=DEFF242B212764B7A2634B573204786850CDBC316BA756330B882649754EB114)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/eqZUk4IcRq-6hftJGIedSg/zh-cn_image_0000002779094073.png?HW-CC-KV=V1&HW-CC-Date=20261009T013106Z&HW-CC-Expire=86400&HW-CC-Sign=DDF4ED72B4B136ADC4519C4C84F25D698E4649329F35DCBB46D3D740F3F4FF1A)
 
 
 
@@ -864,7 +864,7 @@ struct ActionSheetExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/GRdEnJ0hTJ2rnlqYnA1saQ/zh-cn_image_0000002747212931.png?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=C79542E408BA1EB3D870566DCB9E71F2F33A76DAB9239270F50DD158941FCC94)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/igs47s2hScSOVzzvpSIjEA/zh-cn_image_0000002778934217.png?HW-CC-KV=V1&HW-CC-Date=20261009T013106Z&HW-CC-Expire=86400&HW-CC-Sign=9995411E71A0FA013C2713401465330AF4B61C797B5251272DCBF3964E638C51)
 
 
 
@@ -874,9 +874,9 @@ struct ActionSheetExample {
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-该示例通过[ActionSheetOptions](#actionsheetoptions对象说明)中的systemMaterial属性设置组件的系统材质，实现沉浸光感效果。
+该示例通过[ActionSheetOptions](#actionsheetoptions对象说明)中的systemMaterial属性设置组件的系统材质，实现沉浸光感效果。设置系统材质后，ActionSheet弹出过程中会有非线性形变和边缘流光。
 
-组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
+该示例配图为高算力设备强档效果，组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
 
 从API版本26.0.0开始，在[ActionSheetOptions](#actionsheetoptions对象说明)中新增了systemMaterial属性。
 
@@ -934,10 +934,10 @@ struct ActionSheetExample {
 未设置系统材质时：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/QAd3yjJ9Ti6XhuDznx4BEw/zh-cn_image_0000002717772996.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=3AC1FF9B1EEC9EC66B23487D6C39AF7A72D9FA8992ABE992E143AD34A441D6CF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/wm8LK4k6SmeDLoTY7VvYfQ/zh-cn_image_0000002749335134.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013106Z&HW-CC-Expire=86400&HW-CC-Sign=5CE572A150FEB21B1F1F9A705DD6A1BA179BCDE4F5AE5A7CBBC7C9CDAEBF49C9)
 
 
 设置系统材质后：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/5A493L0VSxGw-pNjqXQA7w/zh-cn_image_0000002717613064.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=F1ED2061D3AB62B8C6B4F0E8A35F3B38F76A6A027702A9AAAFAD2BCA0BAD51AC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/GyDVV5_hTB-VUhRYs-gVgg/zh-cn_image_0000002749495018.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013106Z&HW-CC-Expire=86400&HW-CC-Sign=A978ABB7DAA184C98E37D64746BF390E0C505F8FB05DE69A6BBB93D610294D74)

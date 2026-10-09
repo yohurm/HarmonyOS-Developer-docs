@@ -851,7 +851,6 @@ com.samples.mindsporelitecdemoasr successfully launched...
 
 | 初始页面 | 点击识别示例音频按钮后 |
 | --- | --- |
-|  |  |
 
 
 

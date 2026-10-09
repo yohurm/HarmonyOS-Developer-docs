@@ -1,6 +1,6 @@
 # JsLeakWatcher开发实践
 
-更新时间：2026-09-03 02:56:00
+更新时间：2026-09-15 02:12:10
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-js-leak-watcher
 
@@ -14,8 +14,8 @@ ArkTS对象内存泄漏，通常会带来以下影响：
 3. 功耗：系统频繁GC会消耗大量CPU资源，持续高占用会导致设备发热，加速电量消耗。
 4. 功能：部分泄漏会因对象引用残留间接导致功能异常（如ArkUI组件状态错乱、资源冲突、回调重复执行等）。
  
-
  
+
 本文将介绍以下内容：
  
 - [JsLeakWatcher简介](#section1942942918444)
@@ -36,8 +36,8 @@ ArkTS对象内存泄漏，通常会带来以下影响：
  
 开发者可将生成的泄漏信息文件（包括rawheap文件和jsleaklist文件，详细参考[生成文件类型介绍](#section1528540111118)）导入IDE（DevEco Studio 6.0.0起均支持），进行关联分析。通过泄漏对象列表中的泄漏对象直接跳转到引用链，加速找到持有该泄漏对象的根GC_ROOT，提升泄漏问题闭环效率，降低定界定位成本。
  
-
  
+
 [@ohos.hiviewdfx.jsLeakWatcher](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-jsleakwatcher)提供了清晰、易用的ArkTS接口，主要功能如下：
  1. 定期对目标应用执行一次垃圾回收操作（FullGC），尝试回收当前所有根不可达的ArkTS对象（未被GC_ROOT对象持有的ArkTS对象）。
 2. 当执行完垃圾回收操作后，若框架检测到仍有未被回收的ArkTS对象，则立即生成此刻的ArkTS堆快照（rawheap）文件及泄漏对象列表（jsleaklist）文件，并存放在应用沙箱内。
@@ -116,8 +116,8 @@ hdc shell "param set hiviewdfx.hichecker.jsleakwatcher.leak.check enable.com.exa
 
  
  
-
  
+
 
 ## 场景案例
 
@@ -198,20 +198,20 @@ jsLeakWatcher.enableLeakWatcher(false, config, () => {});
   查看[应用对象名称解析](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-snapshot-basic-operations#section17661924162612)数据以及泄漏对象对应代码行号：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/hu5sIWfFSYuYodt8n5bKNw/zh-cn_image_0000002533197979.png?HW-CC-KV=V1&HW-CC-Date=20260911T072524Z&HW-CC-Expire=86400&HW-CC-Sign=08EF7E192EC96D0E9D5C3E90B7982F7E2757D94EDC14BFEC0B42C8272CC4C524)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/bkHS7QKtQ1m3L4h3L9oKQg/zh-cn_image_0000002533197979.png?HW-CC-KV=V1&HW-CC-Date=20261009T012646Z&HW-CC-Expire=86400&HW-CC-Sign=A3CAD64BA10B000202044B8E8D715804DCC099E0CA860236A9923355F018F200)
 
 
   查看泄漏对象的[节点属性与引用链](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-snapshot-basic-operations#section1964818525439)：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/O_qRdHW6T3OUmF7kJXMDPg/zh-cn_image_0000002533077931.png?HW-CC-KV=V1&HW-CC-Date=20260911T072524Z&HW-CC-Expire=86400&HW-CC-Sign=EA637A52D6486980647BBCEDE5E6461532F6D99FF486A69B3A469D95668EA49D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/nJViz-ciRkSe01TP5eomiQ/zh-cn_image_0000002533077931.png?HW-CC-KV=V1&HW-CC-Date=20261009T012646Z&HW-CC-Expire=86400&HW-CC-Sign=CC35200E93AFF0732879EC9E90EA16E342F20129C3D371AED351BFD8A4625C59)
 
 
   DevEco支持导入jsleaklist文件的约束限制参考：[离线导入内存快照](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-snapshot-basic-operations#section6760173514388)。
 
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/uE6R2cP7T62Py5szdgGx5w/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072524Z&HW-CC-Expire=86400&HW-CC-Sign=44C5D91E2A5CE4799BA530D26E6483CF8B92C7071109962B1150797E6A1C4504)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/stvZyf3MQ9O4au7dk-312g/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20261009T012646Z&HW-CC-Expire=86400&HW-CC-Sign=9CD8775722D29EB012B32A5657FD855BEBFC45DAF9332286FC52CAE40112EFB2)
  
 
 JsLeakWatcher对应用性能有影响，仅适用于开发调试和压力测试阶段。在应用上架前，请确保不使用JsLeakWatcher。

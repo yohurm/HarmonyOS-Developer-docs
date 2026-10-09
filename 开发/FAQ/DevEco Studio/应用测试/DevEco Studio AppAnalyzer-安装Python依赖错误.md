@@ -1,42 +1,62 @@
 # DevEco Studio AppAnalyzer-安装Python依赖错误
 
-更新时间：2026-07-15 01:45:01
+更新时间：2026-09-17 11:03:56
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-test-10
 
-#### 问题现象
+## 问题现象
 
 安装Python依赖报错。
  
  
 
-#### DevEco Studio  6.0.2及以上版本
+## DevEco Studio  6.0.2及以上版本
 
  
 
-#### 可能原因
+### 可能原因一
 
 DevEco Studio 代理配置不正确。
  
  
 
-#### 解决措施
+### 解决措施
 
 请点击  DevEco Studio 文件 > 设置 > 外观和行为  > 系统设置 > Http 代理，检查代理配置。
  
  
 
-#### DevEco Studio  6.0.2以下版本
+### 可能原因二
+
+环境变量导致Python运行异常。
+ 
+ 
+
+### 解决措施
+
+移除以下环境变量。
+ 
+```text
+SSLKEYLOGFILE
+PYTHONHOME
+OPENSSL_CONF、OPENSSL_MODULES
+SSL_CERT_FILE、SSL_CERT_DIR
+OPENSSL_ROOT_DIR、OPENSSL_INCLUDE_DIR、OPENSSL_LIB_DIR
+```
+ 
+ 
+
+## DevEco Studio  6.0.2以下版本
 
  
 
-#### 可能原因一
+### 可能原因一
 
 pip配置问题。
  
  
 
-#### 解决措施
+### 解决措施
 1. 修改pip配置。pip的配置文件位于用户根目录下的：~/.pip/pip.conf（Windows路径为：C:\Users\&lt;UserName&gt;\pip\pip.ini*）。 开发者可以配置如下内容：
 
   
@@ -68,37 +88,37 @@ pip config list
  
  
 
-#### 可能原因二
+### 可能原因二
 
 Win系统卸载Python时有残留。
  
  
 
-#### 解决措施
+### 解决措施
 
 Win系统卸载Python时未删除Python安装目录，需要清理Python的安装目录。
  
  
 
-#### 可能原因三
+### 可能原因三
 
 无外网访问权限。
  
  
 
-#### 解决措施
+### 解决措施
 
 冷启动、白块检测、UX检测需要网络下载依赖，需更换有外网访问权限的网络。
  
  
 
-#### 可能原因四
+### 可能原因四
 
 paddlepaddle==2.6.1已经日落，导致pip安装失败。
  
  
 
-#### 解决措施
+### 解决措施
 
 MAC：
  
@@ -125,18 +145,20 @@ cd python_dir_xxxx
 ```
  
 
-#### 可能原因五
+### 可能原因五
 
 Python兼容性问题。
  
  
 
-#### 解决措施
+### 解决措施
 
 Python与某些指定版本的依赖不兼容，支持的版本为**Python 3.9 ~3.12**，推荐**Python 3.11.7。**如果Python最新的版本与一些依赖不兼容，建议卸载Python并安装推荐版本或者更新[DevEco Studio](https://developer.huawei.com/consumer/cn/deveco-studio/)。
  
   
+
 | 分类 | 三方库 | DevEco Studio 5.0.x | DevEco Studio 5.1.x | DevEco Studio 6.0.x |
+| --- | --- | --- | --- | --- |
 | 冷启动&&白块检测 | Flask | 3.0.3 | 3.0.3 | 3.0.3 |
 | 冷启动&&白块检测 | numpy | 1.26.4 | 1.26.4 | 1.26.4 |
 | 冷启动&&白块检测 | onnxruntime | 1.19.2 | 1.19.2 | 1.19.2 |

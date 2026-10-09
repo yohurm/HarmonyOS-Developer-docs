@@ -1,6 +1,6 @@
 # Class (WebviewController)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -370,9 +370,9 @@ struct WebComponent {
 ```
 
 加载本地网页，加载本地资源文件有三种方式。
+1. $rawfile方式。
 
-1.$rawfile方式。
-
+  
 ```ArkTS
 // xxx.ets
 import { webview } from '@kit.ArkWeb';
@@ -400,10 +400,11 @@ struct WebComponent {
 }
 ```
 
-2.resource协议。
+2. resource协议。
 
-使用 resource://rawfile/ 协议前缀可以避免常规 \$rawfile 方式在处理带有“#”路由链接时URL会被“#”截断的问题。当URL中包含“#”号时，“#”后面的内容会被视为锚点（fragment）。
+  使用 resource://rawfile/ 协议前缀可以避免常规 \$rawfile 方式在处理带有“#”路由链接时URL会被“#”截断的问题。当URL中包含“#”号时，“#”后面的内容会被视为锚点（fragment）。
 
+  
 ```ArkTS
 // xxx.ets
 import { webview } from '@kit.ArkWeb';
@@ -430,9 +431,9 @@ struct WebComponent {
   }
 }
 ```
-
 在“src\main\resources\rawfile”文件夹下创建index.html：
 
+  
 ```text
 <!-- index.html -->
 <!DOCTYPE html>
@@ -462,10 +463,11 @@ struct WebComponent {
 </html>
 ```
 
-3.通过沙箱路径加载本地文件，可以参考[web](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-page-loading-with-web-components#加载本地页面)加载沙箱路径的示例代码。
+3. 通过沙箱路径加载本地文件，可以参考[web](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-page-loading-with-web-components#加载本地页面)加载沙箱路径的示例代码。
 
-加载的html文件。
+  加载的html文件。
 
+  
 ```text
 <!-- index.html -->
 <!DOCTYPE html>
@@ -475,6 +477,7 @@ struct WebComponent {
   </body>
 </html>
 ```
+
 
 
 
@@ -1455,7 +1458,7 @@ runJavaScript(script: string, callback : AsyncCallback&lt;string&gt;): void
 在当前显示页面的上下文中异步执行JavaScript脚本，脚本执行的结果将通过异步回调方式返回。此方法必须在用户界面（UI）线程上使用 ，并且回调也将在用户界面（UI）线程上调用。
 
 > [!NOTE]
-> 跨导航操作（如loadUrl）时，JavaScript状态将不再保留。例如，调用loadUrl前定义的全局变量和函数在加载的页面中将不存在。 建议应用程序使用registerJavaScriptProxy来确保JavaScript状态能够在页面导航间保持。 目前不支持传递对象，支持传递结构体。 执行异步方法无法获取返回值，需要根据具体情境判断是否使用同步或异步方式。 前端页面传到应用侧的string数据类型会被视为JSON格式的数据，需要调用JSON.parse反序列化。
+> 跨导航操作（如loadUrl）时，JavaScript状态将不再保留。例如，调用loadUrl前定义的全局变量和函数在加载的页面中将不存在。 建议应用程序使用registerJavaScriptProxy来确保JavaScript状态能够在页面导航间保持。 目前不支持传递对象，支持传递结构体。 执行异步方法无法获取返回值，需要根据具体情境判断是否使用同步或异步方式。 前端页面传到应用侧的string数据类型会被视为JSON格式的数据，需要调用JSON.parse反序列化。 多次调用runJavaScript时，脚本按调用顺序依次执行，但回调结果的返回顺序不保证与调用顺序一致。
 
 
 **系统能力：** SystemCapability.Web.Webview.Core
@@ -1557,7 +1560,7 @@ runJavaScript(script: string): Promise&lt;string&gt;
 在当前显示页面的上下文中异步执行JavaScript脚本，脚本执行的结果将通过Promise方式返回。此方法必须在用户界面（UI）线程上使用 ，并且回调也将在用户界面（UI）线程上调用。
 
 > [!NOTE]
-> 跨导航操作（如loadUrl）时，JavaScript状态 将不再保留，例如，调用loadUrl前定义的全局变量和函数在加载的页面中将不存在。 建议应用程序使用registerJavaScriptProxy来确保JavaScript状态能够在页面导航间保持。 目前不支持传递对象，支持传递结构体。 执行异步方法无法获取返回值，需要根据具体情境判断是否使用同步或异步方式。 前端页面传到应用侧的string数据类型会被视为JSON格式的数据，需要调用JSON.parse反序列化。
+> 跨导航操作（如loadUrl）时，JavaScript状态将不再保留，例如，调用loadUrl前定义的全局变量和函数在加载的页面中将不存在。 建议应用程序使用registerJavaScriptProxy来确保JavaScript状态能够在页面导航间保持。 目前不支持传递对象，支持传递结构体。 执行异步方法无法获取返回值，需要根据具体情境判断是否使用同步或异步方式。 前端页面传到应用侧的string数据类型会被视为JSON格式的数据，需要调用JSON.parse反序列化。 多次调用runJavaScript时，脚本按调用顺序依次执行，但Promise结果的返回顺序不保证与调用顺序一致。
 
 
 **系统能力：** SystemCapability.Web.Webview.Core
@@ -1660,7 +1663,7 @@ runJavaScriptExt(script: string | ArrayBuffer, callback : AsyncCallback&lt;JsMes
 异步执行JavaScript脚本，并通过回调方式返回脚本执行的结果。runJavaScriptExt需要在loadUrl完成后，比如onPageEnd中调用。
 
 > [!NOTE]
-> 前端页面传到应用侧的string数据类型会被视为JSON格式的数据，需要调用JSON.parse反序列化。
+> 前端页面传到应用侧的string数据类型会被视为JSON格式的数据，需要调用JSON.parse反序列化。 多次调用runJavaScriptExt时，脚本按调用顺序依次执行，但回调结果的返回顺序不保证与调用顺序一致。
 
 
 **系统能力：** SystemCapability.Web.Webview.Core
@@ -1895,7 +1898,7 @@ runJavaScriptExt(script: string | ArrayBuffer): Promise&lt;JsMessageExt&gt;
 异步执行JavaScript脚本，并通过Promise方式返回脚本执行的结果。runJavaScriptExt需要在loadUrl完成后，比如[onPageEnd](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-events#onpageend)中调用。
 
 > [!NOTE]
-> 前端页面传到应用侧的string数据类型会被视为JSON格式的数据，需要调用JSON.parse反序列化。
+> 前端页面传到应用侧的string数据类型会被视为JSON格式的数据，需要调用JSON.parse反序列化。 多次调用runJavaScriptExt时，脚本按调用顺序依次执行，但Promise结果的返回顺序不保证与调用顺序一致。
 
 
 **系统能力：** SystemCapability.Web.Webview.Core
@@ -2238,6 +2241,10 @@ zoom(factor: number): void
 
 调整当前网页的缩放比例，[zoomAccess](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-attributes#zoomaccess)需为true。
 
+> [!NOTE]
+> 入参超出取值范围时，本次调用不生效，网页缩放比例保持不变。 当网页缩放比例已达到最大值或最小值时，继续同向缩放的调用同样不生效。
+
+
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
@@ -2245,7 +2252,7 @@ zoom(factor: number): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| factor | number | 是 | 基于当前网页所需调整的相对缩放比例，入参要求大于0，当入参为1时为默认加载网页的缩放比例，入参小于1为缩小，入参大于1为放大。 取值范围：(0，100]。 |
+| factor | number | 是 | 缩放倍数，与当前网页缩放比例相乘得到新的缩放比例。入参为1时缩放比例保持不变，入参小于1为缩小，入参大于1为放大。 取值范围：(0，100]。 |
 
 
 **错误码：**
@@ -4669,9 +4676,9 @@ serializeWebState(): Uint8Array
 
 
 **示例：**
+1. 对文件的操作需要导入文件管理模块，详情请参考[文件管理](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-file-fs)。
 
-1.对文件的操作需要导入文件管理模块，详情请参考[文件管理](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-file-fs)。
-
+  
 ```ArkTS
 // xxx.ets
 import { webview } from '@kit.ArkWeb';
@@ -4707,10 +4714,11 @@ struct WebComponent {
 }
 ```
 
-2.修改EntryAbility.ets。
+2. 修改EntryAbility.ets。
 
-获取应用缓存文件路径。
+  获取应用缓存文件路径。
 
+  
 ```ArkTS
 // xxx.ets
 import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
@@ -4722,6 +4730,7 @@ export default class EntryAbility extends UIAbility {
     }
 }
 ```
+
 
 
 
@@ -4758,9 +4767,9 @@ restoreWebState(state: Uint8Array): void
 
 
 **示例：**
+1. 对文件的操作需要导入文件管理模块，详情请参考[文件管理](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-file-fs)。
 
-1.对文件的操作需要导入文件管理模块，详情请参考[文件管理](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-file-fs)。
-
+  
 ```ArkTS
 // xxx.ets
 import { webview } from '@kit.ArkWeb';
@@ -4805,10 +4814,11 @@ struct WebComponent {
 }
 ```
 
-2.修改EntryAbility.ets。
+2. 修改EntryAbility.ets。
 
-获取应用缓存文件路径。
+  获取应用缓存文件路径。
 
+  
 ```ArkTS
 // xxx.ets
 import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
@@ -4820,6 +4830,7 @@ export default class EntryAbility extends UIAbility {
   }
 }
 ```
+
 
 
 
@@ -9644,57 +9655,63 @@ setPathAllowingUniversalAccess(pathList: Array&lt;string&gt;): void
 设置一个路径列表，当file协议访问该路径列表中的资源时，允许跨域访问本地文件，也允许跨域访问其他在线资源。此外，当设置了路径列表时，file协议仅允许访问路径列表中的资源。典型使用场景：用于需要允许Web组件跨域访问本地资源文件，同时限制访问范围以保证安全的场景。（[fileAccess](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-attributes#fileaccess)的行为将会被此接口行为覆盖）。
 
 setPathAllowingUniversalAccess放开目录的跨域访问限制是一个高风险操作。基于最小权限原则，当前el1，el2放开的路径是固定的，路径列表中的路径应符合以下任一路径格式：
+1. 应用文件目录的子目录（应用文件目录通过Ability Kit中的[Context.filesDir](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-context#属性)获取），例如：
 
-1.应用文件目录的子目录（应用文件目录通过Ability Kit中的[Context.filesDir](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-context#属性)获取），例如：
-
+  
  - /data/storage/el2/base/files/example
- - /data/storage/el2/base/haps/entry/files/example
 
+2. /data/storage/el2/base/haps/entry/files/example
 
-2.应用资源目录及其子目录（应用资源目录通过Ability Kit中的[Context.resourceDir](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-context#属性)获取），例如：
+3. 应用资源目录及其子目录（应用资源目录通过Ability Kit中的[Context.resourceDir](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-context#属性)获取），例如：
 
- - /data/storage/el1/bundle/entry/resources/resfile
- - /data/storage/el1/bundle/entry/resources/resfile/example
+  
+/data/storage/el1/bundle/entry/resources/resfile
 
+4. /data/storage/el1/bundle/entry/resources/resfile/example
 
-3.从API version 21开始，还包括了应用缓存目录及其子目录（应用缓存目录通过Ability Kit中的[Context.cacheDir](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-context#属性)获取），例如：
+5. 从API version 21开始，还包括了应用缓存目录及其子目录（应用缓存目录通过Ability Kit中的[Context.cacheDir](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-context#属性)获取），例如：
 
- - /data/storage/el2/base/cache
- - /data/storage/el2/base/haps/entry/cache/example
- - 设置的目录路径中，不允许包含cache/web，否则会抛出异常码401。如果设置目录路径是cache，cache/web也不允许访问。
+  
+/data/storage/el2/base/cache
 
+6. /data/storage/el2/base/haps/entry/cache/example
 
-4.从API version 21开始，还包括了应用临时目录及其子目录（应用临时目录通过Ability Kit中的[Context.tempDir](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-context#属性)获取），例如：
+7. 设置的目录路径中，不允许包含cache/web，否则会抛出异常码401。如果设置目录路径是cache，cache/web也不允许访问。
 
- - /data/storage/el2/base/temp
- - /data/storage/el2/base/haps/entry/temp/example
+8. 从API version 21开始，还包括了应用临时目录及其子目录（应用临时目录通过Ability Kit中的[Context.tempDir](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-context#属性)获取），例如：
 
+  
+/data/storage/el2/base/temp
 
-当路径列表中有其中一个路径不满足以上条件之一，则会抛出异常码401，并且设置路径列表失败。当设置的路径列表为空，则file协议可访问范围以[fileAccess](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-attributes#fileaccess)的行为为准。
+9. /data/storage/el2/base/haps/entry/temp/example
 
-**系统能力：** SystemCapability.Web.Webview.Core
+  当路径列表中有其中一个路径不满足以上条件之一，则会抛出异常码401，并且设置路径列表失败。当设置的路径列表为空，则file协议可访问范围以[fileAccess](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-attributes#fileaccess)的行为为准。
 
-**参数：**
+  **系统能力：** SystemCapability.Web.Webview.Core
 
+  **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
+
 | --- | --- | --- | --- |
+
 | pathList | Array&lt;string&gt; | 是 | 路径列表 |
 
+  **错误码：**
 
-**错误码：**
-
-以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
-
+  以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
 | 错误码ID | 错误信息 |
+
 | --- | --- |
+
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Parameter string is too long. 3.Parameter verification failed. |
+
 | 17100001 | Init error. The WebviewController must be associated with a Web component. |
 
+  **示例：**
 
-**示例：**
-
+  
 ```ArkTS
 // xxx.ets
 import { webview } from '@kit.ArkWeb';
@@ -9728,9 +9745,9 @@ struct WebComponent {
   }
 }
 ```
-
 加载的html文件，位于应用资源目录resource/resfile/index.html。
 
+  
 ```xml
 <!-- index.html -->
 <!DOCTYPE html>
@@ -9775,9 +9792,9 @@ struct WebComponent {
 
 </html>
 ```
-
 html中使用file协议通过XMLHttpRequest跨域访问本地js文件，js文件位于resource/resfile/js/script.js。
 
+  
 ```text
 const body = document.body;
 const element = document.createElement('div');
@@ -9786,30 +9803,31 @@ body.appendChild(element);
 ```
 
 
+  
 
-## enableBackForwardCache12+
+  ## enableBackForwardCache12+
 
+  **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+  static enableBackForwardCache(features: BackForwardCacheSupportedFeatures): void
 
-static enableBackForwardCache(features: BackForwardCacheSupportedFeatures): void
+  开启Web组件前进后退缓存功能，通过参数指定是否允许使用特定的页面进入前进后退缓存。
 
-开启Web组件前进后退缓存功能，通过参数指定是否允许使用特定的页面进入前进后退缓存。
+  需要在[initializeWebEngine()](#initializewebengine)初始化内核之前调用。
 
-需要在[initializeWebEngine()](#initializewebengine)初始化内核之前调用。
+  **系统能力：** SystemCapability.Web.Webview.Core
 
-**系统能力：** SystemCapability.Web.Webview.Core
-
-**参数：**
-
+  **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
+
 | --- | --- | --- | --- |
+
 | features | BackForwardCacheSupportedFeatures | 是 | 允许使用特定的页面进入前进后退缓存中。 |
 
+  **示例：**
 
-**示例：**
-
+  
 ```ArkTS
 // EntryAbility.ets
 import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
@@ -9832,38 +9850,39 @@ export default class EntryAbility extends UIAbility {
 ```
 
 
+  
 
-## setBackForwardCacheOptions12+
+  ## setBackForwardCacheOptions12+
 
+  **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+  setBackForwardCacheOptions(options: BackForwardCacheOptions): void
 
-setBackForwardCacheOptions(options: BackForwardCacheOptions): void
+  可以设置Web组件中前进后退缓存的相关选项。
 
-可以设置Web组件中前进后退缓存的相关选项。
+  **系统能力：** SystemCapability.Web.Webview.Core
 
-**系统能力：** SystemCapability.Web.Webview.Core
-
-**参数：**
-
+  **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
+
 | --- | --- | --- | --- |
+
 | options | BackForwardCacheOptions | 是 | 用来控制Web组件前进后退缓存相关选项。 |
 
+  **错误码：**
 
-**错误码：**
-
-以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
-
+  以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
 
 | 错误码ID | 错误信息 |
+
 | --- | --- |
+
 | 17100001 | Init error. The WebviewController must be associated with a Web component. |
 
+  **示例：**
 
-**示例：**
-
+  
 ```text
 // xxx.ts
 import { webview } from '@kit.ArkWeb';
@@ -9898,38 +9917,39 @@ struct Index {
 ```
 
 
+  
 
-## trimMemoryByPressureLevel14+
+  ## trimMemoryByPressureLevel14+
 
+  **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+  trimMemoryByPressureLevel(level: PressureLevel): void
 
-trimMemoryByPressureLevel(level: PressureLevel): void
+  根据指定的内存压力等级，主动清理Web组件占用的缓存。
 
-根据指定的内存压力等级，主动清理Web组件占用的缓存。
+  **系统能力：** SystemCapability.Web.Webview.Core
 
-**系统能力：** SystemCapability.Web.Webview.Core
-
-**参数：**
-
+  **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
+
 | --- | --- | --- | --- |
+
 | level | PressureLevel | 是 | 需要清理内存的内存等级。 |
 
+  **错误码：**
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
-
+  以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
 | 错误码ID | 错误信息 |
+
 | --- | --- |
+
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Parameter string is too long. 3.Parameter verification failed. |
 
+  **示例：**
 
-**示例：**
-
+  
 ```ArkTS
 // xxx.ets
 import { webview } from '@kit.ArkWeb';
@@ -9960,40 +9980,43 @@ struct WebComponent {
 ```
 
 
+  
 
-## createPdf14+
+  ## createPdf14+
 
+  **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+  createPdf(configuration: PdfConfiguration, callback: AsyncCallback&lt;PdfData&gt;): void
 
-createPdf(configuration: PdfConfiguration, callback: AsyncCallback&lt;PdfData&gt;): void
+  异步callback方式获取指定网页的数据流。
 
-异步callback方式获取指定网页的数据流。
+  **系统能力：** SystemCapability.Web.Webview.Core
 
-**系统能力：** SystemCapability.Web.Webview.Core
-
-**参数：**
-
+  **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
+
 | --- | --- | --- | --- |
+
 | configuration | PdfConfiguration | 是 | 生成PDF所需参数。 |
+
 | callback | AsyncCallback&lt;PdfData&gt; | 是 | 回调返回网页PDF数据流。 |
 
+  **错误码：**
 
-**错误码：**
-
-以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
-
+  以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
 | 错误码ID | 错误信息 |
+
 | --- | --- |
+
 | 401 | Invalid input parameter. |
+
 | 17100001 | Init error. The WebviewController must be associated with a Web component. |
 
+  **示例**:
 
-**示例**:
-
+  
 ```text
 import { fileIo } from '@kit.CoreFileKit';
 import { webview } from '@kit.ArkWeb';
@@ -10051,47 +10074,49 @@ struct Index {
 ```
 
 
+  
 
-## createPdf14+
+  ## createPdf14+
 
+  **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+  createPdf(configuration: PdfConfiguration): Promise&lt;PdfData&gt;
 
-createPdf(configuration: PdfConfiguration): Promise&lt;PdfData&gt;
+  以Promise方式异步获取指定网页的数据流。
 
-以Promise方式异步获取指定网页的数据流。
+  **系统能力：** SystemCapability.Web.Webview.Core
 
-**系统能力：** SystemCapability.Web.Webview.Core
-
-**参数：**
-
+  **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
+
 | --- | --- | --- | --- |
+
 | configuration | PdfConfiguration | 是 | 生成PDF所需参数。 |
 
-
-**返回值：**
-
+  **返回值：**
 
 | 类型 | 说明 |
+
 | --- | --- |
+
 | Promise&lt;PdfData&gt; | Promise实例，返回网页PDF数据流（PdfData对象，包含ArrayBuffer表示的PDF二进制数据）。 |
 
+  **错误码：**
 
-**错误码：**
-
-以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
-
+  以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
 | 错误码ID | 错误信息 |
+
 | --- | --- |
+
 | 401 | Invalid input parameter. |
+
 | 17100001 | Init error. The WebviewController must be associated with a Web component. |
 
+  **示例**:
 
-**示例**:
-
+  
 ```text
 import { fileIo } from '@kit.CoreFileKit';
 import { webview } from '@kit.ArkWeb';
@@ -10144,28 +10169,29 @@ struct Index {
 ```
 
 
+  
 
-## getScrollOffset13+
+  ## getScrollOffset13+
 
+  **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+  getScrollOffset(): ScrollOffset
 
-getScrollOffset(): ScrollOffset
+  获取网页当前的滚动偏移量（包含过滚动偏移量）。
 
-获取网页当前的滚动偏移量（包含过滚动偏移量）。
+  **系统能力：** SystemCapability.Web.Webview.Core
 
-**系统能力：** SystemCapability.Web.Webview.Core
-
-**返回值**
-
+  **返回值**
 
 | 类型 | 说明 |
+
 | --- | --- |
+
 | ScrollOffset | 网页当前的滚动偏移量（包含过滚动偏移量），包含x和y坐标，单位为vp。 |
 
+  **示例：**
 
-**示例：**
-
+  
 ```ArkTS
 // xxx.ets
 import { webview } from '@kit.ArkWeb';
@@ -10218,9 +10244,9 @@ struct WebComponent {
   }
 }
 ```
-
 加载的html文件。
 
+  
 ```text
 <!-- index.html -->
 <!DOCTYPE html>
@@ -10245,38 +10271,39 @@ Scroll Test
 ```
 
 
+  
 
-## getPageOffset20+
+  ## getPageOffset20+
 
+  **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+  getPageOffset(): ScrollOffset
 
-getPageOffset(): ScrollOffset
+  获取网页当前的滚动偏移量（不包含过滚动偏移量）。
 
-获取网页当前的滚动偏移量（不包含过滚动偏移量）。
+  **系统能力：** SystemCapability.Web.Webview.Core
 
-**系统能力：** SystemCapability.Web.Webview.Core
-
-**返回值**
-
+  **返回值**
 
 | 类型 | 说明 |
+
 | --- | --- |
+
 | ScrollOffset | 网页当前的滚动偏移量（不包含过滚动偏移量），包含x和y坐标，单位为vp。 |
 
+  **错误码：**
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
-
+  以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
 | 错误码ID | 错误信息 |
+
 | --- | --- |
+
 | 801 | Capability not supported. |
 
+  **示例：**
 
-**示例：**
-
+  
 ```ArkTS
 // xxx.ets
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -10337,38 +10364,39 @@ struct WebComponent {
 ```
 
 
+  
 
-## getLastHitTest18+
+  ## getLastHitTest18+
 
+  **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+  getLastHitTest(): HitTestValue
 
-getLastHitTest(): HitTestValue
+  获取上一次被点击区域的元素信息。
 
-获取上一次被点击区域的元素信息。
+  **系统能力：** SystemCapability.Web.Webview.Core
 
-**系统能力：** SystemCapability.Web.Webview.Core
-
-**返回值：**
-
+  **返回值：**
 
 | 类型 | 说明 |
+
 | --- | --- |
+
 | HitTestValue | 点击区域的元素信息。 |
 
+  **错误码：**
 
-**错误码：**
-
-以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
-
+  以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
 
 | 错误码ID | 错误信息 |
+
 | --- | --- |
+
 | 17100001 | Init error. The WebviewController must be associated with a Web component. |
 
+  **示例：**
 
-**示例：**
-
+  
 ```ArkTS
 // xxx.ets
 import { webview } from '@kit.ArkWeb';
@@ -10398,30 +10426,31 @@ struct WebComponent {
 ```
 
 
+  
 
-## getAttachState20+
+  ## getAttachState20+
 
+  **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+  getAttachState(): ControllerAttachState
 
-getAttachState(): ControllerAttachState
+  查询当前WebViewController是否绑定一个Web组件。
 
-查询当前WebViewController是否绑定一个Web组件。
+  **系统能力：** SystemCapability.Web.Webview.Core
 
-**系统能力：** SystemCapability.Web.Webview.Core
-
-**返回值：**
-
+  **返回值：**
 
 | 类型 | 说明 |
+
 | --- | --- |
+
 | ControllerAttachState | WebViewController与Web组件的绑定状态。 |
 
+  **示例：**
 
-**示例：**
+  点击Button可以获取当前WebViewController的绑定状态并输出日志。
 
-点击Button可以获取当前WebViewController的绑定状态并输出日志。
-
+  
 ```ArkTS
 // xxx.ets
 import { webview } from '@kit.ArkWeb';
@@ -10453,57 +10482,59 @@ struct WebComponent {
 ```
 
 
+  
 
-## on('controllerAttachStateChange')20+
+  ## on('controllerAttachStateChange')20+
 
+  **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+  on(type: 'controllerAttachStateChange', callback: Callback&lt;ControllerAttachState&gt;): void
 
-on(type: 'controllerAttachStateChange', callback: Callback&lt;ControllerAttachState&gt;): void
+  注册WebViewController绑定状态事件，通过Callback方式获取WebViewController绑定状态的变化通知。
 
-注册WebViewController绑定状态事件，通过Callback方式获取WebViewController绑定状态的变化通知。
+  **系统能力：** SystemCapability.Web.Webview.Core
 
-**系统能力：** SystemCapability.Web.Webview.Core
-
-**参数：**
-
+  **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
+
 | --- | --- | --- | --- |
+
 | type | string | 是 | 表示注册WebViewController绑定状态事件，固定为"controllerAttachStateChange"。 |
+
 | callback | Callback&lt;ControllerAttachState&gt; | 是 | WebViewController绑定状态改变时的回调函数。 |
 
+  **示例：**
 
-**示例：**
+  请参考[off](#offcontrollerattachstatechange20)。
 
-请参考[off](#offcontrollerattachstatechange20)。
+  
 
+  ## off('controllerAttachStateChange')20+
 
+  **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-## off('controllerAttachStateChange')20+
+  off(type: 'controllerAttachStateChange', callback?: Callback&lt;ControllerAttachState&gt;): void
 
+  取消WebViewController绑定状态事件的注册，取消后将不再接收Callback通知。
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+  **系统能力：** SystemCapability.Web.Webview.Core
 
-off(type: 'controllerAttachStateChange', callback?: Callback&lt;ControllerAttachState&gt;): void
-
-取消WebViewController绑定状态事件的注册，取消后将不再接收Callback通知。
-
-**系统能力：** SystemCapability.Web.Webview.Core
-
-**参数：**
-
+  **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
+
 | --- | --- | --- | --- |
+
 | type | string | 是 | 表示注册WebViewController绑定状态事件，固定为"controllerAttachStateChange"。 |
+
 | callback | Callback&lt;ControllerAttachState&gt; | 否 | WebViewController绑定状态发生改变时的回调函数，默认情况下不填写回调函数。如果填写了Callback，将仅取消注册该特定的回调。如果不填写Callback，将取消注册所有回调。 传入null或undefined时会抛出异常错误码401。 |
 
+  **示例：**
 
-**示例：**
+  on可以注册多个回调，当绑定状态改变后会获取当前的绑定状态并触发这些回调。off可以取消注册某个回调，也可以取消注册所有回调。
 
-on可以注册多个回调，当绑定状态改变后会获取当前的绑定状态并触发这些回调。off可以取消注册某个回调，也可以取消注册所有回调。
-
+  
 ```ArkTS
 // xxx.ets
 import { webview } from '@kit.ArkWeb';
@@ -10556,38 +10587,39 @@ struct WebComponent {
 ```
 
 
+  
 
-## waitForAttached20+
+  ## waitForAttached20+
 
+  **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+  waitForAttached(timeout: number):Promise&lt;ControllerAttachState&gt;
 
-waitForAttached(timeout: number):Promise&lt;ControllerAttachState&gt;
+  异步等待WebViewController与Web组件绑定完成，绑定完成或超时触发回调，通过Promise方式返回当前[ControllerAttachState](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-e#controllerattachstate20)状态。
 
-异步等待WebViewController与Web组件绑定完成，绑定完成或超时触发回调，通过Promise方式返回当前[ControllerAttachState](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-e#controllerattachstate20)状态。
+  **系统能力：** SystemCapability.Web.Webview.Core
 
-**系统能力：** SystemCapability.Web.Webview.Core
-
-**参数：**
-
+  **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
+
 | --- | --- | --- | --- |
+
 | timeout | number | 是 | 异步等待时长。 取值范围: [0, 65535] 单位: ms |
 
-
-**返回值：**
-
+  **返回值：**
 
 | 类型 | 说明 |
+
 | --- | --- |
+
 | Promise&lt;ControllerAttachState&gt; | Promise实例，返回当前ControllerAttachState状态。 |
 
+  **示例：**
 
-**示例：**
+  在初始化阶段设置WebViewController等待绑定完成，超时时间为1000ms。若绑定完成或者超时则会触发回调。
 
-在初始化阶段设置WebViewController等待绑定完成，超时时间为1000ms。若绑定完成或者超时则会触发回调。
-
+  
 ```ArkTS
 // xxx.ets
 import { webview } from '@kit.ArkWeb';
@@ -10624,17 +10656,18 @@ struct WebComponent {
 ```
 
 
+  
 
-## setWebDebuggingAccess20+
+  ## setWebDebuggingAccess20+
 
+  **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+  static setWebDebuggingAccess(webDebuggingAccess: boolean, port: number): void
 
-static setWebDebuggingAccess(webDebuggingAccess: boolean, port: number): void
+  设置是否启用无线网页调试功能，默认不开启。
 
-设置是否启用无线网页调试功能，默认不开启。
-
- - 当没有指定端口port时，该接口等同于[setWebDebuggingAccess](#setwebdebuggingaccess)接口，ArkWeb会启动一个本地domain socket监听。
+  
+当没有指定端口port时，该接口等同于[setWebDebuggingAccess](#setwebdebuggingaccess)接口，ArkWeb会启动一个本地domain socket监听。
  - 当指定了端口port时，ArkWeb会启动一个tcp socket监听。这时可以无线调试网页。详情请参考[无线调试](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-debugging-with-devtools#无线调试)。
 
 
@@ -11227,9 +11260,9 @@ struct WebComponent {
               let info = this.controller.getBlanklessInfoWithKey('https://www.example.com/page1');
               if (info.errCode == webview.WebBlanklessErrorCode.SUCCESS) {
                 if (info.similarity >= 0.5 && info.loadingTime < 1000) {
-                  this.controller.setBlanklessLoadingWithKey('http://www.example.com/page1', true);
+                  this.controller.setBlanklessLoadingWithKey('https://www.example.com/page1', true);
                 } else {
-                  this.controller.setBlanklessLoadingWithKey('http://www.example.com/page1', false);
+                  this.controller.setBlanklessLoadingWithKey('https://www.example.com/page1', false);
                 }
               } else {
                 console.info('getBlankless info err');
@@ -11308,9 +11341,9 @@ struct WebComponent {
               let info = this.controller.getBlanklessInfoWithKey('https://www.example.com/page1');
               if (info.errCode == webview.WebBlanklessErrorCode.SUCCESS) {
                 if (info.similarity >= 0.5 && info.loadingTime < 1000) {
-                  this.controller.setBlanklessLoadingWithKey('http://www.example.com/page1', true);
+                  this.controller.setBlanklessLoadingWithKey('https://www.example.com/page1', true);
                 } else {
-                  this.controller.setBlanklessLoadingWithKey('http://www.example.com/page1', false);
+                  this.controller.setBlanklessLoadingWithKey('https://www.example.com/page1', false);
                 }
               } else {
                 console.info('getBlankless info err');
@@ -11398,7 +11431,7 @@ struct WebComponent {
                     // 数据监控
                   },
                 };
-                this.controller.setBlanklessLoadingWithParams('http://www.example.com/page1', param);
+                this.controller.setBlanklessLoadingWithParams('https://www.example.com/page1', param);
               } else {
                 console.info('getBlankless info err');
               }
@@ -12813,7 +12846,6 @@ struct WebComponent {
 
 > [!NOTE]
 > 
-
 
 
 

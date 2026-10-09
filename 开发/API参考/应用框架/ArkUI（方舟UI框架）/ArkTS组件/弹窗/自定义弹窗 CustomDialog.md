@@ -1,6 +1,6 @@
 # 自定义弹窗 (CustomDialog)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-custom-dialog-box
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -1237,7 +1237,7 @@ struct Example3 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/It5oteRqQ4mn8e1gmzPIeg/zh-cn_image_0000002717613068.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=E001A8AC52206FFBBC8268A26C07E7BAAF643F152BD8DFF7EF48DAC907985D56)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/Q2Qf3DHwRQOlZOqluK2Q5A/zh-cn_image_0000002749495022.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013106Z&HW-CC-Expire=86400&HW-CC-Sign=51447C3AF6FE538FC0C71A7C51A92AFA7F88A82AEA02F246440466B268387AE9)
 
 
 
@@ -1330,7 +1330,7 @@ struct CustomDialogUser {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/oM0dSLZkTNKSerRKtl1tiA/zh-cn_image_0000002747293021.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=40A9DA9E019FFF1A41BAFFA8DE5BF0B7E3F4672CF9A32342FD6145051A6BC8C2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/uE2WUsA4R3eKvJiSWfqyLQ/zh-cn_image_0000002779094079.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013106Z&HW-CC-Expire=86400&HW-CC-Sign=C6A89C007D30F8E866824127BEE5F6905A1EC59CAB08D4DA43F1AFC29545D161)
 
 
 
@@ -1399,7 +1399,7 @@ struct CustomDialogUser {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/YPj1q7WwQBmfZ6AiqY1grw/zh-cn_image_0000002747212937.png?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=8CB1B21AE6E3D79354F28ED068B6BEDCAE838B5711E527FABAD2ACD4D6385EB0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/vPlHjTUZS4iDt1gMqEal-A/zh-cn_image_0000002778934223.png?HW-CC-KV=V1&HW-CC-Date=20261009T013106Z&HW-CC-Expire=86400&HW-CC-Sign=7D9BBD9FBB591EB3FA1BFF6B3912C670D47296346A676F47D0C41195585B24F5)
 
 
 
@@ -1469,7 +1469,7 @@ struct CustomDialogUser {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/fDg1azDOQbqD_i6Pr9ncSA/zh-cn_image_0000002717773002.png?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=37CC4EB543396EF3F1D8183259C3EF6F282114138D2C95F526A365B4655EDCE8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/RNK_ocUGSe2RuxangahUUQ/zh-cn_image_0000002749335140.png?HW-CC-KV=V1&HW-CC-Date=20261009T013106Z&HW-CC-Expire=86400&HW-CC-Sign=032B296C96CA83E8B3DCFE9C63B8F0CF9C49C31FF5610B75DA9853F389020238)
 
 
 
@@ -1543,7 +1543,7 @@ struct CustomDialogUser {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/NkzojCR4QBy-2SX52xwLUQ/zh-cn_image_0000002717613070.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=AEC782484492EA068DEB3C61513CD89CF182F9F33F7725403990A13D44593DE2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/oXGcQwd4SNeYRWDVXI-rOw/zh-cn_image_0000002749495024.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013106Z&HW-CC-Expire=86400&HW-CC-Sign=C1A9DBAFF88CDFB6E9CEE5793C32E672CE6ADFC5612D56B81AD1A1A69554E793)
 
 
 
@@ -1553,9 +1553,9 @@ struct CustomDialogUser {
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-该示例通过[systemMaterial](#customdialogcontrolleroptions对象说明)设置组件的系统材质，实现沉浸光感效果。
+该示例通过[systemMaterial](#customdialogcontrolleroptions对象说明)设置组件的系统材质，实现沉浸光感效果。设置系统材质后，CustomDialog弹出过程中会有非线性形变和边缘流光。
 
-组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
+该示例配图为高算力设备强档效果，组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
 
 从API版本26.0.0开始，在[CustomDialogControllerOptions](#customdialogcontrolleroptions对象说明)中新增了systemMaterial属性。
 
@@ -1614,10 +1614,10 @@ struct CustomDialogUser {
 未设置系统材质时：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/3BhpnyxHT1qxkSdNZU82sw/zh-cn_image_0000002747293023.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=5984C2B882F71E1D30812EFED14B33EC78A5C07EC8DDCFED8FA7D6317A250287)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/rnvHPxrQTteRtTWE6vd0wA/zh-cn_image_0000002779094081.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013106Z&HW-CC-Expire=86400&HW-CC-Sign=8831A5C842D3E660A19E2A4678113DC73727CB98A4964AB150A14C531788E3B5)
 
 
 设置系统材质后：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/qPOjc6wUSDKOWKs6L9384w/zh-cn_image_0000002747212939.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=B833CD886B638D6BFDFEC00ECD32BC4736DE8DE24E1768361C32940DB7C249FA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/dHTi8dFoQhSCSYSkmNfOcA/zh-cn_image_0000002778934225.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013106Z&HW-CC-Expire=86400&HW-CC-Sign=3B6986D7C300DDB540D38765CA0971B2E4A041480409A019684690C3E4F62ECF)

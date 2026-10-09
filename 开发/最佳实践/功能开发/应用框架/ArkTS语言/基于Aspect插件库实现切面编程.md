@@ -1,6 +1,6 @@
 # 基于Aspect插件库实现切面编程
 
-更新时间：2026-08-26 06:47:01
+更新时间：2026-09-15 02:12:10
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-aspect-implements-aop
 
@@ -172,8 +172,8 @@ struct CompA {
  
 **开发步骤**
  
-
  
+
 
 ![](assets/基于Aspect插件库实现切面编程/file-20260515114545667-1.png)
 

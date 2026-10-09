@@ -1,6 +1,6 @@
 # Chip
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-chip
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -84,8 +84,8 @@ ChipOptions定义Chip的样式及具体样式参数。
 | suffixSymbolOptions14+ | ChipSuffixSymbolGlyphOptions | 否 | 是 | symbol类型后缀图标的无障碍朗读功能属性及点击事件回调等。 默认值：不设置对应属性。 值为undefined时，按默认值处理。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
 | backgroundColor | ResourceColor | 否 | 是 | Chip背景颜色。 默认值：\$r('sys.color.ohos_id_color_button_normal')。 值为undefined时，按默认值处理。赋值为非法值时，背景颜色透明。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | activatedBackgroundColor12+ | ResourceColor | 否 | 是 | Chip激活态的背景颜色。 默认值：\$r('sys.color.ohos_id_color_emphasize')。 值为undefined时，按默认值处理。赋值为非法值时，背景颜色透明。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| backgroundSystemMaterial | uiMaterial.Material | 否 | 是 | 设置组件系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏子树，或横向Tabs的底部TabBar子树中，材质效果才会生效。适用于需要实现沉浸式背景效果、半透明磨砂效果等场景。不同材质具有不同的效果，能够影响组件的backgroundColor、border、shadow等视觉属性。 默认值：undefined 值为undefined时，不应用材质样式。 说明：当设置backgroundSystemMaterial时，应将backgroundColor设为Color.Transparent，否则会与系统材质冲突；当backgroundSystemMaterial为undefined时，backgroundColor属性生效。 起始版本： 26.0.0 模型约束： 此接口仅可在Stage模型下使用。 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 |
-| activatedBackgroundSystemMaterial | uiMaterial.Material | 否 | 是 | 设置组件激活状态下的系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏子树，或横向Tabs的底部TabBar子树中，材质效果才会生效。适用于需要激活状态下保持或切换材质效果的交互场景，如标签选中、状态切换等。不同材质具有不同的效果，能够影响组件的backgroundColor、border、shadow等视觉属性。 默认值：undefined 值为undefined时，不应用材质样式。 说明：当设置activatedBackgroundSystemMaterial时，应将activatedBackgroundColor设为Color.Transparent，否则会与系统材质冲突；当activatedBackgroundSystemMaterial为undefined时，activatedBackgroundColor属性生效。 起始版本： 26.0.0 模型约束： 此接口仅可在Stage模型下使用。 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| backgroundSystemMaterial | uiMaterial.Material | 否 | 是 | 设置组件系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏，或横向Tabs的底部TabBar中，沉浸光感效果才会生效。适用于需要实现沉浸式背景效果、半透明磨砂效果等场景。不同材质具有不同的效果，能够影响组件的backgroundColor、border、shadow等视觉属性。 默认值：undefined 值为undefined时，不应用材质样式。 说明：当设置backgroundSystemMaterial时，应将backgroundColor设为Color.Transparent，否则会与系统材质冲突；当backgroundSystemMaterial为undefined时，backgroundColor属性生效。 起始版本： 26.0.0 模型约束： 此接口仅可在Stage模型下使用。 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| activatedBackgroundSystemMaterial | uiMaterial.Material | 否 | 是 | 设置组件激活状态下的系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏，或横向Tabs的底部TabBar中，沉浸光感效果才会生效。适用于需要激活状态下保持或切换材质效果的交互场景，如标签选中、状态切换等。不同材质具有不同的效果，能够影响组件的backgroundColor、border、shadow等视觉属性。 默认值：undefined 值为undefined时，不应用材质样式。 说明：当设置activatedBackgroundSystemMaterial时，应将activatedBackgroundColor设为Color.Transparent，否则会与系统材质冲突；当activatedBackgroundSystemMaterial为undefined时，activatedBackgroundColor属性生效。 起始版本： 26.0.0 模型约束： 此接口仅可在Stage模型下使用。 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 |
 | borderRadius | Dimension | 否 | 是 | Chip背景圆角半径大小，不支持百分比，传入百分比时按默认值处理。 取值范围：[0, +∞) 默认值：\$r('sys.float.ohos_id_corner_radius_button')。 单位：vp 值为undefined时，按默认值处理。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | allowClose | boolean | 否 | 是 | 关闭图标是否显示。 默认值：true true：关闭图标显示；false：关闭图标不显示。 值为undefined时，按默认值处理。 说明：当suffixSymbol有传入参数时，allowClose不生效；当suffixSymbol没有传入参数而suffixIcon有传入参数时，allowClose不生效；当suffixSymbol和suffixIcon都没有传入参数时，allowClose决定是否显示关闭图标。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | onClose | ()=>void | 否 | 是 | 默认关闭图标点击事件回调，无参数和返回值。当用户点击默认关闭图标时触发该回调。 值为undefined时，不触发关闭图标点击事件。 说明：仅当关闭图标显示时生效，即suffixSymbol和suffixIcon都未传入参数且allowClose为true时。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
@@ -849,6 +849,10 @@ struct ChipExample2 {
 ```
 
 
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/LX7c-jo1Sv2YdB2hj3kSiQ/zh-cn_image_0000002778934277.png?HW-CC-KV=V1&HW-CC-Date=20261009T013036Z&HW-CC-Expire=86400&HW-CC-Sign=FC90CB9F7E824061E2CEDB9F63A9DD967906D22C60D5B4B08C947F6319203A9C)
+
+
+
 
 ### 示例8（symbol类型无障碍朗读）
 
@@ -982,6 +986,10 @@ struct ChipExample2 {
 ```
 
 
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/e0xjHPTrSuuYzJDRVBDAmw/zh-cn_image_0000002749335194.png?HW-CC-KV=V1&HW-CC-Date=20261009T013036Z&HW-CC-Expire=86400&HW-CC-Sign=2C08BCCE6E0F407B96A2A6A99B8A5E0444824742788431C1A05241860FC54B25)
+
+
+
 
 ### 示例9（Chip组件无障碍朗读）
 
@@ -1087,6 +1095,10 @@ struct ChipAccessibilityExample {
 ```
 
 
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/eSMV2F9LRnWhTS9s_2drPQ/zh-cn_image_0000002749495078.png?HW-CC-KV=V1&HW-CC-Date=20261009T013036Z&HW-CC-Expire=86400&HW-CC-Sign=F16527C8D890A568701F508C58F0000ED905A4F5074F5DC39088B3C6EDD49EE6)
+
+
+
 
 ### 示例10（设置系统材质样式）
 
@@ -1156,5 +1168,7 @@ struct ChipMaterialExample {
 }
 ```
 
+该示例配图为高算力设备强档效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/LzlbsudbSlmPZsCYWu6iTw/zh-cn_image_0000002747212993.png?HW-CC-KV=V1&HW-CC-Date=20260911T073026Z&HW-CC-Expire=86400&HW-CC-Sign=19C03C8656A6FB2D67EC34E5AF97A9674AD85BE16066A68AFD1BA79BDA45A692)
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/MmdWAhftSHOwWC1uwFTdig/zh-cn_image_0000002779094135.png?HW-CC-KV=V1&HW-CC-Date=20261009T013036Z&HW-CC-Expire=86400&HW-CC-Sign=8521CFE32D798377389751ABA6BB3E20AC911578F52BF2FAD2F0A009EBB588DD)

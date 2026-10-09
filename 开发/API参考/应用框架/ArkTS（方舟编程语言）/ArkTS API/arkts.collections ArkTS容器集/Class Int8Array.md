@@ -1,6 +1,6 @@
 # Class (Int8Array)
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-arkts-collections-int8array
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -254,7 +254,7 @@ constructor(buffer: ArrayBuffer, byteOffset?: number, length?: number)
 ```text
 let int8Array: collections.Int8Array = collections.Int8Array.from([1, 2, 3, 4, 5, 6]);
 console.info("byteLength: " + int8Array.buffer.byteLength); // byteLength: 6
-// 从int8Array对应buffer第1个字节开始，长度为5
+// 从int8Array对应buffer第2个字节开始，长度为5
 let int8Array1: collections.Int8Array = new collections.Int8Array(int8Array.buffer, 1, 5);
 console.info("[" + int8Array1 + "]"); // [2, 3, 4, 5, 6]
 ```

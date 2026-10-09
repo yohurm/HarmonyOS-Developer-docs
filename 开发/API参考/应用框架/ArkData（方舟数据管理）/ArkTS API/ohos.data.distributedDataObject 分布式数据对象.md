@@ -1,6 +1,6 @@
 # @ohos.data.distributedDataObject (分布式数据对象)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-data-distributedobject
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -242,7 +242,7 @@ type StatusObserver = (sessionId: string, networkId: string, status: string) => 
 | --- | --- | --- | --- |
 | sessionId | string | 是 | 标识变更对象的sessionId。长度不大于128字节，且只能包含字母、数字或下划线_。 |
 | networkId | string | 是 | 对端设备的网络标识。要求字符串非空且长度不超过255字节。 |
-| status | string | 是 | 标识分布式数据对象的状态，可能的取值有'online'（上线）、'offline'（下线）和'restore'（恢复）。 |
+| status | string | 是 | 标识分布式数据对象的状态，可能的取值有'online'（上线）、'offline'（下线）和'restored'（恢复）。 |
 
 
 
@@ -1336,7 +1336,7 @@ setAsset(assetKey: string, uri: string): Promise&lt;void&gt;
 设置分布式数据对象中的单个资产的属性信息，该接口必须在[setSessionId](#setsessionid9-2)接口调用前使用。使用Promise异步回调。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/VJvPoSixSzy61tgi0EmXhg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072850Z&HW-CC-Expire=86400&HW-CC-Sign=FA48255D366C46721FE316FB2110E8D51AAE9B635501F501EA396CD98944DE09)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/Cp8YPasFTsuQdilcBpSfGA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20261009T012850Z&HW-CC-Expire=86400&HW-CC-Sign=2B4702E97AE8F05FFBF2150C8DCC5B135914E1DAEF345BE2382DF7126005AF2A)
 
 
 在设置资产时必须保证assetKey存在且对应文件为资产类型文件，否则无法保证对端能接收到此次设置的资产。
@@ -1442,7 +1442,7 @@ setAssets(assetsKey: string, uris: Array&lt;string&gt;): Promise&lt;void&gt;
 设置分布式数据对象中的多个资产的属性信息，该接口必须在[setSessionId](#setsessionid9-2)接口调用前使用。使用Promise异步回调。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/G1gI30UySxavkaG9ZomdYg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072850Z&HW-CC-Expire=86400&HW-CC-Sign=916347CC06AA80273758C3D9A90B278BD8E15944B572410013D1677994E72B9D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/Wit8lVlIS9yVLtsRFUrPLw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20261009T012850Z&HW-CC-Expire=86400&HW-CC-Sign=DA8322794282ED8A868B269028E74FBD4347AE692821B58DFDC0897540FE1DAA)
 
 
 在设置资产时必须保证assetsKey存在且对应文件为资产类型文件，否则无法保证对端能接收到此次设置的资产。

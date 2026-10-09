@@ -36,66 +36,79 @@
 aboutToAppear
 ```
  | 自定义组件实例创建后，build执行前 | 设置WebDebug调试模式、自定义协议URL的权限、Cookie等 | / |
+| --- | --- | --- |
 | 2.控制器绑定 | 
 ```text
 onControllerAttached
 ```
  | Controller成功绑定到Web组件时 | 注入JS对象、设置自定义 User-Agent、使用操作网页不相关的接口 | 禁止在该事件回调前调用Web组件相关的接口，否则会抛出js-error异常 |
+| --- | --- | --- |
 | 3.加载前拦截（URL） | 
 ```text
 onLoadIntercept
 ```
  | LoadUrl和iframe加载时 | 获取并校验URL字段值是否在业务预置的白名单内，返回true表示取消此次导航，false表示允许此次导航 | 默认允许加载，返回undefined或null时为false；与onOverrideUrlLoading触发时机不同 |
+| --- | --- | --- |
 | 4.加载前拦截（请求） | 
 ```text
 onInterceptRequest
 ```
  | 加载URL前 | 用于拦截URL并返回响应数据 | / |
+| --- | --- | --- |
 | 5.页面开始加载 | 
 ```text
 onPageBegin
 ```
  | 页面开始加载时触发 | / | 仅在主frame触发；iframe或frameset的内容加载时不触发 |
+| --- | --- | --- |
 | 6.加载进度更新 | 
 ```text
 onProgressChange
 ```
  | 页面加载过程中的进度通知 | / | 与onPageEnd无直接先后关系；主frame结束时子frame或多frame页面仍可能加载中 |
+| --- | --- | --- |
 | 7.页面加载完成 | 
 ```text
 onPageEnd
 ```
  | 页面加载完成时 | 执行JS脚本 | 仅在主frame触发；收到该回调不能保证下一帧反映DOM状态 |
+| --- | --- | --- |
 | 8.页面可见（早期） | 
 ```text
 onPageVisible
 ```
  | 渲染流程中HTTP响应主体开始加载，新页面即将可见时 | / | 此时文档加载还处于早期，因此链接的资源比如在线CSS、在线图片等可能尚不可用 |
+| --- | --- | --- |
 | 9.组件卸载 | 
 ```text
 onDisAppear
 ```
  | 组件卸载消失时 | / | / |
+| --- | --- | --- |
 | 10.异常处理路径（一） | 
 ```text
 onOverrideUrlLoading
 ```
  | URL即将加载时 | 返回true：中止加载；返回false：继续加载 | 与onLoadIntercept不同，在LoadUrl和iframe加载时不会触发 |
+| --- | --- | --- |
 | 11.异常处理路径（二） | 
 ```text
 onRenderExited
 ```
  | 应用渲染进程异常退出时 | 释放系统资源、保存关键数据等 | 若应用希望异常恢复，需要调用loadUrl接口重新加载页面 |
+| --- | --- | --- |
 | 12.异常处理路径（三） | 
 ```text
 onErrorReceive
 ```
  | 网页收到Web资源加载错误或无网络时 | 通知异常事件，打印错误信息等 | / |
+| --- | --- | --- |
 | 13.异常处理路径（四） | 
 ```text
 onSslErrorEvent
 ```
  | 加载资源发生SSL错误时 | 通知用户加载资源（主资源+子资源）时发生SSL错误 | / |
+| --- | --- | --- |
 
   
 

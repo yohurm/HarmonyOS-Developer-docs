@@ -1,13 +1,13 @@
 # ohpm --version
 
-更新时间：2026-01-15 06:51:04
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm--version
 
 查询 ohpm cli 安装版本。
  
 
-#### 命令格式
+## 命令格式
 
 ```text
 ohpm -v | --version
@@ -15,7 +15,7 @@ ohpm -v | --version
  
  
 
-#### 功能描述
+## 功能描述
 
 - 打印命令行工具的版本号。
 - 可在安装 ohpm 命令行工具之后，对安装版本信息进行校验。
@@ -23,7 +23,7 @@ ohpm -v | --version
  
  
 
-#### 示例
+## 示例
 
 查询 ohpm cli 安装版本，可执行以下命令：
  

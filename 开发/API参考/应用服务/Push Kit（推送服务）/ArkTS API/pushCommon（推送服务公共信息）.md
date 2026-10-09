@@ -1,6 +1,6 @@
 # pushCommon（推送服务公共信息）
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-pushcommon
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -245,5 +245,5 @@ PushPayload是推送服务向应用传递数据的核心接口，开发者可以
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | callId | string | 否 | 否 | 当次呼叫的唯一标识。 |
-| type | string | 否 | 否 | 继承自PushPayload，表示传递给VoIPExtensionAbility的消息类型。 |
-| data | string | 否 | 否 | 继承自PushPayload，表示传递给VoIPExtensionAbility的数据。 |
+| type | string | 否 | 否 | 继承自PushPayload。 |
+| data | string | 否 | 否 | 继承自PushPayload。 |

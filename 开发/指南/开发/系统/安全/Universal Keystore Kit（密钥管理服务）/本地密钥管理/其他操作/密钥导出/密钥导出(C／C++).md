@@ -1,6 +1,6 @@
 # 密钥导出(C/C++)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-export-key-ndk
 
@@ -28,7 +28,7 @@ target_link_libraries(entry PUBLIC libhuks_ndk.z.so)
 keyAlias：密钥别名，封装成[OH_Huks_Blob](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hukstypeapi-oh-huks-blob)结构，密钥别名最大长度为128字节。
 2. paramSetIn：预留参数，暂不需要处理，传空即可。
 3. key：用于放置导出的公钥，为[OH_Huks_Blob](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hukstypeapi-oh-huks-blob)类型对象，需要业务提前申请好内存，需申请足够容纳获取到的密钥属性集的内存大小。
-4. 调用接口[OH_Huks_GetKeyItemParamSet](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-huks-api-h#oh_huks_getkeyitemparamset)，传入上述参数。
+4. 调用接口[OH_Huks_ExportPublicKeyItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-huks-api-h#oh_huks_exportpublickeyitem)，传入上述参数。
 5. 返回值为成功码/错误码，导出公钥以标准的X.509规范的DER格式封装在参数key中，具体请参考[公钥材料格式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-concepts#公钥材料格式)。
 
 ```cpp

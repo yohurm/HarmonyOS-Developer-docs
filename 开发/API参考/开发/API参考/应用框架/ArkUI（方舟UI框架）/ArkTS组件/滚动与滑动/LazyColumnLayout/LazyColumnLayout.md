@@ -1,11 +1,11 @@
 # LazyColumnLayout
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-lazycolumnlayout
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-该组件用于实现支持懒加载的垂直线性布局，其父组件仅限于[List](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list)、[Scroll](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll)、[WaterFlow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-waterflow)或[FlowItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-flowitem)，并支持使用自定义组件或[NodeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-nodecontainer)组件封装后应用在上述组件中。
+该组件用于实现支持懒加载的垂直线性布局，其父组件仅限于[List](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list)、[Scroll](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll)、[WaterFlow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-waterflow)或[FlowItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-flowitem)，并支持使用[自定义组件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-custom-components)或[NodeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-nodecontainer)组件封装后应用在上述组件中。
 
 该组件支持嵌套懒加载容器[LazyVGridLayout](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-lazyvgridlayout)、[LazyVWaterFlowLayout](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-lazyvwaterflowlayout)及其自身LazyColumnLayout。
 
@@ -395,7 +395,7 @@ struct LazyColumnLayoutSample1 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/IO-SLma2S_S3Xg5wjJlQuw/zh-cn_image_0000002717612664.png?HW-CC-KV=V1&HW-CC-Date=20260911T073113Z&HW-CC-Expire=86400&HW-CC-Sign=9C486B20CF495929DCFF228904BF96F178B83817E703382DE0D40BA341D2DD8F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/aO60-s_rTu2lBAMh4utQgw/zh-cn_image_0000002749334680.png?HW-CC-KV=V1&HW-CC-Date=20261009T013102Z&HW-CC-Expire=86400&HW-CC-Sign=0B63FAC7E01549FF2C03EA598200C070E15C38EF9C7D1CD604CAE40F5E9419E3)
 
 
 
@@ -573,4 +573,4 @@ export class MyDataSource<T> extends BasicDataSource<T> {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/ylHfHsKeT6SfcaLaD_am7Q/zh-cn_image_0000002747292617.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073113Z&HW-CC-Expire=86400&HW-CC-Sign=8248E08942A47F3A766B23DBD1A322CD10A48C31053C9BD03E8FE62B3E2F7A82)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/8Io3OyXqT-60-DCuRx1WTw/zh-cn_image_0000002749494564.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013102Z&HW-CC-Expire=86400&HW-CC-Sign=DD48E159EDD971C8E43D59E7C08D076862F82939B9855E311C54DC4878858B79)

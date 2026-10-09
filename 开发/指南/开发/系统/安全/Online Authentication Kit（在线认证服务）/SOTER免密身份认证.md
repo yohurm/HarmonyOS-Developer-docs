@@ -1,6 +1,6 @@
 # SOTER免密认证
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/onlineauthentication-soter
 
@@ -146,7 +146,7 @@ let authParam: userAuth.AuthParam = {
   authType: [userAuth.UserAuthType.FINGERPRINT],
   authTrustLevel: userAuth.AuthTrustLevel.ATL4
 };
-// 使用preAuthResult请求身份认证
+// 使用authParam请求身份认证
 try {
   let userAuthInstance = userAuth.getUserAuthInstance(authParam, {title: ' '});
   // 未获取到authToken则会返回错误码1。

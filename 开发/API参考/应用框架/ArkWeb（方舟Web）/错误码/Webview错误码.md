@@ -1,6 +1,6 @@
 # Webview错误码
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -104,7 +104,7 @@ Function not enabled.
 
 
 
-## 17100005 cookie value格式错误
+## 17100005 Cookie value格式错误
 
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -115,15 +115,15 @@ The provided cookie value is invalid. It must follow the format specified in RFC
 
 **错误描述**
 
-cookie value格式错误。
+Cookie value格式错误。
 
 **可能原因**
 
-不支持的cookie value类型。
+不支持的Cookie value类型。
 
 **处理步骤**
 
-请检查输入的cookie value是否符合RFC 6265规范，确保不包含控制字符、分隔符等非法内容。
+请检查输入的Cookie value是否符合RFC 6265规范，确保不包含控制字符、分隔符等非法内容。
 
 
 
@@ -394,12 +394,9 @@ The resource handler is invalid.
 WebResourceHandler已经失效。
 
 **可能原因**
-
-1.对应的请求在WebSchemeHandler中没有拦截；
-
-2.该请求拦截在构造返回体之前，因为某些原因已经请求结束；
-
-3.该WebResourceHandler已经调用过didFinish和didFail。
+1. 对应的请求在WebSchemeHandler中没有拦截。
+2. 该请求拦截在构造返回体之前，因为某些原因已经请求结束。
+3. 该WebResourceHandler已经调用过didFinish和didFail。
 
 **处理步骤**
 

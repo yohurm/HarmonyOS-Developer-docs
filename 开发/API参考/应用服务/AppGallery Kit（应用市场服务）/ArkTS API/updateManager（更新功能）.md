@@ -1,6 +1,6 @@
 # updateManager（更新功能）
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/store-updatemanager
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -472,10 +472,33 @@ off(type: 'updateChange', callback?: Callback&lt;UpdateSessionState&gt;): void
 ```text
 import { updateManager } from '@kit.AppGalleryKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
-try {
-  // 取消监听
-  updateManager.off('updateChange');
-} catch (error) {
-  hilog.error(0, 'TAG', `moduleInstallManager.off onError.code is ${error.code}, message is ${error.message}`);
+
+@Entry
+@Component
+struct Index {
+  @State message: string = 'off'
+
+  build() {
+    Row() {
+      Column() {
+        Text(this.message)
+          .fontSize(50)
+          .fontWeight(FontWeight.Bold)
+          .onClick(() => this.Off)
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+
+  private Off() {
+
+    try {
+      // 取消监听
+      updateManager.off('updateChange');
+    } catch (error) {
+      hilog.error(0, 'TAG', `off onError.code is ${error.code}, message is ${error.message}`);
+    }
+  }
 }
 ```

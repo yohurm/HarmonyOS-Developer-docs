@@ -1,6 +1,6 @@
 # ohpm cache clean
 
-更新时间：2026-08-29 09:41:34
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-cache
 
@@ -72,7 +72,7 @@ ohpm cache clean
 结果示例：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/qIwk6AydTCi8ahSWWUEO6g/zh-cn_image_0000002731542789.png?HW-CC-KV=V1&HW-CC-Date=20260911T072816Z&HW-CC-Expire=86400&HW-CC-Sign=E185B19676E5F542F2542FD04A4D58582FB8087FFCAE8E83775C31A66ED1432E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/615_MUXoQeaPLgITR03kaw/zh-cn_image_0000002731542789.png?HW-CC-KV=V1&HW-CC-Date=20261009T012817Z&HW-CC-Expire=86400&HW-CC-Sign=B8F5384A6156996BEA0E951060742C2A5B24266AA3E98C60F909EF9A1B3F32CE)
 
  
 **示例2**

@@ -1,6 +1,6 @@
 # HDR Vivid视频转码SDR视频开发实践
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hdr-vivid-transcoding-sdr
 
@@ -31,7 +31,7 @@
 使用[AVTranscoder](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/media-kit-intro#avtranscoder)可以实现视频转码功能，从API version 20开始支持视频转码的C/C++开发，转码功能可在手机、平板、PC/2in1等设备上作为系统提供的基础能力使用。可以通过调用[canIUse()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-syscap#caniuse)接口来判断当前设备是否支持AVTranscoder，当canIUse("SystemCapability.Multimedia.Media.AVTranscoder")的返回值为true时，表示可以使用转码能力。转码步骤如下：初始化与准备阶段，调用[OH_AVTranscoder_Create()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avtranscoder-h#oh_avtranscoder_create)创建`OH_AVTranscoder` 对象；启动与运行阶段，调用OH_AVTranscoder_Start()启动转码任务，此时可调用[OH_AVTranscoder_Pause()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avtranscoder-h#oh_avtranscoder_pause)暂停任务。在暂停状态下，可调用[OH_AVTranscoder_Resume()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avtranscoder-h#oh_avtranscoder_resume)恢复任务；任务进行时，若想取消该任务，可调用[OH_AVTranscoder_Cancel()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avtranscoder-h#oh_avtranscoder_cancel)终止转码任务。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/hZdgVdnYSfmRdES33btyxg/zh-cn_image_0000002747291321.png?HW-CC-KV=V1&HW-CC-Date=20260911T072754Z&HW-CC-Expire=86400&HW-CC-Sign=DD7BB31581AC944700B84FBBF286B2CFB2131D8A461E2F5A0BC8C1BAACD58BD9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/KnsX4cs1QHi6cxFGyMcuMA/zh-cn_image_0000002749493178.png?HW-CC-KV=V1&HW-CC-Date=20261009T012745Z&HW-CC-Expire=86400&HW-CC-Sign=57024452A2E5A185D07579043B507ADC602E75FCE7B0F63B8DFD1F2DFC5809B2)
 
  
   
@@ -42,13 +42,13 @@
  
 关键点：调用[OH_AVTranscoderConfig_SetDstVideoType()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avtranscoder-h#oh_avtranscoderconfig_setdstvideotype)设置输出视频的编码格式为“video/avc”。
  
-```text
+```cpp
 OH_AVTranscoderConfig_SetDstVideoType(config, "video/avc");
 ```
  1. 创建默认AVTranscoder配置，并设置输出视频的编码格式为“video/avc”。
 
   
-```text
+```cpp
 void AVTranscoder::CreateDefaultTransCoderConfig(int32_t dstFd) {
     config = OH_AVTranscoderConfig_Create();
     OH_AVTranscoderConfig_SetDstFD(config, dstFd);
@@ -63,7 +63,7 @@ void AVTranscoder::CreateDefaultTransCoderConfig(int32_t dstFd) {
 2. 进行AVTranscoder转码，并返回转码结果。
 
   
-```text
+```cpp
 int32_t AVTranscoder::StartAVTranscoder(const SampleInfo &sampleInfo) {
     result = 0;
     sampleInfo_ = sampleInfo;
@@ -88,7 +88,7 @@ int32_t AVTranscoder::StartAVTranscoder(const SampleInfo &sampleInfo) {
 3. 定义AVTranscoder状态改变函数，当状态为“AVTRANSCODER_COMPLETED”时，释放AVTranscoder。
 
   
-```text
+```cpp
 void AVTranscoder::AvTranscoderStateChangeCb(OH_AVTranscoder *transcoder, OH_AVTranscoder_State state, void *userData) {
     if (transcoder == nullptr) {
         return;
@@ -108,14 +108,14 @@ void AVTranscoder::AvTranscoderStateChangeCb(OH_AVTranscoder *transcoder, OH_AVT
 4. 在[OH_AVTranscoder_SetStateCallback()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avtranscoder-h#oh_avtranscoder_setstatecallback)中设置AvTranscoder状态改变监听。
 
   
-```text
+```cpp
 OH_AVTranscoder_SetStateCallback(transcoder, AvTranscoderStateChangeCb, nullptr);
 ```
 
 5. 转码成功后，释放AVTranscoder。
 
   
-```text
+```cpp
 int32_t AVTranscoder::ReleaseAVTranscoder() {
     int ret = 0;
     AVCODEC_SAMPLE_LOGI("OH_AVTranscoder_Release ret:%{public}d", ret);
@@ -152,7 +152,7 @@ int32_t AVTranscoder::ReleaseAVTranscoder() {
  1. 创建解码器实例，查询系统支持的解码器能力，根据查询结果基于name创建硬解码器。
 
   
-```text
+```cpp
 class VideoDecoder {
 // ...
 private:
@@ -161,7 +161,7 @@ private:
 };
 ```
 
-```text
+```cpp
 int32_t VideoDecoder::Create(SampleInfo &sampleInfo) {
     // ...
         OH_AVCapability *capability =
@@ -179,7 +179,7 @@ int32_t VideoDecoder::Create(SampleInfo &sampleInfo) {
 2. 调用[OH_VideoDecoder_RegisterCallback()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avcodec-videodecoder-h#oh_videodecoder_registercallback)设置回调函数。
 
   
-```text
+```cpp
 int32_t VideoDecoder::SetCallback(CodecUserData *codecUserData) {
     int32_t ret =
         OH_VideoDecoder_RegisterCallback(decoder_,
@@ -194,7 +194,7 @@ int32_t VideoDecoder::SetCallback(CodecUserData *codecUserData) {
 3. 调用[OH_VideoDecoder_Configure()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avcodec-videodecoder-h#oh_videodecoder_configure)配置解码器。必选配置项有：视频帧宽度、视频帧高度、视频像素格式、指定输出为SDR。
 
   
-```text
+```cpp
 int32_t VideoDecoder::Configure(const SampleInfo &sampleInfo) {
     OH_AVFormat *format = OH_AVFormat_Create();
     CHECK_AND_RETURN_RET_LOG(format != nullptr, AVCODEC_SAMPLE_ERROR, "Create AVFormat failed");
@@ -242,7 +242,7 @@ HarmonyOS提供了Native侧的[VideoProcessing](https://developer.huawei.com/con
  1. 调用[OH_VideoProcessing_Create()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-video-processing-h#oh_videoprocessing_create)创建视频处理实例。
 
   
-```text
+```cpp
 void VideoProcessing::SetProcessingSurface(SampleInfo &sampleInfo) {
     VideoProcessing_ErrorCode ret = OH_VideoProcessing_Create(&processor, VIDEO_PROCESSING_TYPE_COLOR_SPACE_CONVERSION);
     ret = OH_VideoProcessing_GetSurface(processor, &sampleInfo.inWindow);
@@ -252,7 +252,7 @@ void VideoProcessing::SetProcessingSurface(SampleInfo &sampleInfo) {
   调用[OH_VideoProcessing_GetSurface()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-video-processing-h#oh_videoprocessing_getsurface)在视频处理启动之前创建输入surface。
 
   
-```text
+```cpp
 int32_t VideoEncoder::GetSurface(SampleInfo &sampleInfo) {
     int32_t ret;
     if (sampleInfo.processType > 1) {
@@ -268,7 +268,7 @@ int32_t VideoEncoder::GetSurface(SampleInfo &sampleInfo) {
 2. 调用[OH_VideoProcessing_SetSurface()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-video-processing-h#oh_videoprocessing_setsurface)设置surface。
 
   
-```text
+```cpp
 int32_t err = 0;
 err = OH_NativeWindow_SetMetadataValue(sampleInfo.outWindow, OH_HDR_METADATA_TYPE, sizeof(uint8_t),
                                        (uint8_t *)&sampleInfo.outputFormat.metadataType);
@@ -286,7 +286,7 @@ CHECK_AND_RETURN_LOG(ret == VIDEO_PROCESSING_SUCCESS, "SetSurface failed");
 3. 调用[OH_VideoProcessing_RegisterCallback()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-video-processing-h#oh_videoprocessing_registercallback)等函数创建并绑定回调函数。
 
   
-```text
+```cpp
 ret = OH_VideoProcessingCallback_Create(&callback);
 CHECK_AND_RETURN_LOG(ret == VIDEO_PROCESSING_SUCCESS, "OH_VideoProcessingCallback_Create failed");
 ret = OH_VideoProcessingCallback_BindOnError(callback, OnError);
@@ -302,7 +302,7 @@ CHECK_AND_RETURN_LOG(ret == VIDEO_PROCESSING_SUCCESS, "OH_VideoProcessing_Regist
 4. 调用[OH_VideoProcessing_Start()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-video-processing-h#oh_videoprocessing_start)启动色彩空间转换处理。
 
   
-```text
+```cpp
 void VideoProcessing::StartProcessing() {
     VideoProcessing_ErrorCode ret = OH_VideoProcessing_Start(processor);
     CHECK_AND_RETURN_LOG(ret == VIDEO_PROCESSING_SUCCESS, "OH_VideoProcessing_Start failed");
@@ -312,7 +312,7 @@ void VideoProcessing::StartProcessing() {
 5. 调用[OH_VideoProcessing_Stop()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-video-processing-h#oh_videoprocessing_stop)停止色彩空间转换处理。
 
   
-```text
+```cpp
 void VideoProcessing::StopProcessing() {
     VideoProcessing_ErrorCode ret = OH_VideoProcessing_Stop(processor);
     CHECK_AND_RETURN_LOG(ret == VIDEO_PROCESSING_SUCCESS, "OH_VideoProcessing_Stop failed");
@@ -323,7 +323,7 @@ void VideoProcessing::StopProcessing() {
 6. 调用[OH_VideoProcessing_Destroy()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-video-processing-h#oh_videoprocessing_destroy)及[OH_VideoProcessing_DeinitializeEnvironment()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-video-processing-h#oh_videoprocessing_deinitializeenvironment)释放处理实例和资源。
 
   
-```text
+```cpp
 void VideoProcessing::DestroyProcessing() {
     CHECK_AND_RETURN_LOG(processor != nullptr, "processor is nullptr");
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, LOG_TAG, "start DestroyProcessing");
@@ -367,7 +367,7 @@ void VideoProcessing::DestroyProcessing() {
  1. 初始化环境并查询是否支持视频颜色空间转换。
 
   
-```text
+```cpp
 bool VideoProcessing::IsColorSpaceConversionSupported(SampleInfo &sampleInfo) {
     OH_VideoProcessing_InitializeEnvironment();
     return OH_VideoProcessing_IsColorSpaceConversionSupported(&sampleInfo.inputFormat, &sampleInfo.outputFormat);
@@ -377,7 +377,7 @@ bool VideoProcessing::IsColorSpaceConversionSupported(SampleInfo &sampleInfo) {
 2. 设置输入输出的值。
 
   
-```text
+```cpp
 sampleInfo.inputFormat.metadataType = OH_VIDEO_HDR_VIVID;
 sampleInfo.inputFormat.colorSpace = OH_COLORSPACE_BT2020_HLG_LIMIT;
 sampleInfo.inputFormat.pixelFormat = NATIVEBUFFER_PIXEL_FMT_YCRCB_P010;
@@ -389,7 +389,7 @@ sampleInfo.outputFormat.pixelFormat = NATIVEBUFFER_PIXEL_FMT_YCBCR_420_SP;
 3. 创建色彩空间转换模块，并获取Surface。
 
   
-```text
+```cpp
 void VideoProcessing::SetProcessingSurface(SampleInfo &sampleInfo) {
     VideoProcessing_ErrorCode ret = OH_VideoProcessing_Create(&processor, VIDEO_PROCESSING_TYPE_COLOR_SPACE_CONVERSION);
     ret = OH_VideoProcessing_GetSurface(processor, &sampleInfo.inWindow);
@@ -400,7 +400,7 @@ void VideoProcessing::SetProcessingSurface(SampleInfo &sampleInfo) {
 4. 配置异步回调函数。
 
   
-```text
+```cpp
 void OnError(OH_VideoProcessing *videoProcessor, VideoProcessing_ErrorCode error, void *userData) {
     (void)videoProcessor;
     (void)error;
@@ -421,7 +421,7 @@ void OnNewOutputBuffer(OH_VideoProcessing *videoProcessor, uint32_t index, void 
 }
 ```
 
-```text
+```cpp
 ret = OH_VideoProcessingCallback_Create(&callback);
 CHECK_AND_RETURN_LOG(ret == VIDEO_PROCESSING_SUCCESS, "OH_VideoProcessingCallback_Create failed");
 ret = OH_VideoProcessingCallback_BindOnError(callback, OnError);
@@ -437,7 +437,7 @@ CHECK_AND_RETURN_LOG(ret == VIDEO_PROCESSING_SUCCESS, "OH_VideoProcessing_Regist
 5. 设置Surface。
 
   
-```text
+```cpp
 int32_t err = 0;
 err = OH_NativeWindow_SetMetadataValue(sampleInfo.outWindow, OH_HDR_METADATA_TYPE, sizeof(uint8_t),
                                        (uint8_t *)&sampleInfo.outputFormat.metadataType);
@@ -455,7 +455,7 @@ CHECK_AND_RETURN_LOG(ret == VIDEO_PROCESSING_SUCCESS, "SetSurface failed");
 6. 调用[OH_VideoProcessing_Start()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-video-processing-h#oh_videoprocessing_start)启动色彩空间转换处理。
 
   
-```text
+```cpp
 void VideoProcessing::StartProcessing() {
     VideoProcessing_ErrorCode ret = OH_VideoProcessing_Start(processor);
     CHECK_AND_RETURN_LOG(ret == VIDEO_PROCESSING_SUCCESS, "OH_VideoProcessing_Start failed");
@@ -465,7 +465,7 @@ void VideoProcessing::StartProcessing() {
 7. 调用[OH_VideoProcessing_Stop()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-video-processing-h#oh_videoprocessing_stop)停止色彩空间转换处理。
 
   
-```text
+```cpp
 void VideoProcessing::StopProcessing() {
     VideoProcessing_ErrorCode ret = OH_VideoProcessing_Stop(processor);
     CHECK_AND_RETURN_LOG(ret == VIDEO_PROCESSING_SUCCESS, "OH_VideoProcessing_Stop failed");
@@ -475,7 +475,7 @@ void VideoProcessing::StopProcessing() {
   调用[OH_VideoProcessing_Destroy()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-video-processing-h#oh_videoprocessing_destroy)销毁视频处理实例。
 
   
-```text
+```cpp
 void VideoProcessing::DestroyProcessing() {
     CHECK_AND_RETURN_LOG(processor != nullptr, "processor is nullptr");
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, LOG_TAG, "start DestroyProcessing");

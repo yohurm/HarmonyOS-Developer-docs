@@ -46,5 +46,19 @@
     "slug": "liveview-kit-terminology",
     "title": "Live View Kit术语",
     "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/liveview-kit-terminology"
+  },
+  {
+    "file": "企业服务信息来去电页面显示.md",
+    "name": "企业服务信息来去电页面显示",
+    "slug": "callservice-enterprise-service-display",
+    "title": "企业服务信息来去电页面显示",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/callservice-enterprise-service-display"
+  },
+  {
+    "file": "Enterprise Space Kit常见问题.md",
+    "name": "Enterprise Space Kit常见问题",
+    "slug": "enterprisespace-faq",
+    "title": "Enterprise Space Kit常见问题",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/enterprisespace-faq"
   }
 ]

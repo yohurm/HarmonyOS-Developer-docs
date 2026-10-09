@@ -1,6 +1,6 @@
 # NDK开发ArkTS侧编码规范
 
-更新时间：2026-05-22 09:46:30
+更新时间：2026-09-15 02:12:10
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-coding-standard-ndk-arkts
 
@@ -9,7 +9,7 @@ ArkTS通过引用编译好的so文件来调用native方法。为避免不规范�
 NDK工程创建步骤及目录结构可参考：[创建NDK工程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/create-with-ndk)。
  
 
-#### import本模块的so
+## import本模块的so
 
 **配置依赖**：
  
@@ -94,13 +94,13 @@ export const add: (a: number, b: number) => number;
  
  
 
-#### import其它模块的so
+## import其它模块的so
 
 开发者可以在har/hsp中编写公共的so，供其他模块调用。
  
  
 
-#### 引用方模块
+### 引用方模块
 
 **本地依赖**：
  
@@ -182,7 +182,7 @@ struct Index {
  
  
 
-#### 导出方模块
+### 导出方模块
 
  
 通过统一出口将napi导出。

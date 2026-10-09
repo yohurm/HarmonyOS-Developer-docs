@@ -1,6 +1,6 @@
 # ArkGuard混淆配置选项
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/source-obfuscation-rule-options
 
@@ -359,7 +359,7 @@ function add(a: number, b: number) {
 
   
 ```ts
-console.info("in tolevel");
+console.info("in toplevel");
 ```
 
 2. 代码块中的调用。

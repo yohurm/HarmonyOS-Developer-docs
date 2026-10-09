@@ -1,20 +1,20 @@
 # LazyDynamicLayout
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-lazydynamiclayout
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该组件用于实现支持懒加载的动态布局容器，支持开发者自定义布局算法。适用于在可滚动组件中展示大量子组件的场景，通过按需加载和布局可视区域内的子组件，减少首帧渲染时间和内存开销。
- 
-其父组件仅限于[List](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list)、[Scroll](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll)、[WaterFlow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-waterflow)、[FlowItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-flowitem)或[LazyColumnLayout](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-lazycolumnlayout)，并支持使用自定义组件或[NodeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-nodecontainer)组件封装后应用在上述组件中。
- 
+
+其父组件仅限于[List](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list)、[Scroll](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll)、[WaterFlow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-waterflow)、[FlowItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-flowitem)或[LazyColumnLayout](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-lazycolumnlayout)，并支持使用[自定义组件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-custom-components)或[NodeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-nodecontainer)组件封装后应用在上述组件中。
+
 > [!NOTE]
 > 本模块接口仅可在Stage模型下使用。 该组件在不同父组件下的懒加载支持条件如下： 在WaterFlow组件下，仅在WaterFlow组件的单列模式或分段布局中的单列分段场景下使用时支持懒加载。 在List组件下，当 lanes 大于1、 chainAnimation 设置为true或 scrollSnapAlign 设置为ScrollSnapAlign.NONE以外的值时，List不使用嵌套懒加载测量流程，该组件按普通子项测量，懒加载功能失效。 在Scroll、List、WaterFlow组件下使用时，Scroll、List、WaterFlow的滚动方向（水平或垂直）必须和该组件布局方向相同，若布局方向不同会导致应用崩溃。 通过FlowItem、LazyColumnLayout、自定义组件或NodeContainer封装使用时，懒加载行为取决于其上层滚动组件（如WaterFlow、Scroll或List）的配置条件。 此处的父组件指最靠近当前组件的上层滚动组件，其他文档下的具体含义请参考对应内容。
 
- 
+
 **起始版本：** 26.0.0
-  
+
 
 ## 子组件
 
@@ -22,8 +22,8 @@
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 可以包含子组件。
- 
-  
+
+
 
 ## 接口
 
@@ -31,26 +31,26 @@
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 LazyDynamicLayout(algorithm: LazyLayoutAlgorithm)
- 
+
 懒加载动态布局容器。
- 
+
 **起始版本：** 26.0.0
- 
+
 **模型约束：** 此接口仅可在Stage模型下使用。
- 
+
 **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
- 
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
- 
+
 **参数：**
-  
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | algorithm | LazyLayoutAlgorithm | 是 | 指定懒加载动态布局组件的布局算法。需传入LazyLayoutAlgorithm类型的实例，可通过继承LazyCustomLayoutAlgorithm自定义测量和布局逻辑。自定义算法中获取子组件或子组件总数时，需分别使用ExpandMode.LAZY_NOT_EXPAND和ChildrenCountMode.ALL_NOT_EXPAND，避免全量加载导致懒加载失效。 |
- 
- 
-  
+
+
+
 
 ## 属性
 
@@ -58,12 +58,12 @@ LazyDynamicLayout(algorithm: LazyLayoutAlgorithm)
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)。
- 
+
 > [!NOTE]
 > 当布局算法为 LazyCustomLayoutAlgorithm 时，LazyDynamicLayout组件 FrameNode 的 setMeasuredSize 方法优先级高于 尺寸设置 和 边框设置 属性，子组件 FrameNode 的 measure 和 layout 方法优先级高于 ignoreLayoutSafeArea 属性。自定义算法完成测量或布局后，框架不再执行默认测量或布局流程，而是采用自定义算法设置的尺寸和位置。
 
- 
-  
+
+
 
 ## 事件
 
@@ -71,8 +71,8 @@ LazyDynamicLayout(algorithm: LazyLayoutAlgorithm)
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)。
- 
-  
+
+
 
 ### onVisibleIndexesChange
 
@@ -80,33 +80,33 @@ LazyDynamicLayout(algorithm: LazyLayoutAlgorithm)
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onVisibleIndexesChange(callback: [Callback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#callback12)<number[]> | undefined)
- 
+
 设置onVisibleIndexesChange回调函数。当LazyDynamicLayout可视区域内子组件索引列表发生变化时触发回调，返回可视区域内子组件索引列表。
- 
+
 **起始版本：** 26.0.0
- 
+
 **模型约束：** 此接口仅可在Stage模型下使用。
- 
+
 **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
- 
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
- 
+
 **参数：**
-  
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback<number[]> \| undefined | 是 | 当LazyDynamicLayout可视区域内子组件索引列表发生变化时触发的回调函数。返回可视区域内子组件索引列表。入参为undefined时，取消监听。 |
- 
- 
-  
+
+
+
 
 ## 示例
 
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-  
+
 
 ### 示例1（实现懒加载自定义布局）
 
@@ -114,13 +114,13 @@ onVisibleIndexesChange(callback: [Callback](https://developer.huawei.com/consume
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过[List](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list)和LazyDynamicLayout组件实现自定义的懒加载列表布局，并通过[onVisibleIndexesChange](#onvisibleindexeschange)在可视区域发生变化时回调索引。
- 
+
 LazyListLayout实现了一个自定义懒加载列表布局算法，布局算法中通过[setAdjustedOffset](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-lazylayoutalgorithm#setadjustedoffset)接口，确保子组件布局间隔变化时可视区域内第一个子组件的位置不变。
- 
+
 MyDataSource实现了[LazyForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-rendering-control-lazyforeach)数据源接口[IDataSource](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-rendering-control-lazyforeach#idatasource)，用于通过LazyForEach给LazyDynamicLayout提供子组件。
- 
+
 从API版本26.0.0开始，新增LazyDynamicLayout组件。
- 
+
 ```text
 import { LazyDynamicLayout, LazyDynamicLayoutAttribute } from '@kit.ArkUI';
 import { MyDataSource } from './MyDataSource';
@@ -214,7 +214,7 @@ struct CustomListLayoutTest {
   }
 }
 ```
- 
+
 ```ArkTS
 // LazyListLayout.ets
 // 导入布局相关的接口和类
@@ -373,7 +373,7 @@ export class LazyListLayout extends LazyCustomLayoutAlgorithm {
   }
 }
 ```
- 
+
 ```ArkTS
 // MyDataSource.ets
 // 基础数据源类，实现IDataSource接口
@@ -470,6 +470,6 @@ export class MyDataSource<T> extends BasicDataSource<T> {
   }
 }
 ```
- 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/ClhoJF1NQfO8sBFKiXg12w/zh-cn_image_0000002747212533.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073113Z&HW-CC-Expire=86400&HW-CC-Sign=07E7151734D220D28EBD7CE2D6C587638DC5E8506DF88691AFF686FE4DC621C7)
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/-hy9fm3hRWmbt02OU2XosA/zh-cn_image_0000002779093621.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013102Z&HW-CC-Expire=86400&HW-CC-Sign=9EF79C04EA63E4B56F770304A13D0D44383270FBEAF48996D4897A684ACCC16A)

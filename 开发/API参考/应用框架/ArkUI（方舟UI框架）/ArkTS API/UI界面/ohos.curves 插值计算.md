@@ -1,6 +1,6 @@
 # @ohos.curves (插值计算)
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-curve
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -231,9 +231,9 @@ springMotion(response?: number, dampingFraction?: number, overlapDuration?: numb
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| response | number | 否 | 弹簧自然振动周期，决定弹簧复位的速度。 默认值：0.55 单位：秒 取值范围：(0, +∞) 说明： 设置小于等于0的值时，按默认值0.55处理。 |
+| response | number | 否 | 弹簧自然振动周期，决定弹簧复位的速度。 默认值：0.55 单位：s 取值范围：(0, +∞) 说明： 设置小于等于0的值时，按默认值0.55处理。 |
 | dampingFraction | number | 否 | 阻尼系数。 0表示无阻尼，一直处于震荡状态； 大于0小于1的值为欠阻尼，运动过程中会超出目标值； 等于1为临界阻尼； 大于1为过阻尼，运动过程中逐渐趋于目标值。 默认值：0.825 取值范围：[0, +∞) 说明： 设置小于0的值时，按默认值0.825处理。 |
-| overlapDuration | number | 否 | 弹性动画衔接时长。发生动画继承时，如果前后两个弹性动画response不一致，response参数会在overlapDuration时间内平滑过渡；当overlapDuration为0时，response参数不会进行平滑过渡，而是立即切换到新的response值。 默认值：0 单位：秒 取值范围：[0, +∞) 说明： 设置小于0的值时，按默认值0处理。 弹性动画曲线为物理曲线，animation、animateTo、pageTransition中的duration参数不生效，动画持续时间取决于springMotion动画曲线参数和之前的速度。时间不能归一，故不能通过该曲线的interpolate函数获得插值。 |
+| overlapDuration | number | 否 | 弹性动画衔接时长。发生动画继承时，如果前后两个弹性动画response不一致，response参数会在overlapDuration时间内平滑过渡；当overlapDuration为0时，response参数不会进行平滑过渡，而是立即切换到新的response值。 默认值：0 单位：s 取值范围：[0, +∞) 说明： 设置小于0的值时，按默认值0处理。 弹性动画曲线为物理曲线，animation、animateTo、pageTransition中的duration参数不生效，动画持续时间取决于springMotion动画曲线参数和之前的速度。时间不能归一，故不能通过该曲线的interpolate函数获得插值。 |
  
  
 **返回值：**
@@ -274,9 +274,9 @@ responsiveSpringMotion(response?: number, dampingFraction?: number, overlapDurat
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| response | number | 否 | 解释同springMotion中的response。 默认值：0.15 单位：秒 取值范围：(0, +∞) 说明： 设置小于等于0的值时，按默认值0.15处理。 |
+| response | number | 否 | 解释同springMotion中的response。 默认值：0.15 单位：s 取值范围：(0, +∞) 说明： 设置小于等于0的值时，按默认值0.15处理。 |
 | dampingFraction | number | 否 | 解释同springMotion中的dampingFraction。 默认值：0.86 取值范围：[0, +∞) 说明： 设置小于0的值时，按默认值0.86处理。 |
-| overlapDuration | number | 否 | 解释同springMotion中的overlapDuration。当overlapDuration为0时，response参数不会进行平滑过渡，而是立即切换到新的response值。 默认值：0.25 单位：秒 取值范围：[0, +∞) 说明： 设置小于0的值时，按默认值0.25处理。 弹性跟手动画曲线为springMotion的一种特例，仅默认值不同。如果使用自定义参数的弹性曲线，推荐使用springMotion构造曲线。如果使用跟手动画，推荐使用默认参数的弹性跟手动画曲线。 animation、animateTo、pageTransition中的duration参数不生效，动画持续时间取决于responsiveSpringMotion动画曲线参数和之前的速度，也不能通过该曲线的interpolate函数获得插值。 |
+| overlapDuration | number | 否 | 解释同springMotion中的overlapDuration。当overlapDuration为0时，response参数不会进行平滑过渡，而是立即切换到新的response值。 默认值：0.25 单位：s 取值范围：[0, +∞) 说明： 设置小于0的值时，按默认值0.25处理。 弹性跟手动画曲线为springMotion的一种特例，仅默认值不同。如果使用自定义参数的弹性曲线，推荐使用springMotion构造曲线。如果使用跟手动画，推荐使用默认参数的弹性跟手动画曲线。 animation、animateTo、pageTransition中的duration参数不生效，动画持续时间取决于responsiveSpringMotion动画曲线参数和之前的速度，也不能通过该曲线的interpolate函数获得插值。 |
  
  
 **返回值：**
@@ -604,4 +604,4 @@ struct ImageComponent {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/92ppA7wvSqqh-xCKpNP7HA/zh-cn_image_0000002717612404.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072848Z&HW-CC-Expire=86400&HW-CC-Sign=B51BC112039236F98823625D5C85BACE2413ACCD20EBE9FAA1FAFE9431050260)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/bHo_LWFhTsKTviGAvdrFFg/zh-cn_image_0000002749334336.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012850Z&HW-CC-Expire=86400&HW-CC-Sign=6F33FFB8DCA9BCF27AD4EFC136D4A54D65FCCEBB76FC0B033F0B7A68AABBEB1C)

@@ -1,6 +1,6 @@
 # OH_ImageBufferData
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-nativemodule-oh-imagebufferdata
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -15,7 +15,7 @@ typedef struct {...} OH_ImageBufferData
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-OH_ImageBufferData是native层封装的图像数据结构体。获取OH_ImageNative_GetBufferData对象使用[OH_ImageNative_GetBufferData](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-native-h#oh_imagenative_getbufferdata)函数。
+OH_ImageBufferData是native层封装的图像数据结构体。获取OH_ImageBufferData对象使用[OH_ImageNative_GetBufferData](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-native-h#oh_imagenative_getbufferdata)函数。
  
  结构体中保存的是对原图像数据的浅拷贝，当原数据被释放后，不应再对该结构体中的指针进行任何读写操作，否则会出现未定义行为。
  

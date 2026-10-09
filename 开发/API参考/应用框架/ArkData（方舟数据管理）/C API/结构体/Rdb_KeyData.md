@@ -1,19 +1,19 @@
 # Rdb_KeyData
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-rdb-rdb-keydata
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
-union Rdb_KeyData { ... }
+union Rdb_KeyData { ... } *data
 ```
   
 
 ## 概述
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 存放变化的具体数据。
  
@@ -28,14 +28,14 @@ union Rdb_KeyData { ... }
 ## 汇总
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
 ### 成员变量
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
 
 | 名称 | 描述 |

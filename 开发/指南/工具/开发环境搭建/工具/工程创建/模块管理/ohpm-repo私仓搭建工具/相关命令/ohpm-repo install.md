@@ -1,13 +1,13 @@
 # ohpm-repo install
 
-更新时间：2026-07-15 09:00:31
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo-install
 
 安装ohpm-repo服务。
  
 
-#### 命令格式
+## 命令格式
 
 ```text
 ohpm-repo install [options]
@@ -15,17 +15,17 @@ ohpm-repo install [options]
  
  
 
-#### 功能描述
+## 功能描述
 
 在启动服务之前做好准备工作，包括：检查ohpm-repo配置文件的合法性和数据库的初始化等。
  
  
 
-#### 选项
+## 选项
 
  
 
-#### config
+### config
 
 - 默认值："&lt;binary_root&gt;/conf/config.yaml"
 
@@ -41,7 +41,7 @@ ohpm-repo install [options]
  
  
 
-#### skip-db
+### skip-db
 
 - 默认值：false
 - 类型：Boolean
@@ -62,7 +62,7 @@ ohpm-repo install [options]
  
  
 
-#### diagnosis-and-repair
+### diagnosis-and-repair
 
 - 默认值：false
 - 类型：Boolean
@@ -73,7 +73,7 @@ ohpm-repo install [options]
  
  
 
-#### 示例
+## 示例
 
 执行以下命令：
  
@@ -84,12 +84,12 @@ ohpm-repo install  --config D:\config.yaml
 结果示例：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/s8h1bEJWR5WdX9q5peN0Lw/zh-cn_image_0000002624991619.png?HW-CC-KV=V1&HW-CC-Date=20260723T012108Z&HW-CC-Expire=86400&HW-CC-Sign=C343D963A1AB840FAF9F1B8CBBF7D5525E175F14CE525850F03DE619AE34C11C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/xToB0RKVTDm2rq-To3y-og/zh-cn_image_0000002731381453.png?HW-CC-KV=V1&HW-CC-Date=20261009T012820Z&HW-CC-Expire=86400&HW-CC-Sign=E58E293A8E3323D24CAA1AD867C3B129A79EEEAC0DDE0ADF3750660F2F4357CF)
 
  
  
 
-#### 注意
+## 注意
 
 安装成功后，必须根据给出的提示信息刷新环境变量，针对Windows系统和Linux/Mac系统，有不同处理方式：
  

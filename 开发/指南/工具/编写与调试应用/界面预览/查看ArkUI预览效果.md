@@ -1,6 +1,6 @@
 # 查看ArkUI预览效果
 
-更新时间：2026-08-29 09:41:34
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-previewer-arkui
 
@@ -136,10 +136,10 @@ struct Index {
 以上示例的多断点预览效果如下图所示，会展示8个典型档位断点下的预览效果：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/MOtOF8PeSk2eHKktWHCrxg/zh-cn_image_0000002701823664.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072818Z&HW-CC-Expire=86400&HW-CC-Sign=2A818C179CDEB4029C0A51ED88E88236B50403E1EE5BAD7DB43EF768ED51B2EE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/j7kLlCF8Q9KOv7FTbIzITA/zh-cn_image_0000002701823664.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012822Z&HW-CC-Expire=86400&HW-CC-Sign=1FE205BC9F5B16517705D22714066411DCE8F5826BE4B0142A73792CA4B0F617)
 
  
-每个断点预览画面上均可点击![icon](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/srBa3uEdSRy1vpVCsiNzNA/zh-cn_image_0000002701823662.png?HW-CC-KV=V1&HW-CC-Date=20260911T072818Z&HW-CC-Expire=86400&HW-CC-Sign=69716FCBAB10368AAE5FCEBC2D4F3F5DBE7F4178C55DCE53D6A3E95298E47356)查看该断点档位下的组件树。
+每个断点预览画面上均可点击![icon](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/ADh41m_cSRu7K91cDMQUrg/zh-cn_image_0000002701823662.png?HW-CC-KV=V1&HW-CC-Date=20261009T012822Z&HW-CC-Expire=86400&HW-CC-Sign=7047C41B355040627F73DF32A15493116C98CB8EC846CB3558A02AF64707016F)查看该断点档位下的组件树。
  
 支持代码编辑器、UI界面和组件树三者之间的联动：
 - 选中预览器UI界面中的组件，则组件树上对应的组件将被选中，同时代码编辑器中的布局文件中对应的代码块高亮显示。
@@ -150,7 +150,7 @@ struct Index {
  
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/OtSvSYVyRLm0yJhdQzWv8g/zh-cn_image_0000002701663740.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072818Z&HW-CC-Expire=86400&HW-CC-Sign=69DF78B203DA861EED4E392275C64989428E52B76C79937F7F7F2537BC5A12A1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/L7lVlbJ5TMaPv9QHgwumsA/zh-cn_image_0000002701663740.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012822Z&HW-CC-Expire=86400&HW-CC-Sign=5BCBFF8BB22BD9E11AE45D267A30EF0C77A7A3C23D881853083A6595446D0B2D)
 
  
  
@@ -160,4 +160,4 @@ struct Index {
 创建卡片并选中卡片文件后，点击右侧边栏**Previewer**按钮即可预览卡片。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/pOaYDpRiTrKs_CRtk2nLLw/zh-cn_image_0000002701663742.png?HW-CC-KV=V1&HW-CC-Date=20260911T072818Z&HW-CC-Expire=86400&HW-CC-Sign=B3099B9AC6549AE01AAC6088373C9A36A2644CD217C241F1A8461B0C2CAE2D1D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/xraskGXsTha-hijmbdiKAw/zh-cn_image_0000002701663742.png?HW-CC-KV=V1&HW-CC-Date=20261009T012822Z&HW-CC-Expire=86400&HW-CC-Sign=8FADA1315351D9AD30351ABE396EC290976EF61E359413EB692FFB1AF4E2F247)

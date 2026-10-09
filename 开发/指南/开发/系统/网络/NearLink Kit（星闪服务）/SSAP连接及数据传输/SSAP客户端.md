@@ -1,6 +1,6 @@
 # SSAP客户端
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nearlink-ssap-client-connect
 
@@ -36,7 +36,7 @@
 1. 导入相关模块。
 
   
-```text
+```ArkTS
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { scan, ssap, dataTransfer, constant, remoteDevice } from '@kit.NearLinkKit';
@@ -45,7 +45,7 @@ import { scan, ssap, dataTransfer, constant, remoteDevice } from '@kit.NearLinkK
 2. 创建ssap客户端实例。其中参数addr是通过[扫描流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nearlink-start-scan)获取的远端设备地址。
 
   
-```json
+```ArkTS
 let client: ssap.Client;
 @State chosenDeviceAddr: string = '00:11:22:33:AA:FF';
 try {
@@ -60,7 +60,7 @@ try {
 3. 订阅连接状态变化事件。其中client对象在步骤2创建，后续步骤中使用的client对象也是一样，不再赘述。
 
   
-```json
+```ArkTS
 let connectionStateChangeCallback:(data: ssap.ConnectionChangeState) => void =
   (data: ssap.ConnectionChangeState) => {
   hilog.info(this.domainId, this.logTag, `Connection state: ${JSON.stringify(data)}`);
@@ -76,7 +76,7 @@ try {
 4. 订阅属性变化事件。
 
   
-```json
+```ArkTS
 let propertyChangeCallback:(data: ssap.Property) => void = (data: ssap.Property) => {
   hilog.info(this.domainId, this.logTag, `Property changed: ${JSON.stringify(data)}`);
   // ...
@@ -92,7 +92,7 @@ try {
 5. 向服务端发起连接。连接成功后会收到步骤3中订阅的连接状态变化的回调，之后可以进行数据交互。
 
   
-```text
+```ArkTS
 try {
   client.connect().then(() => {
     hilog.info(this.domainId, this.logTag, `Connect success`);
@@ -108,7 +108,7 @@ try {
 6. 获取服务端支持的服务列表。
 
   
-```json
+```ArkTS
 try {
   client.getServices().then((result: Array<ssap.Service>) => {
     // ...
@@ -126,7 +126,7 @@ try {
 7. 读取指定服务的属性值，参数property中的[serviceUuid](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/nearlink-ssap#property)以及[propertyUuid](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/nearlink-ssap#property)通过步骤6获取。
 
   
-```json
+```ArkTS
 const SERVICE_UUID: string = 'FFFFFFFF-1234-5678-ABCD-000000001234';
 const PROPERTY_UUID: string = 'FFFFFFFF-1234-5678-ABCD-000000001234';
 
@@ -155,7 +155,7 @@ try {
 8. 写入指定服务的属性值，参数property中的[serviceUuid](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/nearlink-ssap#property)以及[propertyUuid](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/nearlink-ssap#property)通过步骤6获取。
 
   
-```text
+```ArkTS
 try {
   let properValue = new Uint8Array(arrayBufferProperty);
   properValue[0] = 1;
@@ -176,7 +176,7 @@ try {
   之后如果服务端属性值发生变化，则客户端通过步骤4订阅的事件接收新数据。
 
   
-```text
+```ArkTS
 try {
   client.setPropertyNotification(property, true).then(() => {
     hilog.info(this.domainId, this.logTag, `setPropertyNotification success`);

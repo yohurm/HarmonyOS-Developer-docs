@@ -1,6 +1,6 @@
 # 应用集成三方库（har包）的兼容性指导
 
-更新时间：2026-07-06 03:23:00
+更新时间：2026-09-23 09:11:41
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/app-compatibility-third-har
 
@@ -11,6 +11,7 @@
 在应用开发过程中，会依赖大量的三方库，应用hap和三方库har之间因为SDK版本属性字段的版本差异，会存在各种兼容性问题。
 
 针对三方库本身的开发，建议开发者使用最新的编译的SDK版本，并且通过API兼容性判断机制，将运行的最低SDK版本配置为尽可能低（尤其是针对不依赖HarmonyOS SDK中API的三方库，建议将compatibleSdkVersion配置为12），这样能够满足尽可能多的应用集成，但可能需增加较多API兼容性判断保护，因此开发者需根据现网设备API版本占比情况综合评估后，有选择的进行设置。
+
 
 | sdk属性 | 应用集成方关注点 | 三方库提供方关注点 | 应用集成三方库的规则 |
 | --- | --- | --- | --- |
@@ -34,87 +35,87 @@
 
 
 ```text
-import bundleManager from '@ohos.bundle.bundleManager';
-import display from '@ohos.display';
-import hilog from '@ohos.hilog';
-import deviceInfo from '@ohos.deviceInfo';
-const TAG = 'DisplayCompat';
-const SDK_VER_14 = 14;
-const COMP_ID = 0xFF00;
-enum Orientation {
-  PORTRAIT = 0,
-  LANDSCAPE = 1,
-  PORTRAIT_INVERTED = 2,
-  LANDSCAPE_INVERTED = 3
+<span style="color: rgb(255,0,170);">import</span> <span style="color: rgb(0,0,255);">bundleManager</span> <span style="color: rgb(255,0,170);">from</span> <span style="color: rgb(181,106,1);">'@ohos.bundle.bundleManager'</span>;
+<span style="color: rgb(255,0,170);">import</span> <span style="color: rgb(0,0,255);">display</span> <span style="color: rgb(255,0,170);">from</span> <span style="color: rgb(181,106,1);">'@ohos.display'</span>;
+<span style="color: rgb(255,0,170);">import</span> <span style="color: rgb(0,0,255);">hilog</span> <span style="color: rgb(255,0,170);">from</span> <span style="color: rgb(181,106,1);">'@ohos.hilog'</span>;
+<span style="color: rgb(255,0,170);">import</span> <span style="color: rgb(0,0,255);">deviceInfo</span> <span style="color: rgb(255,0,170);">from</span> <span style="color: rgb(181,106,1);">'@ohos.deviceInfo'</span>;
+<span style="color: rgb(0,0,255);">const</span> <span style="color: rgb(0,0,255);">TAG</span> = <span style="color: rgb(181,106,1);">'DisplayCompat'</span>;
+<span style="color: rgb(0,0,255);">const</span> <span style="color: rgb(0,0,255);">SDK_VER_14</span> = <span style="color: rgb(80,160,79);">14</span>;
+<span style="color: rgb(0,0,255);">const</span> <span style="color: rgb(0,0,255);">COMP_ID</span> = <span style="color: rgb(80,160,79);">0xFF00</span>;
+<span style="color: rgb(0,0,255);">enum</span> <span style="color: rgb(0,0,255);">Orientation</span> {
+  <span style="color: rgb(0,0,255);">PORTRAIT</span> = <span style="color: rgb(80,160,79);">0</span>,
+  <span style="color: rgb(0,0,255);">LANDSCAPE</span> = <span style="color: rgb(80,160,79);">1</span>,
+  <span style="color: rgb(0,0,255);">PORTRAIT_INVERTED</span> = <span style="color: rgb(80,160,79);">2</span>,
+  <span style="color: rgb(0,0,255);">LANDSCAPE_INVERTED</span> = <span style="color: rgb(80,160,79);">3</span>
 }
-class DisplayCompat {
-  private static targetVer = 0;
-  private static deviceVer: number;
-  private static callback: Callback<number>|null;
-  public static async init() {
-    if (!DisplayCompat.targetVer) {
-      try {
-        let bundleInfo:bundleManager.BundleInfo = await bundleManager.getBundleInfoForSelf(
-          bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION
+<span style="color: rgb(0,0,255);">class</span> <span style="color: rgb(0,0,255);">DisplayCompat</span> {
+  <span style="color: rgb(0,0,255);">private</span> <span style="color: rgb(0,0,255);">static</span> <span style="color: rgb(0,0,255);">targetVer</span> = <span style="color: rgb(80,160,79);">0</span>;
+  <span style="color: rgb(0,0,255);">private</span> <span style="color: rgb(0,0,255);">static</span> <span style="color: rgb(0,0,255);">deviceVer</span>: <span style="color: rgb(0,0,255);">number</span>;
+  <span style="color: rgb(0,0,255);">private</span> <span style="color: rgb(0,0,255);">static</span> <span style="color: rgb(0,0,255);">callback</span>: <span style="color: rgb(0,0,255);">Callback</span><<span style="color: rgb(0,0,255);">number</span>>|<span style="color: rgb(0,0,255);">null</span>;
+  <span style="color: rgb(0,0,255);">public</span> <span style="color: rgb(0,0,255);">static</span> <span style="color: rgb(0,0,255);">async</span> <span style="color: rgb(181,106,1);">init</span>() {
+    <span style="color: rgb(255,0,170);">if</span> (!<span style="color: rgb(0,0,255);">DisplayCompat</span>.<span style="color: rgb(0,0,255);">targetVer</span>) {
+      <span style="color: rgb(255,0,170);">try</span> {
+        <span style="color: rgb(0,0,255);">let</span> <span style="color: rgb(0,0,255);">bundleInfo</span>:<span style="color: rgb(0,0,255);">bundleManager</span>.<span style="color: rgb(0,0,255);">BundleInfo</span> = <span style="color: rgb(255,0,170);">await</span> <span style="color: rgb(0,0,255);">bundleManager</span>.<span style="color: rgb(181,106,1);">getBundleInfoForSelf</span>(
+          <span style="color: rgb(0,0,255);">bundleManager</span>.<span style="color: rgb(0,0,255);">BundleFlag</span>.<span style="color: rgb(0,0,255);">GET_BUNDLE_INFO_WITH_APPLICATION</span>
         );
-        const targetSdkVersion = bundleInfo.targetVersion;
-        DisplayCompat.targetVer = targetSdkVersion;
-      } catch (e) {
-        hilog.error(COMP_ID, TAG, 'Init failed: %{public}s', e);
+        <span style="color: rgb(0,0,255);">const</span> <span style="color: rgb(0,0,255);">targetSdkVersion</span> = <span style="color: rgb(0,0,255);">bundleInfo</span>.<span style="color: rgb(0,0,255);">targetVersion</span>;
+        <span style="color: rgb(0,0,255);">DisplayCompat</span>.<span style="color: rgb(0,0,255);">targetVer</span> = <span style="color: rgb(0,0,255);">targetSdkVersion</span>;
+      } <span style="color: rgb(255,0,170);">catch</span> (<span style="color: rgb(0,0,255);">e</span>) {
+        <span style="color: rgb(0,0,255);">hilog</span>.<span style="color: rgb(181,106,1);">error</span>(<span style="color: rgb(0,0,255);">COMP_ID</span>, <span style="color: rgb(0,0,255);">TAG</span>, <span style="color: rgb(181,106,1);">'Init failed: %{public}s'</span>, <span style="color: rgb(0,0,255);">e</span>);
       }
     }
-    if (!DisplayCompat.deviceVer) {
-      DisplayCompat.deviceVer = deviceInfo.sdkApiVersion;
+    <span style="color: rgb(255,0,170);">if</span> (!<span style="color: rgb(0,0,255);">DisplayCompat</span>.<span style="color: rgb(0,0,255);">deviceVer</span>) {
+      <span style="color: rgb(0,0,255);">DisplayCompat</span>.<span style="color: rgb(0,0,255);">deviceVer</span> = <span style="color: rgb(0,0,255);">deviceInfo</span>.<span style="color: rgb(0,0,255);">sdkApiVersion</span>;
     }
   }
-  public static register(cb: Callback<number>) {
-    if (typeof cb !== 'function') return;
-    DisplayCompat.callback = cb;
-    display.on('change', DisplayCompat.handleRotation);
+  <span style="color: rgb(0,0,255);">public</span> <span style="color: rgb(0,0,255);">static</span> <span style="color: rgb(181,106,1);">register</span>(<span style="color: rgb(0,0,255);">cb</span>: <span style="color: rgb(0,0,255);">Callback</span><<span style="color: rgb(0,0,255);">number</span>>) {
+    <span style="color: rgb(255,0,170);">if</span> (<span style="color: rgb(0,0,255);">typeof</span> <span style="color: rgb(0,0,255);">cb</span> !== <span style="color: rgb(181,106,1);">'function'</span>) <span style="color: rgb(255,0,170);">return</span>;
+    <span style="color: rgb(0,0,255);">DisplayCompat</span>.<span style="color: rgb(0,0,255);">callback</span> = <span style="color: rgb(0,0,255);">cb</span>;
+    <span style="color: rgb(0,0,255);">display</span>.<span style="color: rgb(181,106,1);">on</span>(<span style="color: rgb(181,106,1);">'change'</span>, <span style="color: rgb(0,0,255);">DisplayCompat</span>.<span style="color: rgb(181,106,1);">handleRotation</span>);
   }
-  public static unregister() {
-    display.off('change', DisplayCompat.handleRotation);
-    DisplayCompat.callback = null;
+  <span style="color: rgb(0,0,255);">public</span> <span style="color: rgb(0,0,255);">static</span> <span style="color: rgb(181,106,1);">unregister</span>() {
+    <span style="color: rgb(0,0,255);">display</span>.<span style="color: rgb(181,106,1);">off</span>(<span style="color: rgb(181,106,1);">'change'</span>, <span style="color: rgb(0,0,255);">DisplayCompat</span>.<span style="color: rgb(181,106,1);">handleRotation</span>);
+    <span style="color: rgb(0,0,255);">DisplayCompat</span>.<span style="color: rgb(0,0,255);">callback</span> = <span style="color: rgb(0,0,255);">null</span>;
   }
-  private static handleRotation = async (rot: number) => {
-    if (!DisplayCompat.callback) return;
-    try {
-      if (!DisplayCompat.targetVer || !DisplayCompat.deviceVer) await DisplayCompat.init();
-      const disp = display.getDefaultDisplaySync();
-      if (!disp) return;
-      // 判断是否使用旧版行为逻辑
-      console.info(`mast shouldConvert()`+this.shouldConvert())
-      DisplayCompat.callback(this.shouldConvert() ?
-        this.convertOrientation(disp.orientation) : disp.rotation);
-    } catch (e) {
-      hilog.error(COMP_ID, TAG, 'Rotation error: %{public}s', e);
+  <span style="color: rgb(0,0,255);">private</span> <span style="color: rgb(0,0,255);">static</span> <span style="color: rgb(181,106,1);">handleRotation</span> = <span style="color: rgb(0,0,255);">async</span> (<span style="color: rgb(0,0,255);">rot</span>: <span style="color: rgb(0,0,255);">number</span>) <span style="color: rgb(0,0,255);">=</span><span style="color: rgb(0,0,255);">></span> {
+    <span style="color: rgb(255,0,170);">if</span> (!<span style="color: rgb(0,0,255);">DisplayCompat</span>.<span style="color: rgb(0,0,255);">callback</span>) <span style="color: rgb(255,0,170);">return</span>;
+    <span style="color: rgb(255,0,170);">try</span> {
+      <span style="color: rgb(255,0,170);">if</span> (!<span style="color: rgb(0,0,255);">DisplayCompat</span>.<span style="color: rgb(0,0,255);">targetVer</span> || !<span style="color: rgb(0,0,255);">DisplayCompat</span>.<span style="color: rgb(0,0,255);">deviceVer</span>) <span style="color: rgb(255,0,170);">await</span> <span style="color: rgb(0,0,255);">DisplayCompat</span>.<span style="color: rgb(181,106,1);">init</span>();
+      <span style="color: rgb(0,0,255);">const</span> <span style="color: rgb(0,0,255);">disp</span> = <span style="color: rgb(0,0,255);">display</span>.<span style="color: rgb(181,106,1);">getDefaultDisplaySync</span>();
+      <span style="color: rgb(255,0,170);">if</span> (!<span style="color: rgb(0,0,255);">disp</span>) <span style="color: rgb(255,0,170);">return</span>;
+      <span style="color: rgb(80,160,79);">// 判断是否使用旧版行为逻辑</span>
+      <span style="color: rgb(0,0,255);">console</span>.<span style="color: rgb(181,106,1);">info</span>(<span style="color: rgb(181,106,1);">`mast shouldConvert()`</span>+<span style="color: rgb(0,0,255);">this</span>.<span style="color: rgb(181,106,1);">shouldConvert</span>())
+      <span style="color: rgb(0,0,255);">DisplayCompat</span>.<span style="color: rgb(181,106,1);">callback</span>(<span style="color: rgb(0,0,255);">this</span>.<span style="color: rgb(181,106,1);">shouldConvert</span>() ?
+        <span style="color: rgb(0,0,255);">this</span>.<span style="color: rgb(181,106,1);">convertOrientation</span>(<span style="color: rgb(0,0,255);">disp</span>.<span style="color: rgb(0,0,255);">orientation</span>) : <span style="color: rgb(0,0,255);">disp</span>.<span style="color: rgb(0,0,255);">rotation</span>);
+    } <span style="color: rgb(255,0,170);">catch</span> (<span style="color: rgb(0,0,255);">e</span>) {
+      <span style="color: rgb(0,0,255);">hilog</span>.<span style="color: rgb(181,106,1);">error</span>(<span style="color: rgb(0,0,255);">COMP_ID</span>, <span style="color: rgb(0,0,255);">TAG</span>, <span style="color: rgb(181,106,1);">'Rotation error: %{public}s'</span>, <span style="color: rgb(0,0,255);">e</span>);
     }
   }
-  /**
-   * 判断是否使用旧版行为
-   */
-  private static shouldConvert() {
-    // 目标版本<14 或 目标版本≥14但设备版本<14
-    return DisplayCompat.targetVer % 100 < SDK_VER_14 ||
-      (DisplayCompat.targetVer % 100 >= SDK_VER_14 && DisplayCompat.deviceVer < SDK_VER_14);
+  <span style="color: rgb(80,160,79);">/**</span>
+<span style="color: rgb(80,160,79);">   * 判断是否使用旧版行为</span>
+<span style="color: rgb(80,160,79);">   */</span>
+  <span style="color: rgb(0,0,255);">private</span> <span style="color: rgb(0,0,255);">static</span> <span style="color: rgb(181,106,1);">shouldConvert</span>() {
+    <span style="color: rgb(80,160,79);">// 目标版本</span><span style="color: rgb(80,160,79);"><</span><span style="color: rgb(80,160,79);">14 或 目标版本≥14但设备版本</span><span style="color: rgb(80,160,79);"><</span><span style="color: rgb(80,160,79);">14</span>
+    <span style="color: rgb(255,0,170);">return</span> <span style="color: rgb(0,0,255);">DisplayCompat</span>.<span style="color: rgb(0,0,255);">targetVer</span> % <span style="color: rgb(80,160,79);">100</span> < <span style="color: rgb(0,0,255);">SDK_VER_14</span> ||
+      (<span style="color: rgb(0,0,255);">DisplayCompat</span>.<span style="color: rgb(0,0,255);">targetVer</span> % <span style="color: rgb(80,160,79);">100</span> >= <span style="color: rgb(0,0,255);">SDK_VER_14</span> && <span style="color: rgb(0,0,255);">DisplayCompat</span>.<span style="color: rgb(0,0,255);">deviceVer</span> < <span style="color: rgb(0,0,255);">SDK_VER_14</span>);
   }
-  /**
-   * 转换到旧版方向值
-   * @param orientation 原始方向值
-   */
-  private static convertOrientation(orientation: number): number {
-    // 设备在旧版本上的特殊处理
-    switch (orientation) {
-      case Orientation.LANDSCAPE:
-        return Orientation.LANDSCAPE_INVERTED;
-      case Orientation.LANDSCAPE_INVERTED:
-        return Orientation.LANDSCAPE;
-      default:
-        return orientation;
+  <span style="color: rgb(80,160,79);">/**</span>
+<span style="color: rgb(80,160,79);">   * 转换到旧版方向值</span>
+<span style="color: rgb(80,160,79);">   * </span><span style="color: rgb(0,0,255);">@param</span> <span style="color: rgb(0,0,255);">orientation</span><span style="color: rgb(80,160,79);"> 原始方向值</span>
+<span style="color: rgb(80,160,79);">   */</span>
+  <span style="color: rgb(0,0,255);">private</span> <span style="color: rgb(0,0,255);">static</span> <span style="color: rgb(181,106,1);">convertOrientation</span>(<span style="color: rgb(0,0,255);">orientation</span>: <span style="color: rgb(0,0,255);">number</span>): <span style="color: rgb(0,0,255);">number</span> {
+    <span style="color: rgb(80,160,79);">// 设备在旧版本上的特殊处理</span>
+    <span style="color: rgb(255,0,170);">switch</span> (<span style="color: rgb(0,0,255);">orientation</span>) {
+      <span style="color: rgb(255,0,170);">case</span> <span style="color: rgb(0,0,255);">Orientation</span>.<span style="color: rgb(0,0,255);">LANDSCAPE</span>:
+        <span style="color: rgb(255,0,170);">return</span> <span style="color: rgb(0,0,255);">Orientation</span>.<span style="color: rgb(0,0,255);">LANDSCAPE_INVERTED</span>;
+      <span style="color: rgb(255,0,170);">case</span> <span style="color: rgb(0,0,255);">Orientation</span>.<span style="color: rgb(0,0,255);">LANDSCAPE_INVERTED</span>:
+        <span style="color: rgb(255,0,170);">return</span> <span style="color: rgb(0,0,255);">Orientation</span>.<span style="color: rgb(0,0,255);">LANDSCAPE</span>;
+      <span style="color: rgb(255,0,170);">default</span>:
+        <span style="color: rgb(255,0,170);">return</span> <span style="color: rgb(0,0,255);">orientation</span>;
     }
   }
 }
-export default DisplayCompat;
+<span style="color: rgb(255,0,170);">export</span> <span style="color: rgb(255,0,170);">default</span> <span style="color: rgb(0,0,255);">DisplayCompat</span>;
 ```
 
 
@@ -124,7 +125,7 @@ export default DisplayCompat;
 应用配置compatibleSdkVersion为5.0.0(12)，三方库配置的compatibleSdkVersion为5.0.1(13)， 当应用依赖这个三方库，编译构建时提示如下：
 
 ```text
-> hvigor ERROR: Failed :entry:default@MergeProfile...
-> hvigor ERROR: 00306004 Specification Limit Violation
-Error Message: The compatibleSDKVersion 12 cannot be smaller than 13 declared in library har.
+> hvigor<span style="color: rgb(255,0,0);"> ERROR: Failed :entry:default@MergeProfile...</span>
+> hvigor <span style="color: rgb(255,0,0);">ERROR: 00306004 Specification Limit Violation</span>
+<span style="color: rgb(255,0,0);">Error Message: The compatibleSDKVersion 12 cannot be smaller than 13 declared in library har.</span>
 ```

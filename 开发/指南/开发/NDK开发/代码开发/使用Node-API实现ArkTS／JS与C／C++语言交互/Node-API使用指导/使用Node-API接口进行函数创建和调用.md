@@ -1,6 +1,6 @@
 # 使用Node-API接口进行函数创建和调用
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-about-function
 
@@ -144,7 +144,12 @@ hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_cb_info get thisArg:%{publ
 
 在C/C++侧对ArkTS函数进行调用。
  
-注意事项：napi_call_function传入的argv长度需不少于argc；argc为0时可传nullptr，否则argv元素应为有效的napi_value。
+注意事项：
+ 
+- napi_call_function传入的argv长度需不少于argc。
+- argc为0时可传nullptr，否则argv元素应为有效的napi_value。
+- napi_call_function执行后会触发微任务执行。
+
  
 cpp部分代码
  

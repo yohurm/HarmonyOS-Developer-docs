@@ -1,6 +1,6 @@
 # 基于AVPlayer播放格式化音频（ArkTS）
 
-更新时间：2026-09-09 06:06:31
+更新时间：2026-09-15 02:12:10
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-playing-formatted-audio-based-avplayer-arkts
 
@@ -46,8 +46,8 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
 
 通过[Interface (AVPlayer)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avplayer)实现核心音频播放控制能力，包括音频资源加载、播放、暂停、停止及退出等操作。
  
-
  
+
 
 ![](assets/基于AVPlayer播放格式化音频（ArkTS）/file-20260515114714351-2.gif)
 
@@ -320,8 +320,8 @@ public setSilentMode(isSilentMode: boolean) {
 }
 ```
  
-
  
+
  
 
 ## 切换歌曲播放

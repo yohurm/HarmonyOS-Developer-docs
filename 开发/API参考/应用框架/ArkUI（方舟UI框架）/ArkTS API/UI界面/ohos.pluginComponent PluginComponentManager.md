@@ -1,6 +1,6 @@
 # @ohos.pluginComponent (PluginComponentManager)
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-plugincomponent
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -161,7 +161,7 @@ pluginComponentManager.request方法接收到的回调结果。
 | --- | --- | --- | --- | --- |
 | componentTemplate | PluginComponentTemplate | 否 | 否 | 组件模板。 |
 | data | KVObject | 否 | 否 | 组件数据，以键值对形式存储，键和值类型由业务定义。 |
-| extraData | KVObject | 否 | 否 | 附加数据。该字段为可选字段，不提供时默认不包含在返回结果中。 |
+| extraData | KVObject | 否 | 否 | 附加数据。 |
  
  
   

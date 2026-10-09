@@ -1,6 +1,6 @@
 # Enums
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-photoaccesshelper-e
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -629,7 +629,7 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 **模型约束**： 此接口仅可在Stage模型下使用。
 
-**系统能力**: SystemCapability.FileManagement.PhotoAccessHelper.Core
+**系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 
 | 名称 | 值 | 说明 |
@@ -652,12 +652,12 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 **模型约束**： 此接口仅可在Stage模型下使用。
 
-**系统能力**: SystemCapability.FileManagement.PhotoAccessHelper.Core
+**系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| FULL_FUNCTION_GRID | 0 | 宫格支持捏合，捏合后支持选中、点击进大图操纵。 |
+| FULL_FUNCTION_GRID | 0 | 宫格支持捏合，捏合后支持选中、点击进大图操作。 |
 
 
 

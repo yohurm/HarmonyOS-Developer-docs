@@ -1,6 +1,6 @@
 # @ohos.window.floatView (闪控窗)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-floatview
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -17,29 +17,7 @@
  - 手机直播应用：主播在直播过程中使用闪控窗展示自定义的互动面板或控制界面，方便实时操作和互动。
 
 
-**闪控窗和闪控球对比**
-
- - 共同点：闪控窗和[闪控球](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-floatingball)均为一种特殊的应用辅助窗口，具备在应用主窗口和对应UIAbility（应用组件）退至后台后仍然可以在前台显示的能力。可以用于应用退至后台后，使用闪控窗或闪控球继续显示UI。
- - 区别：      
-显示形式不同。闪控球以小圆球的形式展现，适用于展示关键信息。闪控窗以小型窗口展示，展示区域较大，可以持续展示应用内容或提供快捷操作。
- - 闪控球只能贴边展示，闪控窗则没有此限制。
- - 闪控球模板固定，应用不能定制UI。闪控窗同样存在模板，并由系统管理并统一绘制UI，但是提供了可绘制的区域，可供应用加载指定页面内容。
-
-
-
-**与闪控球联动：**
-
-本模块可与[@ohos.window.floatingBall](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-floatingball)（闪控球）联合使用。通过[floatView.bind](#floatviewbind)接口将闪控窗控制器与闪控球控制器绑定后，用户点击闪控球可展开为闪控窗，点击闪控窗左上角的缩小按钮可收起为闪控球，实现两种窗口形态的相互切换。
-
-**全局悬浮窗和闪控窗对比**
-
- - 共同点：全局悬浮窗和闪控窗均为一种特殊的应用辅助窗口，具备在应用主窗口和对应UIAbility退至后台后仍然可以在前台显示的能力。可以用于应用退至后台后，使用全局悬浮窗或闪控窗继续显示UI。
- - 区别：      
-全局悬浮窗由开发者管理并实现UI绘制，无统一UI及动效。
- - 闪控窗由系统管理并统一绘制UI，动效更为高端精致。
- - 闪控窗支持与[闪控球](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-floatingball)互相绑定联合使用，实现更复杂场景。
-
-
+**相关对比**：[闪控球和闪控窗的对比](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/window-type-overview#闪控球和闪控窗的对比)、[全局悬浮窗和闪控窗的对比](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/window-type-overview#全局悬浮窗和闪控窗的对比)
 
 **起始版本：** 26.0.0
 
@@ -146,7 +124,8 @@ import { floatView } from '@kit.ArkUI';
 @Component
 struct Index {
   private floatViewController: floatView.FloatViewController | undefined = undefined;
-  aboutToAppear(): void {
+
+  createFloatView(): void {
     // 请在组件内获取context，确保this.getUIContext().getHostContext()返回的结果为UIAbilityContext
     let ctx = this.getUIContext().getHostContext() as common.UIAbilityContext;
     // 创建闪控窗配置对象
@@ -164,6 +143,14 @@ struct Index {
       });
     } catch (e) {
       console.error(`Failed to create float view controller. Cause:${e.code}, message:${e.message}`);
+    }
+  }
+
+  build() {
+    RelativeContainer() {
+      Button('create fv').onClick(() => {
+        this.createFloatView();
+      })
     }
   }
 }

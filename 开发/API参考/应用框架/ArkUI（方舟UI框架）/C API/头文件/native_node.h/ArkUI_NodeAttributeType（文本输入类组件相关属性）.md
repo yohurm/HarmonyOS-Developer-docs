@@ -1,6 +1,6 @@
 # ArkUI_NodeAttributeType（文本输入类组件相关属性）
 
-更新时间：2026-09-01 03:59:25
+更新时间：2026-09-01 03:59:25（官网已下线）
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-node-h-nodeattributetype-textinputcategory
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable

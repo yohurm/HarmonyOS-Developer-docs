@@ -154,8 +154,6 @@ struct Index {
 | 装饰器参数 | 无。 |
 | 类装饰器 | 装饰class。需要放在class的定义前，使用new创建类对象。 |
 
-
-
 | @Trace成员变量装饰器 | 说明 |
 | --- | --- |
 | 装饰器参数 | 无。 |
@@ -275,15 +273,10 @@ struct Index {
  - @Trace装饰内置类型时，可以观测各自API导致的变化：
 
 | 类型 | 可观测变化的API |
-
 | --- | --- |
-
 | Array | push、pop、shift、unshift、splice、copyWithin、fill、reverse、sort |
-
 | Date | setFullYear, setMonth, setDate, setHours, setMinutes, setSeconds, setMilliseconds, setTime, setUTCFullYear, setUTCMonth, setUTCDate, setUTCHours, setUTCMinutes, setUTCSeconds, setUTCMilliseconds |
-
 | Map | set, clear, delete |
-
 | Set | add, clear, delete |
 
 

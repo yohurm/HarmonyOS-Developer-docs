@@ -1,10 +1,10 @@
 # 基于AVScreenCapture录制音频
 
-更新时间：2026-05-18 00:55:31
+更新时间：2026-09-15 02:12:10
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-record-base-on-avscreencapture
 
-#### 概述
+## 概述
 
 AVScreenCapture具备采集设备内部音频和麦克风音频的能力，可以录制设备内播放的音频或者麦克风的音频。本文适用于音频录制类应用的开发，针对市场上主流音频录制类应用的常见场景，介绍了如何基于AVScreenCapture录制音频，指导开发者实现基础录制。
  
@@ -20,19 +20,19 @@ AVScreenCapture具备采集设备内部音频和麦克风音频的能力，可�
  
  
 
-#### 基础录制
+## 基础录制
 
  
 
-#### 实现原理
+### 实现原理
 
-开发者可以调用C/C++侧屏幕录制[AVScreenCapture](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/media-kit-intro#avscreencapture)模块的接口，完成屏幕录制，采集设备内部和麦克风等音视频源数据。通过AVScreenCapture可以实现单独录制音频文件的功能，在录制音频文件时，支持录制m4a的音频格式，关键流程包括开始录制、停止录制、释放资源等。
+开发者可以调用C/C++侧屏幕录制[AVScreenCapture](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/media-kit-intro#avscreencapture)模块的接口，完成屏幕录制，采集设备内部和麦克风等音视频源数据。通过AVScreenCapture可以实现单独录制音频文件的功能，在录制时，支持录制m4a的音频格式，关键流程包括开始录制、停止录制、释放资源等。
  
  
 
-#### 开发步骤
+### 开发步骤
 
-1.在CMake脚本中链接动态库libnative_avscreen_capture.so、libnative_media_core.so等。
+1.在CMake()脚本中链接动态库libnative_avscreen_capture.so、libnative_media_core.so等。
  
 ```text
 target_link_libraries(entry PUBLIC libace_napi.z.so libace_ndk.z.so libjsvm.so libhilog_ndk.z.so libnative_avscreen_capture.so libuv.so libnative_media_core.so)
@@ -84,7 +84,7 @@ void AVScreenCapture::SetConfig(OH_AVScreenCaptureConfig &config) {
 3.启动音频录制。
  
 - 在调用[OH_AVScreenCapture_Create()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avscreen-capture-h#oh_avscreencapture_create)创建录制对象后，通过环境配置OH_AVScreenCaptureConfig初始化该对象。
-- 然后，调用OH_AVScreenCapture_StartScreenRecording()启动音频录制。
+- 然后，调用[OH_AVScreenCapture_StartScreenRecording()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avscreen-capture-h#oh_avscreencapture_startscreenrecording)启动音频录制。
 
  
 ```cpp
@@ -169,6 +169,6 @@ void AVScreenCapture::ReleaseAVScreenCapture(struct OH_AVScreenCapture *capture)
 ```
  
 
-#### 示例代码
+## 示例代码
 
 - [基于AVScreenCapture录制音频（C++）](https://gitcode.com/HarmonyOS_Samples/avscreen-capture-record-system-audio-arkts)

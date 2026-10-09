@@ -1,9 +1,9 @@
 # @ohos.annotation (注解)
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-annotation
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 本模块定义了HarmonyOS ArkTS API的注解类型，如生命周期最小可用版本、API告警屏蔽等，用于帮助开发者标识和管理API的兼容性、告警抑制等特性。该模块解决了开发者在跨版本开发、第三方SDK集成等场景中遇到的版本兼容性告警、权限告警、多设备适配告警等问题，通过注解方式抑制不必要的告警干扰，提高代码的可维护性和开发效率。
  
@@ -15,7 +15,7 @@
 ## 导入模块
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ```text
 import { Available, SuppressWarnings, SuppressWarningsType } from '@kit.BasicServicesKit';
@@ -26,7 +26,7 @@ import { Available, SuppressWarnings, SuppressWarningsType } from '@kit.BasicSer
 ## Available
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 @interface Available { minApiVersion: string = '' }
  
@@ -79,7 +79,7 @@ function myNewFunc() {
 ## SuppressWarnings23+
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 @interface SuppressWarnings {
  
@@ -204,7 +204,7 @@ async function savePhotoToGallerySuppress(context: common.UIAbilityContext) {
 ## SuppressWarningsType23+
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 支持消除告警的规则。帮助开发者根据实际需求选择性地屏蔽兼容性告警、多设备告警、权限告警等，在确保代码质量的同时减少不必要的告警干扰，提升开发体验。
  

@@ -1,14 +1,14 @@
 # OS平台API行为的变更
 
-更新时间：2026-06-27 01:41:31
+更新时间：2026-10-08 10:09:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-for-all-apps-b123sp16
 
-#### Ability
+## Ability
 
  
 
-#### 包管理bundleManager/AbilityInfo中新增必选属性orientationId
+### 包管理bundleManager/AbilityInfo中新增必选属性orientationId
 
 **变更原因**
  
@@ -36,11 +36,11 @@ AbilityInfo.d.ts中新增必选属性orientationId。
  
  
 
-#### ArkData
+## ArkData
 
  
 
-#### 数据库插入长度为0的Uint8Array的数据，getRow、getValue 接口返回值发生变化
+### 数据库插入长度为0的Uint8Array的数据，getRow、getValue 接口返回值发生变化
 
 **变更原因**
  
@@ -60,6 +60,7 @@ AbilityInfo.d.ts中新增必选属性orientationId。
  
 **起始API Level**
   
+
 | 接口名称 | 起始API Level |
 | --- | --- |
 | getRow | 11 |
@@ -123,7 +124,7 @@ if (resultSet != undefined) {
  
  
 
-#### 关系型数据管理@ohos.data.relationalStore.d.ts中getRdbStore接口新增错误码14800020，用于业务侧进行恢复重建数据库
+### 关系型数据管理@ohos.data.relationalStore.d.ts中getRdbStore接口新增错误码14800020，用于业务侧进行恢复重建数据库
 
 **变更原因**
  
@@ -183,11 +184,11 @@ relationalStore.getRdbStore(this.context, STORE_CONFIG, (err: BusinessError, rdb
  
  
 
-#### ArkTS
+## ArkTS
 
  
 
-#### 延迟加载（lazy import）影响异步任务执行时序变更为不影响异步任务执行时序
+### 延迟加载（lazy import）影响异步任务执行时序变更为不影响异步任务执行时序
 
 **变更原因**
  
@@ -263,7 +264,7 @@ asyncFunc then
  
  
 
-#### 执行幂运算（**）当底数是1，指数是NaN或ToNumber之后是NaN的情况的返回值变更
+### 执行幂运算（**）当底数是1，指数是NaN或ToNumber之后是NaN的情况的返回值变更
 
 **变更原因**
  
@@ -315,7 +316,7 @@ NaN
  
  
 
-#### String.prototype.lastIndexOf接口查找空字符串行为变更
+### String.prototype.lastIndexOf接口查找空字符串行为变更
 
 **变更原因**
  
@@ -363,11 +364,11 @@ console.log("abcde".lastIndexOf("").toString())
  
  
 
-#### ArkUI
+## ArkUI
 
  
 
-#### ImageAttributeModifier支持new方式创建ColorFilter对象传入colorFilter接口变更
+### ImageAttributeModifier支持new方式创建ColorFilter对象传入colorFilter接口变更
 
 **变更原因**
  
@@ -427,7 +428,7 @@ struct ColorFilters {
  
  
 
-#### 轴事件分发机制变更
+### 轴事件分发机制变更
 
 **变更原因**
  
@@ -457,7 +458,7 @@ struct ColorFilters {
  
  
 
-#### List组件首次创建布局时，Scroller控制器的跳转方法优先级变更为高于initialIndex的优先级
+### List组件首次创建布局时，Scroller控制器的跳转方法优先级变更为高于initialIndex的优先级
 
 **访问级别**
  
@@ -477,16 +478,18 @@ initialIndex仅支持设定起始index，并默认将列表头部对齐，这使
  
 场景1：List设置initialIndex为0（默认也是0），并在首次布局前调用scrollToIndex(1)。
   
+
 | 变更前 | 变更后 |
 | --- | --- |
-| List首次布局将从index为0的ListItem开始布局。 | List首次布局将从index为1的ListItem开始布局。 |
+| List首次布局将从index为0的ListItem开始布局。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/-mGPi1h9Sb-HO5psNIT4tQ/zh-cn_image_0000002300492516.png?HW-CC-KV=V1&HW-CC-Date=20261009T012724Z&HW-CC-Expire=86400&HW-CC-Sign=44A3C298865EBBC7EB2A2582CA977E38500BCFA9A4B1BF9CF25124B729B7D32C) | List首次布局将从index为1的ListItem开始布局。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/l8XTBgwLTKaim5LhoLlGGg/zh-cn_image_0000002334331985.png?HW-CC-KV=V1&HW-CC-Date=20261009T012724Z&HW-CC-Expire=86400&HW-CC-Sign=C2FFF77641D7FA883176A4514CAB14F2996EA4C6148BA01F3382A94BB671D970) |
  
  
 场景2：List设置initialIndex为0（默认也是0），并在首次布局前调用scrollEdge(Edge.Bottom)。
   
+
 | 变更前 | 变更后 |
 | --- | --- |
-| List首次布局将展示在顶部，即index为0的ListItem处于顶部。 | List首次布局将展示在底部，即index为最大值的ListItem处于底部。 |
+| List首次布局将展示在顶部，即index为0的ListItem处于顶部。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/TIcjI33vSsG_uHSBzAVS-g/zh-cn_image_0000002334331989.png?HW-CC-KV=V1&HW-CC-Date=20261009T012724Z&HW-CC-Expire=86400&HW-CC-Sign=D7A51E1D86ACC61798EB5D4CC458208D1E73EEC01E73BC9D96720EE05542C003) | List首次布局将展示在底部，即index为最大值的ListItem处于底部。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/gMsv7eJkQUyHMLloszjP3A/zh-cn_image_0000002334372177.png?HW-CC-KV=V1&HW-CC-Date=20261009T012724Z&HW-CC-Expire=86400&HW-CC-Sign=69EA004216BEBD3A608A93E588DEB660E1D313A27F44DC427A63AEA575F864A1) |
  
  
 **起始API Level**
@@ -503,7 +506,7 @@ List组件的initialIndex接口和Scroller控制器的跳转接口（scrollToInd
  
  
 
-#### Image组件的borderRadius接口支持动态修改
+### Image组件的borderRadius接口支持动态修改
 
 **变更原因**
  
@@ -521,9 +524,10 @@ List组件的initialIndex接口和Scroller控制器的跳转接口（scrollToInd
  
 变更后：Image组件的borderRadius接口动态修改生效。
   
+
 | 变更前 | 变更后 |
 | --- | --- |
-|  |  |
+| ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/GGc-jEqfTveu83bMXOiPcQ/zh-cn_image_0000002334372169.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012724Z&HW-CC-Expire=86400&HW-CC-Sign=7EC24F5A5B8749F00928BC7914B784BDDA2CF8BC68790DA75DE300E91EEBF8A1) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/0HYyXLgVRIq0Izuv4cRIqQ/zh-cn_image_0000002334372181.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012724Z&HW-CC-Expire=86400&HW-CC-Sign=D47E7FE400F10850B0D39448499B0638269E5CE1CB5CFDFC1A0439E9CC4E6E59) |
  
  
 ```ArkTS
@@ -569,7 +573,7 @@ Image组件的borderRadius接口。
  
  
 
-#### RichEditor（富文本）在光标处于文本起始位置情况时向前删除空文本onWillChange回调变更
+### RichEditor（富文本）在光标处于文本起始位置情况时向前删除空文本onWillChange回调变更
 
 **变更原因**
  
@@ -585,6 +589,7 @@ RichEditorStyledStringController构造的富文本：光标位于文本起始位
 > 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.0.2(14)时生效。
 
   
+
 | 组件 | 变更前 | 变更后 |
 | --- | --- | --- |
 | RichEditorController构造的富文本 | 光标位于文本起始位置时向前删除，触发onWillChange回调范围是[-1, -1]。 | 光标位于文本起始位置时向前删除，触发onWillChange回调范围是[0, 0]。 |
@@ -605,7 +610,7 @@ RichEditor
  
  
 
-#### 修复zIndex接口会影响组件在3D变换中的透视效果的错误行为
+### 修复zIndex接口会影响组件在3D变换中的透视效果的错误行为
 
 **变更原因**
  
@@ -625,9 +630,10 @@ zIndex接口在3D变换场景与translateZ耦合，导致zIndex值的改变会�
  
 设置组件绕y轴旋转45度，同时设置zIndex值为200，变更前后效果如下：
   
+
 | 变更前 | 变更后 |
 | --- | --- |
-|  |  |
+| ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/31N-cQa4R6qlkWcZ6jK41A/zh-cn_image_0000002300332840.png?HW-CC-KV=V1&HW-CC-Date=20261009T012724Z&HW-CC-Expire=86400&HW-CC-Sign=693589BB737530F93C7504029689272723B16B496E58A50F53992A3469473FD4) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/z1s72sU1TuGwHyxIZaV8oQ/zh-cn_image_0000002334331993.png?HW-CC-KV=V1&HW-CC-Date=20261009T012724Z&HW-CC-Expire=86400&HW-CC-Sign=9F4E221F449036BECE349558FDC72B42D0289A1F99C4FC95575B7B55AAECB1AB) |
  
  
 **起始API Level**
@@ -674,12 +680,12 @@ struct zIndexTest {
 实现效果如下图所示：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/ybbHMdDbR0yJGZ6gr8MBgg/zh-cn_image_0000002300492512.png?HW-CC-KV=V1&HW-CC-Date=20260701T015159Z&HW-CC-Expire=86400&HW-CC-Sign=E479938ABE0AE99A17DC544780AD939FB9A05CC5FB2FEBD0447C5270B2007116)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/LnmtR6QsTnawZOjwjhWWMQ/zh-cn_image_0000002300492512.png?HW-CC-KV=V1&HW-CC-Date=20261009T012724Z&HW-CC-Expire=86400&HW-CC-Sign=012DBA9E8B3F87D5576426D84F1E9AD73A218D3525A14D2F9AFC82AD7CE77AB9)
 
  
  
 
-#### 屏幕Display对象rotation和orientation属性变更
+### 屏幕Display对象rotation和orientation属性变更
 
 **变更原因**
  
@@ -697,12 +703,13 @@ struct zIndexTest {
  
 变更前后对比效果，如下图所示：
   
+
 | 设备旋转方向 | 平板变更前 | 平板变更后 | 手机 |
 | --- | --- | --- | --- |
-|  | rotation: 1 orientation: 0 | rotation: 0 orientation: 0 | rotation: 0 orientation: 0 |
-|  | rotation: 2 orientation: 3 | rotation: 1 orientation: 1 | rotation: 1 orientation: 1 |
-|  | rotation: 3 orientation: 2 | rotation: 2 orientation: 2 | rotation: 2 orientation: 2 |
-|  | rotation: 0 orientation: 1 | rotation: 3 orientation: 3 | rotation: 3 orientation: 3 |
+| ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/mOTOIesqTz2KAr_tpYlTPg/zh-cn_image_0000002300492508.png?HW-CC-KV=V1&HW-CC-Date=20261009T012724Z&HW-CC-Expire=86400&HW-CC-Sign=AD150135B60CDD518FC3F70EC272D37AC6CC889C8280478ECF8C0824E4FE9B18) | rotation: 1 orientation: 0 | rotation: 0 orientation: 0 | rotation: 0 orientation: 0 |
+| ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/iEcjdJp4RwmZ9eXuh5pBhQ/zh-cn_image_0000002300332844.png?HW-CC-KV=V1&HW-CC-Date=20261009T012724Z&HW-CC-Expire=86400&HW-CC-Sign=CC1C90A950715B8053B4FEF342FED64EA764AE56BEB651EBE9AB3CEA715BB65E) | rotation: 2 orientation: 3 | rotation: 1 orientation: 1 | rotation: 1 orientation: 1 |
+| ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/gZURDQSRTXiM5cIhdA5d_g/zh-cn_image_0000002300332836.png?HW-CC-KV=V1&HW-CC-Date=20261009T012724Z&HW-CC-Expire=86400&HW-CC-Sign=4F92D5BB7C1CCBFF49D601774B8C5853C3E444EDF714197D3ACEF3C7684BF24A) | rotation: 3 orientation: 2 | rotation: 2 orientation: 2 | rotation: 2 orientation: 2 |
+| ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/ZY3zNM8sQ62X_fcUx3Ud0Q/zh-cn_image_0000002300492504.png?HW-CC-KV=V1&HW-CC-Date=20261009T012724Z&HW-CC-Expire=86400&HW-CC-Sign=A47CAA44336DDE1FFCDB9623D56C22F90082834AA42909E10231EBF4FBB81677) | rotation: 0 orientation: 1 | rotation: 3 orientation: 3 | rotation: 3 orientation: 3 |
  
  
 **起始API Level**
@@ -721,6 +728,7 @@ struct zIndexTest {
  
 以充电口朝下方向（此时rotation为0）为准，顺时针旋转0、90、180、270度，平板设备上对应的rotation和orientation对照表如下所示：
   
+
 | 顺时针旋转角度 | rotation变更前 | rotation变更后 | orientation变更前 | orientation变更后 |
 | --- | --- | --- | --- | --- |
 | 0 | 1 | 0 | 0 | 0 |
@@ -731,7 +739,7 @@ struct zIndexTest {
  
  
 
-#### @ohos.arkui.uiExtension中uiExtension命名空间下新增properties必选属性
+### @ohos.arkui.uiExtension中uiExtension命名空间下新增properties必选属性
 
 **变更原因**
  
@@ -759,7 +767,7 @@ WindowProxy的properties属性
  
  
 
-#### Navigation的menus接口、NavDestination的title和menus接口支持Resource类型资源
+### Navigation的menus接口、NavDestination的title和menus接口支持Resource类型资源
 
 **变更原因**
  
@@ -842,7 +850,7 @@ NavDestination() {
  
  
 
-#### 在PC/2in1设备上getWindowStatus和on('windowStatusChange')接口在窗口最大化状态返回值变更
+### 在PC/2in1设备上getWindowStatus和on('windowStatusChange')接口在窗口最大化状态返回值变更
 
 **变更原因**
  
@@ -972,7 +980,7 @@ export default class EntryAbility extends UIAbility {
  
  
 
-#### setWindowLayoutFullScreen、setImmersiveModeEnabledState接口在PC/2in1设备的自由多窗模式上禁用
+### setWindowLayoutFullScreen、setImmersiveModeEnabledState接口在PC/2in1设备的自由多窗模式上禁用
 
 **变更原因**
  
@@ -1091,7 +1099,7 @@ export default class EntryAbility extends UIAbility {
  
  
 
-#### setWindowBrightness在PC/2in1设备的行为变更
+### setWindowBrightness在PC/2in1设备的行为变更
 
 **变更原因**
  
@@ -1119,11 +1127,11 @@ setWindowBrightness接口
  
  
 
-#### Basic Service Kit
+## Basic Service Kit
 
  
 
-#### setAppAccess错误码变更
+### setAppAccess错误码变更
 
 **变更原因**
  
@@ -1176,11 +1184,11 @@ try {
  
  
 
-#### Call Service Kit
+## Call Service Kit
 
  
 
-#### kit.CallKit.d.ts文件废弃，替换为kit.CallServiceKit.d.ts文件访问级别
+### kit.CallKit.d.ts文件废弃，替换为kit.CallServiceKit.d.ts文件访问级别
 
 **变更原因**
  
@@ -1212,11 +1220,11 @@ try {
  
  
 
-#### Core File Kit
+## Core File Kit
 
  
 
-#### 持久化权限激活接口实现从sandbox_manager模块切换到UPMS模块
+### 持久化权限激活接口实现从sandbox_manager模块切换到UPMS模块
 
 **变更原因**
  
@@ -1254,11 +1262,11 @@ oh_file_share.h中的C API：OH_FileShare_ActivatePermission
  
  
 
-#### Core Vision Kit
+## Core Vision Kit
 
  
 
-#### @hms.ai.vision.objectDetection.d.ts和@hms.ai.vision.skeletonDetection.d.ts方法文件变更
+### @hms.ai.vision.objectDetection.d.ts和@hms.ai.vision.skeletonDetection.d.ts方法文件变更
 
 **变更原因**
  
@@ -1298,15 +1306,15 @@ oh_file_share.h中的C API：OH_FileShare_ActivatePermission
  
  
 
-#### DFX Kit
+## DFX Kit
 
  
 
-#### Form Kit
+## Form Kit
 
  
 
-#### FormLink的router事件允许拉起Ability类型范围变更
+### FormLink的router事件允许拉起Ability类型范围变更
 
 **变更原因**
  
@@ -1334,11 +1342,11 @@ FormLink
  
  
 
-#### Image Kit
+## Image Kit
 
  
 
-#### image.ImageSource.DecodingOptionsForPicture接口的desiredAuxiliaryPictures属性系统能力变更
+### image.ImageSource.DecodingOptionsForPicture接口的desiredAuxiliaryPictures属性系统能力变更
 
 **变更原因**
  
@@ -1362,6 +1370,7 @@ FormLink
  
 @ohos.multimedia.image中涉及修改的属性如下：
   
+
 | 接口名 | 接口说明 | 属性名 | 属性说明 |
 | --- | --- | --- | --- |
 | image.ImageSource.DecodingOptionsForPicture | 图像解码设置选项 | desiredAuxiliaryPictures | 设置AuxiliaryPicture类型，默认解码所有AuxiliaryPicture类型。 |
@@ -1373,7 +1382,7 @@ FormLink
  
  
 
-#### image.Component.setAuxiliaryPictureInfo接口行为变更
+### image.Component.setAuxiliaryPictureInfo接口行为变更
 
 **变更原因**
  
@@ -1397,6 +1406,7 @@ FormLink
  
 **变更的接口/组件**
   
+
 | API类型 | 所在d.ts文件 | 接口名 | 接口起始版本 |
 | --- | --- | --- | --- |
 | ArkTS API | @ohos.multimedia.image.d.ts | setAuxiliaryPictureInfo(info: AuxiliaryPictureInfo): void | 13 |
@@ -1441,7 +1451,7 @@ async function setAuxiliaryPitcutreInfo() {
  
  
 
-#### image.Component.OH_AuxiliaryPictureNative_SetInfo()接口行为变更
+### image.Component.OH_AuxiliaryPictureNative_SetInfo()接口行为变更
 
 **变更原因**
  
@@ -1465,8 +1475,9 @@ async function setAuxiliaryPitcutreInfo() {
  
 **变更的接口/组件**
  
-
   
+
+
 | API类型 | 所在头文件 | 接口名 | 接口起始版本 |
 | --- | --- | --- | --- |
 | C API | picture_native.h | Image_ErrorCode OH_AuxiliaryPictureNative_SetInfo(OH_AuxiliaryPictureNative *auxiliaryPicture, OH_AuxiliaryPictureInfo *info) | 13 |
@@ -1520,7 +1531,7 @@ Image_ErrorCode SetAuxiliaryPictureInfoTest() {
  
  
 
-#### image接口Heif格式类型变更
+### image接口Heif格式类型变更
 
 **变更原因**
  
@@ -1568,6 +1579,7 @@ Image_ErrorCode SetAuxiliaryPictureInfoTest() {
  
 **变更的接口/组件**
   
+
 | API类型 | 所在d.ts/头文件 | 接口名 | 接口起始版本 |
 | --- | --- | --- | --- |
 | C API | image_packer_native.h | Image_ErrorCode OH_PackingOptions_SetMimeType(OH_PackingOptions *options, Image_MimeType *format) | 12 |
@@ -1586,15 +1598,15 @@ Image_ErrorCode SetAuxiliaryPictureInfoTest() {
 5. 调用image.PackingOption进行Heif图片编码时，开发者调用参数可以使用变更前的image/heif类型，也可以使用image/heic类型。
 6. 调用OH_PackingOptions进行Heif图片编码时，开发者调用参数可以使用变更前的image/heif类型，也可以使用image/heic类型。
  
-
  
- 
-
-#### Media Kit
 
  
 
-#### AVErrorCode枚举值变更
+## Media Kit
+
+ 
+
+### AVErrorCode枚举值变更
 
 **变更原因**
  
@@ -1612,6 +1624,7 @@ Image_ErrorCode SetAuxiliaryPictureInfoTest() {
  
 变更后：播放框架返回IO类网络错误时，对应的错误码会细化，涉及到IO返回错误的接口返回值会有变化，用户升级后需要适配新的错误码上报规则。
   
+
 | 接口声明 | 变更前 | 变更后 |
 | --- | --- | --- |
 | AVPlayer.on(type: 'error', callback: ErrorCallback) | AVERR_IO = 5400103 | 网络场景原有错误码废弃，返回细化后的错误码5411001 ~ 5411011，其余场景不变。 |
@@ -1638,11 +1651,11 @@ Image_ErrorCode SetAuxiliaryPictureInfoTest() {
  
  
 
-#### Scan Kit
+## Scan Kit
 
  
 
-#### 自定义界面扫码权限校验错误码变更
+### 自定义界面扫码权限校验错误码变更
 
 **变更原因**
  
@@ -1679,7 +1692,7 @@ customScan模块下接口：
  
  
 
-#### 集成自定义界面扫码应用适配窗口子系统属性变更
+### 集成自定义界面扫码应用适配窗口子系统属性变更
 
 **变更原因**
  
@@ -1709,11 +1722,11 @@ customScan模块下接口：
  
  
 
-#### 调试工具
+## 调试工具
 
  
 
-#### hdc file recv命令不支持操作媒体库目录
+### hdc file recv命令不支持操作媒体库目录
 
 **变更原因**
  
@@ -1759,7 +1772,7 @@ Table Name: Photos
  
  
 
-#### hdc的file recv命令及shell读取权限变更
+### hdc的file recv命令及shell读取权限变更
 
 **变更原因**
  
@@ -1797,7 +1810,7 @@ hdc命令行工具
  
  
 
-#### hidumper组件内存输出显示每列后新增一个空格
+### hidumper组件内存输出显示每列后新增一个空格
 
 **变更原因**
  
@@ -1814,7 +1827,7 @@ hidumper --mem `pidof render_service_`
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/nZOjj6QBTaqOK7sqTXqEjA/zh-cn_image_0000002334331997.png?HW-CC-KV=V1&HW-CC-Date=20260701T015159Z&HW-CC-Expire=86400&HW-CC-Sign=3FCB749D139B3B8CC8B1E6CBCEB66DDDE40BA0F02FACB4DEF9D0C3964215F801)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/_zQ66DPgQLCLK0qDcRB-_A/zh-cn_image_0000002334331997.png?HW-CC-KV=V1&HW-CC-Date=20261009T012724Z&HW-CC-Expire=86400&HW-CC-Sign=31BD635047C876C9C9C4D41093998E76BC926E6477673B82C4C2BA62B708EDAD)
 
  
 变更后：每一列数据后新增一个空格
@@ -1824,7 +1837,7 @@ hidumper --mem `pidof render_service_`
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/YHuAwBPCQtOTg0c3kh00dQ/zh-cn_image_0000002334372173.png?HW-CC-KV=V1&HW-CC-Date=20260701T015159Z&HW-CC-Expire=86400&HW-CC-Sign=65B4481670127DF9C2DADE24CA5EBD2D8CB431CF17F927BB73DAEF33E1863816)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/AOdxXd73RBSAF-2EykMdjQ/zh-cn_image_0000002334372173.png?HW-CC-KV=V1&HW-CC-Date=20261009T012724Z&HW-CC-Expire=86400&HW-CC-Sign=E1855F5D8EEA0F12294E95B24F7A3FA822CFF14AAA51DC2FA56A3104C6FEBBFA)
 
  
 其中hidumper、hidumper --mem、hidumper -c [system]变更效果与hidumper --mem [pid]命令效果一致。
@@ -1839,7 +1852,7 @@ hidumper组件
  
  
 
-#### 安装的应用是已卸载的预置应用时校验签名是否一致
+### 安装的应用是已卸载的预置应用时校验签名是否一致
 
 **变更原因**
  

@@ -206,13 +206,9 @@ C: host internal memory (Total memory: 11574208)
 - 分析每个通道（“C:”或者“Channel:”）的GPU内存占用（“Total memory”），通过排序找到占用最大的GPU内存类型，并按照如下规则定位至二级根因：
 
 | 关键字 | 二级根因 |
-
 | --- | --- |
-
 | C: vulkan | vulkan内存申请/释放没有配对。 |
-
 | C: gles、Channel: Texture、Channel: Buffer | OpenGLES内存申请/释放没有配对。 |
-
 | C: cl | OpenCL内存申请/释放没有配对。 |
 - 例如通过以下信息可以确认当前GPU内存泄漏故障的二级根因为vulkan内存申请/释放没有配对：
 ```text

@@ -1,6 +1,6 @@
 # Interface (ImageSource)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-imagesource
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -936,11 +936,14 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 async function UpdateDatay(imageSourceObj : image.ImageSource) {
   const array: ArrayBuffer = new ArrayBuffer(100);
-  imageSourceObj.updateData(array, false, 0, 10).then(() => {
+  try {
+    // 该接口为异步接口，调用时需保证执行时序。
+    await imageSourceObj.updateData(array, false, 0, 10);
     console.info('Succeeded in updating data.');
-  }).catch((err: BusinessError) => {
-    console.error(`Failed to update data.code is ${err.code},message is ${err.message}`);
-  })
+  } catch (err) {
+    const e: BusinessError = err as BusinessError;
+    console.error(`Failed to update data.code is ${e.code},message is ${e.message}`);
+  }
 }
 ```
 
@@ -1121,7 +1124,7 @@ createPixelMap(options?: DecodingOptions): Promise&lt;PixelMap&gt;
 
 通过图片解码参数创建PixelMap对象。使用Promise异步回调。
 
-从API version 15开始，推荐使用[createPixelMapUsingAllocator](#createpixelmapusingallocator15)，该接口可以指定输出pixelMap的内存类型[AllocatorType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-e#allocatortype15)，详情请参考[图片解码内存优化(ArkTS)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-allocator-type)。
+系统自动选择共享内存或DMA内存。从API version 15开始，需要指定内存类型时，应调用[createPixelMapUsingAllocator](#createpixelmapusingallocator15)，将allocatorType设置为image.AllocatorType.DMA或image.AllocatorType.SHARE_MEMORY。相关说明请参见[系统默认的内存分配方式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-allocator-type#系统默认的内存分配方式)。
 
 > [!NOTE]
 > 该方法为非线程安全的方法，不支持在同一个ImageSource实例上并发调用。 由于图片占用内存较大，所以当PixelMap对象使用完成后，应主动调用 release 方法，及时释放内存。 释放时应确保该对象的所有异步方法均执行完成，且后续不再使用该对象。
@@ -1174,7 +1177,7 @@ createPixelMap(callback: AsyncCallback&lt;PixelMap&gt;): void
 
 通过默认参数创建PixelMap对象。使用callback异步回调。
 
-从API version 15开始，推荐使用[createPixelMapUsingAllocator](#createpixelmapusingallocator15)，该接口可以指定输出pixelMap的内存类型[AllocatorType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-e#allocatortype15)，详情请参考[图片解码内存优化(ArkTS)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-allocator-type)。
+系统自动选择共享内存或DMA内存。从API version 15开始，需要指定内存类型时，应调用[createPixelMapUsingAllocator](#createpixelmapusingallocator15)，将allocatorType设置为image.AllocatorType.DMA或image.AllocatorType.SHARE_MEMORY。相关说明请参见[系统默认的内存分配方式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-allocator-type#系统默认的内存分配方式)。
 
 > [!NOTE]
 > 该方法为非线程安全的方法，不支持在同一个ImageSource实例上并发调用。 由于图片占用内存较大，所以当PixelMap对象使用完成后，应主动调用 release 方法，及时释放内存。 释放时应确保该对象的所有异步方法均执行完成，且后续不再使用该对象。
@@ -1221,7 +1224,7 @@ createPixelMap(options: DecodingOptions, callback: AsyncCallback&lt;PixelMap&gt;
 
 通过图片解码参数创建PixelMap对象。使用callback异步回调。
 
-从API version 15开始，推荐使用[createPixelMapUsingAllocator](#createpixelmapusingallocator15)，该接口可以指定输出pixelMap的内存类型[AllocatorType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-e#allocatortype15)，详情请参考[图片解码内存优化(ArkTS)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-allocator-type)。
+系统自动选择共享内存或DMA内存。从API version 15开始，需要指定内存类型时，应调用[createPixelMapUsingAllocator](#createpixelmapusingallocator15)，将allocatorType设置为image.AllocatorType.DMA或image.AllocatorType.SHARE_MEMORY。相关说明请参见[系统默认的内存分配方式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-allocator-type#系统默认的内存分配方式)。
 
 > [!NOTE]
 > 该方法为非线程安全的方法，不支持在同一个ImageSource实例上并发调用。 由于图片占用内存较大，所以当PixelMap对象使用完成后，应主动调用 release 方法，及时释放内存。 释放时应确保该对象的所有异步方法均执行完成，且后续不再使用该对象。
@@ -1284,7 +1287,7 @@ createPixelMapSync(options?: DecodingOptions): PixelMap
 
 释放时应确保该对象的所有异步方法均执行完成，且后续不再使用该对象。
 
-从API version 15开始，推荐使用[createPixelMapUsingAllocatorSync](#createpixelmapusingallocatorsync15)，该接口可以指定输出pixelMap的内存类型[AllocatorType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-e#allocatortype15)，详情请参考[图片解码内存优化(ArkTS)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-allocator-type)。
+系统自动选择共享内存或DMA内存。从API version 15开始，需要指定内存类型时，应调用[createPixelMapUsingAllocatorSync](#createpixelmapusingallocatorsync15)，将allocatorType设置为image.AllocatorType.DMA或image.AllocatorType.SHARE_MEMORY。相关说明请参见[系统默认的内存分配方式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-allocator-type#系统默认的内存分配方式)。
 
 > [!NOTE]
 > 该方法为同步方法，调用时会阻塞当前线程，不建议在主线程中调用，否则可能导致应用卡顿、掉帧或响应延迟。具体场景参考 耗时任务并发场景简介 。
@@ -1576,7 +1579,7 @@ createPixelMapUsingAllocator(options?: DecodingOptions, allocatorType?: Allocato
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | DecodingOptions | 否 | 解码参数。 |
-| allocatorType | AllocatorType | 否 | 用于图像解码的内存类型。默认值为AllocatorType.AUTO。 |
+| allocatorType | AllocatorType | 否 | PixelMap的内存类型。默认值为AllocatorType.AUTO，由系统自动选择共享内存或DMA内存。需要指定内存类型时，设置为AllocatorType.DMA或AllocatorType.SHARE_MEMORY。 |
 
 
 **返回值：**
@@ -1657,7 +1660,7 @@ createPixelMapUsingAllocatorSync(options?: DecodingOptions, allocatorType?: Allo
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | DecodingOptions | 否 | 解码参数。 |
-| allocatorType | AllocatorType | 否 | 用于图像解码的内存类型。默认值为AllocatorType.AUTO。 |
+| allocatorType | AllocatorType | 否 | PixelMap的内存类型。默认值为AllocatorType.AUTO，由系统自动选择共享内存或DMA内存。需要指定内存类型时，设置为AllocatorType.DMA或AllocatorType.SHARE_MEMORY。 |
 
 
 **返回值：**

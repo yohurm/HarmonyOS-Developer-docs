@@ -1,10 +1,10 @@
 # TabBar如何实现常见背景样式
 
-更新时间：2026-06-26 09:07:13
+更新时间：2026-09-21 11:01:39
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1041
 
-#### 问题现象
+## 问题现象
 
 TabBar可以帮助用户快速切换核心功能页面，比如“首页、购物车、我的”这种高频跳转的场景，默认样式可能和整体设计风格不搭，而自定义背景色或图片能提升视觉统一性，增强图标或文字的视觉效果，让操作更直观。设置TabBar时可能会遇到如下问题：
  
@@ -17,7 +17,7 @@ TabBar可以帮助用户快速切换核心功能页面，比如“首页、购�
  
  
 
-#### 背景知识
+## 背景知识
 
 - [Tabs组件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs)：通过页签进行内容视图切换的容器组件，每个页签对应一个内容视图。
 - [tabBar](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent#tabbar18)：设置TabBar上显示内容。
@@ -25,11 +25,13 @@ TabBar可以帮助用户快速切换核心功能页面，比如“首页、购�
  
  
 
-#### 解决方案
+## 解决方案
 
 在不同场景下设置TabBar背景的实现方式及其适用场景内容如下：
   
+
 | 实现场景 | 实现方式 | 适用场景 |
+| --- | --- | --- |
 | 场景一：TabBar设置背景色。 | barBackgroundColor设置TabBar的背景色，如"#FFFFFF"。 | 需要单一背景色的Tabs页签样式。 |
 | 场景二：TabBar设置背景色透明样式。 | 使用setTabBarOpacity设置TabBar的不透明度，包括背景、图标、文字。 | 在某些动态效果中，如滚动时逐渐改变TabBar的透明度，以实现平滑的过渡效果。 |
 | 场景二：TabBar设置背景色透明样式。 | 利用barBackgroundColor设置透明度，如"#55FFFFFF"，并使用barOverlap设置TabBar背景变模糊并叠加在TabContent之上，展示出透明效果。 | 在某些设计中，希望TabBar与背景内容有一定的融合，但又需要TabBar上的文字及图标内容清晰可见，可使用该方案增强视觉层次感。 |
@@ -84,7 +86,7 @@ struct BackgroundColor {
  设置效果如下：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/tPs4sMsgQlOyomHQpjIyAw/zh-cn_image_0000002628405536.png?HW-CC-KV=V1&HW-CC-Date=20260811T005648Z&HW-CC-Expire=86400&HW-CC-Sign=E9CBAD6A2D7FAE4E7AEEC2CC3C7B807351B8FBADEB81A0A40C9164EDD1F71869)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/x9OMYpEkTx-V9VDR-fA02w/zh-cn_image_0000002628405536.png?HW-CC-KV=V1&HW-CC-Date=20261009T012739Z&HW-CC-Expire=86400&HW-CC-Sign=D74B3D6571756CF571B140F00484946B7FC76F5BAD5A93C999A4106D16C867CC)
 
 - **场景二：TabBar设置背景色透明样式。**1. TabBar透明背景：在上述代码的基础上，利用barBackgroundColor设置透明度，并使用[barOverlap](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#baroverlap10)设置TabBar背景变模糊并叠加在TabContent之上，展示出透明效果。使用代码如下：
 
@@ -130,7 +132,7 @@ struct TransparentBackgroundColor1 {
  设置效果如下：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/XYdjgU4pR7Cl9GJ6sgvLqQ/zh-cn_image_0000002658804809.png?HW-CC-KV=V1&HW-CC-Date=20260811T005648Z&HW-CC-Expire=86400&HW-CC-Sign=F929F9F78F21F3724BE96F48D654EA4BFD61A5EBF326D7A6AF8C925B510F6CB3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/hVhXUw-qS36wDRRSWpJI3g/zh-cn_image_0000002658804809.png?HW-CC-KV=V1&HW-CC-Date=20261009T012739Z&HW-CC-Expire=86400&HW-CC-Sign=6AF8307BC5B80F8BCCDC36F420D5D350C0A8223C1DCAF932DC339D9D7B0D825C)
 
 
 2. TabBar所有内容全透明：可以使用[setTabBarOpacity](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#settabbaropacity13)设置TabBar的不透明度，包括背景、图标、文字。为了使透明样式更明显，此处依旧使用barOverlap设置叠加效果。与方案一不同点在于该方式不仅修改了背景的透明度，还修改了TabBar的文字透明度。使用代码如下：
@@ -178,7 +180,7 @@ struct TransparentBackgroundColor2 {
  设置效果如下：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/UJtyg6pESdq3L8H0DHfnQA/zh-cn_image_0000002628565444.png?HW-CC-KV=V1&HW-CC-Date=20260811T005648Z&HW-CC-Expire=86400&HW-CC-Sign=7022F832F51AC23A1F2CC3B657ACE86A7620457D5C88392DBF7279FC99065FB3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/TAjQrnR-ROWRbaEYFihPAg/zh-cn_image_0000002628565444.png?HW-CC-KV=V1&HW-CC-Date=20261009T012739Z&HW-CC-Expire=86400&HW-CC-Sign=F2E959A814801F474C7F72BD85157A153FE5C99903B5006B70A99CA05A9F16C2)
 
 - **场景三：TabBar设置背景色渐变。**可以通过[linearGradient](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-gradient-color#lineargradient)方法实现Tabs组件整体的背景色渐变，当然，因为是对整个Tabs组件做了背景渐变色，导致该方式的弊端是只有在固定的角度才能呈现出渐变效果。所以推荐利用Stack堆叠容器，其子组件按照顺序依次入栈，后一个子组件覆盖前一个子组件的特性，叠加Column或其他容器组件于TabBar下方，对其他容器组件进行渐变背景色的设置。
 
@@ -234,7 +236,7 @@ struct GradientBackgroundColor2 {
  设置效果如下：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/ahQSbCwtR4OqqK198no66g/zh-cn_image_0000002658924751.png?HW-CC-KV=V1&HW-CC-Date=20260811T005648Z&HW-CC-Expire=86400&HW-CC-Sign=30CE1927E4AD0F7D0FF69C0D5144B78183ACF8AC781E3BAEECC50B75DC5436AE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/HufYxLp_Sf6XRTzbVJ_84w/zh-cn_image_0000002658924751.png?HW-CC-KV=V1&HW-CC-Date=20261009T012739Z&HW-CC-Expire=86400&HW-CC-Sign=3397A76E5D98CE454CA9A00E2E0A9F9D5454A5D854898F96F1CA37BAF1C234F8)
 
 - **场景四：TabBar设置背景图片。**设置背景图效果与上文中提到的设置渐变背景色原理相同，需要利用Stack组件，在TabBar下方设置Image组件，达到设置背景图效果。
 
@@ -317,8 +319,8 @@ struct BackgroundImage1 {
  设置效果如下：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/NaiP9WEVS6awyKK0LKGF5A/zh-cn_image_0000002628405544.png?HW-CC-KV=V1&HW-CC-Date=20260811T005648Z&HW-CC-Expire=86400&HW-CC-Sign=2A060D912FBFBE7C98E8152AF541E821C846EC9FD48E7A0FCE58424EB474E1F7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/AAPBCGMnSy-pGbTqGgiixA/zh-cn_image_0000002628405544.png?HW-CC-KV=V1&HW-CC-Date=20261009T012739Z&HW-CC-Expire=86400&HW-CC-Sign=AF084554AA2AC62DEF647717320470F5DB6FF596135800212510585F8F271268)
 
 
  
-- **场景五：TabBar设置背景模糊效果。**可以通过[barBackgroundBlurStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#barbackgroundblurstyle18)和[barBackgroundEffect](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#barbackgroundeffect18)设置TabBar页签栏的背景模糊样式和效果。详情请参考：[设置TabBar背景模糊效果](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#示例19设置tabbar背景模糊效果)和[TabBar背景模糊效果示例](https://developer.huawei.com/consumer/cn/doc/architecture-guides/tab_bar_blur-0000002257193008)。
+- **场景五：TabBar设置背景模糊效果。**可以通过[barBackgroundBlurStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#barbackgroundblurstyle18)和[barBackgroundEffect](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#barbackgroundeffect18)设置TabBar页签栏的背景模糊样式和效果。详情请参考：[设置TabBar背景模糊效果](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#示例19设置tabbar背景模糊效果)。

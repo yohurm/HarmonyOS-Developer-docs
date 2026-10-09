@@ -1,6 +1,6 @@
 # OH_CryptoKeyPair
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-cryptoasymkeyapi-oh-cryptokeypair
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -15,7 +15,7 @@ typedef struct OH_CryptoKeyPair OH_CryptoKeyPair
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-定义密钥对结构体。
+密钥对结构体，表示密钥对。
  
 **起始版本：** 12
  

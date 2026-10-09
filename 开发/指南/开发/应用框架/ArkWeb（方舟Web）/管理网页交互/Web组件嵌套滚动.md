@@ -1,6 +1,6 @@
 # Web组件嵌套滚动
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-nested-scrolling
 
@@ -176,9 +176,9 @@ this.webController.setScrollable(false, webview.ScrollType.EVENT);
 
   (3) 判断Web组件是否滚动到底部：webController.getPageOffset().y + this.webHeight >= webController.getPageHeight();
 
-  (4) 获取Web组件自身高度：webController.[getPageHeight()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller#getpageheight);
+  (4) 获取Web组件页面内容高度：webController.[getPageHeight()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller#getpageheight);
 
-  (5) 获取Web组件窗口高度：webController?.[runJavaScriptExt](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller#runjavascriptext10)('window.innerHeight');
+  (5) 获取Web组件自身（窗口）高度：webController?.[runJavaScriptExt](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller#runjavascriptext10)('window.innerHeight');
 
   (6) 获取Web组件的滚动偏移量：webController.[getPageOffset()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller#getpageoffset20);
 5. 如何让Scroll组件不滚动。
@@ -351,7 +351,7 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/o822fLdCQHK12vsWqxRXaQ/zh-cn_image_0000002717770850.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073148Z&HW-CC-Expire=86400&HW-CC-Sign=69FE76ABEEBA320ADD1744FC8170BE9C874EFF471976DEFF385FDEB61AD75012)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/ibIzLUjcTWuLIlTMB4DtLA/zh-cn_image_0000002778931925.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013124Z&HW-CC-Expire=86400&HW-CC-Sign=309150407B2ADE21DC057FC9E908A5E08DD367E612F1A0159ED8BB48E6E460D2)
 
 
 

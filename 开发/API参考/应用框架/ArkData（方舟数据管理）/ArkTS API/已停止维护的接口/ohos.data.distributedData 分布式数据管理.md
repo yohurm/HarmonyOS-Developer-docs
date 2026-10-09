@@ -1,6 +1,6 @@
 # @ohos.data.distributedData (分布式数据管理)
 
-更新时间：2026-09-01 03:59:25
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-distributed-data
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -3860,7 +3860,7 @@ getEntries(query: Query, callback: AsyncCallback<Entry[]>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| query | Query | 是 | 表示要匹配的键前缀。 |
+| query | Query | 是 | 表示查询对象。 |
 | callback | AsyncCallback<Entry[]> | 是 | 回调函数。返回与指定Query对象匹配的键值对列表。 |
  
  

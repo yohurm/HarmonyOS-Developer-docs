@@ -1,6 +1,6 @@
 # 自定义声明式节点 (BuilderNode)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-arktsnode-buildernode
 
@@ -1837,7 +1837,7 @@ struct Page2 {
 图示如下：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/Hc5DrtqZQQ2C4ZHBa2eEDw/zh-cn_image_0000002717610006.png?HW-CC-KV=V1&HW-CC-Date=20260911T072210Z&HW-CC-Expire=86400&HW-CC-Sign=83C042AEBBAD6F5711927D64338FB5EE1BF83B72804BF975EE96855285A3E79D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/k3iBg9PeTRmJd5CFuY9XoQ/zh-cn_image_0000002749331820.png?HW-CC-KV=V1&HW-CC-Date=20261009T012635Z&HW-CC-Expire=86400&HW-CC-Sign=8CFD75EEACC546FE9FF42FB8AAC52FB3626916BA0C6621830C3312016B7E804F)
 
 
 ```ArkTS
@@ -1956,16 +1956,13 @@ struct buildNodeChild {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/kW5vDhaNQ0KYTbSqT6r85w/zh-cn_image_0000002747210565.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072210Z&HW-CC-Expire=86400&HW-CC-Sign=7368A95B7DE1C14E343255B199D251989ED3E804E412AB58D8AFB86C26C0A0EB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/siyXe8zvSsaf1fKBhtGaIQ/zh-cn_image_0000002778931705.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012635Z&HW-CC-Expire=86400&HW-CC-Sign=FBD32B546D64D1E158D24AFF4676EDE458BF8AF845CE959FBA91D9A534DD3964)
 
 
 在上面的示例中：
-
-1.点击change message更改message的值，当前正在显示的BuilderNode下面的子组件buildNodeChild的message属性会被更新，buildNodeChild组件中@Monitor注册的方法onMessageUpdated被触发。
-
-2.点击tab1切换到另一个TabContent，该TabContent的状态由inactive变为active，对应的@Monitor注册的方法onMessageUpdated被触发。
-
-3.点击tab0切换回第一个TabContent，再切换到其他TabContent后点击change message更改message的值，此时tab0冻结，tab0的@Monitor注册的方法onMessageUpdated不会被触发。
+1. 点击change message更改message的值，当前正在显示的BuilderNode下面的子组件buildNodeChild的message属性会被更新，buildNodeChild组件中@Monitor注册的方法onMessageUpdated被触发。
+2. 点击tab1切换到另一个TabContent，该TabContent的状态由inactive变为active，对应的@Monitor注册的方法onMessageUpdated被触发。
+3. 点击tab0切换回第一个TabContent，再切换到其他TabContent后点击change message更改message的值，此时tab0冻结，tab0的@Monitor注册的方法onMessageUpdated不会被触发。
 
 **Navigation**
 
@@ -2164,16 +2161,13 @@ struct TextBuilder {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/04ECkwbsRXStxw2d_UaxlA/zh-cn_image_0000002717770630.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072210Z&HW-CC-Expire=86400&HW-CC-Sign=3251C4AC2688EC3CF8A372DB3962A1399C636BD205EF02F0CD429D79624666A7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/mwxeo_s-TzaEug52ztWu_g/zh-cn_image_0000002749332622.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012635Z&HW-CC-Expire=86400&HW-CC-Sign=5019CCC4832C8E581D67A6531576E8EB85154FD4BC6AB1631BAD4961C44B5663)
 
 
 在上面的示例中：
-
-1.进入Pageone页面，点击update builderNode按钮更改message的值，当前正在显示的BuilderNode下面的子组件TextBuilder组件中@Monitor注册的方法info被触发。
-
-2.点击Next Page切换到PageTwo页面，点击update builderNode按钮，因为页面属于冻结状态，@Monitor注册的方法info不会被触发。
-
-3.点击Back Page回到PageOne页面，因为在PageTwo页面时，message的值发生了变化，@Monitor注册的方法info被触发。
+1. 进入Pageone页面，点击update builderNode按钮更改message的值，当前正在显示的BuilderNode下面的子组件TextBuilder组件中@Monitor注册的方法info被触发。
+2. 点击Next Page切换到PageTwo页面，点击update builderNode按钮，因为页面属于冻结状态，@Monitor注册的方法info不会被触发。
+3. 点击Back Page回到PageOne页面，因为在PageTwo页面时，message的值发生了变化，@Monitor注册的方法info被触发。
 
 **Repeat**
 
@@ -2315,14 +2309,14 @@ struct BuildNodeChild {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/yLbKLDtXRNCmbAwXUuNm8Q/zh-cn_image_0000002717610696.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072210Z&HW-CC-Expire=86400&HW-CC-Sign=500F9F10DA659E1CD96051A3CCA338466EDC00E1FBA19D340E925AFB390B424D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/yAapCf-JQ3yf0DTdlkqztw/zh-cn_image_0000002749492506.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012635Z&HW-CC-Expire=86400&HW-CC-Sign=C1A829220E157316B3137BCE2F00ED3C5CE161B42561F1CCBFA4173388BE955C)
 
 
 在上面的示例中：
 
 点击Reduce length to 5后，被移除的两个组件会进入Repeat缓存池，然后点击Change bgColor更改bgColor的值触发节点刷新。
 
-开启组件冻结（freezeWhenInactive: true）和BuilderNode节点开启冻结（即[inheritFreezeOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-buildernode#inheritfreezeoptions20): true），只有剩余节点中@Monitor装饰的方法onMessageChange被触发，如示例中屏上的5个节点会刷新并打印BuilderNode子组件monitor的5条日志，缓存池中的节点则不会。
+开启组件冻结（freezeWhenInactive: true）和BuilderNode节点开启冻结（即[inheritFreezeOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-buildernode#inheritfreezeoptions20): true），只有剩余节点中@Monitor装饰的方法onBgColorChange被触发，如示例中屏上的5个节点会刷新并打印BuilderNode子组件monitor的5条日志，缓存池中的节点则不会。
 
 **Repeat和TabContent混用**
 
@@ -2456,16 +2450,13 @@ struct FreezeBuildNode {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/e96zjtDtQDeAmq5Pz7F6CA/zh-cn_image_0000002747290649.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072210Z&HW-CC-Expire=86400&HW-CC-Sign=EC93480F8E1AB7ADBB83FC46F29EE2096E71556C800D813DFA002DA0AA7F5083)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/mJoNvIt9ScWxxN85UQAnGQ/zh-cn_image_0000002779091565.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012635Z&HW-CC-Expire=86400&HW-CC-Sign=3AC780C3F07740F525B7EDB67CAD69D8BFE3F7478A5D4EDCBFAC876B159B7BF9)
 
 
 在上面的示例中：
-
-1.点击change更改message的值，当前正在显示的BuilderNode下面的子组件buildNodeChild组件中@Monitor注册的方法onMessageChange被触发。
-
-2.点击tab1切换到另外的TabContent，该TabContent的状态由inactive变为active，对应的BuilderNode下面的子组件buildNodeChild组件中@Monitor注册的方法onMessageChange被触发。
-
-3.再次点击change更改message的值，仅当前显示的TabContent子组件中@Monitor注册的方法onMessageChange被触发。其他inactive的TabContent组件不会触发@Monitor。
+1. 点击change更改message的值，当前正在显示的BuilderNode下面的子组件buildNodeChild组件中@Monitor注册的方法onMessageChange被触发。
+2. 点击tab1切换到另外的TabContent，该TabContent的状态由inactive变为active，对应的BuilderNode下面的子组件buildNodeChild组件中@Monitor注册的方法onMessageChange被触发。
+3. 再次点击change更改message的值，仅当前显示的TabContent子组件中@Monitor注册的方法onMessageChange被触发。其他inactive的TabContent组件不会触发@Monitor。
 
 
 

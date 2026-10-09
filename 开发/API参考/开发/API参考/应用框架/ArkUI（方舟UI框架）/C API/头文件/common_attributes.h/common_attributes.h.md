@@ -1,6 +1,6 @@
 # common_attributes.h
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-common-attributes-h
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -226,7 +226,7 @@ enum ArkUI_UIState
 | UI_STATE_FOCUSED = 1 << 1 | 获焦状态。 |
 | UI_STATE_DISABLED = 1 << 2 | 禁用状态。 |
 | UI_STATE_SELECTED = 1 << 3 | 选中状态，此状态仅由某些特定类型的组件支持，分别是Checkbox、Radio、Toggle、List、Grid和MenuItem。 |
-| UI_STATE_HOVERED = 1 << 4 | 悬停状态。 起始版本： 26 |
+| UI_STATE_HOVERED = 1 << 4 | 悬停状态。 起始版本： 26.0.0 |
  
  
   

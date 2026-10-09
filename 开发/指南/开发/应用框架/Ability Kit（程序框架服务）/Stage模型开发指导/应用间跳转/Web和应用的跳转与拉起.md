@@ -1,6 +1,6 @@
 # Web和应用的跳转与拉起
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/navigating-between-web-and-apps
 
@@ -36,7 +36,7 @@
 
 在HarmonyOS应用开发中，会有Web页面和ArkTS页面互相之间进行跳转的场景，例如列表页用了ArkTS进行开发，而详情页设计上只有简单的内容展示并没有复杂的逻辑操作，于是使用了Web开发并使用了ArkTS中的Web组件进行了加载，在这种场景下，从列表页跳转到详情页就是从ArkTS页面跳转到Web页面，在这种场景下，开发者只需要在ArkTS页面对应的事件回调函数中使用路由栈提供的跳转功能即可实现。关于Navigation组件的使用开发者可以参考：[组件导航（Navigation）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-navigation-navigation)。
  
-```text
+```ArkTS
 NavDestination() {
   Column() {
     Button($r('app.string.back_to_web_page'))
@@ -68,7 +68,7 @@ NavDestination() {
 2. 然后在Web页面中，需要在[onLoadIntercept()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-events#onloadintercept10)回调函数中进行跳转拦截，拦截后通过路由栈进行页面跳转。
 
   
-```text
+```ArkTS
 Navigation(this.navPathStack) {
   Column() {
     Web({
@@ -145,14 +145,14 @@ Navigation(this.navPathStack) {
 3. 根据目标方的uris配置拼凑出完整的link地址，拼接方式为：scheme://host:port/path，例如上述配置对应的拉起地址为：appScheme://www.test.com:80/path1。
 
   
-```text
+```ArkTS
 const link: string = 'appScheme://www.test.com:80/path1';
 ```
 
 4. 通过[canOpenLink()](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/canopenlink)接口判断link是否可以打开，如不能打开链接开发者可以自定义响应逻辑，此处直接返回。
 
   
-```text
+```ArkTS
 if (!bundleManager.canOpenLink(link)) {
   return true;
 }
@@ -161,7 +161,7 @@ if (!bundleManager.canOpenLink(link)) {
 5. 配置拉起时的启动参数[openLinkOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-openlinkoptions)，在该配置中可以进行参数传递以及配置appLinkingOnly属性。代码参考如下：
 
   
-```text
+```ArkTS
 Navigation(this.navPathStack) {
   Column() {
     Web({
@@ -213,7 +213,7 @@ Navigation(this.navPathStack) {
 **图 1** Web页面打开效果图
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/ryRnWOOlSI6C2S7KRM318Q/zh-cn_image_0000002717609920.png?HW-CC-KV=V1&HW-CC-Date=20260911T073020Z&HW-CC-Expire=86400&HW-CC-Sign=BDF4706165961A3D4F89BDA97AE8CCF1769FA9C8E910C36F933899B94DF822DC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/YpfWRxysTx6ucpBELYelrg/zh-cn_image_0000002749331734.png?HW-CC-KV=V1&HW-CC-Date=20261009T013033Z&HW-CC-Expire=86400&HW-CC-Sign=6E1011578DFA2706E8AE4349AADAD8B0F0ED0C67584E273FAA835936410C16C3)
 
  
 因此，Deep Linking适用于需要在已安装的应用之间进行跳转，实现相对简单，但当无应用匹配时用户体验不佳。而App Linking适用于社交分享、广告引流等需要外部链接访问应用的场景，以及对安全性和用户体验要求较高的场景。AppLinking在Deep Linking的基础上增加了域名校验，提高了链接的安全性和可靠性，且无论应用是否安装，用户都能访问内容。
@@ -233,7 +233,7 @@ Navigation(this.navPathStack) {
 2. 在Web组件中，当匹配到对应的文本时，执行拉起指定类型的操作。
 
   
-```text
+```ArkTS
 Navigation(this.navPathStack) {
   Column() {
     Web({
@@ -296,7 +296,7 @@ Navigation(this.navPathStack) {
 2. 使用系统提供的照片选择Picker进行图片的选择以及后续逻辑的开发。
 
   
-```text
+```ArkTS
 Navigation(this.navPathStack) {
   Column() {
     Web({

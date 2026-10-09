@@ -1,10 +1,10 @@
 # Surface模式解码视频的播放控制
 
-更新时间：2026-07-17 09:35:24
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-decoding-play-remote
 
-#### 概述
+## 概述
 
 开发者在开发影视、会议和直播等应用时，通常需要使用视频解码能力实现高性能的播放和视频处理功能。
  
@@ -25,17 +25,17 @@
  
   
 
-#### 视频播放
+## 视频播放
 
   
 
-#### 场景描述
+### 场景描述
 
 视频解码播放是将视频文件内压缩的数据通过解码还原为可视的图像，并进行渲染显示。视频解码常用于高清播放和低延时播放，也是视频编辑播放（如添加滤镜、水印）、实时弹幕叠加以及高级色彩处理等操作的基础。相较于直接使用AVPlayer进行播放（可参考[基于AVPlayer基础播控实践](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-avplayer-basic-control)），解码播放支持更多的视频格式和画面处理能力。
  
   
 
-#### 实现原理
+### 实现原理
 
 Surface模式视频解码播放是通过调用系统AVCodec模块的能力实现的。通过解封装视频文件，解码视频和音频数据进行送显和播放，具体流程如下：
  1. 选择视频进行播放后，使用视频文件初始化解封装器。
@@ -59,7 +59,7 @@ Surface模式视频解码播放是通过调用系统AVCodec模块的能力实现
  
   
 
-#### 开发步骤
+### 开发步骤
 1. 创建解封装器、解码器等解码资源。
 
   
@@ -164,7 +164,7 @@ void Player::VideoDecOutputThread()
 
         CodecBufferInfo bufferInfo = GetBufferInfo();
         // ...
-        // Notify the suface to render the data and release it.
+        // Notify the surface to render the data and release it.
         lastPushTime = std::chrono::system_clock::now();
         ret = videoDecoder_->RenderOutputBuffer(bufferInfo.bufferIndex, !dropFrame);
         CHECK_AND_BREAK_LOG(ret == MEDIA_ERR_OK, "Decoder output thread out");
@@ -200,17 +200,17 @@ int32_t VideoDecoder::RenderOutputBuffer(uint32_t bufferIndex, bool render)
  
   
 
-#### 全屏播放
+## 全屏播放
 
   
 
-#### 场景描述
+### 场景描述
 
 全屏播放是指在播放视频时，应用页面仅显示视频画面和控件，隐藏其它组件。视频通常会进入横屏状态显示，提供沉浸式播放体验。
  
   
 
-#### 实现原理
+### 实现原理
 
 全屏播放通过UI侧的能力实现，主要流程如下。
  1. 应用切换全屏状态后，更新相应的状态变量。
@@ -228,7 +228,7 @@ int32_t VideoDecoder::RenderOutputBuffer(uint32_t bufferIndex, bool render)
  
   
 
-#### 开发步骤
+### 开发步骤
 1. 定义全屏状态的状态变量，并绑定监听方法。
 
   
@@ -274,17 +274,17 @@ XComponent({
  
   
 
-#### 暂停与继续播放
+## 暂停与继续播放
 
   
 
-#### 场景描述
+### 场景描述
 
 暂停和继续播放是视频播放中的常见场景。暂停播放会使视频画面停止变化，内部解码器会停止解码数据和渲染画面。继续播放则是恢复解码器的解码流程，视频继续播放。
  
   
 
-#### 实现原理
+### 实现原理
 
 暂停播放通过阻塞输入和输出子线程实现。阻塞后输入子线程停止提交数据到解码器，输出子线程停止向Surface提供视频帧数据，达到暂停播放的效果。继续播放则是取消输入和输出子线程的阻塞状态，从而恢复播放状态。
  
@@ -294,7 +294,7 @@ XComponent({
  
   
 
-#### 开发步骤
+### 开发步骤
 1. 解码输入和输出子线程均会执行条件变量 wait 操作，并在该操作内部判断当前是否处于暂停状态。
 
   
@@ -349,17 +349,17 @@ int32_t Player::Resume()
  
   
 
-#### 跳转播放
+## 跳转播放
 
   
 
-#### 场景描述
+### 场景描述
 
 跳转播放是指在视频连续播放的过程中，跳转到进度条上的其它位置进行播放。跳转过程中，解码器会清空当前缓存数据，并在跳转位置重新读取数据进行解码。
  
   
 
-#### 实现原理
+### 实现原理
 
 跳转播放通过解封装器的跳转功能实现，具体步骤如下。
  1. 使用解封装器的[OH_AVDemuxer_SeekToTime()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avdemuxer-h#oh_avdemuxer_seektotime)方法，跳转到指定时间的上一个关键帧。
@@ -383,7 +383,7 @@ int32_t Player::Resume()
  
   
 
-#### 开发步骤
+### 开发步骤
 1. 解封装器seek到指定时间点的前一个关键帧。
 
   
@@ -444,17 +444,17 @@ CHECK_AND_BREAK_LOG(ret == MEDIA_ERR_OK, "Push data failed, thread out");
  
   
 
-#### 循环播放
+## 循环播放
 
   
 
-#### 场景描述
+### 场景描述
 
 循环播放是指当前视频播放结束后重新回到视频开头播放，以达到连续播放同一视频的效果。
  
   
 
-#### 实现原理
+### 实现原理
 
 循环播放需要在视频播放到最后一帧后，继续从第一帧开始播放，具体流程如下。
  1. 当输入子线程从解封装器拿到的AVBuffer的[OH_AVCodecBufferFlags](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avbuffer-info-h#oh_avcodecbufferflags)为AVCODEC_BUFFER_FLAGS_EOS，代表该buffer数据为结束帧。
@@ -462,12 +462,12 @@ CHECK_AND_BREAK_LOG(ret == MEDIA_ERR_OK, "Push data failed, thread out");
 3. 从解封装器中拿到首帧数据，实现循环播放。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/uft_WOanSXymNiuWxwAdZg/zh-cn_image_0000002647586708.png?HW-CC-KV=V1&HW-CC-Date=20260723T012202Z&HW-CC-Expire=86400&HW-CC-Sign=46FAEDC91D0BC0462B436642430DC6B811B8EB8BD429C55FC58E5570FAD90A21)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/DCWq7MegRtGZt9zF2SCP6A/zh-cn_image_0000002749333286.png?HW-CC-KV=V1&HW-CC-Date=20261009T013119Z&HW-CC-Expire=86400&HW-CC-Sign=ECA57684B0790E87206B111E58835EE6333FD9540B987BBACA7978B1A2EFD15D)
 
  
   
 
-#### 开发步骤
+### 开发步骤
 1. 解码输入子线程从解封装器拿到视频结束帧后，seek到首帧进行解码。
 
   
@@ -514,27 +514,27 @@ isAudioWaitSeek_.store(false);
  
   
 
-#### 倍速播放
+## 倍速播放
 
   
 
-#### 场景描述
+### 场景描述
 
 在解码播放逻辑中，倍速功能通常基于解码数据输出模块的渲染逻辑来实现。与直接使用播放器的倍速功能相比，基于底层解码的自定义方案支持更精细的速度控制（如0.1倍速微调），满足不同的应用场景。
  
   
 
-#### 实现原理
+### 实现原理
 
 先设置音频播放速度，音频帧渲染速度变化后，视频帧根据[音画同步](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-video-synchronization)功能，进行同步追帧，实现倍速播放效果。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/NOWhTf6kTOaVWKkyXrJ56w/zh-cn_image_0000002677826349.png?HW-CC-KV=V1&HW-CC-Date=20260723T012202Z&HW-CC-Expire=86400&HW-CC-Sign=26246EB6C1D861F1C3B9F098B10D5516A102F18AE24746AAB641BFCC176C94E5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/RvAAKFWNQiG_4U9YWWrAFg/zh-cn_image_0000002749493170.png?HW-CC-KV=V1&HW-CC-Date=20261009T013119Z&HW-CC-Expire=86400&HW-CC-Sign=0C08F07F9579184CA4A9E6C48EA96D6092F3D0C4CD31DC30C1ADDC6ACD4B0B60)
 
  
   
 
-#### 开发步骤
+### 开发步骤
 1. 设置音频播放速度并通过赋值传递给视频解码模块。
 
   
@@ -579,17 +579,17 @@ if (waitTimeUs > 0) {
  
   
 
-#### 切换视频播放
+## 切换视频播放
 
   
 
-#### 场景描述
+### 场景描述
 
 切换视频是视频播放场景中一种常见的交互方式。切换视频会结束当前视频的解码流程和播放，并使用切换后的视频进行解码播放。
  
   
 
-#### 实现原理
+### 实现原理
 
 切换视频播放需要先释放当前视频的解码资源，再使用切换后的视频重新初始化，具体如下。
  1. 设置结束状态，结束解码输入和输出子线程，停止当前视频的解码操作。
@@ -597,12 +597,12 @@ if (waitTimeUs > 0) {
 3. 使用切换后的视频重新创建解码资源和解码子线程，具体请参考视频播放章节的[实现原理](#视频播放实现原理)。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/-S6jYvRXRRmMvY38Qk3sww/zh-cn_image_0000002677666501.png?HW-CC-KV=V1&HW-CC-Date=20260723T012202Z&HW-CC-Expire=86400&HW-CC-Sign=6E3B60C6491A9B2FDB5A4E85E2A3E7593B6BE6C82CFDC4B24D6019A09BEC9FB4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/Yj_m25sRTie_W_R9iRqSNQ/zh-cn_image_0000002779092229.png?HW-CC-KV=V1&HW-CC-Date=20261009T013119Z&HW-CC-Expire=86400&HW-CC-Sign=433BDA1B24502B48766E44B5EDFC504B00A60D9A373DA2C0241A5C1A04CEA03F)
 
  
   
 
-#### 开发步骤
+### 开发步骤
 1. 释放当前视频的解码器、子线程等资源。
 
   
@@ -623,7 +623,7 @@ void Player::Release()
         OH_AudioRenderer_Release(audioRenderer_);
         audioRenderer_ = nullptr;
     }
-    // Release decode resoure.
+    // Release decode resource.
     if (demuxer_ != nullptr) {
         demuxer_->Release();
         demuxer_.reset();
@@ -640,6 +640,6 @@ void Player::Release()
  
   
 
-#### 示例代码
+## 示例代码
 
 [基于Surface模式进行视频播放控制](https://gitcode.com/HarmonyOS_Samples/DecodePlayControl)

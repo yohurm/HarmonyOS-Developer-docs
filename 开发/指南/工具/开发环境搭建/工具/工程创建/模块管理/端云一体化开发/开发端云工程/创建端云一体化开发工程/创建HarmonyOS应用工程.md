@@ -1,14 +1,14 @@
 # 创建HarmonyOS应用工程
 
-更新时间：2026-07-15 09:00:31
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos-create-appproject
 
-#### 新建工程
+## 新建工程
 
  
 
-#### 前提条件
+### 前提条件
 
 - 您已完成[开发准备工作](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos-clouddev-prerequisite)。
 - 您已使用[已实名认证](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos-clouddev-account)、且注册地为中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）的华为开发者账号登录DevEco Studio。
@@ -17,7 +17,7 @@
  
  
 
-#### 选择模板
+### 选择模板
 1. 选择以下任一种方式，打开工程创建向导界面。
 - 如果当前未打开任何工程，可以在DevEco Studio的欢迎页点击“Create Project”开始创建一个新工程。
 
@@ -34,13 +34,16 @@
 
   
 
-  #### 配置工程信息
+  ### 配置工程信息
 
 1. 在工程配置界面，配置工程的基本信息。其中，Device type和Enable CloudDev参数不可更改，其他参数请参考[创建一个新的工程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-create-new-project#section181328285169)内对应的指导进行配置。
 
 | 参数 | 说明 |
+
 | --- | --- |
+
 | Device type | 该工程模板支持的设备类型，目前仅支持手机设备。 |
+
 | Enable CloudDev | 是否启用云开发。云开发模板默认启用且无法更改。 |
 
   
@@ -51,7 +54,7 @@
 
   
 
-  #### 关联云开发资源
+  ### 关联云开发资源
 
   为工程关联云开发所需的资源，即将您账号团队在AGC创建的同包名应用关联到当前工程。具体操作如下：
 
@@ -80,9 +83,7 @@
 ![](assets/创建HarmonyOS应用工程/file-20260514134347835-15.png)
 
 
-5. 如果查询到的应用所属项目尚未启用数据处理位置，请点击界面提示内的“AppGallery Connect”[设置数据处理位置](https://developer.huawei.com/consumer/cn/doc/app/agc-help-datalocation-0000001160439813)。设置完成后返回DevEco Studio界面，点击Bundle name后的
-![](assets/创建HarmonyOS应用工程/file-20260514134347835-16.png)
-刷新当前APP ID列表，即可看到设置的数据处理位置。
+5. 如果查询到的应用所属项目尚未启用数据处理位置，请点击界面提示内的“AppGallery Connect”[设置数据处理位置](https://developer.huawei.com/consumer/cn/doc/app/agc-help-datalocation-0000001160439813)。设置完成后返回DevEco Studio界面，点击Bundle name后的![icon](assets/创建HarmonyOS应用工程/file-20260514134347835-16.png)刷新当前APP ID列表，即可看到设置的数据处理位置。
 
   
 ![](assets/创建HarmonyOS应用工程/file-20260514134347835-17.png)
@@ -126,13 +127,13 @@
 
   
 
-  #### 工程初始化配置
+  ## 工程初始化配置
 
   当您成功创建工程并关联云开发资源后，DevEco Studio会为您的工程自动执行一些初始化配置。
 
   
 
-  #### 自动开通云开发服务
+  ### 自动开通云开发服务
 
   DevEco Studio为工程关联的项目自动开通云函数、云数据库、云存储等云开发服务，您可在“Notifications”窗口查看服务开通状态。
 
@@ -143,13 +144,13 @@
 
   
 
-  #### 端云一体化开发工程目录结构
+  ## 端云一体化开发工程目录结构
 
   端云一体化开发工程主要包含端开发工程（Application）与云开发工程（CloudProgram）。
 
   
 
-  #### 端开发工程（Application）
+  ### 端开发工程（Application）
 
   端开发工程主要用于开发应用端侧的业务代码，使用通用云开发模板创建的端开发工程目录结构如下图所示。“Application/cloud_objects”模块用于存放云对象的端侧调用接口类，“src/main/ets/pages”目录下包含了云存储、云数据库和云函数页面，其他目录文件介绍请参见[工程目录结构](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-project-structure)。
 
@@ -159,7 +160,7 @@
 
   
 
-  #### 云开发工程（CloudProgram）
+  ### 云开发工程（CloudProgram）
 
   在云开发工程中，您可为您的应用开发云端代码，包括云函数和云数据库服务代码。使用通用云开发模板创建的云开发工程目录结构如下图所示。
 
@@ -194,11 +195,11 @@ dataentry：用于存放数据条目文件。该目录下一般会根据您选�
  
  
 
-#### （可选）AGC应用管理
+## （可选）AGC应用管理
 
  
 
-#### 从DevEco Studio补充创建同包名应用
+### 从DevEco Studio补充创建同包名应用
 
 如创建工程时，发现尚未在AGC控制台创建与工程包名相同的应用，可进行补充创建。
  1. 点击界面提示内的“AppGallery Connect”，浏览器打开AGC控制台页面。
@@ -213,10 +214,15 @@ dataentry：用于存放数据条目文件。该目录下一般会根据您选�
   > 应用分类设置后不支持修改，请谨慎选择。
 
 | 参数 | 说明 |
+
 | --- | --- |
+
 | 应用类型 | 创建的HarmonyOS应用形态，默认与您本地工程类型保持一致，不可更改。 |
+
 | 应用名称 | 应用在华为应用市场详情页展示的名称。 |
+
 | 应用包名 | 从DevEco Studio中带入自动填充，且不可更改。 |
+
 | 应用分类 | 请选择普通应用或游戏类应用。 |
 3. 进入“所属项目信息”页面，为应用选择所属的项目后点击“下一步”。
 - 如需将应用添加到已有项目，点击下拉框进行选择。
@@ -247,16 +253,14 @@ dataentry：用于存放数据条目文件。该目录下一般会根据您选�
  - 点击“确认”，应用创建完成。
 ![](assets/创建HarmonyOS应用工程/file-20260514134347835-38.png)
 
-- 返回DevEco Studio，可看到界面已获取并展示了刚刚创建的应用信息。若不展示，可点击Bundle name后的
-![](assets/创建HarmonyOS应用工程/file-20260514134347835-39.png)
-刷新。
+- 返回DevEco Studio，可看到界面已获取并展示了刚刚创建的应用信息。若不展示，可点击Bundle name后的![icon](assets/创建HarmonyOS应用工程/file-20260514134347835-39.png)刷新。
 ![](assets/创建HarmonyOS应用工程/file-20260514134347835-4.png)
 
 
  
  
 
-#### 将游离应用添加到AGC项目下
+### 将游离应用添加到AGC项目下
 
 游离应用指未关联任何AGC项目的应用。创建工程时，如需要关联的AGC应用为游离应用，则您需要将该应用添加到您的AGC项目下。
  
@@ -293,14 +297,14 @@ dataentry：用于存放数据条目文件。该目录下一般会根据您选�
   启用的数据处理位置必须包含中国站点。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/JIzfuz3FRge_cxFqQEI7EQ/zh-cn_image_0000002179338436.png?HW-CC-KV=V1&HW-CC-Date=20260723T012112Z&HW-CC-Expire=86400&HW-CC-Sign=B09B88D762011FA6D683477DACD8638E8E5E9FCB3E6923AF524EF162D5542EA0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/8iLp8cl5RFKgsOtqdc6E7w/zh-cn_image_0000002179338436.png?HW-CC-KV=V1&HW-CC-Date=20261009T012553Z&HW-CC-Expire=86400&HW-CC-Sign=6A82EB3CA1D183AC269A02662465389946E0A72422B67A0196069F1C7F9E1FD1)
 
 - 如项目已设置过数据处理位置，可点击“管理”启用新的数据处理位置、取消已启用的数据处理位置，或修改默认数据处理位置。
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/cXWpyJwjRsu6egYhEEqYIg/zh-cn_image_0000002179338464.png?HW-CC-KV=V1&HW-CC-Date=20260723T012112Z&HW-CC-Expire=86400&HW-CC-Sign=DF9819075D2D3368BA0A95749594E3C92DB882CF5F4DC2C819D183CCC161529A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/Lu2vWvQYTM2JbhFgln1b8Q/zh-cn_image_0000002179338464.png?HW-CC-KV=V1&HW-CC-Date=20261009T012553Z&HW-CC-Expire=86400&HW-CC-Sign=3D6E0A4877F6CC8D641A20FCC7F58C24D16C7582BBA31619020920A30C0BEE22)
 
 
  - 点击“确认”，应用成功关联项目。
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/aCmx9gGlSOi_XkUABC03pw/zh-cn_image_0000002179498200.png?HW-CC-KV=V1&HW-CC-Date=20260723T012112Z&HW-CC-Expire=86400&HW-CC-Sign=07BC5039395E7EF122701C1081188889059F27C86A61425EF82C531673F673DB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/XJDHS_B-REKma6qTOd6NMg/zh-cn_image_0000002179498200.png?HW-CC-KV=V1&HW-CC-Date=20261009T012553Z&HW-CC-Expire=86400&HW-CC-Sign=2991E60F63B287807F02177F6AD0D2F1FEBEF55636E31DEB4172398B70CF1B6C)
 
 - 返回DevEco Studio，可看到应用已关联上了项目。
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/ZZBB5HXwTRCBXVsRTBmtZg/zh-cn_image_0000002214858777.png?HW-CC-KV=V1&HW-CC-Date=20260723T012112Z&HW-CC-Expire=86400&HW-CC-Sign=ABDCBBFF81B2B90B9051538F3270A6A532CB0D9962F5FDFAB2B8C4DDDE292FC3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/gDKc_wQnSzmRIY1_Ggce7g/zh-cn_image_0000002214858777.png?HW-CC-KV=V1&HW-CC-Date=20261009T012553Z&HW-CC-Expire=86400&HW-CC-Sign=635873231D8550D10D859BF8EB1CEF39F4DA1D8DDB1638BE9B61C8DD74C7BFDB)

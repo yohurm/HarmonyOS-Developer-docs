@@ -1,0 +1,95 @@
+# @typescript-eslint/member-ordering
+
+更新时间：2026-10-08 09:38:49
+
+来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-member-ordering
+
+要求类、接口和类型字面量中成员的排序方式保持一致的风格。
+ 
+
+## 规则配置
+
+```json
+// code-linter.json5
+{
+  <span style="color: rgb(135,16,148);">"rules"</span>: {
+    "@typescript-eslint/member-ordering": "error"
+  }
+}
+```
+ 
+ 
+
+## 选项
+
+详情请参考[@typescript-eslint/member-ordering选项](https://typescript-eslint.nodejs.cn/rules/member-ordering/#options)。
+ 
+ 
+
+## 正例
+
+```text
+// 默认排序规则：field-constructor-method
+export class Foo2 {
+  // -> field
+  protected static e: string = '';
+
+  public d: string = '';
+
+  private readonly c: string = '';
+
+  // -> constructor
+  public constructor() {
+    console.info('constructor');
+  }
+
+  // -> method
+  public static a(): void {
+    console.info('static method');
+  }
+
+  public b(): void {
+    console.info(this.c);
+  }
+}
+```
+ 
+ 
+
+## 反例
+
+```text
+// 默认排序规则：field-constructor-method
+export class Foo2 {
+  // -> method
+  public static a(): void {
+    console.info('static method');
+  }
+
+  public b(): void {
+    console.info(this.c);
+  }
+
+  // -> field
+  protected static e: string = '';
+
+  private readonly c: string = '';
+
+  public d: string = '';
+
+  // -> constructor
+  public constructor() {
+    console.info('constructor');
+  }
+}
+```
+ 
+ 
+
+## 规则集
+
+```text
+<span style="color: rgb(6,125,23);">plugin:@typescript-eslint/all</span>
+```
+ 
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-code-linter)。

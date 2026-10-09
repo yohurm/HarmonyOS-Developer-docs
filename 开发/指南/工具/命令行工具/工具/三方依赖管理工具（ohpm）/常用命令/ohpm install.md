@@ -1,6 +1,6 @@
 # ohpm install
 
-更新时间：2026-08-29 09:41:34
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-install
 
@@ -375,8 +375,8 @@ ohpm 客户端从 1.4.0 版本开始，同一项目下所有 Module 的依赖都
  
 ohpm会优先安装&lt;target_path&gt;/moduleName/oh-package.json5文件中配置的依赖，并在&lt;project_root&gt;/moduleName下生成对应的oh-package-&lt;targetName&gt;-lock.json5文件。当指定target_path时，默认会开启依赖版本冲突自动处理功能，在依赖安装完成后，ohpm还会根据实际安装的依赖版本在&lt;target_path&gt;/resolve-conflict/moduleName目录下生成新的oh-package.json5文件。
  
-
  
+
 target_path目录结构示例：
  
 ```json
@@ -389,8 +389,8 @@ target_path目录结构示例：
 |   |   oh-package.json5      // 在特定target语境下生成的工程级依赖配置文件
 ```
  
-
  
+
 dependencyMap.json5内容示例：
  
 ```json
@@ -404,8 +404,8 @@ dependencyMap.json5内容示例：
 }
 ```
  
-
  
+
 **ohpm install指定target_path时依赖配置优先级说明：**
  
 1、&lt;target_path&gt;/dependencyMap.json5中rootDependency配置的oh-package.json5的优先级高于&lt;project_root&gt;/oh-package.json5。
@@ -417,7 +417,7 @@ dependencyMap.json5内容示例：
 4、overrides中的依赖版本优先级高于&lt;target_path&gt;/moduleName/oh-package.json5中对应的依赖版本。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/SU3wwSAQSSGRI48AZC9kwA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072817Z&HW-CC-Expire=86400&HW-CC-Sign=602CFEC5CA76A0E2E01FE273E4DD28E8E44ED39EA5FAD4AFD62C72BA004FD6D3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/ComEJoDBQSSB_FxISn5LEA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20261009T012819Z&HW-CC-Expire=86400&HW-CC-Sign=10B87AA677747853E869E1290C6B6ADB36C0928DFCC68BD8A32664F8C339CCEF)
  
 
 仅当&lt;target_path&gt;/dependencyMap.json5中targetName的值不为空且不等于'default'时，&lt;project_root&gt;/moduleName目录下生成的lock文件名才会变更为：oh-package-targetName-lock.json5。

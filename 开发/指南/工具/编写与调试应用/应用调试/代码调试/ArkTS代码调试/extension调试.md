@@ -1,6 +1,6 @@
 # extension调试
 
-更新时间：2026-01-15 06:51:04
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-arkts-extension
 
@@ -11,7 +11,7 @@
 
  
 
-#### 等待调试方式
+## 等待调试方式
 1. 参考[等待调试](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-arkts-attach-to-process)对当前调试工程进行调试。
 
   
@@ -30,7 +30,7 @@
  
  
 
-#### 修改运行配置方式
+## 修改运行配置方式
 1. 在运行调试窗口，运行配置项**Launch Options**选择**Specified Ability**。
 
   
@@ -41,9 +41,7 @@
   
 ![](assets/extension调试/file-20260514132955567-4.png)
 
-3. 点击**OK**保存配置后，点击调试按钮
-![](assets/extension调试/file-20260514132955567-5.png)
-，启动调试即可命中 Extension Ability 中的生命周期函数断点。
+3. 点击**OK**保存配置后，点击调试按钮![icon](assets/extension调试/file-20260514132955567-5.png)，启动调试即可命中 Extension Ability 中的生命周期函数断点。
 
   
 ![](assets/extension调试/file-20260514132955567-6.png)

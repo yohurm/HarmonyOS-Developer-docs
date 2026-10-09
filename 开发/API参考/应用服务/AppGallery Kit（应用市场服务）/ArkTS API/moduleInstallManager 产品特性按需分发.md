@@ -1,6 +1,6 @@
 # moduleInstallManager (产品特性按需分发)
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/store-moduleinstallmanager
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -66,7 +66,7 @@ import { moduleInstallManager } from '@kit.AppGalleryKit';
 | --- | --- | --- | --- | --- |
 | code | RequestErrorCode | 是 | 否 | 接口调用结果码。 |
 | taskStatus | TaskStatus | 是 | 否 | 按需下载任务状态码。 |
-| taskId | string | 是 | 是 | 按需下载任务taskId，默认值为0。 |
+| taskId | string | 是 | 是 | 按需下载任务taskId，默认值为'0'。 |
 | desc | string | 是 | 否 | 接口调用结果描述，默认值为“”。 |
 | modules | string[] | 是 | 是 | 下载任务中的模块名列表，默认值为[]。 |
 | totalSize | number | 是 | 是 | 下载的总模块大小（字节），默认值为0。 |

@@ -1,6 +1,6 @@
 # 基于List和Scroller实现双向滚动列表
 
-更新时间：2026-08-26 06:47:01
+更新时间：2026-09-20 11:26:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-horizontal-vertical-scrolling-list
 
@@ -11,7 +11,7 @@
 然而，当表格需要同时支持纵向和横向滚动（下文简称为双向滚动）时，单一列表组件无法满足需求。如下图所示：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/pnsXwVj4Tu2x_rcq0x80Gg/zh-cn_image_0000002683157325.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072301Z&HW-CC-Expire=86400&HW-CC-Sign=33732FEE48A3AFBED57EE74B8E6CC5FE44490962A02DC9F6CBE2868001B98507)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/Aanoz5XpRSyZ10avum_uFw/zh-cn_image_0000002683157325.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012645Z&HW-CC-Expire=86400&HW-CC-Sign=487A21639D425E5B2E8B51DA37804608AB8465F3F80C154E1FB054CF5064CA02)
 
  
 本文基于List组件和Scroller控制器，封装核心组件[DualScrollTable](https://gitcode.com/HarmonyOS_Samples/DualScrollList/blob/master/tableview/src/main/ets/components/DualScrollTable.ets)（双向滚动列表组件）。提供满足基础功能的双向滚动列表解决方案，助力开发者快速实现表格双向滚动功能。
@@ -43,7 +43,7 @@
 列表整体布局结构如下图所示：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/-UFX4U4ZSzK2xtdbhf4jWA/zh-cn_image_0000002652957852.png?HW-CC-KV=V1&HW-CC-Date=20260911T072301Z&HW-CC-Expire=86400&HW-CC-Sign=0BE54E83C4B70AB6D3B12BF9285CC782BAA87920B26BB378387DED179FCDDAE4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/0sZI0KaYSrG0aypDyTzU1g/zh-cn_image_0000002652957852.png?HW-CC-KV=V1&HW-CC-Date=20261009T012645Z&HW-CC-Expire=86400&HW-CC-Sign=589088C4A0E28657100E979885C0DA35DB8782B5F5DE07A7B4B2142F26C0C19A)
 
  
  
@@ -64,7 +64,7 @@
 同步滚动时序图，如下图所示：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/jBW78CwxRNSPFuUs4yli6g/zh-cn_image_0000002653117762.png?HW-CC-KV=V1&HW-CC-Date=20260911T072301Z&HW-CC-Expire=86400&HW-CC-Sign=E257F042AFED5FC00D9CDFA77BB6FCD19189569D59EC4AADA7797B4BF2F4D74A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/1plabqanT_ieZu46YIwgmw/zh-cn_image_0000002653117762.png?HW-CC-KV=V1&HW-CC-Date=20261009T012645Z&HW-CC-Expire=86400&HW-CC-Sign=9E2F2239499CCDF2FA54E20C4532E222876A805D9E6AABFB12763C2E9039608F)
 
  
 - 横向滚动TopList时，通过[onScrollFrameBegin()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list#onscrollframebegin9)回调方法拦截滚动偏移量，调用RightList的[scrollTo()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll#scrollto)方法同步横向滚动。
@@ -535,7 +535,7 @@ private scrollToY(scroller: Scroller, yOffset: number): void {
 在股票行情场景中，多只股票的最新价、涨跌额、涨跌幅等指标需要横向排列展示。该场景不启用分组标题和列分割线，表格布局尺寸更紧凑。股票信息表如下图所示：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/E725DANtRXWq2253D_d8AQ/zh-cn_image_0000002682997519.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072301Z&HW-CC-Expire=86400&HW-CC-Sign=16F0069A3DA46BB70812F598DCD8FCE13D79A7EDDB22D781C6BC367E5677070B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/ePaj92qORi6imVk-65QNqA/zh-cn_image_0000002682997519.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012645Z&HW-CC-Expire=86400&HW-CC-Sign=1BE02315EA3E5169143C4D39814BF9FB1A13C543BE39A2B75CD03E4A69656508)
 
  
 
@@ -570,7 +570,8 @@ export default class StockInfoTableViewModel extends BaseTableViewModel {
    * @param context Application context
    */
   public loadTableData(context: Context): void {
-    this.loadData(context, 'stock.json');
+    const isChinese: boolean = i18n.System.getSystemLanguage().startsWith('zh');
+    this.loadData(context, isChinese ? 'stock.json' : 'stock_en.json');
     this.resolveCellFontColors();
     this.topListData = STOCK_TOP_LIST_DATA;
     this.leftTitle = $r('app.string.stock_name_title');
@@ -654,7 +655,7 @@ struct StockInfoTable {
   左侧参数名称与右侧数据行纵向同步滚动，顶部车型名称与底部数据列横向同步滚动。汽车参数表如下图所示：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/Gh0EUpH7QlOGJR9f_Rh1kQ/zh-cn_image_0000002683157331.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072301Z&HW-CC-Expire=86400&HW-CC-Sign=ECE19E71BE7C2E91E1806FFD7FCB4443C43F1AAF29C58CAC42DAF9AB9FCC3CAA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/lIgrL5QyRmaCdtOFGDGyAw/zh-cn_image_0000002683157331.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012645Z&HW-CC-Expire=86400&HW-CC-Sign=F70C1F88D18FCB471EDFDD2045F186A30B81531FA57C9D3FF949BD613096A737)
 
 
   
@@ -672,7 +673,8 @@ export default class CarSpecTableViewModel extends BaseTableViewModel {
    * @param context Application context
    */
   public loadTableData(context: Context): void {
-    this.loadData(context, 'car.json');
+    const isChinese: boolean = i18n.System.getSystemLanguage().startsWith('zh');
+    this.loadData(context, isChinese ? 'car.json' : 'car_en.json');
     this.topListData = [];
     if (this.groupDataArray[0]?.sub[0]?.info?.length > 0) {
       const count: number = this.groupDataArray[0].sub[0].info.length;
@@ -766,7 +768,7 @@ struct CarSpecTable {
   本示例通过Frame分析结果显示，卡顿帧数为0，滚动过程流畅，无卡顿或掉帧现象。如下图所示：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/u1hKH28STyu0NVXMNMDYhg/zh-cn_image_0000002652957856.png?HW-CC-KV=V1&HW-CC-Date=20260911T072301Z&HW-CC-Expire=86400&HW-CC-Sign=78144AC264ECA76E17A05E65E025B86AB3BFB7FAE539C39D23CC212DC959AC7E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/2AVaP8OTRzeNoDWyB_mTQA/zh-cn_image_0000002652957856.png?HW-CC-KV=V1&HW-CC-Date=20261009T012645Z&HW-CC-Expire=86400&HW-CC-Sign=8BCE8FB83B28A985DBA27556FDF1FB1956AED644345A80456F191BD54B80DB31)
 
 
   

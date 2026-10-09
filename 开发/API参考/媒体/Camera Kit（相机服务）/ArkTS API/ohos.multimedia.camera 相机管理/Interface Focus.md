@@ -1,6 +1,6 @@
 # Interface (Focus)
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-focus
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -34,7 +34,7 @@ setFocusMode(afMode: FocusMode): void
  
 设置对焦模式。
  
-进行设置之前，需要先检查设备是否支持指定的焦距模式，可使用方法[isFocusModeSupported](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-focusquery#isfocusmodesupported11)。
+进行设置之前，需要先检查设备是否支持指定的对焦模式，可使用方法[isFocusModeSupported](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-focusquery#isfocusmodesupported11)。
  
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
  
@@ -45,7 +45,7 @@ setFocusMode(afMode: FocusMode): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| afMode | FocusMode | 是 | 指定的焦距模式。传参为null或者undefined，作为0处理，手动对焦模式。 |
+| afMode | FocusMode | 是 | 指定的对焦模式。传参为null或者undefined，作为0处理，手动对焦模式。 |
  
  
 **错误码：**
@@ -94,7 +94,7 @@ getFocusMode(): FocusMode
 
 | 类型 | 说明 |
 | --- | --- |
-| FocusMode | 获取当前设备的焦距模式。接口调用失败会抛出相应错误码并返回undefined，错误码类型CameraErrorCode。 |
+| FocusMode | 获取当前设备的对焦模式。接口调用失败会抛出相应错误码并返回undefined，错误码类型CameraErrorCode。 |
  
  
 **错误码：**
@@ -147,7 +147,7 @@ setFocusPoint(point: Point): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| point | Point | 是 | 焦点。x、y设置范围应在[0，1]之内，超过范围，如果小于0设置0，大于1设置1。 |
+| point | Point | 是 | 焦点。x、y设置范围应在[0, 1]之内，超过范围，如果小于0设置0，大于1设置1。 |
  
  
 **错误码：**

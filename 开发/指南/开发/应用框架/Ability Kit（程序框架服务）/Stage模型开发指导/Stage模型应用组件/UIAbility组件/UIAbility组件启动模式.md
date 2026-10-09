@@ -1,6 +1,6 @@
 # UIAbility组件启动模式
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-launch-type
 

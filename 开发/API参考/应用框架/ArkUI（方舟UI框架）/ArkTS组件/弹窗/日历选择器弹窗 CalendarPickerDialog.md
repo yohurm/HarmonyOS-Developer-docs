@@ -1,6 +1,6 @@
 # 日历选择器弹窗 (CalendarPickerDialog)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-calendarpicker-dialog
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -441,7 +441,7 @@ struct CalendarPickerDialogExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/O5oJGBa5ROGK9MUDvJ0Brg/zh-cn_image_0000002747293027.png?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=172382D35B3E9DAEB07A2B5046C3551499085A2BADCB7E03D4B47730D3AB68A3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/fy0T0b8KTtWns-RmkzWnTg/zh-cn_image_0000002779094085.png?HW-CC-KV=V1&HW-CC-Date=20261009T013106Z&HW-CC-Expire=86400&HW-CC-Sign=30341EA65B904587E0F45A785F395CA1FCF5E2EF7DFBCE5B33DFAA54C8A91277)
 
 
 
@@ -488,17 +488,19 @@ struct CalendarPickerDialogExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/Zcev2vXHQmeLZ2dwcH8xPw/zh-cn_image_0000002747212943.png?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=5636EE678DD209D16E52D71AFA51FBF13E2930154802FC7A95177FC4FBC5DB83)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/cRl6-R_ZRXS3x0DtUSOCkg/zh-cn_image_0000002778934229.png?HW-CC-KV=V1&HW-CC-Date=20261009T013106Z&HW-CC-Expire=86400&HW-CC-Sign=7DAFB619DC6239F19EF70D55E6B099DBA4952DD58CC43F95779A16401B800D6E)
 
 
 
 
-### 示例9（设置系统材质）
+### 示例9（设置沉浸光感）
 
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-该示例通过配置[systemMaterial](#calendardialogoptions对象说明)，实现系统材质效果。
+该示例通过配置[systemMaterial](#calendardialogoptions对象说明)，实现沉浸光感效果。
+
+该示例配图为高算力设备强档效果，组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
 
 从API版本26.0.0开始，在CalendarDialogOptions中新增了systemMaterial属性。
 
@@ -522,10 +524,13 @@ struct CalendarPickerDialogExample {
             });
           })
       }.width('100%')
+      .height('100%')
+      .backgroundImage($r('app.media.bgImg'))  // $r('app.media.bgImg')需要替换为开发者所需的资源文件
+      .backgroundImageSize(ImageSize.FILL)
     }
   }
 }
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/yyo_dVXlRQuia01C44C3dw/zh-cn_image_0000002717773008.png?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=3BCE98340AB6453348A55A5612E265F8A54F3ACBCAF7962FDAF752F8D7EFB4AC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/LqcDuArQQEe3EekfRRkDVA/zh-cn_image_0000002749335146.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013106Z&HW-CC-Expire=86400&HW-CC-Sign=6C1D21CC11138465EFA1289C1A64198001FB40FE8FFDC73547040D1EC405D1AD)

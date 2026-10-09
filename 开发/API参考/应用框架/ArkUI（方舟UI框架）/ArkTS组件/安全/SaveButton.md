@@ -1,6 +1,6 @@
 # SaveButton
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-security-components-savebutton
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -318,6 +318,10 @@ iconSize(size: Dimension | SizeOptions)
 
 设置保存控件的图标尺寸。
 
+> [!NOTE]
+> 在API版本10时，开发者可通过安全控件通用属性 iconSize 设置图标尺寸，此时size类型仅支持Dimension。 从API版本20开始，开发者可以通过本接口设置图标尺寸，size类型增加支持SizeOptions。
+
+
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
@@ -515,7 +519,7 @@ symbolRenderingStrategy(strategy: SymbolRenderingStrategy)
 不同渲染策略效果可参考以下示意图。
 
 
-![](assets/SaveButton/file-20260525091331287-001.png)
+![](assets/SaveButton/file-20260525091331287-002.png)
 
 
 
@@ -635,7 +639,7 @@ struct Index {
 ```
 
 
-![](assets/SaveButton/file-20260525091331287-002.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/NMdsdzUEQLmfYn6I5r_0Kg/zh-cn_image_0000002749335172.png?HW-CC-KV=V1&HW-CC-Date=20261009T013108Z&HW-CC-Expire=86400&HW-CC-Sign=D3CB74D48A1593CFFDAF6EAF0B71226E46BD2253E7C0F891BA269DE9DB71FE70)
 
 
 
@@ -717,7 +721,7 @@ struct SetIcon {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/iVM0MeFfRgGO5tKLb2lImQ/zh-cn_image_0000002717613104.png?HW-CC-KV=V1&HW-CC-Date=20260911T073120Z&HW-CC-Expire=86400&HW-CC-Sign=2AA912F33B87026DEBAB5A83493AF9F5B09B733BFCDFE156264DB4285948710D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/CuDuamopQKqL08sq-fARfw/zh-cn_image_0000002749495056.png?HW-CC-KV=V1&HW-CC-Date=20261009T013108Z&HW-CC-Expire=86400&HW-CC-Sign=815FBD8F0711BF2A6449FFC46DE4300F51C5425378052C22B5821C66556DB153)
 
 
 
@@ -788,4 +792,4 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/chaWXfSOR-KkOTBKcc1qng/zh-cn_image_0000002747293055.jpeg?HW-CC-KV=V1&HW-CC-Date=20260911T073120Z&HW-CC-Expire=86400&HW-CC-Sign=9AE10DC37A0A5D6FEEA3B0D8CB5D22BE9E91FBF734CB5EA4334BE7D37AF46EAB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/QS3gqAdpSz-lUph_GAtiqQ/zh-cn_image_0000002779094113.jpeg?HW-CC-KV=V1&HW-CC-Date=20261009T013108Z&HW-CC-Expire=86400&HW-CC-Sign=35433C9E3EFBDF7E2E79D6501A38E59C3343CD2235CE464EE076AA940A652932)

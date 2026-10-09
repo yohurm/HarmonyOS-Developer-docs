@@ -1,6 +1,6 @@
-# @ohos.nearlink.dataTransfer (星闪数传能力)
+# @ohos.nearlink.dataTransfer (星闪数据传输能力)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-nearlink-data-transfer-api
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable

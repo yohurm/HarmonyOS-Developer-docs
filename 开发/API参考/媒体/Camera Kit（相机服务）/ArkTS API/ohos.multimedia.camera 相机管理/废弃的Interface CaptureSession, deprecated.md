@@ -1,6 +1,6 @@
 # 废弃的Interface (CaptureSession, deprecated)
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-capturesession
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -1356,7 +1356,7 @@ isFocusModeSupported(afMode: FocusMode): boolean
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| afMode | FocusMode | 是 | 指定的焦距模式。 |
+| afMode | FocusMode | 是 | 指定的对焦模式。 |
 
 
 **返回值：**
@@ -1406,7 +1406,7 @@ setFocusMode(afMode: FocusMode): void
 
 设置对焦模式。
 
-进行设置之前，需要先检查设备是否支持指定的焦距模式，可使用方法[isFocusModeSupported](#isfocusmodesupporteddeprecated)。
+进行设置之前，需要先检查设备是否支持指定的对焦模式，可使用方法[isFocusModeSupported](#isfocusmodesupporteddeprecated)。
 
 > [!NOTE]
 > 从 API version 10开始支持，从API version 11开始废弃。建议使用 Focus.setFocusMode 替代。
@@ -1419,7 +1419,7 @@ setFocusMode(afMode: FocusMode): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| afMode | FocusMode | 是 | 指定的焦距模式。 |
+| afMode | FocusMode | 是 | 指定的对焦模式。 |
 
 
 **错误码：**
@@ -1470,7 +1470,7 @@ getFocusMode(): FocusMode
 
 | 类型 | 说明 |
 | --- | --- |
-| FocusMode | 获取当前设备的焦距模式。接口调用失败会返回相应错误码，错误码类型CameraErrorCode。 |
+| FocusMode | 获取当前设备的对焦模式。接口调用失败会返回相应错误码，错误码类型CameraErrorCode。 |
 
 
 **错误码：**

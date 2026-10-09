@@ -1,6 +1,6 @@
 # raw_file.h
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-raw-file-h
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -307,7 +307,7 @@ bool OH_ResourceManager_GetRawFileDescriptor(const RawFile *rawFile, RawFileDesc
 | 参数项 | 描述 |
 | --- | --- |
 | const RawFile *rawFile | 输入参数。指向RawFile对象的指针，通过OH_ResourceManager_OpenRawFile获取。 |
-| descriptor | 输出参数。指向RawFileDescriptor对象的引用，用于返回文件描述符信息。使用完后须调用OH_ResourceManager_ReleaseRawFileDescriptor释放文件描述符，防止文件描述符泄露。 |
+| descriptor | 输出参数。指向RawFileDescriptor对象的引用，用于返回文件描述符信息。使用完后须调用OH_ResourceManager_ReleaseRawFileDescriptor释放文件描述符，防止文件描述符泄漏。 |
  
  
 **返回：**
@@ -341,7 +341,7 @@ bool OH_ResourceManager_GetRawFileDescriptorData(const RawFile *rawFile, RawFile
 | 参数项 | 描述 |
 | --- | --- |
 | const RawFile *rawFile | 输入参数。指向RawFile对象的指针，通过OH_ResourceManager_OpenRawFile获取。 |
-| RawFileDescriptor *descriptor | 输出参数。指向RawFileDescriptor对象的指针，用于返回文件描述符信息。使用完后须调用OH_ResourceManager_ReleaseRawFileDescriptorData释放文件描述符，防止文件描述符泄露。 |
+| RawFileDescriptor *descriptor | 输出参数。指向RawFileDescriptor对象的指针，用于返回文件描述符信息。使用完后须调用OH_ResourceManager_ReleaseRawFileDescriptorData释放文件描述符，防止文件描述符泄漏。 |
  
  
 **返回：**
@@ -647,7 +647,7 @@ bool OH_ResourceManager_GetRawFileDescriptor64(const RawFile64 *rawFile, RawFile
 | 参数项 | 描述 |
 | --- | --- |
 | const RawFile64 *rawFile | 输入参数。指向RawFile64对象的指针，通过OH_ResourceManager_OpenRawFile64获取。 |
-| RawFileDescriptor64 *descriptor | 输出参数。指向RawFileDescriptor64对象的指针，用于返回文件描述符信息。使用完后须调用OH_ResourceManager_ReleaseRawFileDescriptor64释放文件描述符，防止文件描述符泄露。 |
+| RawFileDescriptor64 *descriptor | 输出参数。指向RawFileDescriptor64对象的指针，用于返回文件描述符信息。使用完后须调用OH_ResourceManager_ReleaseRawFileDescriptor64释放文件描述符，防止文件描述符泄漏。 |
  
  
 **返回：**

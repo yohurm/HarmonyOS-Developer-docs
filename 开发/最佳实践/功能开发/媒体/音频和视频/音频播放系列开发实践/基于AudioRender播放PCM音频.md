@@ -1,6 +1,6 @@
 # 基于AudioRenderer播放PCM音频
 
-更新时间：2026-09-02 03:30:31
+更新时间：2026-09-15 02:12:10
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-playing-pcm-audio-based-audiorenderer
 
@@ -681,7 +681,7 @@ public setVolume(volume: number) {
 public async initAVSession() {
   this.context = AppStorage.get(AppStorageKeyConstants.KEY_UI_ABILITY_CONTEXT);
   if (!this.context) {
-    Logger.info(TAG, `session create failed, conext is undefined`);
+    Logger.info(TAG, `session create failed, context is undefined`);
     return;
   }
   this.mediaControlCenter = MediaControlCenter.getInstance();
@@ -875,8 +875,8 @@ public setPlayState(isPlay: boolean) {
 ![](assets/基于AudioRender播放PCM音频/file-20260515114702674-8.gif)
 
  
-
  
+
  
 
 ### 实现原理

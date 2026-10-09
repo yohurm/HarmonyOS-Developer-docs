@@ -1,6 +1,6 @@
 # healthStore (运动健康数据服务)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/health-api-healthstore
 **支持设备：** Phone | Tablet | Wearable
@@ -2413,7 +2413,7 @@ let aggregateRequest: healthStore.AggregateRequest<healthStore.samplePointHelper
  },
   groupBy: {
     unitType: 3,
-    duration: 0
+    duration: 1
   },
   startLocalDate: '10/30/2023',
   endLocalDate: '10/30/2023'

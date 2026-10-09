@@ -1,6 +1,6 @@
 # 调试Native子进程
 
-更新时间：2026-08-29 09:41:34
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-native-child-process
 
@@ -21,10 +21,10 @@
 通过attach方式对Native子进程进行调试，在attach窗口中直接选择子进程进行调试。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/eSEj7sVJS6yxnYqyuhk4tA/zh-cn_image_0000002731381977.png?HW-CC-KV=V1&HW-CC-Date=20260911T072811Z&HW-CC-Expire=86400&HW-CC-Sign=655BC533ABC979A835A23C13A4A5257567030D382538279A716391A3E13B3E81)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/UO5Ab6_TTF2zoSurNnApeg/zh-cn_image_0000002731381977.png?HW-CC-KV=V1&HW-CC-Date=20261009T012804Z&HW-CC-Expire=86400&HW-CC-Sign=BC1953164849F0DA75A8753ABF6FDF92F9FC740CAECCAE15AE8B5326E3F4783A)
 
  
-或者先attach调试主进程，再点击调试面板的![icon](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/O6o1jCI8RmOt4_aE6FEUWw/zh-cn_image_0000002701662750.png?HW-CC-KV=V1&HW-CC-Date=20260911T072811Z&HW-CC-Expire=86400&HW-CC-Sign=510E982C40159904A9D8F18603060B48BF15103BD83EF3E4CFED29B6E691A962)，打开attach窗口选择子进程进行调试。
+或者先attach调试主进程，再点击调试面板的![icon](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/XupXb5skRhSUYMmXKZ99ng/zh-cn_image_0000002701662750.png?HW-CC-KV=V1&HW-CC-Date=20261009T012804Z&HW-CC-Expire=86400&HW-CC-Sign=8B6723D70C7C63452B04B8CD80EDD3B0A68E53753CDC1286486F32E1DE1B354C)，打开attach窗口选择子进程进行调试。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/YNELyPNXTa6RYltWUC_OdA/zh-cn_image_0000002701822674.png?HW-CC-KV=V1&HW-CC-Date=20260911T072811Z&HW-CC-Expire=86400&HW-CC-Sign=FAAC55FE937E022B0E41F93F9CB842885F88957AA4A672BDFFBE46623113FEBE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/VOOT5iQnQ3aH6HPCTZGZlw/zh-cn_image_0000002701822674.png?HW-CC-KV=V1&HW-CC-Date=20261009T012804Z&HW-CC-Expire=86400&HW-CC-Sign=A75A793D56EC2DAE2C0FE41E055D7FFE754F6BE544FE9A93ED2C9D4CAFF09678)

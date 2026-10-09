@@ -78,7 +78,6 @@ AnimateParam和KeyframeAnimateParam的onFinish接口。
   
 | 变更前 | 变更后 |
 | --- | --- |
-|  |  |
  
  
 示例：
@@ -136,7 +135,6 @@ TextInput组件showCounter接口。
   
 | 变更前长文本缩略 | 变更后非PC/2in1设备长文本换行 |
 | --- | --- |
-|  |  |
  
  
 **起始API Level**
@@ -169,7 +167,6 @@ MenuItem UX默认布局效果变更，应用无需适配。
   
 | 变更前 | 变更后 |
 | --- | --- |
-|  |  |
  
  
 **起始API Level**

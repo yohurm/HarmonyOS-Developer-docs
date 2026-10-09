@@ -1,13 +1,14 @@
 # 订阅24h功耗器件分解统计事件（ArkTS）
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-watcher-battery-usage-arkts
 
-#### 接口说明
+## 接口说明
 
 API接口的具体使用说明（参数使用限制、具体取值范围等）请参考[@ohos.hiviewdfx.hiAppEvent (应用事件打点)ArkTS API文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hiviewdfx-hiappevent)。
   
+
 | 接口名 | 描述 |
 | --- | --- |
 | addWatcher(watcher: Watcher): AppEventPackageHolder | 添加应用事件观察者，以添加对应用事件的订阅。 |
@@ -16,7 +17,7 @@ API接口的具体使用说明（参数使用限制、具体取值范围等）�
  
   
 
-#### 开发步骤
+## 开发步骤
 
 以实现对应用内多线程执行耗时操作生成的24h功耗器件分解统计事件订阅为例，说明开发步骤。
  1. 编辑工程中的“entry > src > main > ets  > entryability > EntryAbility.ets”文件，在onCreate函数中添加系统事件的订阅，示例代码如下：
@@ -133,6 +134,12 @@ build() {
   4）安装运行测试应用到测试机上，断开USB（2in1设备还需要断开充电线）；
 
   5）打开测试应用，然后在应用界面中点击“CPU加压”按钮，持续十分钟，测试过程保持屏幕常亮。
+
+  
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/ue0Ctco2Toqk62TRkSUdUQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20261009T012749Z&HW-CC-Expire=86400&HW-CC-Sign=54B92BD4D9291BECDCC8EBBD4F5001D4B79F77555714A1D180E6300CED6672EF)
+ 
+
+  加压结束后必须完成一次整点结算。例：上午10:15开始加压、10:26结束加压，数据11点才会完成一次整点结算，可将设备时间修改到10:58，待设备时间走到11:02后，再执行步骤3；
 3. 测试完成后连接USB，0点后在Log窗口看到对系统事件数据的处理日志（快速触发上报方式：执行命令hdc shell hidumper -s 1213 -a '--test 1'，进入测试模式不进行时间跳变的校验，然后修改设备时间为下午的11点58分）：
 
   

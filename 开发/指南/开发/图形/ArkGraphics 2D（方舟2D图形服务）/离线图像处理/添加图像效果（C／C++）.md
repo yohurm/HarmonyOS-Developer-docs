@@ -1,6 +1,6 @@
 # 添加图像效果 (C/C++)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/effectkit-filter-c
 
@@ -91,9 +91,13 @@ OH_PixelmapInitializationOptions_SetAlphaType(createOps, PIXELMAP_ALPHA_TYPE_UNK
 // 创建OH_PixelmapNative对象
 OH_PixelmapNative *pixelMapNative = nullptr;
 OH_PixelmapNative_CreatePixelmap(pixels, bufferSize, createOps, &pixelMapNative);
+// 像素数据已拷贝至像素图中，创建完成后释放像素数据缓冲区
+delete[] pixels;
+// 释放初始化选项对象
+OH_PixelmapInitializationOptions_Release(createOps);
 ```
 
-4. 基于上文生成的OH_PixelmapNative像素图对象，使用OH_Filter_CreateEffect()接口初始化OH_Filter对象。
+4. 基于上文生成的OH_PixelmapNative像素图对象，使用OH_Filter_CreateEffect()接口创建OH_Filter对象。
 
   
 ```text
@@ -142,11 +146,15 @@ OH_PixelmapNative* filterResult = nullptr;
 EffectErrorCode errCodeResult = OH_Filter_GetEffectPixelMap(filter, &filterResult);
 ```
 
-10. 当不再需要滤镜生成图像效果后，请及时使用OH_Filter_Release()销毁OH_Filter对象。
+10. 当不再需要滤镜生成图像效果后，请及时使用OH_Filter_Release()释放OH_Filter对象。同样，当不再需要原图及滤镜处理后生成的像素图时，请使用OH_PixelmapNative_Release()及时释放。
 
   
 ```text
 EffectErrorCode errCodeRelease = OH_Filter_Release(filter);
+// 释放滤镜处理后生成的像素图对象
+OH_PixelmapNative_Release(filterResult);
+// 释放原图像素图对象
+OH_PixelmapNative_Release(pixelMapNative);
 ```
 绘制效果如下：
 
@@ -154,12 +162,12 @@ EffectErrorCode errCodeRelease = OH_Filter_Release(filter);
 
 | --- | --- |
 
-| 原始图像 |  |
+| 原始图像 | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/WGz4KRHcRTKHZGra3qqotQ/zh-cn_image_0000002749333490.png?HW-CC-KV=V1&HW-CC-Date=20261009T012734Z&HW-CC-Expire=86400&HW-CC-Sign=316ECEE73DE5BE01C1D5C1DC8011BA900E7A0425817F5EB1F8470536F9305F8A) |
 
-| 添加模糊效果 |  |
+| 添加模糊效果 | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/Viaq6vLaSrKqjyxI0xZRDg/zh-cn_image_0000002749493372.png?HW-CC-KV=V1&HW-CC-Date=20261009T012734Z&HW-CC-Expire=86400&HW-CC-Sign=8A2ED6ED6BAE7E6922EC0ECD28B013865FB0F954D1CCB7AB9A8518B39FC0FA57) |
 
-| 添加提亮效果 |  |
+| 添加提亮效果 | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/D975MlYmQbap-LB9ryNE5w/zh-cn_image_0000002779092431.png?HW-CC-KV=V1&HW-CC-Date=20261009T012734Z&HW-CC-Expire=86400&HW-CC-Sign=AC2D1CF4C5F77F4DB484AB21A59AEB9DBFE83BAEC94F8BDA6A2467C27BCCBD15) |
 
-| 添加灰度效果 |  |
+| 添加灰度效果 | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/_vZudjxfRa6fJLtWpr_e4Q/zh-cn_image_0000002778932573.png?HW-CC-KV=V1&HW-CC-Date=20261009T012734Z&HW-CC-Expire=86400&HW-CC-Sign=60CFABB767AA46F0298DD35EE12794C6A0C5956E3530CF145D88FC32E045306C) |
 
-| 添加反色效果 |  |
+| 添加反色效果 | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/ymx172lXRi2eNSSi8twU2Q/zh-cn_image_0000002749333492.png?HW-CC-KV=V1&HW-CC-Date=20261009T012734Z&HW-CC-Expire=86400&HW-CC-Sign=2A8EEA06068439AC1817A1C4AA5516E59280B74F2A98CB83DBBCC99EA616F4C6) |

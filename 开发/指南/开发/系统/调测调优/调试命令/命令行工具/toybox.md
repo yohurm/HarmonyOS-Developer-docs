@@ -1,17 +1,17 @@
-# toybox
+# toybox工具
 
-更新时间：2026-05-26 06:48:54
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/toybox
 
 toybox 是一个轻量级的Linux命令行工具集合，它将常用的Linux命令行工具合并到一个单独的可执行文件中。
   
 
-#### 前置条件
+## 前置条件
 
   
 
-#### 使用方法1
+### 使用方法1
 
 - 正常连接设备
 - 使用hdc shell进入命令行执行模式
@@ -19,14 +19,14 @@ toybox 是一个轻量级的Linux命令行工具集合，它将常用的Linux命
  
   
 
-#### 使用方法2
+### 使用方法2
 
 - 应用沙箱内运行
 
  
   
 
-#### 命令行说明
+## 命令行说明
 
 toybox的执行方式有两种：
  
@@ -44,10 +44,11 @@ toybox的执行方式有两种：
  
   
 
-#### 帮助命令
+### 帮助命令
 
 格式：toybox [--long | --help | --version | [COMMAND] [ARGUMENTS...]]
   
+
 | 选项 | 参数 | 说明 |
 | --- | --- | --- |
 | --help | NA | 显示命令帮助。 |
@@ -59,11 +60,13 @@ toybox的执行方式有两种：
  
 格式：help [-ahu] [COMMAND]
   
+
 | 参数 | 说明 |
 | --- | --- |
 | COMMAND | 显示COMMAND的帮助。[COMMAND] 可被替换为toybox支持的任意命令。 |
  
   
+
 | 选项 | 说明 |
 | --- | --- |
 | -a | 显示所有命令的帮助。 |
@@ -73,8 +76,9 @@ toybox的执行方式有两种：
  
   
 
-#### 数学与计算机基础函数
+### 数学与计算机基础函数
  
+
 | 命令 | 说明 |
 | --- | --- |
 | factor | 分解质因数。 usage: factor [-hx] NUMBER... |
@@ -85,8 +89,9 @@ toybox的执行方式有两种：
  
   
 
-#### 终端操作
+### 终端操作
  
+
 | 命令 | 说明 |
 | --- | --- |
 | chvt | 切换到虚拟终端N。 usage: chvt NUM |
@@ -99,8 +104,9 @@ toybox的执行方式有两种：
  
   
 
-#### sh逻辑命令
+### sh逻辑命令
  
+
 | 命令 | 说明 |
 | --- | --- |
 | false | 返回非零值。 usage: false |
@@ -111,8 +117,9 @@ toybox的执行方式有两种：
  
   
 
-#### 系统操作
+### 系统操作
  
+
 | 命令 | 说明 |
 | --- | --- |
 | dmesg | 显示或控制内核环形缓冲区。 usage: dmesg [-Cc] [-r \| -t \| -T] [-n LEVEL] [-s SIZE] [-w \| -W] |
@@ -132,8 +139,9 @@ toybox的执行方式有两种：
  
   
 
-#### 时间日期
+### 时间日期
  
+
 | 命令 | 说明 |
 | --- | --- |
 | cal | 打印日历。 usage: cal [-h] [[[DAY] MONTH] YEAR] |
@@ -146,8 +154,9 @@ toybox的执行方式有两种：
  
   
 
-#### 登录用户操作
+### 登录用户操作
  
+
 | 命令 | 说明 |
 | --- | --- |
 | groups | 打印用户所在的组。 usage: groups [user] |
@@ -159,8 +168,9 @@ toybox的执行方式有两种：
  
   
 
-#### 进程操作
+### 进程操作
  
+
 | 命令 | 说明 |
 | --- | --- |
 | iotop | 根据I/O对进程排序。 usage: iotop [-AaKObq] [-n NUMBER] [-d SECONDS] [-p PID,] [-u USER,] |
@@ -184,8 +194,9 @@ toybox的执行方式有两种：
  
   
 
-#### 设备节点操作
+### 设备节点操作
  
+
 | 命令 | 说明 |
 | --- | --- |
 | df | 显示命令行中列出的每个文件系统的总共、已使用和空闲的磁盘空间。无参数时显示已装载的所有文件系统。 usage: df [-aHhikP] [-t TYPE] [FILE...] |
@@ -205,8 +216,9 @@ toybox的执行方式有两种：
  
   
 
-#### 网络操作
+### 网络操作
  
+
 | 命令 | 说明 |
 | --- | --- |
 | ftpget/ftpput | 与FTP服务器沟通，支持读、写、列举文件等操作。ftpget自带-g选项。ftpput自带-s选项。 usage: ftpget/ftpput [-cvgslLmMdD] [-p PORT] [-P PASSWORD] [-u USER] HOST [LOCAL] REMOTE |
@@ -220,8 +232,9 @@ toybox的执行方式有两种：
  
   
 
-#### 文件操作
+### 文件操作
  
+
 | 命令 | 说明 |
 | --- | --- |
 | awk | awk是一个处理文本的工具，可对文档内容进行筛选、分析。 usage: awk [-F sepstring] [-v assignment]... program [argument...] or: awk [-F sepstring] -f progfile [-f progfile]... [-v assignment]... [argument...] |
@@ -288,7 +301,7 @@ toybox的执行方式有两种：
 | seq | 从头到尾按递增计数。省略参数默认值为1。使用两个参数作为第一个和最后一个。参数可以是负数或浮点数。 usage: seq [-w \| -f fmt_str] [-s sep_str] [first] [increment] last |
 | setfattr | 写入POSIX扩展属性。 usage: setfattr [-h] [-x \| -n NAME] [-v VALUE] FILE... |
 | sha1sum/sha256sum | 计算sha系列哈希值。 usage: ???sum [-bcs] [FILE]... |
-| shred | 安全的删除文件（用随机数据覆盖文件内容）。 usage: shred [-fuxz] [-n COUNT] [-o OFFSET] [-s SIZE] FILE... |
+| shred | 安全地删除文件（用随机数据覆盖文件内容）。 usage: shred [-fuxz] [-n COUNT] [-o OFFSET] [-s SIZE] FILE... |
 | sort | 对从输入文件（或标准输入设备）到标准输出设备的所有文本行进行排序。 usage: sort [-Mbcdfginrsuz] [FILE...] [-k#[,#[x]] [-t X]] [-o FILE] |
 | split | 将输入（或标准输入设备）数据复制到一系列输出（或“x”）文件，使用按字母顺序递增的后缀（aa,ab,ac...az,ba,bb...）。 usage: split [-a SUFFIX_LEN] [-b BYTES] [-l LINES] [-n PARTS] [INPUT [OUTPUT]] |
 | stat | 显示文件或文件系统的状态。 usage: stat [-tfL] [-c FORMAT] FILE... |
@@ -312,11 +325,11 @@ toybox的执行方式有两种：
  
   
 
-#### 常见问题
+## 常见问题
 
   
 
-#### 报错："Unknown COMMAND xxx"
+### 报错："Unknown COMMAND xxx"
 
 在命令行中输入"xxx"或"toybox xxx"或"help xxx"时，如果遇到报错"Unknown COMMAND xxx"，表示toybox不支持xxx命令。
  
@@ -324,7 +337,7 @@ toybox的执行方式有两种：
  
   
 
-#### 报错："Operation not permitted"/"Permission denied"
+### 报错："Operation not permitted"/"Permission denied"
 
 toybox存在大量操作文件和进程的命令，如果调用者缺少对被操作对象的权限，就会报错。
  1. 权限缺失。请检查被操作的文件，以及所属文件夹的读、写、执行权限，确认自己是否有权限执行。
@@ -338,7 +351,7 @@ toybox存在大量操作文件和进程的命令，如果调用者缺少对被�
  
   
 
-#### 其他Linux标准报错
+### 其他Linux标准报错
 
 toybox大部分命令为对内核的调用，出错时会通过perror打印Linux内核错误码对应的文本。
  
@@ -356,7 +369,7 @@ cat可以打印文件内容，如果试图cat一个目录，会有报错 "Is a d
  
   
 
-#### 命令与toybox描述不符合
+### 命令与toybox描述不符合
 
 如果发现在shell下输入"命令 参数"的表现与"toybox 命令 参数"不一致，可能有两种原因导致。
  1. 实际调用的是shell的实现而非toybox。

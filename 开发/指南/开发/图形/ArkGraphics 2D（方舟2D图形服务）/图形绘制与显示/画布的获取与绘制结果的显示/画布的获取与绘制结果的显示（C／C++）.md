@@ -1,6 +1,6 @@
 # 画布的获取与绘制结果的显示（C/C++）
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/canvas-get-result-draw-c
 
@@ -185,7 +185,7 @@ target_link_libraries(entry PUBLIC libhilog_ndk.z.so libpixelmap.so)
 #include <native_drawing/drawing_pixel_map.h>
 ```
 
-3. 需要通过OH_Drawing_PixelMapGetFromOhPixelMapNative()接口创建一个像素图对象（具体可参考[图片绘制](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pixelmap-drawing-c)），并通过OH_Drawing_CanvasCreateWithPixelMap()接口借助像素图对象创建Canvas。
+3. 需要通过OH_Drawing_PixelMapGetFromOhPixelMapNative()接口创建一个像素图对象（具体可参考[图片绘制](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pixelmap-drawing-c)），并通过OH_Drawing_CanvasDrawPixelMapRect()接口将像素图对象绘制到Canvas上。
 
   
 ```cpp

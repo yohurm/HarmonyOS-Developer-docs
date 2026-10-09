@@ -1,6 +1,6 @@
 # 使用SM2非对称密钥加解密(ArkTS)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-sm2-asym-encrypt-decrypt
 
@@ -70,13 +70,13 @@ async function main() {
   let pubKey = keyPair.pubKey;
   let priKey = keyPair.priKey;
   let message = 'This is a test';
-  // 把字符串按utf-8解码为Uint8Array
+  // 把字符串按utf-8编码为Uint8Array
   let plainText: cryptoFramework.DataBlob = { data: new Uint8Array(buffer.from(message, 'utf-8').buffer) };
   let encryptText = await encryptMessagePromise(pubKey, plainText);
   let decryptText = await decryptMessagePromise(priKey, encryptText);
   if (plainText.data.toString() === decryptText.data.toString()) {
     console.info('decrypt ok.');
-    // 把Uint8Array按utf-8编码为字符串
+    // 把Uint8Array按utf-8解码为字符串
     let messageDecrypted = buffer.from(decryptText.data).toString('utf-8');
     console.info('decrypted result string:' + messageDecrypted);
   } else {
@@ -134,13 +134,13 @@ function main() {
     let pubKey = keyPair.pubKey;
     let priKey = keyPair.priKey;
     let message = 'This is a test';
-    // 把字符串按utf-8解码为Uint8Array
+    // 把字符串按utf-8编码为Uint8Array
     let plainText: cryptoFramework.DataBlob = { data: new Uint8Array(buffer.from(message, 'utf-8').buffer) };
     let encryptText = encryptMessage(pubKey, plainText);
     let decryptText = decryptMessage(priKey, encryptText);
     if (plainText.data.toString() === decryptText.data.toString()) {
       console.info('decrypt ok.');
-      // 把Uint8Array按utf-8编码为字符串
+      // 把Uint8Array按utf-8解码为字符串
       let messageDecrypted = buffer.from(decryptText.data).toString('utf-8');
       console.info('decrypted result string:' + messageDecrypted);
     } else {

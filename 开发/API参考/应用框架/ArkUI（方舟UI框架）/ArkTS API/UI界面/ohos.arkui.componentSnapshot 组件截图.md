@@ -1,6 +1,6 @@
 # @ohos.arkui.componentSnapshot (组件截图)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-componentsnapshot
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -323,7 +323,7 @@ struct OffscreenSnapshotExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/8QwHq3lkT3GOsnbJUztDYw/zh-cn_image_0000002717612366.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=1C5DD8A915107953C056602D9C609EA0688A47C6CCE3144DA9BA0756628AECBE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/KbSdK8AUQ9a1yLjg-iA3Gg/zh-cn_image_0000002749334298.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012847Z&HW-CC-Expire=86400&HW-CC-Sign=CEACDBE440A62B68FF9C9A3A5C11FF46E66AE78B4165B326BE51D630C7241C89)
 
 
 
@@ -441,7 +441,7 @@ struct OffscreenSnapshotExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/YKpd66JPRx20RQFSWZ5Wfg/zh-cn_image_0000002717612366.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=35BDA3A9697342B3A1FA2614539CE7D7D85A26FD0F89F0CEDE08D8E74A5BDA5C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/aEsXmOTZTAudXUh4XDl5Lw/zh-cn_image_0000002749334298.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012847Z&HW-CC-Expire=86400&HW-CC-Sign=7F2B06A0609C434BB7771FFA098E1AB277E9685B227B2D53EE1987139C4D6167)
 
 
 
@@ -540,7 +540,7 @@ struct SnapshotExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/_Ds3KSWxSnGGQSlCGQKLEA/zh-cn_image_0000002717772298.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=D1C0FB0365D33B72E01E1F933954E5229C2559CCD4C28AE64C176610E6921005)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/YMfiu0hYQzqbBc7t0eqTSg/zh-cn_image_0000002778933383.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012847Z&HW-CC-Expire=86400&HW-CC-Sign=AE9E4B52204679FEBD1489A2C135F1C709E2A6A5A60417A463854B24E79A4D2C)
 
 
 
@@ -563,8 +563,8 @@ struct SnapshotExample {
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| maxWidth | number | 否 | 否 | 组件截图的最大宽度限制。 取值范围：[0, +∞) 单位：px |
-| maxHeight | number | 否 | 否 | 组件截图的最大高度限制。 取值范围：[0, +∞) 单位：px |
+| maxWidth | number | 否 | 否 | 组件截图的最大宽度限制。 取值范围：(0, +∞)。异常值为-1，表示查询组件截图尺寸限制失败。 单位：px |
+| maxHeight | number | 否 | 否 | 组件截图的最大高度限制。 取值范围：(0, +∞)。异常值为-1，表示查询组件截图尺寸限制失败。 单位：px |
 
 
 
@@ -658,7 +658,7 @@ struct SnapshotColorModeExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/rnAanqOwSTOWOYaJdTnDGg/zh-cn_image_0000002717772298.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=2FBF9A4D678B2AD38D6DDF97A46FF8F306189AA33340AEA2C2D68BD26F7A687A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/xFlg4YCQREy9VTWxggawig/zh-cn_image_0000002778933383.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012847Z&HW-CC-Expire=86400&HW-CC-Sign=2FC6AD175806782F77913ED9EDB12BB728640619DCF3ECF15E71A82A8BD99B4A)
 
 
 
@@ -730,7 +730,7 @@ struct SnapshotDynamicRangeExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/fuGMUEBRQJWcDlmzXBoZbA/zh-cn_image_0000002717772298.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=81C1A643F7CD67DE5E8AA2BF99268978ECFCFA88AD319601BD0A90A85E98788D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/JyTa3lIIQnO-PfjDTkcwcA/zh-cn_image_0000002778933383.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012847Z&HW-CC-Expire=86400&HW-CC-Sign=8D5FF9861A2FB3FE9EF07BB1D7D992FB3ACF3D044888BFE66884B3BC7044591B)
 
 
 
@@ -871,4 +871,4 @@ struct SnapshotExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/G0yuxUUGS0SoXOy_QUWWKQ/zh-cn_image_0000002747292319.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=5A529AB3F0C9CC9C2E7179A116F4EE6B9C2FE90958D10D86F76CA23B95243B72)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/RgXH59cBSA-LdHtnhXX1-Q/zh-cn_image_0000002749494184.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012847Z&HW-CC-Expire=86400&HW-CC-Sign=2942550D362C867B20C1B7CFAABF97B169668FCB64FA3BF19D3869B54194A6AA)

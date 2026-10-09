@@ -1,6 +1,6 @@
 # OS新增和增强特性
 
-更新时间：2026-08-29 09:40:02
+更新时间：2026-09-23 09:11:41
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-611
 
@@ -30,7 +30,7 @@ AbilityStage组件管理器新增AbilityStage即将创建第一个Ability的回�
 
 ### Call Service Kit
 
-在企业员工来电或去电时，开发者可通过来电、去电手机号查询获取对应的企业服务信息，帮助员工快速了解通话号码相关的企业服务数据，目前支持快递类型的企业服务。（[指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/callservice-enterprise-sersvice-display)、[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/callservicekit-callerinfoquery-extension-ability#onquerybusinessservicedata)）
+在企业员工来电或去电时，开发者可通过来电、去电手机号查询获取对应的企业服务信息，帮助员工快速了解通话号码相关的企业服务数据，目前支持快递类型的企业服务。（[指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/callservice-enterprise-service-display)、[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/callservicekit-callerinfoquery-extension-ability#onquerybusinessservicedata)）
  
  
 

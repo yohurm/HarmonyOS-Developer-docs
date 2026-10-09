@@ -1,6 +1,6 @@
 # Contacts错误码
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-contacts
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
@@ -172,30 +172,7 @@ User cancel.
 
 
 
-## 401 打开联系人头像文件失败
-
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable
-
-**错误信息**
-
-Failed to open contact portrait file.
-
-**错误描述**
-
-无法打开联系人头像文件。
-
-**可能原因**
-
-头像文件路径错误、文件不存在、磁盘损坏。
-
-**处理步骤**
-
-检查文件是否存在。
-
-
-
-## 401 系统内部错误
+## Contacts调用失败返回401
 
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
@@ -314,3 +291,26 @@ Internal error. Invalid contact rawId.
 **处理步骤**
 
 系统异常，请稍后重试。
+
+
+
+### 打开联系人头像文件失败
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
+**错误信息**
+
+Failed to open contact portrait file.
+
+**错误描述**
+
+无法打开联系人头像文件。
+
+**可能原因**
+
+头像文件路径错误、文件不存在、磁盘损坏。
+
+**处理步骤**
+
+检查文件是否存在。

@@ -1,6 +1,6 @@
 # 动态调整预览帧率(ArkTS)
 
-更新时间：2026-03-09 02:50:43
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-framerate
 
@@ -9,13 +9,15 @@
 某些场景下降低帧率可在相机设备启用时降低功耗。
   
 
-#### 约束与限制
+## 约束与限制
 
-支持的帧率范围及帧率的设置依赖于硬件能力的实现，不同的硬件平台可能拥有不同的默认帧率。
+- 支持的帧率范围及帧率的设置依赖于硬件能力的实现，不同的硬件平台可能拥有不同的默认帧率。
+- 如果应用主动设置了动态帧率，在条件允许的情况下，相机会优先按高帧率出图，以保证流畅的视觉体验；但在高负载或高温等场景下，系统会自动降低帧率以保证稳定性。
+
  
   
 
-#### 开发流程
+## 开发流程
 
 相机使用预览功能前，均需要创建相机会话。完成会话配置后，应用提交和开启会话，才可以开始调用相机相关功能。
  
@@ -41,7 +43,7 @@
  
   
 
-#### 导入依赖
+## 导入依赖
 
 导入camera接口，接口中提供了相机相关的属性和方法，导入方法如下。
  
@@ -52,7 +54,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
  
   
 
-#### 创建Session会话并指定模式
+## 创建Session会话并指定模式
 
 相机使用预览等功能前，均需完成[相机管理](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-device-management)和创建相机会话，调用[CameraManager](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-cameramanager)的[createSession](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-cameramanager#createsession11)创建一个会话。
  
@@ -76,7 +78,7 @@ function createPhotoSession(cameraManager: camera.CameraManager): camera.Session
  
   
 
-#### 调整帧率
+## 调整帧率
 1. 调用[PreviewOutput](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-previewoutput)的[getSupportedFrameRates](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-previewoutput#getsupportedframerates12)，查询当前支持的帧率范围。
 
   
@@ -125,7 +127,7 @@ function getActiveFrameRange(previewOutput: camera.PreviewOutput): camera.FrameR
  
   
 
-#### 完整流程
+## 完整流程
 
 结合上述开发流程1~3，完整的session配流及previewOutput在session.start前后调整帧率示例代码如下。
  

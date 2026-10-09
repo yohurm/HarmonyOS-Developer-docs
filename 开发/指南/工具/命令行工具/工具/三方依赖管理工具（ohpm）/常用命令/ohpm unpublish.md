@@ -1,6 +1,6 @@
 # ohpm unpublish
 
-更新时间：2026-08-29 09:41:34
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-unpublish
 
@@ -128,4 +128,4 @@ ohpm unpublish demo@1.0.0 -f
 结果示例：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/W7mmW-qmRTmlOhTnBBsuaw/zh-cn_image_0000002731382783.png?HW-CC-KV=V1&HW-CC-Date=20260911T072818Z&HW-CC-Expire=86400&HW-CC-Sign=C92ABF1787C764A242582F9947B320591492284AD1D220820BF2F7287EBCEC38)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/oSVm7L1uQByqvGlso_IlQQ/zh-cn_image_0000002731382783.png?HW-CC-KV=V1&HW-CC-Date=20261009T012821Z&HW-CC-Expire=86400&HW-CC-Sign=8508B0E88793C7F8D549426DD6C3F045001870C8749DDFA3C64A77FB1EB408D4)

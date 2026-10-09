@@ -1,6 +1,6 @@
 # 复杂绘制效果（C/C++）
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/complex-drawing-effect-c
 
@@ -98,7 +98,7 @@ OH_Drawing_PathEffectDestroy(pathEffect);
 
 | 不设置虚线路径效果的示意图 | 设置虚线路径效果的示意图 |
 | --- | --- |
-|  |  |
+| ![](assets/复杂绘制效果（C／C++）/file-20260514131637664-1.png) | ![](assets/复杂绘制效果（C／C++）/file-20260514131637664-2.png) |
 
 
 
@@ -210,7 +210,7 @@ OH_Drawing_PointDestroy(centerPt);
 此例绘制的具有径向渐变着色器效果的矩形如下所示：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/NP7B-6M0S-mJbl12j_JNNg/zh-cn_image_0000002747291455.png?HW-CC-KV=V1&HW-CC-Date=20260911T072717Z&HW-CC-Expire=86400&HW-CC-Sign=DB00F7E4F8DFBFA467442FCE3A3263D65B986466517BE5139C5008E738B6A114)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/4hrCgOf7SjCLonM1L2rsOg/zh-cn_image_0000002749493312.png?HW-CC-KV=V1&HW-CC-Date=20261009T012726Z&HW-CC-Expire=86400&HW-CC-Sign=2BC4D02B12D3BEA92DF2FBFB3A98BBC9748B9FB6EF44B39D39AC3049CE1BC27D)
 
 
 
@@ -254,7 +254,7 @@ OH_Drawing_PointDestroy(centerPt);
 此例绘制的具有扇形渐变着色器效果的矩形如下所示：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/XEsiLeKNT06uM62uv-Jt0w/zh-cn_image_0000002747211373.png?HW-CC-KV=V1&HW-CC-Date=20260911T072717Z&HW-CC-Expire=86400&HW-CC-Sign=DB0AF0C151E0921D8A83C901E61B5B0F627DAB514F015D1BBD6DE9E36B71D8D1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/UCuXLltMSNqnWgHU1zNfgg/zh-cn_image_0000002779092371.png?HW-CC-KV=V1&HW-CC-Date=20261009T012726Z&HW-CC-Expire=86400&HW-CC-Sign=C47FFEC6B94A6291ADBDC624D7FA9308876F78CAE131673661F5F416265F12F5)
 
 
 
@@ -346,7 +346,7 @@ OH_Drawing_FilterDestroy(filter);
 
 | 不设置颜色滤波器效果的示意图 | 设置5x4颜色矩阵的颜色滤波器效果的示意图 |
 | --- | --- |
-|  |  |
+| ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/4qxgPsz8QyGgV3kllMhtaw/zh-cn_image_0000002778932513.png?HW-CC-KV=V1&HW-CC-Date=20261009T012726Z&HW-CC-Expire=86400&HW-CC-Sign=53E981FA9E6CD22F17706C6249E98244492523A2ED923943F2B2C5099ED5DC99) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/ITM2fpImSuSCRHZXw77bpA/zh-cn_image_0000002749333432.png?HW-CC-KV=V1&HW-CC-Date=20261009T012726Z&HW-CC-Expire=86400&HW-CC-Sign=F3A7D9BB0AFD0A8FE1E331EF4B259B5C1436B40B6C38D3193B7DD01A3C27132C) |
 
 
 
@@ -405,7 +405,7 @@ OH_Drawing_FilterDestroy(filter);
 
 | 不设置图像滤波器效果的示意图 | 设置图像滤波器效果的示意图 |
 | --- | --- |
-|  |  |
+| ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/ty_620lGQJ2GVTlajSIE4Q/zh-cn_image_0000002749493314.png?HW-CC-KV=V1&HW-CC-Date=20261009T012726Z&HW-CC-Expire=86400&HW-CC-Sign=AB3168D24E518B397A97DFEACD75662578C20307B186E34A1305DD3F468DD406) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/jD-NRk9IT1y4ZB5clMchIw/zh-cn_image_0000002779092373.png?HW-CC-KV=V1&HW-CC-Date=20261009T012726Z&HW-CC-Expire=86400&HW-CC-Sign=96728C93F9C218CAB0D776275DE5FABE74756F1902B825A49E545D43F8FE0C89) |
 
 
 
@@ -460,7 +460,7 @@ OH_Drawing_FilterDestroy(filter);
 
 | 不设置蒙版滤波器效果的示意图 | 设置蒙版滤波器效果的示意图 |
 | --- | --- |
-|  |  |
+| ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/Nov8S60kRK6wEq9K6jS0NQ/zh-cn_image_0000002778932515.png?HW-CC-KV=V1&HW-CC-Date=20261009T012726Z&HW-CC-Expire=86400&HW-CC-Sign=4A9D63B4715FF33A214A4106D3CCD7138B06BBE58494DA60C57B99ABA2BE71CA) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/vAx3WV0mS5W8SG9diqxPOQ/zh-cn_image_0000002749333434.png?HW-CC-KV=V1&HW-CC-Date=20261009T012726Z&HW-CC-Expire=86400&HW-CC-Sign=4FEA2348FA90E3336C76D06E2BEB163701C2B5C6885A8CB47F741810A8A15367) |
 
 
 

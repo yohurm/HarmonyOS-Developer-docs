@@ -1,6 +1,6 @@
 # @ohos.net.connection (网络连接管理)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-net-connection
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -1988,8 +1988,8 @@ addCustomDnsRule(host: string, ip: Array&lt;string&gt;, callback: AsyncCallback&
 
 为当前应用程序添加自定义host和对应的IP地址的映射。使用callback异步回调。
 
-> [!NOTE]
-> 不需要时可调用 removeCustomDnsRule 删除某一条自定义规则或调用 clearCustomDnsRules 删除当前应用程序的所有的自定义DNS规则 。 调用本接口添加自定义DNS规则后可持续生效，无需重复添加同一条规则。不需要时可按照上述方法删除。
+> [!TIP]
+> 不需要时可调用 removeCustomDnsRule 删除某一条自定义规则或调用 clearCustomDnsRules 删除当前应用程序的所有的自定义DNS规则 。 调用本接口添加自定义DNS规则后可持续生效，无需重复添加同一条规则。不需要时可按照上述方法删除。 网络切换说明： 当设备从Wi-Fi网络切换至蜂窝数据网络时，配置过自定义DNS规则的应用可能出现无法访问目标系统或服务的情况。此时可开启后关闭飞行模式，或调用 clearCustomDnsRules 清除当前应用程序的自定义DNS规则后重试。
 
 
 **需要权限**：ohos.permission.INTERNET
@@ -2348,7 +2348,7 @@ setPacFileUrl(pacFileUrl: string): void
 设置PAC脚本（Proxy Auto-Configuration Script，代理自动配置脚本）的URL地址，并启动PAC代理能力，比如：[http://127.0.0.1:21998/PacProxyScript.pac](http://127.0.0.1:21998/PacProxyScript.pac) 。可通过调用[findProxyForUrl](#connectionfindproxyforurl20)解析URL地址来获取代理信息。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/76gYVccRRLCRmnRl3MO1Ew/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072923Z&HW-CC-Expire=86400&HW-CC-Sign=641FAC1387E14AEC90EE84855D88716F40B01AC5C9993EB95A7E97288F16056C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/tvMvMs4YQWa8A3ITqZL0Hg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20261009T012941Z&HW-CC-Expire=86400&HW-CC-Sign=334196DB1850E0ACD4555D7D34DF4CE3499DFE4F2AB590E5B6467841555130A5)
 
 
 1、本接口当前在PC/2in120+、Phone23+、Tablet23+、TV23+设备上支持解析脚本并启用PAC代理能力，Wearable设备类型上只保存脚本地址，不会启用PAC代理能力。
@@ -2850,9 +2850,9 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 connection.getIpNeighTable().then((data: connection.NetIpMacInfo[]) => {
   if (data.length !== 0) {
-    console.info(`Succeeded to get ipAddress: ${JSON.stringify(data[0].ipAddress)}`);
-    console.info(`Succeeded to get iface: ${JSON.stringify(data[0].iface)}`);
-    console.info(`Succeeded to get macAddress: ${JSON.stringify(data[0].macAddress)}`);
+    console.info(`Succeeded to get ipAddress: ${JSON.stringify(data.ipAddress)}`);
+    console.info(`Succeeded to get iface: ${JSON.stringify(data.iface)}`);
+    console.info(`Succeeded to get macAddress: ${JSON.stringify(data.macAddress)}`);
   }
 }).catch((error: BusinessError) => {
   console.error(`Failed to get ip neigh table. Code:${error.code}, message:${error.message}`);
@@ -3395,7 +3395,7 @@ register(callback: AsyncCallback&lt;void&gt;): void
 订阅指定网络状态变化的通知。如需监听特定事件，确保调用on监听事件后再调用register进行注册。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/TfS_7KIvTr2Jc792OzqGeg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072923Z&HW-CC-Expire=86400&HW-CC-Sign=F3A47D1E64BFC7B59C8145E892DD03A86FC20B6C8F6951A4384F9929F9281129)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/bKvRphlLQMW4KG0JLPFqMw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20261009T012941Z&HW-CC-Expire=86400&HW-CC-Sign=8076EC97E9EB049AD172D33B0171A8AE1C5FF4D9614DE4CE69E4C26D7350F110)
 
 
 使用完register接口后需要及时调用[unregister](#unregister)取消注册。
@@ -3863,7 +3863,7 @@ interface Data {
   if (socketType == "TCPSocket") {
     tcp.bind({address:"192.168.xxx.xxx",
               port:8080,
-              family:1} as socket.NetAddress, (error: BusinessError) => {
+              family:1} as socket.NetAddress, (error: Error) => {
       if (error) {
         console.error(`Failed to bind. Code:${error.code}, message:${error.message}`);
         return;
@@ -3968,7 +3968,7 @@ connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
   if (socketType == "TCPSocket") {
     tcp.bind({address:"192.168.xxx.xxx",
               port:8080,
-              family:1} as socket.NetAddress, (error: BusinessError) => {
+              family:1} as socket.NetAddress, (error: Error) => {
       if (error) {
         console.error('Failed to bind');
         return;
@@ -4404,10 +4404,10 @@ TCP状态。
 | TCP_SYN_SENT | 2 | 客户端发送SYN，等待服务端ACK+SYN（三次握手的第一步）。 |
 | TCP_SYN_RECV | 3 | 服务端接收SYN并发送ACK+SYN，等待客户端ACK（三次握手的第二步）。 |
 | TCP_FIN_WAIT1 | 4 | 主动端发送FIN，等待对方ACK。 |
-| TCP_FIN_WAIT2 | 5 | 主动端接收自身FIN的ACK，等待对方发送FIN。 |
+| TCP_FIN_WAIT2 | 5 | 主动端接收FIN的ACK，等待对方ACK。 |
 | TCP_TIME_WAIT | 6 | 主动端接收对方FIN并回复ACK，等待2倍最大报文段生存时间后彻底释放。 |
 | TCP_CLOSE | 7 | 初始/关闭状态，无连接。 |
-| TCP_CLOSE_WAIT | 8 | 被动端接收对方FIN并发送ACK，等待本地应用程序关闭连接。 |
+| TCP_CLOSE_WAIT | 8 | 被动端接收FIN并发送ACK，等待对方FIN。 |
 | TCP_LAST_ACK | 9 | 被动端发送FIN后，等待对方ACK。 |
 | TCP_LISTEN | 10 | 服务端监听，等待客户端连接。 |
 | TCP_CLOSING | 11 | 双方同时发送FIN，互相等待ACK。 |
@@ -4650,7 +4650,7 @@ wifiManager.addCandidateConfig(config,(error,networkId) => {
 网络连接信息。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/NfMzzAHxR7Cg5wP3XSlzXQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072923Z&HW-CC-Expire=86400&HW-CC-Sign=E44C8B20F2CC6783208DBBD57011F4745506926FCE593ADCA38996D8D23ED672)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/vp_QSfLRQielkKTfHw__Yw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20261009T012941Z&HW-CC-Expire=86400&HW-CC-Sign=BA6C46AF9A25312EEC962443BE68A3D52A4A72FC49B358EFB0A4AE29AC42FE0B)
 
 
 linkAddresses、routes和dnses可能为空，需要做好空值保护，建议使用前先判断对象是否存在。

@@ -1,6 +1,6 @@
 # ImageBitmap
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-canvas-imagebitmap
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -249,7 +249,7 @@ struct ImageExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/jF0tKmjoS5WEyIyAEHGzOg/zh-cn_image_0000002747212843.png?HW-CC-KV=V1&HW-CC-Date=20260911T073111Z&HW-CC-Expire=86400&HW-CC-Sign=BB8F7FA13B0547DEAAC985E7D0B9E12F8931CF5A4D871CDF14EE6A90244CA895)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/W5B4kvipRNCqWlvfnqWiCw/zh-cn_image_0000002778934129.png?HW-CC-KV=V1&HW-CC-Date=20261009T013100Z&HW-CC-Expire=86400&HW-CC-Sign=B893C4006AC9DA8BF9B1AA085D3396DB8CAED4E5C824834796E250843D0CCD7E)
 
 
 
@@ -295,7 +295,7 @@ struct Demo {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/C-A63McTTLyRJttuQt-MFA/zh-cn_image_0000002717772908.png?HW-CC-KV=V1&HW-CC-Date=20260911T073111Z&HW-CC-Expire=86400&HW-CC-Sign=5C83488A79732967DAEDE477FC7764F9E7EC9A2D6C8B73F9FD4CD24C41D69430)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/FgRbohh6SbCzFWJRp4YHRg/zh-cn_image_0000002749335046.png?HW-CC-KV=V1&HW-CC-Date=20261009T013100Z&HW-CC-Expire=86400&HW-CC-Sign=9D8697C88E7CB4778D07C6F9809A4156A4087EB81A215B25CA1EEBB50A287683)
 
 
 
@@ -316,7 +316,7 @@ import { worker } from '@kit.ArkTS';
 
 @Entry
 @Component
-struct imageBitmapExamplePage {
+struct ImageBitmapExamplePage {
   private settings: RenderingContextSettings = new RenderingContextSettings(true);
   private context: CanvasRenderingContext2D = new CanvasRenderingContext2D(this.settings);
   private myWorker = new worker.ThreadWorker('entry/ets/workers/Worker.ets');
@@ -364,7 +364,7 @@ workerPort.onmessage = (e: MessageEvents) => {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/gM-4hCZkT2uy3g8DGHAHlw/zh-cn_image_0000002747212843.png?HW-CC-KV=V1&HW-CC-Date=20260911T073111Z&HW-CC-Expire=86400&HW-CC-Sign=3B7C5F97A85B208CB096F7AC2E9D22738EF1BBEA376BE62D5848F9A272640DA7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/cdm6v0PYSWi14RYgutO5dA/zh-cn_image_0000002778934129.png?HW-CC-KV=V1&HW-CC-Date=20261009T013100Z&HW-CC-Expire=86400&HW-CC-Sign=00C8373301F11B4F8560F326A9D2DEA985735E491E68C7B6DE67C2D507FF58D6)
 
 
 
@@ -406,4 +406,4 @@ struct ImageBitmapResourceExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/fV1Rnx8pSpWQoXLId1Y6ZQ/zh-cn_image_0000002717612976.png?HW-CC-KV=V1&HW-CC-Date=20260911T073111Z&HW-CC-Expire=86400&HW-CC-Sign=9817558737D85A9441CADCC384B73851BBF9D785793447D06DBB757C672EC592)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/tk-GSqn6QZ6mHK7rIV_JCA/zh-cn_image_0000002749494930.png?HW-CC-KV=V1&HW-CC-Date=20261009T013100Z&HW-CC-Expire=86400&HW-CC-Sign=41B880E7FBB2A5BC1297D383E79F8DEF69FEBEDD738D7A885EE577E8E5AF6E32)

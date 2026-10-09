@@ -1,6 +1,6 @@
 # assetDownloadManager（资源包下载管理）
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/graphics-accelerate-assetdownloadmanager
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -635,7 +635,7 @@ fetchManifestUrl(): Promise&lt;string&gt;
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | No Internet permission. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. No Internet permission. |
 | 1016600094 | Task service ability error. |
 
 
@@ -699,7 +699,7 @@ addAssetDownloadTask(context: common.BaseContext, downloadConfig: AssetDownloadC
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | No Internet permission. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. No Internet permission. |
 | 401 | Parameter error. |
 | 1016600000 | The API call from an ExtensionAbility is not allowed. |
 | 1016600001 | The domain name of the download task is not in the domain name trustlist. |
@@ -775,7 +775,7 @@ pauseAssetDownloadTask(taskId: string): Promise&lt;void&gt;
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | No Internet permission. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. No Internet permission. |
 | 401 | Parameter error. |
 | 1016600000 | The API call from an ExtensionAbility is not allowed. |
 | 1016600002 | The task ID or group ID entered during operations such as pause, resume, and fetch does not exist. |
@@ -861,7 +861,7 @@ resumeAssetDownloadTask(taskId: string): Promise&lt;void&gt;
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | No Internet permission. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. No Internet permission. |
 | 401 | Parameter error. |
 | 1016600000 | The API call from an ExtensionAbility is not allowed. |
 | 1016600002 | The task ID or group ID entered during operations such as pause, resume, and fetch does not exist. |
@@ -1100,7 +1100,7 @@ pauseAllAssetDownloadTasks(): Promise&lt;void&gt;
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | No Internet permission. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. No Internet permission. |
 | 1016600000 | The API call from an ExtensionAbility is not allowed. |
 | 1016600094 | Task service ability error. |
 
@@ -1175,7 +1175,7 @@ resumeAllAssetDownloadTasks(): Promise&lt;void&gt;
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | No Internet permission. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. No Internet permission. |
 | 1016600000 | The API call from an ExtensionAbility is not allowed. |
 | 1016600094 | Task service ability error. |
 
@@ -1420,7 +1420,7 @@ pauseGroupAssetDownloadTasks(groupId: string): Promise&lt;void&gt;
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | No Internet permission. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. No Internet permission. |
 | 401 | Parameter error. |
 | 1016600000 | The API call from an ExtensionAbility is not allowed. |
 | 1016600002 | The task ID or group ID entered during operations such as pause, resume, and fetch does not exist. |
@@ -1506,7 +1506,7 @@ resumeGroupAssetDownloadTasks(groupId: string): Promise&lt;void&gt;
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | No Internet permission. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. No Internet permission. |
 | 401 | Parameter error. |
 | 1016600000 | The API call from an ExtensionAbility is not allowed. |
 | 1016600002 | The task ID or group ID entered during operations such as pause, resume, and fetch does not exist. |
@@ -1706,7 +1706,7 @@ limitDownloadTaskSpeed(taskIds: string[], speedLimit: NetSpeedLevel): Promise&lt
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | No Internet permission. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. No Internet permission. |
 | 401 | Parameter error. |
 | 1016600094 | Task service ability error. |
 

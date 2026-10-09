@@ -1,6 +1,6 @@
 # 拉起快递类应用（startAbilityByType）
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/start-express-apps
 
@@ -16,7 +16,7 @@ startAbilityByType接口中type字段为express，支持查询快递意图，对
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| sceneType | number | 否 | 意图场景，表明本次请求对应的操作意图。默认为1，查询快递填场景填1或不填。 |
+| sceneType | number | 否 | 意图场景，表明本次请求对应的操作意图。默认为1，查询快递场景填1或不填。 |
 | expressNo | string | 是 | 快递单号。 |
 
 

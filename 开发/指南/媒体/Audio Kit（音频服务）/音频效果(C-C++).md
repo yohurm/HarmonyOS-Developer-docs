@@ -1,6 +1,6 @@
 # 音频效果(C/C++)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-suite-effects
 
@@ -248,7 +248,7 @@ OH_AudioSuiteEngine_SetEnvironmentType(*node, static_cast<OH_EnvironmentType>(pa
 
 ## 空间渲染
 
-空间渲染效果节点[EFFECT_NODE_TYPE_SPACE_RENDER](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-audio-suite-base-h#oh_audionode_type)用于实现3D空间音频的定位与渲染，采用左手坐标系（拇指指向x轴正方向、食指指向y轴正方向、其余手指指向z轴正方向），详细说明请参考[空间渲染(C/C++)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-suite-space-render)。
+空间渲染效果节点[EFFECT_NODE_TYPE_SPACE_RENDER](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-audio-suite-base-h#oh_audionode_type)用于实现3D空间音频的定位与渲染，采用左手坐标系（拇指指向x轴正方向、食指指向y轴正方向、其余手指指向z轴正方向），详细说明请参考[空间音频渲染(C/C++)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-suite-space-render)。
 
 
 

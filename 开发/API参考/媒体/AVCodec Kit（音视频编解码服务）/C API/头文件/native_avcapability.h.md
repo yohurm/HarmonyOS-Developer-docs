@@ -1,6 +1,6 @@
 # native_avcapability.h
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avcapability-h
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -10,7 +10,7 @@
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-声明用于编解码能力查询到的Native API。
+声明用于编解码能力查询的Native API。
 
 **引用文件：** <multimedia/player_framework/native_avcapability.h>
 
@@ -343,7 +343,7 @@ bool OH_AVCapability_IsHardware(OH_AVCapability *capability)
 
 | 类型 | 说明 |
 | --- | --- |
-| bool | 如果能力实例描述的是硬件编解码器，则返回true，如果功能实例描述的是软件编解码器，则为false。 |
+| bool | 表示该能力实例描述的是否是硬件编解码器，返回true表示该能力实例描述的是硬件编解码器，返回false表示该能力实例描述的是软件编解码器。 |
 
 
 

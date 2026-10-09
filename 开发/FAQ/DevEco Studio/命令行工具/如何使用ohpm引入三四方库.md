@@ -1,6 +1,6 @@
-# 如何使用ohpm引入三四方库
+# 如何使用ohpm引入三方库
 
-更新时间：2026-06-15 08:43:00
+更新时间：2026-09-17 11:03:56
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-command-line-tool-13
 

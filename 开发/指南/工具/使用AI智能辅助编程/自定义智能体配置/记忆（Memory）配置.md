@@ -1,10 +1,10 @@
 # 记忆（Memory）配置
 
-更新时间：2026-07-15 09:00:31
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-memory
 
-#### 功能介绍
+## 功能介绍
 
 从 DevEco Studio 6.1.0 Beta2 版本开始，CodeGenie搭载长期记忆功能，在应用开发过程中，会学习和提取个人偏好、项目细节等有价值的信息，进行主动记忆或自动记忆。伴随开发者的持续使用，逐步形成覆盖开发者信息、项目场景、问题沉淀的全域记忆体系。在长期交互中，记忆也会随时间更新。
  
@@ -12,7 +12,7 @@
  
  
 
-#### 基本概念
+### 基本概念
 
 - 主动记忆：开发者要求CodeGenie记住输入的内容，CodeGenie会保存这些信息。
 - 自动记忆：自动提取对话中有价值的信息，记录任务执行进度，随时间推移学习开发者的编码风格和项目细节等。
@@ -20,7 +20,7 @@
  
  
 
-#### 使用约束
+### 使用约束
 
 - 当前仅自定义Agent和HarmonyOS Act智能体支持长期记忆检索和生成。其中HarmonyOS Act智能体从26.0.0 Beta1版本开始支持。
 - 当CodeGenie记忆与[规则（Rules）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-agent-rules)发生冲突时，以规则为准。
@@ -29,10 +29,8 @@
  
  
 
-#### 操作步骤
-1. 点击界面右上方**Settings**
-![](assets/记忆（Memory）配置/file-20260514132802587-0.png)
-按钮，选择**Memory**，进入配置页面。
+## 操作步骤
+1. 点击界面右上方**Settings**![icon](assets/记忆（Memory）配置/file-20260514132802587-0.png)按钮，选择**Memory**，进入配置页面。
 ![](assets/记忆（Memory）配置/file-20260514132802587-1.png)
 
 2. 点击Memory后开关，开启和关闭记忆。

@@ -1,6 +1,6 @@
 # hiprofiler
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiprofiler
 
@@ -704,7 +704,7 @@ CONFIG
 此命令读取cpu的基本统计信息。执行命令后，通过hdc file recv /data/local/tmp/hiprofiler_data.htrace命令将文件导出到当前目录，然后通过smartperf打开并解析。结果示例如下图：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/KSDXk72UQcmZ4b9qx7cWMg/zh-cn_image_0000002747291275.png?HW-CC-KV=V1&HW-CC-Date=20260911T072801Z&HW-CC-Expire=86400&HW-CC-Sign=32DFB8D9DCEBEAE43B5FB5112E3D7D938A45D86A309F9FFC3BD1F11EB9BE1ECB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/AsJS90SyRy-u5sP71xomBg/zh-cn_image_0000002749493132.png?HW-CC-KV=V1&HW-CC-Date=20261009T012754Z&HW-CC-Expire=86400&HW-CC-Sign=97519D5F6F1818AD8BEB7B7D6F1EAA2F9D992F886C8824FF5D87C128527D8BCB)
 
 
 
@@ -764,7 +764,7 @@ CONFIG
 此命令读取disk io的基本统计信息。执行命令后，通过hdc file recv /data/local/tmp/hiprofiler_data.htrace将文件导出到当前目录，然后通过smartperf打开并解析。结果示例如下图：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/Os3MKC7iQRiPlNyAVp7HrQ/zh-cn_image_0000002747211193.png?HW-CC-KV=V1&HW-CC-Date=20260911T072801Z&HW-CC-Expire=86400&HW-CC-Sign=DD31868A991FBF75BF94E9732A7198CA0F4297E7D60B25341E95F4106EA6F308)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/TbkIz2cGSie2W6mvq5o08w/zh-cn_image_0000002779092191.png?HW-CC-KV=V1&HW-CC-Date=20261009T012754Z&HW-CC-Expire=86400&HW-CC-Sign=6D5472C7EAEDE2E2618BDF9D1352F1C7F56E8BDACDE25A2E1CD60384C33FF9F5)
 
 
 
@@ -787,7 +787,7 @@ CONFIG
 该插件暂时不支持smartperf工具方式的trace数据解析，只支持DevEco Studio模式下的trace数据解析。如下图所示：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/y705KYOkTcmmLiCj5mr4Rg/zh-cn_image_0000002717771258.png?HW-CC-KV=V1&HW-CC-Date=20260911T072801Z&HW-CC-Expire=86400&HW-CC-Sign=34DF86B229BAD101B48A9BED1B98B0C73FB8E634AEF5C2EEF0A01D2726B1CA8A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/EIx4csBQRtWfz1BvTDqd5g/zh-cn_image_0000002778932333.png?HW-CC-KV=V1&HW-CC-Date=20261009T012754Z&HW-CC-Expire=86400&HW-CC-Sign=83CA4039B1509E8F591A0B8B50E460B917F92BCFEBA3A7A3F2B0CC13661B81D0)
 
 
 
@@ -838,7 +838,7 @@ CONFIG
 此命令示例抓取所有hisystem event订阅事件信息。执行命令后，通过hdc file recv /data/local/tmp/hiprofiler_data.htrace将文件导出到当前目录，然后通过smartperf打开并解析。结果示例如下图：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/mK34TOCMQtKWuhaTtSN_8g/zh-cn_image_0000002717611324.png?HW-CC-KV=V1&HW-CC-Date=20260911T072801Z&HW-CC-Expire=86400&HW-CC-Sign=7600AF5A0CEDA55AA198AC43C75AAD8BD88375A2A4208190A9708BBAB9F57DEC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/T_RgGUzzSW-bu6PF6cpvbA/zh-cn_image_0000002749333250.png?HW-CC-KV=V1&HW-CC-Date=20261009T012754Z&HW-CC-Expire=86400&HW-CC-Sign=130C5E190E5B422EA0BB29858CB72544DCF76A8778F76D894D8D4A9C3950B92F)
 
 
 
@@ -858,7 +858,7 @@ CONFIG
 
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/klQ69NDySDuNUOUXr7zFrA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072801Z&HW-CC-Expire=86400&HW-CC-Sign=C8DE55CE6838962AA91DADBD47458FDF852B4B94CAA85DC84804E31F84545C6A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/gm9EWgRBRzmWxYDSrm0tDA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20261009T012754Z&HW-CC-Expire=86400&HW-CC-Sign=5DBB5DA6B8B47A7ED7BC1E693C9A88994F04DA4809A33C90644D11120E84DB62)
 
 
 startup_process_name和restart_process_name不能同时为空。
@@ -909,7 +909,7 @@ CONFIG
 此命令示例抓取整机网络数据信息。执行命令后，通过hdc file recv /data/local/tmp/hiprofiler_data.htrace将文件导出到当前目录，然后通过smartperf打开并解析。结果示例如下图：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/TtNnI11pTtiLNfU8C3Ua-g/zh-cn_image_0000002747291277.png?HW-CC-KV=V1&HW-CC-Date=20260911T072801Z&HW-CC-Expire=86400&HW-CC-Sign=35602266B132B4F9C288CEC783F210F7C229E1F75FDD355AF2EE5705796A12F5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/flg44LMPRQ-HEZlSP0bMew/zh-cn_image_0000002749493134.png?HW-CC-KV=V1&HW-CC-Date=20261009T012754Z&HW-CC-Expire=86400&HW-CC-Sign=E9C95EB9FE94A68C0A7D7FB33F13AABDA0D7F5D5F49C15D6A7089215BA4933E2)
 
 
 
@@ -1281,7 +1281,7 @@ CONFIG
 ```bash
 $ hiprofiler_cmd \
   -c - \
-  -o /data/local/tmp/hiprofiler_data.htrace \
+  -o /data/local/tmp/hiprofiler_data.zip \
   -t 60 \
   -s \
   -k \
@@ -1335,7 +1335,7 @@ CONFIG
 使用hiprofiler_cmd命令时，显示Service not started。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/bTH1y6WVQUC4uOXaDy6mhQ/zh-cn_image_0000002747211195.png?HW-CC-KV=V1&HW-CC-Date=20260911T072801Z&HW-CC-Expire=86400&HW-CC-Sign=83DBF32904ED876F290609601241E19308774BF69F6673BAB2E1FCE4A91DCC57)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/3k5ts625RMqxSd2Re9sdpQ/zh-cn_image_0000002779092193.png?HW-CC-KV=V1&HW-CC-Date=20261009T012754Z&HW-CC-Expire=86400&HW-CC-Sign=CEB9A2E4959F2D618FA4524D038666A412C30AA654DBE8043B79193AC4A021B6)
 
 
 **可能原因&解决方法**

@@ -1,6 +1,6 @@
 # @hms.core.authentication (华为账号应用统一认证服务)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-api-authentication
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -1180,7 +1180,7 @@ export enum ErrorCode {
 
 executeRequest(request: AuthenticationRequest): Promise&lt;AuthenticationResponse&gt;
 
-执行请求方法，AuthenticationController类成员函数，使用callback异步回调。该方法用于接收并执行华为账号登录（[LoginWithHuaweiIDRequest](#loginwithhuaweiidrequest)）、授权（[AuthorizationWithHuaweiIDRequest](#authorizationwithhuaweiidrequest)）、取消授权（[CancelAuthorizationRequest](#cancelauthorizationrequest)）请求，并返回华为账号登录（[LoginWithHuaweiIDResponse](#loginwithhuaweiidresponse)）、授权（[AuthorizationWithHuaweiIDResponse](#authorizationwithhuaweiidresponse)）、取消授权（[CancelAuthorizationResponse](#cancelauthorizationresponse)）响应结果。 使用Promise异步回调。
+执行请求方法，AuthenticationController类成员函数，该方法用于接收并执行华为账号登录（[LoginWithHuaweiIDRequest](#loginwithhuaweiidrequest)）、授权（[AuthorizationWithHuaweiIDRequest](#authorizationwithhuaweiidrequest)）、取消授权（[CancelAuthorizationRequest](#cancelauthorizationrequest)）请求，并返回华为账号登录（[LoginWithHuaweiIDResponse](#loginwithhuaweiidresponse)）、授权（[AuthorizationWithHuaweiIDResponse](#authorizationwithhuaweiidresponse)）、取消授权（[CancelAuthorizationResponse](#cancelauthorizationresponse)）响应结果。 使用Promise异步回调。
 
 通过[createLoginWithHuaweiIDRequest](#createloginwithhuaweiidrequest)、[createAuthorizationWithHuaweiIDRequest](#createauthorizationwithhuaweiidrequest)、[createCancelAuthorizationRequest](#createcancelauthorizationrequest)构造请求对象后，使用该方法执行请求。
 

@@ -1,6 +1,6 @@
 # @ohos.arkui.theme(主题换肤)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-theme
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -196,7 +196,7 @@ ThemeControl将自定义Theme应用于App组件内，实现App组件风格跟随
 
 setDefaultTheme(theme: CustomTheme): void
 
-将用户自定义Theme设置应用级默认主题，以实现应用风格跟随Theme切换。若在页面中使用此接口设置应用级默认主题，需确保该接口在页面build前执行。若在UIAbility中使用此接口设置应用级默认主题，需确保该接口在onWindowStageCreate阶段里windowStage.[loadContent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-window-windowstage#loadcontent9)接口调用完成的回调函数中执行。详细代码可参考[设置应用内组件自定义主题色](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/theme_skinning#设置应用内组件自定义主题色)。
+将用户自定义Theme设置应用级默认主题，以实现应用风格跟随Theme切换。若在页面中使用此接口设置应用级默认主题，需确保该接口在页面build前执行。若在UIAbility中使用此接口设置应用级默认主题，需确保该接口在onWindowStageCreate阶段里windowStage.[loadContent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-window-windowstage#loadcontent9)接口调用完成的回调函数中执行。详细代码可参考[设置应用内组件自定义主题色](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/theme-skinning#设置应用内组件自定义主题色)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -350,4 +350,4 @@ struct TextPage {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/BtmaoacBR42jQYKbP2LNkA/zh-cn_image_0000002717612372.png?HW-CC-KV=V1&HW-CC-Date=20260911T072837Z&HW-CC-Expire=86400&HW-CC-Sign=00772D6938EFA6F74A978E3BDE09B85973C5AC8E19E39BF6FA3B7423EA966356)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/m2PJOovaQAKlEASJxU7p0g/zh-cn_image_0000002749334304.png?HW-CC-KV=V1&HW-CC-Date=20261009T012848Z&HW-CC-Expire=86400&HW-CC-Sign=E9F061AFEF7FB5E98B2217BD48B6F6FBA9C69A2DF46BDE5164CB5BC77C789958)

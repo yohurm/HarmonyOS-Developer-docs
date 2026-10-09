@@ -1,6 +1,6 @@
 # Interface (FocusQuery)
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-focusquery
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -41,7 +41,7 @@ isFocusModeSupported(afMode: FocusMode): boolean
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| afMode | FocusMode | 是 | 指定的焦距模式。传参为null或者undefined，作为0处理，手动对焦模式。 |
+| afMode | FocusMode | 是 | 指定的对焦模式。传参为null或者undefined，作为0处理，手动对焦模式。 |
  
  
 **返回值：**

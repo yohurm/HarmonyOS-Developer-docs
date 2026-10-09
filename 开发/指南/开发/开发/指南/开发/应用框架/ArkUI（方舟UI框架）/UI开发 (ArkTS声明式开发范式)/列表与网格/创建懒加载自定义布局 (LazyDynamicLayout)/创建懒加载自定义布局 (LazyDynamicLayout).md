@@ -1,6 +1,6 @@
 # 创建懒加载自定义布局 (LazyDynamicLayout)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-create-lazy-custom-layout
 
@@ -293,7 +293,7 @@ private adjustAnchorPosition(helper: LazyLayoutHelper): void {
   通过[getChild](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#getchild12)方法获取指定索引的子组件[FrameNode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#framenode-1)。必须传入[ExpandMode.LAZY_NOT_EXPAND](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#expandmode15)参数，避免全量加载导致懒加载失效。
 
   
-```text
+```ArkTS
 let child = self.getChild(currIndex, ExpandMode.LAZY_NOT_EXPAND);
 ```
 
@@ -539,7 +539,7 @@ LazyDynamicLayout(this.lazyAlgorithm) {
   上述示例中，点击底部按钮可以切换行间距。由于布局算法中实现了[setAdjustedOffset](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-lazylayoutalgorithm#setadjustedoffset)调整逻辑，切换间距后锚点子组件（正向布局时为可视区域第一个子组件，反向布局时为可视区域最后一个子组件）的位置保持不变，避免了滚动跳动。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/h5jL6vUZSM6rfgk5dI_W3g/zh-cn_image_0000002747290341.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072257Z&HW-CC-Expire=86400&HW-CC-Sign=3273BFB69FF13D88ABB2AEAB421B58220A70C5A98C0A8A3679207CB85C5D9D35)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/Ov-V9HI-Rgqyk7QY47GNnA/zh-cn_image_0000002749492120.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012628Z&HW-CC-Expire=86400&HW-CC-Sign=CDF33B629B2E163652CFE78A251DA6563EE8DBD6942D30F1FADB6148FAC719D8)
 
 
   针对自定义懒加载布局的开发，有以下相关实例可供参考。

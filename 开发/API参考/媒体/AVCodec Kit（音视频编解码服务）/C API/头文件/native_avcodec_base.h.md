@@ -1,6 +1,6 @@
 # native_avcodec_base.h
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avcodec-base-h
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -1444,7 +1444,7 @@ typedef void (*OH_AVCodecOnError)(OH_AVCodec *codec, int32_t errorCode, void *us
 | 音频编解码 | AV_ERR_DRM_DECRYPT_FAILED：DRM解密失败。 |
 | 视频编解码 | AV_ERR_NO_MEMORY：系统资源不足。 AV_ERR_UNKNOWN：未知错误，请通过具体日志分析。 AV_ERR_SERVICE_DIED：服务状态已消亡。 |
 | 视频解码 | AV_ERR_VIDEO_UNSUPPORTED_COLOR_SPACE_CONVERSION：当前输入不支持色彩空间转换功能。 |
-| 视频编码 | AV_ERROR_INPUT_DATA_ERROR： 1. 运行过程中surfacebuffer宽、高超出OH_VideoEncoder_Configure接口配置的宽、高。 2. 配置信息与输入数据比特不一致，如：编码输入数据为8bit而配置为10bit，或编码输入数据为10bit而配置为8bit。 3. 配置了不支持的pixelformat。 |
+| 视频编码 | AV_ERR_INPUT_DATA_ERROR： 1. 运行过程中surfacebuffer宽、高超出OH_VideoEncoder_Configure接口配置的宽、高。 2. 配置信息与输入数据比特不一致，如：编码输入数据为8bit而配置为10bit，或编码输入数据为10bit而配置为8bit。 3. 配置了不支持的pixelformat。 |
 
 
 **系统能力：** SystemCapability.Multimedia.Media.CodecBase

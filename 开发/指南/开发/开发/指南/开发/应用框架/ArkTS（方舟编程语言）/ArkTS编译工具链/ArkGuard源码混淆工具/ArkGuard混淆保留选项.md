@@ -1,6 +1,6 @@
 # ArkGuard混淆保留选项
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/source-obfuscation-keep-options
 
@@ -459,7 +459,7 @@ filepath仅支持相对路径，./和../为相对于混淆配置文件所在目�
 **使用该选项时，需要注意以下事项：**
  1. 该选项在开启[-compact](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/source-obfuscation-rule-options#section-compact)功能后才会生效；未开启-compact时，配置不生效。
 2. 配置的路径仅支持相对路径，./和../均为相对于混淆配置文件所在的目录。若配置路径为文件夹，则该文件夹下的文件及子文件夹中的文件都不被压缩。
-3. 当配置路径指向远程三方包（即oh_modules目录）时，需指定其在**工程级**oh_modules中的真实路径（与[-keep](#section-keep)中保留远程HAP包的方式二一致），以确保路径解析正确。
+3. 当配置路径指向远程三方包（即oh_modules目录）时，需指定其在**工程级**oh_modules中的真实路径（与[-keep](#section-keep)中保留远程HAR包的方式二一致），以确保路径解析正确。
  
 ```ArkTS
 -compact

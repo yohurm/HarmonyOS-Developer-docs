@@ -1,6 +1,6 @@
 # LongPressGesture
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-gestures-longpressgesture
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -33,6 +33,10 @@ LongPressGesture(value?: { fingers?: number; repeat?: boolean; duration?: number
 当长按触发时间小于500毫秒时，系统优先响应长按事件而非拖拽事件。
  
 当长按触发时间达到或超过500毫秒时，系统优先响应拖拽事件而非长按事件。
+ 
+> [!NOTE]
+> 当长按过程中触发应用窗口退后台/销毁，手指/手写笔输入源切换（手写笔输入源切换包括手写笔悬浮状态场景），屏幕旋转时，长按手势会被取消。
+
  
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
  
@@ -227,4 +231,4 @@ struct LongPressGestureExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/6Trn1pP-SyWY09BTQIM2fA/zh-cn_image_0000002747212453.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073109Z&HW-CC-Expire=86400&HW-CC-Sign=DD4FF6E2975042CFBEC3CBE72F2821FB408CDB6C531F5A3D7D5CF3DA76D21C8B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/2R50Cp0eRDWbInL4rQLKOA/zh-cn_image_0000002779093467.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013058Z&HW-CC-Expire=86400&HW-CC-Sign=6A7FB20EB8E402348A28553A1CC63522ED88C6BB2AE4EF4DC54A5BAF5DD43752)

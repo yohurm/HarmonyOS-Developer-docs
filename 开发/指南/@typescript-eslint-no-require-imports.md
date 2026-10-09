@@ -1,0 +1,55 @@
+# @typescript-eslint/no-require-imports
+
+更新时间：2026-10-08 09:38:49
+
+来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-no-require-imports
+
+禁止使用“require()”语法导入依赖。
+ 
+
+## 规则配置
+
+```json
+// code-linter.json5
+{
+  <span style="color: rgb(135,16,148);">"rules"</span>: {
+    "@typescript-eslint/no-require-imports": "error"
+  }
+}
+```
+ 
+ 
+
+## 选项
+
+该规则无需配置额外选项。
+ 
+ 
+
+## 正例
+
+```text
+// lib1 lib2 lib3为ArkTS文件
+import * as lib1 from './lib1';
+import { lib2 } from './lib2';
+import * as lib3 from './lib3';
+```
+ 
+ 
+
+## 反例
+
+```text
+// lib3为ArkTS文件
+import lib3 = require('./lib3');
+```
+ 
+ 
+
+## 规则集
+
+```text
+<span style="color: rgb(6,125,23);">plugin:@typescript-eslint/all</span>
+```
+ 
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-code-linter)。

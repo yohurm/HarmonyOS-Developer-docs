@@ -1,6 +1,6 @@
 # SIGTRAP断点或陷阱异常故障模式说明
 
-更新时间：2026-09-02 03:30:31
+更新时间：2026-09-20 11:26:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-cppcrash-sigtrap-fault-mode
 
@@ -26,10 +26,10 @@ TRAP_BRKPT是SIGTRAP信号的一种类型，通常由软件断点指令触发。
   
 
 | 信号 | si_code | 触发场景和机制 | 典型架构/实现 | 底层指令/异常 | 关键特征 |
+| --- | --- | --- | --- | --- | --- |
 | SIGTRAP | TRAP_BRKPT | 软件CFI校验失败 | ARM64(LLVM -fsanitize=cfi配置) | brk #0 | 编译器插入，内核按照断点信号处理 |
 | SIGILL | ILL_ILLOPC | 软件CFI校验失败 | x86_64/ARM64(udf配置) | ud2/udf #0 | CPU视为非法操作码 |
 | SIGILL | ILL_ILLPACCFI | 硬件CFI后向校验失败 | ARM64 v8.3+ | RETAA/RETAB | 高版本内核专门扩展的si_code |
-| SIGSEGV | SEGV_CPERR | 硬件前向保护违规 | ARM64(BTI)/x86(CET) | BLR/BR 目标无标记/show stack不匹配 | 触发#CP异常 |
  
  
 问题分析的步骤如下：
@@ -132,8 +132,8 @@ napi_value TriggerBrkInstruction(napi_env env, napi_callback_info info)
  
 清理删除BRK汇编指令代码。
  
-
  
+
 **案例二：触发Double Free故障**
  
 **问题现象**

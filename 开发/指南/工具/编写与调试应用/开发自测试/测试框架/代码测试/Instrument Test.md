@@ -1,6 +1,6 @@
-# Instrument Test
+# 仪器测试（Instrument Test）
 
-更新时间：2026-08-29 09:41:34
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-instrument-test
 
@@ -43,7 +43,9 @@
 
 | 新版本 | 历史版本 |
 
-|  |  |
+| --- | --- |
+
+| ![](assets/Instrument Test/file-20260514133035505-12.png) | ![](assets/Instrument Test/file-20260514133035505-13.png) |
 
 1. 创建以下目录或文件，文件内容示例可在[运行Instrument Test测试用例](#section1574003717165)后，在对应模块的.test/{productName}/intermediates/src/ohosTest（DevEco Studio 6.1.0 Beta1及以上版本）或build/{productName}/intermediates/src/ohosTest（DevEco Studio 6.1.0 Beta1以下版本）下查看，其中productName是当前生效的product，可以通过点击DevEco Studio右上方![icon](assets/Instrument%20Test/file-20260514133035505-14.png)图标进行查看。
 
@@ -309,7 +311,7 @@ testability目录 > TestAbility.ets文件
 4. 当程序出现内存错误时，弹出ASan log信息，点击信息中的链接即可跳转至引起内存错误的代码处。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/qas2YaT4QQe0K4tP9Jzjlw/zh-cn_image_0000002731382889.png?HW-CC-KV=V1&HW-CC-Date=20260911T072815Z&HW-CC-Expire=86400&HW-CC-Sign=F3AAF9E84046CC528AF969082699D8FF8D6ED5CB29D690B101271420DC08257E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/RP4EBHUgQIu_gWBpMWGbBA/zh-cn_image_0000002731382889.png?HW-CC-KV=V1&HW-CC-Date=20261009T012815Z&HW-CC-Expire=86400&HW-CC-Sign=94270D6343B49E02A1793D4A52C0B7241A462D19CF83B447E8479260E214E6D8)
 
 
   
@@ -341,7 +343,7 @@ testability目录 > TestAbility.ets文件
 import entryTest from 'libentry_test.so';
 export default function abilityTest() {
   describe('ActsAbilityTest', () => {
-    ...
+    // ...
     it('testNative', 0, () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'testNative it begin');
       let result = entryTest.runNativeTest();
@@ -354,7 +356,7 @@ export default function abilityTest() {
 
 
 7. 运行testNative测试用例，查看测试结果。
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/e37Lo5baSn2VLaZZqdP2lw/zh-cn_image_0000002731542861.png?HW-CC-KV=V1&HW-CC-Date=20260911T072815Z&HW-CC-Expire=86400&HW-CC-Sign=53D818DEF88E13BB7DD60FCF7692064D4FCF7E1A44E1F3DE800283AB4474E863)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/KuPLPCqRQkSN6g-y-DkmQg/zh-cn_image_0000002731542861.png?HW-CC-KV=V1&HW-CC-Date=20261009T012815Z&HW-CC-Expire=86400&HW-CC-Sign=7799F91214022B1EB354340AAA8751183BB064EAD93E4EA91CABFB5928BDB684)
 
 
   
@@ -392,28 +394,28 @@ endif()
     snprintf(filename, <span style="color: rgb(0,0,255);">sizeof</span>(filename), <span style="color: rgb(255,0,0);">"/data/storage/el2/base/c++_coverage.profraw"</span>); // 覆盖率报告文件路径和文件名，不可修改
     __llvm_profile_set_filename(filename);
     <span style="color: rgb(80,160,79);">// 开启测试</span>
-    ...
+    // ...
     // 结束测试，保存数据
      __llvm_profile_write_file();
-    ...
+    // ...
 }
 ```
 
 
 3. 运行覆盖率测试，选中ArkTS测试文件，单击**右键 > Run '测试文件名称' with Coverage**，执行测试。
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/_RS0isJcTW6fMNbK35j8Bw/zh-cn_image_0000002731542837.png?HW-CC-KV=V1&HW-CC-Date=20260911T072815Z&HW-CC-Expire=86400&HW-CC-Sign=B04F4D6A4E71D64FD81E15F1BA06D52501B621B3F4A5E795A08F9A2FB7C958F4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/tzfxpIG-QPeijxUoPSx9og/zh-cn_image_0000002731542837.png?HW-CC-KV=V1&HW-CC-Date=20261009T012815Z&HW-CC-Expire=86400&HW-CC-Sign=9EACA3FE304EC824A6E2CD8AF8D663887C223312A53978AB9774DA918B3D5E1C)
 
 
   启动测试后，进行编译构建，底部将出现Cover窗口，构建结束后自动拉起Cover窗口，测试任务结束后，窗口中会打印测试报告的路径。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/v3BdMOA9SLibdEWafz5VWw/zh-cn_image_0000002731542835.png?HW-CC-KV=V1&HW-CC-Date=20260911T072815Z&HW-CC-Expire=86400&HW-CC-Sign=18B5769B837DC983B0BEA8557689E15480E2426C14B99F077CD1DD8F79DD79EE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/Luro4TQ7T0-TmVYf90mEjA/zh-cn_image_0000002731542835.png?HW-CC-KV=V1&HW-CC-Date=20261009T012815Z&HW-CC-Expire=86400&HW-CC-Sign=2A6F59790E02BEB36C7888E43203F5710D6628A3B5B3634B69BEDC1AFB196C3F)
 
 
   点击链接可打开报告，查看C++代码覆盖率详情。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/CX6qNnWuTfmFAxPIvsbZAQ/zh-cn_image_0000002731542845.png?HW-CC-KV=V1&HW-CC-Date=20260911T072815Z&HW-CC-Expire=86400&HW-CC-Sign=E28445635016035FAA73DF2F22CD625BCD1D1FF68D763618808F6430F6F646E9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/ypqILm7HTnK4rhz7ppAUEw/zh-cn_image_0000002731542845.png?HW-CC-KV=V1&HW-CC-Date=20261009T012815Z&HW-CC-Expire=86400&HW-CC-Sign=9573629F348AA78474184E9754513F97749471D38B639B4FE951AE6FF41AC42E)
 
 
   

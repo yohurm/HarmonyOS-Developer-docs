@@ -1,6 +1,6 @@
 # relational_store.h
 
-更新时间：2026-09-01 03:59:25
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-relational-store-h
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -145,7 +145,7 @@
 | typedef void (*Rdb_SyncCallback)(Rdb_ProgressDetails *progressDetails) | Rdb_SyncCallback | 数据库端云同步的回调函数。 |
 | int OH_Rdb_CloudSync(OH_Rdb_Store *store, Rdb_SyncMode mode, const char *tables[], uint32_t count,const Rdb_ProgressObserver *observer) | - | 进行端云同步。 |
 | int OH_Rdb_SubscribeAutoSyncProgress(OH_Rdb_Store *store, const Rdb_ProgressObserver *observer) | - | 订阅RDB存储的自动同步进度。 当收到自动同步进度的通知时，将调用回调。 |
-| int OH_Rdb_UnsubscribeAutoSyncProgress(OH_Rdb_Store *store, const Rdb_ProgressObserver *observer) | - | 取消订阅RDB存储的自动同步进程。 |
+| int OH_Rdb_UnsubscribeAutoSyncProgress(OH_Rdb_Store *store, const Rdb_ProgressObserver *observer) | - | 取消订阅RDB存储的自动同步进度。 |
 | int OH_Rdb_LockRow(OH_Rdb_Store *store, OH_Predicates *predicates) | - | 根据指定的条件锁定数据库中的数据，锁定数据不执行端云同步。 |
 | int OH_Rdb_UnlockRow(OH_Rdb_Store *store, OH_Predicates *predicates) | - | 根据指定的条件解锁数据库中的数据。 |
 | OH_Cursor *OH_Rdb_QueryLockedRow(OH_Rdb_Store *store, OH_Predicates *predicates, const char *const *columnNames, int length) | - | 根据指定条件查询数据库中锁定的数据。 |
@@ -2392,7 +2392,7 @@ Rdb_TableDetails *OH_Rdb_GetTableDetails(Rdb_ProgressDetails *progress, int32_t 
 
 | 类型 | 说明 |
 | --- | --- |
-| Rdb_TableDetails | 如果操作成功，会返回一个Rdb_TableDetails结构体的指针，否则返回NULL。 |
+| Rdb_TableDetails * | 如果操作成功，会返回一个Rdb_TableDetails结构体的指针，否则返回NULL。 |
  
  
 **参考：**
@@ -2536,7 +2536,7 @@ int OH_Rdb_UnsubscribeAutoSyncProgress(OH_Rdb_Store *store, const Rdb_ProgressOb
  
 **描述**
  
-取消订阅RDB存储的自动同步进程。
+取消订阅RDB存储的自动同步进度。
  
 **起始版本：** 11
  
@@ -2546,7 +2546,7 @@ int OH_Rdb_UnsubscribeAutoSyncProgress(OH_Rdb_Store *store, const Rdb_ProgressOb
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 指向目标OH_Rdb_Store实例的指针。 |
-| const Rdb_ProgressObserver *observer | 表示自动同步进度的观察者Rdb_ProgressObserver。如果是空指针，则自动同步进程的所有回调都将被取消注册。 |
+| const Rdb_ProgressObserver *observer | 表示自动同步进度的观察者Rdb_ProgressObserver。如果是空指针，则自动同步进度的所有回调都将被取消注册。 |
  
  
 **返回：**

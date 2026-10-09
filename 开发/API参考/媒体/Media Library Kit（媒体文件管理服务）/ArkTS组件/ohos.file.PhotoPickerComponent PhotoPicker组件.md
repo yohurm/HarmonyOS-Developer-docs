@@ -1,6 +1,6 @@
 # @ohos.file.PhotoPickerComponent (PhotoPicker组件)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-file-photopickercomponent
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -671,7 +671,7 @@ setMaxSelected(maxSelected: MaxSelected): void
 
 setPhotoBrowserItem(uri: string, photoBrowserRange?: PhotoBrowserRange): void
 
-应用可通过该接口,切换picker组件至大图浏览模式浏览图片；当已处于大图浏览模式时，切换浏览的图片。
+应用可通过该接口，切换picker组件至大图浏览模式浏览图片；当已处于大图浏览模式时，切换浏览的图片。
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
@@ -1335,7 +1335,7 @@ Picker的颜色模式。
 | --- | --- | --- |
 | NONE | 0 | 不提示。 |
 | TOAST | 1 | 弹toast提示。 |
-| MASK | 2 | 蒙灰提示。 |
+| MASK | 2 | 蒙层提示。 |
 
 
 

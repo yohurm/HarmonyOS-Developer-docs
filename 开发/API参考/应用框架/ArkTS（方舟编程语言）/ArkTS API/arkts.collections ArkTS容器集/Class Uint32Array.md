@@ -1,6 +1,6 @@
 # Class (Uint32Array)
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-arkts-collections-uint32array
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -520,7 +520,7 @@ toLocaleString(): string
 // 当前应用所在系统为法国地区
 let array = new collections.Uint32Array([1000, 2000, 3000]);
 let stringArray = array.toLocaleString();
-console.info(stringArray); // 预期输出：1,000, 2,000, 3,000
+console.info(stringArray); // 预期输出：1,000,2,000,3,000
 ```
  
   

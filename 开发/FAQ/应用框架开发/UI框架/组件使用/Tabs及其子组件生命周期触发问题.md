@@ -397,6 +397,7 @@ struct TabBarBeClicked {
 Tabs及其子组件生命周期相关问题可以总结成如下表格：
   
 | 组件 | 关键生命周期监听事件 | 功能描述与触发时机 |
+| --- | --- | --- |
 | Tabs事件 | onChange | 最核心的切换事件。当TabContent发生切换（无论是点击TabBar、滑动还是代码控制）时触发，返回切换后的新索引。 |
 | Tabs事件 | onTabBarClick | 专门监听TabBar的点击事件。当用户点击TabBar上的某个标签时触发，返回被点击标签的索引。注意：即使点击当前已选中的标签也会触发。 |
 | TabContent事件 | onWillShow | 当对应的TabContent即将显示时触发。在非首次创建的切换场景中，这是子内容“显示”的信号。 |

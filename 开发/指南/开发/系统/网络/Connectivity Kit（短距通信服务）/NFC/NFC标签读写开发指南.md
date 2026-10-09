@@ -1,6 +1,6 @@
 # NFC标签读写开发指南
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nfc-tag-access-guide
 
@@ -485,3 +485,19 @@ want = {
         "entities": ["entity.system.home"]
     }
 ```
+
+
+
+## 常见问题
+
+
+
+### 常用的读写NFC标签应用有哪些
+
+NFC标签助手、NFC标签工具。
+
+
+
+### 如何通过NFC碰一碰实现应用跳转
+
+向NFC标签写入包含目标应用跳转信息的NDEF记录，设备触碰标签后系统解析NDEF并跳转至对应应用。标签格式及写卡方式参见[NDEF格式Tag定制](#ndef格式tag定制)。

@@ -1,49 +1,49 @@
 # 命令行构建工具（hvigorw）
 
-更新时间：2026-09-08 02:53:31
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-commandline
 
 hvigorw作为Hvigor的wrapper包装工具，支持自动安装Hvigor构建工具和相关插件依赖，以及执行Hvigor构建命令。
-
+ 
 执行命令前，需要先配置JDK，配置Node.js、hvigor等环境变量，具体请参考[搭建流水线](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-command-line-building-app)。
-
+ 
 
 ## 命令行使用方式
 
 hvigorw命令行格式为：
-
+ 
 ```bash
 hvigorw [taskNames...] <options>
 ```
-
+ 
 其中taskNames是任务，可同时执行多个任务，options是可选参数，具体的任务和可选参数请参考[常用命令](#section16300629103)。
-
+ 
 > [!NOTE]
 > 从hvigorw 5.18.4版本开始，以下命令支持在任意路径下执行，其他hvigorw命令需要在工程根目录下执行。 hvigorw -v hvigorw --version hvigorw version hvigorw -h hvigorw --help
 
-
-
+ 
+ 
 
 ## 常用命令
 
 常见的任务和参数如下，更多任务请参考[任务详细说明](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-task-process#section196919100414)。
-
-
+ 
+ 
 
 ### 查询
-
+ 
 
 | 参数 | 说明 |
 | --- | --- |
 | -h, --help | 打印hvigorw的命令帮助信息。 |
 | -v, --version, version | 打印hvigorw版本信息。 |
-
-
-
+ 
+ 
+ 
 
 ### 编译构建
-
+ 
 
 | 任务 | 说明 |
 | --- | --- |
@@ -53,10 +53,10 @@ hvigorw [taskNames...] <options>
 | assembleApp | 构建App应用。 |
 | assembleHsp | 构建Hsp包。 |
 | assembleHar | 构建Har包。 |
-
-
+ 
+ 
 编译构建命令行常用扩展参数：
-
+  
 
 | 参数 | 说明 |
 | --- | --- |
@@ -68,12 +68,12 @@ hvigorw [taskNames...] <options>
 | -p coverage={true \| false} | 执行测试框架代码覆盖率插桩编译，详细使用请参考使用命令行执行测试。 |
 | -p parameterFile=param.json/json5 | 设置oh-package.json5文件的参数配置文件，其中"param"可自行修改为对应配置文件名称。详细使用请参考parameterFile。 |
 | -p buildVersion=1 | 设置构建版本号为1，详细使用请参考app.json5的buildVersion。 该参数从hvigorw 6.23.3版本开始支持。 |
-
-
-
+ 
+ 
+ 
 
 ### 日志
-
+ 
 
 | 参数 | 说明 |
 | --- | --- |
@@ -82,12 +82,12 @@ hvigorw [taskNames...] <options>
 | -i, --info | 设置Hvigor的日志级别为info。 |
 | -d, --debug | 设置Hvigor的日志级别为debug。 |
 | --stacktrace，--no-stacktrace | Hvigor默认关闭打印所有异常的堆栈信息，如需开启在命令行后添加--stacktrace。 |
-
-
-
+ 
+ 
+ 
 
 ### 可视化
-
+ 
 
 | 参数 | 说明 |
 | --- | --- |
@@ -99,12 +99,12 @@ hvigorw [taskNames...] <options>
 | --analyze | 同--analyze=normal命令。 从hvigorw 4.3.0开始废弃，请使用--analyze=normal替换。 |
 | --no-analyze | 同--analyze=false命令。 从hvigorw 4.3.0开始废弃，请使用--analyze=false替换。 |
 | --verbose-analyze | 同--analyze=advanced命令。 从hvigorw 4.3.0开始废弃，请使用--analyze=advanced替换。 |
-
-
-
+ 
+ 
+ 
 
 ### daemon
-
+ 
 
 | 参数 | 说明 |
 | --- | --- |
@@ -115,12 +115,12 @@ hvigorw [taskNames...] <options>
 | --status-daemon | 查询当前环境中所有的Hvigor守护进程信息。 |
 | --max-old-space-size=12345 | 设置守护进程最大的老生代内存大小为12345MB。 |
 | --max-semi-space-size=32 | 设置守护进程新生代内存最大的半空间大小为32MB。 该参数从hvigorw 5.18.4版本开始支持。 |
-
-
-
+ 
+ 
+ 
 
 ### 性能/内存
-
+ 
 
 | 参数 | 说明 |
 | --- | --- |
@@ -128,12 +128,12 @@ hvigorw [taskNames...] <options>
 | --incremental, --no-incremental | Hvigor默认开启增量构建能力，如需关闭在命令行后添加--no-incremental。 |
 | --optimization-strategy=performance | 设置构建模式为性能优先模式，可加快构建速度，但会占用更多内存。 从hvigorw 5.19.2版本开始支持。 |
 | --optimization-strategy=memory | 设置构建模式为内存优先模式，可以减少编译内存占用，默认使用memory。 从hvigorw 5.19.2版本开始支持。 |
-
-
-
+ 
+ 
+ 
 
 ### 公共命令
-
+ 
 
 | 任务 | 说明 |
 | --- | --- |
@@ -141,22 +141,22 @@ hvigorw [taskNames...] <options>
 | taskTree | 打印工程各模块的任务依赖关系信息。 |
 | prune | 清除30天内未使用的Hvigor缓存文件并从pnpm存储中删除未引用的包。 |
 | buildInfo | 打印工程级或模块级build-profile.json5中的配置信息，包含product、module、target、buildMode、buildOption，以树状结构输出。 该功能从hvigorw 5.18.4版本开始支持。 |
-
-
+ 
+ 
 buildInfo命令扩展参数：
-
+  
 
 | 参数 | 说明 |
 | --- | --- |
 | -p module={ModuleName} | 指定需要打印配置信息的模块名，不指定时会打印工程级的配置信息。 |
 | -p buildOption | 命令包含此参数时会打印buildOption配置，不含此参数时将不会展示buildOption配置，输出的buildOption优先级请参考合并编译选项规则。 |
 | -p json | 将输出结果以json格式展示。 |
-
-
-
+ 
+ 
+ 
 
 ### 其他命令
-
+ 
 
 
 > [!NOTE] 说明

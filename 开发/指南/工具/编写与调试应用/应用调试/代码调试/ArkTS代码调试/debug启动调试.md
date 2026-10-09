@@ -1,6 +1,6 @@
 # debug启动调试
 
-更新时间：2026-01-15 06:51:04
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-arkts-debug
 
@@ -8,36 +8,34 @@
  1. 如果需要设置断点调试，找到需要暂停的代码片段，点击该代码行的左侧边线，或将光标置于该行上并按Ctrl + F8（macOS为Command+F8）。如果无法添加断点，请查看FAQ[调试过程中无法添加断点](https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-debugging-1)。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/M6OBc5-tRDaLB2is4w9QFQ/zh-cn_image_0000002602066083.png?HW-CC-KV=V1&HW-CC-Date=20260528T030551Z&HW-CC-Expire=86400&HW-CC-Sign=0E534D154F9BC16A6C52BB5EC5B438B8C08E2D58891DB7597822F8E128082E18)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/kmQvHyVYTkCh2D-emzQMTA/zh-cn_image_0000002701822706.png?HW-CC-KV=V1&HW-CC-Date=20261009T012803Z&HW-CC-Expire=86400&HW-CC-Sign=292D5C55787A1AA6F5DAF2B8E61167D9189153DEF638F785E8500BADB6394956)
 
 
   设置断点后，调试能够在正确的断点处中断，并高亮显示该行。
 2. 在设备选择框中，选择调试的设备。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/gV_Rj5NJQ2uRD0-oeDFoOA/zh-cn_image_0000002571546600.png?HW-CC-KV=V1&HW-CC-Date=20260528T030551Z&HW-CC-Expire=86400&HW-CC-Sign=AACD5360432C6134384C65A0AE18FCC1F7AFDF1A88F27A55FF3CDDFFDA5860FC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/pFvrjRuqS96RbrPG6pIEDQ/zh-cn_image_0000002701662782.png?HW-CC-KV=V1&HW-CC-Date=20261009T012803Z&HW-CC-Expire=86400&HW-CC-Sign=0AFE56729ADFDD9F9AB61E57C217CC2CAEE492B17163BF269D098B1A2A5C72C1)
 
 3. 选择启动调试的配置，在模块选择框中选择需要调试的模块。也可以通过Edit Configurations[配置调试参数](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-run-debug-configurations)。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/wuZHnbtETV60XP5RCG7apQ/zh-cn_image_0000002602186133.png?HW-CC-KV=V1&HW-CC-Date=20260528T030551Z&HW-CC-Expire=86400&HW-CC-Sign=F309C35550E68B4E647E9209E39C9591FD25455282E87A71AE266B35853AB7C7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/2TGzzSzIQuePtUnBn26g7g/zh-cn_image_0000002731541975.png?HW-CC-KV=V1&HW-CC-Date=20261009T012803Z&HW-CC-Expire=86400&HW-CC-Sign=CC17AF4B8CE3625489D79C2CB198126CDEC1251A7B984CC48F5E8FBAA766D7AF)
 
-4. 在工具栏中，单击Debug
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/uj-wSsELRlewONJfDoqPew/zh-cn_image_0000002602186135.png?HW-CC-KV=V1&HW-CC-Date=20260528T030551Z&HW-CC-Expire=86400&HW-CC-Sign=2F404C78E486308BE0FAE46D6D56533470883441424C97F25B18FE7D113EB08D)
-。
+4. 在工具栏中，单击Debug![icon](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/G__UyhwcS169JxEtblI1qw/zh-cn_image_0000002731382003.png?HW-CC-KV=V1&HW-CC-Date=20261009T012803Z&HW-CC-Expire=86400&HW-CC-Sign=14F24EAAB4F7463B9E0CE4D90CB5E6FF5202D745FD8CC172291925836FD170BA)。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/WsuNFRRKRy2Ra6etUe_B4g/zh-cn_image_0000002602186137.png?HW-CC-KV=V1&HW-CC-Date=20260528T030551Z&HW-CC-Expire=86400&HW-CC-Sign=7365926D2A03B096A3D9E9C0B3BE2DEE59C6AD891261B35F1AB21E8FF76AA592)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/4u5NRRMVQPu5E3equhbgrg/zh-cn_image_0000002731382007.png?HW-CC-KV=V1&HW-CC-Date=20261009T012803Z&HW-CC-Expire=86400&HW-CC-Sign=D32AF52D7BBBAD5D1A5C6B478C879DC1DFD88D3D7B66735CBB715C6F1906033A)
 
 
   或者在工具栏中Run中选择Debug。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/OZoa3B0zS_C1l1SmjtlOng/zh-cn_image_0000002602186139.png?HW-CC-KV=V1&HW-CC-Date=20260528T030551Z&HW-CC-Expire=86400&HW-CC-Sign=F240DB363BF60091AF05FDB6D76C38D006FA4760E898E6DC29D831EACACFFB3C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/3H3M2qwXRciSXMRAzJ9YWA/zh-cn_image_0000002731541981.png?HW-CC-KV=V1&HW-CC-Date=20261009T012803Z&HW-CC-Expire=86400&HW-CC-Sign=9C5367CC05F40539964F6338660F7DA0F9959463ED1709FCF8AD85B29FB2C002)
 
 5. 启动调试后，开发者可以通过[调试器](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-arkts-debugger)进行代码调试。
 
   如有断点会在断点处高亮，并展示当前断点处的Frames和Variables。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/Uv0ycUrjR96Dc_BzhOnqzw/zh-cn_image_0000002571546602.png?HW-CC-KV=V1&HW-CC-Date=20260528T030551Z&HW-CC-Expire=86400&HW-CC-Sign=A9FE9A830E61E9EF11C17140EA66185C14FB871B856B6EF3A16FAC0B09C68FF3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/fwYief29SfyqtiOu7VFRLA/zh-cn_image_0000002701822704.png?HW-CC-KV=V1&HW-CC-Date=20261009T012803Z&HW-CC-Expire=86400&HW-CC-Sign=8FE87F2CD09C0FF59D3A6EB0C36DAAAE64CA6B46B502F2FFC62EDD6DBC5D96CA)

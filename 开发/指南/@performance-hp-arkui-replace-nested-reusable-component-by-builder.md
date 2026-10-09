@@ -1,0 +1,180 @@
+# @performance/hp-arkui-replace-nested-reusable-component-by-builder
+
+更新时间：2026-10-08 09:38:49
+
+来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hp-arkui--replace-reusable-by-builder
+
+建议使用@Builder替代嵌套的自定义组件。
+ 
+通用丢帧场景下，建议优先修改。
+ 
+
+## 规则配置
+
+```json
+// code-linter.json5
+{
+  <span style="color: rgb(135,16,148);">"rules"</span>: {
+    <span style="color: rgb(135,16,148);">"@performance/hp-arkui-replace-nested-reusable-component-by-builder"</span>: <span style="color: rgb(6,125,23);">"warn"</span>,
+  }
+}
+```
+ 
+ 
+
+## 选项
+
+该规则无需配置选项。
+ 
+ 
+
+## 正例
+
+```text
+// 源码文件，请以工程实际为准
+import { MyDataSource } from './MyDataSource';
+
+@Entry
+@Component
+struct MyComponent{
+  private data: MyDataSource = new MyDataSource();
+
+  aboutToAppear(): void {
+    for (let index = 0; index < 30; index++) {
+      this.data.pushData(index.toString())
+    }
+  }
+
+  build() {
+    Column() {
+      List() {
+        LazyForEach(this.data, (item: string) => {
+          ListItem() {
+            //  正例
+            ChildComponent({ desc: item })
+          }
+        }, (item: string) => item)
+      }
+      .height('100%')
+      .width('100%')
+    }
+    .width('100%')
+  }
+}
+
+// 正例 使用组件复用
+@Reusable
+@Component
+struct ChildComponent {
+  @State desc: string = '';
+
+  aboutToReuse(params: Record<string, Object>): void {
+    this.desc = params.desc as string;
+  }
+
+  build() {
+    Column() {
+      // 使用@Builder，可以减少自定义组件创建和渲染的耗时
+      ChildComponentBuilder({ paramA: this.desc })
+    }
+    .width('100%')
+  }
+}
+
+class Temp {
+  paramA: string = '';
+}
+
+@Builder
+function ChildComponentBuilder($$: Temp) {
+  Column() {
+    // 此处使用`${}`来进行按引用传递，让@Builder感知到数据变化，进行UI刷新
+    Text(`子组件 + ${$$.paramA}`)
+      .fontSize(30)
+      .fontWeight(30)
+  }
+  .width('100%')
+}
+```
+ 
+ 
+
+## 反例
+
+```text
+// 源码文件，请以工程实际为准
+import { MyDataSource } from './MyDataSource';
+
+@Entry
+@Component
+struct MyComponent{
+  private data: MyDataSource = new MyDataSource();
+
+  aboutToAppear(): void {
+    for (let index = 0; index < 30; index++) {
+      this.data.pushData(index.toString())
+    }
+  }
+
+  build() {
+    Column() {
+      List() {
+        LazyForEach(this.data, (item: string) => {
+          ListItem() {
+            //反例 使用自定义组件
+            ComponentA({ desc: item })
+          }
+        }, (item: string) => item)
+      }
+      .height('100%')
+      .width('100%')
+    }
+  }
+}
+
+@Reusable
+@Component
+struct ComponentA {
+  @State desc: string = '';
+
+  aboutToReuse(params: ESObject): void {
+    this.desc = params.desc as string;
+  }
+
+  build() {
+    // 在复用组件中嵌套使用自定义组件
+    ComponentB({ desc: this.desc })
+  }
+}
+
+
+@Component
+struct ComponentB {
+  @State desc: string = '';
+
+  // 嵌套的组件中也需要实现aboutToReuse来进行UI的刷新
+  aboutToReuse(params: ESObject): void {
+    this.desc = params.desc as string;
+  }
+
+  build() {
+    Column() {
+      Text('子组件' + this.desc)
+        .fontSize(30)
+        .fontWeight(30)
+    }
+    .width('100%')
+  }
+}
+```
+ 
+ 
+
+## 规则集
+
+```json
+<span style="color: rgb(106,135,89);">plugin:@performance/recommended</span>
+plugin:@performance/all
+```
+ 
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-code-linter)。

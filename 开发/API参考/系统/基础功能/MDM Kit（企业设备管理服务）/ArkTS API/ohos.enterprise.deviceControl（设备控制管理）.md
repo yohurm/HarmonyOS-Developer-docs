@@ -1,6 +1,6 @@
-# @ohos.enterprise.deviceControl（设备控制管理）
+# @ohos.enterprise.deviceControl (设备控制管理)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-devicecontrol
 **支持设备：** Phone | PC/2in1 | Tablet

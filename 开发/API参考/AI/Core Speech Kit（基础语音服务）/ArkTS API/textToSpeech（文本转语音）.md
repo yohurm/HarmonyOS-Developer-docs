@@ -1,6 +1,6 @@
 # textToSpeech（文本转语音）
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/hms-ai-texttospeech
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -1092,10 +1092,6 @@ onComplete(requestId: string, response: CompleteResponse): void
 | response | CompleteResponse | 是 | 完成播报相关信息。 |
 
 
-> [!NOTE]
-> onData 可能存在数据过大的情况，无法一次性返回全部数据，请继续接收 onData 回调。
-
-
 **示例：**
 
 ```json
@@ -1152,7 +1148,7 @@ onData?: OnDataCallback
 合成播报过程中回调此接口，返回请求ID，音频流信息，音频附加信息如格式、时长等。若需要返回音频流信息，请实现此接口。
 
 > [!NOTE]
-> 调用方在播放音频前需要按照 sequence 对音频流进行排序, 避免播放时音频流顺序错乱。
+> 调用方在播放音频前需要按照 sequence 对音频流进行排序, 避免播放时音频流顺序错乱。 onData可能存在数据过大的情况，无法一次性返回全部数据，请继续接收onData回调。
 
 
 **元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。

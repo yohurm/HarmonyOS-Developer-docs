@@ -1,6 +1,6 @@
 # 查看App Killed（应用终止）日志
 
-更新时间：2026-04-30 02:42:31
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-faultlog-appkilled
 
@@ -13,4 +13,4 @@ AppKilled窗口中支持查看的异常退出原因请参考[reason字段说明]
 
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/G94FHCohReGsNBbMKG9QLg/zh-cn_image_0000002571546872.png?HW-CC-KV=V1&HW-CC-Date=20260528T030548Z&HW-CC-Expire=86400&HW-CC-Sign=850A102544E83CCB28BBB1DC6BCD5E05A14C33170AC379676FCFA6244436FF16)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/hmbhVXchTJuoFpcMzxky6Q/zh-cn_image_0000002701823394.png?HW-CC-KV=V1&HW-CC-Date=20261009T012808Z&HW-CC-Expire=86400&HW-CC-Sign=86790B31DD45D3BAC5F37A5B820B9C09E39A37C6D7DCCBCC5EDE56CFA63EBD71)

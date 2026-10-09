@@ -1,6 +1,6 @@
 # 订阅应用冻屏事件（ArkTS）
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-watcher-freeze-events-arkts
 
@@ -223,9 +223,3 @@ HiAppEvent eventInfo.params.page_switch_log=["/data/storage/el2/log/page_switch/
 [FaultLogger.query](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-faultlogger#faultloggerquery9)(使用callback回调)和[FaultLogger.query](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-faultlogger#faultloggerquery9-1)(使用Promise回调)都可以使用[hiAppEvent.addWatcher](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hiviewdfx-hiappevent#hiappeventaddwatcher)实现相同功能。
 
 查阅[开发步骤](#开发步骤)和[验证观察者是否订阅到应用冻屏事件](#验证观察者是否订阅到应用冻屏事件)，了解使用HiAppEvent订阅应用冻屏事件（ArkTS）的具体步骤。
-
-
-
-## 示例代码
-
- - [应用异常处理](https://gitcode.com/HarmonyOS_Samples/exception-handling)

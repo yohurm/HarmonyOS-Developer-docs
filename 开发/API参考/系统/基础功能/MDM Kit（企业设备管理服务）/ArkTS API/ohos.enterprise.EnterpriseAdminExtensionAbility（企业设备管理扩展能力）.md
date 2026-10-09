@@ -1,6 +1,6 @@
-# @ohos.enterprise.EnterpriseAdminExtensionAbility（企业设备管理扩展能力）
+# @ohos.enterprise.EnterpriseAdminExtensionAbility (企业设备管理扩展能力)
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterpriseadminextensionability
 **支持设备：** Phone | PC/2in1 | Tablet

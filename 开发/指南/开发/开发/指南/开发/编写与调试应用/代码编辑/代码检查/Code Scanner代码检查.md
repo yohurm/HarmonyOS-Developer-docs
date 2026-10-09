@@ -1,10 +1,20 @@
 # Code Scanner代码检查
 
-更新时间：2026-08-29 09:41:34
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-code-scanner
 
 从26.0.0版本开始，DevEco Studio新增Code Scanner功能，用于检查整个项目的资源泄漏问题。开发者可根据扫描结果中的告警提示，手动修复代码缺陷，在代码开发阶段，确保代码质量。
+ 
+
+## 约束与限制
+
+ 
+
+### 支持的国家/地区
+
+该功能仅支持中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）。
+ 
  
 
 ## 操作步骤
@@ -26,4 +36,4 @@
   Severity统计了所有告警数量，点击**All**、**Fatal**、**Error**、**Warn**可分别查看对应告警级别的具体信息。点击**Filter by scene**下拉菜单，可以筛选不同规则的检查结果。单击告警文件可以查看告警信息和对应配置的规则。双击某条告警结果，可以跳转到对应代码缺陷位置；选中告警结果时，可以在右侧Execution Trace窗口查看告警原因和问题的来源到问题的发生点的可能的执行流。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/O3ypqBERS3WjcsgHx197Qw/zh-cn_image_0000002701822650.png?HW-CC-KV=V1&HW-CC-Date=20260911T072809Z&HW-CC-Expire=86400&HW-CC-Sign=58CD99F0089DDB5DC51AD9390535A5AF2970080E46BF1322A73209D49C77AD13)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/dUIFnK0CRgOUHNzNJgkT7g/zh-cn_image_0000002701822650.png?HW-CC-KV=V1&HW-CC-Date=20261009T012800Z&HW-CC-Expire=86400&HW-CC-Sign=4D98535461884B905FA578387E035BECA7F88251420292C713B22E81153A1DEC)

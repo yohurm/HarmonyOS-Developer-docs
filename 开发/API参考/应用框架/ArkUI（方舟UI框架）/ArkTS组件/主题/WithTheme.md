@@ -1,6 +1,6 @@
 # WithTheme
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-with-theme
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -282,4 +282,4 @@ struct IndexPage {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/tW3GAAS_QZu8juA7vz5pIw/zh-cn_image_0000002717613106.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073116Z&HW-CC-Expire=86400&HW-CC-Sign=B5ACC249F120D1CDBE2A5CF331A21630A2D0553265D4AE01DFA858D7A03C7F75)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/4mbn8X3mSqyN7pv0gEIlCw/zh-cn_image_0000002749495058.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013104Z&HW-CC-Expire=86400&HW-CC-Sign=4A05F381F842F261395A964B097C3EE4442BD879555A01B7A9898EF85AED99D3)

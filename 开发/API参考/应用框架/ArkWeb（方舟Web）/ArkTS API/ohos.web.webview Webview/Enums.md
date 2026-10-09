@@ -1,6 +1,6 @@
 # Enums
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-e
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -541,7 +541,7 @@ Web页面场景下，全局滚动条模式。
 | SUCCESS | 0 | 成功。 |
 | ERR_UNKNOWN | -1 | 未知错误，内部状态错误等。 |
 | ERR_INVALID_PARAM | -2 | 参数不合法。 |
-| ERR_CONTROLLER_NOT_INITED | -3 | WebViewController未绑定组件。 |
+| ERR_CONTROLLER_NOT_INITED | -3 | WebviewController未绑定组件。 |
 | ERR_KEY_NOT_MATCH | -4 | 未匹配到key值，对于setBlanklessLoadingWithKey需与getBlanklessInfoWithKey配套使用并且key值一致，否则返回该错误码。 |
 | ERR_SIGNIFICANT_CHANGE | -5 | 当相似度较低时，系统会判定为跳变太大，setBlanklessLoadingWithKey接口不会成功启用插帧。 |
 | ERR_DURATION_OUT_OF_RANGE23+ | -6 | 在BlanklessLoadingParam设置的插帧持续时间超出范围。 模型约束： 此接口仅可在Stage模型下使用。 |

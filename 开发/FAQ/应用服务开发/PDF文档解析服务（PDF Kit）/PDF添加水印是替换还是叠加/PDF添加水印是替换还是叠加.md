@@ -1,6 +1,6 @@
 # PDF添加水印是替换还是叠加
 
-更新时间：2026-06-26 07:48:29
+更新时间：2026-06-26 07:48:29（官网已下线）
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-pdf-20
 

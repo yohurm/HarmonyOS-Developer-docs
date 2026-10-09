@@ -1,6 +1,6 @@
 # 开发Hvigor任务
 
-更新时间：2026-08-29 09:41:34
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-task
 
@@ -8,8 +8,8 @@
 
 任务是Hvigor构建过程中的基本执行单元，通常包含一段可执行代码；一个任务可以依赖其他多个任务。Hvigor任务调度执行时通过解析依赖关系确定任务执行时序。
  
-
  
+
 UP-TO-DATE
  
 任务标识，表示任务未实际执行。Hvigor任务增量跳过机制，在二次执行任务时检测任务输入输出条件未发生变化，则任务跳过执行提高构建效率。
@@ -20,8 +20,8 @@ UP-TO-DATE
 > hvigor UP-TO-DATE ::PackageApp...
 ```
  
-
  
+
 Finished
  
 任务执行完成标识，表示任务已执行完成。
@@ -32,8 +32,8 @@ Finished
 > hvigor Finished ::PackageApp... after 310 ms
 ```
  
-
  
+
  
 
 ## 注册任务

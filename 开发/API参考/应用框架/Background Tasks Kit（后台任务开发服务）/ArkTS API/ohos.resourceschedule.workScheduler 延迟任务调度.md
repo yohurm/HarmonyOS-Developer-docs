@@ -1,6 +1,6 @@
 # @ohos.resourceschedule.workScheduler (延迟任务调度)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-resourceschedule-workscheduler
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -667,7 +667,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CHARGING_PLUGGED_ANY | 0 | 表示这个触发条件是任何类型的充电器连接。 |
-| CHARGING_PLUGGED_AC | 1 | 表示这个触发条件是直流充电器连接。 |
+| CHARGING_PLUGGED_AC | 1 | 表示这个触发条件是交流充电器连接。 |
 | CHARGING_PLUGGED_USB | 2 | 表示这个触发条件是USB充电连接。 |
 | CHARGING_PLUGGED_WIRELESS | 3 | 表示这个触发条件是无线充电器连接。 |
 

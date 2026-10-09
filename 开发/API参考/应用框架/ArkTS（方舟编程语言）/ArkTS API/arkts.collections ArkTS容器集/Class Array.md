@@ -1,6 +1,6 @@
 # Class (Array)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-arkts-collections-array
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -322,7 +322,7 @@ console.info(newArray.toString()); // 预期输出： a, b
 
 static from&lt;T&gt;(arrayLike: ArrayLike&lt;T&gt; | Iterable&lt;T&gt;, mapFn: ArrayFromMapFn<T, T>): Array&lt;T&gt;
 
-从一个实现了ArrayLike接口的对象创建一个新的ArkTS Array，并且使用自定义函数处理每个数组元素。
+从一个实现了ArrayLike接口或Iterable接口的对象创建一个新的ArkTS Array，并且使用自定义函数处理每个数组元素。
 
 **元服务API**： 从API version 18开始，该接口支持在元服务中使用。
 
@@ -362,7 +362,7 @@ console.info(newArray.toString()); // 预期输出： 1, 3, 5
 
 static from<U, T>(arrayLike: ArrayLike&lt;U&gt; | Iterable&lt;U&gt;, mapFn: ArrayFromMapFn<U, T>): Array&lt;T&gt;
 
-从一个实现了ArrayLike接口的对象创建一个新的ArkTS Array，并且使用自定义函数处理每个数组元素，ArrayLike接口对象的元素类型可以和数组元素的类型不一样。
+从一个实现了ArrayLike接口或Iterable接口的对象创建一个新的ArkTS Array，并且使用自定义函数处理每个数组元素，接口对象的元素类型可以和数组元素的类型不一样。
 
 **元服务API**： 从API version 18开始，该接口支持在元服务中使用。
 
@@ -2091,7 +2091,7 @@ toLocaleString(): string
 // 当前应用所在系统为法国地区
 let array = new collections.Array<number | string>(1000, 'Test', 53621);
 let stringArray = array.toLocaleString();
-console.info(stringArray); // 预期输出：1, 000, Test, 53, 621
+console.info(stringArray); // 预期输出：1,000,Test,53,621
 ```
 
 
@@ -2219,7 +2219,7 @@ for (let item of array) {
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| index | number | 是 | 所需代码单元的从零开始的索引。当index<0 或者index>=length，则会抛出错误。 |
+| index | number | 是 | 所需代码元素的从零开始的索引。当index<0 或者index>=length，则会抛出错误。 |
 
 
 **返回值：**

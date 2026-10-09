@@ -1,6 +1,6 @@
 # CppCrash类问题案例
 
-更新时间：2026-09-09 06:06:31
+更新时间：2026-09-15 02:12:10
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-scenario-stability-cppcrash
 
@@ -38,7 +38,7 @@ Timestamp:1970-12-07 10:27:48.228
 Pid:26984
 Uid:20010045
 Process name:xxx
-Reason:Signal:SIGSEGV(SEGV_MAPERR)@0000000000000004  probably caused by NULL pointer dereference<span> 额</span>
+Reason:Signal:SIGSEGV(SEGV_MAPERR)@0000000000000004  probably caused by NULL pointer dereference
 Fault thread Info:
 Tid:27270, Name:xxx
 #00 pc 0000000000022770 /system/lib64/libapp context.z.so(OHOS::AbilityRuntime::ApplicationContext::DispatchWindowStageFocus (std::__l::shared ptr<NativeReference> consts, std::__l::shared_ptr<NativeReference> consts)+152)
@@ -498,16 +498,16 @@ Timestamp:2025-06-12 14:19:29.750
 Pid:540
 Uid:0
 Process name:./fpacl0
-Process life time:<span>l</span>s
-Rea<span>S</span>on:Signal:SIGILL(ILL_ILLPACCFI) @0x0000005615e449a8 <- Reason字段是ILL_ILLPACCFI
+Process life time:1s
+Reason:Signal:SIGILL(ILL_ILLPACCFI) @0x0000005615e449a8 <- Reason字段是ILL_ILLPACCFI
 Fault thread info:
 Tid:540, Name:fpac10.
 #00 pc 00000000000019a8 /data/kernel test/fpac10(main+84) <- 异常发生位置
-#01 pc 00000000000a1574 /system/lib/ld-musl-aarch64.so.1(libc_start<span> </span>_main_stage2+80) (aca211c0cbb78f65c624199913847e19)
+#01 pc 00000000000a1574 /system/lib/ld-musl-aarch64.so.1(libc_start_main_stage2+80) (aca211c0cbb78f65c624199913847e19)
 Registers: <- 寄存器信息
 x0:0000007fc581cad0 x1:0000007fc581cad0 x2:000000000000000c x3:0000000000006000
 x4:0000005615e46cfc x5:0000007fc581cadc x6:0000216f6c6c6568 x7:000000000000216f
-x8:0<span> </span>0000005a00000000x9<span>：</span>000000000000a51f x<span>l</span>0:00000000ffffffe0 x<span>ll</span>:ffffffffffffffd8
+x8:00000005a00000000 x9:000000000000a51f x10:00000000ffffffe0 x11:ffffffffffffffd8
 x12:0000007fc581c940 x13:0000005a193527ec x14:0000000000000001 x15:0000000000000000
 x16:0000005615e45cd8 x17:0000005a193cba80 x18:0000000000000000 x19:0000007fc581cb68
 x20:0000000000000001 x21:0000005615e44954 x22:0000007fc581cb78 x23:00000000000000e8

@@ -1,6 +1,6 @@
 # 时间滑动选择器弹窗 (TimePickerDialog)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-timepicker-dialog
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -564,7 +564,7 @@ struct TimePickerDialogExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/KGC0ZfKsTyaBQrrYoMnBIA/zh-cn_image_0000002717613088.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073119Z&HW-CC-Expire=86400&HW-CC-Sign=FD34A70F2132C22672BA9450A22813C85C0BE5CCDFADEB3692B08DC709DB0805)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/T9MSwBSuRkWhgkFUlvFfZg/zh-cn_image_0000002749495040.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013108Z&HW-CC-Expire=86400&HW-CC-Sign=56CD07ACDA860FD0D57B7C1C0F5DE75BA739045E606F7A2CF4CEBA96AB6FEE8E)
 
 
 
@@ -606,7 +606,7 @@ struct TimePickerDialogExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/Wr_idiG3TvmSpLPnOnAPag/zh-cn_image_0000002747293039.png?HW-CC-KV=V1&HW-CC-Date=20260911T073119Z&HW-CC-Expire=86400&HW-CC-Sign=A9FD192268B753063975682ACF93E6B425ABD2C049A22EF430BF3463642044CD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/kXTUiIZ1RTG-dSoEpUS24g/zh-cn_image_0000002779094097.png?HW-CC-KV=V1&HW-CC-Date=20261009T013108Z&HW-CC-Expire=86400&HW-CC-Sign=84CBCE0CF25827F2FF6BBF2D1FED773538AD713AFAD568FE059CB15016861173)
 
 
 
@@ -649,17 +649,19 @@ struct TimePickerDialogExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/WuYEnT70T0KAQrV97-e9bA/zh-cn_image_0000002747212955.png?HW-CC-KV=V1&HW-CC-Date=20260911T073119Z&HW-CC-Expire=86400&HW-CC-Sign=84A16B6A6CB667C6CDAC44F42BEAE4A5F444EF1A5B2597341FC678D7E2D63222)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/ML4GlPNgTOyH9CGyOINZ5A/zh-cn_image_0000002778934241.png?HW-CC-KV=V1&HW-CC-Date=20261009T013108Z&HW-CC-Expire=86400&HW-CC-Sign=E19D90556EF6CB893C0B9A0066962F52F154C26518A4BCEFB1E9CABD3024209E)
 
 
 
 
-### 示例12（设置系统材质）
+### 示例12（设置沉浸光感）
 
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-该示例通过配置[systemMaterial](#timepickerdialogoptions对象说明)，实现系统材质效果。
+该示例通过配置[systemMaterial](#timepickerdialogoptions对象说明)，实现沉浸光感效果。
+
+该示例配图为高算力设备强档效果，组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
 
 从API版本26.0.0开始，在TimePickerDialogOptions中新增了systemMaterial属性。
 
@@ -680,10 +682,13 @@ struct DatePickerDialogExample {
             });
           })
       }.width('100%')
+      .height('100%')
+      .backgroundImage($r('app.media.bgImg'))  // $r('app.media.bgImg')需要替换为开发者所需的资源文件
+      .backgroundImageSize(ImageSize.FILL)
     }
   }
 }
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/wA007ekKTumZ8utAgbzvNg/zh-cn_image_0000002717773020.png?HW-CC-KV=V1&HW-CC-Date=20260911T073119Z&HW-CC-Expire=86400&HW-CC-Sign=F85D0DF5D496E6B0E257C914ABF2509B243CEE503048671DA6B193322CAA8461)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/oaw-Ss7FRbm9VBBjL9I54A/zh-cn_image_0000002749335158.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013108Z&HW-CC-Expire=86400&HW-CC-Sign=AD8339773525BA3A1EB156B156763F103C313733F70F3BFA49D41F414AB98B48)

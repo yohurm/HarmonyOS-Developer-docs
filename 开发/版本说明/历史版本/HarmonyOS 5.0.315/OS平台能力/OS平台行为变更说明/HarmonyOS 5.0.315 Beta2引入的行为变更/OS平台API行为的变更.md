@@ -197,7 +197,6 @@ struct StyledStringExample {
   
 | 变更前 | 变更后（应用前台但非通话界面） |
 | --- | --- |
-|  |  |
  
  
 **起始API Level**

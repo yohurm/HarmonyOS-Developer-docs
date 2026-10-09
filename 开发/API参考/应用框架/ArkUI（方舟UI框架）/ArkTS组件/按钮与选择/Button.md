@@ -1,6 +1,6 @@
 # Button
 
-更新时间：2026-09-04 10:41:25
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-button
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -881,7 +881,7 @@ struct ButtonExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/BLNyYN-BTSWyi2jOSN9yuA/zh-cn_image_0000002747292661.jpeg?HW-CC-KV=V1&HW-CC-Date=20260911T073103Z&HW-CC-Expire=86400&HW-CC-Sign=BF03A6D3BC429C635200AED7E581EEB8192872C99DA4B0D8E51B222F98BEA0CC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/fz5gIZOuTmGYXCGHMQH8mA/zh-cn_image_0000002749494654.jpeg?HW-CC-KV=V1&HW-CC-Date=20261009T013052Z&HW-CC-Expire=86400&HW-CC-Sign=EA7468B167005B7CD5E64A8175B51C15B0946A8705A9BA6FA8DB8FF3553C4412)
 
  
   
@@ -918,7 +918,7 @@ struct ButtonExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/IexQz_vBTvSb-L82CTaBzQ/zh-cn_image_0000002747212577.jpeg?HW-CC-KV=V1&HW-CC-Date=20260911T073103Z&HW-CC-Expire=86400&HW-CC-Sign=12BC15FB67272BE842662B023C0A438A4D7104CFF6F51624F63F02A0FE9BAF7E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/dvgZT05kSCOrJ3NfMgvHpQ/zh-cn_image_0000002779093711.jpeg?HW-CC-KV=V1&HW-CC-Date=20261009T013052Z&HW-CC-Expire=86400&HW-CC-Sign=3FE2A6CDDE8EEF00377DFC72B2D386D5F2672ADF543B1C502D00894D222D68B9)
 
  
   
@@ -994,7 +994,7 @@ struct ButtonExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/wzaQkj66QNKVMQv2Th7lCQ/zh-cn_image_0000002717772642.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073103Z&HW-CC-Expire=86400&HW-CC-Sign=1BA387B546F3CD9448BF14359276BD0E2495F0570EEABC69A1D293E98795D088)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/FwWzbJDJSDuHk2qDRYvuXQ/zh-cn_image_0000002778933857.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013052Z&HW-CC-Expire=86400&HW-CC-Sign=F12EB9190D636CA013D4430D2BA7DA70C72B25CAD02C103B325FF827A73DC2CA)
 
  
   
@@ -1043,7 +1043,7 @@ struct ButtonExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/GmFfn1XfSPK8LOOSazHHLg/zh-cn_image_0000002717612710.jpeg?HW-CC-KV=V1&HW-CC-Date=20260911T073103Z&HW-CC-Expire=86400&HW-CC-Sign=879AC4C46A0F03897F45078966E869939FFE07948A6938E03B30A8B489DD2A09)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/GrYSUQMiTMqOwz7i58fJpg/zh-cn_image_0000002749334772.jpeg?HW-CC-KV=V1&HW-CC-Date=20261009T013052Z&HW-CC-Expire=86400&HW-CC-Sign=BD252FFF21F74AFF046C89D03F7919E91A8F1955A58702325789FE770672D878)
 
  
   
@@ -1076,7 +1076,7 @@ struct Index {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/34MOROKFSlymFmefX0wEMA/zh-cn_image_0000002747292663.jpeg?HW-CC-KV=V1&HW-CC-Date=20260911T073103Z&HW-CC-Expire=86400&HW-CC-Sign=D543E2C6FE7F027DFC8860512767867FC5E855229C952D6B320021A8230B21E6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/xT0IOtePTj67EyBL0Mlbkg/zh-cn_image_0000002749494658.jpeg?HW-CC-KV=V1&HW-CC-Date=20261009T013052Z&HW-CC-Expire=86400&HW-CC-Sign=4F112D9C9B9A9B629515ED54E4A1DB6EA82AEFED588E2ECA15C8363FBDB2AF28)
 
  
   
@@ -1088,7 +1088,11 @@ struct Index {
 
 该示例使用通用属性[systemMaterial](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-image-effect#systemmaterial)接口来设置组件的系统材质，以实现沉浸光感效果。
  
-组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
+该示例配图为高算力设备强档效果，组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
+ 
+> [!NOTE]
+> 如果开发者没有主动设置Button的背景色属性，即使用Button组件默认的背景色参数时，设置系统材质后会自动继承默认的背景色参数。如果开发者主动设置了背景色，且背景色参数设置在系统材质参数之前，则系统材质参数会强制清除开发者主动设置的背景色，将其改为透明色。 如果主动设置的背景色在系统材质之后，则背景色和系统材质会叠加显示（背景色层级更高）。
+
  
 从API版本26.0.0开始，新增systemMaterial属性。
  
@@ -1104,6 +1108,7 @@ struct Index {
       Button('helloWorld')
         .width(200)
         .fontColor(Color.Black)
+        // 通过systemMaterial设置系统材质
         .systemMaterial(new uiMaterial.ImmersiveMaterial({
           style: uiMaterial.ImmersiveStyle.THIN
         }))
@@ -1154,10 +1159,10 @@ struct Index {
 未设置系统材质时：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/bMzkCFCsSbqbFQCtub3kuQ/zh-cn_image_0000002747212579.png?HW-CC-KV=V1&HW-CC-Date=20260911T073103Z&HW-CC-Expire=86400&HW-CC-Sign=541B9D961084305421D25C2CAF9CC4836271C2365FC5C166041F30933872D9B9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/P0rVl-9MSUWjkEJThCdAeQ/zh-cn_image_0000002779093715.png?HW-CC-KV=V1&HW-CC-Date=20261009T013052Z&HW-CC-Expire=86400&HW-CC-Sign=C76514FA7E5231079EF7516F290A8564EB9F47D584B57F30A9D1984B47DE0833)
 
  
-设置沉浸光感后：
+设置系统材质后：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/Q3ES__IsT7qWwCqJ4IaRNQ/zh-cn_image_0000002717772644.png?HW-CC-KV=V1&HW-CC-Date=20260911T073103Z&HW-CC-Expire=86400&HW-CC-Sign=F06D042F7FE09E43B9CEB21FA824DE0206B30A127E6C0CBAE0899821699A762E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/KseFlSE3Q8eWi7jzDgdzYQ/zh-cn_image_0000002778933861.png?HW-CC-KV=V1&HW-CC-Date=20261009T013052Z&HW-CC-Expire=86400&HW-CC-Sign=4A15A5AB6A1122C9B42F62B6231736C979A494964D45198DBF8D68FC30E0BC40)

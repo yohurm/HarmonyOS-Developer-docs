@@ -1,6 +1,6 @@
 # ArkUI_NumberValue
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule-arkui-numbervalue
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -15,13 +15,13 @@ typedef union {...} ArkUI_NumberValue
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-ArkUI 在 Native 侧使用的数字类型，用于通过统一类型承载浮点、有符号整型和无符号整型数值。
+ArkUI在Native侧使用的数字类型，用于通过统一类型承载浮点、有符号整型和无符号整型数值。
  
 **起始版本：** 12
  
 **相关模块：** [ArkUI_NativeModule](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule)
  
-**所在头文件：** [native_type.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-type-h)
+**所在头文件：** [common_type.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-common-type-h)
  
   
 

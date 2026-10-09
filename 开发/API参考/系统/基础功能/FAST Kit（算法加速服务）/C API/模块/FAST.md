@@ -1,6 +1,6 @@
 # FAST
 
-更新时间：2026-09-04 10:41:25
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/fast-kit-fast
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -169,8 +169,8 @@
 | FAST_EXPORT FAST_ErrorCode HMS_FAST_SegmentMap_Query (FAST_SegmentMapHandle handle, size_t left, size_t right, int32_t *result) | 查询线段表的区间。 |
 | FAST_EXPORT FAST_ErrorCode HMS_FAST_RectPartition_CreateConfig (FAST_RectPartitionConfig **config) | 创建矩形划分求解器的不透明配置。 |
 | FAST_EXPORT void HMS_FAST_RectPartition_DestroyConfig (FAST_RectPartitionConfig *config) | 销毁矩形划分求解器的不透明配置。 |
-| FAST_EXPORT FAST_ErrorCode HMS_FAST_RectPartition_SetAlgo (FAST_RectPartitionConfig *config, const char *name) | 设置矩形划分求解器使用的算法。目前仅支持扫描线算法“SweepLineAlgo”，输出数量尽可能少（不保证最优性）的不相交矩形集合，复杂度为。 |
-| FAST_EXPORT FAST_ErrorCode HMS_FAST_RectPartition_Solve (FAST_RectPartitionConfig *config, size_t size, const FAST_Rect *origin, FAST_Rect *result, size_t *resultSize) | 在指定不透明配置下解决矩形划分问题。函数接收若干个彼此不相交的矩形作为输入，计算出覆盖相同区域的矩形划分方案，并使输出的矩形数量尽可能少。 说明： 1. 输入须保证矩形两两不相交（即任意两个矩形满足： 或 或或 ），否则函数返回FAST_ERROR_CODE_ILLEGAL_INPUT。 2. 函数能保证输出矩形的数量小于等于输入矩形的数量。 |
+| FAST_EXPORT FAST_ErrorCode HMS_FAST_RectPartition_SetAlgo (FAST_RectPartitionConfig *config, const char *name) | 设置矩形划分求解器使用的算法。目前仅支持扫描线算法“SweepLineAlgo”，输出数量尽可能少（不保证最优性）的不相交矩形集合，复杂度为![](assets/FAST/file-20260525091434556-001.png)。 |
+| FAST_EXPORT FAST_ErrorCode HMS_FAST_RectPartition_Solve (FAST_RectPartitionConfig *config, size_t size, const FAST_Rect *origin, FAST_Rect *result, size_t *resultSize) | 在指定不透明配置下解决矩形划分问题。函数接收若干个彼此不相交的矩形作为输入，计算出覆盖相同区域的矩形划分方案，并使输出的矩形数量尽可能少。 说明： 1. 输入须保证矩形两两不相交（即任意两个矩形满足：![](assets/FAST/file-20260525091434559-002.png) 或 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/UFt2rTVgSXmvYYM3jPqm9A/zh-cn_image_0000002779094609.png?HW-CC-KV=V1&HW-CC-Date=20261009T012741Z&HW-CC-Expire=86400&HW-CC-Sign=469B1A97A1B8F7F2E95F12A8FF5AAA3D46F7018CC819F763F89C4BA5E0309913)或![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/PrjQFY-lSYCBWQfXTaOXiA/zh-cn_image_0000002778934755.png?HW-CC-KV=V1&HW-CC-Date=20261009T012741Z&HW-CC-Expire=86400&HW-CC-Sign=99912DF905FCA11403AC04EC7AAA40E29F22C8BE488B176F51A2DA2CBF637E22)或 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/wWf-Hk17QdKnw3e0T7jaQw/zh-cn_image_0000002749335670.png?HW-CC-KV=V1&HW-CC-Date=20261009T012741Z&HW-CC-Expire=86400&HW-CC-Sign=A8E68F0A3DD06FDF8BDAD17DAE458B9172397A5E61850A23C01A8A9A7196ED97)），否则函数返回FAST_ERROR_CODE_ILLEGAL_INPUT。 2. 函数能保证输出矩形的数量小于等于输入矩形的数量。 |
 | FAST_ErrorCode HMS_FAST_PolyRoot_ComputeRoots (const FAST_Poly *poly, const size_t maxRootCount, double *root, size_t *rootCount) | 计算多项式的给定数量的实数根。 |
 | FAST_ErrorCode HMS_FAST_PolyRoot_ComputeSingle (const FAST_Poly *poly, double *root) | 计算多项式的绝对值最大的实根。 |
 | FAST_ErrorCode HMS_FAST_PolyRoot_ComputeRootIntervals (const FAST_Poly *poly, const size_t maxRootCount, double *leftBoundary, double *rightBoundary, size_t *rootCount) | 计算多项式给定数量的实根的隔离区间，输出每个实根的左右边界。 |
@@ -370,7 +370,7 @@ typedef struct FAST_Poly FAST_Poly
 **描述**
  
 定义稀疏格式多项式的数据结构。多项式
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/xrqSSE3ES8ehrJ__U_zU4Q/zh-cn_image_0000002717773532.png?HW-CC-KV=V1&HW-CC-Date=20260911T072746Z&HW-CC-Expire=86400&HW-CC-Sign=AA35811251DF70BDF9B587338590DA26CEBBC1931AFBB3914514B237EF1184EE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/tLo2S9LoQPW209nf8RowhQ/zh-cn_image_0000002749495554.png?HW-CC-KV=V1&HW-CC-Date=20261009T012741Z&HW-CC-Expire=86400&HW-CC-Sign=522CA6AC2321AB32536129D5F25F9D407831A13EF4B5F82E185FAE2D20CB9220)
 由系数数组coeff和指数数组pow共同描述，且需按指数升序排列。
  
 **起始版本：** 26.0.0
@@ -1010,7 +1010,7 @@ const uint32_t FAST_MAX_FFT_LOG2N = 16;
 **描述**
  
 FFT支持的最大点数N对应的以2为底的对数值。即FAST_MAX_FFT_LOG2N=
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/k9Ym2QjwQfCOJwDBH4jpSg/zh-cn_image_0000002717613600.png?HW-CC-KV=V1&HW-CC-Date=20260911T072746Z&HW-CC-Expire=86400&HW-CC-Sign=8B07F6E2744AB1602CCFD5B2C8FBD965F81079D953036AD156C9BDD518F1E046)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/WWJHn1TqRKSrenzZK5UHJg/zh-cn_image_0000002779094611.png?HW-CC-KV=V1&HW-CC-Date=20261009T012741Z&HW-CC-Expire=86400&HW-CC-Sign=80BD78F7DBD15A198E0B2826043B8C2939A6230C23C42F7A4713A8B03FA3113F)
 ，其中N为FFT支持的最大点数，例如该值为16时，最大点数为65536。
  
 **起始版本**：26.0.0
@@ -1330,7 +1330,7 @@ FAST_EXPORT FAST_ErrorCode HMS_FAST_RectPartition_SetAlgo (FAST_RectPartitionCon
 | 名称 | 描述 |
 | --- | --- |
 | config | 待设置的矩形划分求解器的不透明配置FAST_RectPartitionConfig。 |
-| name | 矩形求解器使用的算法名称。目前仅支持扫描线算法“SweepLineAlgo”，输出数量尽可能少（不保证最优性）的不相交矩形集合，复杂度为。 |
+| name | 矩形求解器使用的算法名称。目前仅支持扫描线算法“SweepLineAlgo”，输出数量尽可能少（不保证最优性）的不相交矩形集合，复杂度为![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/jinXp6-BTpqb2UmLw4WSvQ/zh-cn_image_0000002749335668.png?HW-CC-KV=V1&HW-CC-Date=20261009T012741Z&HW-CC-Expire=86400&HW-CC-Sign=CB4D0950E9889C0AB65DFEB3C5ADAE559804122F7ABA5D5DBDE55179C3E71244)。 |
  
  
 **返回：**
@@ -2042,9 +2042,9 @@ FAST_ErrorCode HMS_FAST_Biquadm_SetActiveFilters (FAST_Biquadm * filter, const u
  
 当成功时，返回[FAST_ERROR_CODE_SUCCESS](#fast_errorcode-1)。
  
-当filter或activeMask为NULL，或filter的activeFilters为NULL时，返回[FAST_ERROR_CODE_INVALID_PTR](#fast_errorcode-1)。
+当filter或activeMask为NULL时，返回[FAST_ERROR_CODE_INVALID_PTR](#fast_errorcode-1)。
  
-当filter未初始化时，返回[FAST_ERROR_CODE_ILLEGAL_INPUT](#fast_errorcode-1)。
+当filter未初始化，或filter的activeFilters为NULL时，返回[FAST_ERROR_CODE_ILLEGAL_INPUT](#fast_errorcode-1)。
  
   
 
@@ -2076,9 +2076,9 @@ FAST_ErrorCode HMS_FAST_Biquadm_SetActiveFiltersD (FAST_BiquadmD * filter, const
  
 当成功时，返回[FAST_ERROR_CODE_SUCCESS](#fast_errorcode-1)。
  
-当filter或activeMask为NULL，或filter的activeFilters为NULL时，返回[FAST_ERROR_CODE_INVALID_PTR](#fast_errorcode-1)。
+当filter或activeMask为NULL时，返回[FAST_ERROR_CODE_INVALID_PTR](#fast_errorcode-1)。
  
-当filter未初始化时，返回[FAST_ERROR_CODE_ILLEGAL_INPUT](#fast_errorcode-1)。
+当filter未初始化，或filter的activeFilters为NULL时，返回[FAST_ERROR_CODE_ILLEGAL_INPUT](#fast_errorcode-1)。
  
   
 
@@ -2114,7 +2114,7 @@ FAST_ErrorCode HMS_FAST_Biquadm (FAST_Biquadm * filter, const float ** input, co
  
 当成功时，返回[FAST_ERROR_CODE_SUCCESS](#fast_errorcode-1)。
  
-当filter、coeff或output为NULL时，返回[FAST_ERROR_CODE_INVALID_PTR](#fast_errorcode-1)。
+当filter、input或output为NULL时，返回[FAST_ERROR_CODE_INVALID_PTR](#fast_errorcode-1)。
  
 当filter未初始化或length超出范围时，返回[FAST_ERROR_CODE_ILLEGAL_INPUT](#fast_errorcode-1)。
  
@@ -2152,7 +2152,7 @@ FAST_ErrorCode HMS_FAST_BiquadmD (FAST_BiquadmD * filter, const double ** input,
  
 当成功时，返回[FAST_ERROR_CODE_SUCCESS](#fast_errorcode-1)。
  
-当filter、coeff或output为NULL时，返回[FAST_ERROR_CODE_INVALID_PTR](#fast_errorcode-1)。
+当filter、input或output为NULL时，返回[FAST_ERROR_CODE_INVALID_PTR](#fast_errorcode-1)。
  
 当filter未初始化或length超出范围时，返回[FAST_ERROR_CODE_ILLEGAL_INPUT](#fast_errorcode-1)。
  

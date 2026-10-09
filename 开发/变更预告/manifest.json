@@ -61,5 +61,33 @@
     "slug": "changelogs-overview-pre",
     "title": "26.0.0的行为变更汇总",
     "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-roadmap/changelogs-overview-pre"
+  },
+  {
+    "file": "6.0.2(22)无行为变更.md",
+    "name": "6.0.2(22)无行为变更",
+    "slug": "all-changelogs-602",
+    "title": "6.0.2(22)无行为变更",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-roadmap/all-changelogs-602"
+  },
+  {
+    "file": "5.0.4(16)无行为变更.md",
+    "name": "5.0.4(16)无行为变更",
+    "slug": "all-changelogs-504",
+    "title": "5.0.4(16)无行为变更",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-roadmap/all-changelogs-504"
+  },
+  {
+    "file": "5.0.5(17)无行为变更.md",
+    "name": "5.0.5(17)无行为变更",
+    "slug": "all-changelogs-505",
+    "title": "5.0.5(17)无行为变更",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-roadmap/all-changelogs-505"
+  },
+  {
+    "file": "6.0.0(20)的行为变更汇总.md",
+    "name": "6.0.0(20)的行为变更汇总",
+    "slug": "all-changelogs-600",
+    "title": "6.0.0(20)的行为变更汇总",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-roadmap/all-changelogs-600"
   }
 ]

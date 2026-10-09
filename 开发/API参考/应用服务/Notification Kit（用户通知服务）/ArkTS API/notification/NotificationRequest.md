@@ -1,6 +1,6 @@
 # NotificationRequest
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-notification-notificationrequest
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -49,7 +49,7 @@
 | extraInfo | {[key: string]: any} | 否 | 是 | 扩展参数。为应用提供定制服务。默认为空。 以下Key由系统赋值，开发者手动修改也不会生效，系统在数据传递时会自动修改为实际值。 - 'ohos.notificationManager.wantUri'：用户点击通知时传递给应用的Want 中的uri字段，使用getActiveNotifications接口获取该信息。 |
 | slotType(deprecated) | notification.SlotType | 否 | 是 | 通知渠道类型，默认值为OTHER_TYPES。 从API version 7开始支持，从API version 11开始废弃，建议使用notificationSlotType替代。 |
 | hashCode | string | 是 | 是 | 通知唯一标识。 |
-| creatorBundleName | string | 是 | 是 | 创建通知的应用名称。 |
+| creatorBundleName | string | 是 | 是 | 创建通知的应用包名。 |
 | creatorUid | number | 是 | 是 | 创建通知的应用UID。 |
 | creatorPid | number | 是 | 是 | 创建通知的PID。 |
 | creatorUserId8+ | number | 是 | 是 | 创建通知的用户ID。 |
@@ -100,6 +100,6 @@
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| wantAction | string | 否 | 是 | 应用在创建wantAgent时，传入的want的action字段，具体含义请参考action。 |
-| wantUri | string | 否 | 是 | 应用在创建wantAgent时，传入的want的uri字段，具体含义请参考uri。 |
-| wantParameters | Record<string, Object> | 否 | 是 | 应用在创建wantAgent时，传入的want的parameters字段，具体含义请参考parameters。 |
+| wantAction | string | 否 | 是 | 应用在创建wantAgent时，传入的Want的action字段，具体含义请参考action。 |
+| wantUri | string | 否 | 是 | 应用在创建wantAgent时，传入的Want的uri字段，具体含义请参考uri。 |
+| wantParameters | Record<string, Object> | 否 | 是 | 应用在创建wantAgent时，传入的Want的parameters字段，具体含义请参考parameters。 |

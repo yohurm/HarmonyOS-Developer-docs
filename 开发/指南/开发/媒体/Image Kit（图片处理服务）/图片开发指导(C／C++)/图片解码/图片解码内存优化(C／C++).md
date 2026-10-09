@@ -1,6 +1,6 @@
 # 图片解码内存优化(C/C++)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-allocator-type-c
 
@@ -398,17 +398,9 @@ napi_value CreatePixelmapWithYUV(napi_env env, napi_callback_info info)
 
 ## 系统默认的内存分配方式
 
-在使用[OH_ImageSourceNative_CreatePixelmap](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-source-native-h#oh_imagesourcenative_createpixelmap)接口进行解码时，不同场景下会采取不同的内存分配类型。
+使用[OH_ImageSourceNative_CreatePixelmap()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-source-native-h#oh_imagesourcenative_createpixelmap)解码时，系统自动选择共享内存或DMA内存。
 
-以下场景将使用DMA_ALLOC。
-
- - 解码HDR图片。
- - 解码HEIF格式图片。
- - 解码JPEG格式图片，当原图的宽和高均在1024像素至8192像素之间，[PIXEL_FORMAT](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-pixelmap-native-h#pixel_format)为PIXEL_FORMAT_RGBA_8888或PIXEL_FORMAT_NV21，同时硬件不繁忙（并发数为3）。
- - 解码其他格式图片。要求[OH_DecodingOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-nativemodule-oh-decodingoptions)中的desiredSize大于等于512像素 * 512像素（未设置desiredSize时按原图尺寸考虑），并且宽度为64的倍数。
-
-
-除上述场景外，其余情况均使用SHARE_MEMORY。
+需要指定内存类型时，应调用[OH_ImageSourceNative_CreatePixelmapUsingAllocator()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-source-native-h#oh_imagesourcenative_createpixelmapusingallocator)，将allocator设置为IMAGE_ALLOCATOR_TYPE_DMA或IMAGE_ALLOCATOR_TYPE_SHARE_MEMORY。
 
 
 

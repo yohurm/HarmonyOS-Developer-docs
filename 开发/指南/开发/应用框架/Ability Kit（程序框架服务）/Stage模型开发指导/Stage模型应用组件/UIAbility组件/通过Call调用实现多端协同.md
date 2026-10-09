@@ -1,6 +1,6 @@
 # 通过Call调用实现多端协同
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-cross-device-interaction
 
@@ -162,7 +162,7 @@ class MyParcelable {
 }
 
 function sendMsgCallback(data: rpc.MessageSequence): rpc.Parcelable {
-  hilog.info(DOMAIN_NUMBER, TAG, '%{public}s', 'CalleeSortFunc called');
+  hilog.info(DOMAIN_NUMBER, TAG, '%{public}s', 'sendMsgCallback called');
 
   // 获取Caller发送的序列化数据
   let receivedData: MyParcelable = new MyParcelable(0, '');

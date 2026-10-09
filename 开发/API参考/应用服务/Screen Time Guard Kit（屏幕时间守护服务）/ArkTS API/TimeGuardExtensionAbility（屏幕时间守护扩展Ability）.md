@@ -1,6 +1,6 @@
 # @hms.utilityApplication.screenTimeGuard.TimeGuardExtensionAbility（屏幕时间守护扩展Ability）
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/screentimeguard-timeguardextensionability
 **支持设备：** Phone | Tablet
@@ -55,7 +55,7 @@ import { TimeGuardExtensionAbility } from '@kit.ScreenTimeGuardKit';
 
 onStart(strategyName: string): Promise&lt;void&gt;
  
-当管控应用启动守护策略时，系统将自动触发此回调函数，开发者可在回调函数中执行自己的业务逻辑。使用Promise异步回调。
+当守护策略对应的管控生效时，系统将自动触发此回调函数，开发者可在回调函数中执行自己的业务逻辑。使用Promise异步回调。
  
 **模型约束：** 此接口仅可在Stage模型下使用。
  
@@ -68,7 +68,7 @@ onStart(strategyName: string): Promise&lt;void&gt;
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| strategyName | string | 是 | 启动的守护策略名称。 |
+| strategyName | string | 是 | 生效的守护策略名称。 |
  
  
 **返回值：**
@@ -113,7 +113,7 @@ export default class EntryAbility extends TimeGuardExtensionAbility {
 
 onStop(strategyName: string): Promise&lt;void&gt;
  
-当管控应用停止守护策略时，系统将自动触发此回调函数，开发者可在回调函数中执行自己的业务逻辑。使用Promise异步回调。
+当守护策略对应的管控失效时，系统将自动触发此回调函数，开发者可在回调函数中执行自己的业务逻辑。使用Promise异步回调。
  
 **模型约束：** 此接口仅可在Stage模型下使用。
  
@@ -126,7 +126,7 @@ onStop(strategyName: string): Promise&lt;void&gt;
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| strategyName | string | 是 | 停止的守护策略名称。 |
+| strategyName | string | 是 | 失效的守护策略名称。 |
  
  
 **返回值：**

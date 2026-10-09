@@ -1,6 +1,6 @@
 # Toggle
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-toggle
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -380,7 +380,7 @@ struct ToggleExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/QoOW-wIcQRe3HfQdM4J6Lw/zh-cn_image_0000002717612712.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073109Z&HW-CC-Expire=86400&HW-CC-Sign=4071E30AD8DBB30EB8545AA0FB76887F98A28A0CD05D2483C35328C313B79C10)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/OvgAQ-KEQM--9CJM-Ku2Zw/zh-cn_image_0000002749334776.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013057Z&HW-CC-Expire=86400&HW-CC-Sign=3F6561C32D1E7348AA6179776F45E022135FF04F15FC3B2BE890361745A3836A)
 
 
 
@@ -429,7 +429,7 @@ struct ToggleExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/889WxXPwR_uWaj-9ctPdzQ/zh-cn_image_0000002747292665.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073109Z&HW-CC-Expire=86400&HW-CC-Sign=96748BC0A4CD1DBB54F89FAFEDD6FB6A0C333BA945911949439458679453BD85)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/Rm25ALleQVmMU_SiWfpKPA/zh-cn_image_0000002749494662.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013057Z&HW-CC-Expire=86400&HW-CC-Sign=CA7C272D0AD8196A827BA958B4A2681C2907F00F27F292A3EE8EF2D8F6789F70)
 
 
 
@@ -496,7 +496,7 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/FiaJEilkR1-o-iW3fdbhtA/zh-cn_image_0000002747212581.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073109Z&HW-CC-Expire=86400&HW-CC-Sign=AE2E225C559DCEE77EB9AA7EA0F2B4742601D17B5754E0BF519FC5B516DE1C64)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/Hh1zNpijRpy9voaIzqARpQ/zh-cn_image_0000002779093719.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013057Z&HW-CC-Expire=86400&HW-CC-Sign=5B75139CCB1680A367960BCC605E9D350CF65E5E3D6C6C4E44748B7159EB3139)
 
 
 
@@ -506,9 +506,9 @@ struct Index {
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-该示例展示了Toggle组件Switch类型在开启沉浸光感前后的效果对比，包括不设置系统材质、设置undefined、设置系统材质以及设置系统材质并配合[switchPointColor](#switchpointcolor)设置点光源颜色的效果。示例使用通用属性[systemMaterial](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-image-effect#systemmaterial)接口来实现沉浸光感效果。
+该示例展示了Toggle组件Switch类型在开启沉浸光感前后的效果对比。示例使用通用属性[systemMaterial](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-image-effect#systemmaterial)接口来实现沉浸光感效果。
 
-组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
+该示例配图为高算力设备强档效果，组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
 
 从API版本26.0.0开始，新增systemMaterial属性。
 
@@ -524,35 +524,24 @@ import { uiMaterial } from '@kit.ArkUI';
 @Component
 struct ToggleMaterialTest {
   build() {
-    Column({ space: 10 }) {
-      // 不设置系统材质接口，无沉浸光感效果
-      Toggle({ type: ToggleType.Switch, isOn: true })
-
-      // systemMaterial设置undefined，恢复为无沉浸光感的效果
-      Toggle({ type: ToggleType.Switch, isOn: true })
-        .systemMaterial(undefined)
-
+    Stack() {
       // 设置系统材质，开启沉浸光感效果（systemMaterial参数任意仅作为系统材质开关，最终使用组件侧固定参数），默认白色点光源（颜色为switchPointColor默认值）
       Toggle({ type: ToggleType.Switch, isOn: true })
         .systemMaterial(new uiMaterial.Material())
-
-      // 设置系统材质，开启沉浸光感效果（systemMaterial参数任意仅作为系统材质开关，最终使用组件侧固定参数），点光源颜色跟随switchPointColor设置
-      Toggle({ type: ToggleType.Switch, isOn: true })
-        .systemMaterial(new uiMaterial.Material())
-        .switchPointColor(Color.Red)
     }
     .width('100%')
+    .height('100%')
   }
 }
 ```
 
-高算力设备场景示例图：
+未设置系统材质时：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/b2YrzZNJR66mKXlF-ghxrw/zh-cn_image_0000002717772646.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073109Z&HW-CC-Expire=86400&HW-CC-Sign=1FCDC653E6AC8D02787F398D1B4A53365EA18CEE6BBB525CC025C9D76BF5A0A6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/kBUTXTDFQ3uoZFyR108vbQ/zh-cn_image_0000002778933865.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013057Z&HW-CC-Expire=86400&HW-CC-Sign=ABDF52133D294D8DDDA0F532EC9B70C37581CE784CAA31D95C7AB5E1C3B52568)
 
 
-低算力设备场景示例图：
+设置系统材质后：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/8OFtTFbLRjmtT9eNXTgXHA/zh-cn_image_0000002717612714.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073109Z&HW-CC-Expire=86400&HW-CC-Sign=EC11C4216C218C59EB81301E3768BC8196C4FCD2DCBBED2193999ACCF0659C03)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/KKmb1AmlSteWyo_EppNH9Q/zh-cn_image_0000002749334780.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013057Z&HW-CC-Expire=86400&HW-CC-Sign=304C184FC6441C1A3120580EB7E7F1B37164A3628E823C5BEFF07228FF665177)

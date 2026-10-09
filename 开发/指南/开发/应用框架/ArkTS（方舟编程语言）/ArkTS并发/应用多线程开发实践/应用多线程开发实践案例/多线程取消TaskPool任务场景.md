@@ -1,6 +1,6 @@
 # 多线程取消TaskPool任务场景
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/multi-thread-cancel-task
 
@@ -38,8 +38,12 @@ import { PromptAction } from '@kit.ArkUI';
 @Concurrent
 function cancel(send: SendableTest) {
   // 在子线程中通过任务ID取消任务
-  taskpool.cancel(send.getTaskId());
-  console.info('cancel task finished');
+  try {
+    taskpool.cancel(send.getTaskId());
+    console.info('cancel task finished');
+  } catch (e) {
+    console.error(`cancel failed, taskId: ${send.getTaskId()}, error: ${e.message}`);
+  }
 }
 
 @Concurrent

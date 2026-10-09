@@ -1,6 +1,6 @@
 # 单应用自渲染GPU内存泄漏故障模式说明
 
-更新时间：2026-09-09 06:06:31
+更新时间：2026-09-15 02:12:10
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-gpuleak-self-rendering-fault-mode
 
@@ -133,13 +133,13 @@ C: vulkan image (Total memory: 2097152000)
 - 单击③处Call Trees查看内存申请调用栈。
 - 单击④处选择Created & Existing，筛选申请并且未释放的内存及其调用栈。
 - 找到内存申请异常的内存及其调用栈，如下图⑤、⑥处框选的内容。
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/ecPvDSaIRR2fUkqMOsHsZA/zh-cn_image_0000002710303863.png?HW-CC-KV=V1&HW-CC-Date=20260911T072343Z&HW-CC-Expire=86400&HW-CC-Sign=364FEA106702A79B80CAFC45D45B02B72ED04537BCEBCE11E1192FC188C815B8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/zLIGmtLyQuuYRcImTfwmQg/zh-cn_image_0000002710303863.png?HW-CC-KV=V1&HW-CC-Date=20261009T012655Z&HW-CC-Expire=86400&HW-CC-Sign=4595CE2FD3F326A99FE0FB9635181D24F238105B7E7680F04BEDF4443C5545FC)
 
 - 结合ArkTS栈分析发现单击按钮“GPU-Leak-Vulkan-Sync”后，应用会申请一次GPU内存，且未进行释放：
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/n8RU78kPQZ--ysHpqLiL3w/zh-cn_image_0000002680464214.png?HW-CC-KV=V1&HW-CC-Date=20260911T072343Z&HW-CC-Expire=86400&HW-CC-Sign=D1AE8A400CEC8E546490133AA34DDC3EF55BD01EAC8E3D6EF5E8A12B7CCF76D4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/VToI0TDoTwmodzT3ZZPQ3A/zh-cn_image_0000002680464214.png?HW-CC-KV=V1&HW-CC-Date=20261009T012655Z&HW-CC-Expire=86400&HW-CC-Sign=9078288ABAA91AE7AF1E28D30B430E47D62398AE54749D1BC18D76ABB78A56C6)
 
 - 结合Native调用栈定位至LeakMemoryGPUvkAllocateMemorySync()，泄漏点为通过VulkanImageExample方式动态分配了大量GPU内存，但是没有主动释放导致的泄漏问题：
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/vVkMRXGfQYes07xvDxGKvA/zh-cn_image_0000002710144025.png?HW-CC-KV=V1&HW-CC-Date=20260911T072343Z&HW-CC-Expire=86400&HW-CC-Sign=A1722EDA0C046D211B2756608C01D2902CF9E0045385B67EDE78260C42A2D082)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/h25w8d6-RpS_LXSR012Vqg/zh-cn_image_0000002710144025.png?HW-CC-KV=V1&HW-CC-Date=20261009T012655Z&HW-CC-Expire=86400&HW-CC-Sign=7C126E64FD62482DB79052632FA032DBD0C2A55AFF61666F8706FCB3D5649314)
 
 
  
@@ -147,26 +147,26 @@ C: vulkan image (Total memory: 2097152000)
 **开发态问题分析思路：**
  
 - 开发者在调试过程中，如果遇到应用闪退问题，可以在DevEco Studio中找到日志组件如下图①处，再选择应用终止如下图②处，单击③选择应用进程名，筛选出调试应用的历史退出原因，发现上一次闪退原因为“ResourceLeak:Gpu Leak”如下图④处所示，说明应用在调试过程中发生了GPU内存泄漏故障。
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/d-H_wCQrTOSCwOqyGNthdw/zh-cn_image_0000002680624108.png?HW-CC-KV=V1&HW-CC-Date=20260911T072343Z&HW-CC-Expire=86400&HW-CC-Sign=F62195F16D3C5C26E0AC4BC8572B65996E449739502C3EBF3C2BBFCFED394DC0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/eje2JQmxT8irD9TCJNdmVg/zh-cn_image_0000002680624108.png?HW-CC-KV=V1&HW-CC-Date=20261009T012655Z&HW-CC-Expire=86400&HW-CC-Sign=6F1A38EC7C3ECB9E861037AD6E5CE88F86C4F01ED858CA35B0AC5F858EC372A2)
 
 
  
 - 确认问题为GPU内存泄漏后，开发者可以使用DevEco Studio的Profiler工具中的Allocation功能进行分析，使用方法可参考[基础内存：Allocation分析](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-insight-session-allocations)。
 - 抓取GPU内存申请趋势之前需要先增加筛选Graphic Memory泳道，然后启动录制：
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/vCEyjG6qTSGd1ieh-ozh1A/zh-cn_image_0000002710303871.png?HW-CC-KV=V1&HW-CC-Date=20260911T072343Z&HW-CC-Expire=86400&HW-CC-Sign=9D3CC75DD1E796B1A8BDCF43C92890E818A27B0561C2CD074295F49D964CED1A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/6e_NxQsRQsm60liQ0iGBUg/zh-cn_image_0000002710303871.png?HW-CC-KV=V1&HW-CC-Date=20261009T012655Z&HW-CC-Expire=86400&HW-CC-Sign=3C48D144FA13EE4D1D998E4EEE17BDD5FA882EA36FAE29FD02BA7505D45BF197)
 
 - 录制过程中，开发者可以持续复现疑似发生泄漏的场景。
 - 录制完成后，选中Graphic Memory中的Vulkan泳道：
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/5ahpoMq7To-gSOkbll8zVg/zh-cn_image_0000002680464226.png?HW-CC-KV=V1&HW-CC-Date=20260911T072343Z&HW-CC-Expire=86400&HW-CC-Sign=CA1550F68B96B2828363EF555A36FD405D86E9FDA9AA80E6564A08EBD65C003F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/WYYNwT3FQlakDgiH6ePFUA/zh-cn_image_0000002680464226.png?HW-CC-KV=V1&HW-CC-Date=20261009T012655Z&HW-CC-Expire=86400&HW-CC-Sign=87DB1104AE573BA85EFCBAC2B0D1BBD14480B6B2B2B98E30B75783B8F9DAFE9E)
 
 - 单击①处Call Trees按钮，单击②处筛选Created & Existing，可以找到异常申请的内存块和它的内存申请调用栈，内存申请调用栈如下图③处框中所示：
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/9coky6Z6SnGhXIyKrhuUAQ/zh-cn_image_0000002710144035.png?HW-CC-KV=V1&HW-CC-Date=20260911T072343Z&HW-CC-Expire=86400&HW-CC-Sign=A5C1F68A46EF213DD714E2B0089E2DAE2CD2E5D1E06E21F180069F300EEF76D5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/oFFINXt8QRiwXulVYmp-sw/zh-cn_image_0000002710144035.png?HW-CC-KV=V1&HW-CC-Date=20261009T012655Z&HW-CC-Expire=86400&HW-CC-Sign=851EF61465F475F97592B60FC0EBD33D3170F33491D46EB99F1E449625B27824)
 
 - 结合ArkTS栈分析发现单击按钮“GPU-Leak-Vulkan-Sync”后，应用会申请一次GPU内存，且未进行释放：
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/4-Y41plzQs-YBOi9cjR1kA/zh-cn_image_0000002680624120.png?HW-CC-KV=V1&HW-CC-Date=20260911T072343Z&HW-CC-Expire=86400&HW-CC-Sign=DA30A4CB16FAA9DF05C0F81BC2941DA3539A5F0C9013BEF60DC596CDC7E0DDD1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/KIBx4sxiQxWONexIy2s3oQ/zh-cn_image_0000002680624120.png?HW-CC-KV=V1&HW-CC-Date=20261009T012655Z&HW-CC-Expire=86400&HW-CC-Sign=3DFAD8E5EB9F45404FDC23A1138C5A5DEB84CBF933B7E40A0E57BDA9939E536A)
 
 - 结合Native调用栈定位至LeakMemoryGPUvkAllocateMemorySync()，泄漏点为通过VulkanImageExample方式动态分配了大量GPU内存，但是没有主动释放导致的泄漏问题：
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/A5p9FJW9TSyuA-YDMyFwhg/zh-cn_image_0000002710303887.png?HW-CC-KV=V1&HW-CC-Date=20260911T072343Z&HW-CC-Expire=86400&HW-CC-Sign=630E46EF8F6225646D073F76F38EA1F8F5CEEAAA210FD1996275787FC41CB0B1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/3Z1jOF7eStqy1si9U-LfXg/zh-cn_image_0000002710303887.png?HW-CC-KV=V1&HW-CC-Date=20261009T012655Z&HW-CC-Expire=86400&HW-CC-Sign=7C812C279CAD1B90430149330316FCE47D2C7D2D4EC28659B3DBE24FA69851AD)
 
 
  

@@ -1,6 +1,6 @@
 # 安全随机数生成(ArkTS)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-generate-random-number
 
@@ -73,7 +73,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 function doRandBySync() {
   let rand = cryptoFramework.createRandom();
-  let len = 24; // Generate a 24-byte random number.
+  let len = 24; // 生成一个24字节的随机数。
   try {
     let randData = rand.generateRandomSync(len);
     if (randData.data.length !== 0) {

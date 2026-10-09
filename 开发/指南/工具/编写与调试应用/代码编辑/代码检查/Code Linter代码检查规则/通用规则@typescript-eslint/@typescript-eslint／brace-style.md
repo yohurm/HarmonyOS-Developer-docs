@@ -1,18 +1,18 @@
 # @typescript-eslint/brace-style
 
-更新时间：2026-01-15 06:51:04
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_brace-style
 
 对代码块强制执行一致的括号样式。
  
 
-#### 规则配置
+## 规则配置
 
 ```json
 // code-linter.json5
 {
-  "rules": {
+  <span style="color: rgb(135,16,148);">"rules"</span>: {
     "@typescript-eslint/brace-style": "error"
   }
 }
@@ -20,13 +20,13 @@
  
  
 
-#### 选项
+## 选项
 
 详情请参考[@typescript-eslint/brace-style选项](https://eslint.nodejs.cn/docs/rules/brace-style#选项)。
  
  
 
-#### 正例
+## 正例
 
 ```text
 function foo(): boolean {
@@ -48,7 +48,7 @@ export { C };
  
  
 
-#### 反例
+## 反例
 
 ```text
 function foo(): boolean 
@@ -73,10 +73,10 @@ export { C };
  
  
 
-#### 规则集
+## 规则集
 
 ```text
-plugin:@typescript-eslint/all
+<span style="color: rgb(6,125,23);">plugin:@typescript-eslint/all</span>
 ```
  
 Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-code-linter)。

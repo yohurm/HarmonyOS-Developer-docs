@@ -1,6 +1,6 @@
 # 自定义Native Sendable对象的多线程操作场景
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-define-sendable-object
 
@@ -94,7 +94,10 @@ MyObject::~MyObject() {}
 void MyObject::Destructor(napi_env env, void *nativeObject, [[maybe_unused]] void *finalizeHint)
 {
     OH_LOG_INFO(LOG_APP, "MyObject::Destructor called");
-    reinterpret_cast<MyObject *>(nativeObject)->~MyObject();
+    MyObject *obj = reinterpret_cast<MyObject *>(nativeObject);
+    if (obj != nullptr) {
+        delete obj;
+    }
 }
 
 // 在构造函数中绑定ArkTS Sendable对象与C++对象

@@ -1,6 +1,6 @@
 # 基于AbcKitTS实现字节码插桩
 
-更新时间：2026-08-26 06:47:01
+更新时间：2026-09-15 02:12:10
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-abckitts-implements-instrumentation
 
@@ -87,7 +87,7 @@ IsaKit是AbcKitTS提供的核心指令操作工具，用于操作方法的Block�
 开发者要使用AbcKitTS对HarmonyOS工程进行插桩，需要完成两个步骤：**编写插桩代码**和**注册插件**。其中，插桩代码的编写会根据具体业务逻辑而有所不同，本文将在[场景示例](#section21172491410)中根据不同业务场景详细介绍实现方法。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/5S6wlIA-Q8egukh1HvSOeg/zh-cn_image_0000002568136792.png?HW-CC-KV=V1&HW-CC-Date=20260911T072249Z&HW-CC-Expire=86400&HW-CC-Sign=A283CAF2204D0E4DBF07DF5343D52A6292E73BA2F97622ED26C4C4A800E10014)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/lc_lMtNVQPW1EBhIvcURQg/zh-cn_image_0000002568136792.png?HW-CC-KV=V1&HW-CC-Date=20261009T012638Z&HW-CC-Expire=86400&HW-CC-Sign=B1D75599CE82C80B1F0A67D972D8AE7BD09D2373EEE74ECB1BB755F98A1B1E68)
 
  
  
@@ -1290,8 +1290,8 @@ export class MethodParameterValidateTask {
 ```
 
  
-
  
+
  
 
 ## 示例代码

@@ -1,6 +1,6 @@
 # functionalButtonComponentManager(场景化融合Button组件管理)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/scenario-fusion-functionalbuttoncomponentmanager
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -3772,4 +3772,4 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/svaaTe_CRfaf1_4511bsJg/zh-cn_image_0000002747293929.png?HW-CC-KV=V1&HW-CC-Date=20260911T073052Z&HW-CC-Expire=86400&HW-CC-Sign=B5003C0712C547CDDA7FA478AC2135982B85F4F895F131EFA27203B5E562E0D2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/WNZRkr3vRnSpgTdEbpLufQ/zh-cn_image_0000002749336048.png?HW-CC-KV=V1&HW-CC-Date=20261009T013045Z&HW-CC-Expire=86400&HW-CC-Sign=9D665914EC4C81C69DDFD319CCF90AB36958606E7FAC7B6EE8F326B114F86B00)

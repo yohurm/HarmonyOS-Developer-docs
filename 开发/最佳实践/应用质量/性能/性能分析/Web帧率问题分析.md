@@ -1,6 +1,6 @@
 # Web帧率问题分析
 
-更新时间：2026-09-02 03:30:31
+更新时间：2026-09-15 02:12:10
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-web-frame-rate-performance-analysis
 
@@ -19,8 +19,8 @@
 
  
  
-
  
+
 ArkWeb（HarmonyOS的Web引擎，负责Web页面的渲染、JS执行与交互处理）子泳道聚合了Web相关线程的trace信息，通过分析Web渲染过程关键函数的trace点，可以分析出每一帧的执行流程，图为[异步渲染模式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-render-mode#异步渲染模式默认)下ArkWeb滑动过程中的渲染流程图，其聚合的Web线程信息如下：
  
 - H:RosenWeb：用于记录准备提交给Render Service进行统一渲染的数据量。
@@ -100,8 +100,8 @@ Web为自渲染模式，丢帧判定需基于RosenWeb的buffer缓存状态：当
 
 手势事件下发是动效的起点，在页面滑动的过程中，Web内核需通过手势事件生成的偏移量来绘制页面，因此每一帧都应该有手势事件下发，如果应用主线程长时间阻塞逻辑，会导致Web在这一帧无手势下发。确认应用主线程是否存在业务阻塞逻辑，如果有长时间阻塞逻辑，那么需要通过Profiler工具（[DevEco Profiler调优工具简介](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-profiler)）抓取trace，确认这一段running的来源。
  
-
- 1. **使用离线Web组件阻塞应用主线程****问题描述**
+ 
+1. **使用离线Web组件阻塞应用主线程****问题描述**
 
   某应用在web页面第一次滑动过程中出现概率丢帧卡顿。
 

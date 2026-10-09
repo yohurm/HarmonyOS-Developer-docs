@@ -1,6 +1,6 @@
 # Interfaces (其他)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-i
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -30,7 +30,7 @@
 | hostDeviceName15+ | string | 是 | 否 | 远端设备名称。若当前无远端设备，返回为空。 元服务API： 从API version 19开始，该接口支持在元服务中使用。 |
 | hostDeviceType15+ | HostDeviceType | 是 | 否 | 远端设备类型。 元服务API： 从API version 19开始，该接口支持在元服务中使用。 |
 | lensEquivalentFocalLength24+ | Array&lt;number&gt; | 是 | 是 | 相机镜头等效焦距。 元服务API： 从API version 24开始，该接口支持在元服务中使用。 |
-| isLogicalCamera24+ | boolean | 是 | 是 | 是否为逻辑摄像头（由多个物理相机组成）, true表示是逻辑摄像头，false表示是物理摄像头。 模型约束： 此接口仅可在Stage模型下使用。 元服务API： 从API version 24开始，该接口支持在元服务中使用。 |
+| isLogicalCamera24+ | boolean | 是 | 是 | 是否为逻辑摄像头（由多个物理相机组成），true表示是逻辑摄像头，false表示是物理摄像头。 模型约束： 此接口仅可在Stage模型下使用。 元服务API： 从API version 24开始，该接口支持在元服务中使用。 |
 | constituentCameraDevices24+ | Array&lt;CameraDevice&gt; | 是 | 是 | 组成此逻辑相机的物理相机列表。 模型约束： 此接口仅可在Stage模型下使用。 元服务API： 从API version 24开始，该接口支持在元服务中使用。 |
 | lensFocalLength24+ | number | 是 | 是 | 镜头实际焦距。 模型约束： 此接口仅可在Stage模型下使用。 元服务API： 从API version 24开始，该接口支持在元服务中使用。 |
 | minimumFocusDistance24+ | number | 是 | 是 | 相机最小对焦距离。 模型约束： 此接口仅可在Stage模型下使用。 元服务API： 从API version 24开始，该接口支持在元服务中使用。 |

@@ -1,6 +1,6 @@
 # 订阅主线程超时事件（ArkTS）
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-watcher-mainthreadjank-events-arkts
 
@@ -91,7 +91,11 @@ hiAppEvent.addWatcher({
          } else if (path.endsWith(".trace")) {
            targetPath= "/data/storage/el2/base/mainThreadJank.trace";
          }
-         fileIo.copyFileSync(path.toString(), targetPath.toString());
+         try {
+           fileIo.copyFileSync(path.toString(), targetPath.toString());
+         } catch (e) {
+           hilog.error(0x0000, 'testTag', `copy file failed: ${e}`);
+         }
        }
      }
    }

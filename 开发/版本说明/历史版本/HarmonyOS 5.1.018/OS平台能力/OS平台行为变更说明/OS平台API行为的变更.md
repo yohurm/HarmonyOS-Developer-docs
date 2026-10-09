@@ -348,8 +348,7 @@ CanvasRenderingContext2D绘制路径时，若存在方法的number类型参数�
 | setTransform | 绘制方法的number类型参数传入NaN或Infinity值，在该方法后执行的绘制方法无法绘制。 | number类型参数传入NaN或Infinity值参数时该方法不生效。其他传入有效参数的绘制方法正常绘制。 |
 | translate | 绘制方法的number类型参数传入NaN或Infinity值，在该方法后执行的绘制方法无法绘制。 | number类型参数传入NaN或Infinity值参数时该方法不生效。其他传入有效参数的绘制方法正常绘制。 |
 | lineDashOffset | 设置了虚线样式的线条绘制出来是实线。 | 设置了虚线样式的线条绘制出来是虚线。 |
- 
-  
+
 | 示例 | 变更前 | 变更后 |
 | --- | --- | --- |
 | context.moveTo(100, 100) context.lineTo(NaN, 100) context.lineTo(200, 200) context.stroke() | 无绘制内容 |  |
@@ -468,7 +467,6 @@ blendMode离屏模式与不透明度属性（opacity）同时使用时，组件�
   
 | 变更前 | 变更后 |
 | --- | --- |
-|  |  |
  
  
 **起始API Level**

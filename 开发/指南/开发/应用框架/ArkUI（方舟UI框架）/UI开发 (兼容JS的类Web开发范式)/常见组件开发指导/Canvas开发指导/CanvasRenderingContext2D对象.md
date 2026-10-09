@@ -1,6 +1,6 @@
 # CanvasRenderingContext2D对象
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-components-canvasrenderingcontext2d
 
@@ -413,7 +413,6 @@ export default {
             this.ctx.fillStyle = gradient;
             this.ctx.fillRect(100, 100, 400, 300);
         } else if (e.newValue == 'value4') {
-            this.ctx.clearRect(0, 0, 600, 500);
             this.ctx.clearRect(0, 0, 600, 500);
             let gradient = this.ctx.createRadialGradient(300, 250, 20, 300, 250, 200);
             gradient.addColorStop(0.0, 'red');
@@ -844,4 +843,4 @@ export default {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/0qwvq7EDSxqi7jS8fBVwrQ/zh-cn_image_0000002717610824.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073133Z&HW-CC-Expire=86400&HW-CC-Sign=9AAB5C73B733F8625339947F19CF246B1B276F351BCE2E09C82AEF084D744D32)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/e1ITWYqTTZmaiAkxVKPb3g/zh-cn_image_0000002749492634.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013115Z&HW-CC-Expire=86400&HW-CC-Sign=93E6A9E0A253C24A22203A1A4C645C45CAB522898BFEB0B4205EA8177672AA2B)

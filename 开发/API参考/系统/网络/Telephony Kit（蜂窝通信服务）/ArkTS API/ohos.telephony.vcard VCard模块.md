@@ -1,9 +1,9 @@
 # @ohos.telephony.vcard (VCard模块)
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-vcard
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
+**支持设备：** Phone | Tablet | Wearable
 
 VCard是电子名片的文件格式标准，它可包含的信息有：姓名、地址资讯、电话号码、URL、logo、相片等。VCard模块提供了VCard能力，包括将VCard文件导入联系人数据库和将联系人数据导出为VCard文件等。
 
@@ -15,7 +15,7 @@ VCard是电子名片的文件格式标准，它可包含的信息有：姓名、
 ## 导入模块
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
+**支持设备：** Phone | Tablet | Wearable
 
 ```text
 import { vcard } from '@kit.TelephonyKit';
@@ -26,7 +26,7 @@ import { vcard } from '@kit.TelephonyKit';
 ## vcard.importVCard
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
+**支持设备：** Phone | Tablet | Wearable
 
 importVCard(context: Context, filePath: string, accountId: number, callback: AsyncCallback&lt;void&gt;): void
 
@@ -85,7 +85,7 @@ class EntryAbility extends UIAbility {
 ## vcard.importVCard
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
+**支持设备：** Phone | Tablet | Wearable
 
 importVCard(context: Context, filePath: string, accountId?: number): Promise&lt;void&gt;
 
@@ -153,7 +153,7 @@ class EntryAbility extends UIAbility {
 ## vcard.importVCard
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
+**支持设备：** Phone | Tablet | Wearable
 
 importVCard(context: Context, filePath: string, callback: AsyncCallback&lt;void&gt;): void
 
@@ -210,7 +210,7 @@ class EntryAbility extends UIAbility {
 ## vcard.exportVCard
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
+**支持设备：** Phone | Tablet | Wearable
 
 exportVCard(context: Context, predicates: dataSharePredicates.DataSharePredicates, options: VCardBuilderOptions, callback: AsyncCallback&lt;string&gt;): void
 
@@ -274,7 +274,7 @@ class EntryAbility extends UIAbility {
 ## vcard.exportVCard
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
+**支持设备：** Phone | Tablet | Wearable
 
 exportVCard(context: Context, predicates: dataSharePredicates.DataSharePredicates, options?: VCardBuilderOptions): Promise&lt;string&gt;
 
@@ -347,7 +347,7 @@ class EntryAbility extends UIAbility {
 ## vcard.exportVCard
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
+**支持设备：** Phone | Tablet | Wearable
 
 exportVCard(context: Context, predicates: dataSharePredicates.DataSharePredicates, callback: AsyncCallback&lt;string&gt;): void
 
@@ -407,7 +407,7 @@ class EntryAbility extends UIAbility {
 ## VCardBuilderOptions
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
+**支持设备：** Phone | Tablet | Wearable
 
 VCard版本和编码信息。
 
@@ -425,7 +425,7 @@ VCard版本和编码信息。
 ## VCardType
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
+**支持设备：** Phone | Tablet | Wearable
 
 VCard版本类型。
 

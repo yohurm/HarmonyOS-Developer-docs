@@ -1,6 +1,6 @@
 # RichEditor
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richeditor
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -244,9 +244,7 @@ dataDetectorConfig(config: TextDataDetectorConfig)
 需配合[enableDataDetector](#enabledatadetector11)一起使用，设置enableDataDetector为true时，dataDetectorConfig的配置才能生效。
 
 当有两个实体A、B重叠时，按以下规则保留实体：
-
 1. 若A ⊂ B，则保留B，反之则保留A。
-
 2. 当A ⊄ B且B ⊄ A时，若A.start < B.start，则保留A，反之则保留B。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
@@ -1386,7 +1384,7 @@ onWillAttachIME(callback: Callback&lt;IMEClient&gt; | undefined)
 | --- | --- | --- | --- | --- |
 | offset | number | 否 | 否 | 删除内容的偏移位置。 |
 | direction | RichEditorDeleteDirection | 否 | 否 | 删除操作的方向。 |
-| length | number | 否 | 否 | 删除内容长度。 |
+| length | number | 否 | 否 | 删除内容长度，删除范围为[offset, offset + length)，结束位置对应的内容不包含在内。 |
 | richEditorDeleteSpans | Array<RichEditorTextSpanResult \| RichEditorImageSpanResult> | 否 | 否 | 删除的文本或图片Span的信息。 |
 
 
@@ -1427,7 +1425,7 @@ onWillAttachIME(callback: Callback&lt;IMEClient&gt; | undefined)
 | spanPosition | RichEditorSpanPosition | 否 | 否 | Span位置。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | value | string | 否 | 否 | 文本Span内容或Symbol的id。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | textStyle | RichEditorTextStyleResult | 否 | 否 | 文本Span样式信息。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
-| offsetInSpan | [number, number] | 否 | 否 | 文本Span内容里有效内容的起始和结束位置。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| offsetInSpan | [number, number] | 否 | 否 | 文本Span内容里有效内容的起始和结束位置，取值范围为[起始位置, 结束位置)，结束位置对应的内容不包含在内。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | valueResource11+ | Resource | 否 | 是 | SymbolSpan资源内容。 默认值：undefined。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | symbolSpanStyle11+ | RichEditorSymbolSpanStyle | 否 | 是 | 组件SymbolSpan样式信息。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | paragraphStyle12+ | RichEditorParagraphStyle | 否 | 是 | 段落样式。 省略时，使用系统默认段落样式。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
@@ -1452,7 +1450,7 @@ Span位置信息。
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | spanIndex | number | 否 | 否 | Span索引值。 |
-| spanRange | [number, number] | 否 | 否 | Span内容在RichEditor内的起始和结束位置。 |
+| spanRange | [number, number] | 否 | 否 | Span内容在RichEditor内的起始和结束位置，取值范围为[起始位置, 结束位置)，结束位置对应的Span不包含在内。 |
 
 
 
@@ -1618,7 +1616,7 @@ RichEditorSymbolSpanStyle和RichEditorSymbolSpanStyleResult中fontWeight的转�
 | valuePixelMap | PixelMap | 否 | 是 | 图片内容。 |
 | valueResourceStr | ResourceStr | 否 | 是 | 图片资源id。 |
 | imageStyle | RichEditorImageSpanStyleResult | 否 | 否 | 图片样式。 |
-| offsetInSpan | [number, number] | 否 | 否 | Span里图片的起始和结束位置。 |
+| offsetInSpan | [number, number] | 否 | 否 | Span里图片的起始和结束位置，取值范围为[起始位置, 结束位置)，结束位置对应的内容不包含在内。 |
 
 
 
@@ -1906,7 +1904,7 @@ selectionStart和selectionEnd均为-1时表示全选，均为0时可以清空选
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | selectionStart | number | 是 | 选中开始位置。 |
-| selectionEnd | number | 是 | 选中结束位置。 |
+| selectionEnd | number | 是 | 选中结束位置，选中范围为[selectionStart, selectionEnd)，结束位置对应的内容不包含在内。 |
 | options12+ | SelectionOptions | 否 | 选择项配置，用于控制选中操作时的菜单弹出策略。 当需要自定义菜单弹出行为（如强制显示或隐藏菜单）时传入此参数； 省略时默认使用MenuPolicy.DEFAULT，遵循系统默认菜单弹出策略。 各MenuPolicy取值的适用场景请参考SelectionOptions对象说明。 |
 
 
@@ -2624,7 +2622,7 @@ onContentChanged(listener: StyledStringChangedListener): void
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| selection | [number, number] | 否 | 否 | 选中范围。 |
+| selection | [number, number] | 否 | 否 | 选中范围，取值范围为[起始位置, 结束位置)，结束位置对应的内容不包含在内。 |
 | spans | Array<RichEditorTextSpanResult \| RichEditorImageSpanResult> | 否 | 否 | span信息。 |
 
 
@@ -2645,7 +2643,7 @@ onContentChanged(listener: StyledStringChangedListener): void
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | start | number | 否 | 是 | 文本的起始位置，省略或者设置负值时表示从0开始。 |
-| end | number | 否 | 是 | 文本的结束位置，省略或者超出文本范围时表示无穷大。 |
+| end | number | 否 | 是 | 文本的结束位置，与start共同表示选中文本的范围[start, end)，结束位置对应的内容不包含在内，省略或者超出文本范围时表示无穷大。 |
 
 
 
@@ -2809,7 +2807,7 @@ SymbolSpan样式选项。
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | style | RichEditorParagraphStyle | 否 | 否 | 段落样式。 |
-| range | [number, number] | 否 | 否 | 段落起始和结束位置。 |
+| range | [number, number] | 否 | 否 | 段落起始和结束位置，取值范围为[起始位置, 结束位置)，结束位置对应的内容不包含在内。 |
 
 
 
@@ -2856,7 +2854,7 @@ SymbolSpan样式选项。
 | textShadow11+ | ShadowOptions \| Array&lt;ShadowOptions&gt; | 否 | 是 | 设置文字阴影效果。 默认值：undefined，不设置文字阴影效果。 该接口支持以数组形式入参，实现多重文字阴影。 说明： 仅支持设置阴影模糊半径、颜色和偏移量，不支持智能取色。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | lineHeight12+ | number \| string \| Resource | 否 | 是 | 设置文本的文本行高。 默认值：不设置时自适应字体大小。 number类型取值范围：(0, +∞)，设置值不大于0时，不限制文本行高，自适应字体大小。number类型时单位为fp，不支持设置百分比字符串。当lineHeight设置值小于当前字号下文本渲染出的实际高度时，fallbackLineSpacing属性将生效。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | letterSpacing12+ | number \| string | 否 | 是 | 设置文本字符间距，默认单位为fp。默认值：0。当取值为负值时，文字会发生压缩。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| fontFeature12+ | string | 否 | 是 | 设置文字特性效果，比如数字等宽的特性。如果未设置，默认为变宽数字。设置无效字符保持默认。 格式为：normal \| <feature-tag-value> <feature-tag-value>的格式为：&lt;string&gt; [ &lt;integer&gt; \| on \| off ] <feature-tag-value>的个数可以有多个，中间用','隔开。 例如，使用等宽时钟数字的输入格式为："ss01" on。 Font Feature当前支持的属性见fontFeature属性列表。 设置 Font Feature 属性，Font Feature 是 OpenType 字体的高级排版能力，如支持连字、数字等宽等特性，一般用在自定义字体中，其能力需要字体本身支持。 更多 Font Feature 能力介绍可参考 https://www.w3.org/TR/css-fonts-3/#font-feature-settings-prop 和 https://sparanoid.com/lab/opentype-features/ 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| fontFeature12+ | string | 否 | 是 | 设置文字特性效果，比如数字等宽的特性。如果未设置，默认为变宽数字。设置无效字符保持默认。 格式为：normal \| <feature-tag-value> <feature-tag-value>的格式为：&lt;string&gt; [ &lt;integer&gt; \| on \| off ] <feature-tag-value>的个数可以有多个，中间用','隔开。 例如，使用等宽时钟数字的输入格式为："ss01" on。 Font Feature当前支持的属性见fontFeature属性列表。 设置Font Feature属性，Font Feature是OpenType字体的高级排版能力，如支持连字、数字等宽等特性，一般用在自定义字体中，其能力需要字体本身支持。 更多Font Feature能力介绍可参考font-feature-settings property和OpenType Features。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | halfLeading18+ | boolean | 否 | 是 | 文本是否将行间距平分至行的顶部与底部。 true表示将行间距平分至行的顶部与底部，false则不平分。 默认值：false。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
 | textBackgroundStyle18+ | TextBackgroundStyle | 否 | 是 | 文本背景样式。 默认值： { color: Color.Transparent, radius: 0 } 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
 | strokeWidth23+ | LengthMetrics \| number | 否 | 是 | 文本描边宽度。如果LengthMetrics的unit值是PERCENT，当前设置不生效，作为0处理。 值小于0时为实体字，大于0时为轮廓字，等于0时无描边效果。 默认值：0。 单位：LengthMetrics类型时跟随LengthMetrics，number类型时是vp。 取值范围：(-∞, +∞) 与shaderStyle同时设置时，shaderStyle不生效。 元服务API： 从API version 23开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
@@ -3189,7 +3187,7 @@ type MenuOnAppearCallback = (start: number, end: number) => void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | start | number | 是 | 选中内容的起始位置。 |
-| end | number | 是 | 选中内容的终止位置。 |
+| end | number | 是 | 选中内容的终止位置，选中范围为[start, end)，结束位置对应的内容不包含在内。 |
 
 
 
@@ -3213,7 +3211,7 @@ type MenuCallback = (start: number, end: number) => void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | start | number | 是 | 选中内容的起始位置。 |
-| end | number | 是 | 选中内容的终止位置。 |
+| end | number | 是 | 选中内容的终止位置，选中范围为[start, end)，结束位置对应的内容不包含在内。 |
 
 
 

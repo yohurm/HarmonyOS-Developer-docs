@@ -1,16 +1,16 @@
 # Account Kit Skill能力开放
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-skill
 
-#### 概述
+## 概述
 
 Account Kit接入Skills，旨在帮助开发者快速集成Account Kit开放能力。开放Skills包含客户端与服务端两部分，可自动生成客户端页面代码与服务端接口工程，支持端到端验证，有效简化接入流程、降低开发成本。
  
   
 
-#### 能力覆盖范围
+### 能力覆盖范围
 
 - **华为账号一键登录Skill**：帮助开发者快速接入华为账号一键登录能力。其中：
 [客户端Skill](https://matrix.openharmony.cn/#/skillSquare/details?id=6a215e9b8428f219b71f84a2)负责生成 ArkTS 华为账号一键登录页面、配置工程依赖与添加权限，并实现页面跳转逻辑。
@@ -20,7 +20,7 @@ Account Kit接入Skills，旨在帮助开发者快速集成Account Kit开放能�
  
   
 
-#### 快速开始
+## 快速开始
 1. 下载并配置Skill：请在[能力覆盖范围](#能力覆盖范围)章节中点击对应Skill的超链接进行下载，并放到AI编码工具（如OpenCode、Claude Code等）的Skill配置目录下（不同工具规范不一致，按工具要求处理）。
 2. 配置MCP（服务端Skill无需此项配置）：在AI编码工具的配置文件中（不同工具配置文件名称不一致，按工具要求处理）添加如下deveco-mcp配置项，更多详情请参考[DevEco Toolbox](https://github.com/open-deveco/deveco-toolbox)。
  
@@ -51,23 +51,24 @@ Account Kit接入Skills，旨在帮助开发者快速集成Account Kit开放能�
  
   
 
-#### 使用方式
+## 使用方式
 
 在AI编码工具中通过关键词或Skill名称触发，以华为账号一键登录客户端Skill为例
  
 **关键词触发**：帮我接入华为账号一键登录
  
-**Skill名称强制触发**：使用"huawei-account-kit-quicklogin-client" Skill，帮我接入华为账号一键登录
+**Skill名称强制触发**：使用"hmos-account-kit-quicklogin-client" Skill，帮我接入华为账号一键登录
   
+
 | 技能 | Skill名称 | 关键词 |
 | --- | --- | --- |
 | 华为账号一键登录客户端Skill | hmos-account-kit-quicklogin-client | 帮我接入华为账号一键登录 |
-| 华为账号一键登录服务端Skill | hmos-account-kit-quicklogin-server | 帮我生成华为账号一键登录服务端java代码 |
+| 华为账号一键登录服务端Skill | huawei-account-kit-quicklogin-server | 帮我生成华为账号一键登录服务端java代码 |
  
  
   
 
-#### 注意事项
+## 注意事项
 
 - 客户端Skill生成的代码需在ArkTS工程中运行，当前仅支持ArkTS开发框架。
 - 请务必在集成发布前，在测试环境中充分验证所生成代码的正确性与安全性。
@@ -76,7 +77,7 @@ Account Kit接入Skills，旨在帮助开发者快速集成Account Kit开放能�
  
   
 
-#### 免责声明
+## 免责声明
 
 为保障平台及开发者双方的合法权益，特此声明如下：
  

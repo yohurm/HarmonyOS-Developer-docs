@@ -1,6 +1,6 @@
-# Local Test
+# 本地测试（Local Test）
 
-更新时间：2026-08-29 09:41:34
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-local-test
 
@@ -41,11 +41,13 @@
 
   可以采用运行工程目录（test）、测试文件（如Index.test.ets）、测试套件（describe）、测试方法（it）的方式来执行Local Test，各级别测试执行入口如下。
 
-|  |  |
+| ![](assets/Local Test/file-20260514133037800-12.png) | ![](assets/Local Test/file-20260514133037800-13.png) |
+
+| --- | --- |
 
 | 目录级 | 文件级 |
 
-|  |  |
+| ![](assets/Local Test/file-20260514133037800-14.png) | ![](assets/Local Test/file-20260514133037800-15.png) |
 
 | 套件级 | 方法级 |
 
@@ -87,8 +89,8 @@
 ![](assets/Local%20Test/file-20260514133037800-5.png)
 
  
-
  
+
 断点命中时，在代码编辑器窗口单击右键，在弹出的菜单中将出现调试模式特有功能，如计算表达式、添加变量监视等。
  
 
@@ -116,31 +118,31 @@
 
 
  
-
  
+
 - 方式二：在DevEco Studio的右上角，选择测试任务，然后单击右侧的![icon](assets/Local%20Test/file-20260514133037800-9.png)按钮，执行测试。
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/YgYUIvwsQgu9auDsHFebxQ/zh-cn_image_0000002731383045.png?HW-CC-KV=V1&HW-CC-Date=20260911T072816Z&HW-CC-Expire=86400&HW-CC-Sign=4347D7FB02A44D3C9350923012A63AF71D0B180D8F76159F9A1B4CFBBB1EE930)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/WnIGbmSpQb6r62XZBYg5dA/zh-cn_image_0000002731383045.png?HW-CC-KV=V1&HW-CC-Date=20261009T012816Z&HW-CC-Expire=86400&HW-CC-Sign=9D75E514CD4EAFEBF543744C2420BD083840D45F86BDDD34F4DA206DF6D22B19)
 
 
  
 启动测试后，进行编译构建，底部将出现Cover窗口，构建结束后自动拉起Cover窗口，测试任务结束后，窗口中会打印测试报告的路径。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/SfqvRNUBRlaTlK0iPRJmYg/zh-cn_image_0000002731543003.png?HW-CC-KV=V1&HW-CC-Date=20260911T072816Z&HW-CC-Expire=86400&HW-CC-Sign=1D804F281F8FE1332E27D85DD410D13C0FD8B6268C0E97CD019C666B212748DD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/FHswGnMQTBGGlWJkdk8M_Q/zh-cn_image_0000002731543003.png?HW-CC-KV=V1&HW-CC-Date=20261009T012816Z&HW-CC-Expire=86400&HW-CC-Sign=2BEE507EAD2813408E0CBF46DDDD2BBC42773BACE6E1C3770C7E43614BEF328D)
 
  
-
  
+
 点击链接可打开报告，查看代码覆盖率详情，关于覆盖率的计算方式请参考[查看覆盖率报告](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ui-test#section10394362109)。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/zAlmk_3gQ1SIv1rU-IK1rA/zh-cn_image_0000002731543007.png?HW-CC-KV=V1&HW-CC-Date=20260911T072816Z&HW-CC-Expire=86400&HW-CC-Sign=AEF29CB674791BE8D6E7D5EB4B5EB75AF12D3A8BF3ACCD9F7E119966A4764E3B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/7tRZ_RMvR7-mq6uSgnCrag/zh-cn_image_0000002731543007.png?HW-CC-KV=V1&HW-CC-Date=20261009T012816Z&HW-CC-Expire=86400&HW-CC-Sign=F7F908616625A9060F4FFA97C92B9019BE3EAB48A8984CD887BEFF242F32165A)
 
  
 在Cover窗口中，单击rerun按钮可以按照之前的设置，重新执行覆盖率用例。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/uuzuA0AqSiS29NEPv3j_fw/zh-cn_image_0000002701823752.png?HW-CC-KV=V1&HW-CC-Date=20260911T072816Z&HW-CC-Expire=86400&HW-CC-Sign=598AC1013FC48775484750A53552F9AA5F8A79DABC439FD4D5BA314B3B43F2B1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/Q-Oa0iDnTTudyzPW8HpQzw/zh-cn_image_0000002701823752.png?HW-CC-KV=V1&HW-CC-Date=20261009T012816Z&HW-CC-Expire=86400&HW-CC-Sign=AE00CE727DD466C7BFBDA6B84A5282B86655E1F256599C73190C5EAB72629B72)
 
  
  
@@ -152,12 +154,12 @@
 2. 在**Run/Debug Configurations**界面，单击**+**按钮，在弹出的下拉菜单中，单击**Local Test**。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/oiTk4goiSoOyd_Ckmn17gA/zh-cn_image_0000002701663802.png?HW-CC-KV=V1&HW-CC-Date=20260911T072816Z&HW-CC-Expire=86400&HW-CC-Sign=C6365B886FAFA69EFDB50B2C6A86ED621B80EABB42226997FEED4AA8AE76294C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/oFjQfpo0SXqyyHUWY4VvEw/zh-cn_image_0000002701663802.png?HW-CC-KV=V1&HW-CC-Date=20261009T012816Z&HW-CC-Expire=86400&HW-CC-Sign=50E7CE962DCFAA8C7FFB4F3387C652D099CDCA6DA33F0EF2C92B1EC8358ECD6C)
 
 3. 根据实际情况，配置Local Test的运行参数。 然后单击**OK**，完成配置。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/kEHcdEQYTSSLFRxR-OiyeA/zh-cn_image_0000002701823734.png?HW-CC-KV=V1&HW-CC-Date=20260911T072816Z&HW-CC-Expire=86400&HW-CC-Sign=14E6782F22BC7C1AB34171A3B42C5CDE115638BF61453993756BAB2D0EA1C752)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/zvSx-ArcRAuKRYaO8-pEdg/zh-cn_image_0000002701823734.png?HW-CC-KV=V1&HW-CC-Date=20261009T012816Z&HW-CC-Expire=86400&HW-CC-Sign=7D430C099B49B5DFE08FF5752E6CF9BAEE7F60B6C8988669F92DC56B0BE2DD5D)
 
  
  

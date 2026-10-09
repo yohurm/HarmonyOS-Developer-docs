@@ -1,6 +1,6 @@
 # Interface (CameraManager)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-cameramanager
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -1039,7 +1039,7 @@ isTorchSupported(): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 表示设备是否支持手电筒，true表示设备支持手电筒，false表示设备不支持手电。 如果返回false，则isTorchModeSupported、getTorchMode、setTorchMode、isTorchLevelControlSupported和setTorchModeOnWithLevel都不会生效。 若接口调用失败，返回undefined。 |
+| boolean | 表示设备是否支持手电筒，true表示设备支持手电筒，false表示设备不支持手电筒。 如果返回false，则isTorchModeSupported、getTorchMode、setTorchMode、isTorchLevelControlSupported和setTorchModeOnWithLevel都不会生效。 若接口调用失败，返回undefined。 |
 
 
 **示例：**

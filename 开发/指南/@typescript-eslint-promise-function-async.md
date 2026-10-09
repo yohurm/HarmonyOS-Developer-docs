@@ -1,0 +1,76 @@
+# @typescript-eslint/promise-function-async
+
+更新时间：2026-10-08 09:38:49
+
+来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-promise-function-async
+
+要求任何返回Promise的函数或方法标记为async。
+ 
+ 
+
+
+## 规则配置
+
+```json
+// code-linter.json5
+{
+  <span style="color: rgb(135,16,148);">"rules"</span>: {
+    "@typescript-eslint/promise-function-async": "error"
+  }
+}
+```
+ 
+ 
+
+## 选项
+
+详情请参考[@typescript-eslint/promise-function-async选项](https://typescript-eslint.nodejs.cn/rules/promise-function-async/#options)。
+ 
+ 
+
+## 正例
+
+```text
+export const arrowFunctionReturnsPromise = async () => Promise.resolve('value');
+
+export async function functionReturnsPromise() {
+  return Promise.resolve('value');
+}
+
+// An explicit return type that is not Promise means this function cannot be made async, so it is ignored by the rule
+export function functionReturnsUnionWithPromiseExplicitly(
+  p: boolean
+): string | Promise<string> {
+  return p ? 'value' : Promise.resolve('value');
+}
+
+export async function functionReturnsUnionWithPromiseImplicitly(p: boolean) {
+  return p ? 'value' : Promise.resolve('value');
+}
+```
+ 
+ 
+
+## 反例
+
+```text
+export const arrowFunctionReturnsPromise = () => Promise.resolve('value');
+
+export function functionReturnsPromise() {
+  return Promise.resolve('value');
+}
+
+export function functionReturnsUnionWithPromiseImplicitly(p: boolean) {
+  return p ? 'value' : Promise.resolve('value');
+}
+```
+ 
+ 
+
+## 规则集
+
+```text
+<span style="color: rgb(6,125,23);">plugin:@typescript-eslint/all</span>
+```
+ 
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-code-linter)。

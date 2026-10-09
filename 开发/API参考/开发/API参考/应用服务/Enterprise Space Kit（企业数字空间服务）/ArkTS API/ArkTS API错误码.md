@@ -1,6 +1,6 @@
 # ArkTS API错误码
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-space
 **支持设备：** PC/2in1
@@ -10,7 +10,8 @@
 
   
 
-#### 1020300001 系统服务异常
+## 1020300001 系统服务异常
+
 
 **支持设备：** PC/2in1
 
@@ -20,7 +21,7 @@ System service exception.
  
 **错误描述**
  
-系统服务异常。
+空间互传系统服务异常。
  
 **可能原因**
  
@@ -32,7 +33,8 @@ System service exception.
  
   
 
-#### 1020300002 请求参数无效
+## 1020300002 请求参数无效
+
 
 **支持设备：** PC/2in1
 
@@ -42,7 +44,7 @@ Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 
  
 **错误描述**
  
-请求参数无效。
+空间互传请求参数无效。
  
 **可能原因**
  
@@ -54,7 +56,8 @@ Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 
  
   
 
-#### 1020400001 系统服务异常
+## 1020400001 系统服务异常
+
 
 **支持设备：** PC/2in1
 
@@ -64,7 +67,7 @@ System service exception.
  
 **错误描述**
  
-系统服务异常。
+空间管理系统服务异常。
  
 **可能原因**
  
@@ -76,7 +79,8 @@ System service exception.
  
   
 
-#### 1020400002 请求参数无效
+## 1020400002 请求参数无效
+
 
 **支持设备：** PC/2in1
 
@@ -86,7 +90,7 @@ Parameter error.
  
 **错误描述**
  
-请求参数无效。
+空间管理请求参数无效。
  
 **可能原因**
  
@@ -98,7 +102,8 @@ Parameter error.
  
   
 
-#### 1020400003 工作空间无效
+## 1020400003 工作空间无效
+
 
 **支持设备：** PC/2in1
 
@@ -125,7 +130,8 @@ Invalid workspace.
  
   
 
-#### 1020400004 企业认证失败
+## 1020400004 企业认证失败
+
 
 **支持设备：** PC/2in1
 
@@ -148,7 +154,8 @@ Authentication failed.
  
   
 
-#### 1020400005 配置信息未设置
+## 1020400005 配置信息未设置
+
 
 **支持设备：** PC/2in1
 
@@ -172,7 +179,8 @@ Configuration not set.
  
   
 
-#### 1020400006 SA进程异常退出，导致连接中断
+## 1020400006 SA进程异常退出，导致连接中断
+
 
 **支持设备：** PC/2in1
 
@@ -194,7 +202,8 @@ SA进程异常退出，导致连接中断。
  
   
 
-#### 1020400007 企业空间未开启
+## 1020400007 企业空间未开启
+
 
 **支持设备：** PC/2in1
 
@@ -216,7 +225,8 @@ Enterprise workspace not enabled.
  
   
 
-#### 1020400008 账号名或密码无效
+## 1020400008 账号名或密码无效
+
 
 **支持设备：** PC/2in1
 
@@ -238,7 +248,8 @@ Invalid account name or password.
  
   
 
-#### 1020400009 企业账号已锁定
+## 1020400009 企业账号已锁定
+
 
 **支持设备：** PC/2in1
 
@@ -260,7 +271,8 @@ The account is locked.
  
   
 
-#### 1020400010 企业认证服务器不可达
+## 1020400010 企业认证服务器不可达
+
 
 **支持设备：** PC/2in1
 
@@ -282,7 +294,8 @@ Enterprise authentication server unreachable.
  
   
 
-#### 1020400011 禁止创建账号
+## 1020400011 禁止创建账号
+
 
 **支持设备：** PC/2in1
 
@@ -304,7 +317,8 @@ Account creation is not permitted.
  
   
 
-#### 1020400012 全盘加密未开启
+## 1020400012 全盘加密未开启
+
 
 **支持设备：** PC/2in1
 
@@ -326,7 +340,8 @@ Full disk encryption is not enabled.
  
   
 
-#### 1020400014 跨空间消息提醒配置超限
+## 1020400014 跨空间消息提醒配置超限
+
 
 **支持设备：** PC/2in1
 

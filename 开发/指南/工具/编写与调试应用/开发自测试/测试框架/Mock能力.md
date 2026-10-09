@@ -1,6 +1,6 @@
 # Mock能力
 
-更新时间：2026-04-20 06:32:02
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-test-mock
 
@@ -11,7 +11,7 @@
 
  
 
-#### 系统模块/依赖模块Mock
+## 系统模块/依赖模块Mock
 
 通过import mock对系统模块API或依赖模块的方法进行Mock，在mock-config.json5配置文件中定义目标模块和Mock实现代码文件的映射关系，运行时import目标模块都将指向Mock实现代码。以系统API bluetoothManager为例，具体实现如下。
  1. 在src/mock目录下新建一个ArkTS文件，例如bluetooth_manager.mock.ets，在这个文件内定义目标模块的Mock实现。
@@ -72,24 +72,24 @@ export default function mock_system_api() {
 
 4. 如果测试文件是手动创建的，需要将用例类mock_system_api添加到List.test.ets文件中。
 ```text
-import mock_system_api from './bluetoothManager.test';
+import mock_system_api from <span style="color: rgb(255,0,170);">'./bluetoothManager.test'</span><span style="color: rgb(181,106,1);">;</span>
 
-export default function testsuite() {
-  mock_system_api();
-}
+export default function <span style="color: rgb(0,0,255);">testsuite</span><span style="color: rgb(0,0,255);">() </span><span style="color: rgb(255,0,170);">{</span>
+  mock_system_api<span style="color: rgb(0,0,255);">()</span><span style="color: rgb(181,106,1);">;</span>
+<span style="color: rgb(255,0,170);">}</span>
 ```
 
 5. 执行测试，用例通过。
  
  
 
-#### 本地模块Mock
+## 本地模块Mock
 
 有两种方式可以对本地模块进行Mock，一是使用hamock/hypium插件包的mock接口，二是使用import mock。
  
  
 
-#### 使用hamock/hypium插件包的mock接口
+### 使用hamock/hypium插件包的mock接口
 
 以下例子通过mock接口模拟本地模块的某个方法，关于Mock的更多说明可以参考[mock能力](https://gitcode.com/openharmony/testfwk_arkxtest#mock能力)。
  1. 在src/main/ets目录下新建一个ArkTS文件，例如ClassForMock.ets，并在其中导出一个类。
@@ -134,68 +134,68 @@ export default function afterReturnTest() {
 
 3. 如果测试文件是手动创建的，需要将用例类afterReturnTest添加到List.test.ets文件中。
 ```text
-import afterReturnTest from './afterReturnTest.test';
+import afterReturnTest from <span style="color: rgb(255,0,170);">'./afterReturnTest.test'</span><span style="color: rgb(181,106,1);">;</span>
 
-export default function testsuite() {
-  afterReturnTest();
-}
+export default function <span style="color: rgb(0,0,255);">testsuite</span><span style="color: rgb(0,0,255);">() </span><span style="color: rgb(255,0,170);">{</span>
+  afterReturnTest<span style="color: rgb(0,0,255);">()</span><span style="color: rgb(181,106,1);">;</span>
+<span style="color: rgb(255,0,170);">}</span>
 ```
 
 4. 执行测试，用例通过。
  
  
 
-#### 使用import mock
+### 使用import mock
 
 使用import mock对本地模块进行Mock，操作步骤和系统模块/依赖模块的Mock类似，在mock-config.json5配置文件中定义目标模块和Mock实现代码文件的映射关系，运行时import目标模块都将指向Mock实现代码。以下例子对本地模块entry/src/main/ets/common/calc.ets中的sum函数进行Mock。
  1. 在src/mock目录下新建一个common目录并创建一个ArkTS文件，例如calc.mock.ets，在这个文件内定义目标模块的Mock实现。
 ```ArkTS
 // src/mock/common/calc.mock.ets
-export function sum() {
-  return "this is mock sum";
-}
+export function <span style="color: rgb(0,0,255);">sum</span><span style="color: rgb(255,0,170);">() </span><span style="color: rgb(181,106,1);">{</span>
+  return <span style="color: rgb(132,63,161);">"this is mock sum"</span><span style="color: rgb(181,106,1);">;</span>
+<span style="color: rgb(181,106,1);">}</span>
 ```
  calc.ets的原始实现如下：
 
   
 ```ArkTS
 // src/main/ets/common/calc.ets
-export function sum() {
-  return 1;
-}
+export function <span style="color: rgb(0,0,255);">sum</span><span style="color: rgb(255,0,170);">() </span><span style="color: rgb(181,106,1);">{</span>
+  return <span style="color: rgb(80,160,79);">1</span><span style="color: rgb(181,106,1);">;</span>
+<span style="color: rgb(181,106,1);">}</span>
 ```
 
 2. 在Mock配置文件src/mock/mock-config.json5中定义目标模块与Mock实现的映射关系。
 ```ArkTS
 {
-  "common/calc.ets": { // 本地模块只支持ets/xxx的相对路径，并需明确文件后缀
-    "source": "src/mock/common/calc.mock.ets"  // Mock代码的路径，相对于模块根目录
-  },
+<span style="color: rgb(132,63,161);">  "common/calc.ets"</span><span style="color: rgb(181,106,1);">: </span>{ // 本地模块只支持ets/xxx的相对路径，并需明确文件后缀
+    <span style="color: rgb(132,63,161);">"source"</span><span style="color: rgb(181,106,1);">: </span><span style="color: rgb(80,160,79);">"src/mock/common/calc.mock.ets"</span>  // Mock代码的路径，相对于模块根目录
+  }<span style="color: rgb(181,106,1);">,</span>
 }
 ```
 
 3. 在测试文件中编写如下代码。
 ```ArkTS
-// test_mock_local_method.test.ets
-import { describe, it, expect } from '@ohos/hypium'
-import { sum } from '../../../main/ets/common/calc';
+// <span style="color: rgb(0,0,255);">test_mock_local_method</span>.test.ets
+import <span style="color: rgb(255,0,170);">{ </span><span style="color: rgb(0,0,255);">describe</span><span style="color: rgb(181,106,1);">, </span><span style="color: rgb(0,0,255);">it</span><span style="color: rgb(181,106,1);">, </span><span style="color: rgb(0,0,255);">expect </span><span style="color: rgb(255,0,170);">} </span>from <span style="color: rgb(255,0,170);">'@ohos/hypium'</span>
+import <span style="color: rgb(181,106,1);">{ </span><span style="color: rgb(255,255,255);">sum </span><span style="color: rgb(181,106,1);">} </span>from <span style="color: rgb(132,63,161);">'../../../main/ets/common/calc'</span><span style="color: rgb(181,106,1);">;</span>
 
-export default function test_mock_local_method() {
-  describe('test_mock_local_method', () => {
-    it("test_mock_local_method", 0, () => {
-      expect(sum()).assertEqual("this is mock sum")
-    })
-  })
-}
+export default function <span style="color: rgb(0,0,255);">test_mock_local_method</span><span style="color: rgb(0,0,255);">() </span><span style="color: rgb(255,0,170);">{</span>
+  <span style="color: rgb(0,0,255);">describe</span><span style="color: rgb(0,0,255);">(</span><span style="color: rgb(255,0,170);">'test_mock_local_method'</span><span style="color: rgb(181,106,1);">, </span><span style="color: rgb(0,0,255);">() </span><span style="color: rgb(181,106,1);">=</span><span style="color: rgb(181,106,1);">></span> <span style="color: rgb(255,0,170);">{</span>
+    <span style="color: rgb(0,0,255);">it</span><span style="color: rgb(0,0,255);">(</span><span style="color: rgb(255,0,170);">"test_mock_local_method"</span><span style="color: rgb(181,106,1);">, </span><span style="color: rgb(255,0,0);">0</span><span style="color: rgb(181,106,1);">, </span><span style="color: rgb(0,0,255);">() </span><span style="color: rgb(181,106,1);">=</span><span style="color: rgb(181,106,1);">></span> <span style="color: rgb(255,0,170);">{</span>
+      <span style="color: rgb(0,0,255);">expect</span><span style="color: rgb(0,0,255);">(</span><span style="color: rgb(0,0,255);">sum</span><span style="color: rgb(0,0,255);">())</span><span style="color: rgb(181,106,1);">.</span><span style="color: rgb(0,0,255);">assertEqual</span><span style="color: rgb(0,0,255);">(</span><span style="color: rgb(255,0,170);">"this is mock sum"</span><span style="color: rgb(0,0,255);">)</span>
+    <span style="color: rgb(255,0,170);">}</span><span style="color: rgb(0,0,255);">)</span>
+  <span style="color: rgb(255,0,170);">}</span><span style="color: rgb(0,0,255);">)</span>
+<span style="color: rgb(255,0,170);">}</span>
 ```
 
 4. 如果测试文件是手动创建的，需要将用例类test_mock_local_method添加到List.test.ets文件中。
 ```text
-import test_mock_local_method from './test_mock_local_method.test';
+import <span style="color: rgb(0,0,255);">test_mock_local_method</span> from <span style="color: rgb(255,0,170);">'./test_mock_local_method.test'</span><span style="color: rgb(181,106,1);">;</span>
 
-export default function testsuite() {
-  test_mock_local_method();
-}
+export default function <span style="color: rgb(0,0,255);">testsuite</span><span style="color: rgb(0,0,255);">() </span><span style="color: rgb(255,0,170);">{</span>
+  <span style="color: rgb(0,0,255);">test_mock_local_method</span><span style="color: rgb(0,0,255);">()</span><span style="color: rgb(181,106,1);">;</span>
+<span style="color: rgb(255,0,170);">}</span>
 ```
 
 5. 执行测试，用例通过。

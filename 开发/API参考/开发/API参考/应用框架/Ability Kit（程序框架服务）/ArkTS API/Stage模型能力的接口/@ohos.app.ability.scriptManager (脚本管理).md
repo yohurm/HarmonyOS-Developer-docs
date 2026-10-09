@@ -1,14 +1,16 @@
 # @ohos.app.ability.scriptManager (脚本管理)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-scriptmanager
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供管理和组织脚本信息的能力，支持应用的ArkTS脚本执行结果上报。
 
+**起始版本：** 26.0.0
+
 > [!NOTE]
-> 应用的ArkTS脚本需要绑定一个Ability，在 module.json5 的 skillProfiles标签 中配置对应的Ability。 脚本通过export default class导出，其入口函数的第一个参数固定为 ArkTSScriptInfo ，用于接收系统传递的脚本上下文信息，开发者可在第一个参数后添加自定义参数。
+> 应用的ArkTS脚本开发参考 基于ArkTS脚本的应用Skill开发指导 。 应用的ArkTS脚本需要绑定一个Ability，在 module.json5 的 skillProfiles标签 中配置对应的Ability。 脚本通过export default class导出，其入口函数的第一个参数固定为 ArkTSScriptInfo ，用于接收系统传递的脚本上下文信息，开发者可在第一个参数后添加自定义参数。
 
 
 
@@ -20,8 +22,6 @@
 ```text
 import { scriptManager } from '@kit.AbilityKit';
 ```
-
-**起始版本：** 26.0.0
 
 
 

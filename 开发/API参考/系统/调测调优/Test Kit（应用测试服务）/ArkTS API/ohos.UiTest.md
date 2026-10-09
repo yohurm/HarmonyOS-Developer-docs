@@ -1,6 +1,6 @@
 # @ohos.UiTest
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-uitest
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -9653,7 +9653,7 @@ isEnabled(): Promise&lt;boolean&gt;
 
 获取控件使能状态。使用Promise异步回调。
 
-> [!NOTE]
+> [!TIP]
 > 从API version 8开始支持，从API version 9开始废弃，建议使用 isEnabled 9+ 替代。
 
 
@@ -9781,7 +9781,6 @@ inputText(text: string): Promise&lt;void&gt;
 
 > [!NOTE]
 > 
-
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[inputText9+](#inputtext9)替代。
 

@@ -1,6 +1,6 @@
 # 代码索引（clangd）
 
-更新时间：2026-08-29 09:41:34
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-clangd
 
@@ -20,10 +20,10 @@
 点击菜单栏**File >Settings（macOS为DevEco Studio > Preferences/Settings）>Advanced Settings>Clangd，**进行索引模式切换。切换索引模式后，需要重启DevEco Studio。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/56_X4Yy_RRS6xQ9ZWc4BMQ/zh-cn_image_0000002731542253.png?HW-CC-KV=V1&HW-CC-Date=20260911T072347Z&HW-CC-Expire=86400&HW-CC-Sign=BCBDF87819B8DE85AC9ED12770C8F6E016B1FEF0888AC329A27BF224ABD5223D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/SO-nN8Z_RtqEJwge9oiElg/zh-cn_image_0000002731542253.png?HW-CC-KV=V1&HW-CC-Date=20261009T012522Z&HW-CC-Expire=86400&HW-CC-Sign=4A9A19DE7C2D93CFBCBB9FF66A36C74341934256F95B70C463ADDF8D3125C79C)
 
  
 打开C/C++大工程时，DevEco Studio右下角会弹出提示，建议切换索引模式。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/NADgu26JQQuYG6CDqqIyKA/zh-cn_image_0000002731382281.png?HW-CC-KV=V1&HW-CC-Date=20260911T072347Z&HW-CC-Expire=86400&HW-CC-Sign=9F8C5A495F00B360D9690E00C5EF9C86960140300AED9F1EADBF7D6D750DF2CE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/Rnwkb4ARTZujymV17OWnDw/zh-cn_image_0000002731382281.png?HW-CC-KV=V1&HW-CC-Date=20261009T012522Z&HW-CC-Expire=86400&HW-CC-Sign=B44386E943314EA550584786B0C3C8520050E1B240862B0D3B738E2602092F12)

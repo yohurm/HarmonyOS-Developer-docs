@@ -1,6 +1,6 @@
 # Video
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-media-components-video
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -1284,7 +1284,7 @@ interface FullscreenObject {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/jvnw8d9HRYSTwBYbMVZ7yQ/zh-cn_image_0000002747292837.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=91212E7AF588026B89AC8629570DD6FD3FD077872CE6E830F87B60AF55E4546B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/pg9OOxZ0SSWmiqPdXPbOvw/zh-cn_image_0000002749494838.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013106Z&HW-CC-Expire=86400&HW-CC-Sign=A21113D168B2AEFCD2E3ABA5F5A7F70C85BFF85478F1306E328B1064CBE6B894)
 
 
 
@@ -1459,7 +1459,7 @@ struct VideoObject {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/bwVUEkmOS5aV_dPx3QB_Xw/zh-cn_image_0000002747212753.png?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=A51C62B0383C6AE8FA784271F4AC3869B5E60134B7974E063894D4F5E1AEF7E6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/RPu5oNtaSWiCsXcWu-xhTw/zh-cn_image_0000002779093895.png?HW-CC-KV=V1&HW-CC-Date=20261009T013106Z&HW-CC-Expire=86400&HW-CC-Sign=E80D690841BC827B1DA250B9C80EF7E2D83A6CE48037584A764DD6A67A5434A3)
 
 
 
@@ -1509,7 +1509,7 @@ struct VideoErrorComponent {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/iBSnzQSLTPWB3v2Smfv78w/zh-cn_image_0000002717772818.png?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=0856B742BDB741FA009F7019806A19F4F552269D447242754C53CEAD34AE29F8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/A4WXRVb1RtSzjUbCjqL7MQ/zh-cn_image_0000002778934039.png?HW-CC-KV=V1&HW-CC-Date=20261009T013106Z&HW-CC-Expire=86400&HW-CC-Sign=C0AF76E38D69B7A723403E5F1B445D4270199B201F8CE8E6719634FE0D3AA909)
 
 
 
@@ -1638,7 +1638,7 @@ interface FullscreenObject {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/viu2UmJpSK2UXVP_MV8jJg/zh-cn_image_0000002717612886.png?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=2B8A2CD6CBF5375F6B834079AC23D47C1C11283DBFA342ABEB15C76A6ABE428D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/ZR8KFUZMSfKHiZs2Creqfw/zh-cn_image_0000002749334956.png?HW-CC-KV=V1&HW-CC-Date=20261009T013106Z&HW-CC-Expire=86400&HW-CC-Sign=6574E9F313D237CBEB08FFAEE528728DB39BB434C8BE53F0D262E500E247C062)
 
 
 
@@ -1658,7 +1658,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 @Entry
 @Component
 struct VideoControllerAsyncExample {
-  @State videoSrc: Resource = $rawfile('video1.mp4');// 替换为开发者所需的视频资源文件。
+  @State videoSrc: Resource = $rawfile('video1.mp4'); // 替换为开发者所需的视频资源文件。
   controller: VideoControllerAsync = new VideoControllerAsync();
 
   build() {
@@ -1717,7 +1717,7 @@ struct VideoControllerAsyncExample {
               console.info('start success')
             })
             .catch((err: BusinessError) => { // catch处理执行失败的场景。
-              console.info(`start failed: ${err.message}`)
+              console.error(`start failed: ${err.message}`)
             })
         }).margin(2)
         Button('pause').onClick(() => {
@@ -1726,7 +1726,7 @@ struct VideoControllerAsyncExample {
               console.info('pause success')
             })
             .catch((err: BusinessError) => {
-              console.info(`pause failed: ${err.message}`)
+              console.error(`pause failed: ${err.message}`)
             })
         }).margin(2)
         Button('stop').onClick(() => {
@@ -1735,7 +1735,7 @@ struct VideoControllerAsyncExample {
               console.info('stop success')
             })
             .catch((err: BusinessError) => {
-              console.info(`stop failed: ${err.message}`)
+              console.error(`stop failed: ${err.message}`)
             })
         }).margin(2)
         Button('reset').onClick(() => {
@@ -1744,7 +1744,7 @@ struct VideoControllerAsyncExample {
               console.info('reset success')
             })
             .catch((err: BusinessError) => {
-              console.info(`reset failed: ${err.message}`)
+              console.error(`reset failed: ${err.message}`)
             })
         }).margin(2)
       }

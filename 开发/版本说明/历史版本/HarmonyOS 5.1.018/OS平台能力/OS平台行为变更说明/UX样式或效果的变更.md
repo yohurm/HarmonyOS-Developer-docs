@@ -1,10 +1,10 @@
 # UX样式或效果的变更
 
-更新时间：2026-06-27 01:41:31
+更新时间：2026-10-08 10:09:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-ux-5101
 
-#### 按钮默认值变更为新增圆角矩形类型
+## 按钮默认值变更为新增圆角矩形类型
 
 **变更原因**
  
@@ -23,7 +23,7 @@
 变更后：ButtonOptions中type的默认值为ButtonType.ROUNDED_RECTANGLE。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/dm67u9F8SmuhTJF4aJ8EkQ/zh-cn_image_0000002295507629.png?HW-CC-KV=V1&HW-CC-Date=20260701T015144Z&HW-CC-Expire=86400&HW-CC-Sign=408BF698995E223DE4B15C25C3C6180BCEC9418464DC321D3681FAEC4D4E1C5A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/uOdR7ASkRjmgSq0rQE7vaQ/zh-cn_image_0000002295507629.png?HW-CC-KV=V1&HW-CC-Date=20261009T012725Z&HW-CC-Expire=86400&HW-CC-Sign=C4D9427B30C49D215E70EBA85CB63505266D9D4F336765ECB36DC945779469D0)
 
  
 **起始API Level**
@@ -69,7 +69,7 @@ struct ButtonExample {
  
  
 
-#### 修复Popup高级组件宽度限制计算错误的问题
+## 修复Popup高级组件宽度限制计算错误的问题
 
 **变更原因**
  
@@ -83,9 +83,10 @@ struct ButtonExample {
  
 变更后：屏幕宽度小于400vp时，Popup高级组件最大宽度为当前屏幕宽度。
   
+
 | 变更前 | 变更后 |
 | --- | --- |
-|  |  |
+| ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/OYaFaWUZTjqd4KOwy-rB_w/zh-cn_image_0000002295394577.png?HW-CC-KV=V1&HW-CC-Date=20261009T012725Z&HW-CC-Expire=86400&HW-CC-Sign=DB062896FD7A4440520D421F9B08F4B523CDDB549E45E96E5AB108FE1B765438) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/Gh28e1--SVyhKlb3dZzhUA/zh-cn_image_0000002260714472.png?HW-CC-KV=V1&HW-CC-Date=20261009T012725Z&HW-CC-Expire=86400&HW-CC-Sign=49C077298338482F1096CB09754049BA7FCC073D1942126A8A583095D26E5AC1) |
  
  
 **起始API Level**
@@ -102,7 +103,7 @@ Popup高级组件。
  
  
 
-#### 半模态底部样式最大高度默认避让状态栏安全区
+## 半模态底部样式最大高度默认避让状态栏安全区
 
 **变更原因**
  
@@ -124,9 +125,10 @@ UX规格变更。
 - 变更后：API version 18及以后，状态栏隐藏时，半模态底部样式最大高度距离状态栏下边界8vp，避让状态栏安全区。该样式的最大高度为屏幕高度 - (窗口状态栏安全区高度 + 安全间距8vp)。
 
   
+
 | 变更前 | 变更后 |
 | --- | --- |
-|  |  |
+| ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/mZv9rdurRcycIwWEgJpvtQ/zh-cn_image_0000002260714476.png?HW-CC-KV=V1&HW-CC-Date=20261009T012725Z&HW-CC-Expire=86400&HW-CC-Sign=C2A31DB59D0040B2AE754B1E269FE3A01E495E91C8FF1A8D24179BE02B986FEA) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/UxazmsmoQ-mGR8GLdc7zZg/zh-cn_image_0000002260817554.png?HW-CC-KV=V1&HW-CC-Date=20261009T012725Z&HW-CC-Expire=86400&HW-CC-Sign=AA92497592BC93C6037D14BFDA4573AC3D2B71CE5D3ABC5CA7CCE5E2CC07AAD8) |
  
  
 场景2：横屏下，状态栏不隐藏时，半模态底部样式最大高度也需要避让状态栏安全区。
@@ -135,9 +137,10 @@ UX规格变更。
 - 变更后：API version 18及以后，状态栏不隐藏时，半模态底部样式最大高度距离状态栏下边界8vp，避让状态栏安全区。该样式的最大高度为屏幕高度 - (窗口状态栏安全区高度 + 安全间距8vp)。
 
   
+
 | 变更前 | 变更后 |
 | --- | --- |
-|  |  |
+| ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/Hnc70ClRS8CFAy8iFPTIAw/zh-cn_image_0000002295507637.jpg?HW-CC-KV=V1&HW-CC-Date=20261009T012725Z&HW-CC-Expire=86400&HW-CC-Sign=9597CDF54EC3E73A844FAE32DE68B1AC4FA158C850E527D005D99A5A25B473A4) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/sqBJh8DYRnujbkO77suyqw/zh-cn_image_0000002295394585.jpg?HW-CC-KV=V1&HW-CC-Date=20261009T012725Z&HW-CC-Expire=86400&HW-CC-Sign=BE915B7EAB5CD3C54508799DA9555F1CFF369AAABA7F3C72AA3FE849AB7D58F4) |
  
  
 **起始API Level**

@@ -1,6 +1,6 @@
 # Class (Uint8ClampedArray)
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-arkts-collections-uint8clampedarray
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -1121,7 +1121,7 @@ map(callbackFn: TypedArrayMapCallback<number, Uint8ClampedArray>): Uint8ClampedA
 
 ```text
 let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([25, 36, 49]);
-const mapped: collections.Uint8ClampedArray = array.map(Math.sqrt); // Uint8ClampedArray [5, 6 ,7]
+const mapped: collections.Uint8ClampedArray = array.map(Math.sqrt); // Uint8ClampedArray [5, 6, 7]
 ```
 
 

@@ -548,8 +548,6 @@ OH_AVErrCode OH_VideoEncoder_Configure(OH_AVCodec *codec, OH_AVFormat *format)
 | OH_MD_KEY_PROFILE 请参阅OH_MD_KEY_PROFILE | AV_ERR_OK | AV_ERR_INVALID_VAL | AV_ERR_OK |
 | OH_MD_KEY_I_FRAME_INTERVAL | AV_ERR_OK | \ | AV_ERR_OK |
 
-
-
 | OH_MD_KEY_ BITRATE | OH_MD_KEY_ QUALITY | OH_MD_KEY_ VIDEO_ENCODER_BITRATE_MODE | 返回值 | 说明 |
 | --- | --- | --- | --- | --- |
 | \ | \ | \ | AV_ERR_OK | 使用编码器默认值 |

@@ -1,13 +1,10 @@
 # 基于AudioCapturer录制PCM音频（ArkTS）
 
-更新时间：2026-05-22 09:46:30
+更新时间：2026-09-20 11:26:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-record-base-on-audiocapturer
 
-**   
-
-
-#### 概述
+## 概述
 
 AudioCapturer是用于音频录制的ArkTS API，仅支持录制PCM格式，可以用于录制音频母带。本文适用于音频录制类应用的开发，针对市场上主流音频录制类应用的常见场景，介绍了基于AudioCapturer如何录制PCM音频，指导开发者基于不同的业务场景，使用AudioCapturer实现音频录制功能。
  
@@ -23,15 +20,15 @@ AudioCapturer是用于音频录制的ArkTS API，仅支持录制PCM格式，可�
  
  
 
-#### 基础录制
+## 基础录制
 
  
 
-#### 实现原理
+### 实现原理
 
 AudioCapturer可以录制PCM（Pulse Code Modulation）音频数据，能够快速实现PCM的基础录制，支持设置静音打断和回声消除。在创建完AudioCapturer后，需要设置对应的回调函数、音频录制的参数配置，通过readData的回调函数将采集的数据写入到文件中。
  
-图1 **AudioCapturer状态变化示意图
+**图1 **AudioCapturer状态变化示意图
 
 ![](assets/基于AudioCapturer录制PCM音频（ArkTS）/file-20260515114722835-1.jpg)
 
@@ -39,7 +36,7 @@ AudioCapturer可以录制PCM（Pulse Code Modulation）音频数据，能够快�
  
  
 
-#### 开发步骤
+### 开发步骤
 
 1.配置音频采集参数。
  
@@ -174,11 +171,11 @@ async releaseCapturer(): Promise<void> {
  
  
 
-#### 常见问题
+## 常见问题
 
  
 
-#### 设置静音打断模式
+### 设置静音打断模式
 
 开发者在创建AudioCapturer实例时，调用[setWillMuteWhenInterrupted()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiocapturer#setwillmutewheninterrupted20)接口设置当前录制音频流是否启用静音打断模式。
  
@@ -191,18 +188,18 @@ this.capturer.setWillMuteWhenInterrupted(true).catch((error: BusinessError) => {
  
  
 
-#### 设置回声消除
+### 设置回声消除
 
 开发者在设置audio.AudioCapturerInfo时，将[SourceType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-e#sourcetype8)值指定为SOURCE_TYPE_VOICE_COMMUNICATION或SOURCE_TYPE_LIVE即可。
  
  
 
-#### 获取音频振幅
+### 获取音频振幅
 
 开发者在开发通讯软件的语音录制发送、音乐录制等场景时，为了体现当前录制音量的大小，需要实现音频录制波形。关于音频录制波形可以参考[基于AudioRenderer和AudioCapturer实现音频波形动画](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-ripple-animation)。
  
  
 
-#### 示例代码
+## 示例代码
 
 - [基于AudioCapturer录制音频(ArkTS)](https://gitcode.com/HarmonyOS_Samples/audio-capturer-record-pcm)

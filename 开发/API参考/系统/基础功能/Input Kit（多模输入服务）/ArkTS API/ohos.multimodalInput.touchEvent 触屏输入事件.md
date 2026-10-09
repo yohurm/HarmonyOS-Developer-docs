@@ -1,6 +1,6 @@
 # @ohos.multimodalInput.touchEvent (触屏输入事件)
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-touchevent
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -30,7 +30,7 @@ import { KeyAction,ToolType,SourceType,Touch,TouchEvent } from '@kit.InputKit';
 
 触屏输入事件类型。
  
-**系统能力：** SystemCapability.MultimodalInput.Input.Core
+**系统能力**：SystemCapability.MultimodalInput.Input.Core
   
 
 | 名称 | 值 | 说明 |
@@ -53,7 +53,7 @@ import { KeyAction,ToolType,SourceType,Touch,TouchEvent } from '@kit.InputKit';
 
 操作触屏的工具类型。
  
-**系统能力：** SystemCapability.MultimodalInput.Input.Core
+**系统能力**：SystemCapability.MultimodalInput.Input.Core
   
 
 | 名称 | 值 | 说明 |
@@ -77,7 +77,7 @@ import { KeyAction,ToolType,SourceType,Touch,TouchEvent } from '@kit.InputKit';
 
 触屏来源的设备类型，当前支持触屏、手写笔、触控板类型上报。
  
-**系统能力：** SystemCapability.MultimodalInput.Input.Core
+**系统能力**：SystemCapability.MultimodalInput.Input.Core
   
 
 | 名称 | 值 | 说明 |
@@ -96,7 +96,7 @@ import { KeyAction,ToolType,SourceType,Touch,TouchEvent } from '@kit.InputKit';
 
 触屏点信息。
  
-**系统能力：** SystemCapability.MultimodalInput.Input.Core
+**系统能力**：SystemCapability.MultimodalInput.Input.Core
   
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
@@ -132,7 +132,7 @@ import { KeyAction,ToolType,SourceType,Touch,TouchEvent } from '@kit.InputKit';
 
 触屏输入事件。
  
-**系统能力：** SystemCapability.MultimodalInput.Input.Core
+**系统能力**：SystemCapability.MultimodalInput.Input.Core
   
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |

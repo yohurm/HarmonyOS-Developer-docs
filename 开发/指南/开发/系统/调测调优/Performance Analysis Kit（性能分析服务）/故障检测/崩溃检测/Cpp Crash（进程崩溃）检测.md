@@ -1,6 +1,6 @@
 # Cpp Crash（进程崩溃）检测
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cppcrash-guidelines
 
@@ -456,10 +456,8 @@ ARM 64位系统支持抓取CPP和JS之间跨语言的调用栈，因此如果在
 ### 空指针解引用故障场景日志规格
 
 空指针解引用通常有以下两个常见的场景：
-
-1.形如SIGSEGV(SEGV_MAPERR)@0x00000000或cppcrash日志的Register中打印的r0，r1等传参寄存器的值为0，应首先考虑调用时是否传入了空指针。
-
-2.形如SIGSEGV(SEGV_MAPERR)@0x0000000c（小于一个内存页大小）或cppcrash日志Register中打印的r1等传参寄存器的值为一个很小的值时应考虑调用入参的结构体成员是否包含空指针。
+1. 形如SIGSEGV(SEGV_MAPERR)@0x00000000或cppcrash日志的Register中打印的r0，r1等传参寄存器的值为0，应首先考虑调用时是否传入了空指针。
+2. 形如SIGSEGV(SEGV_MAPERR)@0x0000000c（小于一个内存页大小）或cppcrash日志Register中打印的r1等传参寄存器的值为一个很小的值时应考虑调用入参的结构体成员是否包含空指针。
 
 该场景会在日志中打印出提示信息，表明故障很有可能是因为空指针解引用导致。以下是一份DevEco Studio归档在FaultLog的进程崩溃日志的核心内容。
 
@@ -1048,7 +1046,7 @@ at onPageShow (sample|sample|1.0.0|src/main/ets/pages/Index.ts:381:36)
 
 **编译选项开启方法**
 
-以Cmake为例，在CMakeList.txt中添加set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-omit-frame-pointer -funwind-tables")。
+以CMake为例，在CMakeLists.txt中添加set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-omit-frame-pointer -funwind-tables")。
 
 
 
@@ -1057,7 +1055,7 @@ at onPageShow (sample|sample|1.0.0|src/main/ets/pages/Index.ts:381:36)
 从**API version 24**开始，当应用发生SIGPIPE异常退出时，可开启SIGPIPE信号打印调用栈功能，重启应用后，开发者复现问题场景，可以抓取调用栈信息并输出到HILOG。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/Mbjo6dg5REGv_5JFafAKIg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072721Z&HW-CC-Expire=86400&HW-CC-Sign=DFE5941C31D7643B5D603301BBA89B81CB6F2EFA1A7477A68AEB1F1E3BAFA1C0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/vXt3pb_ZTpeSOLw-T55Org/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20261009T012728Z&HW-CC-Expire=86400&HW-CC-Sign=C529BA2CBE131184A98A019CE0AF5B300F7191900809E76ED6B5F30E22D3719B)
 
 
 此功能只能在[debug版本应用](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/performance-analysis-kit-terminology#debug版本应用)开启。

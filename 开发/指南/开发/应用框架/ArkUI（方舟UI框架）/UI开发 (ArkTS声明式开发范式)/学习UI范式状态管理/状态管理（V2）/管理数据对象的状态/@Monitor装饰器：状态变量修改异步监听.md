@@ -1,6 +1,6 @@
 # @Monitor装饰器：状态变量修改异步监听
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-monitor
 
@@ -99,7 +99,7 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/Dfix2JAZSc-VGBH9sthWpA/zh-cn_image_0000002717770062.png?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=23D78C461DEED50C5E6FC92B3D0E28BED2347618227573428DBFF47D13FDC248)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/ZSLGXKCJRwOSfo4AfBzZuQ/zh-cn_image_0000002778931025.png?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=0F49770304B3B046E760A1ABF7458E12F61F792695AAE9812C8EF1103641C58F)
 
 
 上述代码中，点击"change info name"更改info中的name属性或点击"change info age"更改age时，均会触发info注册的@Watch回调。点击"change numArr[2]"更改numArr中的第3个元素或点击"change numArr[3]"更改第4个元素时，均会触发numArr注册的@Watch回调。在这两个回调中，由于无法获取数据更改前的值，在业务逻辑更加复杂的场景下，无法准确知道是哪一个属性或元素发生了改变从而触发了@Watch事件，这不便于开发者对变量的更改进行准确监听。因此推出@Monitor装饰器实现对对象、数组中某一单个属性或数组项变化的监听，并且能够获取到变化之前的值。
@@ -212,7 +212,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/Oe-goa8tTY26S-BD_DiNug/zh-cn_image_0000002717610128.png?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=8EC3EF92D5EBAFA7F3232C8B1932C346562702F0EB2DC2FC78B5D9879FD52DA2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/seL1QsUkS_ulkhT33WkqEQ/zh-cn_image_0000002749331942.png?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=250AABD4C5CD7532D29B41ECFEFBE10361BCDD741CB7FFA64EAFDB4AB94B2F1C)
 
  - @Monitor监听的状态变量为类对象时，仅能监听对象整体的变化。监听类属性的变化需要类属性被@Trace装饰。
 
@@ -268,7 +268,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/fDK8LsT1S4eqcPlLBWeunQ/zh-cn_image_0000002747290079.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=6B928C8F9725C77B8097DDE537262B784EF81D723D2137D5254F0B60EF170EAB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/-z_zZ6dmRiyaa6c9-tWxQw/zh-cn_image_0000002749491826.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=B3CCF0362C450CCD9D2AA5C984481F9395CFFFBF176BEB7B9F7955E2E3A6C0CD)
 
 
 
@@ -352,7 +352,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/F4lnj0f-Q-6Iv9xgl8IM5A/zh-cn_image_0000002747209997.png?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=DCC24B446A9D6392C63DFDF0EC7142801BAAE2B2CF6D9554F9EC5147F2AA0805)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/CmFUJ0-7R-mEL-3Li0S7og/zh-cn_image_0000002779090883.png?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=F1E52B2FD85CFFA25B2B402F4F6BE644C4B7482D87A02887DB3230C8947D3230)
 
  - @Monitor可以监听深层属性的变化，该深层属性需要被@Trace装饰。
 
@@ -395,7 +395,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/jH0ar_qoTb-eC80wVq-x7w/zh-cn_image_0000002717770064.png?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=F835D17A773D97B07749985ABEA84E79DFE25F41F7D6626CD278AA9C442070D0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/xK_1OGG4S1aSa8Du9oPkCA/zh-cn_image_0000002778931027.png?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=705F6C560BD733044F97C856901F026797B7BB5472645442680D9C1DD61F17C7)
 
  - 在继承类场景下，可以在继承链中对同一个属性进行多次监听。
 
@@ -450,7 +450,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/6jpg_2TOSn2nNY1lmxO7vQ/zh-cn_image_0000002717610130.png?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=27EA8E93A2E2310F767DB27665C7DFD8CDDFA892D18940934252A8D511E02785)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/87E6PnfWSryvKLULEcy7TQ/zh-cn_image_0000002749331944.png?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=62E97ABBAB7184FE499D9DB8553E34FFDC994DC3536329AA17BC35AD514D774D)
 
 
 
@@ -574,7 +574,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/xXMowIVWRxikCEtiFYGwcg/zh-cn_image_0000002747290081.png?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=536F48470905EA6F895F7800E6E038A4343E9D52F765AFBC424B9BB08113A4C1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/I9xt-ME0QAK-QEXLBRgIiw/zh-cn_image_0000002749491828.png?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=DD02EA38BF274978BBB342ACCB092836E048FB7963CA335A83A7F0497A28EC97)
 
  - 对象整体改变，但监听的属性不变时，不触发@Monitor回调。
 
@@ -649,7 +649,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/xJOB5q6nRSCXWKdA7gTCMg/zh-cn_image_0000002747209999.png?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=BE339DB169E42B7D11865C6E848D5EE92A2549B634922D2D4F48A9D4FE0EC6B6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/YWTCr-fyTGONFCpYhFfuVA/zh-cn_image_0000002779090885.png?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=9A292D27932F7560FFE5C7F1BAC4568F5C3BEDF0F3F802045C5B7494952CBE2B)
 
  - 在一次事件中多次改变被@Monitor监听的属性，以最后一次修改为准。
 
@@ -698,7 +698,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/N8yCDfS7Q-Wu14evwu48IA/zh-cn_image_0000002717770066.png?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=7278AEB0CEC01D842724C8A3C07D71409A719326C8461CA5DB05DC16759A5439)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/7Hpfyzd1SdOjLo1TisF3mA/zh-cn_image_0000002778931029.png?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=02A10E701D8B06F3FDDD3D5BAFB9D02D9B27B6E512507C90F66875B7FF2A6DE1)
 
 
 
@@ -790,7 +790,7 @@ struct MonitorWildcardObject {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/M0EBTe2lShOKiQyY_83k2Q/zh-cn_image_0000002717610132.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=3EB0A9FD4EF11D9C0E955A6B36D071542308BA0551B474D5CD526E0273DBEE62)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/EZfTNeqQRZykmxZWOBx_wQ/zh-cn_image_0000002749331946.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=D4A5B662F0084A573F43EB6D801379A4BA08340DACBCD27CC356A91CB4D2AFAC)
 
 
 
@@ -895,7 +895,7 @@ struct MonitorWildcardNestedObject {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/N2YRZ3k8Q_2GVDFNFFV3vA/zh-cn_image_0000002747290083.png?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=3123EE57650A966BE12CD66C38D65C5A3491C4C6B7F3C17E97F34B7F05B06553)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/4xUkU-JCQd21PsPv-K0eXg/zh-cn_image_0000002749491830.png?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=2B36B7212B69732957AA5CB4F591C96E894D5A367C1B3E7ADF4CF913B5E93AE8)
 
 
 当使用配置项的@Monitor监听的变量在可访问和不可访问之间切换时，都会触发@Monitor回调。
@@ -1051,7 +1051,7 @@ struct MonitorWildcardArray {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/OGYkocxSQVC-YUs7eMWRcA/zh-cn_image_0000002747210001.png?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=17E93F85D33F1F28B9ABD65B09060E2BFB18A756D7F67B555A2E1DBE39BD009A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/AA28Q1Q5SIGNNYOw7KjGfA/zh-cn_image_0000002779090887.png?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=37762809A3C079C2E7FE530424DD72D62352416E954857DAECFDF3137D284C65)
 
 
 
@@ -1125,7 +1125,7 @@ struct MonitorWildcardDate {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/BQ2U2RnCRje_S2raDyBtQw/zh-cn_image_0000002717770068.png?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=D372CB0AFFA171880B968973019911620186A46690A3C646C929B9722857F3DE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/XMakqwsJQ-yMYeqqAJs6Ng/zh-cn_image_0000002778931031.png?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=06B6E73888954C8E7824CBDFCB70F885117C32F3782575387231782332A9E111)
 
 
 
@@ -1250,7 +1250,7 @@ struct MonitorWildcardMap {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/3i6gjMHqRB2DYVmvnepo3g/zh-cn_image_0000002717610134.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=E193F7F5BB8486FEBC0C77AB9731604D7A34A270335F2068ECF173382964575E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/RrkfGKw7T3OZwV7wdG5Cvw/zh-cn_image_0000002749331948.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=FA6077AB6EA870B20FDCE375D025D21B55386263B02782D870FB90E366E6542E)
 
 
 
@@ -1348,7 +1348,7 @@ struct MonitorWildcardSet {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/XVsghpn0RhGVE6gexEtmLA/zh-cn_image_0000002747290085.png?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=BA14F9F479089CD3B9346939B5A9D5E5CEC2EFB1A2C9342688887D99160D7718)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/vKm8kc5MTTWfto9H8VRv3A/zh-cn_image_0000002749491832.png?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=E37A6130D28B106CF4795B5C2DBED0B776B915E23226363FA3E37019B43AA524)
 
 
 
@@ -1397,7 +1397,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/fOkAnI9jQj2k-dHcU5CN4w/zh-cn_image_0000002747210003.png?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=63E0968FCCF13949E5A549A6678409742EB4109B638089374765CFD28CBD040A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/wdBQqHC9SL-yL7_bMPgP2A/zh-cn_image_0000002779090889.png?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=D71C87CA05F9EB5D341680727474B427C211B6F4C22E7810655420ED8FA0EE01)
 
  - 当@Monitor传入多个路径参数时，以参数的全拼接结果判断是否重复监听。全拼接时会在参数间加空格，以区分不同参数。例如，'ab', 'c'的全拼接结果为'ab c'，'a', 'bc'的全拼接结果为'a bc'，二者全拼接不相等。以下示例中，Monitor 1、Monitor 2与Monitor 3都监听了name属性的变化。由于Monitor 2与Monitor 3的入参全拼接相等（都为'name position'），因此Monitor 2不生效，仅Monitor 3生效。当name属性变化时，将同时触发onNameAgeChange与onNamePositionChangeDuplicate方法。但请注意，Monitor 2与Monitor 3的写法仍然被视作在一个类中对同一个属性进行多次@Monitor的监听，这是不建议的。
 
@@ -1456,7 +1456,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/pucGXvWmQ9WVj2znAWhetQ/zh-cn_image_0000002717770070.png?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=2B707C58BBBC8F9C06F0274F90840A51B0EFFB76CAD6A3B42795404C21C15954)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/caH9HbcXRYSrzUbXjQ4NDg/zh-cn_image_0000002778931033.png?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=B599A5B097A0D988A3D88A062DC4183C15D6D638AFCC8B3F2DE4CF7B22A7BD97)
 
  - @Monitor的参数需要为监听属性名的字符串，仅可以使用字符串字面量、const常量、enum枚举值作为参数。如果使用变量作为参数，仅会监听@Monitor初始化时，变量值所对应的属性。当更改变量时，@Monitor无法实时改变监听的属性，即@Monitor监听的目标属性从初始化时便已经确定，无法动态更改。不建议开发者使用变量作为@Monitor的参数进行初始化。
 
@@ -1556,7 +1556,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/LwUdIO8vRvS7q-jfDIwBSg/zh-cn_image_0000002717610136.png?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=E07264139FBDDC1B2F202E0C152BDD16A1BF49330F8A2D3C2F3AAE1A13A4DD37)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/D_6WHGZwSliHyFNcmBJFTw/zh-cn_image_0000002749331950.png?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=FC23EFDACCDA728EB7FCC625A6788DE56CE6B7B5ABEDE54B68077F84C28B2BAB)
 
  - 建议开发者避免在@Monitor中再次更改被监听的属性，这会导致无限循环。
 
@@ -1571,6 +1571,125 @@ class Info {
   }
 }
 ```
+
+ - 从API version 24开始，当@Monitor监听的路径可能不存在或者路径中的变量缺少观测能力时，编辑器会提示告警The '@Monitor' decorator needs to monitor the state variables that exist.。以下为@Monitor路径校验的告警场景及修复方式：
+
+  
+**类未被@ObservedV2装饰**：当@Monitor监听的路径经过未被@ObservedV2装饰的类时，该路径无法被正常监听，编辑器会提示告警。
+
+  告警代码：
+
+  
+```text
+class Inner {
+  public num: number = 0;
+}
+
+@ObservedV2
+class Outer {
+  @Trace public inner: Inner = new Inner();
+
+  // inner的类型Inner未被@ObservedV2装饰，路径'inner.num'无法监听'num'属性的修改
+  @Monitor('inner.num')
+  onChange(monitor: IMonitor) {
+  }
+}
+```
+修复代码：使用@ObservedV2装饰Inner类，并使用@Trace装饰其属性。
+
+  
+```text
+@ObservedV2
+class Inner {
+  @Trace public num: number = 0;
+}
+
+@ObservedV2
+class Outer {
+  @Trace public inner: Inner = new Inner();
+
+  @Monitor('inner.num')
+  onChange(monitor: IMonitor) {
+  }
+}
+```
+
+ - **属性未被@Trace装饰**：当@Monitor监听的属性未被@Trace装饰时，该属性的变化无法被监听，编辑器会提示告警。
+
+  告警代码：
+
+  
+```text
+@ObservedV2
+class Info {
+  public name: string = 'Tom';
+
+  // name未被@Trace装饰，路径'name'无法监听修改
+  @Monitor('name')
+  onNameChange(monitor: IMonitor) {
+  }
+}
+```
+修复代码：使用@Trace装饰name属性。
+
+  
+```text
+@ObservedV2
+class Info {
+  @Trace public name: string = 'Tom';
+
+  @Monitor('name')
+  onNameChange(monitor: IMonitor) {
+  }
+}
+```
+
+ - **路径类型为interface**：当@Monitor监听的路径中存在类型为interface的变量时，由于interface本身对其属性没有观测能力，编辑器会提示路径可能不存在的告警。该告警无法去除，开发者需要确认interface数据有UIUtils.makeObserved封装才能被@Monitor监听。
+
+  告警代码：
+
+  
+```text
+import { UIUtils } from '@kit.ArkUI';
+
+interface IInfo {
+  name: string;
+}
+
+@ObservedV2
+class Container {
+  // 使用UIUtils.makeObserved封装的interface数据才能被@Monitor监听
+  public info: IInfo = UIUtils.makeObserved({ name: 'Name' });
+
+  // info的类型为interface，路径'info.name'可能无法监听'name'属性的修改
+  @Monitor('info.name')
+  onNameChange(monitor: IMonitor) {
+  }
+}
+```
+
+ - **路径类型为联合类型**：当@Monitor监听的路径中存在类型为联合类型的变量时，编辑器会提示路径可能不存在的告警。该告警无法去除，开发者需要确认联合类型中包含目标路径的对象类型存在并具有观测能力。
+
+  告警代码：
+
+  
+```text
+@ObservedV2
+class User {
+  @Trace public age: number = 10;
+}
+
+@ObservedV2
+class Page {
+  @Trace user: User | number = new User();
+
+  // user的类型为联合类型User | number，路径'user.age'可能不存在
+  @Monitor('user.age')
+  onChange(monitor: IMonitor) {
+  }
+}
+```
+
 
 
 
@@ -1660,7 +1779,7 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/PZl5K8KqTEeU4vYI6G1WKw/zh-cn_image_0000002747290087.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=60151500E2A7380AE4636729BF20521D8A043C8B9BFA4BF874600210D295885D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/uU-49F8SQvSG8nYbMKjzUg/zh-cn_image_0000002749491834.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=65BC5CCD932B424E151C87120E125A64E52BBAC7FB4CD21B6123E2E5BF1D75C2)
 
 
 
@@ -1760,7 +1879,7 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/rfNuNeEcS3qNPOD9W0W0pg/zh-cn_image_0000002747210005.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=18B9D87ABC4B9D9A1CA200DFEBEFAE8B1159C31C6FAE5DB00A28F38DA1B22151)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/P8phfZ_tTlWSz5tKYJk1-A/zh-cn_image_0000002779090891.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=98FBE6E265BD07A79783DBFD928A7EAAF4320D501FC45E916320EA34BBB36CB3)
 
 
 在上面的例子中，可以通过创建和销毁Child组件来观察定义在自定义组件中的@Monitor的生效和失效时机。推荐按如下顺序进行操作：
@@ -1823,7 +1942,7 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/Dycn7kePT8eXGelaiUbcxw/zh-cn_image_0000002717770072.png?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=40693CC10CC8C031770E56F8113671643CBEF558A56F17332824D7CE70C13F00)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/dAmz_BykSPqtrkvJ-8Xicg/zh-cn_image_0000002778931035.png?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=637297A39CC03EDDAAC989078BA315ADA3624B77B87B85184AE5A1200F766C1E)
 
 
 上面的例子中，@Monitor会在info创建完成后生效，这个时机晚于类的constructor，早于自定义组件的aboutToAppear。当界面加载完成后，点击“change message”，修改message变量。此时日志输出信息如下：
@@ -1927,7 +2046,7 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/_lk1LboPQcGUkqISU6fSwg/zh-cn_image_0000002717610138.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=1CBA4DE4947085F9249FA9D13A2F765106EF209F4B4D853F32EA7EF22A7A3C4F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/o30FKdtsRMGhvS3XmbtSGg/zh-cn_image_0000002749331952.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=274E67BAF4A5B3BA73D8F19F376EE91EEC9D34348471947B5DDB4C67DEF20F71)
 
 
 在上面的例子中，当点击“change showFlag”切换if组件的条件时，Child组件会被销毁。此时，点击“change number”修改age的值时，可以通过日志观察到InfoWrapper中定义的@Monitor回调仍然被触发了。这是因为此时自定义组件Child虽然执行了aboutToDisappear，但是其成员变量infoWrapper还没有被立刻回收，当变量发生变化时，依然能够调用到infoWrapper中定义的onInfoAgeChange方法，所以从现象上看@Monitor回调仍会被触发。
@@ -2027,7 +2146,7 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/GbiUMKogT_mWV-JUmi_9DQ/zh-cn_image_0000002747290089.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=05231B27E6148B24D4A6BB4F0CC7C8DFA9EF39D814350A1EBE6BB2EDAC966B35)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/9v0u6lEkTMWcT7SqipHm7Q/zh-cn_image_0000002749491836.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=59EC1F9D4CAA84BC3F40BA01429A3F92055925D5CD8B5D817BBFCAE57ADABE3B)
 
 
 2、主动置空监听的对象。当自定义组件即将销毁时，主动置空@Monitor的监听目标，这样@Monitor无法再监听原监听目标的变化，达到取消@Monitor监听的效果。
@@ -2123,7 +2242,7 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/yYfMh-iRRDGi_7FltOWkOg/zh-cn_image_0000002747210007.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=32EC0E18E3B3309E729446113B7F3640A8C811D16E6B4554681383B5C1CC7515)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/2gXli24mQg2NbEWJZZl4mA/zh-cn_image_0000002779090893.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=77F91D4CA299CEC8539C04E8FAD9683E835E513C80522BB8BC0DA92AB87D5DD4)
 
 
 
@@ -2172,7 +2291,7 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/EtpughsNR-q9Si4HEzkDxw/zh-cn_image_0000002717770074.png?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=8BD804EBA3E58540AD2674CAB9961E9EADAE9DE6B23D6D6D1E798B8647EDEBBC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/Vpk3B1b1SMysrDjRZKcgDg/zh-cn_image_0000002778931037.png?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=C92C4E57CB67CF45272089FB9A677C1923A54CC1880EB1B872E9AE4273B087D1)
 
 
 上面的代码中，当点击按钮同时更改状态变量age和非状态变量name时，会输出以下日志：
@@ -2231,7 +2350,7 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/hyIkXSMmRnKcsce2GIIaOA/zh-cn_image_0000002717610140.png?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=357A55C51655703ADE2DDA93D7A20DE157BD2CEF777002ECB87CB3A07FEBC024)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/MI5tZq-7QRm8HkxpCaO2SQ/zh-cn_image_0000002749331954.png?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=A14F011A35380D68F38971428AC22DEE2C2DE45D7D4A1F00A7FD8A1145738524)
 
 
 【反例2】
@@ -2318,7 +2437,7 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/h_kg6g0HTOyCZOT3IxLK6A/zh-cn_image_0000002747290091.png?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=BBC7B20FC98874C5CE06592A0620C0AF05264BE61ADD7C26FB074F54D2BB5AFA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/LOpcB9pdSemITtHaaXM0Sw/zh-cn_image_0000002749491838.png?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=7063DA849F160402F410218F69B980CB0A2C6E26A6E875055DE2379BACEE9526)
 
 
 或直接监听状态变量本身：
@@ -2356,7 +2475,7 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/En400KLoSIKHxAfCoV8iVQ/zh-cn_image_0000002747210009.png?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=2063AFEF13425F6597B3CF546B2C8D72269DB4BE41D3D0E75CA812E3DB48C2C2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/27wM9g5aQ96yVchdnIjagg/zh-cn_image_0000002779090895.png?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=AF508FC4F2B8AD2E4668724697CF3ABB72D704764528EE88F26347C1E76AAAAA)
 
 
 
@@ -2422,4 +2541,4 @@ struct Page {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/FSrxgH3OSMSQm6qGZMn2lA/zh-cn_image_0000002717770076.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=C383EA22877CA5A35A55325934CF002BB17DA375B00CBCF20F64246853D56E74)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/DncH9HrMSkSu1ZKFEqKVLw/zh-cn_image_0000002778931039.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012631Z&HW-CC-Expire=86400&HW-CC-Sign=E8A8187AAC27F9297BEE1F44151B320E4882F6FCC91FED886E6BDE7A26FEC48F)

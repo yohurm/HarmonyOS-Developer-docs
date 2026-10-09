@@ -1,6 +1,6 @@
 # AlphabetIndexer
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-alphabet-indexer
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -1271,4 +1271,133 @@ struct AlphabetIndexerSample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/zL7fRRcrQQeJ7SzFAoGHmA/zh-cn_image_0000002747292891.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073111Z&HW-CC-Expire=86400&HW-CC-Sign=521DDAF861021FBF393C3E6B7380A00277A288F5306B430A76B4C64C41576F90)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/YMvd25CQRAy1Bsco8jd9MA/zh-cn_image_0000002749494892.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013100Z&HW-CC-Expire=86400&HW-CC-Sign=E8B3FB5D5014B76E25B3BA0C38B3E6E43BA05538536988CA730DEFF90133726A)
+
+
+
+
+### 示例4（设置提示弹窗的沉浸光感效果）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+该示例展示索引条提示弹窗的沉浸光感效果。
+
+该示例配图为高算力设备强档效果，组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
+
+从API版本26.0.0开始，索引条参数[popupBackground](#popupbackground)和[popupBackgroundBlurStyle](#popupbackgroundblurstyle12)均未主动设置（或参数value传入undefined）时，提示弹窗默认开启沉浸光感，默认材质样式为THICK。
+
+```ArkTS
+// xxx.ets
+@Entry
+@Component
+struct AlphabetIndexerSample {
+  private arrayA: string[] = ['安'];
+  private arrayB: string[] = ['卜', '白', '包', '毕', '丙'];
+  private arrayC: string[] = ['曹', '成', '陈', '催'];
+  private arrayL: string[] = ['刘', '李', '楼', '梁', '雷', '吕', '柳', '卢'];
+  private value: string[] = ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G',
+    'H', 'I', 'J', 'K', 'L', 'M', 'N',
+    'O', 'P', 'Q', 'R', 'S', 'T', 'U',
+    'V', 'W', 'X', 'Y', 'Z'];
+
+  build() {
+    Stack({ alignContent: Alignment.Start }) {
+      Row() {
+        List({ space: 20, initialIndex: 0 }) {
+          ForEach(this.arrayA, (item: string) => {
+            ListItem() {
+              Text(item)
+                .width('80%')
+                .height('5%')
+                .fontSize(30)
+                .textAlign(TextAlign.Center)
+            }
+          }, (item: string) => item)
+
+          ForEach(this.arrayB, (item: string) => {
+            ListItem() {
+              Text(item)
+                .width('80%')
+                .height('5%')
+                .fontSize(30)
+                .textAlign(TextAlign.Center)
+            }
+          }, (item: string) => item)
+
+          ForEach(this.arrayC, (item: string) => {
+            ListItem() {
+              Text(item)
+                .width('80%')
+                .height('5%')
+                .fontSize(30)
+                .textAlign(TextAlign.Center)
+            }
+          }, (item: string) => item)
+
+          ForEach(this.arrayL, (item: string) => {
+            ListItem() {
+              Text(item)
+                .width('80%')
+                .height('5%')
+                .fontSize(30)
+                .textAlign(TextAlign.Center)
+            }
+          }, (item: string) => item)
+        }
+        .width('30%')
+        .height('100%')
+
+        Column() {
+          Column() {
+            AlphabetIndexer({ arrayValue: this.value, selected: 0 })
+              .usingPopup(true) // 索引项被选中时显示提示弹窗
+              .alignStyle(IndexerAlign.Left) // 提示弹窗在索引条右侧弹出
+              .popupItemBorderRadius(24) // 设置提示弹窗索引项背板圆角半径
+              .itemBorderRadius(14) // 设置索引项背板圆角半径
+              .popupTitleBackground(0xCCCCCC) // 设置提示弹窗一级索引项背景颜色
+              .onSelect((index: number) => {
+                console.info(this.value[index] + ' Selected!');
+              })
+              .onRequestPopupData((index: number) => {
+                // 当选中A时，提示弹窗里面的二级索引文本列表显示A对应的列表arrayA，选中B、C、L时也同样
+                // 选中其余索引项时，提示弹窗二级索引文本列表为空，提示弹窗会只显示一级索引项
+                if (this.value[index] == 'A') {
+                  return this.arrayA;
+                } else if (this.value[index] == 'B') {
+                  return this.arrayB;
+                } else if (this.value[index] == 'C') {
+                  return this.arrayC;
+                } else if (this.value[index] == 'L') {
+                  return this.arrayL;
+                } else {
+                  return [];
+                }
+              })
+              .onPopupSelect((index: number) => {
+                console.info('onPopupSelected:' + index);
+              })
+          }
+          .height('80%')
+        }
+        .width('70%')
+      }
+      .width('100%')
+      .height('100%')
+      // $r('app.media.image')需要替换为开发者所需的图像资源文件。
+      .backgroundImage($r("app.media.image"))
+    }
+  }
+}
+```
+
+未设置系统材质时：
+
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/z774d2lNSFmlc_SrCNqV-A/zh-cn_image_0000002779093949.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013100Z&HW-CC-Expire=86400&HW-CC-Sign=0429933D171F0347C35C8EFD3E3BD6A15104ADA1C32D14D41A9919281570D8A2)
+
+
+设置系统材质后：
+
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/5ywXCe2MSgG9e9U0xWj4iQ/zh-cn_image_0000002778934093.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013100Z&HW-CC-Expire=86400&HW-CC-Sign=283378E7CBB01ABCBFD2DC4BA13C112C306EC32B9A6B3A834FCE0CE662B136E7)

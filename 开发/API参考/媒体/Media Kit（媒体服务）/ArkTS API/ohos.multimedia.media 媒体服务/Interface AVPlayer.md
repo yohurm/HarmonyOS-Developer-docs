@@ -1,6 +1,6 @@
 # Interface (AVPlayer)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avplayer
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -39,7 +39,7 @@ import { media } from '@kit.MediaKit';
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| url9+ | string | 否 | 是 | 媒体URL，只允许在idle状态下设置。 支持的视频格式：mp4、mpeg-ts、mkv。 支持的音频格式：m4a、aac、mp3、ogg、wav、flac、amr、ape。 支持路径示例： 1. fd类型播放：fd://xx。 2. http网络播放：http://xx。 3. https网络播放：https://xx。 4. HLS网络播放路径：http://xx或者https://xx。 说明： - 设置网络播放路径，需声明权限：ohos.permission.INTERNET，相关错误码: 201 权限校验失败。 - 从API version 11开始不支持webm。 - 将资源句柄（fd）传递给AVPlayer实例之后，请不要通过该资源句柄做其他读写操作，包括但不限于将同一个资源句柄传递给多个AVPlayer / AVMetadataExtractor / AVImageGenerator / AVTranscoder。同一时间通过同一个资源句柄读写文件时存在竞争关系，将导致媒体播放器数据获取异常。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| url9+ | string | 否 | 是 | 媒体URL，只允许在idle状态下设置。 支持的视频格式：mp4、mpeg-ts、mkv。 支持的音频格式：m4a、aac、mp3、ogg、wav、flac、amr、ape。 支持路径示例： 1. fd类型播放：fd://xx。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/b1vImGf6R82DZa65PqwA8g/zh-cn_image_0000002749335980.png?HW-CC-KV=V1&HW-CC-Date=20261009T012609Z&HW-CC-Expire=86400&HW-CC-Sign=15FC4412733EA24B02ED30D90101F52CAA5DC403AEFA0A432C20F8C6B0F4F4C5) 2. http网络播放：http://xx。 3. https网络播放：https://xx。 4. HLS网络播放路径：http://xx或者https://xx。 说明： - 设置网络播放路径，需声明权限：ohos.permission.INTERNET，相关错误码: 201 权限校验失败。 - 从API version 11开始不支持webm。 - 将资源句柄（fd）传递给AVPlayer实例之后，请不要通过该资源句柄做其他读写操作，包括但不限于将同一个资源句柄传递给多个AVPlayer / AVMetadataExtractor / AVImageGenerator / AVTranscoder。同一时间通过同一个资源句柄读写文件时存在竞争关系，将导致媒体播放器数据获取异常。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | fdSrc9+ | AVFileDescriptor | 否 | 是 | 媒体文件描述，只允许在idle状态下设置。 使用场景：应用中的媒体资源被连续存储在同一个文件中。 支持的视频格式（mp4、mpeg-ts、mkv）。 支持的音频格式（m4a、aac、mp3、ogg、wav、flac、amr、ape）。 使用示例： 假设一个连续存储的媒体文件： 视频1（地址偏移：0，字节长度:100）； 视频2（地址偏移：101，字节长度：50）； 视频3（地址偏移：151，字节长度：150）； 1. 播放视频1：AVFileDescriptor { fd = 资源句柄; offset = 0; length = 100; }。 2. 播放视频2：AVFileDescriptor { fd = 资源句柄; offset = 101; length = 50; }。 3. 播放视频3：AVFileDescriptor { fd = 资源句柄; offset = 151; length = 150; }。 假设是一个独立的媒体文件: 请使用src=fd://xx。 说明： 从API version 11开始不支持webm。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | dataSrc10+ | AVDataSrcDescriptor | 否 | 是 | 流式媒体资源描述，只允许在idle状态下设置。 使用场景：应用播放从远端下载到本地的文件，在应用未下载完整音视频资源时，提前播放已获取的资源数据。若将已获取的资源数据写入到本地文件中，同时从本地文件中读取数据，即可实现边播边缓存的能力。 支持的视频格式（mp4、mpeg-ts、mkv）。 支持的音频格式（m4a、aac、mp3、ogg、wav、flac、amr、ape）。 使用示例： 假设用户正在从远端服务器获取音视频媒体文件，希望下载到本地的同时播放已经下载好的部分： 1.用户需要获取媒体文件的总大小size（单位为字节），获取不到时设置为-1。 2.用户需要实现回调函数func用于填写数据，如果size = -1，则func形式为：func(buffer: ArrayBuffer, length: number)，此时播放器只会按照顺序获取数据；否则func形式为：func(buffer: ArrayBuffer, length: number, pos: number)，播放器会按需跳转并获取数据。 3.用户设置AVDataSrcDescriptor {fileSize = size, callback = func}。 注意事项： 如果播放的是mp4/m4a格式用户需要保证moov字段（媒体信息字段）在mdat字段（媒体数据字段）之前，或者moov之前的字段小于10M，否则会导致解析失败无法播放。 说明： 从API version 11开始不支持webm。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | surfaceId9+ | string | 否 | 是 | 视频窗口ID，默认值为空（表示未设置窗口）。 仅支持在initialized状态下初始化。 初始化后可以在prepared/playing/paused/completed/stopped状态下重新设置，重新设置后视频播放将在新的窗口渲染。 使用场景：视频播放时的窗口渲染（纯音频播放时不涉及）。 使用示例： 通过getXComponentSurfaceId接口创建surfaceId。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
@@ -522,7 +522,7 @@ removePlaybackMediaSource(id: string): Promise&lt;void&gt;
 从播放器的播放列表中移除指定的媒体源。使用Promise异步回调。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/jla2UjOvSq67NI6cnUa2Wg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072136Z&HW-CC-Expire=86400&HW-CC-Sign=520390B6652FE1CA81D3F1722186BB03BB20D1536C9AB3EF60B9C386E28B5EB9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/iwitgLp9Tr60XqcRZYwW4w/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20261009T012609Z&HW-CC-Expire=86400&HW-CC-Sign=A672FF8422DDB84D19E8DECDABFECBA91FE17CE0A537EC5378BE707FCDDCB12D)
 
 
  - 如果该ID在当前播放列表中不存在，将返回错误码。
@@ -2242,7 +2242,7 @@ seek(timeMs: number, mode?:SeekMode): void
 跳转到指定播放位置，只能在prepared/playing/paused/completed状态调用，可以通过[on('seekDone')](#onseekdone9)事件确认是否生效。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/Mi348mbRSkmzd9mqcpgoPg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072136Z&HW-CC-Expire=86400&HW-CC-Sign=1F5D90F0D5109D600B0EE084346717AA9F35BE9949BC4380098195FF5FD5F07E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/FDpobOxoS4K8vXIFTPkTqw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20261009T012609Z&HW-CC-Expire=86400&HW-CC-Sign=0C123CB8E9B25A3F2400DD6D16438007B21B63D21152F1803F2CC574416B9535)
 
 
 从API版本26.0.0开始，直播场景支持seek。
@@ -2405,7 +2405,7 @@ setSpeed(speed: PlaybackSpeed): void
 setSpeed使用固定的枚举倍速值，适合标准倍速场景；setPlaybackRate支持任意倍速值且取值范围更大，适合自定义倍速场景。两者功能相同，建议根据API版本和精度需求选择：API version 9-19，使用setSpeed；API version 20及以上且需要精确倍速控制，使用setPlaybackRate。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/cbrMrGQnTkWqy0wHGmGZpQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072136Z&HW-CC-Expire=86400&HW-CC-Sign=9A88D254F3EFC772FA77C28CF6ECE828A9025859EFE629A68B5B9DA43F29EFE9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/nmMaX2twSYiUUe4HRTBYHg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20261009T012609Z&HW-CC-Expire=86400&HW-CC-Sign=26E178B9DF47EEECE7397E10DE49B65D10B7FCD79CD8956D7E76AD55D85C05F9)
 
 
 直播场景不支持setSpeed。
@@ -2516,7 +2516,7 @@ setPlaybackRate(rate: number): void
 设置倍速模式。只能在'prepared' | 'playing' | 'paused' | 'completed'状态下调用，在API版本26.0.0及以上的取值范围是[0.125, 8.0]，API版本26.0.0以下的取值范围是[0.125, 4.0]，可以通过[playbackRateDone](#onplaybackratedone20)事件确认是否生效。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/ioIgSDg2RXOMcZyn4jbnwA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072136Z&HW-CC-Expire=86400&HW-CC-Sign=F9DD63B4033BADF61F2D92AC9E970A145D4CF82FE7CF2C1D54605A034AF4DEB3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/taIXNx-5RIyLxgzTlPdQhA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20261009T012609Z&HW-CC-Expire=86400&HW-CC-Sign=A113514AE5FD6D911235B5A43A28B1A0BA7C08B92DB4E0043FCE0E04342FD28E)
 
 
 直播场景不支持setPlaybackRate。
@@ -3097,7 +3097,7 @@ async function test(){
 
 setVolume(volume: number): void
 
-设置媒体播放音量，只能在prepared/playing/paused/completed状态调用，可以通过[on('volumeChange')](#onvolumechange9)事件确认是否生效。
+调节当前播放的视频/音频的媒体播放音量，只能在prepared/playing/paused/completed状态调用，可以通过[on('volumeChange')](#onvolumechange9)事件确认是否生效。此接口功能不对系统其他音量生效，如需调节其他音量（如系统音量、应用音量等）请参考[播放音量管理](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/volume-management)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -3273,7 +3273,7 @@ on(type: 'timeUpdate', callback: Callback&lt;number&gt;): void
 监听资源播放当前时间，单位为毫秒（ms），用于刷新进度条当前位置，默认间隔100ms时间上报，因用户操作（seek）产生的时间变化会立刻上报。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/p7kJogEqQ5C8TbSbPVdbtg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072136Z&HW-CC-Expire=86400&HW-CC-Sign=A822253D267B2B3E8017167F4592E0C57A235F624BFBA12658C6D67354CD1166)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/Xm5nLVSbRgK1giBZvnIyAg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20261009T012609Z&HW-CC-Expire=86400&HW-CC-Sign=81B0D712BAD5003278F87051605EDE52F081D2DB6A60A5F9305EE160BD676F9B)
 
 
  - 直播场景不支持timeUpdate上报。
@@ -3391,7 +3391,7 @@ on(type: 'durationUpdate', callback: Callback&lt;number&gt;): void
 监听资源播放资源的时长，单位为毫秒（ms），用于刷新进度条长度，默认只在prepared上报一次，同时允许一些特殊码流刷新多次时长。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/wvUqC4ahT5GxbEbg3l27Vw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072136Z&HW-CC-Expire=86400&HW-CC-Sign=172E3BDED14F46CF533EAFB7407259F50AA21719F033879ABA03F0C55121F641)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/3HUqTb_pQ2KRe4tP9daVHQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20261009T012609Z&HW-CC-Expire=86400&HW-CC-Sign=E5D197104A73753FBCED62D0FE4ECF7EC227347DCABB94FB53ED921C62A0233B)
 
 
 直播场景不支持durationUpdate上报。

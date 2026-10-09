@@ -1,6 +1,6 @@
 # 自定义组件节点 (FrameNode)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-arktsnode-framenode
 
@@ -803,7 +803,7 @@ FrameNode提供了查询接口用于返回实体节点的基础信息。具体�
 3. 通过[无感监听](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-observer)获取。
 
 > [!NOTE]
-> 1、当前接口提供的可查询的信息包括： 节点大小： getMeasuredSize ， getUserConfigSize 布局信息： getPositionToWindow ， getPositionToParent ， getLayoutPosition ， getUserConfigBorderWidth ， getUserConfigPadding ， getUserConfigMargin 节点信息： getId ， getUniqueId ， getNodeType ， getOpacity ， isVisible ， isClipToFrame ， isAttached ， getInspectorInfo ， getCustomProperty 2、无法获取UINode类型节点，例如：JsView节点、 Span 、 ContainerSpan 、 ContentSlot 、 ForEach 、 LazyForEach 、if/else组件等。
+> 当前接口提供的可查询的信息包括： 节点大小： getMeasuredSize ， getUserConfigSize 布局信息： getPositionToWindow ， getPositionToParent ， getLayoutPosition ， getUserConfigBorderWidth ， getUserConfigPadding ， getUserConfigMargin 节点信息： getId ， getUniqueId ， getNodeType ， getOpacity ， isVisible ， isClipToFrame ， isAttached ， getInspectorInfo ， getCustomProperty 无法获取UINode类型节点，例如：JsView节点、 Span 、 ContainerSpan 、 ContentSlot 、 ForEach 、 LazyForEach 、if/else组件等。
 
 
 
@@ -2107,7 +2107,7 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/wvyV5ZGySUCuS0hHiXBr2A/zh-cn_image_0000002747210555.png?HW-CC-KV=V1&HW-CC-Date=20260911T072142Z&HW-CC-Expire=86400&HW-CC-Sign=C73C019586C808A9E463CABA894CA300FBEEE76046A7E5A080DE30AE3791D873)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/5GV2cyrBTK6Y98rOtJRuPw/zh-cn_image_0000002778931695.png?HW-CC-KV=V1&HW-CC-Date=20261009T012635Z&HW-CC-Expire=86400&HW-CC-Sign=A5DEA8E68629F75E8F3095CD49A98ED95DEBD8BCCCFED9DCE0DE964A0B59E2BA)
 
 
 
@@ -2211,7 +2211,7 @@ struct ListNodeTest {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/VL48oN8cR2eaIvUdN9wzwA/zh-cn_image_0000002717770620.png?HW-CC-KV=V1&HW-CC-Date=20260911T072142Z&HW-CC-Expire=86400&HW-CC-Sign=4F26B627C1BD9BC91DEF58DFD2CDC76A8C7C72E6E5F24431D6778415788AD64C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/1MSEFDwAQGOwmRGw3IvsPA/zh-cn_image_0000002749332612.png?HW-CC-KV=V1&HW-CC-Date=20261009T012635Z&HW-CC-Expire=86400&HW-CC-Sign=60CFBED966D004A9F8522C8656A0AB99CF3574D8B48397F224FCC4419750DC3E)
 
 
 
@@ -2286,4 +2286,4 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/boZudR8rRB-sE0-PJ7TaSQ/zh-cn_image_0000002717610686.png?HW-CC-KV=V1&HW-CC-Date=20260911T072142Z&HW-CC-Expire=86400&HW-CC-Sign=31D7200764D0AE11C44114EE2E43B1D42B2EFB541E4AB09DFC25475A1C93C089)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/Y98m0pLhTCSOYgGqDPWUNA/zh-cn_image_0000002749492496.png?HW-CC-KV=V1&HW-CC-Date=20261009T012635Z&HW-CC-Expire=86400&HW-CC-Sign=7BFE406A9A32DA8FA439D059D6CFFCB616FE3E545713273EE25F961AE5788E0E)

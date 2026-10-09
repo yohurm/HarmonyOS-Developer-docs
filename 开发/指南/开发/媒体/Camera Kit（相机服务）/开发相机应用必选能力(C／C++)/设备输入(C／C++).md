@@ -1,6 +1,6 @@
 # 设备输入(C/C++)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera-device-input
 
@@ -111,7 +111,7 @@ void CreateAndOpenCamera()
     // 打开相机。
     ret = OH_CameraInput_Open(cameraInput);
     if (ret != CAMERA_OK) {
-        OH_LOG_ERROR(LOG_APP, "OH_CameraInput_open failed.");
+        OH_LOG_ERROR(LOG_APP, "OH_CameraInput_Open failed.");
         return;
     }
 }

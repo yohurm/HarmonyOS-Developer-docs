@@ -1,6 +1,6 @@
 # 文本滑动选择器弹窗 (TextPickerDialog)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-textpicker-dialog
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -659,7 +659,7 @@ struct TextPickerDialogExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/2mlixIaORVe0s7j1ATLFdQ/zh-cn_image_0000002717773024.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073119Z&HW-CC-Expire=86400&HW-CC-Sign=AE6FCECCB287D03BB90B5B0CD5322569A560F410CCA3127BD9BF17E84FF6B35F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/_htYrnqVRna5Z4l4CqvV5w/zh-cn_image_0000002749335162.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013107Z&HW-CC-Expire=86400&HW-CC-Sign=C89D0E6AE3C490984475D4FB3EB63F1866D6342C6D9CC6857E48ABD76A5FE2F1)
 
 
 
@@ -704,7 +704,7 @@ struct TextPickerDialogExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/7Ea2nTIXTFWO5DacFRdYHw/zh-cn_image_0000002717613094.png?HW-CC-KV=V1&HW-CC-Date=20260911T073119Z&HW-CC-Expire=86400&HW-CC-Sign=79AFD4558F0E5EA666AB73B9A7C46071B50A7C1E9C72A5E71F4A1F0977A8220B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/0cunC-HoT_KUq2aNMNL_SQ/zh-cn_image_0000002749495046.png?HW-CC-KV=V1&HW-CC-Date=20261009T013107Z&HW-CC-Expire=86400&HW-CC-Sign=D3141C6F95AD877501B35F8FF84F5DA131BC104FECFA65353AA69321A0A627BB)
 
 
 
@@ -750,17 +750,19 @@ struct TextPickerDialogExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/SaCk1TqhQouBjVAYwxLr4g/zh-cn_image_0000002747293045.png?HW-CC-KV=V1&HW-CC-Date=20260911T073119Z&HW-CC-Expire=86400&HW-CC-Sign=92FF84E648AC0A8E7E9A89DEE143217C8DDEDD045EB897C8DFF891A289FB55CB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/g841hiTgRq-rw2JsiPW1nA/zh-cn_image_0000002779094103.png?HW-CC-KV=V1&HW-CC-Date=20261009T013107Z&HW-CC-Expire=86400&HW-CC-Sign=4FDDEE94E75E4E6E49A2A683FCFF26224C7E326A84B87467525D9B9C2949D8B9)
 
 
 
 
-### 示例11（设置系统材质）
+### 示例11（设置沉浸光感）
 
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-该示例通过配置[systemMaterial](#textpickerdialogoptionsext20对象说明)，实现系统材质效果。
+该示例通过配置[systemMaterial](#textpickerdialogoptionsext20对象说明)，实现沉浸光感效果。
+
+该示例配图为高算力设备强档效果，组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
 
 从API版本26.0.0开始，在TextPickerDialogOptionsExt中新增了systemMaterial属性。
 
@@ -785,10 +787,13 @@ struct TextPickerDialogExample {
             })
           })
       }.width('100%')
+      .height('100%')
+      .backgroundImage($r('app.media.bgImg'))  // $r('app.media.bgImg')需要替换为开发者所需的资源文件
+      .backgroundImageSize(ImageSize.FILL)
     }
   }
 }
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/outUUYCfQxWzMuqUTW8xjg/zh-cn_image_0000002747212961.png?HW-CC-KV=V1&HW-CC-Date=20260911T073119Z&HW-CC-Expire=86400&HW-CC-Sign=8686EBE62CE8E775445795721719BFABC10E5256E63E1987C213F3DB810BD03F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/XU6b9rZ8Qs6OF9Ych5CCyQ/zh-cn_image_0000002778934247.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013107Z&HW-CC-Expire=86400&HW-CC-Sign=F1ABE219B036864EEA5BD388C359618890250624C2BF981A201BC61A149109E3)

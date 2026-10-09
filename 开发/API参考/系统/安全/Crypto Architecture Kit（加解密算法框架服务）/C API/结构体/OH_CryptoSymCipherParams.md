@@ -1,6 +1,6 @@
 # OH_CryptoSymCipherParams
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-cryptosymcipherapi-oh-cryptosymcipherparams
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -15,7 +15,7 @@ typedef struct OH_CryptoSymCipherParams OH_CryptoSymCipherParams
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-定义对称加解密参数结构体。
+对称密钥加解密参数结构体，表示对称密钥加解密参数。
  
 **起始版本：** 12
  

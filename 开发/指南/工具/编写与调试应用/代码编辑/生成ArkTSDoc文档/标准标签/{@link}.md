@@ -1,13 +1,13 @@
 # {@link}
 
-更新时间：2026-04-20 06:32:02
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-arktsdoc-link
 
 {@link} 用于创建指向指定namepath或网页的链接。使用 {@link} 标记时，可以使用不同格式提供链接文本。
  
 
-#### 语法
+## 语法
 
 - {@link namepathOrURL}
 - [link text]{@link namepathOrURL}
@@ -17,7 +17,7 @@
  
  
 
-#### 示例
+## 示例
 
 提供链接文本：
  

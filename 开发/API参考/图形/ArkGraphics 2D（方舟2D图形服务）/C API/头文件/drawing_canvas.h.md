@@ -1787,7 +1787,7 @@ void OH_Drawing_CanvasSkew(OH_Drawing_Canvas* canvas, float sx, float sy)
 用于画布倾斜变换。等同于将当前画布矩阵左乘（premultiply）倾斜变换矩阵，并应用到画布上。其中倾斜变换矩阵为：
  
 |1 sx 0| 
- 
+| --- |
 |sy 1 0| 
  
 |0 0 1|。

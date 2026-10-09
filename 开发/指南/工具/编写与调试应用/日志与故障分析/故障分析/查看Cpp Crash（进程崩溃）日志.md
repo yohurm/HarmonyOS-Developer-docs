@@ -1,6 +1,6 @@
 # 查看Cpp Crash（进程崩溃）日志
 
-更新时间：2026-07-29 07:25:01
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-faultlog-cppcrash
 
@@ -15,10 +15,11 @@
 4. **Logs**：展示FaultLog中的HiLog日志，具体请参考[查看HiLog日志](#section656352444818)。
  
 
-#### 字段说明
+## 字段说明
 
 **Fault Analysis**页签中的字段和FaultLog的字段对应关系如下。
   
+
 | Fault Analysis的字段 | 说明 |
 | --- | --- |
 | Occurrence time | FaultLog发生的时间，对应FaultLog中的Timestamp字段。 |
@@ -35,16 +36,17 @@
  
  
 
-#### 查看堆栈信息
+## 查看堆栈信息
 
 Stacks页面包含了FaultLog中的堆栈信息，并以线程为单元进行折叠，点击展开按钮，可以展开对应线程。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/uioCLfyZT4Ks9-K3TEgUfg/zh-cn_image_0000002678156559.png?HW-CC-KV=V1&HW-CC-Date=20260730T071818Z&HW-CC-Expire=86400&HW-CC-Sign=575BDBC37EAA1A616B5A42FACCE228646BA3D6FFDA00EEE4B85C969866A3A1A3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/gQOIbK6mSrCsTaKxCWMFiw/zh-cn_image_0000002731542285.png?HW-CC-KV=V1&HW-CC-Date=20261009T012808Z&HW-CC-Expire=86400&HW-CC-Sign=56442C46DF72CD7BEA38B2776922DED54F6746633F207DFECF008788545EE6BD)
 
  
 图中标注1的勾选框是展开应用堆栈，标注2的勾选框是展开系统堆栈，两个勾选框一共组成了四种状态，具体如下表。
   
+
 | 勾选框勾选状态 | 说明 |
 | --- | --- |
 | 1、2都不勾选 | 展示所有线程，线程处于折叠状态。 |
@@ -55,9 +57,9 @@ Stacks页面包含了FaultLog中的堆栈信息，并以线程为单元进行折
  
  
 
-#### 查看HiLog日志
+## 查看HiLog日志
 
 Logs页面展示了FaultLog中的HiLog日志，支持日志级别的过滤和搜索。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/OLAIcTmZRma37G6VhCOTmg/zh-cn_image_0000002677996709.png?HW-CC-KV=V1&HW-CC-Date=20260730T071818Z&HW-CC-Expire=86400&HW-CC-Sign=733576306FF21E4E37983F86DC6B49572BAD1C4F890CC312386AA2015BF8A474)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/vDtdcO-BS5CFxvxBMnQCfQ/zh-cn_image_0000002731542289.png?HW-CC-KV=V1&HW-CC-Date=20261009T012808Z&HW-CC-Expire=86400&HW-CC-Sign=20CAB1FDA8DE7A27F0BB68975455942DCA727BF14F28A360D707AB981B9A534F)

@@ -1,6 +1,6 @@
 # Class (FrameCallback)
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-framecallback
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -34,7 +34,7 @@ onFrame(frameTimeInNano: number): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| frameTimeInNano | number | 是 | 下一帧渲染开始执行的时间，以纳秒为单位，由系统回调时传入，开发者无需手动传入。 取值范围：[0, +∞) |
+| frameTimeInNano | number | 是 | 下一帧渲染开始执行的时间，以ns为单位，由系统回调时传入，开发者无需手动传入。 取值范围：[0, +∞) |
  
  
 **示例：**

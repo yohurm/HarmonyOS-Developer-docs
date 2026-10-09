@@ -1,6 +1,6 @@
 # ArkGuard字节码混淆开启指南
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bytecode-obfuscation-guide
 
@@ -69,7 +69,7 @@
 -enable-filename-obfuscation
 -enable-export-obfuscation
 ```
-开发者还可以使用#在混淆规则文件中进行注释，每行以#开头的文本会被当做是注释。使用方法如下，#后为注释内容：
+开发者还可以使用#在混淆规则文件中进行注释，每行以#开头的文本会被当作是注释。使用方法如下，#后为注释内容：
 
   
 ```text
@@ -193,7 +193,7 @@ console.info(obj002.dynamicName + ''); // 使用点语法静态访问属性
 4. 验证应用功能以及模块被依赖时的接口调用功能，排查遗漏的场景。若应用出现功能异常，可依据混淆后的报错栈，在模块的 **build/default/[...]/release/obfuscation/** 目录下查阅 **nameCache.json**（名称映射表）、**config.json**（混淆项与白名单）等产物，按[查看混淆效果](#查看混淆效果)对照定位源码行；并按需使用-keep-global-name、-keep-property-name等进行保留。
 - 待上述选项应用适配成功后，开启-enable-filename-obfuscation选项。此选项开启后以下场景需要适配：
 
-1. 若代码中有动态import语句，如const path = './filePath'; import (path)，会出现文件引用失败的情况，需要使用-keep-file-name，filePath来保留这个文件名。
+1. 若代码中有动态import语句，如const path = './filePath'; import (path)，会出现文件引用失败的情况，需要使用-keep-file-name filePath来保留这个文件名。
 
 2. 若应用中有描述路由表信息的[routerMap配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#routermap标签)，其中的pageSourceFile字段标记页面在模块的路径，需要使用-keep-file-name来保留这个路径。
 
@@ -224,7 +224,7 @@ console.info(obj002.dynamicName + ''); // 使用点语法静态访问属性
 
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/go0eruuZQuOAfsmQnj5pmg/zh-cn_image_0000002717769904.png?HW-CC-KV=V1&HW-CC-Date=20260911T072305Z&HW-CC-Expire=86400&HW-CC-Sign=511AA2BED61B282ED0CEA4F26BCEE767772901610A4DA90F4DF4EAF66B71BBF9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/xYmbT5mtR9qBuMc3HYb0DA/zh-cn_image_0000002778930867.png?HW-CC-KV=V1&HW-CC-Date=20261009T012657Z&HW-CC-Expire=86400&HW-CC-Sign=1B2F5FEEE73526D9E462B4FED69ED2E621D8E2FFC2FC34B23EBB87DA20035EBC)
 
  
   
@@ -236,4 +236,4 @@ console.info(obj002.dynamicName + ''); // 使用点语法静态访问属性
 反混淆工具需要使用应用编译过程中生成的sourceMaps.json文件以及混淆名称映射文件nameCache.json文件，因此请本地备份它们；为方便问题定位，建议备份release目录。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/YboPLoFhR6GhItQjcfnYTw/zh-cn_image_0000002717609970.png?HW-CC-KV=V1&HW-CC-Date=20260911T072305Z&HW-CC-Expire=86400&HW-CC-Sign=B6FD6FC4C954761A19DE671FD4B9C30C9B1237D53B72951767B2B2D562080FF6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/icqYteh2QCWqiUXM9ZPXWQ/zh-cn_image_0000002749331784.png?HW-CC-KV=V1&HW-CC-Date=20261009T012657Z&HW-CC-Expire=86400&HW-CC-Sign=634C23BC4872D06EC829CC21709708B73F80A6A9AAABC6FF92F66E42EDDD0BDE)

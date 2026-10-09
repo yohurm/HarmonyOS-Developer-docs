@@ -1,6 +1,6 @@
 # 弧形列表 (ArcList)（圆形屏幕推荐使用）
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-create-arclist
 
@@ -28,7 +28,7 @@ ArcList({
 ```
 
 > [!NOTE]
-> ArcList 仅支持 ArcListItem 和自定义组件作为子组件。ArcListItem必须配合ArcList来使用。使用自定义组件时，请使用ArcListItem作为自定义组件的顶层组件，请勿直接给自定义组件设置属性和事件方法，因为ArcList通过ArcListItem管理子组件的布局和事件处理，直接设置可能导致部分功能无法正常生效。
+> ArcList 仅支持 ArcListItem 和 自定义组件 作为子组件。ArcListItem必须配合ArcList来使用。使用自定义组件时，请使用ArcListItem作为自定义组件的顶层组件，请勿直接给自定义组件设置属性和事件方法，因为ArcList通过ArcListItem管理子组件的布局和事件处理，直接设置可能导致部分功能无法正常生效。
 
 
 
@@ -472,7 +472,7 @@ export struct ArcListArcIndexerBar {
 **图8** 弧形列表与弧形索引条联动
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/wt_uytiPQ8y5W9QvGrTpkw/zh-cn_image_0000002717770304.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072505Z&HW-CC-Expire=86400&HW-CC-Sign=D87531A35AF1A6C2FDE4F66E78DCDFB066D40AADC2B3637A985EF1DA5370AB36)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/C88awSbBQy2QBV02fuRtCQ/zh-cn_image_0000002778931299.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012628Z&HW-CC-Expire=86400&HW-CC-Sign=600178F1D3BD447102F539BCF39CAD579900297C860B15674D82DD55A7A5B821)
 
 
 
@@ -535,7 +535,7 @@ ArcListItem() {
 **图9** 侧滑删除列表项
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/lTWk93XVQd6rvbsW67XAqw/zh-cn_image_0000002717610370.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072505Z&HW-CC-Expire=86400&HW-CC-Sign=EC0DC2F39555B84E7842D353EABF16FB964A40E2328500DCD03D1607397B9031)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/KWDoF5mKR2-FgkcGMVNPPA/zh-cn_image_0000002749332216.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012628Z&HW-CC-Expire=86400&HW-CC-Sign=BAD6C667AFC0DE3C9B1D6A25832937D4E46BD7AF7DCD2E3067A14154EAAF0206)
 
 
 

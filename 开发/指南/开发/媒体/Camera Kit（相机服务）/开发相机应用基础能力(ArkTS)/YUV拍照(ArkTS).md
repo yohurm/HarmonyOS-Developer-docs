@@ -1,6 +1,6 @@
 # YUV拍照(ArkTS)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-yuv-shooting
 
@@ -102,7 +102,7 @@ function getPhotoOutput(cameraManager: camera.CameraManager, photoProfile: camer
 
 13. 触发拍照。
 
-  通过photoOutput的[capture](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-photooutput#capture-2)方法，执行拍照任务。该方法有两个参数，第一个参数为拍照设置setting，setting中可以设置图片质量，图片旋转角度等信息。第二参数为异步回调函数，用于获取结果。接口调用失败会返回相应错误码。
+  通过photoOutput的[capture](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-photooutput#capture-2)方法，执行拍照任务。该方法有两个参数，第一个参数为拍照设置setting，setting中可以设置图片质量，图片旋转角度等信息。第二个参数为异步回调函数，用于获取结果。接口调用失败会返回相应错误码。
 
   通过PhotoOutput中的[getPhotoRotation](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-photooutput#getphotorotation12)方法，可以获取拍照旋转角度。
 

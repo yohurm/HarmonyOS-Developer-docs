@@ -1,6 +1,6 @@
 # Native侧子线程与UI主线程通信
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native_subthread-to-uimain
 
@@ -93,7 +93,7 @@ Native侧子线程分配到系统资源之后在子线程中调用uv_async_send(
   在ArkTS侧实现一个回调函数，参数为param，函数体中对参数param加30后刷新变量value，并返回最新的param值。将回调函数作为参数调用Native侧的threadSafeCase()接口。
 
   
-```text
+```ArkTS
 // Call Native side function and pass ArkTS side function to Native side.
 testNapi.threadSafeCase(this.work);
 ```
@@ -105,7 +105,7 @@ testNapi.threadSafeCase(this.work);
   在拆分子线程时，需要保存上下文信息及ArkTS函数引用，保存完之后拆分子线程。
 
   
-```text
+```cpp
 napi_threadsafe_function tsFn;
 static int g_value = 0;
 
@@ -116,7 +116,7 @@ struct CallbackContext {
 };
 ```
 
-```text
+```cpp
 static napi_value ThreadSafeCase(napi_env env, napi_callback_info info) {
     size_t argc = 1;
     napi_value js_callback;
@@ -145,7 +145,7 @@ static napi_value ThreadSafeCase(napi_env env, napi_callback_info info) {
   在子线程中通过napi_call_threadsafe_function()调用线程安全函数tsFn，把CallbackContext结构体数据作为参数传入线程安全函数。开发者可以根据自身实际需求在子线程中添加相应的业务操作。
 
   
-```text
+```cpp
 void SubThread(CallbackContext *asyncContext) {
     if (asyncContext == nullptr) {
         return;
@@ -162,7 +162,7 @@ void SubThread(CallbackContext *asyncContext) {
   通过上面保存的上下文信息及ArkTS函数引用回调ArkTS回调函数实现加30操作。
 
   
-```text
+```cpp
 static void ThreadSafeCallJs(napi_env env, napi_value js_callBack, void *context, void *data) {
     CallbackContext *argContext = reinterpret_cast<CallbackContext *>(data);
     if (argContext != nullptr) {
@@ -196,7 +196,7 @@ static void ThreadSafeCallJs(napi_env env, napi_value js_callBack, void *context
 **结果展示**
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/MlGc74EcS2i1qQPlnTqsRw/zh-cn_image_0000002717612346.png?HW-CC-KV=V1&HW-CC-Date=20260911T073020Z&HW-CC-Expire=86400&HW-CC-Sign=1C8D1EE73ED54B1583490B7BADA6C2F7EDC079EB7B4E197E395BB4DDA1D6927D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/Ws1NIf4CRZWCsb0jLtujsA/zh-cn_image_0000002749334278.png?HW-CC-KV=V1&HW-CC-Date=20261009T013033Z&HW-CC-Expire=86400&HW-CC-Sign=5F858880B3E70112457F21E5FE8FECDC92E89311BF62458D5CAD9CD068DFA45E)
 
  
   
@@ -211,7 +211,7 @@ static void ThreadSafeCallJs(napi_env env, napi_value js_callBack, void *context
   在ArkTS侧实现一个回调函数，参数为param，函数体中对参数param加30后刷新变量value，并返回最新的param值。将回调函数作为参数调用Native侧的libUvCase()接口。
 
   
-```text
+```ArkTS
 @State value: number = 0;
 work: Function = (param: number) => {
   param += 30;
@@ -220,7 +220,7 @@ work: Function = (param: number) => {
 }
 ```
 
-```text
+```ArkTS
 // Call Native side function and pass ArkTS side function to Native side.
 testNapi.libUvCase(this.work);
 ```
@@ -230,7 +230,7 @@ testNapi.libUvCase(this.work);
   libUvCase()接口接收到ArkTS传入的回调函数后保存上下文信息及ArkTS函数引用。
 
   
-```text
+```cpp
 size_t argc = 1;
 napi_value callback_function;
 napi_get_cb_info(env, info, &argc, &callback_function, nullptr, nullptr);
@@ -254,7 +254,7 @@ napi_create_reference(env, callback_function, 1, &asyncContext->callbackRef);
   在libUvCase()接口中保存完数据之后，通过napi_get_uv_event_loop()接口获取主线程Loop，该Loop会在主线程中运行。然后初始化一个async句柄，该句柄会绑定一个后续在主线程Loop上运行的回调函数（后续可以在该函数中调用ArkTS侧函数）。接着拆分子线程。
 
   
-```text
+```cpp
 uv_loop_t *loop = nullptr;
 if (napi_get_uv_event_loop(env, &loop) != napi_ok) {
     delete asyncContext;
@@ -276,7 +276,7 @@ return nullptr;
   子线程获取到系统调度之后，调用uv_async_send()方法通知主线程调用与async绑定的回调函数。
 
   
-```text
+```cpp
 void CallbackUvWorkTest(CallbackContext *context) {
     if (context == nullptr) {
         return;
@@ -291,7 +291,7 @@ void CallbackUvWorkTest(CallbackContext *context) {
   主线程收到子线程uv_async_send()传递的信号后会在对应Loop中调用之前async句柄绑定的的回调函数，该函数会运行在主线程里（也就是我们之前获取的Loop中），通过上面保存的上下文信息及ArkTS函数引用回调ArkTS回调函数实现加30操作。
 
   
-```text
+```cpp
 void async_handler(uv_async_t *handle) {
     CallbackContext *context = static_cast<CallbackContext *>(handle->data);
     napi_handle_scope scope = nullptr;
@@ -323,7 +323,7 @@ void async_handler(uv_async_t *handle) {
 **结果展示**
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/sVCiQ_JKQ3St_CM4FbFKog/zh-cn_image_0000002747292299.png?HW-CC-KV=V1&HW-CC-Date=20260911T073020Z&HW-CC-Expire=86400&HW-CC-Sign=C9F46C15931ACE77B0237456DD710E73E4256DE61D3586459C03DDF69F8B403D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/u4KZJB00Qk6pPF3jfuOXBQ/zh-cn_image_0000002749494164.png?HW-CC-KV=V1&HW-CC-Date=20261009T013033Z&HW-CC-Expire=86400&HW-CC-Sign=6CDCEBB3C25D3E235EA448ABC295B73397439F90AC79D6774EFC15E4C3F28231)
 
  
   

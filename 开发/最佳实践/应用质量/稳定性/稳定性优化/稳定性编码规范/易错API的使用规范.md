@@ -1,10 +1,10 @@
 # 易错API的使用规范
 
-更新时间：2026-05-22 09:46:30
+更新时间：2026-09-15 02:12:10
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-coding-standard-api
 
-#### 视效API
+## 视效API
 
  
 静态图片，建议使用EffectKit异步模糊；AdaptiveColor使用问题
@@ -32,11 +32,11 @@
 [EffectKit的ColorPicker](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-effectkit#colorpicker)：取色类，用于从一张图像数据中获取它的主要颜色。
  
 
-#### 媒体平台API
+## 媒体平台API
 
  
 
-#### 播控
+### 播控
 
  
 1、回调泄漏问题
@@ -80,8 +80,8 @@ sessionController.on('playbackStateChange', 'all', this.playStateCallback);
 sessionController.off('playbackStateChange', this.playStateCallback);
 ```
  
-
  
+
 2、打印日志过多问题
  
 **【问题描述】**
@@ -98,8 +98,8 @@ sessionController.off('playbackStateChange', this.playStateCallback);
  
 [媒体会话管理setAVMetadata](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-avsession-avsession#setavmetadata10)
  
-
  
+
 3、投播时正确播放资源
  
 **【问题描述】**
@@ -182,7 +182,7 @@ this.session?.on('pause', async () => {
 ```
  
 
-#### 相机
+### 相机
 
  
 1、回调on('xxx')接口中，禁止添加（调用on）或者移除（调用off）回调操作
@@ -218,8 +218,8 @@ function callback() {
 cameraManager.on('cameraStatus', callback);
 ```
  
-
  
+
 2、CameraSession中，addInput接口的入参必须是一个已经调用了open的CameraInput。
  
 **【问题描述】**
@@ -259,8 +259,8 @@ session.beginConfig();
 session.addInput(cameraInput);
 ```
  
-
  
+
 3、CameraSession中，addOutput前需要先addInput。
  
 **【问题描述】**
@@ -309,8 +309,8 @@ session.addInput(cameraInput);
 session.addOutput(previewOutput);
 ```
  
-
  
+
 4、Session增减Input和Output的接口调用流程必须在beginConfig和commitConfig接口调用之间。
  
 **【问题描述】**
@@ -364,8 +364,8 @@ session.addOutput(previewOutput);
 session.commitConfig();
 ```
  
-
  
+
 5、Session的release，Input的close等返回Promise的操作如果在异步函数内调用，请确保调用了await保证时序正常。
  
 **【问题描述】**
@@ -405,7 +405,7 @@ async function onBackground(): Promise<void> {
 ```
  
 
-#### 音频
+### 音频
 
  
 1、多次调用裸指针的Release会触发UAF（use after free）。
@@ -428,8 +428,8 @@ async function onBackground(): Promise<void> {
  
 [使用OHAudio开发音频播放功能(C/C++)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ohaudio-for-playback)
  
-
  
+
 2、使用OHAudio的应用仅注册部分回调，可能导致野指针崩溃。
  
 **【问题描述】**
@@ -450,8 +450,8 @@ async function onBackground(): Promise<void> {
  
 [使用OHAudio开发音频播放功能(C/C++)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ohaudio-for-playback)
  
-
  
+
 3、OnWriteData回调排查
  
 **【问题描述】**
@@ -485,8 +485,8 @@ async function onBackground(): Promise<void> {
  
 [使用OHAudio开发音频播放功能(C/C++)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ohaudio-for-playback)
  
-
  
+
 4、防止Offload流卡顿的自排查步骤
  
 **【问题描述】**
@@ -541,7 +541,7 @@ PS: 针对案例3和4，应用可以添加维测：统计实际写入的数据�
 
  
 
-#### 视频
+### 视频
 
  
 AVImageGenerator或AVMetadataExtractor功能失效问题。
@@ -649,7 +649,7 @@ async fetchMeta(): Promise<void> {
 ```
  
 
-#### ArkUI相关API
+## ArkUI相关API
 
  
 1. Inspector接口在业务代码里使用
@@ -676,8 +676,8 @@ async fetchMeta(): Promise<void> {
  
 [getInspectorInfo()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#getinspectorinfo12)
  
-
  
+
 2、OH_NativeXComponent_RegisterCallback接口传参
  
 **【问题描述】**
@@ -698,8 +698,8 @@ async fetchMeta(): Promise<void> {
  
 [OH_NativeXComponent_RegisterCallback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-interface-xcomponent-h#oh_nativexcomponent_registercallback)
  
-
  
+
 3、@ohos.measure和@ohos.font不推荐在UIAbility的生命周期中调用
  
 **【问题描述】**
@@ -734,8 +734,8 @@ onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
  
 [@ohos.measure (文本计算)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-measure)
  
-
  
+
 4、在CustomdialogController方法中禁止动态赋值。
  
 **【问题描述】**
@@ -754,8 +754,8 @@ onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
  
 [自定义弹窗 (CustomDialog)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-custom-dialog-box)
  
-
  
+
 5、在懒加载、list与web场景下手动控制CheckboxGroup的状况变量
  
 **【问题描述】**
@@ -814,8 +814,8 @@ struct CheckBoxPage {
 }
 ```
  
-
  
+
 6、UIExtensionComponent send&sendSync 能力有效周期注意点
  
 **【问题描述】**
@@ -880,8 +880,8 @@ Button("点击向UIExtensionAbility发送数据").onClick(() => {
 })
 ```
  
-
  
+
 7、在使用多态配置按钮的按压效果和hover效果之前，需要先关闭按钮自身的按压和hover效果。
  
 **【问题描述】**
@@ -953,8 +953,8 @@ struct StyleExample {
 }
 ```
  
-
  
+
 8、Image组件接口使用不规范
  
 **【问题描述】**
@@ -969,8 +969,8 @@ struct StyleExample {
  
 使用Image组件时，建议通过autoSize或sourceSize降低编解码分辨率。
  
-
  
+
 9、GetRectangleById接口可能存在组件不存在场景
  
 **【问题描述】**
@@ -995,8 +995,8 @@ struct StyleExample {
  
 **【最佳实践】**
  
-
  
+
 10、getInspectorByKey接口可能存在组件不存在场景，返回的是空字符串而不是空json对象。
  
 **【问题描述】**
@@ -1015,8 +1015,8 @@ getInspectorByKey接口可能存在组件不存在场景，返回的是空字符
  
 [getInspectorByKey](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-component-id#getinspectorbykey9)
  
-
  
+
 11、不推荐在aboutToAppear、aboutToDisappear中调用动画。
  
 **【问题描述】**
@@ -1107,8 +1107,8 @@ getInspectorByKey接口可能存在组件不存在场景，返回的是空字符
   }
 ```
  
-
  
+
 12、使用if/else来做数据保护时，不建议在动画闭包里操作数据，否则会crash。
  
 **【问题描述】**
@@ -1282,8 +1282,8 @@ struct Index {
 }
 ```
  
-
  
+
 13、滚动类组件当Scroller控制器未绑定容器组件或者容器组件被异常释放时，currentOffset的返回值为空。
  
 **【问题描述】**
@@ -1302,10 +1302,10 @@ currentOffset的返回值为空，导致应用出现异常。
  
 [currentOffset](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll#currentoffset)
  
-
  
 
-#### IPC相关API
+
+## IPC相关API
 
 1、使用IPC&RPC通信时，调用writeString使用不规范
  
@@ -1327,8 +1327,8 @@ currentOffset的返回值为空，导致应用出现异常。
  
 [writeString](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-rpc#writestring9)
  
-
  
+
 2、使用IPC&RPC通信时，MessageSequence使用不规范
  
 **【问题描述】**
@@ -1349,8 +1349,8 @@ currentOffset的返回值为空，导致应用出现异常。
  
 [MessageSequence](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-rpc#messagesequence9)
  
-
  
+
 3、rpc.MessageParcel 或rpc.MessageSequence 使用不规范
  
 **【问题描述】**
@@ -1373,8 +1373,8 @@ currentOffset的返回值为空，导致应用出现异常。
  
 达到parcel的上限200KB后，使用RawData传输超过200KB的数据。
  
-
  
+
 4、创建Ashmem对象后，写入数据正常，但读取数据失败。
  
 **【问题描述】**
@@ -1403,8 +1403,8 @@ currentOffset的返回值为空，导致应用出现异常。
  
 [readDataFromAshmem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-rpc#readdatafromashmem11)
  
-
  
+
 5、使用Ashmem对象传递数据，Ashmem的内存未释放
  
 **【问题描述】**
@@ -1433,8 +1433,8 @@ MessageSequence类中的读写方法：
  
 [readAshmem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-rpc#readashmem9)
  
-
  
+
 6、调用新接口传递ArrayBuffer数据时，读取数据对应不上
  
 **【问题描述】**
@@ -1471,8 +1471,8 @@ MessageSequence类中的读写方法：
 ![](assets/易错API的使用规范/file-20260515115125199-11.png)
 
  
-
  
+
 7、onRemoteRequest函数报错，返回错误码4
  
 **【问题描述】**
@@ -1493,8 +1493,8 @@ MessageSequence类中的读写方法：
  
 2、当上层业务返回false时，IPC内部会认为此次通信是失败的，会直接赋值为4，结束此次通信
  
-
  
+
 8、使用IPC进行通信时，业务data和reply释放时机不对
  
 **【问题描述】**
@@ -1533,7 +1533,7 @@ sendMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, 
  
  
 
-#### 图形API
+## 图形API
 
  
 1、OH_NativeWindow_DestroyNativeWindow()使用问题
@@ -1554,8 +1554,8 @@ sendMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, 
  
 [OH_NativeImage](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-image-h)
  
-
  
+
 2、OH_NativeWindow相关接口野指针crash问题
  
 **【问题描述】**
@@ -1583,8 +1583,8 @@ sendMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, 
  
 [NativeWindow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-external-window-h)
  
-
  
+
 3、OH_NativeWindow相关接口空指针crash问题
  
 **【问题描述】**
@@ -1622,7 +1622,7 @@ crash的栈顶在libsurface.z.so中。
 [NativeWindow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-external-window-h)
  
 
-#### 方舟运行时API
+## 方舟运行时API
 
 1、【use after free】napi_async_work使用不规范
  
@@ -1716,8 +1716,8 @@ extern "C" __attribute__((constructor)) void RegisterEntryModule(void){
  
 在napi_create_async_work的第五个参数中设置回调函数，将napi_delete_async_work的工作放在该回调函数中执行。这可以确保在异步任务执行期间，上层开发者的内存问题不会反映在系统栈中，从而避免问题难以定位。
  
-
  
+
 2、【double free】开发者手动释放ArrayBuffer内存导致double free
  
 **【问题描述】**
@@ -1758,8 +1758,8 @@ napi_create_arraybuffer、napi_create_sendable_arraybuffer、napi_get_arraybuffe
  
 开发者不允许主动释放虚拟机管理的ArrayBuffer指针。
  
-
  
+
 3、【memory leak】开发者使用uv_queue_work方法将任务抛到js线程上面执行的时候，对js线程的回调方法未加handle scope
  
 **【问题描述】**
@@ -1819,8 +1819,8 @@ void callbackTest(CallbackContext* context)
 }
 ```
  
-
  
+
 4、【multi-thread】开发者使用napi接口时，跨线程使用napi_env或napi_value引发多线程安全问题
  
 **【问题描述】**
@@ -2106,8 +2106,8 @@ static napi_value Test4(napi_env env, napi_callback_info info) {
 }
 ```
  
-
  
+
 8、【use after free】开发者保存env指针，env释放后开发者继续使用，产生UAF导致崩溃
  
 **【问题描述】**
@@ -2205,6 +2205,6 @@ static napi_value Test5(napi_env env, napi_callback_info info) {
  
  
 
-#### 示例代码
+## 示例代码
 
 - [易错API的使用规范](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/tree/master/ApiUsingStandards)

@@ -1,6 +1,6 @@
 # @ohos.fastbuffer (FastBuffer)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-fastbuffer
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -97,7 +97,7 @@ import { fastbuffer } from '@kit.ArkTS';
 // 创建长度为5的FastBuffer对象，默认填充0
 let buf1 = fastbuffer.alloc(5);
 console.info(buf1.toString());
-// 输出结果：00000
+// 输出结果为空
 // 创建长度为5的FastBuffer对象，填充字符'a'
 let buf2 = fastbuffer.alloc(5, 'a');
 // 创建长度为11的FastBuffer对象，使用base64编码填充

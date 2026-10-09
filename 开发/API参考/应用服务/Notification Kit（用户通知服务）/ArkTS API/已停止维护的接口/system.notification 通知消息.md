@@ -1,6 +1,6 @@
 # @system.notification (通知消息)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-system-notification
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -71,7 +71,7 @@ show(options?: ShowNotificationOptions): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| options | ShowNotificationOptions | 否 | 通知标题。 |
+| options | ShowNotificationOptions | 否 | 通知展示的相关参数选项，可设置通知标题、通知内容以及通知被点击后触发的行为。 |
 
 
 **示例：**

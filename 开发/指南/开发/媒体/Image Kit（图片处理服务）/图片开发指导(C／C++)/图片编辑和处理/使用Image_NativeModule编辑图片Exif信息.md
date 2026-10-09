@@ -1,6 +1,6 @@
 # 使用Image_NativeModule读取和编辑图片Exif信息
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-tool-c
 
@@ -30,7 +30,7 @@ Exif信息的读取与编辑相关C API如下，详细介绍请参考[image_sour
 
 | 接口 | 说明 |
 | --- | --- |
-| OH_ImageSourceNative_GetImageProperty() | 获取指定属性键的Exif信息。 |
+| OH_ImageSourceNative_GetImagePropertyWithNull() | 获取指定属性键的Exif信息。 |
 | OH_ImageSourceNative_ModifyImageProperty() | 修改指定属性键的Exif信息。 |
 
 

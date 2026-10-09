@@ -1,6 +1,6 @@
 # dialog开发指导
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-components-dialog
 
@@ -158,7 +158,7 @@ export default {
 
 ## 场景示例
 
-在本场景中，开发者可以通过dialog组件实现一个日程表。弹窗在打开状态下，利用[textarea](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-basic-textarea)组件输入当前日程，点击确认按钮后获取当前时间并保存输入文本。最后以列表形式将各日程进行展示。
+在本场景中，开发者可以通过dialog组件实现一个日程表。弹窗在打开状态下，利用[textarea](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-basic-textarea)组件输入当前日程，点击确认按钮后获取当前日期并保存输入文本。最后以列表形式将各日程进行展示。
 
 ```text
 <!-- xxx.hml -->
@@ -312,4 +312,4 @@ export default {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/AEKfV4GxQ4qWfTAy33EPmw/zh-cn_image_0000002747290731.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073133Z&HW-CC-Expire=86400&HW-CC-Sign=395B8074C187F21BDD817B38182EC4DA75137550D1842873876F1509648981B4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/c2fDeC8wRSipoW5q4T-fpg/zh-cn_image_0000002779091647.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013116Z&HW-CC-Expire=86400&HW-CC-Sign=68B91234F73FE68BC48333B265B7A1BC9A425A20CCEF20113E81340711C39E06)

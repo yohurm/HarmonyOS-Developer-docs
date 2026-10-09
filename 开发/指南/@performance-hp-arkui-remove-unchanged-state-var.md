@@ -1,0 +1,148 @@
+# @performance/hp-arkui-remove-unchanged-state-var
+
+更新时间：2026-10-08 09:38:49
+
+来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hp-arkui-remove-unchanged-state-var
+
+建议移除未改变的状态变量设置。
+ 
+通用丢帧场景下，建议优先修改。
+ 
+
+## 规则配置
+
+```json
+// code-linter.json5
+{
+  <span style="color: rgb(135,16,148);">"rules"</span>: {
+    <span style="color: rgb(135,16,148);">"@performance/hp-arkui-remove-unchanged-state-var"</span>: <span style="color: rgb(6,125,23);">"suggestion"</span>,
+  }
+}
+```
+ 
+ 
+
+## 选项
+
+该规则无需配置选项。
+ 
+ 
+
+## 正例
+
+```text
+class Translate {
+  translateX: number = 20;
+}
+
+@Component
+struct Title {
+  build() {
+    Row() {
+      // 本地资源 icon.png
+      Image($r('app.media.icon'))
+        .width(50)
+        .height(50)
+      Text("Title")
+        .fontSize(20)
+    }
+  }
+}
+
+@Entry
+@Component
+struct MyComponent {
+  @State translateObj: Translate = new Translate();
+  // 直接使用一般变量即可
+  button_msg: string = "i am button";
+
+  build() {
+    Column() {
+      Title()
+      Stack() {
+      }
+      .backgroundColor("black")
+      .width(200)
+      .height(400)
+
+      Button(this.button_msg)
+        .onClick(() => {
+          animateTo({
+            duration: 50
+          }, () => {
+            this.translateObj.translateX = (this.translateObj.translateX + 50) % 150
+          })
+        })
+    }
+    .translate({
+      x: this.translateObj.translateX
+    })
+  }
+}
+```
+ 
+ 
+
+## 反例
+
+```text
+@Observed
+class Translate {
+  translateX: number = 20;
+}
+
+@Component
+struct Title {
+  build() {
+    Row() {
+      // 本地资源 icon.png
+      Image($r('app.media.icon'))
+        .width(50)
+        .height(50)
+      Text("Title")
+        .fontSize(20)
+    }
+  }
+}
+
+@Entry
+@Component
+struct MyComponent {
+  @State translateObj: Translate = new Translate();
+  @State button_msg: string = "i am button";
+
+  build() {
+    Column() {
+      Title()
+      Stack() {
+      }
+      .backgroundColor("black")
+      .width(200)
+      .height(400)
+
+      // 这里只是用了状态变量button_msg的值，没有任何写的操作
+      Button(this.button_msg)
+        .onClick(() => {
+          animateTo({
+            duration: 50
+          }, () => {
+            this.translateObj.translateX = (this.translateObj.translateX + 50) % 150
+          })
+        })
+    }
+    .translate({
+      x: this.translateObj.translateX
+    })
+  }
+}
+```
+ 
+ 
+
+## 规则集
+
+```text
+<span style="color: rgb(106,135,89);">plugin:@performance/all</span>
+```
+ 
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-code-linter)。

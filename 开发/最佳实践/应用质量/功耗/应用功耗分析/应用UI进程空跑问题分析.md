@@ -1,6 +1,6 @@
 # 应用UI进程空跑问题分析
 
-更新时间：2026-08-26 06:47:01
+更新时间：2026-09-15 02:12:10
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-ui-skip-analysis
 

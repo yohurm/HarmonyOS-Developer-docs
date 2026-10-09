@@ -1,6 +1,6 @@
 # 录像(C/C++)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera-recording
 
@@ -22,7 +22,6 @@
 #include <cstdio>
 #include <fcntl.h>
 #include <map>
-#include <string>
 #include <vector>
 #include <native_buffer/native_buffer.h>
 #include "iostream"
@@ -90,7 +89,7 @@ Camera_ErrorCode NDKCamera::CreateVideoOutput(char *videoId)
         return CAMERA_INVALID_ARGUMENT;
     }
     ret_ = OH_CameraManager_CreateVideoOutput(cameraManager_, videoProfile_, videoId, &videoOutput_);
-    OH_LOG_ERROR(LOG_APP, " create video width: %{public}d, height: %{public}d, format: %{public}d",
+    OH_LOG_INFO(LOG_APP, " create video width: %{public}d, height: %{public}d, format: %{public}d",
         videoProfile_->size.width, videoProfile_->size.height, videoProfile_->format);
     if (videoId == nullptr || videoOutput_ == nullptr || ret_ != CAMERA_OK) {
         OH_LOG_ERROR(LOG_APP, "CreateVideoOutput failed.");
@@ -128,7 +127,7 @@ Camera_ErrorCode NDKCamera::VideoOutputStart(void)
 ```cpp
 Camera_ErrorCode NDKCamera::VideoOutputStop(void)
 {
-    OH_LOG_ERROR(LOG_APP, "enter VideoOutputStop.");
+    OH_LOG_INFO(LOG_APP, "enter VideoOutputStop.");
     ret_ = OH_VideoOutput_Stop(videoOutput_);
     if (ret_ != CAMERA_OK) {
         OH_LOG_ERROR(LOG_APP, "VideoOutputStop failed.");
@@ -171,7 +170,7 @@ void VideoOutputOnFrameEnd(Camera_VideoOutput *videoOutput, int32_t frameCount)
 ```cpp
 void VideoOutputOnError(Camera_VideoOutput *videoOutput, Camera_ErrorCode errorCode)
 {
-    OH_LOG_INFO(LOG_APP, "VideoOutput errorCode = %{public}d", errorCode);
+    OH_LOG_ERROR(LOG_APP, "VideoOutput errorCode = %{public}d", errorCode);
 }
 ```
 

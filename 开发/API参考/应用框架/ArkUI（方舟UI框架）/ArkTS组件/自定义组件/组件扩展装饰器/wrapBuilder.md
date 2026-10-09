@@ -1,6 +1,6 @@
-# wrapBuilder
+# wrapBuilder: 封装全局@Builder
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-wrapbuilder
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable

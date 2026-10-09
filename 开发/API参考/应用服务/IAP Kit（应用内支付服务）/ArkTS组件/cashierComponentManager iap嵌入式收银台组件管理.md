@@ -1,6 +1,6 @@
 # cashierComponentManager (iap嵌入式收银台组件管理)
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-cashier-component-manager
 **支持设备：** TV
@@ -89,7 +89,7 @@ iap嵌入式收银台的支付失败回调。在用户使用iap嵌入式收银�
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | productId | string | 是 | 支付失败的商品ID。 |
-| error | BusinessError&lt;void&gt; | 是 | 支付失败回调获取到的iap.CreatePurchaseResult对象。 |
+| error | BusinessError&lt;void&gt; | 是 | 支付失败回调获取到的错误信息，可通过该参数获取具体错误原因。 |
  
  
   

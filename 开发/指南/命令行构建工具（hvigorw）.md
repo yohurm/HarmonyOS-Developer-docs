@@ -1,0 +1,163 @@
+# 命令行构建工具（hvigorw）
+
+更新时间：2026-10-08 09:38:49
+
+来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hvigor-commandline
+
+hvigorw作为Hvigor的wrapper包装工具，支持自动安装Hvigor构建工具和相关插件依赖，以及执行Hvigor构建命令。
+ 
+执行命令前，需要先[配置环境变量](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-commandline-get#section14891106103319)。
+ 
+
+## 命令行使用方式
+
+hvigorw命令行格式为：
+ 
+```text
+hvigorw [taskNames...] <options>
+```
+ 
+其中taskNames是任务，可同时执行多个任务，options是可选参数，具体的任务和可选参数请参考[常用命令](#section16300629103)。
+ 
+> [!NOTE]
+> 以下命令支持在任意路径下执行，其他hvigorw命令需要在工程根目录下执行。 hvigorw -v hvigorw --version hvigorw version hvigorw -h hvigorw --help
+
+ 
+ 
+
+## 常用命令
+
+常见的任务和参数如下，更多任务请参考[任务详细说明](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hvigor-task-process#section196919100414)。
+ 
+ 
+
+### 查询
+ 
+
+| 参数 | 说明 |
+| --- | --- |
+| -h, --help | 打印hvigorw的命令帮助信息。 |
+| -v, --version, version | 打印hvigorw版本信息。 |
+ 
+ 
+ 
+
+### 编译构建
+ 
+
+| 任务 | 说明 |
+| --- | --- |
+| clean | 清理构建产物build目录。 |
+| assembleHap | 构建Hap应用。 |
+| assembleApp | 构建App应用。 |
+| assembleHsp | 构建Hsp包。 |
+| assembleHar | 构建Har包。 |
+ 
+ 
+编译构建命令行常用扩展参数：
+  
+
+| 参数 | 说明 |
+| --- | --- |
+| -p buildMode={debug \| release} | 采用debug/release模式进行编译构建。 缺省时：构建Hap/Hsp/Har时为debug模式，构建App时为release模式。 关于构建模式的详细说明，请参考指定构建模式。针对HAR构建，请参考构建HAR。 |
+| -p debuggable=true/false | 该配置会覆盖构建模式中对应的buildOption中的debuggable配置。 关于debuggable的合并优先级，请参考合并编译选项规则。 |
+| -p product={ProductName} | 指定product进行编译，编译product下配置的module target。 缺省时：默认为default。 |
+| -p module={ModuleName}@{TargetName} | 指定模块及target进行编译，可指定多个相同类型的模块进行编译，以逗号隔开；TargetName不指定时默认为default。 限制：此参数需要与--mode module参数搭配使用。 缺省时：执行AssembleHap任务会编译工程下所有模块，默认指定target为default。 |
+| -p parameterFile=param.json/json5 | 设置oh-package.json5文件的参数配置文件，其中"param"可自行修改为对应配置文件名称。详细使用请参考parameterFile。 |
+| -p buildVersion=1 | 设置构建版本号为1，详细使用请参考app.json5的buildVersion。 |
+ 
+ 
+ 
+
+### 日志
+ 
+
+| 参数 | 说明 |
+| --- | --- |
+| -e, --error | 设置Hvigor的日志级别为error。 |
+| -w, --warn | 设置Hvigor的日志级别为warn。 |
+| -i, --info | 设置Hvigor的日志级别为info。 |
+| -d, --debug | 设置Hvigor的日志级别为debug。 |
+| --stacktrace，--no-stacktrace | Hvigor默认关闭打印所有异常的堆栈信息，如需开启在命令行后添加--stacktrace。 |
+ 
+ 
+ 
+
+### 可视化
+ 
+
+| 参数 | 说明 |
+| --- | --- |
+| --analyze=normal | 在DevEco Studio中开启Build Analyzer构建分析，设置为普通模式，通过简单打点数据进行分析。 |
+| --config properties.hvigor.analyzeHtml=true | 在工程的.hvigor/report目录下生成构建可视化html文件，该文件可直接在浏览器中打开。 |
+| --analyze=false | 不启用Build Analyzer构建分析。 |
+| --analyze=advanced | 启用Build Analyzer构建分析，并设置为进阶模式，通过更加详细的打点数据进行分析。如果需要更详细的任务耗时数据，请选择该模式。 |
+| --analyze=ultrafine | 启用Build Analyzer构建分析，并设置为超精细化模式，与advanced模式相比，在ArkTS编译阶段记录更详细的打点数据，但开启后可能导致编译构建时间更长。 |
+ 
+ 
+ 
+
+### daemon
+ 
+
+| 参数 | 说明 |
+| --- | --- |
+| --daemon | 启用守护进程。 |
+| --no-daemon | Hvigor默认启用守护进程，如需关闭，可在命令行后添加该选项。 命令行模式下推荐使用此参数。 |
+| --stop-daemon | 关闭当前工程的守护进程。 |
+| --stop-daemon-all | 关闭所有工程的守护进程。 |
+| --status-daemon | 查询当前环境中所有的Hvigor守护进程信息。 |
+| --max-old-space-size=12345 | 设置守护进程最大的老生代内存大小为12345MB。 |
+| --max-semi-space-size=32 | 设置守护进程新生代内存最大的半空间大小为32MB。 |
+ 
+ 
+ 
+
+### 性能/内存
+ 
+
+| 参数 | 说明 |
+| --- | --- |
+| --parallel, --no-parallel | Hvigor默认开启并行构建能力，如需关闭在命令行后添加--no-parallel。 |
+| --incremental, --no-incremental | Hvigor默认开启增量构建能力，如需关闭在命令行后添加--no-incremental。 |
+| --optimization-strategy=performance | 设置构建模式为性能优先模式，可加快构建速度，但会占用更多内存。 |
+| --optimization-strategy=memory | 设置构建模式为内存优先模式，可以减少编译内存占用，默认使用memory。 |
+ 
+ 
+ 
+
+### 公共命令
+ 
+
+| 任务 | 说明 |
+| --- | --- |
+| tasks | 打印工程各模块包含的任务信息。 |
+| taskTree | 打印工程各模块的任务依赖关系信息。 |
+| prune | 清除30天内未使用的Hvigor缓存文件并从pnpm存储中删除未引用的包。 |
+| buildInfo | 打印工程级或模块级build-profile.json5中的配置信息，包含product、module、target、buildMode、buildOption，以树状结构输出。 |
+ 
+ 
+buildInfo命令扩展参数：
+  
+
+| 参数 | 说明 |
+| --- | --- |
+| -p module={ModuleName} | 指定需要打印配置信息的模块名，不指定时会打印工程级的配置信息。 |
+| -p buildOption | 命令包含此参数时会打印buildOption配置，不含此参数时将不会展示buildOption配置，输出的buildOption优先级请参考合并编译选项规则。 |
+| -p json | 将输出结果以json格式展示。 |
+ 
+ 
+ 
+
+### 其他命令
+ 
+
+| 参数 | 说明 |
+| --- | --- |
+| -s,--sync | 处理并持久化Hvigor部分工程信息到工程./hvigor/outputs/sync/output.json中。 |
+| -m,--mode | 在对应的目录执行相应的task，例hvigorw clean -m project在工程目录下执行build目录清理（即清理工程级别的build文件夹）。 |
+| --enable-build-script-type-check | 开启工程中hvigorfile.ts的类型检查，该字段已废弃，请使用--type-check替换。 |
+| --type-check, --no-type-check | Hvigor默认关闭工程中hvigorfile.ts的类型检查，如需开启，可在命令行后添加--type-check。 |
+| --config, -c | 指定hvigor-config.json5配置文件中的参数。 当前仅支持设置properties里的参数，具体支持的参数请查看hvigor-config.json5文件中properties支持的参数。 --config properties.key=value 同 -c properties.key=value |
+| --watch | 使能观察模式，主要用于热加载场景。 |
+| --node-home &lt;string&gt; | 指定nodejs路径。 |

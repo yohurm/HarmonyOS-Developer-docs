@@ -1,6 +1,6 @@
 # 粒子动画 (Particle)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-particle-animation
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -209,7 +209,7 @@ interface ParticleOptions<
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | emitter | EmitterOptions&lt;PARTICLE&gt; | 否 | 否 | 粒子发射器配置。 |
-| color | ParticleColorPropertyOptions[/topic/body/section/table/tgroup/tbody/row/entry/color_updater {""}) (color_updater] | 否 | 是 | 粒子颜色配置。 说明： 默认值：{ range:[Color.White,Color.White] }。图片粒子不支持设置颜色。 |
+| color | ParticleColorPropertyOptions&lt;COLOR_UPDATER&gt; | 否 | 是 | 粒子颜色配置。 说明： 默认值：{ range:[Color.White,Color.White] }。图片粒子不支持设置颜色。 |
 | opacity | ParticlePropertyOptions<number, OPACITY_UPDATER> | 否 | 是 | 粒子透明度配置。 默认值：{ range:[1.0,1.0] } |
 | scale | ParticlePropertyOptions<number, SCALE_UPDATER> | 否 | 是 | 粒子大小配置。 默认值：{ range:[1.0,1.0] } |
 | velocity | VelocityOptions | 否 | 是 | 粒子速度配置。 说明： speed表示速度大小。angle表示速度的方向（单位：度），以元素几何中心为坐标原点，水平方向为X轴，正数表示顺时针方向旋转角度。 默认值：{ speed:[0.0,0.0],angle:[0.0,0.0] } |
@@ -1139,7 +1139,7 @@ struct ParticleExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/x0UuLBuSSHGG_LBb_rOiMg/zh-cn_image_0000002747293003.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073119Z&HW-CC-Expire=86400&HW-CC-Sign=F10FA45BA47F0B1C009A0CA2DC67BC0929CC55639AC9A2DCB21E5C5753307D1C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/56ky-HuDR8uqNelfZ3dY9w/zh-cn_image_0000002779094061.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013108Z&HW-CC-Expire=86400&HW-CC-Sign=291EFC50A04E6E99A624D3F75DAC4ED1455F98506E5176EE0F8689E1D33D7F76)
 
 
 
@@ -1253,7 +1253,7 @@ struct ParticleExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/Ew5oA7bYTFGbzD5fwQGGrQ/zh-cn_image_0000002747212919.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073119Z&HW-CC-Expire=86400&HW-CC-Sign=7AD2F11E249537B441A942F60F4F39D3490F0EA81DD069A97A112D9E8FB5094B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/Y31DF2MKT-2kXM0q0JKRhQ/zh-cn_image_0000002778934205.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013108Z&HW-CC-Expire=86400&HW-CC-Sign=20AEF940938C0845F6516D29D99291E9531999578F8D02F0574E668F481CAA8F)
 
 
 
@@ -1388,7 +1388,7 @@ struct ParticleExample3 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/eZrjb5hYR6-LAtYXywvouw/zh-cn_image_0000002717772984.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073119Z&HW-CC-Expire=86400&HW-CC-Sign=9532E0E1A45F3676B1E3268E8E25BE5479120C60DBEB0FDB37E7AB17B92A1AE8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/1k2kIdaiR_WPQvF8Yfo2jA/zh-cn_image_0000002749335122.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013108Z&HW-CC-Expire=86400&HW-CC-Sign=839FCD3CDEBCE75CDF32EBB05930D23A39A57019B85D56627BE49655D4F49E56)
 
 
 
@@ -1474,7 +1474,7 @@ struct ParticleExample4 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/sOnOKSsNTbiz0RqsVKJgDg/zh-cn_image_0000002717613052.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073119Z&HW-CC-Expire=86400&HW-CC-Sign=C7497E267F71A652BE6C22B69CD721EFCCA7C989AE32DE43D73BCF5BF6EEC9D3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/zZZSsVxtSXyXtqMjsYBlGg/zh-cn_image_0000002749495006.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013108Z&HW-CC-Expire=86400&HW-CC-Sign=F4D800C7CDDBA464EBE0FE777B37BFB8E6FD3EDD001A7206CC0CD91B4EE038C4)
 
 
 
@@ -1568,7 +1568,7 @@ struct ParticleExample5 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/04OlY0vITmGR3cQcv8Q2kQ/zh-cn_image_0000002747293005.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073119Z&HW-CC-Expire=86400&HW-CC-Sign=39C066848C4DD0AD8E76879669D42DC39484FFAE479136F96F65EF5C5E1EF7FB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/LqhPzNdASY6AwLlauTt6Zw/zh-cn_image_0000002779094063.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013108Z&HW-CC-Expire=86400&HW-CC-Sign=AEA07CADA05B7DDB727C2E6042548DA1FC5AF24D18CDC8DCDDE3F498F373B956)
 
 
 
@@ -1691,7 +1691,7 @@ struct ParticleExample6 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/NcTtlCpSS5S7jncKs9VmxA/zh-cn_image_0000002747212921.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073119Z&HW-CC-Expire=86400&HW-CC-Sign=43583719A75D720294B58091637521832DD5DFB3BF7E6D895E1F7C4616EB9491)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/bTf8N5vDQzSXxPPujq0ovQ/zh-cn_image_0000002778934207.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013108Z&HW-CC-Expire=86400&HW-CC-Sign=FFD43862504C789F0D2AC5CE712BBC6FAB9A20B26C80EB0F3B4F7915490B6986)
 
 
 
@@ -1827,4 +1827,4 @@ struct ParticleExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/IGuy8Ne1QSmeqpTyDWMcnw/zh-cn_image_0000002717772986.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073119Z&HW-CC-Expire=86400&HW-CC-Sign=5DBD3B6918DF934B18545603341B42B1FCD101B098171E7337C15390F39E1899)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/MNlZNcaLSni8fntNISspwg/zh-cn_image_0000002749335124.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013108Z&HW-CC-Expire=86400&HW-CC-Sign=6538DA7FAA05966B71D517F9B145B044AAE2704D602EFBD2263DEC0828339CAC)

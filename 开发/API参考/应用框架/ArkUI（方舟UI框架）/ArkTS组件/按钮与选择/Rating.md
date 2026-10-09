@@ -1,6 +1,6 @@
 # Rating
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-rating
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -110,7 +110,7 @@ stars(starCount: Optional&lt;number&gt;)
 
 stepSize(value: number)
 
-设置操作评级的步长。设置为小于0.1的值时，按默认值显示。默认值：0.5。
+设置操作评级的步长。设置为小于0.1的值时，按默认值显示。默认值：0.5。设置的评分值会规整到stepSize的整数倍（四舍五入到最近的整数倍）。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -135,7 +135,7 @@ stepSize(value: number)
 
 stepSize(size: Optional&lt;number&gt;)
 
-设置操作评级的步长。设置为小于0.1的值时，按默认值显示。与[stepSize](#stepsize)相比，size参数新增了对undefined类型的支持。当size的值为undefined时，默认值：0.5。
+设置操作评级的步长。设置为小于0.1的值时，按默认值显示。与[stepSize](#stepsize)相比，size参数新增了对undefined类型的支持。当size的值为undefined时，默认值：0.5。设置的评分值会规整到stepSize的整数倍（四舍五入到最近的整数倍）。
 
 **卡片能力：** 从API version 18开始，该接口支持在ArkTS卡片中使用。
 
@@ -298,7 +298,7 @@ onChange(callback:(value: number) => void)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | 是 | 评分条的评分值。取值范围为[0, stars]，精度受stepSize影响。 |
+| value | number | 是 | 评分条的评分值。取值范围为[0, stars]，取值会规整到stepSize的整数倍。 |
 
 
 
@@ -350,7 +350,7 @@ type OnRatingChangeCallback = (rating: number) => void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| rating | number | 是 | 评分条的评分值。取值范围为[0, stars]。 |
+| rating | number | 是 | 评分条的评分值。取值范围为[0, stars]，取值会规整到stepSize的整数倍。 |
 
 
 
@@ -388,10 +388,10 @@ type OnRatingChangeCallback = (rating: number) => void
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| rating | number | 否 | 否 | 设置并接收评分值。 默认值：0 取值范围： [0, stars] 小于0取0，大于stars的值按stars的值显示。 该参数支持$$双向绑定变量。 该参数支持!!双向绑定变量。 |
+| rating | number | 否 | 否 | 设置并接收评分值。 默认值：0 取值范围： [0, stars] 小于0取0，大于stars的值按stars的值显示。 设置的评分值会规整到stepSize的整数倍（四舍五入到最近的整数倍），实际显示值与onChange回调值均为规整后的值。该参数支持$$与!!双向绑定变量。 |
 | indicator | boolean | 否 | 否 | 评分条是否作为指示器使用。当值为true时，表示作为指示器；当值为false时，表示不作为指示器。 默认值：false |
 | stars | number | 否 | 否 | 评分条的星级总数。 默认值：5 取值范围：大于0，小于等于0时按默认值显示。 该参数同时定义了rating的最大值与stepSize的最大值。 |
-| stepSize | number | 否 | 否 | 评分条的评分步长。 默认值：0.5 取值范围：[0.1, stars] |
+| stepSize | number | 否 | 否 | 评分条的评分步长。 默认值：0.5 取值范围：[0.1, stars] 设置的评分值会规整到stepSize的整数倍（四舍五入到最近的整数倍）。 |
 | triggerChange | Callback&lt;number&gt; | 否 | 否 | 触发评分变化的回调，参数为新的评分值。 |
 
 
@@ -419,7 +419,7 @@ type OnRatingChangeCallback = (rating: number) => void
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| rating7+ | number | 否 | 否 | 设置并接收评分值。 默认值：0 取值范围： [0, stars] 小于0取0，大于stars取最大值stars。 该参数支持$$双向绑定变量。 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| rating7+ | number | 否 | 否 | 设置并接收评分值。 默认值：0 取值范围： [0, stars] 小于0取0，大于stars取最大值stars。 设置的评分值会规整到stepSize的整数倍（四舍五入到最近的整数倍），实际显示值与onChange回调值均为规整后的值。该参数支持$$双向绑定变量。 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | indicator7+ | boolean | 否 | 是 | 设置评分组件作为指示器使用。值为true时，作为指示器使用，不可改变评分；值为false时，可进行评分。 默认值：false 说明： indicator=true时，默认组件高度height=12.0vp，组件width=height * stars。 indicator=false时，默认组件高度height=28.0vp，组件width=height * stars。 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 
 
@@ -526,7 +526,7 @@ struct RatingExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/qqphulOJQauHxbwVBKeHLg/zh-cn_image_0000002747292691.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073106Z&HW-CC-Expire=86400&HW-CC-Sign=E91836893230A9430A25D9EC63013438F4A348849352621D1494AB131D10331F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/4MhN8VU6R7S2X0Ks_fn_-A/zh-cn_image_0000002749494692.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013054Z&HW-CC-Expire=86400&HW-CC-Sign=BD07928FC46668EBC5A4059697A9AF29399A5B253F8357757A873CA60AA08FF4)
 
 
 
@@ -739,7 +739,7 @@ struct RatingExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/iyrP060IQzS8C2IjT7MCuQ/zh-cn_image_0000002747212607.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073106Z&HW-CC-Expire=86400&HW-CC-Sign=B469323997D51F62D553C251443A13093FE0529B4057B2A56A26B4F72F10FD99)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/2GtTfzZlQ0qUJ16BfT3Dyg/zh-cn_image_0000002779093749.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013054Z&HW-CC-Expire=86400&HW-CC-Sign=7FFAE86F66B477D7731511A31DA9923D3D7C705126E06B86DED5CB9DF548D596)
 
 
 
@@ -784,7 +784,7 @@ struct RatingExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/le606qZpTgGXS0A57gH7ZQ/zh-cn_image_0000002717772672.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073106Z&HW-CC-Expire=86400&HW-CC-Sign=A18F00620EEF104512CE84D84073DA940861E537CEFC00AC464F8949D1A13051)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/hbSkOLq6RA-2aYjnNZAqTA/zh-cn_image_0000002778933893.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013054Z&HW-CC-Expire=86400&HW-CC-Sign=577A1725E034ECDFC35248BC0D16C850D37BF8C8793C28B463BA01B39A6CFE3B)
 
 
 
@@ -832,4 +832,4 @@ struct RatingExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/BfZ7DZj7SvWUxJ3nZUld-w/zh-cn_image_0000002717772672.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073106Z&HW-CC-Expire=86400&HW-CC-Sign=F2B1960B6DAB2D6DEC34833271C4E8AD545225459D34CAC909B178490AAAE84A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/rFkBxflGRqWVJhIqCFcXeQ/zh-cn_image_0000002778933893.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013054Z&HW-CC-Expire=86400&HW-CC-Sign=0B48BF54EC31F046BD150FF5BC87A0AB1D7AFBEA13799BD5F4A91EEEA3044721)

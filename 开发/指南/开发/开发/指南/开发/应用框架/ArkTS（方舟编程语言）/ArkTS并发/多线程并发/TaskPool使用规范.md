@@ -1,6 +1,6 @@
 # TaskPool使用规范
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/task-pool-usage-guidelines
 
@@ -572,7 +572,7 @@ taskpool.execute(returnPromise).catch((e: BusinessError) => {
  
 对于TaskPool中的concurrentFunc()，虽然使能了精准import机制，在concurrentFunc()的最顶层仅会导入当前执行所需要的模块。但是对于较大的模块或在当前模块内依赖导入的其他模块，在系统侧是无法优化的。
  
-```text
+```ArkTS
 import { a } from './a';
 import { b } from './b';
 import { c } from './c';
@@ -604,7 +604,7 @@ TaskPool线程池线程的最大数量是有限的，当前策略是maxThreads=C
  
 同步：
  
-```text
+```ArkTS
 let srcPath = pathDir + "/srcDir/test.txt";
 let dstPath = pathDir + "/dstDir/test.txt";
 
@@ -613,7 +613,7 @@ fileIo.copyFileSync(srcPath, dstPath);
  
 异步：
  
-```text
+```ArkTS
 import { BusinessError } from '@kit.BasicServicesKit';
 
 

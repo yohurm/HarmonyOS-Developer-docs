@@ -1,6 +1,6 @@
 # @typescript-eslint/explicit-function-return-type
 
-更新时间：2026-01-15 06:51:04
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_explicit-function-return-type
 
@@ -9,12 +9,12 @@
 该规则仅支持对.ts文件进行检查。通过配置选项，可以支持对.ets文件进行检查。
  
 
-#### 规则配置
+## 规则配置
 
 ```json
 // code-linter.json5
 {
-  "rules": {
+  <span style="color: rgb(135,16,148);">"rules"</span>: {
     "@typescript-eslint/explicit-function-return-type": "error"
   }
 }
@@ -22,7 +22,7 @@
  
  
 
-#### 选项
+## 选项
 
 该规则支持配置以下选项：
  
@@ -50,7 +50,7 @@ type Options = [
  
  
 
-#### 正例
+## 正例
 
 ```text
 // No return value should be expected (void)
@@ -78,7 +78,7 @@ export { test, fn, arrowFn, Test };
  
  
 
-#### 反例
+## 反例
 
 ```text
 // Should indicate that no value is returned (void)
@@ -106,11 +106,11 @@ export { test, fn, arrowFn, Test };
  
  
 
-#### 规则集
+## 规则集
 
 ```text
-plugin:@typescript-eslint/recommended
-plugin:@typescript-eslint/all
+<span style="color: rgb(6,125,23);">plugin:@typescript-eslint/recommended</span>
+<span style="color: rgb(6,125,23);">plugin:@typescript-eslint/all</span>
 ```
  
 Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-code-linter)。

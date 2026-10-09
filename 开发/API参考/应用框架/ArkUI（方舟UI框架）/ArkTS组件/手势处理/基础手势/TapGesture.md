@@ -1,6 +1,6 @@
 # TapGesture
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-gestures-tapgesture
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -136,7 +136,7 @@ onAction(event: (event: GestureEvent) => void)
 
 getCurrentLocalPosition?(): Coordinate2D
  
-获取点击位置相对于当前组件实时位置的左上角坐标。
+获取点击位置相对于当前组件实时位置的左上角坐标。在事件无法提供有效的实时组件坐标时，返回空值，使用前请进行判空处理。
  
 **起始版本：** 26.0.0
  
@@ -201,7 +201,7 @@ struct TapGestureExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/7d7s_ObnT4aalhs7BTFOJQ/zh-cn_image_0000002717612584.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073110Z&HW-CC-Expire=86400&HW-CC-Sign=91FDBB1D9D276EF3432329EBC909AED75D881FA124DB956E9E617C6B07C88B5C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/R7qMiV6sTN-MSZCS_7xUcQ/zh-cn_image_0000002749334526.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013059Z&HW-CC-Expire=86400&HW-CC-Sign=F626CD2927EF5527E98246A3E9B1028BE42BC298321682F76370DFDCFD107A30)
 
  
   
@@ -249,7 +249,7 @@ struct TapGestureExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/Akh4uE50TDyJ5LX4dcUfhQ/zh-cn_image_0000002747292537.png?HW-CC-KV=V1&HW-CC-Date=20260911T073110Z&HW-CC-Expire=86400&HW-CC-Sign=6455F9049622A9490509F2FCE820300FE09641F1E8279F6DFBD5B7AFB9AECC61)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/JGNngzEZQLK-VImMRCjlNA/zh-cn_image_0000002749494410.png?HW-CC-KV=V1&HW-CC-Date=20261009T013059Z&HW-CC-Expire=86400&HW-CC-Sign=6926E30989C3E5DEBF5824459176F6D7F020409B510D8197B66D1788462ED0E1)
 
  
   
@@ -295,4 +295,4 @@ struct GetCurrentLocalPositionExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/ieFBT92eTY293sZeNbksWg/zh-cn_image_0000002747292405.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073110Z&HW-CC-Expire=86400&HW-CC-Sign=25ED0C9403525FD09D4BE5C38C30387D9DF65F244531B70E3CE3AA4234E194AD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/qsERK6jVQheXbrUMer41yQ/zh-cn_image_0000002749494270.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013059Z&HW-CC-Expire=86400&HW-CC-Sign=5A6087ED1499810FB7684DFD0758C48F07F0A4CB778722BCBD05E1FFB0099002)

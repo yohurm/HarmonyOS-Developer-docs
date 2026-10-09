@@ -1,6 +1,6 @@
 # 基础绘制效果（C/C++）
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/basic-drawing-effect-c
 
@@ -187,11 +187,11 @@ OH_Drawing_PenLineCapStyle线帽样式可选分类对应如下：
 
 | --- | --- | --- |
 
-| LINE_FLAT_CAP | 没有线帽样式，线条头尾端点处横切。 |  |
+| LINE_FLAT_CAP | 没有线帽样式，线条头尾端点处横切。 | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/Fc64v1-cSKi4rh-Gtmbh7g/zh-cn_image_0000002779092359.jpg?HW-CC-KV=V1&HW-CC-Date=20261009T012638Z&HW-CC-Expire=86400&HW-CC-Sign=FF65E1CD0AF6393CCAAACA8DC418D61DE23D510FECAA16497BA652F6289620AD) |
 
-| LINE_SQUARE_CAP | 线帽的样式为方框，线条的头尾端点处多出一个方框，方框宽度和线段一样宽，高度是线段宽度的一半。 |  |
+| LINE_SQUARE_CAP | 线帽的样式为方框，线条的头尾端点处多出一个方框，方框宽度和线段一样宽，高度是线段宽度的一半。 | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/qobEEWF_SFyzkGky5nWoTg/zh-cn_image_0000002778932501.jpg?HW-CC-KV=V1&HW-CC-Date=20261009T012638Z&HW-CC-Expire=86400&HW-CC-Sign=2237899BCBDE48D5E6E6D73BEBD6215B45C309E3E3771EB4BBB64BD930CE0192) |
 
-| LINE_ROUND_CAP | 线帽的样式为圆弧，线条的头尾端点处多出一个半圆弧，半圆的直径与线段宽度一致。 |  |
+| LINE_ROUND_CAP | 线帽的样式为圆弧，线条的头尾端点处多出一个半圆弧，半圆的直径与线段宽度一致。 | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/YRlUcUdJQw6FZ4EwGYDDcA/zh-cn_image_0000002749333420.jpg?HW-CC-KV=V1&HW-CC-Date=20261009T012638Z&HW-CC-Expire=86400&HW-CC-Sign=5B739EC8F1D18C481209673E34A8DCEA70A0E9CCAC52282AE427278CB67263B3) |
 
 6. 可使用OH_Drawing_PenSetJoin()接口设置画笔转角样式。
 
@@ -206,11 +206,11 @@ OH_Drawing_PenLineJoinStyle转角样式可选分类对应如下：
 
 | --- | --- | --- |
 
-| LINE_MITER_JOIN | 转角类型为尖角 |  |
+| LINE_MITER_JOIN | 转角类型为尖角 | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/ShHIBRi8RoO8Ec6ffTX0JQ/zh-cn_image_0000002779092367.png?HW-CC-KV=V1&HW-CC-Date=20261009T012638Z&HW-CC-Expire=86400&HW-CC-Sign=08B76F71DE2F4185670F1EB25FB5DDCC4B4B15D7A1BD064C5757001E78B6387F) |
 
-| LINE_ROUND_JOIN | 转角类型为圆角 |  |
+| LINE_ROUND_JOIN | 转角类型为圆角 | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/wZgGDz-8QGGOB3vPhjZKGQ/zh-cn_image_0000002778932509.png?HW-CC-KV=V1&HW-CC-Date=20261009T012638Z&HW-CC-Expire=86400&HW-CC-Sign=CEB475697DE863DDEB07FC5E1C6AF9B31CAC657A5F07BEDC233999A37DBF7F00) |
 
-| LINE_BEVEL_JOIN | 转角类型为平角 |  |
+| LINE_BEVEL_JOIN | 转角类型为平角 | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/akH8Z2YxTPeYLK2Rwbl7gw/zh-cn_image_0000002749333428.png?HW-CC-KV=V1&HW-CC-Date=20261009T012638Z&HW-CC-Expire=86400&HW-CC-Sign=155576A5D423023BCDCAADCAADC64F1DBD1FB4235BE8FF5312AE33D5896720FE) |
 
 7. 使用OH_Drawing_CanvasAttachPen()接口给Canvas画布设置画笔。接口接受两个参数，一个是画布对象Canvas，请确保已创建或获取得到画布Canvas，具体可见[画布的获取与绘制结果的显示（C/C++）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/canvas-get-result-draw-c)；另一个是要设置的画笔对象。画布将会使用设置的画笔样式和颜色等绘制图形轮廓。
 

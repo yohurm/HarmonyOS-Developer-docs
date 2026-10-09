@@ -1,6 +1,6 @@
 # 订阅应用终止事件（C/C++）
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-watcher-app-killed-events-ndk
 
@@ -238,7 +238,9 @@ static napi_value RemoveWatcher(napi_env env, napi_callback_info info) {
 ```text
 static napi_value DestroyWatcher(napi_env env, napi_callback_info info) {
     // 销毁创建的观察者，并置systemEventWatcher为nullptr。
-    OH_HiAppEvent_DestroyWatcher(systemEventWatcher);
+    if (systemEventWatcher != nullptr) {
+       OH_HiAppEvent_DestroyWatcher(systemEventWatcher);
+    }
     systemEventWatcher = nullptr;
     return {};
 }

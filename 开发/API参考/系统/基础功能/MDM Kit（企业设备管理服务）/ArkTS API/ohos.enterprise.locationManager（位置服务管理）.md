@@ -1,6 +1,6 @@
-# @ohos.enterprise.locationManager（位置服务管理）
+# @ohos.enterprise.locationManager (位置服务管理)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-locationmanager
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -37,7 +37,7 @@ setLocationPolicy(admin: Want, policy: LocationPolicy): void
 设置位置服务管理策略。可用于企业管控场景，如：在涉密区域禁用位置服务以保护信息安全，或在物流配送应用中强制开启位置服务以追踪设备位置。
 
 > [!NOTE]
-> 禁用：在需要保护隐私或节省电量的场景下设置。 强制开启：在设备安全追踪、资产管理等场景下设置。 默认：取消策略限制，由用户自主控制。
+> 禁用：在需要保护隐私或节省电量的场景下设置。 强制开启：在设备安全追踪、资产管理等场景下设置。 默认：取消策略限制，由用户自主控制。 在多个MDM应用场景下，遵循 独占 规则。
 
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_LOCATION
@@ -45,8 +45,6 @@ setLocationPolicy(admin: Want, policy: LocationPolicy): void
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**冲突规则：** [独占](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则2独占)。
 
 **参数：**
 

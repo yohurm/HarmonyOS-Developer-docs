@@ -1,6 +1,6 @@
 # 通过向量数据库实现数据持久化 (C/C++)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-vector-store-guidelines
 
@@ -22,7 +22,7 @@
 
 ## 约束限制
 
- - 系统默认日志方式是[WAL](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-terminology#wal模式)（Write Ahead Log）模式，系统默认落盘方式是[FULL模式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-terminology#full模式)。
+ - 系统默认日志方式是[WAL](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-terminology#wal-mode-write-ahead-logwal模式)（Write Ahead Log）模式，系统默认落盘方式是[FULL模式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-terminology#full-modefull模式)。
  - 数据库中默认有4个读连接和1个写连接，线程获取到空闲读连接时，即可进行读取操作。当没有空闲读连接时，会创建新的读连接。
  - 为保证数据的准确性，数据库同一时间只能支持一个写操作，并发的写操作会串行执行。
  - 当应用被卸载完成后，设备上的相关数据库文件及临时文件会被自动清除。

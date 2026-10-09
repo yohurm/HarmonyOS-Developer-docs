@@ -1,6 +1,6 @@
 # ohpm仓库接口协议
 
-更新时间：2026-08-29 09:41:34
+更新时间：2026-09-14 03:29:10
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-interface-protocol
 
@@ -528,8 +528,8 @@ Authorization：<token>
 2）pkg_stream=<@hsp.tgz;application/octet-stream>：待上传包的文件流数据
 ```
  
-
  
+
 请求示例中请求体的包元数据内容如下所示：
  
 ```ArkTS
@@ -939,8 +939,8 @@ GET <router-prefix>/:group?/:package_name/versions?pageNum=1&pageSize=10
 authorization: NjJmNjFhODI3N2ZlNDUwMzlhYmUwNjQxZjQ3ZTNhZDU=
 ```
  
-
  
+
 请求头包含一个字段，描述如下：
   
 
@@ -1121,7 +1121,7 @@ body的item是一个json对象，包含十二个字段，描述如下：
  
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/F6ogeZF1Q7qTxDN_5HiEJw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072815Z&HW-CC-Expire=86400&HW-CC-Sign=F475DAB96785A686D34DC3B768E0FC208AED1E43C52B46394971FA4A5B99DB38)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/fdOmbPSQQkuDzqoiMvQ3Rw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20261009T012815Z&HW-CC-Expire=86400&HW-CC-Sign=94C285E29DB1D31CA2C17B7E6CFB5DD5000AC23EB921E4C0108E2A4770190460)
  
 
 由于[流式上传接口](#section08863329310)在ohpm 5.0.1版本才开始支持，当ohpm调用该接口时，若返回的响应状态码为404时，ohpm客户端会再次调用[上传接口](#section444511511524)上传。为了保证与ohpm客户端的兼容性，请确保当访问仓库不存在的接口仓库的响应状态码为404。

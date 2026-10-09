@@ -1,6 +1,6 @@
 # 拦截Web组件发起的网络请求
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-scheme-handler
 
@@ -242,7 +242,7 @@ NDK：[arkweb_net_error_list.h](https://developer.huawei.com/consumer/cn/doc/har
 ArkTS：[@ohos.web.netErrorList (ArkWeb网络协议栈错误列表)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-neterrorlist)。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/NQfD5QEkTxKTy4DD8VSTWA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T073148Z&HW-CC-Expire=86400&HW-CC-Sign=A80CEA22E60B9B3A6617085B8466D135A8CCAD05B2499FFB04FE25A8C0B112FF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/agO39z6zTKihA2Pi_dOXdg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20261009T013124Z&HW-CC-Expire=86400&HW-CC-Sign=270CF0D5A69C37B47BA89C86D24358F54F882C95D66EE62BE878A638B26CEFC7)
 
 
  - ArkWeb不支持自定义错误码，请使用ArkWeb提供的错误码来结束请求。
@@ -312,6 +312,8 @@ this.schemeHandler.onRequestStart((request: webview.WebSchemeHandlerRequest, res
  return true;
 })
 ```
+
+网络拦截支持流式请求，可以通过多次调用[didReceiveResponseBody](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webresourcehandler#didreceiveresponsebody12)或者[OH_ArkWebResourceHandler_DidReceiveData](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkweb-scheme-handler-h#oh_arkwebresourcehandler_didreceivedata)，分块构造返回响应体。最后一次返回响应体时，再调用[didFinish](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webresourcehandler#didfinish12)或者[OH_ArkWebResourceHandler_DidFinish](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkweb-scheme-handler-h#oh_arkwebresourcehandler_didfinish)通知Web组件被拦截的请求已经完成。
 
 当希望通过[OH_ArkWebResourceHandler_DidFailWithError](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkweb-scheme-handler-h#oh_arkwebresourcehandler_didfailwitherror)或者[didFail(code: WebNetErrorList)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webresourcehandler#didfail12)结束当前请求时，需要在调用该接口之前通过[OH_ArkWebResourceHandler_DidReceiveResponse](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkweb-scheme-handler-h#oh_arkwebresourcehandler_didreceiveresponse)或者[didReceiveResponse](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webresourcehandler#didreceiveresponse12)返回给Web内核一个响应头，否则无法结束请求。
 

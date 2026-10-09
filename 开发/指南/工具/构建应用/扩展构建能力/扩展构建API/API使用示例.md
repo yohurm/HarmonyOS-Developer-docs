@@ -1,6 +1,6 @@
 # API使用示例
 
-更新时间：2026-04-20 06:32:02
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-build-expanding-sample
 

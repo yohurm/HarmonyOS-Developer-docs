@@ -1,6 +1,6 @@
 # 案例：ArkTS内存泄漏分析
 
-更新时间：2026-08-29 09:41:34
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-arkts-memory-leak-analysis
 
@@ -247,7 +247,7 @@ DevEco Studio 6.1.0 Release版本新增，位于（handle）标签中，允许�
 如下图，ReferenceAddress:0x5b0b560160是napi_ref地址，子节点是napi_ref关联的ArkTS对象。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/1HjzAGXXQNqH1WFOogsk8w/zh-cn_image_0000002701663604.png?HW-CC-KV=V1&HW-CC-Date=20260911T072808Z&HW-CC-Expire=86400&HW-CC-Sign=415864C615BF73D3E2F2A523D83D0CA5EE7DDC6E9ADF147D0E3616BDC9EB9E5C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/Fs-flmNgQY2eQ_Ew--oh6Q/zh-cn_image_0000002701663604.png?HW-CC-KV=V1&HW-CC-Date=20261009T012758Z&HW-CC-Expire=86400&HW-CC-Sign=F5C2A7916B32908BFAC44174F4AD288D1ABBD50158C40D3E6D5A9A29457EC363)
 
  
 > [!NOTE]
@@ -312,13 +312,13 @@ SourceTextModule为虚拟机创建的对象，当应用使用export暴露对象�
 对于声明对象，可以通过constructor属性来确定对象名称。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/fKbLmWc4TAeiTzfwEKgJ0g/zh-cn_image_0000002701663620.png?HW-CC-KV=V1&HW-CC-Date=20260911T072808Z&HW-CC-Expire=86400&HW-CC-Sign=D76609876A63BF6766F65C09DB9760CD0DE9901580E1F30B16E6FED5CFF38CB0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/DVi0X35ERDGSavl8836FUQ/zh-cn_image_0000002701663620.png?HW-CC-KV=V1&HW-CC-Date=20261009T012758Z&HW-CC-Expire=86400&HW-CC-Sign=8E52A9B794F452883042760CD6E16EBF12CB754218D16C5C7DFC8F26D2C1F9EC)
 
  
 对于实例化对象，一般没有constructor，则需要展开__proto__属性后查找constructor；
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/X2Zeklx9T56t0XkcEyeRiA/zh-cn_image_0000002731382847.png?HW-CC-KV=V1&HW-CC-Date=20260911T072808Z&HW-CC-Expire=86400&HW-CC-Sign=70242F0826F04A6FD04E6378467A50FD4B277A295120D3BD19745E41BBC008F9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/AKFGdGybQWy7KrZnvDUkXw/zh-cn_image_0000002731382847.png?HW-CC-KV=V1&HW-CC-Date=20261009T012758Z&HW-CC-Expire=86400&HW-CC-Sign=3B931BC486BAFEB23850FA7FF73C8D89D593693FA2135E60085E7B517D0AB9E1)
 
  
 若对象里有一些标志性属性，可以通过在代码里搜索属性名称来找到具体是哪个对象。
@@ -326,7 +326,7 @@ SourceTextModule为虚拟机创建的对象，当应用使用export暴露对象�
 如果对象间有继承关系，则可以继续展开__proto__：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/uFEMPD4PRhKjJZAH6IN_Og/zh-cn_image_0000002701823542.png?HW-CC-KV=V1&HW-CC-Date=20260911T072808Z&HW-CC-Expire=86400&HW-CC-Sign=1E2896273C7C16967E0B6D31097BA788BC532CDA9BF4782A05AE65F0A2E6D52C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/mClbnOXRQGq9lyrr6cDkRQ/zh-cn_image_0000002701823542.png?HW-CC-KV=V1&HW-CC-Date=20261009T012758Z&HW-CC-Expire=86400&HW-CC-Sign=71C972FE6872EB1E08A46BA7CC2B40E3D785C890402375E1452EDA326D8AEB5E)
 
  
 如上图则表明Man对象继承自People对象。

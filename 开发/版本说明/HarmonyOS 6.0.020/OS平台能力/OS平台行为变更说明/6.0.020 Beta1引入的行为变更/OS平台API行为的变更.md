@@ -1,6 +1,6 @@
 # OS平台API行为的变更
 
-更新时间：2026-09-09 06:41:01
+更新时间：2026-10-08 10:09:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-for-all-apps-6001
 
@@ -126,8 +126,8 @@ AbilityDelegator提供的startAbility()接口参见[startAbility API参考](http
 - 修改uri字段和wantConstant.Params.PARAMS_STREAM字段中的非文件URI为文件URI。如果原来写入的URI是沙箱路径，可以通过[fileUri.getUriFromPath](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-file-fileuri#fileurigeturifrompath)接口将其转为文件URI。
 
  
-
  
+
  
 
 ## ArkTS
@@ -320,7 +320,7 @@ struct Demo {
 
 | 变更前 | 变更后 |
 | --- | --- |
-|  |  |
+| ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/dyqOzaZqShejSCq1pwlgew/zh-cn_image_0000002367720909.jpeg?HW-CC-KV=V1&HW-CC-Date=20261009T012727Z&HW-CC-Expire=86400&HW-CC-Sign=89B71114B32AA2EC16D664284E10E478990CDC188F8BBE632B60F3D45EE7A0A3) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/cPn2RE_WTjitIIYP9tuPdg/zh-cn_image_0000002333642694.jpeg?HW-CC-KV=V1&HW-CC-Date=20261009T012727Z&HW-CC-Expire=86400&HW-CC-Sign=4B996A1ECE6C69B81F59237580FBFF4F471CC10B4BF01F1427E698269B159169) |
  
  
 **起始API Level**

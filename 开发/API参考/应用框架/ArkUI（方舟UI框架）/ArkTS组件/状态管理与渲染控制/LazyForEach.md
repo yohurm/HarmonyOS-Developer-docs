@@ -1,6 +1,6 @@
 # LazyForEach
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-rendering-control-lazyforeach
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -33,8 +33,6 @@ LazyForEach从提供的数据源中按需迭代数据，并在每次迭代过程
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **参数：**
 

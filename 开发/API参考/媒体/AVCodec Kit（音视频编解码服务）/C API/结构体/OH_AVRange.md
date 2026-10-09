@@ -1,6 +1,6 @@
 # OH_AVRange
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avcapability-oh-avrange
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -16,6 +16,8 @@ typedef struct OH_AVRange {...} OH_AVRange
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 范围包含最小值和最大值。
+ 
+**系统能力：** SystemCapability.Multimedia.Media.CodecBase
  
 **起始版本：** 10
  

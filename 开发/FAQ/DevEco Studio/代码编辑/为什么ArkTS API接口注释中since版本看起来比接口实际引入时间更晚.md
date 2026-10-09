@@ -50,6 +50,7 @@ declare namespace inputMethodEngine {
 在此例中，使用两段注释说明API在19/20两个版本所出现的变化。getAttachOptions()最早在API 19引入，在部分不支持的设备上会抛出801错误码。从API 20起，所有设备均支持，不会再抛出801错误码。
   
 | 工程最低兼容版本 build-profile.json5中compatibleSdkVersion字段 | 查看SDK声明文件 | 鼠标悬停在接口调用处 |
+| --- | --- | --- |
 | 5.0.0(12) | 只显示最新一段@since 20注释，其余折叠 | 分两段显示@since 19、@since 20注释内容 |
 | 5.1.1(19) | 只显示最新一段@since 20注释，其余折叠 | 分两段显示@since 19、@since 20注释内容 |
 | 6.0.0(20) | 只显示最新一段@since 20注释，其余折叠 | 只显示@since 20注释内容 |

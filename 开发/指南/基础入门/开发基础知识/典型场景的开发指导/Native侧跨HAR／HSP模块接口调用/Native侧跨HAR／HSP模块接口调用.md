@@ -1,6 +1,6 @@
 # Native侧跨HAR/HSP模块接口调用
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-cross-har-hsp-interface-call
 
@@ -32,7 +32,7 @@
 **图 1** Native侧跨HAR/HSP模块调用原理图
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/8N3ZCoWVRwOE5k0Jzv4jsA/zh-cn_image_0000002747289817.png?HW-CC-KV=V1&HW-CC-Date=20260911T073019Z&HW-CC-Expire=86400&HW-CC-Sign=9DF2CB4DDBDCFDEADBBAB1A6430365BDD731B41484A8323D951E4806B375E841)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/7mUaZp1SROu1G417zUDxgQ/zh-cn_image_0000002749491564.png?HW-CC-KV=V1&HW-CC-Date=20261009T013032Z&HW-CC-Expire=86400&HW-CC-Sign=7EC58085D399B2CA12E73D5BAC78F475CD9AA12092B8617AD342A424BE8C5951)
 
  
   
@@ -44,7 +44,7 @@
 **图 2** Native侧跨HAR/HSP模块调用Native方法
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/Vp8tCR6ZR5KDl2tD_4pQ2g/zh-cn_image_0000002747209735.png?HW-CC-KV=V1&HW-CC-Date=20260911T073019Z&HW-CC-Expire=86400&HW-CC-Sign=9660584A9A5378E9CEDFE722150335EE144D3BB259AE471094218EB5A3DCB91E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/p5lzlfPMRkCn_y-UjOn29w/zh-cn_image_0000002779090621.png?HW-CC-KV=V1&HW-CC-Date=20261009T013032Z&HW-CC-Expire=86400&HW-CC-Sign=7EAC977DF33FC5C9FEF63DB6831733F3953BA18FC85E650E97F36E94E581E7B5)
 
  
   
@@ -58,7 +58,7 @@ Native侧跨HAR/HSP模块调用Native方法时，需要实现Module1（HAP）的
   napi_har.cpp代码如下所示。
 
   
-```text
+```cpp
 #include "napi/native_api.h"
 #include "napi_har.h"
 
@@ -69,7 +69,7 @@ double harNativeAdd(double a, double b) {
    napi_har.h代码如下所示。
 
   
-```text
+```cpp
 #ifndef CROSSMODULEREFERENCE_NAPI_HAR_H
 #define CROSSMODULEREFERENCE_NAPI_HAR_H
 #include <js_native_api_types.h>
@@ -143,7 +143,7 @@ target_link_libraries(entry PUBLIC libace_napi.z.so static_module::add shared_mo
 8. 在Module1的Native侧调用Module2的invokeHarNative()方法。
 
   
-```text
+```cpp
 static napi_value invokeHarNative(napi_env env, napi_callback_info info)
 {
     size_t argc = 2;
@@ -174,7 +174,7 @@ static napi_value invokeHarNative(napi_env env, napi_callback_info info)
 9. 在Module1的ArkTS侧调用Native侧的invokeHarNative()方法。
 
   
-```text
+```ArkTS
 Button($r('app.string.call_har_native_method'))
   .fontSize(16)
   .width('100%')
@@ -194,7 +194,7 @@ Button($r('app.string.call_har_native_method'))
 **图 3** Native侧调用HAR模块的Native方法
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/xsberYueRuOsRkiW0_Cmgg/zh-cn_image_0000002717769802.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073019Z&HW-CC-Expire=86400&HW-CC-Sign=A1038F4444124E2E93A29CB2F53BCF90E1244533C7EA9A245B810BF71AA79B20)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/bfDbqIpNTg6MzLOHZgTqUw/zh-cn_image_0000002778930765.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013032Z&HW-CC-Expire=86400&HW-CC-Sign=4D3EE3259776EF5F1CEFDAC7A311C84EEA10FCDEEF5FA11D01A10CC005586D9B)
 
  
   
@@ -206,7 +206,7 @@ Button($r('app.string.call_har_native_method'))
 **图 4** Native侧跨HAR/HSP模块调用ArkTS方法
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/yc85al-VSeWNxhPiN9Gx-A/zh-cn_image_0000002717609868.png?HW-CC-KV=V1&HW-CC-Date=20260911T073019Z&HW-CC-Expire=86400&HW-CC-Sign=17CC844EB0CFF5980BF4A73D1F4C937274DDFC47AE4D90802FC3B22DAD395CBD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/xasdcw7nQJyhWv1yg3M7JQ/zh-cn_image_0000002749331682.png?HW-CC-KV=V1&HW-CC-Date=20261009T013032Z&HW-CC-Expire=86400&HW-CC-Sign=85D1050F513D3A59D7594828B6FE339E6F52C3671837728F06E96125CE72387B)
 
  
   
@@ -220,7 +220,7 @@ Native侧跨HAR/HSP模块调用ArkTS方法具体实现方法如下所示。
   napi_har.h代码如下所示。
 
   
-```text
+```cpp
 #ifndef CROSSMODULEREFERENCE_NAPI_HAR_H
 #define CROSSMODULEREFERENCE_NAPI_HAR_H
 #include <js_native_api_types.h>
@@ -233,7 +233,7 @@ napi_value harArkTSAdd(double a, double b);
    napi_har.cpp代码如下所示。
 
   
-```text
+```cpp
 void setHarEnv(napi_env env) {
     g_main_env = env;
 }
@@ -242,7 +242,7 @@ void setHarEnv(napi_env env) {
 3. 在Module1中的napi_init.cpp中的Init()方法中调用setHarEnv()方法将Module1中的napi_env传递到Module2中。
 
   
-```text
+```cpp
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -264,7 +264,7 @@ EXTERN_C_END
 4. 在Module2中创建ArkTS方法，提供给Module2的Native侧调用。
 
   
-```text
+```ArkTS
 export function add(a: number, b: number): number {
   return a + b;
 }
@@ -302,7 +302,7 @@ export function add(a: number, b: number): number {
   napi_har.cpp代码如下所示。
 
   
-```text
+```cpp
 napi_value harArkTSAdd(double a, double b) {
     napi_env env = g_main_env;
     napi_value module;
@@ -327,7 +327,7 @@ napi_value harArkTSAdd(double a, double b) {
 - 在module1的Native侧调用module2的harArkTSAdd()方法。
 
   
-```text
+```cpp
 static napi_value invokeHarArkTS(napi_env env, napi_callback_info info)
 {
     size_t argc = 2;
@@ -354,7 +354,7 @@ static napi_value invokeHarArkTS(napi_env env, napi_callback_info info)
 - 在Module1的ArkTS侧调用Native侧的invokeHarArkTS()方法。
 
   
-```text
+```ArkTS
 Button($r('app.string.call_har_ArkTS_method'))
   .fontSize(16)
   .width('100%')
@@ -374,7 +374,7 @@ Button($r('app.string.call_har_ArkTS_method'))
 **图 5** Native侧调用HAR模块的ArkTS方法
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/fMkXZ_IjRouIwDL-u7_bdQ/zh-cn_image_0000002747289819.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073019Z&HW-CC-Expire=86400&HW-CC-Sign=CFF06980F19C5C49664F3BEEC587FD40D8D3133166AC34DF208A58D16FE93202)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/VO6paWF4RCOZHswvTCkBLg/zh-cn_image_0000002749491566.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013032Z&HW-CC-Expire=86400&HW-CC-Sign=406C61927D9BDF8442E2D89E8A6072443B9CC9028CE705581BD96D8B7E115F78)
 
  
   

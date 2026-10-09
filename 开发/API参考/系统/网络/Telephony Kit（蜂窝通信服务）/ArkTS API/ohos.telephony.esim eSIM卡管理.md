@@ -1,9 +1,9 @@
 # @ohos.telephony.esim (eSIM卡管理)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-esim
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
+**支持设备：** Phone | Wearable
 
 本模块提供了eSIM卡管理的基础能力，包括获取指定卡槽是否支持eSIM功能，如果支持则允许用户添加单个配置文件。
 
@@ -15,7 +15,7 @@
 ## 导入模块
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
+**支持设备：** Phone | Wearable
 
 ```text
 import { eSIM } from '@kit.TelephonyKit';
@@ -26,7 +26,7 @@ import { eSIM } from '@kit.TelephonyKit';
 ## eSIM.isSupported
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
+**支持设备：** Phone | Wearable
 
 isSupported(slotId: number): boolean
 
@@ -76,7 +76,7 @@ console.info(`the esim is Supported:` + isSupported);
 ## eSIM.addProfile
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
+**支持设备：** Phone | Wearable
 
 addProfile(profile: DownloadableProfile): Promise&lt;boolean&gt;
 
@@ -145,7 +145,7 @@ eSIM.addProfile(profile).then(() => {
 ## DownloadableProfile
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
+**支持设备：** Phone | Wearable
 
 可下载的配置文件。
 
@@ -165,7 +165,7 @@ eSIM.addProfile(profile).then(() => {
 ## AccessRule20+
 
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
+**支持设备：** Phone | Wearable
 
 访问规则。
 

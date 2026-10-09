@@ -1,6 +1,6 @@
 # ArrayBuffer对象
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arraybuffer-object
 
@@ -110,4 +110,4 @@ struct Index {
 
 ## ArrayBuffer转移传输方式
 
-在TaskPool中，传递ArrayBuffer数据时，默认使用转移方式，原线程将无法再使用已传输给子线程的ArrayBuffer。 在上文示例的基础上去除task.setTransferList接口调用，即在createImageTask的第二个参数传入false，就可以实现转移方式的传输。
+在TaskPool中，传递ArrayBuffer数据时，默认使用转移方式，原线程将无法再使用已传输给子线程的ArrayBuffer。 在上文示例的基础上去除task.setTransferList()接口调用，即在createImageTask的第二个参数传入false，就可以实现转移方式的传输。

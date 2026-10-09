@@ -1,6 +1,6 @@
 # @ohos.continuation.continuationManager (流转/协同管理)
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-continuation-continuationmanager
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -8,7 +8,7 @@
 continuationManager模块提供了流转/协同入口管理服务能力，包括连接/取消流转管理服务，注册/解注册设备连接变化监听，拉起设备选择模块，更新连接状态。
 
 > [!NOTE]
-> 本模块首批接口从API version 8开始支持，从API version 22开始废弃，建议使用 分布式设备管理 替代。 本模块接口仅可在Stage模型下使用。
+> 本模块首批接口从API version 8开始支持，从API version 22开始废弃，建议使用 @ohos.distributedDeviceManager (设备管理) 替代。 本模块接口仅可在Stage模型下使用。
 
 
 
@@ -33,7 +33,7 @@ register(callback: AsyncCallback&lt;number&gt;): void
 注册流转管理服务，并获取对应的注册token，无过滤条件，使用AsyncCallback方式作为异步方法。
 
 > [!NOTE]
-> 从API version 9开始废弃，建议使用 ondevicestatechange 替代。
+> 从API version 9开始废弃，建议使用 on('deviceStateChange') 替代。
 
 
 **模型约束**：此接口仅可在Stage模型下使用。
@@ -76,7 +76,7 @@ register(options: ContinuationExtraParams, callback: AsyncCallback&lt;number&gt;
 连接流转管理服务，并获取对应的注册token，使用AsyncCallback方式作为异步方法。
 
 > [!NOTE]
-> 从API version 9开始废弃，建议使用 onDeviceStateChange 替代。
+> 从API version 9开始废弃，建议使用 on('deviceStateChange') 替代。
 
 
 **模型约束**：此接口仅可在Stage模型下使用。
@@ -124,7 +124,7 @@ register(options?: ContinuationExtraParams): Promise&lt;number&gt;
 连接流转管理服务，并获取对应的注册token，使用Promise方式作为异步方法。
 
 > [!NOTE]
-> 从API version 9开始废弃，建议使用 onDeviceStateChange 替代。
+> 从API version 9开始废弃，建议使用 on('deviceStateChange') 替代。
 
 
 **模型约束**：此接口仅可在Stage模型下使用。
@@ -175,7 +175,7 @@ registerContinuation(callback: AsyncCallback&lt;number&gt;): void
 注册流转管理服务，并获取对应的注册token，无过滤条件，使用AsyncCallback方式作为异步方法。
 
 > [!NOTE]
-> 从API version 9开始支持，从API version 22开始废弃，建议使用 onDeviceStateChange 替代。
+> 从API version 9开始支持，从API version 22开始废弃，建议使用 on('deviceStateChange') 替代。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -239,7 +239,7 @@ registerContinuation(options: ContinuationExtraParams, callback: AsyncCallback&l
 连接流转管理服务，并获取对应的注册token，使用AsyncCallback方式作为异步方法。
 
 > [!NOTE]
-> 从API version 9开始支持，从API version 22开始废弃，建议使用 onDeviceStateChange 替代。
+> 从API version 9开始支持，从API version 22开始废弃，建议使用 on('deviceStateChange') 替代。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -308,7 +308,7 @@ registerContinuation(options?: ContinuationExtraParams): Promise&lt;number&gt;
 连接流转管理服务，并获取对应的注册token，使用Promise方式作为异步方法。
 
 > [!NOTE]
-> 从API version 9开始支持，从API version 22开始废弃，建议使用 onDeviceStateChange 替代。
+> 从API version 9开始支持，从API version 22开始废弃，建议使用 on('deviceStateChange') 替代。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -382,7 +382,7 @@ on(type: 'deviceConnect', callback: Callback&lt;ContinuationResult&gt;): void
 异步方法，监听设备连接状态，使用Callback形式返回连接的设备信息。
 
 > [!NOTE]
-> 从API version 9开始废弃，建议使用 onDeviceStateChange 替代。
+> 从API version 9开始废弃，建议使用 on('deviceStateChange') 替代。
 
 
 **模型约束**：此接口仅可在Stage模型下使用。
@@ -422,7 +422,7 @@ on(type: 'deviceDisconnect', callback: Callback&lt;string&gt;): void
 异步方法，监听设备断开状态，使用Callback形式返回断开的设备信息。
 
 > [!NOTE]
-> 从API version 9开始废弃，建议使用 onDeviceStateChange 替代。
+> 从API version 9开始废弃，建议使用 on('deviceStateChange') 替代。
 
 
 **模型约束**：此接口仅可在Stage模型下使用。
@@ -460,7 +460,7 @@ off(type: 'deviceConnect', callback?: Callback&lt;ContinuationResult&gt;): void
 异步方法，取消监听设备连接状态，使用Callback形式返回连接的设备信息。
 
 > [!NOTE]
-> 从API version 9开始废弃，建议使用 offDeviceStateChange 替代。
+> 从API version 9开始废弃，建议使用 off('deviceStateChange') 替代。
 
 
 **模型约束**：此接口仅可在Stage模型下使用。
@@ -500,7 +500,7 @@ off(type: 'deviceDisconnect', callback?: Callback&lt;string&gt;): void
 异步方法，取消监听设备断开状态，使用Callback形式返回连接的设备信息。
 
 > [!NOTE]
-> 从API version 9开始废弃，建议使用 offDeviceStateChange 替代。
+> 从API version 9开始废弃，建议使用 off('deviceStateChange') 替代。
 
 
 **模型约束**：此接口仅可在Stage模型下使用。
@@ -538,7 +538,7 @@ on(type: 'deviceSelected', token: number, callback: Callback<Array&lt;Continuati
 异步方法，监听设备连接状态，使用Callback形式返回连接的设备信息。
 
 > [!NOTE]
-> 从API version 9开始支持，从API version 22开始废弃，建议使用 onDeviceStateChange 替代。
+> 从API version 9开始支持，从API version 22开始废弃，建议使用 on('deviceStateChange') 替代。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -605,7 +605,7 @@ on(type: 'deviceUnselected', token: number, callback: Callback<Array&lt;Continua
 异步方法，监听设备断开状态，使用Callback形式返回断开的设备信息。
 
 > [!NOTE]
-> 从API version 9开始支持，从API version 22开始废弃，建议使用 onDeviceStateChange 替代。
+> 从API version 9开始支持，从API version 22开始废弃，建议使用 on('deviceStateChange') 替代。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -673,7 +673,7 @@ off(type: 'deviceSelected', token: number): void
 取消监听设备连接状态。
 
 > [!NOTE]
-> 从API version 9开始支持，从API version 22开始废弃，建议使用 offDeviceStateChange 替代。
+> 从API version 9开始支持，从API version 22开始废弃，建议使用 off('deviceStateChange') 替代。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -732,7 +732,7 @@ off(type: 'deviceUnselected', token: number): void
 取消监听设备断开状态。
 
 > [!NOTE]
-> 从API version 9开始支持，从API version 22开始废弃，建议使用 offDeviceStateChange 替代。
+> 从API version 9开始支持，从API version 22开始废弃，建议使用 off('deviceStateChange') 替代。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -1388,7 +1388,7 @@ unregister(token: number, callback: AsyncCallback&lt;void&gt;): void
 解注册流转管理服务，传入注册时获取的token进行解注册，使用AsyncCallback方式作为异步方法。
 
 > [!NOTE]
-> 从API version 9开始废弃，建议使用 offDeviceStateChange 替代。
+> 从API version 9开始废弃，建议使用 off('deviceStateChange') 替代。
 
 
 **模型约束**：此接口仅可在Stage模型下使用。
@@ -1431,7 +1431,7 @@ unregister(token: number): Promise&lt;void&gt;
 解注册流转管理服务，传入注册时获取的token进行解注册，使用Promise方式作为异步方法。
 
 > [!NOTE]
-> 从API version 9开始废弃，建议使用 offDeviceStateChange 替代。
+> 从API version 9开始废弃，建议使用 off('deviceStateChange') 替代。
 
 
 **模型约束**：此接口仅可在Stage模型下使用。
@@ -1481,7 +1481,7 @@ unregisterContinuation(token: number, callback: AsyncCallback&lt;void&gt;): void
 解注册流转管理服务，传入注册时获取的token进行解注册，使用AsyncCallback方式作为异步方法。
 
 > [!NOTE]
-> 从API version 9开始支持，从API version 22开始废弃，建议使用 offDeviceStateChange 替代。
+> 从API version 9开始支持，从API version 22开始废弃，建议使用 off('deviceStateChange') 替代。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -1545,7 +1545,7 @@ unregisterContinuation(token: number): Promise&lt;void&gt;
 解注册流转管理服务，传入注册时获取的token进行解注册，使用Promise方式作为异步方法。
 
 > [!NOTE]
-> 从API version 9开始支持，从API version 22开始废弃，建议使用 offDeviceStateChange 替代。
+> 从API version 9开始支持，从API version 22开始废弃，建议使用 off('deviceStateChange') 替代。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。

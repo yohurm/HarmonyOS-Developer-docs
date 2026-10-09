@@ -1,6 +1,6 @@
 # LazyForEach：数据懒加载
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-lazyforeach
 
@@ -143,7 +143,7 @@ struct InitialRendering {
 
 **错误案例：键值相同导致渲染异常**
 
-当不同数据项生成的键值相同时，框架的行为是不可预测的。例如，在以下代码中，LazyForEach渲染的数据项键值均相同，在滑动过程中，LazyForEach会预加载划入划出当前页面的子组件，而新建的子组件和销毁的旧子组件具有相同的键值，框架可能取用错误的缓存，导致子组件渲染出现问题。
+当不同数据项生成的键值相同时，框架的行为是不可预测的。例如，在以下代码中，LazyForEach渲染的数据项键值均相同，在滑动过程中，LazyForEach会预加载滑入滑出当前页面的子组件，而新建的子组件和销毁的旧子组件具有相同的键值，框架可能取用错误的缓存，导致子组件渲染出现问题。
 
 BasicDataSource代码见文档末尾BasicDataSource示例代码: [string类型数组的BasicDataSource代码](#string类型数组的basicdatasource代码)。
 
@@ -2088,7 +2088,7 @@ LazyForEach(this.data, (item: string) => {
 **定义键值生成函数后，点击按钮更新数据，组件刷新**
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/4MBzjTSQSJy_eTp7OuSjkg/zh-cn_image_0000002747210085.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072212Z&HW-CC-Expire=86400&HW-CC-Sign=0EBE3F9DFB5C8DD2E2CEA5DEDF7D14164423D2064BEF48AA1B46A857AE34AAF3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/OKb_l1FfTQyGBGSo3zsDLA/zh-cn_image_0000002779090975.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012632Z&HW-CC-Expire=86400&HW-CC-Sign=91579AD42382CB58941300EB4AD983CC3D97028C4DA300B07C9023F8566FAB60)
 
 
 

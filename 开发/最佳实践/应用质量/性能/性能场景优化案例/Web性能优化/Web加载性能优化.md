@@ -1,6 +1,6 @@
 # Web加载性能优化
 
-更新时间：2026-08-26 06:47:01
+更新时间：2026-09-15 02:12:10
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-web-develop-optimization
 
@@ -168,8 +168,8 @@ export struct Second {
 ![](assets/Web加载性能优化/file-20260515115035550-12.png)
 
  
-
  
+
 【推荐用法】
  
 在后台创建一个ArkWeb组件来预先启动用于渲染的Web渲染进程。
@@ -393,8 +393,8 @@ export struct Second {
 > 开发者可以在后续页面操作中选择是否复用ArkWeb组件。
 
  
-
  
+
 **总结**
   
 
@@ -763,8 +763,8 @@ struct Index {
 > 本方案能消除POST请求下载的耗时，预计收益在100毫秒左右，具体取决于POST请求的数据内容和当前网络环境。 预取POST请求行为包括连接和资源下载。连接和资源加载耗时可能达到数百毫秒，具体取决于POST请求的数据内容和当前网络环境。建议为预下载留出足够的时间。 预取POST请求会消耗额外的流量和内存，建议仅用于高频页面。 POST请求具有即时性，预取POST请求需指定有效期。 目前仅支持预取Content-Type为application/x-www-form-urlencoded的POST请求，最多预取6个。预取第7个时，会自动清除最早预取的POST缓存。也可以通过clearPrefetchedResource()接口主动清除不再使用的预取资源缓存。 如果要使用预获取的资源缓存，开发者需要在正式发起的POST请求的请求头中添加“ArkWebPostCacheKey”，其值为对应缓存的cacheKey。
 
  
-
  
+
 **实践案例**
  
 案例一：加载包含POST请求的首页。
@@ -877,8 +877,8 @@ xhr.send(formData);
 ```
 
  
-
  
+
 案例二：加载包含POST请求的下一页。
  
 【不推荐用法】
@@ -1039,8 +1039,8 @@ struct Index {
 > JavaScript的编译时间受文件大小和逻辑复杂度的影响。
 
  
-
  
+
 案例二：使用预编译JavaScript生成字节码缓存，具体步骤如下：
  1. 配置预编译的JavaScript文件信息。
 
@@ -1114,8 +1114,8 @@ Web({ src: 'https://www.example.com/a.html', controller: this.controller })
 > 当需要更新本地已生成的编译字节码时，修改cacheOptions参数中responseHeaders的E-Tag或Last-Modified响应头对应的值，再次调用接口即可。
 
  
-
  
+
 **总结**
   
 
@@ -1152,8 +1152,8 @@ Web组件默认支持HTTP协议和自定义协议的JavaScript生成字节码缓
  1. 开发者需要在Web组件运行前注册自定义协议。
 2. 拦截自定义协议的JavaScript，设置ResponseData和ResponseDataID。
  
-
  
+
  
 > [!NOTE]
 > ResponseData为JavaScript内容，ResponseDataID用于区分内容是否变更。内容变更时，ResponseDataID也需要变更。
@@ -1301,8 +1301,8 @@ struct Index {
 ![](assets/Web加载性能优化/file-20260525085643752-006.png)
 
  
-
  
+
 案例二：调用ArkTS接口customizeSchemes()，在注册自定义协议的情况下，实现JavaScript生成字节码缓存，具体步骤如下：
  1. 将scheme对象的isCodeCacheSupported属性设置为true，支持自定义协议的JavaScript生成字节码缓存
 
@@ -1391,8 +1391,8 @@ Web({
 ```
 
  
-
  
+
 案例三：调用Native接口 `int32_t OH_ArkWeb_RegisterCustomSchemes(const char *scheme, int32_t option)`，实现自定义协议的JavaScript生成字节码缓存。通过网络拦截接口拦截Web组件发出的请求。示例代码请参考[拦截Web组件发起的网络请求](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-scheme-handler)。具体步骤如下：
  1. 注册三方协议配置时，传入 `ARKWEB_SCHEME_OPTION_CODE_CACHE_ENABLED` 参数。
 
@@ -1488,8 +1488,8 @@ onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
 
 **原理介绍**
  
-
  
+
 页面加载前，离线资源免拦截注入会将图片、样式表和脚本资源注入内存缓存，节省首次加载的网络请求时间。
  
  
@@ -1653,8 +1653,8 @@ export async function injectOfflineResource(controller: WebviewController, resou
 ![](assets/Web加载性能优化/file-20260525085643753-012.png)
 
  
-
  
+
 **总结**
   
 
@@ -1676,8 +1676,8 @@ export async function injectOfflineResource(controller: WebviewController, resou
 
  
  
-
  
+
 **实践案例**
  
 案例一：使用字符串格式的数据做拦截替换
@@ -1732,7 +1732,7 @@ struct Index {
           this.responseResource.setResponseCode(200);
           this.responseResource.setReasonMessage('OK');
           this.responseResource.setResponseHeader([{ headerKey: 'Access-Control-Allow-Origin', headerValue: '*' }]);
-          hilog.info(DOMAIN, TAG, 'getMessageData return reponse');
+          hilog.info(DOMAIN, TAG, 'getMessageData return response');
           return this.responseResource;
         })
     }
@@ -1865,7 +1865,7 @@ struct WebComponent {
           this.responseResource.setResponseCode(200);
           this.responseResource.setReasonMessage('OK');
           this.responseResource.setResponseHeader([{ headerKey: 'Access-Control-Allow-Origin', headerValue: '*' }]);
-          hilog.info(DOMAIN, TAG, 'getMessageData return reponse');
+          hilog.info(DOMAIN, TAG, 'getMessageData return response');
           return this.responseResource;
         })
     }
@@ -1903,8 +1903,8 @@ struct WebComponent {
 ![](assets/Web加载性能优化/file-20260525085643755-016.png)
 
  
-
  
+
 上图展示了小程序的一般架构，逻辑层使用自带的JavaScript运行时，现有C++环境通过Native接口直接与视图层（ArkWeb渲染器）通信，无需返回ArkTS环境调用JSBridge接口。
  
 
@@ -1988,12 +1988,12 @@ struct WebComponent {
 ![](assets/Web加载性能优化/file-20260525085643755-018.png)
 
  
-
  
+
 经过多轮测试，从点击ArkTS侧的Button到触发H5侧的htmlTest()方法，耗时7到9毫秒。
  
-
  
+
 案例二：使用NDK接口实现JSBridge通信。
  
 应用侧代码：
@@ -2385,8 +2385,8 @@ runJS.html作为应用前端页面：
  
 经过多轮测试，从点击ArkTS侧的Button到触发H5侧的runJSRetStr方法，耗时2到6毫秒。
  
-
  
+
 **总结**
   
 
@@ -2412,8 +2412,8 @@ JSBridge优化方案适用于ArkWeb应用与前端网页通信，开发者可根
  
 异步JSBridge调用适用于H5侧调用ArkTS侧或C++侧注册的JSBridge函数。调用后不等待执行结果，避免在ArkUI主线程负载重时JSBridge同步调用导致Web线程等待IPC时间过长，从而造成阻塞。
  
-
  
+
 **实践案例**
  
  
@@ -2587,8 +2587,8 @@ struct Index {
 ```
 
  
-
  
+
 案例二：使用registerJavaScriptProxy()或 javaScriptProxy()注册异步函数或异步同步共存函数。H5侧调用JSBridge函数时，建议避免使用不推荐的用法。
  
 ```ArkTS
@@ -2625,8 +2625,8 @@ Web({src: $rawfile('index.html'),controller: this.controller})
  })
 ```
  
-
  
+
 **总结**
  
 数据运行结果如下表所示。

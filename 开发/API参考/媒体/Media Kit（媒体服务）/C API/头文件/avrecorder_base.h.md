@@ -1,6 +1,6 @@
 # avrecorder_base.h
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avrecorder-base-h
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -10,7 +10,7 @@
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-定义了媒体AVRecorder的结构体、枚举和回调函数。
+定义AVRecorder的结构体、枚举和回调函数类型。
  
 **引用文件：** <multimedia/player_framework/avrecorder_base.h>
  

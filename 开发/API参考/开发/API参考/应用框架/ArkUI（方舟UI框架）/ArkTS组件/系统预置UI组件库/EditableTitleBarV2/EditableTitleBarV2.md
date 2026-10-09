@@ -1,6 +1,6 @@
 # EditableTitleBarV2
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-editabletitlebarv2
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -640,8 +640,8 @@ EditableTitleBarStyleV2的构造函数。
 从API版本26.0.0开始，支持EditableTitleBarV2。
 
 ```text
-import { Prompt } from '@kit.ArkUI';
 import {
+  Prompt,
   EditableLeftIconTypeV2,
   EditableTitleBarV2,
   EditableLeftIconV2,
@@ -706,7 +706,7 @@ struct EditableTitleBarV2Demo01 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/CaysJwMwRgC4U-nWCklO8g/zh-cn_image_0000002717773076.png?HW-CC-KV=V1&HW-CC-Date=20260911T073028Z&HW-CC-Expire=86400&HW-CC-Sign=61CD8D0D2019CC96D34A865143276EA2D1CD6E1B6105F521BFD6E92D5FEF0494)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/orPT7gKCSX2py4YiARmg8g/zh-cn_image_0000002778934299.png?HW-CC-KV=V1&HW-CC-Date=20261009T013037Z&HW-CC-Expire=86400&HW-CC-Sign=787F2138BCFEE5E2ADDE0E93E8C698506249C27571B13BB1ACCC960AFE8BA0AC)
 
 
 
@@ -721,8 +721,9 @@ struct EditableTitleBarV2Demo01 {
 从API版本26.0.0开始，支持EditableTitleBarV2。
 
 ```text
-import { LengthMetrics, Prompt } from '@kit.ArkUI';
 import {
+  LengthMetrics,
+  Prompt,
   EditableLeftIconTypeV2,
   EditableTitleBarV2,
   EditableLeftIconV2,
@@ -861,7 +862,7 @@ struct EditableTitleBarV2Demo02 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/QNoj-ZQ1QkCXLjih6v2Pcg/zh-cn_image_0000002717613144.png?HW-CC-KV=V1&HW-CC-Date=20260911T073028Z&HW-CC-Expire=86400&HW-CC-Sign=3936921804ECDC62E55CE612830ADCDA47E2D367EEDF6F8B7FDD3CE94E8DA86F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/T5MbgdgzRICjH1QR_vOGVA/zh-cn_image_0000002749335216.png?HW-CC-KV=V1&HW-CC-Date=20261009T013037Z&HW-CC-Expire=86400&HW-CC-Sign=3422F7FB4D593CAE467ADB7F76E7328D51A99A5DE6627A556378106E8C4FBA5B)
 
 
 
@@ -876,8 +877,8 @@ struct EditableTitleBarV2Demo02 {
 从API版本26.0.0开始，支持EditableTitleBarV2。
 
 ```text
-import { Prompt } from '@kit.ArkUI';
 import {
+  Prompt,
   EditableLeftIconTypeV2,
   EditableTitleBarV2,
   EditableLeftIconV2,
@@ -949,7 +950,7 @@ struct EditableTitleBarV2Demo03 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/Dss2r7MjReu6ylWc_Kw66Q/zh-cn_image_0000002747293097.png?HW-CC-KV=V1&HW-CC-Date=20260911T073028Z&HW-CC-Expire=86400&HW-CC-Sign=90D93D08F775A195A0435CBA09C19B32DDDE5E19C3ED639D75BEF9981B08DDEF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/6l4JUDMaRm-mtmU6fm6OSA/zh-cn_image_0000002749495100.png?HW-CC-KV=V1&HW-CC-Date=20261009T013037Z&HW-CC-Expire=86400&HW-CC-Sign=03CC642EC425C610058810572F124C005BAFFCEB93A693F492F6D39F3C0D4A88)
 
 
 
@@ -964,8 +965,7 @@ struct EditableTitleBarV2Demo03 {
 从API版本26.0.0开始，支持EditableTitleBarV2。
 
 ```text
-import { Prompt } from '@kit.ArkUI';
-import { EditableLeftIconTypeV2, EditableTitleBarV2, EditableLeftIconV2, EditableSaveButtonV2 } from '@kit.ArkUI';
+import { Prompt, EditableLeftIconTypeV2, EditableTitleBarV2, EditableLeftIconV2, EditableSaveButtonV2 } from '@kit.ArkUI';
 
 @Entry
 @Component
@@ -993,7 +993,7 @@ struct EditableTitleBarV2Demo04 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/C7GeJBNsRxaP6OcBmegI6Q/zh-cn_image_0000002747213013.png?HW-CC-KV=V1&HW-CC-Date=20260911T073028Z&HW-CC-Expire=86400&HW-CC-Sign=EC9D47EC37A76F6358884449DE4451DEDE681E2EDC9240440188EC06E8AB66D1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/bLjTLcBQQyi1dq190zX45w/zh-cn_image_0000002779094157.png?HW-CC-KV=V1&HW-CC-Date=20261009T013037Z&HW-CC-Expire=86400&HW-CC-Sign=E6F7A7839E521BD424E49C971E682F819D5967CA52F27BD42EC47709957B717C)
 
 
 
@@ -1008,8 +1008,8 @@ struct EditableTitleBarV2Demo04 {
 从API版本26.0.0开始，支持EditableTitleBarV2。
 
 ```text
-import { Prompt } from '@kit.ArkUI';
 import {
+  Prompt,
   EditableLeftIconTypeV2,
   EditableTitleBarV2,
   EditableLeftIconV2,
@@ -1060,7 +1060,7 @@ struct EditableTitleBarV2Demo05 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/QAoFSsI6QByDbrVDtR6B9Q/zh-cn_image_0000002717773078.png?HW-CC-KV=V1&HW-CC-Date=20260911T073028Z&HW-CC-Expire=86400&HW-CC-Sign=556EE7265D2BA81837D8099B91F18ED0898F98436BE86E1F297DF1E96A4C8D3B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/nye1zL_dTJ2hqJLiQ0GFMg/zh-cn_image_0000002778934301.png?HW-CC-KV=V1&HW-CC-Date=20261009T013037Z&HW-CC-Expire=86400&HW-CC-Sign=BA30999BDC9A01DC82DCD290A0D93E10CD24D5A719AEC6560DA726CB790591C2)
 
 
 
@@ -1075,8 +1075,9 @@ struct EditableTitleBarV2Demo05 {
 从API版本26.0.0开始，支持EditableTitleBarV2。
 
 ```text
-import { Prompt, SymbolGlyphModifier } from '@kit.ArkUI';
 import {
+  Prompt,
+  SymbolGlyphModifier,
   EditableLeftIconTypeV2,
   EditableTitleBarV2,
   EditableLeftIconV2,
@@ -1156,4 +1157,4 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/lmtwk2dXSsSZnAfSF8_6JQ/zh-cn_image_0000002717613146.png?HW-CC-KV=V1&HW-CC-Date=20260911T073028Z&HW-CC-Expire=86400&HW-CC-Sign=06CEC5F52CC39609132878FDE2CBBAF6094B94B40ACE42D20766E7C74DDFDB30)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/9LV63Wp2T0Wq48SqUpSPbw/zh-cn_image_0000002749335218.png?HW-CC-KV=V1&HW-CC-Date=20261009T013037Z&HW-CC-Expire=86400&HW-CC-Sign=F7038C3A270433429162D6B833AF8270D54C9DD4CB8CD79431CA785AFD063D4D)

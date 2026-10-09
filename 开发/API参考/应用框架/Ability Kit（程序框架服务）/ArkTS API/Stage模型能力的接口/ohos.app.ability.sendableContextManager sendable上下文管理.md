@@ -1,6 +1,6 @@
 # @ohos.app.ability.sendableContextManager (sendable上下文管理)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-sendablecontextmanager
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable

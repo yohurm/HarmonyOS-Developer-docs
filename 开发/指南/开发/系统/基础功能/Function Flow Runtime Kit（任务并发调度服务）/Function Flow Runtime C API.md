@@ -1,6 +1,6 @@
 # Function Flow Runtime C API
 
-更新时间：2026-08-18 12:49:55
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ffrt-api-guideline-c
 
@@ -2073,7 +2073,7 @@ int main()
 
     ffrt::submit([&]() {
         ffrt_usleep(2);
-        if(ffrt_rwlock_trywrlock(&rwlock)){
+        if(ffrt_rwlock_trywrlock(&rwlock) == ffrt_success){
             x++;
             ffrt_rwlock_unlock(&rwlock);
         }
@@ -2081,7 +2081,7 @@ int main()
 
     ffrt::submit([&]() {
         ffrt_usleep(2);
-        if(ffrt_rwlock_tryrdlock(&rwlock)){
+        if(ffrt_rwlock_tryrdlock(&rwlock) == ffrt_success){
             ffrt_rwlock_unlock(&rwlock);
         }
     },{},{});

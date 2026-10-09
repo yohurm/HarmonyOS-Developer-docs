@@ -1,6 +1,6 @@
 # 使用Node-API进行class相关开发
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-about-class
 
@@ -49,7 +49,7 @@ Node-API接口开发流程参考[使用Node-API实现跨语言交互开发流程
 通过给定的构造函数实例化一个对象，将这个对象返回ArkTS侧使用。
  
 > [!NOTE]
-> 参数constructor不是function类型则返回napi_function_expected。
+> 参数constructor不是function类型则返回napi_function_expected。 napi_new_instance执行后会触发微任务执行。
 
  
 cpp部分代码

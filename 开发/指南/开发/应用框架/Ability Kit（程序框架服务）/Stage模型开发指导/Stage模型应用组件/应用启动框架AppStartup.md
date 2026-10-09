@@ -1,6 +1,6 @@
 # 应用启动框架AppStartup
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-startup
 
@@ -244,7 +244,7 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 **图5** so预加载任务依赖关系图
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/K_2URF43SfKs_CzQB1GuTg/zh-cn_image_0000002717609894.png?HW-CC-KV=V1&HW-CC-Date=20260911T072333Z&HW-CC-Expire=86400&HW-CC-Sign=AEE4F5B18E641EA052725A1E56624DB3DF9B1F8CD901B3BD88616F7292DD5109)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/WSFTAPS_QfieoOSOtD5Log/zh-cn_image_0000002749331708.png?HW-CC-KV=V1&HW-CC-Date=20261009T012555Z&HW-CC-Expire=86400&HW-CC-Sign=F57D973C27605E19DC476E6AAB71C0D669AB88FD8D030AD34855DF37A510C15C)
 
 1. 参考[Node-API](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-process)创建so文件。本例中的6个so文件名称分别为libentry_001.so~libentry_006.so。
 2. 在启动框架配置文件startup_config.json中，添加预加载so任务配置。
@@ -427,7 +427,7 @@ export default class StartupTask_001 extends StartupTask {
 **图6** 启动任务与so预加载依赖关系图
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/7GlCrRT2S6aMrfhOjkXssA/zh-cn_image_0000002747289845.png?HW-CC-KV=V1&HW-CC-Date=20260911T072333Z&HW-CC-Expire=86400&HW-CC-Sign=6F67A387164ABF4682744351B907B9D9711A3411B1CCCCDAEBC841489E4D8C76)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/3SOaS2lORuKpCE1BZeh-ZA/zh-cn_image_0000002749491592.png?HW-CC-KV=V1&HW-CC-Date=20261009T012555Z&HW-CC-Expire=86400&HW-CC-Sign=625C8EABD35CBD9B501FF7ECCFCB0D8E1CA9FD5F215D8E7A8DAFAA0AAB79C272)
 
 
 开发步骤如下：
@@ -536,8 +536,7 @@ export default class EntryAbility extends UIAbility {
       startupManager.run(startParams).then(() => {
         console.info(`StartupTest startupManager run then, startParams = ${JSON.stringify(startParams)}.`);
       }).catch((error: BusinessError) => {
-        console.error(`StartupTest promise catch error, error = ${JSON.stringify(error)}.`);
-        console.error(`StartupTest promise catch error, startParams = ${JSON.stringify(startParams)}.`);
+        console.error(`StartupTest promise catch error, code = ${error.code}, message = ${error.message}.`);
       })
     } catch (error) {
       let errMsg = (error as BusinessError).message;
@@ -598,7 +597,7 @@ struct Index {
 **图7** 启动任务设置匹配规则
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/Ook5HWNDSH6Rx6KL_iCVBA/zh-cn_image_0000002747209763.png?HW-CC-KV=V1&HW-CC-Date=20260911T072333Z&HW-CC-Expire=86400&HW-CC-Sign=CC52984D1CFA50A1E10165ACF117F08A739734D5CB7558F5EE9BB0795FAA174F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/kf26ViMhSf-d-olFAP-AVA/zh-cn_image_0000002779090649.png?HW-CC-KV=V1&HW-CC-Date=20261009T012555Z&HW-CC-Expire=86400&HW-CC-Sign=8C2C64C82E0E03B15BD1018A4F74A906DC95C2CE47F53A3B0E979A1F8A30F096)
 
 
 可以通过以下两种方式添加匹配规则：
@@ -725,7 +724,7 @@ export default class MyStartupConfigEntry extends StartupConfigEntry {
 **图8** 设置启动任务提前调度
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/TGu9I6idREmi1GE-E-oT4Q/zh-cn_image_0000002717769830.png?HW-CC-KV=V1&HW-CC-Date=20260911T072333Z&HW-CC-Expire=86400&HW-CC-Sign=357BD2775F49070CCE68C93D05CE11D1C7255C1ACF1F2B7E43CCFF8FB5E9BDD3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/zYg6W2p7TAiILIGJcWPnqg/zh-cn_image_0000002778930793.png?HW-CC-KV=V1&HW-CC-Date=20261009T012555Z&HW-CC-Expire=86400&HW-CC-Sign=005600BD7124AA32CE44149B378BF5319CADC47ABBD68CFBE93A3AE4C4182FEA)
 
 
 例如，应用首页需要通过网络请求获取Feed流数据，且希望该任务能在异步线程中与AbilityStage模块加载并发执行。假设网络请求任务为[定义启动任务配置](#定义启动任务配置)步骤中的StartupTask_004，开发步骤如下：

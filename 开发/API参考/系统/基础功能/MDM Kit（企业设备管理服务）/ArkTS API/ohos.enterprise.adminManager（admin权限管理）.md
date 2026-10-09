@@ -1,6 +1,6 @@
-# @ohos.enterprise.adminManager（admin权限管理）
+# @ohos.enterprise.adminManager (admin权限管理)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-adminmanager
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -510,7 +510,7 @@ startAdminProvision(admin: Want, type: AdminType, context: common.Context, param
 
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/3vRxlfJQThih2XvRU3A_JA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072857Z&HW-CC-Expire=86400&HW-CC-Sign=5C9F04F914C4F6B88E91086F9CF60212E1A73C7B336D658B3F0458FD22A3DB11)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/Dsf_RMCHQFeNYeYKUmMjCw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20261009T012856Z&HW-CC-Expire=86400&HW-CC-Sign=E546EB637EEA48D64296F94154FE62A7888F7E824D99FC0BC840688DB543E141)
 
 
 1、此接口只能在企业设备上生效。
@@ -704,7 +704,7 @@ enableSelfDeviceAdmin(admin: Want, credential: string): void
 在企业设备中，MDM应用没有预置激活的场景下，MDM应用可以通过该接口实现自激活。该接口仅支持激活MDM应用自身，不支持激活其他MDM应用；支持的激活类型包括超级设备管理应用和普通设备管理应用。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/m7A_zWWjRea0f0Z5bKgl0A/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072857Z&HW-CC-Expire=86400&HW-CC-Sign=1D1695567FFDA7C1A3F7B1B19D5695BF299B8EB3D88534A77BCB3263FAC56000)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/cSX661ffQAGVvGSGiMn0Kw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20261009T012856Z&HW-CC-Expire=86400&HW-CC-Sign=A360A0EED13298FADF650EFD938513E70E53FA471AE2552AE3BBF96F9565D79C)
 
 
 1、此接口只能在企业设备上生效。

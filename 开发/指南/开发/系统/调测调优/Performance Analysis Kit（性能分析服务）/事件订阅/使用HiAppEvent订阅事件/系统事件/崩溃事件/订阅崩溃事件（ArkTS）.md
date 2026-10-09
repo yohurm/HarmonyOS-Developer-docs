@@ -1,6 +1,6 @@
 # 订阅崩溃事件（ArkTS）
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-watcher-crash-events-arkts
 
@@ -75,7 +75,7 @@ if (deviceInfo.sdkApiVersion >= 20) {  // API Version 20及以后版本，支持
 if (deviceInfo.sdkApiVersion >= 24) {
   let crashEventPolicy : hiAppEvent.EventPolicy = {
     "appCrashPolicy": { // 崩溃事件配置策略
-      "pageSwitchLogEnable": true, // 从API版本24开始，支持使能页面切换日志
+      "pageSwitchLogEnable": true, // 从API version 24开始，支持使能页面切换日志
       "collectMinidump": true // 从API版本26.0.0开始，支持使能minidump
     }
   };

@@ -1,6 +1,6 @@
 # 画布操作及状态处理（C/C++）
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/canvas-operation-state-c
 
@@ -82,7 +82,7 @@ OH_Drawing_RectDestroy(rect);
 
 | 原始图 | 裁剪后的图 |
 | --- | --- |
-|  |  |
+| ![](assets/画布操作及状态处理（C／C++）/file-20260514131635863-0.png) | ![](assets/画布操作及状态处理（C／C++）/file-20260525091645677-001.png) |
 
 
 
@@ -145,7 +145,7 @@ OH_Drawing_BrushDestroy(brush);
 
 | 原始图 | 平移后的效果图 |
 | --- | --- |
-|  |  |
+| ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/jeNYB7DlTESCqrq53yA8xg/zh-cn_image_0000002778932497.png?HW-CC-KV=V1&HW-CC-Date=20261009T012659Z&HW-CC-Expire=86400&HW-CC-Sign=81A1D134068A5E4B8EF7E0E34494FEB78E3BA391265319B7FDA563B794961839) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/3RIf002nSomVhodHy63agw/zh-cn_image_0000002749333416.png?HW-CC-KV=V1&HW-CC-Date=20261009T012659Z&HW-CC-Expire=86400&HW-CC-Sign=659043E84C950428FFC9315904211082AF0F850DAAE65994F6B673FE161FB8C7) |
 
 
 
@@ -180,7 +180,7 @@ OH_Drawing_BrushDestroy(brush);
 
 | 原始图 | 旋转后的效果图 |
 | --- | --- |
-|  |  |
+| ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/9HZPGivET5ug_nBQFmLG5Q/zh-cn_image_0000002749493298.png?HW-CC-KV=V1&HW-CC-Date=20261009T012659Z&HW-CC-Expire=86400&HW-CC-Sign=0AAE303F81366F17E440C944E92184E854F0ADC6D9D2F22920F72D3DACC5577D) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/dIEcxmNrR3q689cs7A64fg/zh-cn_image_0000002779092357.png?HW-CC-KV=V1&HW-CC-Date=20261009T012659Z&HW-CC-Expire=86400&HW-CC-Sign=CD841BC31EABB9D52853F61B2BB046D5EC597F3551ACAFE3FB7EA760E697B828) |
 
 
 
@@ -215,7 +215,7 @@ OH_Drawing_BrushDestroy(brush);
 
 | 原始图 | 放大后的效果图 |
 | --- | --- |
-|  |  |
+| ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/cVwVYb6cT5yODBN8j9AKlA/zh-cn_image_0000002778932499.png?HW-CC-KV=V1&HW-CC-Date=20261009T012659Z&HW-CC-Expire=86400&HW-CC-Sign=4B06ABD7337CB8724F7FC2C75575FD48AC768D45513C79238A9784FE195FB0D1) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/mXyI90hEROqXyvfglUhb8Q/zh-cn_image_0000002749333418.png?HW-CC-KV=V1&HW-CC-Date=20261009T012659Z&HW-CC-Expire=86400&HW-CC-Sign=58E5CD2E346B69DAAE1C74FB14B913BC75073826D292F0F6E28DFEB7FCD12B57) |
 
 
 
@@ -272,7 +272,7 @@ OH_Drawing_MatrixDestroy(matrix);
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/1cNlTypXS0yCuzNmq8bBPQ/zh-cn_image_0000002747291443.png?HW-CC-KV=V1&HW-CC-Date=20260911T072536Z&HW-CC-Expire=86400&HW-CC-Sign=0738A381122B6B11D146A6C2C756E8716086CA576BDD0388DE25D127A02E9002)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/HwORroytR6i1tu0dhs-1Tw/zh-cn_image_0000002749493300.png?HW-CC-KV=V1&HW-CC-Date=20261009T012659Z&HW-CC-Expire=86400&HW-CC-Sign=EB96022A826DE5DA1B3682E92F4CF3F645901587A3C90F4C9660485931FC9A71)
 
 
 

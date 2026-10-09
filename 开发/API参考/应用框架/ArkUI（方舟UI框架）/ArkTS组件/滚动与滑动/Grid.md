@@ -1,6 +1,6 @@
 # Grid
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -17,7 +17,7 @@
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-仅支持[GridItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-griditem)子组件和自定义组件。自定义组件在Grid下使用时，建议使用GridItem作为自定义组件的顶层组件，不建议给自定义组件设置属性和事件方法。
+仅支持[GridItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-griditem)子组件和[自定义组件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-custom-components)。自定义组件在Grid下使用时，建议使用GridItem作为自定义组件的顶层组件，不建议给自定义组件设置属性和事件方法。
 
 支持通过渲染控制类型（[if/else](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse)、[ForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-foreach)、[LazyForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-lazyforeach)和[Repeat](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-rendering-control-repeat)）动态生成子组件，更推荐使用LazyForEach或Repeat以优化性能。
 
@@ -109,6 +109,8 @@ columnsTemplate('repeat(auto-stretch, track-size)')是设置固定列宽值为tr
 
 auto-fit模式和auto-stretch模式只支持track-size为一个有效列宽值，并且auto-stretch模式中的track-size只支持px、vp和有效数字，不支持%。auto-fill模式支持一个或多个有效列宽，如columnsTemplate('repeat(auto-fill, 20)')、columnsTemplate('repeat(auto-fill, 20 80px)')。
 
+非repeat形式的模板串中每项仅支持'数字+fr'、'数字+px'、'数字+%'三种格式，不支持vp（如columnsTemplate('100vp 100vp')）。需要按固定vp尺寸自动计算列数时，应使用repeat(auto-fill, track-size)。
+
 使用效果可以参考[示例8](#示例8设置自适应列数)。
 
 设置为'0fr'时，该列的列宽为0，不显示GridItem。设置为其他非法值时，GridItem显示为固定1列。
@@ -179,6 +181,8 @@ rowsTemplate('repeat(auto-stretch, track-size)')是设置固定行高值为track
 
 auto-fit模式和auto-stretch模式只支持track-size为一个有效行高值，并且auto-stretch模式中的track-size只支持px、vp和有效数字，不支持%。auto-fill模式支持一个或多个有效行高，如rowsTemplate('repeat(auto-fill, 20)')、rowsTemplate('repeat(auto-fill, 20 80px)')。
 
+非repeat形式的模板串中每项仅支持'数字+fr'、'数字+px'、'数字+%'三种格式，不支持vp（如rowsTemplate('100vp 100vp')）。需要按固定vp尺寸自动计算行数时，应使用repeat(auto-fill, track-size)。
+
 设置为'0fr'，则这一行的行高为0，这一行GridItem不显示。设置为其他非法值，按固定1行处理。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -194,7 +198,7 @@ auto-fit模式和auto-stretch模式只支持track-size为一个有效行高值�
 
 
 > [!NOTE]
-> Grid组件根据rowsTemplate、columnsTemplate属性的设置情况，可分为以下三种布局模式： 1、rowsTemplate、columnsTemplate同时设置： Grid只展示固定行列数的元素，其余元素不展示，且Grid不可滚动。 此模式下以下属性不生效：layoutDirection、maxCount、minCount、cellLength。 Grid的宽高没有设置时，默认适应父组件尺寸。 Grid网格列大小按照Grid自身内容区域大小减去所有行列Gap后按各个行列所占比重分配。 GridItem默认填满网格大小。 2、rowsTemplate、columnsTemplate仅设置其中的一个： 元素按照设置的方向进行排布，超出Grid显示区域后，Grid可通过滚动的方式展示。 如果设置了columnsTemplate，Grid滚动方向为垂直方向，主轴方向为垂直方向，交叉轴方向为水平方向。 如果设置了rowsTemplate，Grid滚动方向为水平方向，主轴方向为水平方向，交叉轴方向为垂直方向。 此模式下以下属性不生效：layoutDirection、maxCount、minCount、cellLength。 网格交叉轴方向尺寸根据Grid自身内容区域交叉轴尺寸减去交叉轴方向所有Gap后按所占比重分配。 网格主轴方向尺寸取当前网格交叉轴方向所有GridItem主轴方向尺寸最大值。 此模式下GridItem交叉轴方向尺寸与网格一致，可以通过设置 constraintSize 中的maxWidth或maxHeight限制GridItem交叉轴方向尺寸小于网格。 3、rowsTemplate、columnsTemplate都不设置： 元素在layoutDirection方向上排布，列数由Grid的宽度、首个元素的宽度、minCount、maxCount、columnsGap共同决定。 行数由Grid高度、首个元素高度、cellLength、rowsGap共同决定。超出行列容纳范围的元素不显示，也不能通过滚动进行展示。 此模式下仅生效以下属性：layoutDirection、maxCount、minCount、cellLength、editMode、columnsGap、rowsGap。 当前layoutDirection设置为Row时，先从左到右排列，排满一行再排下一行。剩余高度不足时不再布局，整体内容顶部居中。 当前layoutDirection设置为Column时，先从上到下排列，排满一列再排下一列，剩余宽度不足时不再布局。整体内容顶部居中。 当前Grid下面没有GridItem时，Grid的宽高为0。
+> Grid组件根据rowsTemplate、columnsTemplate属性的设置情况，可分为以下三种布局模式： rowsTemplate、columnsTemplate同时设置： Grid只展示固定行列数的元素，其余元素不展示，且Grid不可滚动。 此模式下以下属性不生效：layoutDirection、maxCount、minCount、cellLength。 Grid的宽高没有设置时，默认适应父组件尺寸。 Grid网格列大小按照Grid自身内容区域大小减去所有行列Gap后按各个行列所占比重分配。 GridItem默认填满网格大小。 rowsTemplate、columnsTemplate仅设置其中的一个： 元素按照设置的方向进行排布，超出Grid显示区域后，Grid可通过滚动的方式展示。 如果设置了columnsTemplate，Grid滚动方向为垂直方向，主轴方向为垂直方向，交叉轴方向为水平方向。 如果设置了rowsTemplate，Grid滚动方向为水平方向，主轴方向为水平方向，交叉轴方向为垂直方向。 此模式下以下属性不生效：layoutDirection、maxCount、minCount、cellLength。 网格交叉轴方向尺寸根据Grid自身内容区域交叉轴尺寸减去交叉轴方向所有Gap后按所占比重分配。 网格主轴方向尺寸取当前网格交叉轴方向所有GridItem主轴方向尺寸最大值。 此模式下GridItem交叉轴方向尺寸与网格一致，可以通过设置 constraintSize 中的maxWidth或maxHeight限制GridItem交叉轴方向尺寸小于网格。 rowsTemplate、columnsTemplate都不设置： 元素在layoutDirection方向上排布，列数由Grid的宽度、首个元素的宽度、minCount、maxCount、columnsGap共同决定。 行数由Grid高度、首个元素高度、cellLength、rowsGap共同决定。超出行列容纳范围的元素不显示，也不能通过滚动进行展示。 此模式下仅生效以下属性：layoutDirection、maxCount、minCount、cellLength、editMode、columnsGap、rowsGap。 当前layoutDirection设置为Row时，先从左到右排列，排满一行再排下一行。剩余高度不足时不再布局，整体内容顶部居中。 当前layoutDirection设置为Column时，先从上到下排列，排满一列再排下一列，剩余宽度不足时不再布局。整体内容顶部居中。 当前Grid下面没有GridItem时，Grid的宽高为0。
 
 
 
@@ -902,7 +906,7 @@ GridItem的对齐方式枚举。
 
 
 > [!NOTE]
-> 1、只有可滚动的Grid中，设置STRETCH参数会生效，其他场景不生效。 2、在Grid的一行中，如果每个GridItem都是大小规律的（只占一行一列），设置STRETCH参数会生效，存在跨行或跨列的GridItem的场景不生效。 3、设置STRETCH后，只有不设置高度的GridItem才会以当前行中最高的GridItem作为自己的高度，设置过高度的GridItem高度不会变化。 4、设置STRETCH后，Grid布局时会有额外的布局流程，可能会带来额外的性能开销。
+> 只有可滚动的Grid中，设置STRETCH参数会生效，其他场景不生效。 在Grid的一行中，如果每个GridItem都是大小规律的（只占一行一列），设置STRETCH参数会生效，存在跨行或跨列的GridItem的场景不生效。 设置STRETCH后，只有不设置高度的GridItem才会以当前行中最高的GridItem作为自己的高度，设置过高度的GridItem高度不会变化。 设置STRETCH后，Grid布局时会有额外的布局流程，可能会带来额外的性能开销。
 
 
 

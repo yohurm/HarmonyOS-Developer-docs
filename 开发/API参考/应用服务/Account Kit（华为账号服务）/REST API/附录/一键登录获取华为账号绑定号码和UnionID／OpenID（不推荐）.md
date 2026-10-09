@@ -1,11 +1,11 @@
 # 一键登录获取华为账号绑定号码和UnionID/OpenID（不推荐）
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-api-get-user-info-quicklogin-getid
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/iAz4lHhlTW6dtzNvZMO1sA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072232Z&HW-CC-Expire=86400&HW-CC-Sign=42CB4BABEB418E5B34E8DC871D2C5A50083A9E13699F5999C83988818F1703C0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/nHP5Fo15QRiNGUtwNqmYbQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20261009T012550Z&HW-CC-Expire=86400&HW-CC-Sign=8ACD59851AD3878238273B7E05A808DBFB0110E087E7618F176EE6243BF2C8EE)
 
 
 为了更安全的网络访问，请务必使用TLS1.2协议及规定内的加密套件。若使用协议是TLS1.0、TLS1.1或规定外的加密套件，可能无法正常访问华为账号服务。
@@ -152,8 +152,8 @@ access_token=<Access Token>
 | --- | --- | --- | --- |
 | openID | 是 | String | 用户OpenID。具体格式要求请参考OpenID和UnionID的格式说明。 |
 | unionID | 是 | String | 用户UnionID。具体格式要求请参考OpenID和UnionID的格式说明。 |
-| loginMobileNumber | 否 | String | 华为账号绑定号码，使用该手机号完成一键登录的功能，详见华为账号一键登录（获取手机号和UnionID/OpenID）。 以下场景loginMobileNumber不返回： - 用户未绑定手机号 - 应用未申请quickLoginMobilePhone的scope权限 - 获取Authorization Code时不携带quickLoginMobilePhone scope - 应用服务器部署在中国境外、香港特别行政区、澳门特别行政区或中国台湾 |
-| loginMobileValid | 否 | int | 通过一键登录功能获取的华为账号绑定号码的实时有效性。 当不返回 loginMobileNumber时，也不进行返回。 若发起一键登录时LoginPanelParams的verifyPhoneNumber参数值传递为true，表示华为代为验证手机号有效性，开发者无需关注此返回值； 若verifyPhoneNumber参数值传递为false, 需要根据返回的状态值进行处理。 0：在过去90天内，无法证明当前手机号码可以触达用户， 需要进行验证 1：在过去90天内，当前手机号码被证明可以触达用户，可以直接使用 |
+| loginMobileNumber | 否 | String | 华为账号绑定号码，使用该手机号完成一键登录的功能，详见华为账号一键登录（获取手机号和UnionID/OpenID）。 以下场景loginMobileNumber不返回： - 用户未绑定手机号。 - 应用未申请quickLoginMobilePhone的scope权限。 - 获取Authorization Code时不携带quickLoginMobilePhone scope。 - 应用服务器部署在中国境外、香港特别行政区、澳门特别行政区或中国台湾。 |
+| loginMobileValid | 否 | int | 通过一键登录功能获取的华为账号绑定号码的实时有效性。 当不返回 loginMobileNumber时，也不进行返回。 若发起一键登录时LoginPanelParams的verifyPhoneNumber参数值传递为true，表示华为代为验证手机号有效性，开发者无需关注此返回值； 若verifyPhoneNumber参数值传递为false, 需要根据返回的状态值进行处理。 0：在过去90天内，无法证明当前手机号码可以触达用户，需要进行验证。 1：在过去90天内，当前手机号码被证明可以触达用户，可以直接使用。 |
 | purePhoneNumber | 否 | String | 不带国家码的手机号，此处为loginMobileNumber去除国际冠码与国际电话区号的形式。 当不返回 loginMobileNumber时，也不进行返回。 |
 | phoneCountryCode | 否 | String | purePhoneNumber的国际冠码(00)+国际电话区号。 当不返回 loginMobileNumber时，也不进行返回。 |
 | warning | 否 | String | 应用服务器部署在中国境外、香港特别行政区、澳门特别行政区或中国台湾时， 不返回华为账号绑定的手机号码，而返回此字段进行提示说明。 |
@@ -233,6 +233,7 @@ Content-Type: application/json;charset=utf-8
 
 {
     "openID": "MDFAMTAxMDA1MTg1QGFlMzM0OWIyOGY0*****MDRiaNTI5ODAxYTA3MDh*****A4ZTZmNTA2ZTE4ZT*****lmNGVmN2E1ZjY1OTg4NWRiaN2QxMzQy*****TU0YWQ3",
+    "unionID": "MDETDFsu1k*****KAATfuqNSH*****7AW3Afh*****iaWeQ",
     "warning": "xxx site doesn't support quick login, see the guide for details"
 }
 ```
@@ -322,7 +323,7 @@ public class GetMobileByQuickLoginDemo {
 
 | NSP_STATUS | 描述 | 解决方法 |
 | --- | --- | --- |
-| 6 | 会话失效，session timeout。 可能原因: - access_token无效或已过期 - access_token格式不正确 - 其他内部原因 | - 请检查传参是否正确，如无问题请尝试重新获取。 - 未对access_token进行URLEncode处理，可参考示例代码组装参数。 - 根据返回的错误描述进行处理，若仍无法解决，请通过在线提单提交问题。 |
+| 6 | 会话失效或已超时（session timeout）。 可能原因: - access_token无效或已过期。 - access_token格式不正确。 - 其他内部原因。 | - 请检查传参是否正确，如无问题请尝试重新获取。 - 未对access_token进行URLEncode处理，可参考示例代码组装参数。 - 根据返回的错误描述进行处理，若仍无法解决，请通过在线提单提交问题。 |
 | 403 | 访问无权限。 | 请前往AppGallery Connect（简称AGC）为应用申请开放权限，详见申请账号权限。 |
 | 500 | 接口内部错误。 | 根据返回的错误描述进行处理，若仍无法解决，请通过在线提单提交问题。 |
 | 503 | 触发系统流控。 | 请稍后重试。 |

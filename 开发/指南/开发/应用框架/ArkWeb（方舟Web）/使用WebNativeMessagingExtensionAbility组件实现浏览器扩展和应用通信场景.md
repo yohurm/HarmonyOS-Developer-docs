@@ -1,6 +1,6 @@
 # 使用WebNativeMessagingExtensionAbility组件实现浏览器扩展和应用通信场景
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-native-messaging
 
@@ -50,7 +50,7 @@
 ### 整体流程
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/0sJnuqnGSKOaNplH_nYGrw/zh-cn_image_0000002747210827.png?HW-CC-KV=V1&HW-CC-Date=20260911T073148Z&HW-CC-Expire=86400&HW-CC-Sign=FD207A6B36DBC05763E9765574BD3435822ACC478CEAC3939D3DAAB649A6F940)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/UuLJOnhvSMyzdZJOszYZWA/zh-cn_image_0000002779091825.png?HW-CC-KV=V1&HW-CC-Date=20261009T013124Z&HW-CC-Expire=86400&HW-CC-Sign=4A3C7C764924F6F9EDA840E0905B2C716F0CA486806700DF6634AC79C56BFF4C)
 
 
  - **流程：**
@@ -329,9 +329,9 @@ export default class MyWebNativeMessageExtAbility extends WebNativeMessagingExte
 }
 ```
 
+6. 在shared_config.json添加[extension配置](#datashare存放应用extension配置信息)。
 
-6.在shared_config.json添加[extension配置](#datashare存放应用extension配置信息)。
-
+  
 ```json
 {
   "crossAppSharedConfig": [
@@ -349,6 +349,7 @@ export default class MyWebNativeMessageExtAbility extends WebNativeMessagingExte
   ]
 }
 ```
+
 
 
 

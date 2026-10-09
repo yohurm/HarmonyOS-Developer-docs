@@ -1,18 +1,18 @@
 # @typescript-eslint/lines-between-class-members
 
-更新时间：2026-01-15 06:51:04
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_lines-between-class-members
 
 禁止或者要求类成员之间有空行分隔。
  
 
-#### 规则配置
+## 规则配置
 
 ```json
 // code-linter.json5
 {
-  "rules": {
+  <span style="color: rgb(135,16,148);">"rules"</span>: {
     "@typescript-eslint/lines-between-class-members": "error"
   }
 }
@@ -20,7 +20,7 @@
  
  
 
-#### 选项
+## 选项
 
 该规则有两个选项配置，第一个选项可以是字符串或者对象，第二个选项是对象。详情请参考[eslint/lines-between-class-members选项](https://eslint.nodejs.cn/docs/latest/rules/lines-between-class-members#选项)。
  
@@ -40,7 +40,7 @@
  
  
 
-#### 正例
+## 正例
 
 ```text
 // 默认要求类成员之间有空行分隔
@@ -57,7 +57,7 @@ export class Foo {
  
  
 
-#### 反例
+## 反例
 
 ```text
 // 默认要求类成员之间有空行分隔
@@ -73,10 +73,10 @@ export class Foo {
  
  
 
-#### 规则集
+## 规则集
 
 ```text
-plugin:@typescript-eslint/all
+<span style="color: rgb(6,125,23);">plugin:@typescript-eslint/all</span>
 ```
  
 Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-code-linter)。

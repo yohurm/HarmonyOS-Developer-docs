@@ -1,6 +1,6 @@
 # PhotoEditorExtensionContext
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-photoeditorextensioncontext
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -30,7 +30,7 @@ import { common } from '@kit.AbilityKit';
 
 saveEditedContentWithUri(uri: string): Promise&lt;AbilityResult&gt;
 
-传入编辑过的图片的uri并保存。使用Promise异步回调。
+传入编辑过的图片的沙箱路径并保存。使用Promise异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -41,7 +41,7 @@ saveEditedContentWithUri(uri: string): Promise&lt;AbilityResult&gt;
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| uri | string | 是 | 编辑后图片的uri，格式为file://&lt;bundleName&gt;/&lt;sandboxPath&gt;。 |
+| uri | string | 是 | 编辑后图片的沙箱路径。 |
 
 
 **返回值：**
@@ -68,7 +68,7 @@ saveEditedContentWithUri(uri: string): Promise&lt;AbilityResult&gt;
 **示例：**
 
 ```json
-import { common, UIExtensionContentSession, Want } from '@kit.AbilityKit';
+import { common, Want } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { fileIo } from '@kit.CoreFileKit';
 import { image } from '@kit.ImageKit';
@@ -91,31 +91,28 @@ struct Index {
           this.originalImage?.rotate(90).then(() => {
             const imagePackerApi: image.ImagePacker = image.createImagePacker();
             let packOpts: image.PackingOption = { format: 'image/jpeg', quality: 98 };
-            imagePackerApi.packToData(this.originalImage, packOpts).then((data: ArrayBuffer) => {
+            imagePackerApi.packToData(this.originalImage, packOpts).then(async (data: ArrayBuffer) => {
               let context = this.getUIContext().getHostContext() as common.PhotoEditorExtensionContext;
               let filePath = context.filesDir + '/edited.jpg';
               let file: fileIo.File | undefined;
-              try{
+              try {
                 file = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE
                 | fileIo.OpenMode.CREATE | fileIo.OpenMode.TRUNC);
                 let writeLen = fileIo.writeSync(file.fd, data);
                 hilog.info(0x0000, TAG, 'write data to file succeed and size is:'
                   + writeLen);
-                fileIo.closeSync(file);
-                context.saveEditedContentWithUri(filePath).then
-                  (data => {
-                    hilog.info(0x0000, TAG,
-                      `saveContentEditingWithUri result: ${JSON.stringify(data)}`);
-                  });
-              } catch (e) {
-                hilog.info(0x0000, TAG, `writeImage failed:${e}`);
+                let result = await context.saveEditedContentWithUri(filePath);
+                hilog.info(0x0000, TAG,
+                  `saveContentEditingWithUri result: ${JSON.stringify(result)}`);
+              } catch (err) {
+                hilog.error(0x0000, TAG, `writeImage failed:${err}`);
               } finally {
-                fileIo.close(file);
+                fileIo.closeSync(file);
               }
             }).catch((error: BusinessError) => {
               hilog.error(0x0000, TAG,
-                'Failed to pack the image. And the error is: ' + String(error));
-            })
+                `Failed to pack the image. Code: ${error.code}, message: ${error.message}`);
+            });
           })
         }).margin({ top: 10 })
       }
@@ -172,7 +169,7 @@ saveEditedContentWithImage(pixeMap: image.PixelMap, option: image.PackingOption)
 **示例：**
 
 ```json
-import { common, UIExtensionContentSession, Want } from '@kit.AbilityKit';
+import { common, Want } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { image } from '@kit.ImageKit';
 
@@ -198,12 +195,16 @@ struct Index {
                 packOpts).then(data => {
                   hilog.info(0x0000, TAG,
                     `saveContentEditingWithImage result: ${JSON.stringify(data)}`);
+                }).catch((error: BusinessError) => {
+                  hilog.error(0x0000, TAG, `saveEditedContentWithImage failed: ${error.message}`);
                 });
             } catch (e) {
-              hilog.error(0x0000, TAG, `saveContentEditingWithImage failed:${e}`);
+              hilog.error(0x0000, TAG, `saveEditedContentWithImage failed:${e}`);
               return;
             }
-          })
+          }).catch((error: BusinessError) => {
+            hilog.error(0x0000, TAG, `rotate failed: ${error.message}`);
+          });
         }).margin({ top: 10 })
       }
     }

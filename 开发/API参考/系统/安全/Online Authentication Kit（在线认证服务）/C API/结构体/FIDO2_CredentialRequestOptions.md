@@ -1,6 +1,6 @@
 # FIDO2_CredentialRequestOptions
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_f_i_d_o2___credential_request_options
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -59,7 +59,7 @@ FIDO2_CredentialMediationRequirement FIDO2_CredentialRequestOptions::mediation
  
 **描述**
  
-用户介入要求。
+操作是否需要用户参与。
  
   
 

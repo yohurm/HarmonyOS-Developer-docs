@@ -1,29 +1,31 @@
 # Drawing自绘制性能提升
 
-更新时间：2026-08-10 06:55:01
+更新时间：2026-09-15 02:12:10
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-drawing-capability-improve-performance
 
-#### 概述
+## 概述
 
 [Canvas](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-canvas-canvas)画布组件是用来显示自绘内容的组件，它具有保留历史绘制内容、增量绘制的特点。Canvas有[CanvasRenderingContext2D](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-canvasrenderingcontext2d)/[OffscreenCanvasRenderingContext2D](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-offscreencanvasrenderingcontext2d)和[DrawingRenderingContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawingrenderingcontext)两套API，应用使用两套绘制API绘制的内容都可以在绑定的Canvas组件上显示。其中CanvasRenderingContext2D按照W3C标准封装了Native Drawing接口，可以方便快速复用Web应用的绘制逻辑，因此非常适用于Web应用和游戏、快速原型设计、数据可视化、在线绘图板、教学工具或创意应用等场景。
  
 为了遵循W3C标准，实现过程中进行了多层的封装，涉及一些数据结构的转换，不如原生API那样接近硬件，因此对于性能要求比较高、绘制比较复杂，或者硬件依赖性比较强的场景（如高性能游戏开发、专业图形处理软件、桌面或移动应用等），使用Canvas CanvasRenderingContext2D绘制会存在一定的卡顿、掉帧等性能问题，此时可以直接使用Native Drawing接口自绘制替代Canvas CanvasRenderingContext2D绘制来提升绘制性能。
   
+
 | 方案 | 适用场景 | 特点 |
+| --- | --- | --- |
 | 使用Canvas CanvasRenderingContext2D | Web应用和游戏、快速原型设计、数据可视化、在线绘图板、教学工具、创意应用 | 场景简单、跨平台、快捷灵活、兼容性强、开发维护成本低、性能要求低。 |
 | 使用Native Drawing | 高性能游戏开发、专业图形处理软件、桌面或移动应用开发 | 场景复杂、资源管理精细、硬件依赖强、与平台深度集成、定制化、性能要求高。 |
  
  
  
 
-#### 原理机制
+## 原理机制
 
 由于Canvas CanvasRenderingContext2D绘制本质上是对Native Drawing接口的封装，相对于直接使用Native Drawing接口，Canvas CanvasRenderingContext2D在实现过程中进行了多层的封装，涉及一些数据结构的转换。如果图片绘制比较复杂，执行的绘制指令可能会成倍数的增长，进而绘制性能下降的更加严重，导致卡顿、掉帧等问题。下面以实现在背景图上绘制1000个透明空心圆的玻璃效果来对比两者的性能差异。
  
  
 
-#### 场景示例
+## 场景示例
 
 下图是一个绘制1000个透明空心圆与背景图融合的绘制场景，下面分别使用Canvas CanvasRenderingContext2D和Native侧的Drawing来实现该场景，并分析两者的性能差异。
  
@@ -33,7 +35,7 @@
  
  
 
-#### 使用Canvas CanvasRenderingContext2D绘制
+### 使用Canvas CanvasRenderingContext2D绘制
 
  
 Canvas CanvasRenderingContext2D使用[globalCompositeOperation](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-canvas-common-property#globalcompositeoperation)属性来实现各种图层混合模式，此处将该属性的值设置为destination-out来实现透明空心圆。具体实现步骤如下：
@@ -171,7 +173,7 @@ export default struct GlassCoverView {
 
  
 
-#### 使用Native侧Drawing绘制
+### 使用Native侧Drawing绘制
 
 Native Drawing主要使用分层接口[OH_Drawing_CanvasSaveLayer()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-canvas-h#oh_drawing_canvassavelayer)和融合接口[OH_Drawing_BrushSetBlendMode()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-brush-h#oh_drawing_brushsetblendmode)来实现多图融合效果。通过在前端创建一个自绘制节点[RenderNode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-rendernode)，并将图形绘制上下文及背景图参数通过Native侧暴露的接口传入，由Native使用相应Drawing接口进行绘制。具体实现步骤如下：
  
@@ -426,9 +428,11 @@ static void NativeOnDrawPixelMap(OH_Drawing_Canvas *canvas, NativePixelMap *nati
 
  
 
-#### 效果对比
+## 效果对比
  
+
 | 方案 | 圆圈数量 | 耗时 |
+| --- | --- | --- |
 | Canvas CanvasRenderingContext2D 画透明圈 | 1000 | 14.9毫秒 |
 | Native Drawing画透明圈 | 1000 | 2.4毫秒 |
  
@@ -437,6 +441,6 @@ static void NativeOnDrawPixelMap(OH_Drawing_Canvas *canvas, NativePixelMap *nati
  
  
 
-#### 示例代码
+## 示例代码
 
 - [Drawing自绘制性能提升](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/tree/master/NdkDrawing)

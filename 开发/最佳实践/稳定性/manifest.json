@@ -397,5 +397,19 @@
     "slug": "bpta-stability-threadleak-fault-mode-overreview",
     "title": "线程泄漏故障模式概述",
     "url": "https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-threadleak-fault-mode-overreview"
+  },
+  {
+    "file": "稳定性分析/稳定性故障模式说明/内存泄漏故障模式说明/GPU内存泄漏故障模式说明/GPU内存泄漏故障模式概述.md",
+    "name": "GPU内存泄漏故障模式概述",
+    "slug": "bpta-stability-gpuleak-fault-mode-overreview",
+    "title": "GPU内存泄漏故障模式概述",
+    "url": "https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-gpuleak-fault-mode-overreview"
+  },
+  {
+    "file": "稳定性分析/稳定性故障模式说明/JS Crash故障模式说明.md",
+    "name": "JS Crash故障模式说明",
+    "slug": "bpta-stability-jscrash-fault-mode",
+    "title": "JS Crash故障模式说明",
+    "url": "https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-jscrash-fault-mode"
   }
 ]

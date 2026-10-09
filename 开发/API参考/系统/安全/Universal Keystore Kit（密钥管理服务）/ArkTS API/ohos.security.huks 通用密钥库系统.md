@@ -1,6 +1,6 @@
 # @ohos.security.huks (通用密钥库系统)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-huks
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
@@ -2949,7 +2949,7 @@ huks.hasKeyItem(keyAlias, emptyOptions).then((data) => {
   if (data) {
     console.info(`keyAlias:${keyAlias} is existed!`);
   } else {
-    console.info(`find key failed!`);
+    console.error(`find key failed!`);
   }
 });
 ```

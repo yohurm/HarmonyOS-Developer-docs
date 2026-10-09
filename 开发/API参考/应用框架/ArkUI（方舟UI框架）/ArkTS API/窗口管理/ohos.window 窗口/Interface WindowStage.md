@@ -1,6 +1,6 @@
 # Interface (WindowStage)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-window-windowstage
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -1324,7 +1324,7 @@ on(eventType: 'windowStageLifecycleEvent', callback: Callback&lt;WindowStageLife
 开启WindowStage生命周期变化的监听。
 
 > [!TIP]
-> on('windowStageEvent') 与本接口的区别： 1.前者无法保证状态切换间的顺序，对于状态间的顺序有要求的情况下不推荐使用，推荐使用本接口； 2.当前接口不提供WindowStage的获焦失焦状态监听，对于windowStage获焦失焦状态有监听需求的情况下，推荐使用 on('windowEvent') ； 3.其他系统机制及其生命周期状态切换的详细说明，请参考 主窗口的生命周期 。
+> on('windowStageEvent') 与本接口的区别： 前者无法保证状态切换间的顺序，对于状态间的顺序有要求的情况下不推荐使用，推荐使用本接口； 当前接口不提供WindowStage的获焦失焦状态监听，对于windowStage获焦失焦状态有监听需求的情况下，推荐使用 on('windowEvent') ； 其他系统机制及其生命周期状态切换的详细说明，请参考 主窗口的生命周期 。
 
 
 **模型约束：** 此接口仅可在Stage模型下使用。

@@ -1,6 +1,6 @@
 # ApplicationContext (应用上下文)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-applicationcontext
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -1468,7 +1468,7 @@ setFont(font: string): void
 设置应用的字体类型。仅支持主线程调用。
 
 > [!NOTE]
-> 调用该接口前，需要确保窗口已完成创建、且UIAbility对应的页面已完成加载，即在 onWindowStageCreate() 生命周期中通过 loadContent 方法加载页面之后调用。
+> 调用该接口前，需要确保窗口已完成创建、且UIAbility对应的页面已完成加载，即在 onWindowStageCreate() 生命周期中通过 loadContent 方法加载页面之后调用。 setFont('null')可以恢复系统默认字体类型。
 
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core

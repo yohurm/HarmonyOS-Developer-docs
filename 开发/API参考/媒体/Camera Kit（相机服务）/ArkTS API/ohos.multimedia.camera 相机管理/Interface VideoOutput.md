@@ -1,6 +1,6 @@
 # Interface (VideoOutput)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-videooutput
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -407,7 +407,7 @@ off(type: 'error', callback?: ErrorCallback): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 监听事件，固定为'error'，photoOutput创建成功后可监听。 |
+| type | string | 是 | 监听事件，固定为'error'，videoOutput创建成功后可监听。 |
 | callback | ErrorCallback | 否 | 回调函数，如果指定参数则取消对应callback（callback对象不可是匿名函数），否则取消所有callback。 |
 
 

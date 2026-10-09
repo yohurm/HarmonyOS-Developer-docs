@@ -1,6 +1,6 @@
 # 如何在Canvas上实现涂抹效果
 
-更新时间：2026-08-13 14:12:37
+更新时间：2026-09-21 11:01:39
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1060
 
@@ -125,7 +125,7 @@ struct CanvasPanGesture {
   实现效果如下：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/EX83OEmCTaWG2d3nCrWFXQ/zh-cn_image_0000002658926415.png?HW-CC-KV=V1&HW-CC-Date=20260911T072742Z&HW-CC-Expire=86400&HW-CC-Sign=AFED5C87A662B90C88F8D97DC2EC830EE2DF24BCABBEB2B8092F26C6FAAFCC32)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/RIDvvajxTkaWSy3uXeHjNA/zh-cn_image_0000002658926415.png?HW-CC-KV=V1&HW-CC-Date=20261009T012739Z&HW-CC-Expire=86400&HW-CC-Sign=AB4573AC5685BA845C200DDED136D871C4A017FA9F80861B8D4A386DC2F74DB0)
 
 
  - 场景二：撤销绘制的路径。在一些签名场景，如果用户绘制错误需要重新绘制，直接使用clearRect方法清空画布体验不够友好，需要仅撤销最新的绘制路径，这时可以使用数组来存储绘制过程中的路径，然后点击撤销时移除最新路径，最后重绘剩余路径，这样即可实现撤销绘制功能。示例代码参考如下：
@@ -226,7 +226,7 @@ struct CanvasCancelDraw {
   实现效果如下：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/mcrzocgTRe-gw4W48So7og/zh-cn_image_0000002628407212.png?HW-CC-KV=V1&HW-CC-Date=20260911T072742Z&HW-CC-Expire=86400&HW-CC-Sign=5C17F1456BD46BBB8F193F702ADD72BF9F319C19497948BF0F5CCA1A1720E654)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/tnKNFTDCThSnbExFlOcjLQ/zh-cn_image_0000002628407212.png?HW-CC-KV=V1&HW-CC-Date=20261009T012739Z&HW-CC-Expire=86400&HW-CC-Sign=2755172B6C0CC3EBAA2CF2E13DCC48B8211B476D47E3037540BE686D2245D65E)
 
 - 场景三：擦除部分绘制内容。在一些绘图场景，可能需要在原有的线条基础上进行擦除而不是撤销，这时就需要globalCompositeOperation实现。Canvas是增量绘制，在原有的基础上进行擦除，可以通过设置globalCompositeOperation属性为destination-out来实现，示例代码参考如下：
 
@@ -295,7 +295,7 @@ struct CanvasEraseDraw {
   实现效果如下：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/T0AHrIKFTnye5O1twy_TlQ/zh-cn_image_0000002658806469.png?HW-CC-KV=V1&HW-CC-Date=20260911T072742Z&HW-CC-Expire=86400&HW-CC-Sign=F282A68AA7AC92425C0BF8551CA6F784E7D5DE995CDCA96F981F8013ED942E42)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/hsFvNRVNTA2V-3EeIVrXgA/zh-cn_image_0000002658806469.png?HW-CC-KV=V1&HW-CC-Date=20261009T012739Z&HW-CC-Expire=86400&HW-CC-Sign=EF5E6467DE9887191E257C0566E53F550C8030A21298BAD4A49B9F03BDCA8446)
 
 
  
@@ -312,6 +312,5 @@ Q：在Canvas上实现涂抹效果是否有相关参考案例？
 A：可以参考官网示例：
  
 - [公文审批-画板签名、文件预览下载](https://developer.huawei.com/consumer/cn/doc/architecture-guides/document_approval-0000002280673593)。
-- [图片绘制马赛克并保存](https://developer.huawei.com/consumer/cn/doc/architecture-guides/image_draw_mosaic-0000002413444896)。
 - [实现Canvas的橡皮擦效果](https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1542)。
 - [刮刮乐抽奖效果](https://developer.huawei.com/consumer/cn/doc/architecture-guides/scratch_effect-0000002320935777)。

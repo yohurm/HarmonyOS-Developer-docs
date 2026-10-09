@@ -1,6 +1,6 @@
 # 图片绘制（C/C++）
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pixelmap-drawing-c
 
@@ -109,7 +109,7 @@ delete[] pixels;
 绘制效果如下：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/swF1gVyGQiGbb0xtIMApLg/zh-cn_image_0000002717771452.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T073043Z&HW-CC-Expire=86400&HW-CC-Sign=3DD5825EC15739EC309E4CA25A303CCC2EA2DD9E6AB6863FD3169044C46BB96F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/4qcOQ18uRnKjWJdMk8ab8g/zh-cn_image_0000002778932527.jpg?HW-CC-KV=V1&HW-CC-Date=20261009T013043Z&HW-CC-Expire=86400&HW-CC-Sign=17319B780D0373A1E0D0F1DAC842B0821E8527CD9FE79636A6FC38B5EE0C6C05)
 
 
 

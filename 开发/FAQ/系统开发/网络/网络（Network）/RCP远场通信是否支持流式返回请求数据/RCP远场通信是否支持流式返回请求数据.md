@@ -1,6 +1,6 @@
 # RCP远场通信是否支持流式返回请求数据
 
-更新时间：2026-08-13 01:23:38
+更新时间：2026-08-13 01:23:38（官网已下线）
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-network-146
 

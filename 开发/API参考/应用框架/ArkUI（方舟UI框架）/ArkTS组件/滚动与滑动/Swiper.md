@@ -1,6 +1,6 @@
 # Swiper
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-swiper
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -2409,14 +2409,10 @@ customContentTransition(transition: SwiperContentAnimatedTransition)
 自定义Swiper页面切换动画。在页面跟手滑动和离手后执行切换动画的过程中，会对视窗内所有页面逐帧触发回调，开发者可以在回调中设置透明度、缩放比例、位移等属性来自定义切换动画。
 
 使用说明：
-
-1、循环场景下，设置prevMargin和nextMargin属性，使得Swiper前后端显示同一页面时，该接口不生效。
-
-2、在页面跟手滑动和离手后执行切换动画的过程中，会对视窗内所有页面逐帧触发[SwiperContentTransitionProxy](#swipercontenttransitionproxy12)回调。例如，当视窗内有下标为0、1的两个页面时，会每帧触发两次index值分别为0和1的回调。
-
-3、设置displayCount属性的swipeByGroup参数为true时，若同组中至少有一个页面在视窗内时，则会对同组中所有页面触发回调，若同组所有页面均不在视窗内时，则会一起下渲染树。
-
-4、在页面跟手滑动和离手后执行切换动画的过程中，默认动画（页面滑动）依然会发生，若希望页面不滑动，可以设置主轴方向上负的位移（translate属性）来抵消页面滑动。例如：当displayCount属性值为2，视窗内有下标为0、1的两个页面时，页面水平滑动过程中，可以逐帧设置第0页的translate属性在x轴上的值为-position * mainAxisLength来抵消第0页的位移，设置第1页的translate属性在x轴上的值为-(position - 1) * mainAxisLength来抵消第1页的位移。
+1. 循环场景下，设置prevMargin和nextMargin属性，使得Swiper前后端显示同一页面时，该接口不生效。
+2. 在页面跟手滑动和离手后执行切换动画的过程中，会对视窗内所有页面逐帧触发[SwiperContentTransitionProxy](#swipercontenttransitionproxy12)回调。例如，当视窗内有下标为0、1的两个页面时，会每帧触发两次index值分别为0和1的回调。
+3. 设置displayCount属性的swipeByGroup参数为true时，若同组中至少有一个页面在视窗内时，则会对同组中所有页面触发回调，若同组所有页面均不在视窗内时，则会一起下渲染树。
+4. 在页面跟手滑动和离手后执行切换动画的过程中，默认动画（页面滑动）依然会发生，若希望页面不滑动，可以设置主轴方向上负的位移（translate属性）来抵消页面滑动。例如：当displayCount属性值为2，视窗内有下标为0、1的两个页面时，页面水平滑动过程中，可以逐帧设置第0页的translate属性在x轴上的值为-position * mainAxisLength来抵消第0页的位移，设置第1页的translate属性在x轴上的值为-(position - 1) * mainAxisLength来抵消第1页的位移。
 
 **卡片能力：** 从API版本26.0.0开始，该接口支持在ArkTS卡片中使用。
 
@@ -2446,12 +2442,9 @@ onContentDidScroll(handler: ContentDidScrollCallback)
 监听Swiper页面滑动事件。
 
 使用说明：
-
-1、循环场景下，设置prevMargin和nextMargin属性，使得Swiper前后端显示同一页面时，该接口不生效。
-
-2、在页面滑动过程中，会对视窗内所有页面逐帧触发[ContentDidScrollCallback](#contentdidscrollcallback12)回调。例如，当视窗内有下标为0、1的两个页面时，会每帧触发两次index值分别为0和1的回调。
-
-3、设置displayCount属性的swipeByGroup参数为true时，若同组中至少有一个页面在视窗内时，则会对同组中所有页面触发回调。
+1. 循环场景下，设置prevMargin和nextMargin属性，使得Swiper前后端显示同一页面时，该接口不生效。
+2. 在页面滑动过程中，会对视窗内所有页面逐帧触发[ContentDidScrollCallback](#contentdidscrollcallback12)回调。例如，当视窗内有下标为0、1的两个页面时，会每帧触发两次index值分别为0和1的回调。
+3. 设置displayCount属性的swipeByGroup参数为true时，若同组中至少有一个页面在视窗内时，则会对同组中所有页面触发回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -3238,7 +3231,7 @@ struct SwiperExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/XpnQoMnMTb67kidHCwnwZQ/zh-cn_image_0000002747212517.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073114Z&HW-CC-Expire=86400&HW-CC-Sign=19FF55FEDB2A420B027B1BE6092AD7F81B6F879B23C98DAF519407EFCAAFABF6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/WNo2apH4TlWTtHiVCbWZKg/zh-cn_image_0000002779093591.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013103Z&HW-CC-Expire=86400&HW-CC-Sign=803E7DB4EDE558B3D7A059FE25FC60ADAE4A2CD7A1B41E573B1DD4AD9EC305E3)
 
 
 
@@ -3381,7 +3374,7 @@ struct SwiperCustomAnimationExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/yZg_A3jaT-aqX7MY0JgBhQ/zh-cn_image_0000002717772582.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073114Z&HW-CC-Expire=86400&HW-CC-Sign=60A53D47678B4D134DE4937D54783CF355929066014F0611796BF9D85EE53C54)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/1tDYgtIBS5CHlVmhp9oBAw/zh-cn_image_0000002778933737.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013103Z&HW-CC-Expire=86400&HW-CC-Sign=B661BCE5147349867279E16B1FCE350336EEAA6547BBD075BD8128EBCD54C5E8)
 
 
 
@@ -3484,7 +3477,7 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/NTQzItIZTWCJUpynzY11iw/zh-cn_image_0000002717612650.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073114Z&HW-CC-Expire=86400&HW-CC-Sign=6DBACF6EEF78A38FC2FB3C8A199D42763692B91B767A6C7FCB8C0942A8C64142)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/5rmuv6j6Sli0Bf0TZBqiDg/zh-cn_image_0000002749334652.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013103Z&HW-CC-Expire=86400&HW-CC-Sign=FBE681E399142C0EBFA91A52FEA70CE43AA28ABFD6D281AED71C06899BC61580)
 
 
 
@@ -3677,7 +3670,7 @@ struct TabsSwiperExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/5TfiyND7QIuum_Ddpp_pbw/zh-cn_image_0000002747292603.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073114Z&HW-CC-Expire=86400&HW-CC-Sign=D49D3171D56FD99A6D8A1030430195825D7046F01C57347235FA7D65527CD0C9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/resB35aURuS41fgBsQjF3Q/zh-cn_image_0000002749494538.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013103Z&HW-CC-Expire=86400&HW-CC-Sign=CCA77DA98EAF4BFE922BF6561749FF0759E096A894952AD510A843A302F5A473)
 
 
 
@@ -3773,7 +3766,7 @@ struct SwiperExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/ksqBWW5GTnCqVCpsX5pkjQ/zh-cn_image_0000002747212519.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073114Z&HW-CC-Expire=86400&HW-CC-Sign=4F5F868BAAD9CDBD34A588786660A99626B63C511E163D15B540B00EF46A1911)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/Vfa1k_7_QeCwJH0_bAcNDg/zh-cn_image_0000002779093595.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013103Z&HW-CC-Expire=86400&HW-CC-Sign=C5B9D162FE0506A4A0B3F79D9AEBDBA360DBE255CA03EE851EF6055E3C6A6E9E)
 
 
 
@@ -3884,7 +3877,7 @@ struct SwiperExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/cNXsCDO-QGqTuUlZsckgRw/zh-cn_image_0000002717772584.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073114Z&HW-CC-Expire=86400&HW-CC-Sign=C369AD11BB5E545DE6EFB4320FA619BC7B18B2BE7D270CBE5F1751534B076788)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/uZA1EVr0QuK9flBV2Dm-DA/zh-cn_image_0000002778933741.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013103Z&HW-CC-Expire=86400&HW-CC-Sign=1EBBE5A3E9E8CDB55234E13014FED1AB91A65370BD7A4184A0B4B7D59D282D3D)
 
 
 
@@ -3955,13 +3948,13 @@ struct SwiperExample {
 Swiper宽度属于[sm](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-grid-layout#栅格容器断点)及更小的断点区间时显示1列。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/ldykxOf8S2qgRq881xjP8A/zh-cn_image_0000002717612652.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T073114Z&HW-CC-Expire=86400&HW-CC-Sign=F50FAACC67A82267D1682D9A987705AA621EB7418353540344BCF3405EA6AE59)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/nAYINyraQvCaQnMXSj-ziA/zh-cn_image_0000002749334656.jpg?HW-CC-KV=V1&HW-CC-Date=20261009T013103Z&HW-CC-Expire=86400&HW-CC-Sign=AAD2E157C0B12592CB0B8D0872C54AD21E21C86BE24A4319F8A90EB4D6D01C09)
 
 
 Swiper宽度属于[md](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-grid-layout#栅格容器断点)断点区间时显示2列。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/7bDQ_PsiSvKFRKMmroDUaA/zh-cn_image_0000002747292605.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T073114Z&HW-CC-Expire=86400&HW-CC-Sign=FD8C47FCAC8B7762154152E41091F9B3071D3267C30E70F370369AFEC806BFB0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/U_TwluHeS4ye72UPMdkQ_Q/zh-cn_image_0000002749494542.jpg?HW-CC-KV=V1&HW-CC-Date=20261009T013103Z&HW-CC-Expire=86400&HW-CC-Sign=2CD0C7B109C143AD6BC601257E58C1D7B144F9AD04F1C3EEB7E92B15C929AC9B)
 
 
 
@@ -4032,7 +4025,7 @@ struct SwiperFakeDragExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/CiHwAG17Rha8YGqygcvdNw/zh-cn_image_0000002747212521.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073114Z&HW-CC-Expire=86400&HW-CC-Sign=895BE5BE7D74CA9B8E53196ED8AB611404166B7B56B359D6B4ECCF80EFD4137B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/SWz7PbO9Sju9s6MhtCS1VQ/zh-cn_image_0000002779093599.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013103Z&HW-CC-Expire=86400&HW-CC-Sign=DFC707F656873F369B90395E6687A27BE337C27360706595E26E0F056BCA17BF)
 
 
 
@@ -4086,4 +4079,4 @@ struct SwiperIndicatorIconExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/IiwlMtuGSnKKQpzLcQH6Zw/zh-cn_image_0000002717772586.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T073114Z&HW-CC-Expire=86400&HW-CC-Sign=1683EBC33975FCB8E09E9B415E57BF5EB31780A34B150EFBD310AED05187D5DD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/U0Mq0zLOQtaFF7gR-ooHgw/zh-cn_image_0000002778933745.jpg?HW-CC-KV=V1&HW-CC-Date=20261009T013103Z&HW-CC-Expire=86400&HW-CC-Sign=D01AB35FC52A732663AF9EAB30D2EBD0847175F96ED99DC2E547BC2FE0B6CE87)

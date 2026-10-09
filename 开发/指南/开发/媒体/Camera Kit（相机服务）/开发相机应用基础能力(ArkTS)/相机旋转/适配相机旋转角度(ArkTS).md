@@ -1,6 +1,6 @@
 # 适配相机旋转角度(ArkTS)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-rotation-angle-adaptation
 
@@ -200,7 +200,7 @@ getVideoRotation(videoOutput: camera.VideoOutput, deviceDegree: number): camera.
 
 2. **方案二：**
 
-  从API版本23开始开始，入参deviceDegree为可选参数，当不传入参数时，由系统获取deviceDegree进行录像旋转角度计算。当重力传感器数据无效，无法计算deviceDegree时，系统将使用最后一次有效的deviceDegree。如果应用涉及使用USB相机或在多屏场景下，建议使用方案二。
+  从API版本23开始，入参deviceDegree为可选参数，当不传入参数时，由系统获取deviceDegree进行录像旋转角度计算。当重力传感器数据无效，无法计算deviceDegree时，系统将使用最后一次有效的deviceDegree。如果应用涉及使用USB相机或在多屏场景下，建议使用方案二。
 
   
 ```ArkTS
@@ -348,8 +348,8 @@ enablePhysicalCameraOrientation(cameraInput: camera.CameraInput) {
 
 | 设备和镜头方向 | 处理过程示意图 | XComponent布局 |
 | --- | --- | --- |
-| 设备条件： 手机竖屏、充电口向下。 使用后置相机拍摄。 可得： - 后置相机镜头角度 = 90° - 屏幕旋转角度 = 0°，Display.rotation = 0 - 图像预览旋转角度 = 0°+90° = 90° |  | 出图与最终成像有90度夹角，布局宽高与图像宽高交换。 |
-| 设备条件： 手机横屏、充电口向右。 使用后置相机拍摄。 可得： - 后置相机镜头角度 = 90° - 屏幕旋转角度 = 270°，Display.rotation = 3 - 图像预览旋转角度 = 270°+90° = 360° = 0° |  | 出图与最终成像有0度夹角，布局与图像宽高比一致。 |
+| 设备条件： 手机竖屏、充电口向下。 使用后置相机拍摄。 可得： - 后置相机镜头角度 = 90° - 屏幕旋转角度 = 0°，Display.rotation = 0 - 图像预览旋转角度 = 0°+90° = 90° | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/Po56pgQ6RJuAuFBpzRkoNg/zh-cn_image_0000002749493212.png?HW-CC-KV=V1&HW-CC-Date=20261009T012658Z&HW-CC-Expire=86400&HW-CC-Sign=532CCCC33F6C344C46B1C8D6C5F3F546337C1D0D740E860805A0710D1F985DB0) | 出图与最终成像有90度夹角，布局宽高与图像宽高交换。 |
+| 设备条件： 手机横屏、充电口向右。 使用后置相机拍摄。 可得： - 后置相机镜头角度 = 90° - 屏幕旋转角度 = 270°，Display.rotation = 3 - 图像预览旋转角度 = 270°+90° = 360° = 0° | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/_ZesTSVUTIePmGohz9qIqg/zh-cn_image_0000002779092271.png?HW-CC-KV=V1&HW-CC-Date=20261009T012658Z&HW-CC-Expire=86400&HW-CC-Sign=DDB4389BDBBAB907792CE9AB03914482A1EB17ACD455A032EC47F0C18406325A) | 出图与最终成像有0度夹角，布局与图像宽高比一致。 |
 
 
 从上图可以看出，当手机从竖屏转换为横屏时，图像始终保持16:9的输出比例，但镜头与屏幕显示方向之间的夹角从90度变为0度。如果布局保持9:16不变，那么16:9的图像数据放置在9:16的空间内显示，会导致图像形变。因此，为确保图像显示正常，横屏时需要将布局的宽高比调整为16:9。

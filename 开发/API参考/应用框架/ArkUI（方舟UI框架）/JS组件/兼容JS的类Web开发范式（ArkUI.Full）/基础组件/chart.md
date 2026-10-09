@@ -146,8 +146,6 @@
 | endColor | Color | - | 否 | 终止位置的颜色，设置endColor必须设置startColor。 不设置startColor时，会使用系统默认预置的颜色数组。 |
 | value | number | 0 | 是 | 占比数据的所占份额，最大100。 |
 | name | string | - | 否 | 此类数据的名称。 |
- 
-  
 
 | 数据组 | 浅色主题 | 深色主题 |
 | --- | --- | --- |

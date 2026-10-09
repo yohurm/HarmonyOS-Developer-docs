@@ -1,6 +1,6 @@
 # lowpower_audio_sink.h
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-lowpower-audio-sink-h
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -63,7 +63,7 @@
 | OH_AVErrCode OH_LowPowerAudioSinkCallback_SetErrorListener(OH_LowPowerAudioSinkCallback* callback, OH_LowPowerAudioSink_OnError onError, void* userData) | 为LowPowerAudioSinkCallback设置错误监听。 |
 | OH_AVErrCode OH_LowPowerAudioSinkCallback_SetInterruptListener(OH_LowPowerAudioSinkCallback* callback, OH_LowPowerAudioSink_OnInterrupted onInterrupted, void* userData) | 为LowPowerAudioSinkCallback设置音频焦点打断监听。 |
 | OH_AVErrCode OH_LowPowerAudioSinkCallback_SetDeviceChangeListener(OH_LowPowerAudioSinkCallback* callback, OH_LowPowerAudioSink_OnDeviceChanged onDeviceChanged, void* userData) | 为LowPowerAudioSinkCallback设置音频设备切换监听。 |
-| OH_AVErrCode OH_LowPowerAudioSinkCallback_SetEosListener(OH_LowPowerAudioSinkCallback callback, OH_LowPowerAudioSink_OnEos onEos, void userData) | 为LowPowerAudioSinkCallback设置播放完成监听。 |
+| OH_AVErrCode OH_LowPowerAudioSinkCallback_SetEosListener(OH_LowPowerAudioSinkCallback* callback, OH_LowPowerAudioSink_OnEos onEos, void* userData) | 为LowPowerAudioSinkCallback设置播放完成监听。 |
  
  
   

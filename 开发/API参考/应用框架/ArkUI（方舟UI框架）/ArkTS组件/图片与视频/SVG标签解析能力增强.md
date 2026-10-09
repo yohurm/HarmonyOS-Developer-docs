@@ -366,7 +366,6 @@ SVG支持校验transform属性非法值的能力。对于transform属性，当�
 
 | 扩展前 | 扩展后 |
 | --- | --- |
-|  |  |
 
 
 
@@ -400,7 +399,6 @@ transform操作在use中，use对象也在相同的mask元素内。
 
 | 扩展前 | 扩展后 |
 | --- | --- |
-|  |  |
 
 
 transform操作在g标签中，且不包含scale操作。
@@ -422,7 +420,6 @@ transform操作在g标签中，且不包含scale操作。
 
 | 扩展前 | 扩展后 |
 | --- | --- |
-|  |  |
 
 
 
@@ -522,7 +519,6 @@ SVG包含“preserveAspectRatio”属性且值为“&lt;align&gt; [&lt;meetOrSli
 
 | 扩展前 | 扩展后 |
 | --- | --- |
-|  |  |
 
 
 
@@ -555,7 +551,6 @@ SVG包含“preserveAspectRatio”属性且值为“&lt;align&gt; [&lt;meetOrSli
 
 | 扩展前 | 扩展后 |
 | --- | --- |
-|  |  |
 
 
 图源示例显示一个径向渐变从绝对坐标圆心(100, 100)开始，半径为90的渐变效果。
@@ -575,7 +570,6 @@ SVG包含“preserveAspectRatio”属性且值为“&lt;align&gt; [&lt;meetOrSli
 
 | 扩展前 | 扩展后 |
 | --- | --- |
-|  |  |
 
 
 
@@ -607,7 +601,6 @@ SVG包含“preserveAspectRatio”属性且值为“&lt;align&gt; [&lt;meetOrSli
 
 | 扩展前 | 扩展后 |
 | --- | --- |
-|  |  |
 
 
 
@@ -640,7 +633,6 @@ SVG包含“preserveAspectRatio”属性且值为“&lt;align&gt; [&lt;meetOrSli
 
 | 扩展前 | 扩展后 |
 | --- | --- |
-|  |  |
 
 
 
@@ -678,7 +670,6 @@ SVG包含“preserveAspectRatio”属性且值为“&lt;align&gt; [&lt;meetOrSli
 
 | 扩展前 | 扩展后 |
 | --- | --- |
-|  |  |
 
 
 
@@ -723,7 +714,6 @@ SVG包含“preserveAspectRatio”属性且值为“&lt;align&gt; [&lt;meetOrSli
 
 | 扩展前 | 扩展后 |
 | --- | --- |
-|  |  |
 
 
 
@@ -760,7 +750,6 @@ SVG包含“preserveAspectRatio”属性且值为“&lt;align&gt; [&lt;meetOrSli
 
 | 扩展前 | 扩展后 |
 | --- | --- |
-|  |  |
 
 
 
@@ -824,7 +813,6 @@ pattern图案支持重复平铺效果。
 
 | 扩展前 | 扩展后 |
 | --- | --- |
-|  |  |
 
 
 
@@ -856,7 +844,6 @@ linearGradient线性渐变支持做平移和缩放。
 
 | 扩展前 | 扩展后 |
 | --- | --- |
-|  |  |
 
 
 
@@ -888,7 +875,6 @@ radialGradient径向渐变支持做平移和缩放。
 
 | 扩展前 | 扩展后 |
 | --- | --- |
-|  |  |
 
 
 
@@ -918,7 +904,6 @@ mask遮罩的x、y、width、height等参数允许是数字、百分数、小数
 
 | 扩展前 | 扩展后 |
 | --- | --- |
-|  |  |
 
 
 
@@ -948,4 +933,3 @@ filter滤镜的x、y、width、height等参数允许是数字、百分数、小�
 
 | 扩展前 | 扩展后 |
 | --- | --- |
-|  |  |

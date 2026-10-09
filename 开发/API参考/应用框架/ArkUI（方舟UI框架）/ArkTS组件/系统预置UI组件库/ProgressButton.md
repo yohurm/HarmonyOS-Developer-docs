@@ -1,6 +1,6 @@
 # ProgressButton
 
-更新时间：2026-09-04 10:41:25
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-progressbutton
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -8,7 +8,7 @@
 文本下载按钮，可显示具体下载进度。
  
 > [!NOTE]
-> 该组件从API version 10开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。 本模块接口仅可在Stage模型下使用。 如果ProgressButton设置 通用属性 和 通用事件 ，编译工具链会额外生成节点__Common__，并将通用属性或通用事件挂载在__Common__上，而不是直接应用到ProgressButton本身。这可能导致开发者设置的通用属性或通用事件不生效或不符合预期，因此，不建议ProgressButton设置通用属性和通用事件。
+> 该组件从API version 10开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。 本模块接口仅可在Stage模型下使用。 如果ProgressButton设置 通用属性 或 通用事件 ，编译工具链会额外生成节点__Common__，并将通用属性或通用事件挂载在__Common__上，而不是直接应用到ProgressButton本身。这可能导致开发者设置的通用属性或通用事件不生效或不符合预期，因此，不建议ProgressButton设置通用属性和通用事件。
 
   
 
@@ -71,15 +71,6 @@ ProgressButton({progress: number, content: ResourceStr, progressButtonWidth?: Le
 | textColor | ResourceColor | 否 | 是 | 按钮文本颜色。 默认值：系统默认值（#CE000000） |
 | backgroundColor | ResourceColor | 否 | 是 | 按钮背景色。 默认值：\$r('sys.color.ohos_id_color_foreground_contrary') |
  
- 
-  
-
-## 事件
-
-
-**支持设备：** Phone | PC/2in1 | Tablet | TV
-
-不支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)。
  
   
 
@@ -282,4 +273,4 @@ struct Index {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/i73jqMAAQUCp34ygZR4B4Q/zh-cn_image_0000002717613164.png?HW-CC-KV=V1&HW-CC-Date=20260911T073029Z&HW-CC-Expire=86400&HW-CC-Sign=EA459CEF7D8BC0F9176DFAC675287E8F437C8E27F416CD6CAAB1DFC37291668B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/K3YwzjU4R7KZMfM1CFOqgg/zh-cn_image_0000002749335236.png?HW-CC-KV=V1&HW-CC-Date=20261009T013038Z&HW-CC-Expire=86400&HW-CC-Sign=69C219FC5DE61FC231A4A750A706AF4E79A74B25D36F48043F577F1A2A0FD3BE)

@@ -1,6 +1,6 @@
 # drawable_descriptor.h
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawable-descriptor-h
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -44,8 +44,6 @@
 | ArkUI_DrawableDescriptor | ArkUI_DrawableDescriptor | 定义DrawableDescriptor对象。 |
 | OH_PixelmapNative | - | 使用Image Kit定义的Native侧的OH_PixelmapNative对象。 |
 | OH_PixelmapNative* | OH_PixelmapNativeHandle | 定义OH_PixelmapNative对象指针类型。 |
-| ArkUI_Node | - | 定义ArkUI Native组件实例对象，供ArkUI_NodeHandle指针在Native接口中标识和传递组件实例。 起始版本： 22 |
-| ArkUI_Node* | ArkUI_NodeHandle | 定义 ArkUI Native 组件实例对象指针，用于在 ArkUI Native 接口中标识和传递组件实例，例如创建、挂载、移除或销毁组件节点。 起始版本： 22 |
 | ArkUI_DrawableDescriptor_AnimationController | ArkUI_DrawableDescriptor_AnimationController | 定义DrawableDescriptor动图控制器对象。 起始版本： 22 |
 
 

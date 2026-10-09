@@ -244,6 +244,7 @@ static void SignalHandlerEx(int signo, siginfo_t* si, void* context) // 信号�
 如果可以安全的调用该函数，并且在信号处理程序上文中可以安全的使用，则该函数是异步安全的或异步信号安全的。下表中所列的均为异步安全函数，来自POSIX标准。应用程序可以**在信号处理程序中调用这些异步安全函数**。
   
 | _Exit() | fexecve() | posix_trace_event() | sigprocmask() |
+| --- | --- | --- | --- |
 | _exit() | fork() | pselect() | sigqueue() |
 | abort() | fstat() | pthread_kill() | sigset() |
 | accept() | fstatat() | pthread_self() | sigsuspend() |

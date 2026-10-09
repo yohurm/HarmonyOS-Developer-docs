@@ -1,13 +1,13 @@
 # User-Agent开发指导
 
-更新时间：2026-04-30 09:02:20
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-default-useragent
 
 User-Agent（简称UA）是一个特殊的字符串，包含设备类型、操作系统及版本等关键信息。在Web开发中，这个字符串使服务器能够识别请求的来源设备及其特性，从而根据这些信息提供定制化的内容和服务。如果页面无法正确识别UA，可能会导致多种异常情况。例如，为移动设备优化的页面布局可能会在桌面设备上显示错乱，反之亦然。此外，某些特定的浏览器功能或CSS样式可能仅在特定的浏览器版本中受支持，如果页面无法根据UA字符串做出正确的判断，就可能导致渲染问题或逻辑错误。
   
 
-#### 默认User-Agent结构
+## 默认User-Agent结构
 
 - 默认User-Agent定义
 
@@ -26,14 +26,23 @@ Mozilla/5.0 (Phone; OpenHarmony 5.0) AppleWebKit/537.36 (KHTML, like Gecko) Chro
 - 字段说明
 
 | 字段 | 含义 |
+
 | --- | --- |
+
 | DeviceType | 当前的设备类型。 取值范围： - Phone：手机设备 - Tablet：平板设备 - PC：2in1设备 |
+
 | OSName | 基础操作系统名称。 默认取值：OpenHarmony |
+
 | OSVersion | 基础操作系统版本，两位数字，M.S。 例如HarmonyOS-6.1.0.31取值为6.1 |
+
 | ChromeCompatibleVersion | 兼容Chrome主版本的版本号，从114版本开始演进。 对应取值参考约束与限制，例如HarmonyOS 6.0上默认的Chrome版本为132 |
+
 | ArkWeb | HarmonyOS版本Web内核名称。 默认取值：ArkWeb |
+
 | ArkWeb VersionCode | ArkWeb版本号，格式a.b.c.d。 例如4.1.6.1 |
+
 | DeviceCompat | 前向兼容字段。 手机设备默认取值为Mobile 其他设备默认取值为空 |
+
 | 扩展区 | 三方应用可以扩展的字段。 三方应用使用ArkWeb组件时，可以做UA扩展，例如加入APP相关信息标识。 |
 
  
@@ -42,7 +51,7 @@ Mozilla/5.0 (Phone; OpenHarmony 5.0) AppleWebKit/537.36 (KHTML, like Gecko) Chro
 
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/xW7s247BSu-0SwX3JzrLaw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260528T030416Z&HW-CC-Expire=86400&HW-CC-Sign=538C253F93C7DC424F05ED769470FB398109582DE2D8E5E188FA5B0EDB3EF6AD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/J5UWaS7fQn2U9O7t_0w61Q/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20261009T013123Z&HW-CC-Expire=86400&HW-CC-Sign=FFEC366290E64C601CC90EBF6133E1030DFB9767BF2251D53FD4EBC8216ACCFD)
  
  
 为了确保兼容性，部分浏览器可能会在用户代理（User-Agent）中增加非OpenHarmony的操作系统名称。针对用户代理中同时包含“OpenHarmony”和非OpenHarmony操作系统名称的场景，建议网页将OpenHarmony的处理逻辑放置在其他操作系统处理逻辑之前。
@@ -51,7 +60,7 @@ Mozilla/5.0 (Phone; OpenHarmony 5.0) AppleWebKit/537.36 (KHTML, like Gecko) Chro
  
   
 
-#### 自定义User-Agent结构
+## 自定义User-Agent结构
 
 在下面的示例中，通过调用[getUserAgent()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller#getuseragent)接口获取当前默认的用户代理（User-Agent）字符串。这一接口提供的默认User-Agent信息为开发者提供了基础，使开发者能够基于这个默认信息进行定制或扩展。
  
@@ -189,8 +198,9 @@ struct WebComponent {
  
   
 
-#### 相关User-Agent接口优先级
+## 相关User-Agent接口优先级
  
+
 | 接口名称 | 优先级 | 说明 |
 | --- | --- | --- |
 | setCustomUserAgent | 最高 | 对调用的Web组件生效。 |
@@ -201,11 +211,11 @@ struct WebComponent {
  
   
 
-#### 常见问题
+## 常见问题
 
   
 
-#### 如何通过User-Agent来识别HarmonyOS操作系统中不同设备
+### 如何通过User-Agent来识别HarmonyOS操作系统中不同设备
 
 HarmonyOS设备的识别主要通过User-Agent中的系统、系统版本和设备类型三个维度来判断。建议同时检查上述信息，以确保更准确的设备识别。
  1. 系统识别
@@ -247,27 +257,31 @@ const is2in1 = () => /PC/i.test(navigator.userAgent);
  
   
 
-#### 如何模拟HarmonyOS操作系统的User-Agent进行前端调试
+### 如何模拟HarmonyOS操作系统的User-Agent进行前端调试
 
 在Windows/Mac/Linux等操作系统中，可以通过Chrome/Edge/Firefox等浏览器DevTools提供的User-Agent复写能力，模拟HarmonyOS User-Agent。
  
   
 
-#### 如何在HarmonyOS中自定义User-Agent以实现H5兼容性
+### 如何在HarmonyOS中自定义User-Agent以实现H5兼容性
 
 HarmonyOS提供[setCustomUserAgent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller#setcustomuseragent10)接口以支持User-Agent的自定义设置。为适配移动端H5页面通常依赖的UA标识检测（如Mobile、OpenHarmony等），并确保不覆盖系统默认UA信息，推荐按如下方式操作：首先通过[getDefaultUserAgent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller#getdefaultuseragent14)接口获取系统默认User-Agent字符串，随后将H5兼容所需的自定义标识字段追加至该字符串末尾，最后调用setCustomUserAgent接口设置修改后的完整UA字符串。
  
   
 
-#### 如何解决H5页面的UA兼容性问题
+### 如何解决H5页面的UA兼容性问题
 
+**Q：如何在UA中判断网页由自带的浏览器中打开还是在应用webview中打开**
+ 
+A：手机自带浏览器有"HuaweiBrowser"字段，可以通过该字段进行区分。
+ 
 **Q：移动设备上网页呈现电脑版样式或电脑设备上网页呈现移动样式展示**
  
 A：网站会针对不同UA展示不同样式页面。需要移动设备UA设置DeviceCompat为"Mobile"，DeviceType为"Phone"，PC设备UA设置DeviceCompat为""，DeviceType为"PC"，平板设备UA设置DeviceCompat为""，DeviceType则为"Tablet"。
  
 **Q：部分网页打不开或显示“不支持的浏览器”**
  
-A：网页未适配OpenHarmony UA，需要网页对"OpenHarmony"标识作兼容处理。
+A：网页未适配OpenHarmony UA，需要网页对"OpenHarmony"标识作兼容处理。在网页适配前，可通过[setCustomUserAgent()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller#setcustomuseragent10)在默认UA中追加其他兼容性字段进行临时过渡适配。
  
 **Q：页面循环跳转**
  
@@ -279,6 +293,6 @@ A：UA 中的“兼容性字段”干扰了服务端识别。为了保障网页�
  
   
 
-#### 示例代码
+## 示例代码
 
 - [Web用户代理](https://gitcode.com/harmonyos_samples/web-user-agent)

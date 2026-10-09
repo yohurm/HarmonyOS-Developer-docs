@@ -36,6 +36,7 @@
 TabBar实现居左或居右样式实现方案如下：
   
 | 实现场景 | 实现方式 | 实现方法 | 适用场景 |
+| --- | --- | --- | --- |
 | 实现场景 | 左 | 实现方式 | 右 | 适用场景 |
 | barModifier参数实现 | barModifier参数 | 设置align属性为Alignment.Start，并设置Tabs属性barMode为BarMode.Scrollable。 | 设置align属性为Alignment.End，并设置Tabs属性barMode为BarMode.Scrollable。 | 仅需简单对齐，无需深度定制样式。 |
 | 滚动容器实现 | Scroll | Scroll设置宽度，Scroll外部Row的reverse属性设置为false。 | Scroll设置宽度，Scroll外部Row的reverse属性设置为true。 | 放置较多的页签数量。 |

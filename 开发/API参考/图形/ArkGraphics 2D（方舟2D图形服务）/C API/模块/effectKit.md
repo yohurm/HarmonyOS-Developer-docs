@@ -1,14 +1,10 @@
 # effectKit
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-effectkit
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ## 概述
-
-
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供处理图像的一些基础能力，包括对当前图像的亮度调节、模糊化、灰度调节等。
  
@@ -19,9 +15,6 @@
   
 
 ## 文件汇总
-
-
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
 
 | 名称 | 描述 |

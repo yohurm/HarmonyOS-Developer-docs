@@ -1,12 +1,14 @@
 # recommended推荐规则清单
 
-更新时间：2026-06-24 07:08:31
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-coderlinter-recommended-rules
 
-#### 通用规则推荐规则集@typescript-eslint/recommended
+## 通用规则推荐规则集@typescript-eslint/recommended
  
+
 | @typescript-eslint/await-thenable | 不允许对不是“Thenable”对象的值使用await关键字（“Thenable”表示某个对象拥有“then”方法，比如Promise）。 |
+| --- | --- |
 | @typescript-eslint/consistent-type-imports | 强制使用一致的类型导入风格。 |
 | @typescript-eslint/explicit-function-return-type | 函数和类方法需要显式的定义返回类型。 |
 | @typescript-eslint/explicit-module-boundary-types | 导出到外部的函数和公共类方法，需要显式的定义返回类型和参数类型。 |
@@ -25,9 +27,11 @@
  
  
 
-#### 安全规则推荐规则集@security/recommended
+## 安全规则推荐规则集@security/recommended
  
+
 | @security/no-commented-code | 不使用的代码段建议直接删除，不允许通过注释的方式保留。 |
+| --- | --- |
 | @security/no-unsafe-aes | 该规则禁止在AES加密算法中使用不安全的ECB加密模式。 |
 | @security/no-unsafe-dh | 该规则禁止使用不安全的DH密钥协商算法。 |
 | @security/no-unsafe-dh-key | 该规则禁止使用不安全的DH密钥。 |
@@ -44,9 +48,11 @@
  
  
 
-#### 性能规则推荐规则集@performance/recommended
+## 性能规则推荐规则集@performance/recommended
  
+
 | @performance/foreach-args-check | 建议在ForEach参数中设置keyGenerator。 |
+| --- | --- |
 | @performance/high-frequency-log-check | 不建议在高频函数中使用Hilog。 |
 | @performance/hp-arkts-no-use-any-export-current | 避免使用export * 导出当前module中定义的类型和数据。 |
 | @performance/hp-arkts-no-use-any-export-other | 避免使用export * 导出其他module中定义的类型和数据。 |
@@ -86,18 +92,22 @@
  
  
 
-#### 预览规则集@previewer/recommended
+## 预览规则集@previewer/recommended
  
+
 | @previewer/mandatory-default-value-for-local-initialization | 如果组件的属性支持本地初始化，需要设置一个合法的不依赖运行时的默认值。 |
+| --- | --- |
 | @previewer/no-page-method-on-preview-component | 禁止在非路由组件上实例化onPageShow、onPageHide、onBackPress等页面级方法。 |
 | @previewer/no-unallowed-decorator-on-root-component | 对于@Entry组件，不允许使用@Consume、@Link、@ObjectLink、@Prop注解；对于@Preview组件，建议使用一个定义了完整的、合法的、不依赖运行时的默认值的父组件作为预览该组件的容器。 |
  
  
  
 
-#### 一次开发多端部署规则推荐规则集@cross-device-app-dev/recommended
+## 一次开发多端部署规则推荐规则集@cross-device-app-dev/recommended
  
+
 | @cross-device-app-dev/color-contrast | 文本和背景之间的颜色对比度至少为4.5:1以确保可读性。 |
+| --- | --- |
 | @cross-device-app-dev/color-value | 颜色值应当使用“\$r”从color.json中引用，以适配不同的系统颜色模式，禁止使用固定的值。 |
 | @cross-device-app-dev/font-size | 字体大小要求至少为8fp以便于阅读。 |
 | @cross-device-app-dev/font-size-unit | 字体大小单位建议使用fp，以适配系统字体设置。 |
@@ -111,9 +121,11 @@
  
  
 
-#### ArkTS代码风格规则推荐规则集@hw-stylistic/recommended
+## ArkTS代码风格规则推荐规则集@hw-stylistic/recommended
  
+
 | @hw-stylistic/array-bracket-spacing | 强制数组“[”之后和“]”之前加空格。该规则仅检查.ets文件类型。 |
+| --- | --- |
 | @hw-stylistic/brace-style | 强制大括号和语句位于同一行。该规则仅检查.ets文件类型。 |
 | @hw-stylistic/comma-spacing | 强制数组元素和函数中多个参数之间的逗号后面加空格，逗号前不加空格。该规则仅检查.ets文件类型。 |
 | @hw-stylistic/curly | 条件语句和循环语句的逻辑代码必须写在大括号中。该规则仅检查.ets文件类型。 |

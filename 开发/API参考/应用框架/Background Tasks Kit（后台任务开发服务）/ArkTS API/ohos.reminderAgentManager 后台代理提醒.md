@@ -1,6 +1,6 @@
 # @ohos.reminderAgentManager (后台代理提醒)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-reminderagentmanager
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -1344,10 +1344,10 @@ reminderAgentManager.unsubscribeReminderState(reminderStateCallback).then(() => 
 | snoozeContentResourceId18+ | number | 否 | 是 | 指明延时提醒内容的资源ID，通过\$r(资源名称).id方法获取。 |
 | notificationId | number | 否 | 是 | 指明提醒使用的通知的id号，需开发者传入，相同id号的提醒会覆盖，默认值为0。 |
 | groupId11+ | string | 否 | 是 | 指明提醒使用相同的组id。相同组id中，一个提醒被点击不再提醒后，组内其他提醒也会被取消。 |
-| slotType | notification.SlotType | 否 | 是 | 指明提醒的通道渠道类型。 |
+| slotType | notification.SlotType | 否 | 是 | 指明提醒的通知渠道类型。 |
 | tapDismissed10+ | boolean | 否 | 是 | 通知是否自动清除，默认值为true，具体请参考NotificationRequest.tapDismissed。 - true：点击通知消息或通知按钮后，自动删除当前通知。 - false：点击通知消息或通知按钮后，保留当前通知。 |
 | autoDeletedTime10+ | number | 否 | 是 | 自动清除的时间。 数据格式：时间戳，单位：ms，具体请参考NotificationRequest.autoDeletedTime。 |
-| snoozeSlotType11+ | notification.SlotType | 否 | 是 | 指明延时提醒的通道渠道类型（不适用于倒计时提醒类型）。 |
+| snoozeSlotType11+ | notification.SlotType | 否 | 是 | 指明延时提醒的通知渠道类型（不适用于倒计时提醒类型）。 |
 | customRingUri11+ | string | 否 | 是 | 指明自定义提示音的uri，提示音文件必须放在resources/rawfile目录下，支持m4a、aac、mp3、ogg、wav、flac、amr等格式。 |
 | ringChannel20+ | RingChannel | 否 | 是 | 指明自定义提示音的音频播放通道，默认为闹钟通道。 |
 | fixedTimeZone | TimeZoneType | 否 | 是 | 时区类型，默认为TimeZoneType.DEFAULT。 起始版本： 26.0.0 模型约束： 此接口仅可在Stage模型下使用。 |

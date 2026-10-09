@@ -1,6 +1,6 @@
 # （可选）同步云端代码至DevEco Studio工程
 
-更新时间：2026-07-15 09:00:31
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos-clouddev-sync
 
@@ -9,7 +9,7 @@ DevEco Studio还支持您将AGC云端当前项目下的代码同步至本地工�
 云端代码同步目前支持以下模式：[仅同步云函数/云对象](#section588213529814)、[仅同步云数据库](#section474014335350)、[一键同步云侧代码](#section1198316575339)。
  
 
-#### 同步云函数/云对象
+## 同步云函数/云对象
 
 > [!NOTE]
 > 对于使用DevEco Studio 4.1 Canary 2之前的版本部署的函数，同步下来的是JavaScript代码。
@@ -17,7 +17,7 @@ DevEco Studio还支持您将AGC云端当前项目下的代码同步至本地工�
  
  
 
-#### 同步单个云函数/云对象
+### 同步单个云函数/云对象
 
 云函数/云对象部署到AGC云端后，如在云端又进行了新改动，您可再将云端的云函数/云对象同步到本地工程。云函数/云对象的同步方式一致，下文以云对象为例进行说明。
  1. 右击云对象目录，选择“Sync '云对象名'”。下文以云对象“id-generator”为例。
@@ -37,7 +37,7 @@ DevEco Studio还支持您将AGC云端当前项目下的代码同步至本地工�
  
  
 
-#### 批量同步云函数/云对象
+### 批量同步云函数/云对象
 
 批量同步云函数/云对象即将AGC云端当前项目下的所有云函数/云对象同步至本地工程。
  1. 右击“cloudfunctions”目录，选择“Sync Cloud Functions”。
@@ -66,7 +66,7 @@ DevEco Studio还支持您将AGC云端当前项目下的代码同步至本地工�
  
  
 
-#### 同步云数据库
+## 同步云数据库
 
 > [!NOTE]
 > 目前仅支持同步对象类型。
@@ -74,7 +74,7 @@ DevEco Studio还支持您将AGC云端当前项目下的代码同步至本地工�
  
  
 
-#### 同步单个对象类型
+### 同步单个对象类型
 
 对象类型部署到AGC云端后，如又发生了新改动，您可再将云端的对象类型同步到本地。
  1. 右击对象类型JSON文件（以“objecttype1.json”为例），选择“Sync 'objecttype1.json'”。
@@ -89,7 +89,7 @@ DevEco Studio还支持您将AGC云端当前项目下的代码同步至本地工�
  
  
 
-#### 批量同步对象类型
+### 批量同步对象类型
 
 您可以将AGC云端当前项目下所有的对象类型一键同步至本地。
  1. 右击“objecttype”目录，选择“Sync Object Type”。
@@ -109,7 +109,7 @@ DevEco Studio还支持您将AGC云端当前项目下的代码同步至本地工�
  
  
 
-#### 一键同步云侧代码
+## 一键同步云侧代码
 
 > [!NOTE]
 > 对于使用DevEco Studio 4.1 Canary 2之前的版本部署的函数，同步下来的是JavaScript代码。
@@ -117,7 +117,7 @@ DevEco Studio还支持您将AGC云端当前项目下的代码同步至本地工�
 1. 右击云开发工程（“CloudProgram”），选择“Sync Cloud Program”。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/-ClXWNRPSrmkTHr6zOPzsw/zh-cn_image_0000002214858849.png?HW-CC-KV=V1&HW-CC-Date=20260723T012114Z&HW-CC-Expire=86400&HW-CC-Sign=8840D791395327B4B5C914818584081E69F4961AB66F34D1B27E732A4CF7468D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/utpQtURcTZO6kSYT--bKDg/zh-cn_image_0000002214858849.png?HW-CC-KV=V1&HW-CC-Date=20261009T012553Z&HW-CC-Expire=86400&HW-CC-Sign=C71A1EE08FA647F48F45AE2489A02A4713084B8FEC566413F2D8C5494309CD32)
 
 2. 弹窗提示您本地工程下已存在同名对象类型/云函数/云对象。
 选择“Skip”，同步时将跳过本地同名对象类型/云函数/云对象。

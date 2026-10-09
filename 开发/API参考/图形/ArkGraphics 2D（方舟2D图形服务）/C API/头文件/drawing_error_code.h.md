@@ -1,6 +1,6 @@
 # drawing_error_code.h
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-error-code-h
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -86,7 +86,7 @@ enum OH_Drawing_ErrorCode
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_DRAWING_SUCCESS = 0 | 操作成功完成。 |
-| OH_DRAWING_ERROR_NO_PERMISSION = 201 | 权限校验失败。请检查是否已申请所需权限。 |
+| OH_DRAWING_ERROR_NO_PERMISSION = 201 | 权限校验失败，应用无权限使用该API，需要申请权限。 |
 | OH_DRAWING_ERROR_INVALID_PARAMETER = 401 | 无效的输入参数，如参数中传入了NULL。请检查参数类型、取值范围或参数是否为空。 |
 | OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE = 26200001 | 输入参数不在有效的范围内。请检查参数值是否在接口文档规定的有效范围内。 |
 | OH_DRAWING_ERROR_ALLOCATION_FAILED = 26200002 | 内存分配失败。 起始版本： 13 |

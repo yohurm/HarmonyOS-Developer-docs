@@ -1,9 +1,9 @@
 # @ohos.telephony.call (拨打电话)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-call
-**支持设备：** Phone | Tablet | Wearable
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 该模块提供呼叫管理功能，包括拨打电话、跳转到拨号界面、获取通话状态、格式化电话号码等。
 
@@ -17,7 +17,7 @@
 ## 导入模块
 
 
-**支持设备：** Phone | Tablet | Wearable
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ```text
 import { call } from '@kit.TelephonyKit';
@@ -28,7 +28,7 @@ import { call } from '@kit.TelephonyKit';
 ## call.dial(deprecated)
 
 
-**支持设备：** Phone | Tablet | Wearable
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 dial(phoneNumber: string, callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -66,7 +66,7 @@ call.dial("138xxxxxxxx", (err: BusinessError, data: boolean) => {
 ## call.dial(deprecated)
 
 
-**支持设备：** Phone | Tablet | Wearable
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 dial(phoneNumber: string, options: DialOptions, callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -268,7 +268,7 @@ call.makeCall("138xxxxxxxx").then(() => {
 ## call.makeCall24+
 
 
-**支持设备：** Phone | Tablet | Wearable
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 makeCall(phoneNumber: string, options?: MakeCallOptions): Promise&lt;void&gt;
 
@@ -384,7 +384,7 @@ let context = this.getUIContext().getHostContext() as Context;
 call.makeCall(context, "138xxxxxxxx").then(() => {
     console.info(`makeCall success`);
 }).catch((err: BusinessError) => {
-    console.error(`makeCall fail, promise: err->${err.code)},message:${err.message}`);
+    console.error(`makeCall fail, promise: err->${err.code},message:${err.message}`);
 });
 ```
 
@@ -393,7 +393,7 @@ call.makeCall(context, "138xxxxxxxx").then(() => {
 ## call.makeCallWithToken
 
 
-**支持设备：** Phone | Tablet | Wearable
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 makeCallWithToken(phoneNumber: string, options?: MakeCallOptions): Promise&lt;string&gt;
 
@@ -1395,7 +1395,7 @@ call.getCallTransferInfo(type, number)
 ## MakeCallOptions24+
 
 
-**支持设备：** Phone | Tablet | Wearable
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 拨打电话的可选参数。
 

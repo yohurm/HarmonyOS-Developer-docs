@@ -1,6 +1,6 @@
 # PreviewChecker检测规则
 
-更新时间：2026-08-29 09:41:34
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-previewer-previewchecker
 
@@ -62,8 +62,8 @@ struct <span style="color: rgb(0,128,128);">Index</span> {
 
 ## @previewer/no-unallowed-decorator-on-root-component
 
-
  
+
 不允许直接预览包含@Consume、@Link、@ObjectLink、@Prop等装饰器的子组件；建议使用一个定义了完整的、合法的、不依赖运行时的默认值的父组件，并预览此父组件来查看子组件的预览效果。
  
 **反例**

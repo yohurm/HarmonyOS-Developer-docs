@@ -1,6 +1,6 @@
 # 消息认证码计算HMAC(ArkTS)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-compute-hmac
 
@@ -41,7 +41,7 @@ async function genSymKeyByData(symKeyData: Uint8Array) {
 }
 
 async function doHmac() {
-  // 把字符串按utf-8解码为Uint8Array，使用固定的128位的密钥，即16字节
+  // 把字符串按utf-8编码为Uint8Array，使用固定的128位的密钥，即16字节
   let keyData = new Uint8Array(buffer.from('12345678abcdefgh', 'utf-8').buffer);
   let key = await genSymKeyByData(keyData);
   let macAlgName = 'SHA256'; // 摘要算法名
@@ -73,7 +73,7 @@ function genSymKeyByData(symKeyData: Uint8Array) {
 }
 
 function doHmacBySync() {
-  // 把字符串按utf-8解码为Uint8Array，使用固定的128位的密钥，即16字节
+  // 把字符串按utf-8编码为Uint8Array，使用固定的128位的密钥，即16字节
   let keyData = new Uint8Array(buffer.from('12345678abcdefgh', 'utf-8').buffer);
   let key = genSymKeyByData(keyData);
   let macAlgName = 'SHA256'; // 摘要算法名
@@ -119,7 +119,7 @@ async function genSymKeyByData(symKeyData: Uint8Array) {
 }
 
 async function doLoopHmac() {
-  // 把字符串按utf-8解码为Uint8Array，使用固定的128位的密钥，即16字节
+  // 把字符串按utf-8编码为Uint8Array，使用固定的128位的密钥，即16字节
   let keyData = new Uint8Array(buffer.from('12345678abcdefgh', 'utf-8').buffer);
   let key = await genSymKeyByData(keyData);
   let macAlgName = 'SHA256'; // 摘要算法名
@@ -157,7 +157,7 @@ function genSymKeyByData(symKeyData: Uint8Array) {
 }
 
 function doLoopHmacBySync() {
-  // 把字符串按utf-8解码为Uint8Array，使用固定的128位的密钥，即16字节
+  // 把字符串按utf-8编码为Uint8Array，使用固定的128位的密钥，即16字节
   let keyData = new Uint8Array(buffer.from('12345678abcdefgh', 'utf-8').buffer);
   let key = genSymKeyByData(keyData);
   let macAlgName = 'SHA256'; // 摘要算法名
@@ -206,7 +206,7 @@ async function genSymKeyByData(symKeyData: Uint8Array) {
   return symKey;
 }
 async function doHmac() {
-  // 把字符串按utf-8解码为Uint8Array，使用固定的128位的密钥，即16字节。
+  // 把字符串按utf-8编码为Uint8Array，使用固定的128位的密钥，即16字节。
   let keyData = new Uint8Array(buffer.from('12345678abcdefgh', 'utf-8').buffer);
   let key = await genSymKeyByData(keyData);
   let spec: cryptoFramework.HmacSpec = {

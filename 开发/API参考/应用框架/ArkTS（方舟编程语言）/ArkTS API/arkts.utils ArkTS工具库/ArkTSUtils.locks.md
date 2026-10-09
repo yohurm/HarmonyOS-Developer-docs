@@ -1,6 +1,6 @@
 # namespace (locks)
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-arkts-utils-locks
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -590,7 +590,7 @@ let p = lock.lockAsync<void, string>(
 | --- | --- | --- | --- | --- |
 | name | string | 否 | 否 | 锁的名称。 |
 | mode | AsyncLockMode | 否 | 否 | 锁的模式。 |
-| contextId | number | 否 | 否 | AsyncLockMode调用者的执行上下文标识符。 |
+| contextId | number | 否 | 否 | AsyncLock调用者的执行上下文标识符。 |
 
 
 

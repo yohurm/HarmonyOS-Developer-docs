@@ -1,6 +1,6 @@
 # @ohos.geoLocationManager (位置服务)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-geolocationmanager
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -173,7 +173,7 @@ import { geoLocationManager } from '@kit.LocationKit';
 | interval | number | 否 | 否 | 表示上报位置信息的时间间隔，单位是秒。默认值为1，取值范围为大于等于0。等于0时对位置上报时间间隔无限制。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | locationScenario | UserActivityScenario \| PowerConsumptionScenario | 否 | 否 | 表示定位的场景信息。取值范围见UserActivityScenario和PowerConsumptionScenario的定义。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | sportsType | SportsType | 否 | 是 | 表示运动模式。取值范围见SportsType定义。此参数仅在locationScenario设置为UserActivityScenario.SPORT时有效。默认值为0，表示该参数不生效。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 |
-| needPoi19+ | boolean | 否 | 是 | 表示是否需要获取当前位置附近的POI信息。false代表不需要获取当前位置附近的POI信息，true代表需要获取当前位置附近的POI信息。不设置时，默认值为false。 该参数仅在精确位置功能场景（即同时授权了ohos.permission.APPROXIMATELY_LOCATION和ohos.permission.LOCATION 权限）下有效，模糊位置功能生效场景（即仅授权了ohos.permission.APPROXIMATELY_LOCATION 权限）下不返回POI信息。 元服务API： 从API version 19开始，该接口支持在元服务中使用。 |
+| needPoi19+ | boolean | 否 | 是 | 表示是否需要获取当前位置附近的POI信息。false代表不需要获取当前位置附近的POI信息，true代表需要获取当前位置附近的POI信息。不设置时，默认值为false。当前仅支持在中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）获取POI信息。 该参数仅在精确位置功能场景（即同时授权了ohos.permission.APPROXIMATELY_LOCATION和ohos.permission.LOCATION 权限）下有效，模糊位置功能生效场景（即仅授权了ohos.permission.APPROXIMATELY_LOCATION 权限）下不返回POI信息。 元服务API： 从API version 19开始，该接口支持在元服务中使用。 |
 
 
 
@@ -194,7 +194,7 @@ import { geoLocationManager } from '@kit.LocationKit';
 | --- | --- | --- | --- | --- |
 | locatingPriority | LocatingPriority | 否 | 否 | 表示优先级信息。取值范围见LocatingPriority的定义。 |
 | locatingTimeoutMs | number | 否 | 否 | 表示超时时间，单位是毫秒，最小为1000毫秒。取值范围为大于等于1000。 |
-| needPoi19+ | boolean | 否 | 是 | 表示是否需要获取当前位置附近的POI信息。false代表不需要获取当前位置附近的POI信息，true代表需要获取当前位置附近的POI信息。不设置时，默认值为false。 该参数仅在精确位置功能场景（即同时授权了ohos.permission.APPROXIMATELY_LOCATION和ohos.permission.LOCATION 权限）下有效，模糊位置功能生效场景（即仅授权了ohos.permission.APPROXIMATELY_LOCATION 权限）下不返回POI信息。 元服务API： 从API version 19开始，该接口支持在元服务中使用。 |
+| needPoi19+ | boolean | 否 | 是 | 表示是否需要获取当前位置附近的POI信息。false代表不需要获取当前位置附近的POI信息，true代表需要获取当前位置附近的POI信息。不设置时，默认值为false。当前仅支持在中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）获取POI信息。 该参数仅在精确位置功能场景（即同时授权了ohos.permission.APPROXIMATELY_LOCATION和ohos.permission.LOCATION 权限）下有效，模糊位置功能生效场景（即仅授权了ohos.permission.APPROXIMATELY_LOCATION 权限）下不返回POI信息。 元服务API： 从API version 19开始，该接口支持在元服务中使用。 |
 
 
 
@@ -3608,7 +3608,7 @@ console.info("poiServiceState:" + poiServiceState);
 
 getPoiInfo(): Promise&lt;PoiInfo&gt;
 
-获取当前位置附近的POI信息。使用Promise异步回调。
+获取当前位置附近的POI信息。使用Promise异步回调。当前该接口仅支持在中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）使用。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
@@ -4509,12 +4509,12 @@ startBluetoothSearch(request: BluetoothSearchRequestParams, callback: Callback&l
 ```text
 import { geoLocationManager } from '@kit.LocationKit';
 
-private callback = (bluetoothScanResult: geoLocationManager.BluetoothScanResult) => {
+let callback = (bluetoothScanResult: geoLocationManager.BluetoothScanResult) => {
   if (bluetoothScanResult) {
     console.info('bluetoothScanResult: deviceId=' + bluetoothScanResult.deviceId);
       try {
          // 开发者需要考虑在合适的时机调用stopBluetoothSearch停止蓝牙扫描以节省功耗，本代码仅作为参考
-         geoLocationManager.stopBluetoothSearch(this.callback);
+         geoLocationManager.stopBluetoothSearch(callback);
       } catch (err) {
          console.error("errCode:" + err.code + ", message:" + err.message);
       }
@@ -4526,7 +4526,7 @@ let request: geoLocationManager.BluetoothSearchRequestParams = {
 };
  
 try {
-  geoLocationManager.startBluetoothSearch(request, this.callback);
+  geoLocationManager.startBluetoothSearch(request, callback);
 } catch (err) {
   console.error("errCode:" + err.code + ", message:" + err.message);
 }

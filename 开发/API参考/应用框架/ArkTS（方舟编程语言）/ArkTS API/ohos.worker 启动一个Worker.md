@@ -1,6 +1,6 @@
 # @ohos.worker (启动一个Worker)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-worker
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -2702,7 +2702,9 @@ const workerInstance = new worker.ThreadWorker("workers/worker.ets");
 workerInstance.postMessage("message from main thread to worker");
 workerInstance.onmessage = (d: MessageEvents): void => {
   // 当Worker线程传递myModel时，data即为myModel。data没有init的方法
-  let data: string  = d.data;
+  let data: Record<string, Object> = d.data as Record<string, Object>;
+  console.info('name:', data.name);// name: default name
+  console.info('init:', data.init === undefined);// init: true
 }
 ```
 
@@ -2712,7 +2714,7 @@ import { worker, MessageEvents, ErrorEvent } from '@kit.ArkTS';
 
 const workerPort = worker.workerPort;
 class MyModel {
-    name = "undefined";
+    name = "default name";
     init() {
         this.name = "MyModel";
     }

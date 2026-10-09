@@ -1,6 +1,6 @@
 # 案例：Native内存泄漏分析
 
-更新时间：2026-06-12 06:54:33
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-native-allocation-case
 
@@ -11,7 +11,7 @@
 [6.1.0(23) Beta1](https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/overview-610#section174491130173414)及以上版本，通过All Heap泳道找出Native内存泄漏的原因。
  
 
-#### 初步识别内存问题
+## 初步识别内存问题
 1. 使用[实时监控功能](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/realtime-monitor)对应用的内存资源进行监控。正常操作应用，观察运行过程中Memory泳道的变化。
 
   当在一段时间内应用内存没有明显增加或者在内存上涨后又逐渐回落至正常水平，则基本可以排除应用存在内存问题；反之，在一段时间内不断上涨且无回落或者内存占用明显增长超出预期，那么则可初步判断应用可能存在内存问题。
@@ -30,9 +30,7 @@
   
 ![](assets/案例：Native内存泄漏分析/file-20260514133150384-10.png)
 
-4. 点击三角按钮
-![](assets/案例：Native内存泄漏分析/file-20260514133150384-11.png)
-即开始录制。
+4. 点击三角按钮![icon](assets/案例：Native内存泄漏分析/file-20260514133150384-11.png)即开始录制。
 5. 录制过程中，不断在问题场景操作应用功能，放大问题便于快速定界问题点。
 6. 点击下图中方块按钮或者左侧停止按钮结束录制。
 
@@ -49,11 +47,11 @@
  
  
 
-#### 使用Allocation模板分析Native内存问题（DevEco Studio 6.1.0 Beta1及以上版本）
+## 使用Allocation模板分析Native内存问题（DevEco Studio 6.1.0 Beta1及以上版本）
 
  
 
-#### 录制模板数据
+### 录制模板数据
 1. 连接设备后，点击应用选择框选择需要录制的应用，选择**Allocation**模板，点击Create Session或双击Allocation图标即可创建一个Allocation的录制模板。
 2. 创建模板后，点击三角按钮即开始录制。
 
@@ -78,7 +76,7 @@
  
  
 
-#### 分析Native数据
+### 分析Native数据
 1. 框选All Heap中的Native Heap子泳道。
 1. 在下方详情区的“Statistics”页签中选择Created & Existing。
 
@@ -100,11 +98,11 @@ All Allocations：框选的时间段的所有分配内存信息。
  
  
 
-#### 使用Allocation模板分析Native内存问题（DevEco Studio 6.1.0 Beta1以下版本）
+## 使用Allocation模板分析Native内存问题（DevEco Studio 6.1.0 Beta1以下版本）
 
  
 
-#### 录制Allocation模板数据
+### 录制Allocation模板数据
 1. 连接设备后，点击应用选择框选择需要录制的应用，选择**Allocation**模板，点击Create Session或双击Allocation图标即可创建一个Allocation的录制模板。
 2. 创建模板后，点击三角按钮即开始录制。
 
@@ -114,7 +112,7 @@ All Allocations：框选的时间段的所有分配内存信息。
 
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/SPYOqUb-R6W8I5tY9WTjDQ/zh-cn_image_0000002625073779.png?HW-CC-KV=V1&HW-CC-Date=20260624T020721Z&HW-CC-Expire=86400&HW-CC-Sign=1706CAF2E494FB960D26AEACF7BB926B006C442EA29825A5DD477A287C1E6B09)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/cjCWWxweSUu9CafbbG_20Q/zh-cn_image_0000002701822572.png?HW-CC-KV=V1&HW-CC-Date=20261009T012817Z&HW-CC-Expire=86400&HW-CC-Sign=EAB30CBD2B956703EB061F457984978085012BE300A7FAE6D8B6A6F0A870D2E3)
 
 3. 操作应用复现问题场景，并在问题复现完成后，点击下图中方块按钮或者左侧停止按钮结束录制。
 
@@ -124,12 +122,12 @@ All Allocations：框选的时间段的所有分配内存信息。
 
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/a1Ykwt7cRoOrmDvzIcXnCQ/zh-cn_image_0000002625073777.png?HW-CC-KV=V1&HW-CC-Date=20260624T020721Z&HW-CC-Expire=86400&HW-CC-Sign=300C61FDC995787A7882E10AE7D5845EFAD602A62564E001BC4C7050F9B097A7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/UzunvDrTQfySb4KULwOKAg/zh-cn_image_0000002731381881.png?HW-CC-KV=V1&HW-CC-Date=20261009T012817Z&HW-CC-Expire=86400&HW-CC-Sign=D57397EB3E12C65C9F703977C3359FD6110932403B86CE0AD4612451AA97F9E7)
 
  
  
 
-#### 分析Native数据
+### 分析Native数据
 1. 框选Native Allocation泳道或子泳道。两个子泳道All Heap和All Anonymous VM分别代表使用malloc和mmap函数分配的内存情况。
 1. 在下方详情区的“Statistics”页签中选择Created & Existing。
 
@@ -140,7 +138,7 @@ All Allocations：框选的时间段的所有分配内存信息。
 4. 切换到“Call Trees”页签，该部分数据展示了详细的内存分配栈信息，同样需要选择Created & Existing。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/4I3y1bl9QqeUHoljYMcT2A/zh-cn_image_0000002625073783.png?HW-CC-KV=V1&HW-CC-Date=20260624T020721Z&HW-CC-Expire=86400&HW-CC-Sign=0137149BA3DD569436B0B9E7B06B925FCF5C82B3DE1958E7C6A98082DE263814)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/jMtLDRaxSTe_ehUA_OLeMw/zh-cn_image_0000002731541855.png?HW-CC-KV=V1&HW-CC-Date=20261009T012817Z&HW-CC-Expire=86400&HW-CC-Sign=1A5892077A1651771BEDDE76B0440F06D90CF8FF6E658A2B6C86EAFF659B155A)
 
 5. 优先在内存分配栈信息中寻找与业务代码强相关的Symbol Name，即Category中为亮色。从上图中看，主要泄漏点在业务代码侧，需要结合业务代码进行分析。
 

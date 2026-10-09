@@ -1,6 +1,6 @@
 # Class (UserAgentMetadata)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-useragentmetadata
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -424,7 +424,7 @@ setPlatform(platform: string): void
 
 getPlatform(): string
 
-获取操作系统名称。不调用对应的[setPlatform](#setplatform)设置时，名称默认值："HarmonyOS" 。
+获取操作系统名称。不调用对应的[setPlatform](#setplatform)设置时，名称默认值："OpenHarmony" 。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -478,7 +478,7 @@ setPlatformVersion(platformVersion: string): void
 
 getPlatformVersion(): string
 
-获取操作系统版本号。不调用对应的[setPlatformVersion](#setplatformversion)设置时，版本号默认值：按HarmonyOS平台版本号规则，同const.product.os.dist.version。
+获取操作系统版本号。不调用对应的[setPlatformVersion](#setplatformversion)设置时，版本号默认值：按OpenHarmony平台版本号规则，同const.product.os.dist.version。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 

@@ -1,6 +1,6 @@
 # ohpm uninstall
 
-更新时间：2026-08-29 09:41:34
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-uninstall
 
@@ -192,7 +192,7 @@ alias: un
 ohpm uninstall lottie
 ```
  
-
  
+
 > [!NOTE]
 > ohpm 1.0.0~1.3.0 使用 ohpm 卸载时，如果 json 是直接依赖的三方包，则当前工程 oh_modules 目录下文件夹 lottie 目录被删除，以及 json 对应的间接依赖也可能被删除（若间接依赖的包没有被其他三方包关联引用的情况下）。 oh-package.json5 文件中 dependencies 属性删除对应的行（例如："lottie": "2.0.7"）。 ohpm 1.4.x ohpm 客户端从 1.4.0 版本开始，使用 ohpm 卸载时，项目级 oh_modules 目录下的文件夹 lottie 目录 不会 被删除，模块级 oh_modules 目录下的文件夹 lottie 目录会被删除。 oh-package.json5 文件中 dependencies 属性删除对应的行（例如："lottie": "2.0.7"）。

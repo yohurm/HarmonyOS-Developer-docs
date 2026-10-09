@@ -1,6 +1,6 @@
 # Enums
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-e
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -716,9 +716,9 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | YUV_Y | 1 | 亮度信息。 |
-| YUV_U | 2 | 色度信息。 |
-| YUV_V | 3 | 色度信息。 |
-| JPEG | 4 | JPEG 类型。 |
+| YUV_U | 2 | 蓝色色度分量信息。 |
+| YUV_V | 3 | 红色色度分量信息。 |
+| JPEG | 4 | JPEG类型。 |
 
 
 

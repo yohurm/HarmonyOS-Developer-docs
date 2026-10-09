@@ -1,6 +1,6 @@
 # 应用数据向量化 (ArkTS)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/aip-data-intelligence-embedding
 
@@ -52,10 +52,16 @@
 
 ## 约束限制
 
- - 考虑到数据向量化处理的计算量和资源占用较大，当前仅支持在2in1设备上使用。
+ - 文本向量化模型：       
+API版本26.0.0之前，支持在PC/2in1设备上使用文本向量化模型。
+ - 从API版本26.0.0开始，支持在PC/2in1、Phone和Tablet设备上使用文本向量化模型。
+ - 其中，针对Phone和Tablet设备，仅支持在Kirin 9010s及以上版本的设备上使用文本向量化模型。
+
+      - 图像向量化模型：仅支持在PC/2in1设备上使用。
  - 嵌入模型的推理过程可使用NPU加速。与NPU计算相比，纯CPU的计算在时延和功耗上都有较大差距，建议采用NPU加速。
  - 模型推理单次可处理的文本长度上限为512个字符，支持中英文。
  - 模型推理单次可处理的图像大小小于20MB。
+ - 生成的向量仅在本设备有效，不可用于跨设备检索。
 
 
 
@@ -68,6 +74,7 @@
 | 接口名称 | 描述 |
 | --- | --- |
 | getTextEmbeddingModel(config: ModelConfig): Promise&lt;TextEmbedding&gt; | 获取文本嵌入模型。 |
+| getSupportedCloudModel(): Promise<Array&lt;CloudModelInfo&gt;> | 获取当前设备支持的云侧嵌入模型。 |
 | loadModel(): Promise&lt;void&gt; | 加载文本嵌入模型。 |
 | splitText(text: string, config: SplitConfig): Promise<Array&lt;string&gt;> | 获取文本的分块。 |
 | getEmbedding(text: string): Promise<Array&lt;number&gt;> | 获取给定文本的嵌入向量。 |
@@ -92,7 +99,8 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 2. 获取文本嵌入模型。
 
-  调用getTextEmbeddingModel方法，获取文本嵌入模型。示例代码如下所示：
+  
+针对PC/2in1设备：使用端侧嵌入模型，需配置模型版本、是否使用NPU加速及模型缓存路径。示例代码如下所示：
 
   
 ```ArkTS
@@ -118,7 +126,37 @@ intelligence.getTextEmbeddingModel(textConfig)
   })
 ```
 
-3. 加载文本嵌入模型。
+3. 针对Phone/Tablet设备：使用云侧嵌入模型，需调用getSupportedCloudModel方法获取云侧模型信息并配置下载模型使用的网络策略。示例代码如下所示：
+
+  
+```text
+intelligence.getSupportedCloudModel()
+  .then((info: Array<intelligence.CloudModelInfo>) => {
+    console.info('Succeeded in getting supported model');
+    if (info.length > 0) {
+      modelInfo = info[0];
+    }
+  })
+```
+
+```text
+if (modelInfo !== undefined) {
+  textConfig.modelInfo = modelInfo;
+  textConfig.networkPolicy = intelligence.NetworkPolicy.WIFI_ONLY;
+}
+intelligence.getTextEmbeddingModel(textConfig)
+  .then((data: intelligence.TextEmbedding) => {
+    console.info('Succeeded in getting TextModel');
+    textEmbedding = data;
+    // ...
+  })
+  .catch((err: BusinessError) => {
+    console.error('Failed to get TextModel and code is ' + err.code);
+    // ...
+  })
+```
+
+4. 加载文本嵌入模型。
 
   调用loadModel方法，加载文本嵌入模型。示例代码如下所示：
 
@@ -135,7 +173,7 @@ textEmbedding.loadModel()
   })
 ```
 
-4. 获取文本的分块。当数据长度超过限定时，使用splitText()接口将其分块，然后再进行数据向量化。
+5. 获取文本的分块。当数据长度超过限定时，使用splitText()接口将其分块，然后再进行数据向量化。
 
   调用splitText方法，获取文本的分块结果。示例代码如下所示：
 
@@ -158,7 +196,7 @@ intelligence.splitText(splitText, splitConfig)
   })
 ```
 
-5. 获取给定文本的嵌入向量。给定的文本数据可以是单个文本或文本集合。
+6. 获取给定文本的嵌入向量。给定的文本数据可以是单个文本或文本集合。
 
   调用getEmbedding方法，获取给定单个文本或文本集合的嵌入向量。示例代码如下所示：
 
@@ -187,7 +225,7 @@ textEmbedding.getEmbedding(batchTexts)
   })
 ```
 
-6. 释放文本嵌入模型。
+7. 释放文本嵌入模型。
 
   调用releaseModel方法，释放文本嵌入模型。示例代码如下所示：
 

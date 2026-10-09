@@ -1,6 +1,6 @@
 # SelectionMenu
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-selectionmenu
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -80,7 +80,7 @@ SelectionMenuOptions定义SelectionMenu的可选菜单类型项及其配置参�
 | onPaste | (event?: EditorEventInfo) => void | 否 | 是 | 替代内置系统菜单粘贴项的事件回调。 生效前提是一定要有controller参数，有系统默认菜单才能替换内置粘贴功能。 说明： event为返回信息。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | onCut | (event?: EditorEventInfo) => void | 否 | 是 | 替代内置系统菜单剪切项的事件回调。 生效前提是一定要有controller参数，有系统默认菜单才能替换内置剪切功能。 说明： event为返回信息。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | onSelectAll | (event?: EditorEventInfo) => void | 否 | 是 | 替代内置系统菜单全选项的事件回调。 生效前提是一定要有controller参数，有系统默认菜单才能替换内置全选功能。 说明： event为返回信息。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| backgroundSystemMaterial | uiMaterial.Material | 否 | 是 | 菜单背景板使用的系统材质，用于bindSelectMenu，或放置在Navigation或NavDestination的标题栏子树、或横向Tabs的底部TabBar子树中，菜单背景板的沉浸光感效果才会生效。用于实现菜单背景的视觉效果（如模糊、透明度等）。不同系统材质包含不同的属性，影响最终的显示效果。具体材质类型及属性请参考uiMaterial.Material。默认值：undefined，无材质效果。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
+| backgroundSystemMaterial | uiMaterial.Material | 否 | 是 | 菜单背景板使用的系统材质，用于实现菜单背景的视觉效果（如模糊、透明度等）。不同系统材质包含不同的属性，影响最终的显示效果。具体材质类型及属性请参考uiMaterial.Material。默认值：undefined，无材质效果。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 
 
 
@@ -515,7 +515,7 @@ struct Index {
 
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/wO8045wgTx-n3a4BS-qevw/zh-cn_image_0000002717773106.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073029Z&HW-CC-Expire=86400&HW-CC-Sign=CE87E4F00EB6739936F8830B5A58A301706A46AE28A30F4B6C87BA316BA2598F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/bBT66hlxRCCutLJFSlGuRQ/zh-cn_image_0000002749335246.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013039Z&HW-CC-Expire=86400&HW-CC-Sign=AB299D2377A93C4DD469E9C43D551A7423C2D2E77DDCB021AD80CDDDF929B679)
 
 
 
@@ -859,7 +859,7 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/cp0Ma2_JR6-MVVOS6eFC9g/zh-cn_image_0000002717613174.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T073029Z&HW-CC-Expire=86400&HW-CC-Sign=5372488D075EEEF722CEB6DA6D78FD10FFA1148251D64F793EE06BD999DAD7EA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/1Buua5bPRjK9FJ917zRcNQ/zh-cn_image_0000002749495130.jpg?HW-CC-KV=V1&HW-CC-Date=20261009T013039Z&HW-CC-Expire=86400&HW-CC-Sign=13C4CC123B336555FBA956E969FE538C4E8AC7B46E9F9577859C2FEDF52E4F17)
 
 
 
@@ -870,6 +870,8 @@ struct Index {
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例通过设置[SelectionMenuOptions](#selectionmenuoptions)的属性backgroundSystemMaterial，展示了超薄样式的背景板材质。
+
+该示例配图为高算力设备强档效果，组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
 
 从API版本26.0.0开始，SelectionMenuOptions新增backgroundSystemMaterial属性。
 
@@ -979,5 +981,13 @@ struct Index {
 }
 ```
 
+未设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/CaPnSKe2RHKmBZZRAtPvTQ/zh-cn_image_0000002747293127.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T073029Z&HW-CC-Expire=86400&HW-CC-Sign=6F333BC77C5288AF3A89EBD32CFDB160400924E4AE4CC6F3A10C305B372A0E5E)
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/xBwTmz_GQX-S_M5OVw767Q/zh-cn_image_0000002779094187.jpg?HW-CC-KV=V1&HW-CC-Date=20261009T013039Z&HW-CC-Expire=86400&HW-CC-Sign=62C220E72987BC0B3E3A50C5B5C34690B69043F484DEC1276C1C466CCD04F830)
+
+
+设置系统材质时：
+
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/oxJZnlA8R9WAvXfa-Y4Opg/zh-cn_image_0000002778934331.jpg?HW-CC-KV=V1&HW-CC-Date=20261009T013039Z&HW-CC-Expire=86400&HW-CC-Sign=2715A9154408CB45677433A68F1D71471475323DFBE6316B890691E098B4C12D)

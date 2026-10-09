@@ -1,6 +1,6 @@
 # CryptoSymKeyApi
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-cryptosymkeyapi
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -10,7 +10,7 @@
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-提供对称密钥相关功能接口。
+描述HarmonyOS为应用提供的对称密钥相关接口。
  
 **起始版本：** 12
  

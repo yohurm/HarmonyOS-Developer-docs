@@ -1,25 +1,26 @@
 # Resource Leak（资源泄漏）检测
 
-更新时间：2026-08-04 06:06:24
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/resource-leak-guidelines
 
-#### 简介
+## 简介
 
 资源泄漏是指句柄、线程或内存等资源，在应用运行过程中没有被正确释放，导致资源被长期占用且无法被其他应用使用，如果某一类资源耗尽，系统可能出现卡死或重启等异常情况。为了应对资源泄漏问题，系统会提供资源泄漏检测、判决、维测日志抓取、日志上报的能力，为开发者提供详细的维测日志以辅助故障定位。本文将主要介绍[资源泄漏检测的实现原理](#实现原理)以及[资源泄漏日志的规格](#日志获取)。
  
   
 
-#### 基本概念
+## 基本概念
 
 资源泄漏主要分为三类：内存泄漏、句柄泄漏和线程泄漏。对于每种泄漏，系统会通过周期采样的方式对进程的资源使用情况进行检测，如果资源使用超过阈值，会抓取对应维测日志并上报泄漏事件。通过Hiappevent资源泄漏事件进行订阅，订阅方法详见[资源泄漏事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-watcher-resourceleak-events)。
  
   
 
-#### 实现原理
+## 实现原理
 
 资源泄漏具体检测方式如下：
   
+
 | 泄漏类型 | 检测机制 |
 | --- | --- |
 | 句柄泄漏（FD_LEAK） | 每隔60s遍历一次进程，获取进程fd句柄总数，超过阈值（5000个） 时抓取详细句柄信息，同步上报泄漏。 |
@@ -30,7 +31,7 @@
  
  
 > [!NOTE]
-> 表格中所述阈值/基线均为系统默认，如果生态在开发过程中需要自行设定基线，可以使用 hidebug.setAppResourceLimit接口 进行设置，该接口建议在开发阶段调用，不要在正式发布阶段使用。 虚拟机内存使用率计算公式 = heapUsed / totalHeap。 heapUsed：当前虚拟机使用的堆大小，单位：KB。可通过 hidebug.getAppVMMemoryInfo() 接口获取。 totalHeap：当前虚拟机的堆总大小，单位：KB。可通过 hidebug.getAppVMMemoryInfo() 接口获取。 当应用上报JS_ERROR/CPP_CRASH故障，Error message包含“OutOfMemory”时，可参考 内存泄漏分析方法 辅助定位。 管控是指当系统判定应用发生泄漏后，主动终止泄漏应用的行为。 在资源泄漏资料中，DMA（ION）、dmaheap、dmabuf 可理解为同一种内存类型，不作强区分。
+> 表格中所述阈值/基线均为系统默认，如果生态在开发过程中需要自行设定基线，可以使用 hidebug.setAppResourceLimit()接口 进行设置，该接口建议在开发阶段调用，不要在正式发布阶段使用。 虚拟机内存使用率计算公式 = heapUsed / totalHeap。 heapUsed：当前虚拟机使用的堆大小，单位：KB。可通过 hidebug.getAppVMMemoryInfo() 接口获取。 totalHeap：当前虚拟机的堆总大小，单位：KB。可通过 hidebug.getAppVMMemoryInfo() 接口获取。 当应用上报JS_ERROR/CPP_CRASH故障，Error message包含“OutOfMemory”时，可参考 内存泄漏分析方法 辅助定位。 管控是指当系统判定应用发生泄漏后，主动终止泄漏应用的行为。 在资源泄漏资料中，DMA（ION）、dmaheap、dmabuf 可理解为同一种内存类型，不作强区分。
 
  
 资源泄漏内核管控方式如下：
@@ -43,13 +44,13 @@
  
   
 
-#### 约束和限制
+## 约束和限制
 1. 句柄泄漏调用栈、native内存泄漏调用栈、js泄漏内存快照等维测因为开销较大，所以在[nolog版本](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/performance-analysis-kit-terminology#nolog版本)默认不开启。
 2. 如果开发者希望获取到nolog版本的js泄漏内存快照，可参考[资源泄漏事件订阅（ArkTS）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-watcher-resourceleak-events-arkts)增加对nolog版本js内存快照的订阅。
  
   
 
-#### 日志获取
+## 日志获取
 
 资源泄漏日志由LeakDetector模块进行管理，可通过以下方式获取：
  
@@ -58,11 +59,17 @@
   DevEco Testing工具会收集设备/data/log/reliability/resource_leak/路径下的资源泄漏故障日志，根据进程名、故障和时间分类显示。
 
 | 泄漏类型 | 日志文件名称 |
+
 | --- | --- |
+
 | 句柄泄漏（FD_LEAK） | [pid]_fd_leak.txt |
+
 | 线程泄漏（THREAD_LEAK） | [pid]_thread_leak.txt |
+
 | 内存泄漏（MEMORY_LEAK） - js泄漏（JS_LEAK） | memleak-js-[process_name]-[pid]-[tid]-[timestamp].rawheap |
+
 | 内存泄漏（MEMORY_LEAK） - native内存泄漏（PSS_MEMORY） | memleak-native-[process_name]-[pid]-sample.txt memleak-native-[process_name]-[pid]-smaps.txt memleak-native-[process_name]-[pid]-[timestamp].txt |
+
 | 内存泄漏（MEMORY_LEAK） - ASHMEM/DMA（ION）/GPU等内存泄漏（KERNEL_MEMORY） | memleak-kernel-[module]-0-sample.txt memleak-kernel-[module]-0-[timestamp].txt |
 
   
@@ -86,14 +93,15 @@
  
   
 
-#### 句柄泄漏日志规格
+## 句柄泄漏日志规格
 
 故障日志文件名：[pid]_fd_leak.txt（**方式一**）或RESOURCE_OVERLIMIT_[TIMESTAMP]_[PID].log（**方式三**）。
  
   
 
-#### 日志头部信息
+### 日志头部信息
  
+
 | 字段 | 说明 |
 | --- | --- |
 | time | 故障发生时间。 |
@@ -111,7 +119,7 @@ leaked fd nums: 5111
  
   
 
-#### 句柄类型详细信息
+### 句柄类型详细信息
 
 - **Leaked fd Top 10：** 按照句柄名聚类，获取泄漏句柄中最多的类型。第一列为泄漏数量，第二列为泄漏类型，如下即ASHMEM类型的句柄存在4796个。
 
@@ -153,7 +161,7 @@ Dir Type Top 10:
  
   
 
-#### 特殊类型句柄维测信息
+### 特殊类型句柄维测信息
 
 如果**Leaked fd Top 10**的TOP句柄信息属于ashmem/socket/pipe/sync_file/dmabuf这五类特殊类型，且该类型的句柄个数超过1000个，日志中会增加整机详细的维测信息，具体如下：
  
@@ -162,12 +170,19 @@ Dir Type Top 10:
   ASHMEM（共享内存），当TOP 1的句柄类型为ASHMEM时，抓取整机ASHMEM内存的详细信息如下。
 
 | 字段 | 说明 |
+
 | --- | --- |
+
 | Process_name | 持有该ASHMEM内存块的应用进程包名。 |
+
 | Process_ID | 发生故障进程的pid，可以用于在流水日志中搜索相关进程信息。 |
+
 | Fd | 该进程持有的句柄。 |
+
 | Applicant_Pid | 申请该ASHMEM内存块的进程pid，可根据此字段识别该内存块的申请来源。 |
+
 | Ashmem_name | 共享内存的名字，开发者可通过提供的API进行设置，用来判断存储的资源类型，指向不同的领域。 |
+
 | Size | 单个ASHMEM块的大小，单位：B。 |
 
   
@@ -192,11 +207,17 @@ process1 781 18 328233 781 dev/ashmem/PolicyVolumeMap 384
   socket（网络通信），当TOP 1的句柄类型为socket时，抓取整机socket内存的详细信息如下。
 
 | 字段 | 说明 |
+
 | --- | --- |
+
 | ProcessName | 持有该socket内存块的应用进程包名。 |
+
 | ProcessID | 发生故障进程的pid，可以用于在流水日志中搜索相关进程信息。 |
+
 | Fd | 该进程持有的句柄。 |
+
 | inode | 文件系统对象信息。 |
+
 | PeerTid | 对端tid（对于有连接的socket为对应值，无连接为0）。 |
 
   
@@ -214,14 +235,23 @@ process1   6874   3   0    0
   pipe（进程间通信），当TOP 1的句柄类型为pipe时，以fd维度抓取整机pipe内存的详细信息如下。
 
 | 字段 | 说明 |
+
 | --- | --- |
+
 | ProcessName | 持有该pipe内存块的应用进程包名。 |
+
 | ProcessID | 发生故障进程的pid，可以用于在流水日志中搜索相关进程信息。 |
+
 | Fd | 该进程持有的句柄。 |
+
 | PipeName | 管道名。 |
+
 | inode | 文件系统对象信息。 |
+
 | MaxUsage | 最大使用量。 |
+
 | NumAccounted | 累计大小量。 |
+
 | RingSize | RingBuf大小，单位：KB。 |
 
   
@@ -239,16 +269,27 @@ process1 629 8 / 11 16 16 16
   sync_file（显存），当TOP 1的句柄类型为sync_file时，以fd维度抓取整机sync_file的详细信息如下。
 
 | 字段 | 说明 |
+
 | --- | --- |
+
 | ProcessName | 持有该sync_file内存块的应用进程包名。 |
+
 | ProcessID | 发生故障进程的pid，可以用于在流水日志中搜索相关进程信息。 |
+
 | Fd | 该进程持有的句柄。 |
+
 | FenceName | sync_file名字。 |
+
 | inode | 文件系统对象信息。 |
+
 | FenceNum | fence个数。 |
+
 | TimelineName | fence的Timeline名字。 |
+
 | DriverName | 驱动名字。 |
+
 | Status | fence的状态。 |
+
 | Timestamp | fence的时间戳。 |
 
   
@@ -266,13 +307,21 @@ process1 1309 26 NULL 4186 1 0:online_composer_gfx_primary ukmd_release_fence_29
   dmabuf（也称DMA内存），当TOP 1的句柄类型为dmabuf时，以fd维度抓取了整机dmabuf的详细信息如下 **。**
 
 | 字段 | 说明 |
+
 | --- | --- |
+
 | Process name | 持有该DMA（ION）内存块的应用进程包名。 |
+
 | Process ID | 发生故障进程的pid，可以用于在流水日志中搜索相关进程信息。 |
+
 | Fd | 该进程持有的句柄。 |
+
 | size | buffer内存大小，单位：B。 |
+
 | magic | buffer唯一标识（magic相同表示指向同一块buffer） 。 |
+
 | buf->pid | 申请者的pid。 |
+
 | buf->task_comm | 申请buffer的进程名。 |
 
   
@@ -289,7 +338,7 @@ Process dma_heap info:
  
   
 
-#### 句柄栈信息
+### 句柄栈信息
 
 当判定句柄泄漏后，会hook该进程的pipe/open等系统调用10分钟，抓取调用栈，并基于相同调用栈聚类。如下每一行都是一个调用栈，调用顺序为从右到左，其中num后面的数字表示调用栈总个数，bt后面为具体调用栈。具体栈信息可通过[addr2line](https://llvm.org/docs/CommandGuide/llvm-symbolizer.html)解析到对应的函数。
  
@@ -316,7 +365,7 @@ num 3968 bt [/system/lib64/libfdleak_tracker.so+0x1fb58] [/system/lib/ld-musl-aa
  
   
 
-#### 句柄泄漏聚类规则
+### 句柄泄漏聚类规则
 
 应用程序在同一或不同版本上、不同时间产生的泄漏问题可能为同一原因，开发者可以从故障日志中提取故障特征，根据故障特征将多份故障日志进行聚类，以提高泄漏问题的分析效率。
  1. 通过[句柄泄漏日志](#句柄泄漏日志规格)中的top10的文件句柄数以及top10的文件路径句柄数判定是哪种类型的句柄泄漏，将占比最多的句柄类型作为本次故障的故障特征。
@@ -324,14 +373,15 @@ num 3968 bt [/system/lib64/libfdleak_tracker.so+0x1fb58] [/system/lib/ld-musl-aa
  
   
 
-#### 线程泄漏日志规格
+## 线程泄漏日志规格
 
 故障日志文件名：[pid]_thread_leak.txt（**方式一**）或RESOURCE_OVERLIMIT_[TIMESTAMP]_[PID].log（**方式三**）。
  
   
 
-#### 日志头部信息
+### 日志头部信息
  
+
 | 字段 | 说明 |
 | --- | --- |
 | time | 检测到线程泄漏的时间。 |
@@ -353,7 +403,7 @@ summary: 879
  
   
 
-#### 线程类泄漏详细信息
+### 线程类泄漏详细信息
 
 - **Top 10 Thread Name：** 按照线程名聚类，获取泄漏最多的线程，第一列为泄漏数量，第二列为线程名称（若创建线程时未指定线程名，则表现为线程名和进程名相同）。
 
@@ -371,9 +421,13 @@ Top 10 Thread Name:
 - **线程启动信息**：可根据线程启动时间推测。
 
 | 字段 | 说明 |
+
 | --- | --- |
+
 | tid | 检测到泄漏时未释放线程的线程号 |
+
 | thread_name | 未释放的线程名 |
+
 | start_time(jiffies) | 线程创建时间 |
 
   
@@ -411,7 +465,7 @@ Tid:1527, Name:xxx
  
   
 
-#### 线程泄漏聚类规则
+### 线程泄漏聚类规则
 
 应用程序在同一或不同版本上、不同时间产生的泄漏问题可能为同一原因，开发者可以从故障日志中提取故障特征，根据故障特征将多份故障日志进行聚类，以提高泄漏问题的分析效率。
  1. 分析[线程泄漏日志](#线程泄漏日志规格)中展示的top10线程，将占比最多的线程名作为本次故障的故障特征。
@@ -425,7 +479,7 @@ Tid:1527, Name:xxx
  
   
 
-#### JS内存泄漏日志规格
+## JS内存泄漏日志规格
 
 **故障日志文件名：** memleak-js-[process_name]-[pid]-[tid]-[timestamp].rawheap（**方式一**）或RESOURCE_OVERLIMIT_[TIMESTAMP]_[PID].log（**方式三**）。
  
@@ -436,7 +490,7 @@ Tid:1527, Name:xxx
  
   
 
-#### JS泄漏聚类规则
+### JS泄漏聚类规则
 
 应用程序在同一或不同版本上、不同时间产生的泄漏问题可能为同一原因，开发者可以从故障日志中提取故障特征，根据故障特征将多份故障日志进行聚类，以提高泄漏问题的分析效率。
  
@@ -483,16 +537,17 @@ Tid:1527, Name:xxx
  
   
 
-#### native内存泄漏日志规格
+## native内存泄漏日志规格
 
 **故障日志文件名：** 泄漏日志获取中方式一和方式三文件名不同，方式三为RESOURCE_OVERLIMIT_[TIMESTAMP]_[PID].log，根据内容区分，方式一如下所示：
  
   
 
-#### 内存采样
+### 内存采样
 
 日志文件：memleak-native-[process_name]-[pid]-sample.txt，里面展示了进程号，进程名，基线值，内存采样的情况，可以直观的观察到内存的变化情况。
   
+
 | 字段 | 说明 |
 | --- | --- |
 | SoftThreshold | 系统设定的该进程基线（也可由应用自身通过setAppResourceLimit接口设置），应用内存连续五次超过进程基线即上报内存泄漏事件，单位：KB。 |
@@ -550,10 +605,11 @@ Index   RSS(KB)     Offset(KB)  PSS(KB)     SwapPSS(KB)     TotalPSS(KB)     Med
  
   
 
-#### 内存维测
+### 内存维测
 
 日志文件：memleak-native-[process_name]-[pid]-smaps.txt
   
+
 | 字段 | 说明 |
 | --- | --- |
 | RealPssMemory | 记录了realtime时刻采集的PSS值，单位：KB。 |
@@ -644,7 +700,7 @@ bins:           size ind    allocated      nmalloc (#/sec)      ndalloc (#/sec) 
  
   
 
-#### 内存栈
+### 内存栈
 
 **栈信息日志文件：** memleak-native-[process_name]-[pid]-[timestamp].txt
  
@@ -655,7 +711,7 @@ bins:           size ind    allocated      nmalloc (#/sec)      ndalloc (#/sec) 
 
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/BL23KYpbRFSvkTRpkKgtLQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095815Z&HW-CC-Expire=86400&HW-CC-Sign=78237972F526691FCA602A11D447E5360EF651BC55E91A5B900458E0B6648483)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/qLUQHXyLQDeXhf7OsRVQ6g/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20261009T013045Z&HW-CC-Expire=86400&HW-CC-Sign=876D20819BD3A2C2776B13D3CB35063F700DBF48A7621159E612B993D349446B)
  
 
   系统自动抓的调用栈（memleak-native-[process_name]-[pid]-[timestamp].txt）**无法直接在DevEco Studio打开，需要修改后缀名为.nas**。
@@ -664,7 +720,7 @@ bins:           size ind    allocated      nmalloc (#/sec)      ndalloc (#/sec) 
   点击Call Trees可以查看抓取进程的调用栈，筛选“Created & Existing”，根据没有释放的内存占比排序，展开可查看详细进程调用信息，优先排查内存占用较高的堆栈。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/n6X5MIhmRdW9snWxqrUfUQ/zh-cn_image_0000002704273049.png?HW-CC-KV=V1&HW-CC-Date=20260813T095815Z&HW-CC-Expire=86400&HW-CC-Sign=EAED01DB6C00DCFACE373D018F28F3060664A913725317DD119DE3BE9FDA9272)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/tP0mXGH2SwCMNnW5N3f_mA/zh-cn_image_0000002749333216.png?HW-CC-KV=V1&HW-CC-Date=20261009T013045Z&HW-CC-Expire=86400&HW-CC-Sign=01723D736B31B722A90A328014B6A93DAF860CAE4E5BC29276036341030A22E1)
 
 
   
@@ -676,13 +732,13 @@ bins:           size ind    allocated      nmalloc (#/sec)      ndalloc (#/sec) 
   同样选择“Created & Existing”，表示在hook抓取内存申请未释放的。长度越长代表在剩余内存中占用越多，优先排查。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/1ZimOwB6TCuVtPVrKZZ6PQ/zh-cn_image_0000002674473252.png?HW-CC-KV=V1&HW-CC-Date=20260813T095815Z&HW-CC-Expire=86400&HW-CC-Sign=1D5B61E4DAA6BC1486A871DF5D09ADF4DFD3B1714040B64358A7A6AC9A0E04FD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/zIKJt2UfTzuOe5skxFy_pA/zh-cn_image_0000002749493100.png?HW-CC-KV=V1&HW-CC-Date=20261009T013045Z&HW-CC-Expire=86400&HW-CC-Sign=3AAA03E1F091B46E8B90D356D18291B6329C9EF1FB040B5AF15CB02E3E9D986C)
 
 
  
   
 
-#### native泄漏聚类规则
+### native泄漏聚类规则
 
 应用程序在同一或不同版本上、不同时间产生的泄漏问题可能为同一原因，开发者可以从故障日志中提取故障特征，根据故障特征将多份故障日志进行聚类，以提高泄漏问题的分析效率。
  
@@ -690,10 +746,15 @@ bins:           size ind    allocated      nmalloc (#/sec)      ndalloc (#/sec) 
  1. 对故障日志一中的进程“LOGGER_MEMCHECK_SMAPS_INFO”信息进行分析，根据以下表格所列方法计算各类型内存占比，筛选占比最高的内存泄漏类型。
 
 | 内存泄漏类型 | 计算方法 |
+
 | --- | --- |
+
 | 虚拟机对象泄漏 | 搜索关键字“ArkTS”，计算“Pss”列和“SwapPss”列之和占总内存比例。 |
+
 | 堆内存泄漏 | 搜索关键字“jemalloc”，计算“Pss”列和“SwapPss”列之和占总内存比例。 |
+
 | ASHMEM内存泄漏 | 搜索关键字“/dev/ashmem”，计算“Pss”列和“SwapPss”列之和占总内存比例。 |
+
 | anon类型内存较大 | 搜索关键字“[anon]”，计算“Pss”列和“SwapPss”列之和占总内存比例。 |
 
   
@@ -750,20 +811,25 @@ Size        Rss         Pss        Clean       Dirty         Clean       Dirty  
 
   
 
-  #### ASHMEM/DMA/GPU/GPU_RS内存泄漏日志规格
+  ## ASHMEM/DMA/GPU/GPU_RS内存泄漏日志规格
 
   
 
-  #### 内存采样
+  ### 内存采样
 
   
 日志文件：memleak-kernel-[module]-0-sample.txt（**方式一**）或 RESOURCE_OVERLIMIT_[TIMESTAMP]_[PID].log（**方式三**）。
 
 | 字段 | 说明 |
+
 | --- | --- |
+
 | memoryName | 内核内存类型，如果发现进程存在泄漏（超过系统设定基线），会显示为该泄漏进程的进程名；如果memoryName打印类型为：ASHMEM/GPU/DMA（ION），则说明无进程泄漏。 |
+
 | softThreshold | 系统设定的软门限（超过8个采样周期，即30+分钟超过软门限后判定泄漏），单位：KB。 |
+
 | hardThreshold | 系统设定的硬门限（单次超过硬门限后判定泄漏），单位：KB。 |
+
 | topMemory | 检测到的内核内存峰值，单位：KB。 |
 
   
@@ -780,10 +846,11 @@ time(s) kernelMemory(KB)realtime
  
   
 
-#### 内存维测
+### 内存维测
 
 日志文件：memleak-kernel-[module]-0-[timestamp].txt **（方式一）**
   
+
 | 字段 | 说明 |
 | --- | --- |
 | LOGGER_MEMCHECK_MEMINFO | 整机内存信息概览。 |
@@ -884,6 +951,7 @@ process1      65141   268 274432      430936       42829      allocator_host  65
   字段说明：
 
   
+
 | 字段 | 说明 |
 | --- | --- |
 | Process | 持有DMA（ION）内存块的应用进程包名（16个字符截断）。 |
@@ -948,7 +1016,7 @@ process1”表示上下文ctx_1是由进程“process1”创建的，这个进�
  
   
 
-#### 内存栈
+### 内存栈
 
 从HarmonyOS 6.0.0开始，支持抓取GPU内存申请的调用栈以分析进程DMA（ION）泄漏问题。检测到泄漏后会收集15分钟内的GPU内存申请trace，开发者可本地搭建[Smartper](https://gitcode.com/openharmony-sig/smartperf)f环境并导入Profiler日志进行解析。
  
@@ -956,7 +1024,7 @@ process1”表示上下文ctx_1是由进程“process1”创建的，这个进�
  
   
 
-#### ASHMEM/DMA/GPU/GPU_RS聚类规则
+### ASHMEM/DMA/GPU/GPU_RS聚类规则
 
 应用程序在同一或不同版本上、不同时间产生的泄漏问题可能为同一原因，开发者可以从故障日志中提取故障特征，根据故障特征将多份故障日志进行聚类，以提高泄漏问题的分析效率。
  
@@ -1038,7 +1106,7 @@ C: host default memory (Total memory: 1789351)
 2. 聚类到GPU内存类型后，筛选出其中占用最大的内存段并进行聚类。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/StKnERZ2TyCAVVB1yjwXeQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095815Z&HW-CC-Expire=86400&HW-CC-Sign=C45DC0B43C4056FCB464FE8045B6EB6CB35D480784E53A1BDF862C936E050EB3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/s9umq_fnTPix7M5SUU_bqA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20261009T013045Z&HW-CC-Expire=86400&HW-CC-Sign=9200C54F589E1DC3EC69FCD1831616154443561DC17D71E2194A995C8A96AF02)
  
  
 不同的芯片平台中，GPU表现形式会存在差异：
@@ -1051,12 +1119,13 @@ Channel: Texture (Total memory: 1789351)。
  
   
 
-#### 内核管控日志规格
+## 内核管控日志规格
 
 触发内核管控时，系统资源供给已不足以支撑抓取开销较大的维测，因此只能提供基础维测信息支撑初步定界定位。
  
 内核管控日志通用内容如下：
   
+
 | 字段 | 说明 |
 | --- | --- |
 | pidNumber | 泄漏应用pid。 |
@@ -1082,7 +1151,7 @@ LOGGER_MEMCHECK_GERNAL_INFO
  
   
 
-#### RSS内核管控
+### RSS内核管控
 
 概述：应用RSS内存泄漏超过整机运行内存的1/3，且整机处于低内存状态时，触发RSS内核管控。
  
@@ -1090,6 +1159,7 @@ LOGGER_MEMCHECK_GERNAL_INFO
  
 RSS内核管控日志内容如下：
   
+
 | 字段 | 说明 |
 | --- | --- |
 | LOGGER_MEMCHECK_SAMPLIFY_SMAPS_INFO | 记录了该进程的smaps汇总信息。 |
@@ -1124,7 +1194,7 @@ LOGGER_MEMCHECK_SAMPLIFY_SMAPS_INFO
  
   
 
-#### GPU内核管控
+### GPU内核管控
 
 概述：应用GPU内存泄漏超过整机运行内存的1/3，且整机处于低内存状态时，触发GPU内核管控。
  
@@ -1134,7 +1204,7 @@ GPU内核管控日志内容与[GPU内存泄漏日志规格](#ashmemdmagpugpu_rs�
  
   
 
-#### ASHMEM内核管控
+### ASHMEM内核管控
 
 概述：应用ASHMEM内存泄漏超过整机运行内存的1/3，且整机处于低内存状态时，触发ASHMEM内核管控。
  
@@ -1144,7 +1214,7 @@ ASHMEM内核管控日志内容与[ASHMEM内存泄漏日志规格](#ashmemdmagpug
  
   
 
-#### DMA内核管控
+### DMA内核管控
 
 概述：应用DMA（ION）内存泄漏超过整机运行内存的1/3，且整机处于低内存状态时，触发DMA（ION）内核管控。
  
@@ -1154,7 +1224,7 @@ DMA（ION）内核管控日志内容与[DMA内存泄漏日志规格](#ashmemdmag
  
   
 
-#### thread内核管控
+### thread内核管控
 
 概述：应用申请线程过多，导致整机调度不足时，会触发thread内核管控。
  
@@ -1162,6 +1232,7 @@ DMA（ION）内核管控日志内容与[DMA内存泄漏日志规格](#ashmemdmag
  
 thread内核管控日志内容如下：
   
+
 | 字段 | 说明 |
 | --- | --- |
 | pidNumber | 泄漏应用pid。 |

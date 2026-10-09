@@ -1,6 +1,6 @@
 # CryptoMacApi
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-cryptomacapi
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -10,7 +10,7 @@
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-为应用提供MAC算法接口。
+描述HarmonyOS为应用提供的消息认证码(MAC)接口。
  
 **起始版本：** 20
  
@@ -24,4 +24,4 @@
 
 | 名称 | 描述 |
 | --- | --- |
-| crypto_mac.h | 定义MAC接口。 |
+| crypto_mac.h | 定义消息认证码接口。 |

@@ -1,6 +1,6 @@
 # DynamicLayout
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-dynamiclayout
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -9,6 +9,17 @@
 
 > [!NOTE]
 > 该组件从API version 24开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 本模块接口仅可在Stage模型下使用。
+
+
+
+## 导入模块
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+```text
+import { DynamicLayout } from '@kit.ArkUI';
+```
 
 
 
@@ -381,7 +392,7 @@ struct LayoutSwitchExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/UtXikLu-QIC60I9GRvhl7g/zh-cn_image_0000002717772538.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073112Z&HW-CC-Expire=86400&HW-CC-Sign=2152B96CDAEEB427850AD86CA9D3C9CF8095063205A068139ECFABFFB918AB30)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/Vl0wGI5tQqCj_jN4OZkeww/zh-cn_image_0000002778933655.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013101Z&HW-CC-Expire=86400&HW-CC-Sign=23170524E5926C3F38BC643514E225B61E86C7290CDD0FEF6781B15FB08CFFC0)
 
 
 
@@ -458,4 +469,4 @@ struct PropertyChangeExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/ePSCfUrmQF-DWP2bTSc9Jw/zh-cn_image_0000002717612606.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073112Z&HW-CC-Expire=86400&HW-CC-Sign=BBB8BFC50AAB1E1AB5C33738542F62ADCFB9C4A5AED4C7A7E3226BC6431B792B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/BXyqvfQkSsi6HqpUZ4IGrA/zh-cn_image_0000002749334570.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013101Z&HW-CC-Expire=86400&HW-CC-Sign=C08A4C8D82A0E7A8143B9D4145FBFA11E220F75A99BDC454487683CE0EE35046)

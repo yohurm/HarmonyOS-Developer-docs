@@ -1,6 +1,6 @@
 # 基于AVPlayer播放网络视频实践
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avplayer-network-video
 
@@ -58,7 +58,7 @@ AVPlayer通过URL形式配置播放源，有以下两种方式：
 1. 创建AVPlayer。
 
   
-```text
+```ArkTS
 public async initAVPlayer(source: VideoData, surfaceId: string) {
   // ...
   try {
@@ -76,7 +76,7 @@ public async initAVPlayer(source: VideoData, surfaceId: string) {
 2. 设置AVPlayer的url属性，或者调用[media.createMediaSourceWithUrl()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-f#mediacreatemediasourcewithurl12)函数通过URL创建播放源，并配置到AVPlayer，之后AVPlayer将自动进入initialized状态。
 
   
-```json
+```ArkTS
 public async initAVPlayer(source: VideoData, surfaceId: string) {
   // ...
   try {
@@ -158,7 +158,7 @@ public async initAVPlayer(source: VideoData, surfaceId: string) {
 1. 创建AVPlayer，并配置好相应的播放源。
 
   
-```json
+```ArkTS
 public async initAVPlayer(source: VideoData, surfaceId: string) {
   // ...
   try {
@@ -192,7 +192,7 @@ public async initAVPlayer(source: VideoData, surfaceId: string) {
 2. 注册[timeUpdate](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avplayer#ontimeupdate9)事件处理函数，并在函数中更新由@State修饰的状态变量currentTime。
 
   
-```text
+```ArkTS
 private setAVPlayerCallback() {
   // ...
   this.avPlayer.on('timeUpdate', (time: number) => {
@@ -208,7 +208,7 @@ private setAVPlayerCallback() {
 3. 注册[bufferingUpdate](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avplayer#onbufferingupdate9)事件处理函数，并在函数中更新由@State修饰的状态变量currentBufferTime。
 
   
-```text
+```ArkTS
 private setAVPlayerCallback() {
   // ...
   this.avPlayer.on('bufferingUpdate', (infoType: media.BufferingInfoType, value: number) => {
@@ -228,7 +228,7 @@ private setAVPlayerCallback() {
 4. 绑定currentTime到播放Slider的value属性，绑定currentBufferTime到缓冲Slider的value属性，并利用[Stack](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-stack-layout)布局将播放[Slider](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-slider)和缓冲Slider重叠在一起，然后设置播放Slider的trackColor为透明，缓冲Slider的style属性设为SliderStyle.NONE以隐藏滑块。
 
   
-```text
+```ArkTS
 @Builder
 progressBuilder() {
   Stack() {
@@ -289,7 +289,7 @@ progressBuilder() {
 对于缓冲区而言，下载线程是生产端，读取线程则是消费端。生产端将数据写入到缓冲区中，消费端则从缓冲区读取数据，下面将介绍缓冲区中的几个水位线概念。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/gdveNhiATlyPIEDnJXCKhg/zh-cn_image_0000002747291395.png?HW-CC-KV=V1&HW-CC-Date=20260911T072519Z&HW-CC-Expire=86400&HW-CC-Sign=640C1CB54912B0F7D873946A10B8F3E7F35263470A86710B70A0549C42A35E34)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/0nijynz-SyeXx_AW4ZoEAw/zh-cn_image_0000002749493252.png?HW-CC-KV=V1&HW-CC-Date=20261009T012637Z&HW-CC-Expire=86400&HW-CC-Sign=CDA5ED93B52182407FFE90FC08A7AE4758F2160D6F2275817953FA24C798EEF7)
 
  
 以上四个水位线取值情况如下，其中起播水位线和下载暂停水位线（缓冲区大小）可通过配置AVPlayer的播放策略来控制，其他两个暂未提供配置接口。
@@ -325,7 +325,7 @@ progressBuilder() {
 1. 创建AVPlayer，并通过[media.createMediaSourceWithUrl()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-f#mediacreatemediasourcewithurl12)方法生成MediaSource实例。
 
   
-```json
+```ArkTS
 public async initAVPlayer(source: VideoData, surfaceId: string) {
   // ...
   try {
@@ -359,7 +359,7 @@ public async initAVPlayer(source: VideoData, surfaceId: string) {
 2. 创建PlaybackStrategy实例，并通过AVPlayer的[setMediaSource()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avplayer#setmediasource12)方法，将[PlaybackStrategy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-i#playbackstrategy12)实例配置进AVPlayer。
 
   
-```json
+```ArkTS
 public async initAVPlayer(source: VideoData, surfaceId: string) {
   // ...
   try {
@@ -393,7 +393,7 @@ public async initAVPlayer(source: VideoData, surfaceId: string) {
 1. 创建AVPlayer，并直接通过赋值AVPlayer.url属性，对AVPlayer初始化。
 
   
-```json
+```ArkTS
 public async initAVPlayer(source: VideoData, surfaceId: string) {
   // ...
   try {
@@ -427,7 +427,7 @@ public async initAVPlayer(source: VideoData, surfaceId: string) {
 2. 注册AVPlayer的状态回调函数，并在initialized状态回调中配置[PlaybackStrategy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-i#playbackstrategy12)实例。
 
   
-```text
+```ArkTS
 this.avPlayer.on('stateChange', async (state) => {
   if (!this.avPlayer) {
     return;

@@ -1,13 +1,13 @@
 # ohpm list
 
-更新时间：2026-07-28 12:07:32
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-list
 
 列出已安装的三方库。
  
 
-#### 命令格式
+## 命令格式
 
 ```text
 ohpm list [options] [[<@group>/]<pkg>[@<version>]]
@@ -20,7 +20,7 @@ alias: ls
  
  
 
-#### 功能描述
+## 功能描述
 
 以树形结构列出当前项目安装的所有三方库信息，以及它们的依赖关系。
  
@@ -28,11 +28,11 @@ alias: ls
  
  
 
-#### Options
+## Options
 
  
 
-#### depth
+### depth
 
 - 默认值：0
 - 类型：number
@@ -49,7 +49,7 @@ alias: ls
  
  
 
-#### json
+### json
 
 - 默认值：无
 - 别名：j
@@ -59,7 +59,7 @@ alias: ls
  
  
 
-#### prefix
+### prefix
 
 - 默认值：""
 - 类型：string
@@ -69,7 +69,7 @@ alias: ls
  
  
 
-#### parameterFile
+### parameterFile
 
 - 默认值：无
 - 类型：string
@@ -80,7 +80,7 @@ alias: ls
  
  
 
-#### recursive
+### recursive
 
 - 默认值：false
 - 类型：Boolean
@@ -91,7 +91,7 @@ OHPM客户端从5.2.0版本开始，可以在 list 命令后面配置 -r 或者 
  
  
 
-#### target_path
+### target_path
 
 - 默认值：无
 - 类型：string
@@ -101,7 +101,7 @@ OHPM客户端从5.2.0版本开始，可以在 list 命令后面配置 -r 或者 
  
  
 
-#### log_level
+### log_level
 
 - 默认值：无
 - 类型：String
@@ -111,7 +111,7 @@ OHPM客户端从5.2.0版本开始，可以在 list 命令后面配置 -r 或者 
  
  
 
-#### debug
+### debug
 
 - 默认值：false
 - 类型：Boolean
@@ -121,7 +121,7 @@ OHPM客户端从5.2.0版本开始，可以在 list 命令后面配置 -r 或者 
  
  
 
-#### 示例
+## 示例
 
 - 查看当前项目安装的**所有**三方库及依赖关系。
 
@@ -134,7 +134,7 @@ ohpm list
  结果示例：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/r7Md2q-QTpKpdmn-deqidg/zh-cn_image_0000002648077104.png?HW-CC-KV=V1&HW-CC-Date=20260730T071813Z&HW-CC-Expire=86400&HW-CC-Sign=6F6A84EDC02B0B94CABA043C530F87999E685C8A334B5F7C3C5094C03E2CA2D6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/P5P1e2pxQemEt41jXkxolA/zh-cn_image_0000002731542985.png?HW-CC-KV=V1&HW-CC-Date=20261009T012819Z&HW-CC-Expire=86400&HW-CC-Sign=80CC809239BD3832D18DBA46F364B0BA90E9EF3C11E9DAC96FE5CAD82BABC121)
 
 - 查看当前项目安装的**某个**三方库的依赖关系
 
@@ -147,7 +147,7 @@ ohpm list universalify
  结果示例：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/b0LM_kBxQjqSB7nmz9mxKA/zh-cn_image_0000002678156823.png?HW-CC-KV=V1&HW-CC-Date=20260730T071813Z&HW-CC-Expire=86400&HW-CC-Sign=74CF5AF34284FB63452CA1C9923CCB3FD479175A848271CB6E1C49A0E8C536FF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/ZHeWa3lFTr6rCKecW8mRkA/zh-cn_image_0000002731383013.png?HW-CC-KV=V1&HW-CC-Date=20261009T012819Z&HW-CC-Expire=86400&HW-CC-Sign=601287DDA4FE185A8FC433DD642BED48995D14A4F561DA91ABEE80422C4945F3)
 
 - 查看当前项目所有module安装的**所有**三方库及依赖关系。执行以下命令：
 

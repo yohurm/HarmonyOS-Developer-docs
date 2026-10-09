@@ -1,6 +1,6 @@
 # 数字信封导入密钥(ArkTS)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-import-envelop-key-arkts
 
@@ -122,7 +122,7 @@ async function EnvelopRsaTest()
     .then((data) => {
       handle = data.handle;
     }).catch((error: BusinessError) => {
-      console.error('decrypt init fail, errorCode: ${error.code}')
+      console.error(`decrypt init fail, errorCode: ${error.code}`)
     })
   await huks.finishSession(handle, enOption)
     .then((data) => {
@@ -320,7 +320,7 @@ async function EnvelopAesTest()
     .then((data) => {
       handle = data.handle;
     }).catch((error: BusinessError) => {
-      console.error('decrypt init fail')
+      console.error(`encrypt init fail`)
     });
   await huks.finishSession(handle, enOption)
     .then((data) => {

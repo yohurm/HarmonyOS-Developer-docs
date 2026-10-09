@@ -1,10 +1,10 @@
 # 使用DevEco Studio静态检测编码规范
 
-更新时间：2026-03-12 08:45:02
+更新时间：2026-09-15 02:12:10
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-ide-static-detection
 
-#### 使用Clang-Tidy检测
+## 使用Clang-Tidy检测
 
  
 **自定义配置**
@@ -57,7 +57,9 @@ DevEco Studio集成了开源的Clang-Tidy。
  
 **默认配置检查内容**
   
+
 | 默认配置类型 | 检测问题 |
+| --- | --- |
 | clang-analyzer-unix.MismatchedDeallocator | 用于检测不匹配的内存释放问题。例如，如果使用malloc分配了内存，却错误地使用了delete或free来释放。 |
 | clang-analyzer-huawei.InfiniteRecursiveChecker | 用于检测可能导致无限递归的问题。无限递归可能会导致栈溢出等问题。 |
 | clang-analyzer-huawei.InfiniteGotoChecker | 用于检测可能导致无限循环的goto语句。无限循环可能会导致程序卡死或资源耗尽。 |
@@ -74,7 +76,7 @@ DevEco Studio集成了开源的Clang-Tidy。
  
  
 
-#### 使用CodeLinter检测
+## 使用CodeLinter检测
 
 **Code Linter代码检查**
  
@@ -185,19 +187,13 @@ overrides：针对工程根目录下的部分特定目录或文件，可以配�
  
 扫描完成后，在底部工具面板查看检查结果。勾选Defects中的告警等级，查看对应告警信息。双击告警结果，跳转到代码缺陷位置。选中告警结果时，右侧Defect Description窗口显示规则详细说明。搜索规则时，可设定全词匹配和大小写敏感。
  
-单击
-![](assets/使用DevEco%20Studio静态检测编码规范/file-20260515115126869-2.png)
-图标，查看可修复的代码规则，点击
-![](assets/使用DevEco%20Studio静态检测编码规范/file-20260515115126869-3.png)
-代码修复图标，可以一键式批量修复告警，并刷新检查结果。
+单击![icon](assets/使用DevEco%20Studio静态检测编码规范/file-20260515115126869-2.png)图标，查看可修复的代码规则，点击![icon](assets/使用DevEco%20Studio静态检测编码规范/file-20260515115126869-3.png)代码修复图标，可以一键式批量修复告警，并刷新检查结果。
  
 
 ![](assets/使用DevEco%20Studio静态检测编码规范/file-20260515115126869-4.png)
 屏蔽告警信息：
  
-- 在某些特殊场景下，若扫描结果中出现误报，点击单条告警结果后的
-![](assets/使用DevEco%20Studio静态检测编码规范/file-20260515115126869-5.png)
-Ignore图标，可以忽略对告警所在行的code linter检查；或勾选文件名称或多条待屏蔽的告警，点击左侧工具面板Ignore图标批量执行操作；
+- 在某些特殊场景下，若扫描结果中出现误报，点击单条告警结果后的![icon](assets/使用DevEco%20Studio静态检测编码规范/file-20260515115126869-5.png)Ignore图标，可以忽略对告警所在行的code linter检查；或勾选文件名称或多条待屏蔽的告警，点击左侧工具面板Ignore图标批量执行操作；
 - 在文件顶部添加注释/* eslint-disable */可以屏蔽整个文件执行code linter检查，在eslint-disable 后加入一个或多个以逗号分隔的规则Id，可以屏蔽具体检查规则；
 - 在需要忽略检查的代码块前后分别添加/* eslint-disable */和/* eslint-enable */添加注释信息，再执行Code Linter，将不再显示该代码块扫描结果；在待屏蔽的代码行前一行添加/* eslint-disable-next-line */，也可屏蔽对该代码行的codelinter检查。
 
@@ -208,9 +204,7 @@ Ignore图标，可以忽略对告警所在行的code linter检查；或勾选文
 ![](assets/使用DevEco%20Studio静态检测编码规范/file-20260515115126869-6.png)
 
  
-导出检查结果：点击工具面板左侧
-![](assets/使用DevEco%20Studio静态检测编码规范/file-20260515115126869-7.png)
-导出按钮，即可导出检查结果到excel文件，包含告警所在行，告警明细，告警级别等信息。
+导出检查结果：点击工具面板左侧![icon](assets/使用DevEco%20Studio静态检测编码规范/file-20260515115126869-7.png)导出按钮，即可导出检查结果到excel文件，包含告警所在行，告警明细，告警级别等信息。
  
 
 ![](assets/使用DevEco%20Studio静态检测编码规范/file-20260515115126869-8.png)
@@ -265,7 +259,7 @@ Foo.bar();
 对pages/Index.ets文件进行代码检查，结果如下：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/DRu8NLyCQLK7MR01LfW4ug/zh-cn_image_0000002194009852.png?HW-CC-KV=V1&HW-CC-Date=20260528T024717Z&HW-CC-Expire=86400&HW-CC-Sign=AC06000D6981083FD58C0CF4A9A6E152D34E5A7D658E5877EFA9A42CF946828B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/mizn7Iu5Rp2eUspThpcZpA/zh-cn_image_0000002194009852.png?HW-CC-KV=V1&HW-CC-Date=20261009T012655Z&HW-CC-Expire=86400&HW-CC-Sign=04D5C29CBA04C7BAEBBDDF51A7FD1E0F03C6F5FEDC000248DA7CE7D692221DC1)
 
  
 **示例2：对类名Foo的命名风格校验**
@@ -305,6 +299,7 @@ class foo {    //Here is an example of a naming style error, where foo is the in
 }
 ```
   
+
 | 字段名称 | 参数说明 | 是否必选 | 类型 | 支持配置的参数 |
 | --- | --- | --- | --- | --- |
 | selector | 配置要检查的语法 | 是 | 字符串、字符串数组 | variable：变量function：函数parameter：参数parameterProperty：参数属性accessor：get/set方法enumMember：枚举成员classMethod：类方法structMethod：自定义组件中的方法objectLiteralMethod：对象方法typeMethod：接口方法classProperty：类属性structProperty：自定义组件中的属性objectLiteralProperty：对象属性typeProperty：接口属性class：类struct：自定义组件interface：接口typeAlias：类型别名enum：枚举typeParameter：泛型参数default：包含以上所有的类型variableLike：包含variable，function，parametermemberLike：包含classProperty，structProperty，objectLiteralProperty，typeProperty，parameterProperty ，enumMember，classMethod，objectLiteralMethod，typeMethod，accessortypeLike：包含class，struct，interface，typeAlias，enum，typeParametermethod：包含classMethod，structMethod，objectLiteralMethod，typeMethodproperty：包含classProperty，objectLiteralProperty，typeProperty |
@@ -326,7 +321,7 @@ class foo {    //Here is an example of a naming style error, where foo is the in
 对pages/Index.ets文件执行代码检查，显示检查结果如下：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/087gCi_tRfKs1bdrUlP2Lw/zh-cn_image_0000002229335649.png?HW-CC-KV=V1&HW-CC-Date=20260528T024717Z&HW-CC-Expire=86400&HW-CC-Sign=45FC31AF3CA66FA30CA4C11C9CDE4940432DE42FACBFAD0617889CA94F906BB6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/GqQJfVAhQBqHeC7igHyFtg/zh-cn_image_0000002229335649.png?HW-CC-KV=V1&HW-CC-Date=20261009T012655Z&HW-CC-Expire=86400&HW-CC-Sign=D855EEE7EE904659419BAA9B9A3A49314F477365E334E9B510103ED2651FA916)
 
  
 **示例3：检查代码文件的命名风格**
@@ -363,4 +358,4 @@ class foo {    //Here is an example of a naming style error, where foo is the in
 对pages/test.ets文件执行代码检查，显示检查结果如下：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/myLXGzE2R8ShqP67Ux2q0g/zh-cn_image_0000002229450117.png?HW-CC-KV=V1&HW-CC-Date=20260528T024717Z&HW-CC-Expire=86400&HW-CC-Sign=DA997C032887A25C6257EF88F5A2E03F24F4F1EE7FE0D4BF872E287B83993BA1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/qB0kdrHzRJinkdmVdp-Jpw/zh-cn_image_0000002229450117.png?HW-CC-KV=V1&HW-CC-Date=20261009T012655Z&HW-CC-Expire=86400&HW-CC-Sign=2E6F76738BCBC2B28919FF7DF1008563818405547E497737CE77295DEAF6AED6)

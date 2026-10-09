@@ -1,14 +1,14 @@
 # OS平台API行为的变更
 
-更新时间：2026-06-27 01:41:31
+更新时间：2026-10-08 10:09:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-for-all-apps-5031
 
-#### Ability
+## Ability
 
  
 
-#### installSource字段规格变更
+### installSource字段规格变更
 
 **变更原因**
  
@@ -58,11 +58,11 @@ ApplicationInfo中的installSource字段。
  
  
 
-#### AppGallery Kit
+## AppGallery Kit
 
  
 
-#### kit.StoreKit.d.ts文件废弃，替换为kit.AppGalleryKit.d.ts文件
+### kit.StoreKit.d.ts文件废弃，替换为kit.AppGalleryKit.d.ts文件
 
 **变更原因**
  
@@ -94,11 +94,11 @@ ApplicationInfo中的installSource字段。
  
  
 
-#### ArkTS
+## ArkTS
 
  
 
-#### 信号处理方法注册接口sigaction支持SA_RESETHAND标志位变更
+### 信号处理方法注册接口sigaction支持SA_RESETHAND标志位变更
 
 **变更原因**
  
@@ -164,11 +164,11 @@ if (ret < 0) {
  
  
 
-#### ArkUI
+## ArkUI
 
  
 
-#### FrameNode被UINode包裹时isVisible接口返回值发生变更
+### FrameNode被UINode包裹时isVisible接口返回值发生变更
 
 **变更原因**
  
@@ -239,7 +239,7 @@ FrameNode.d.ts文件isVisible接口。
  
  
 
-#### 富文本组件RichEditor的onCopy回调中设置preventDefault()时的行为变更
+### 富文本组件RichEditor的onCopy回调中设置preventDefault()时的行为变更
 
 **变更原因**
  
@@ -267,11 +267,11 @@ FrameNode.d.ts文件isVisible接口。
  
  
 
-#### AVCodec Kit
+## AVCodec Kit
 
  
 
-#### OH_AVCodecOnStreamChanged在音频解码场景的默认行为变更
+### OH_AVCodecOnStreamChanged在音频解码场景的默认行为变更
 
 **变更原因**
  
@@ -303,11 +303,11 @@ native_avcodec_audiocodec.h 下的接口OH_AudioCodec_RegisterCallback注册的n
  
  
 
-#### Localization Kit
+## Localization Kit
 
  
 
-#### 变更缅甸文，马来文和泰文的显示名称
+### 变更缅甸文，马来文和泰文的显示名称
 
 **变更原因**
  
@@ -335,11 +335,11 @@ i18n.System.getDisplayLanguage
  
  
 
-#### Media Kit
+## Media Kit
 
  
 
-#### 系统录屏应用调用的截屏接口变更
+### 系统录屏应用调用的截屏接口变更
 
 **变更原因**
  
@@ -373,18 +373,18 @@ i18n.System.getDisplayLanguage
  
  
 
-#### 应用配置文件
+## 应用配置文件
 
  
 
-#### supportWindowMode选项配置fullscreen和split时，窗口全屏启动
+### supportWindowMode选项配置fullscreen和split时，窗口全屏启动
 
 **变更原因**
  
 PC/2in1设备上，在module.json5的[supportWindowMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#abilities标签)属性配置fullscreen和split时，或在startOptions的[supportWindowModes](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-startoptions#startoptions)属性配置FULL_SCREEN和SPLIT时，窗口将以自由窗口状态启动，与预期效果不符。
  
-
  
+
 **变更影响**
  
 该变更涉及应用适配。
@@ -413,15 +413,15 @@ API version 15及之后的版本, 开发者需要关注在module.json5的support
  
 若预期是以自由窗口启动，则需要在module.json5的supportWindowMode属性配置增加floating配置项或startOptions的supportWindowModes属性中增加FLOATING配置项。
  
-
  
- 
-
-#### 调试工具
 
  
 
-#### hilog日志在商用版本（nolog版本）开发者模式下默认日志级别由info变为warning
+## 调试工具
+
+ 
+
+### hilog日志在商用版本（nolog版本）开发者模式下默认日志级别由info变为warning
 
 **变更原因**
  

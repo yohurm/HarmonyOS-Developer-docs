@@ -1,6 +1,6 @@
 # @ohos.request.cacheDownload (缓存下载)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-request-cachedownload
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -562,6 +562,8 @@ getDownloadInfo(url: string): DownloadInfo | undefined
 | --- | --- |
 | 201 | permission denied. |
 
+
+**示例：**
 
 ```json
 import { cacheDownload, BusinessError } from '@kit.BasicServicesKit';

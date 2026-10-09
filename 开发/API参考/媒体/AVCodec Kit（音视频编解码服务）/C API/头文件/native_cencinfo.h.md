@@ -1,6 +1,6 @@
 # native_cencinfo.h
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-cencinfo-h
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -294,7 +294,7 @@ OH_AVErrCode OH_AVCencInfo_SetKeyIdAndIv(OH_AVCencInfo *cencInfo, uint8_t *keyId
 
 | 类型 | 说明 |
 | --- | --- |
-| OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：cencInfo为空、keyId为空、keyIdLen != DRM_KEY_ID_SIZE、iv是空、ivLen != DRM_KEY_IV_SIZE、keyId拷贝失败，或者iv拷贝失败。 |
+| OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：cencInfo为空、keyId为空、keyIdLen != DRM_KEY_ID_SIZE、iv为空、ivLen != DRM_KEY_IV_SIZE、keyId拷贝失败，或者iv拷贝失败。 |
  
  
   

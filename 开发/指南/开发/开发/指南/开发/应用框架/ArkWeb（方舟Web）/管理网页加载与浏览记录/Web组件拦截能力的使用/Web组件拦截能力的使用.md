@@ -1,6 +1,6 @@
 # Web组件拦截能力的使用
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-component-intercept-capab-usage
 
@@ -22,7 +22,7 @@ ArkWeb提供了多种拦截能力，使开发者能够监控、修改和记录�
 | 使用场景 | 页面跳转控制 | 网络请求拦截 | 网络请求拦截 |
 | --- | --- | --- | --- |
 | 方案 | onLoadIntercept | onInterceptRequest | WebSchemeHandler |
-| 典型应用场景 | • 应用的跳转与拉起 • 请求重定向 • 页面白名单配置 | • 本地资源替换 • 自定义资源加载策略 • 提示恶意请求 | 除支持 onInterceptRequest 的应用场景外，还支持： • 配置公共请求头 • 跨域请求 • POST请求拦截 |
+| 典型应用场景 | • Web和应用的跳转与拉起 • 请求重定向 • 页面白名单配置 | • 本地资源替换 • 自定义资源加载策略 • 提示恶意请求 | 除支持 onInterceptRequest 的应用场景外，还支持： • 配置公共请求头 • 跨域请求 • POST请求拦截 |
 | 拦截时机 | Web组件加载url之前 | 请求发起前 | 请求发起前 |
 | 拦截范围 | 页面主URL的请求（包括页面中iframe的导航行为，不包括子资源的请求） | 页面主URL的请求和子资源的请求 | 页面主URL的请求和子资源的请求 |
 | 数据访问能力 | 支持获取请求的 URL、是否为主 frame 等相关信息 参考：WebResourceRequest | 支持获取请求的 URL、是否为主 frame 等相关信息 参考：WebResourceRequest | 除支持获取请求的 URL、是否为主 frame 等相关信息外，还支持获取 POST 请求体和 buffer 类型数据 参考：WebSchemeHandlerRequest |
@@ -41,7 +41,7 @@ ArkWeb提供了多种拦截能力，使开发者能够监控、修改和记录�
  
 **核心用法**：
  
-- **[应用的跳转与拉起](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-web-app-jump-and-pull-up)**：拦截特定地址的请求，拉起指定应用或跳转其他页面处理，用于实现拦截支付类标签链接跳转到支付应用进行支付，或拦截地址类标签链接跳转到地图类应用进行导航等。
+- **[Web和应用的跳转与拉起](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/navigating-between-web-and-apps)**：拦截特定地址的请求，拉起指定应用或跳转其他页面处理，用于实现拦截支付类标签链接跳转到支付应用进行支付，或拦截地址类标签链接跳转到地图类应用进行导航等。
 - **[请求重定向](#请求重定向)**：拦截特定地址的请求，并将访问重定向到新的目标地址，用于在域名更换或登录引导时，将用户访问跳转到正确的页面。
 - **[页面白名单配置](#页面白名单配置)**：配置链接黑名单/白名单，拦截/放行指定URL请求，确保Web组件的请求在信任范围内，用于实现阻止用户访问危险网页等功能。
 
@@ -85,7 +85,7 @@ Web组件在加载URL前会触发[onLoadIntercept()](https://developer.huawei.co
 **图 1** 基于onLoadIntercept()的请求拦截流程图
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/zKzCTt8YSYu8S2XDCzNeYg/zh-cn_image_0000002747290879.png?HW-CC-KV=V1&HW-CC-Date=20260911T073146Z&HW-CC-Expire=86400&HW-CC-Sign=FBC31846EE31C9D10B199E5ED957C5D66EB337F4A2E070C91362A6EC4E2B68E5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/Q6m-PzGhSvG3O0RkDV9PoA/zh-cn_image_0000002749492736.png?HW-CC-KV=V1&HW-CC-Date=20261009T013122Z&HW-CC-Expire=86400&HW-CC-Sign=737E776CFDB9999E78B3DDBB88D2BA75467B315CAFEC61FB017E385602BB04AB)
 
  
   
@@ -99,7 +99,7 @@ Web组件在加载URL前会触发[onLoadIntercept()](https://developer.huawei.co
 **图 2** 请求重定向
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/A1m1i_W2Qz-Bi-tYMNokwg/zh-cn_image_0000002747210797.png?HW-CC-KV=V1&HW-CC-Date=20260911T073146Z&HW-CC-Expire=86400&HW-CC-Sign=AA15189ED84785802EC31C1F0B5BECC1D9F2D910FD33C6B0D4CD4971366E822E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/ru8ZQBR9TretBeFsLQUGAQ/zh-cn_image_0000002779091795.png?HW-CC-KV=V1&HW-CC-Date=20261009T013122Z&HW-CC-Expire=86400&HW-CC-Sign=342B03D8D928C1338308C664521AD54758DACC705D2FC4F1B03B329FA2744382)
 
  
 **实现原理**
@@ -110,7 +110,7 @@ Web组件在加载URL前会触发[onLoadIntercept()](https://developer.huawei.co
  1. 获取请求的URL。
 
   
-```text
+```ArkTS
 /**
    * Processes the load intercept event
    * Returns true if loading should be blocked (redirect performed), false to allow
@@ -124,7 +124,7 @@ Web组件在加载URL前会触发[onLoadIntercept()](https://developer.huawei.co
 2. 判断URL是否满足重定向条件。
 
   
-```text
+```ArkTS
 /**
    * Checks if the URL needs to be intercepted and redirected
    */
@@ -143,7 +143,7 @@ Web组件在加载URL前会触发[onLoadIntercept()](https://developer.huawei.co
    */
   private normalizeUrl(url: string): string {
     return url
-      .replace(/^(?:[a-zA-Z]+:)?\/\//, '')
+      .replace(/^(?:[a-zA-Z]+:)?[/]{2}/, '')
       .replace(/\/+$/, '')
       .trim();
   }
@@ -152,7 +152,7 @@ Web组件在加载URL前会触发[onLoadIntercept()](https://developer.huawei.co
 3. 若满足重定向条件，通过[WebviewController.loadUrl()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller#loadurl)加载重定向页面。
 
   
-```text
+```ArkTS
 /**
    * Processes the load intercept event
    * Returns true if loading should be blocked (redirect performed), false to allow
@@ -196,7 +196,7 @@ Web组件在加载URL前会触发[onLoadIntercept()](https://developer.huawei.co
 **图 3** 页面白名单配置
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/ViAUOCRlT_apFQnMyzIHvQ/zh-cn_image_0000002717770862.png?HW-CC-KV=V1&HW-CC-Date=20260911T073146Z&HW-CC-Expire=86400&HW-CC-Sign=7215EF8A4C1593AD2E857626339327BDAB188ACFA1B3DB29A5D84F11D4D4B7C1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/ly5Mb3mRTDqydxOscnAnwg/zh-cn_image_0000002778931937.png?HW-CC-KV=V1&HW-CC-Date=20261009T013122Z&HW-CC-Expire=86400&HW-CC-Sign=F476447C34ECA89B39FE89FDF710632EE61599BF1ABB8215FE4523974750BDBF)
 
  
 **实现原理**
@@ -233,7 +233,7 @@ Web({ src: this.loadingUrl, controller: this.controller })
     let normalized = url.trim().toLowerCase();
     // ...
     normalized = normalized
-      .replace(/^(?:[a-z0-9+.-]+:)?\/\//, '') // strip protocol-like prefixes
+      .replace(/^(?:[a-z0-9+.-]+:)?[/]{2}/, '') // strip protocol-like prefixes
       .split(/[/?#]/)[0]; // drop everything after domain
     return normalized.replace(/:+$/, '').replace(/\/+$/, '');
   }
@@ -334,7 +334,7 @@ Web组件在加载URL之前会触发[onInterceptRequest()](https://developer.hua
 **图 4** 基于onInterceptRequest()的请求拦截流程图
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/NajYNrEvR92aj4HP6ZAG2A/zh-cn_image_0000002717610928.png?HW-CC-KV=V1&HW-CC-Date=20260911T073146Z&HW-CC-Expire=86400&HW-CC-Sign=100C4C540DCF0E080906C890DE6E92A627069A5798879349C8B8BEDBAD14D800)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/hAZ-4bBxROinOBO_Fe0Dsw/zh-cn_image_0000002749332854.png?HW-CC-KV=V1&HW-CC-Date=20261009T013122Z&HW-CC-Expire=86400&HW-CC-Sign=C4DC0EFE540298FD7C02A1E570CE2AA593A172A203317D79372D2F16B1127E4C)
 
  
   
@@ -348,7 +348,7 @@ Web组件在加载URL之前会触发[onInterceptRequest()](https://developer.hua
 **图 5** 本地资源替换
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/VhUrDtZERVm_ds-WZc3l7A/zh-cn_image_0000002747290881.png?HW-CC-KV=V1&HW-CC-Date=20260911T073146Z&HW-CC-Expire=86400&HW-CC-Sign=F198ABE5F3961C86CB88E23072840F458CD189AB2BBA8C7AED858ABD627D0807)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/wuh9O49WSdqZcsQaPaL0QA/zh-cn_image_0000002749492738.png?HW-CC-KV=V1&HW-CC-Date=20261009T013122Z&HW-CC-Expire=86400&HW-CC-Sign=564ADACEA0075D6C6DB3CBB1AA13AD1A83038149BCEAFB859B49067D7F17C21D)
 
  
 **实现原理**
@@ -359,7 +359,7 @@ Web组件在加载URL之前会触发[onInterceptRequest()](https://developer.hua
  1. 配置网络请求资源和本地资源的映射关系，以及本地资源与相应MIME类型的映射关系。
 
   
-```text
+```ArkTS
 // Map between domain names and local files
   schemeMap = new Map([
     ['https://www.example.com/', 'index.html'],
@@ -378,7 +378,7 @@ Web组件在加载URL之前会触发[onInterceptRequest()](https://developer.hua
       })
 ```
 
-```text
+```ArkTS
 /**
    * Updates the scheme and mime type mappings
    */
@@ -391,7 +391,7 @@ Web组件在加载URL之前会触发[onInterceptRequest()](https://developer.hua
 2. 获取请求的URL。
 
   
-```text
+```ArkTS
 /**
    * Processes the intercepted request and returns local resource response if applicable
    * Returns null if request should be allowed through
@@ -406,7 +406,7 @@ Web组件在加载URL之前会触发[onInterceptRequest()](https://developer.hua
 3. 通过映射关系获取本地资源。
 
   
-```text
+```ArkTS
 /**
    * Processes the intercepted request and returns local resource response if applicable
    * Returns null if request should be allowed through
@@ -466,7 +466,7 @@ Web组件在加载URL之前会触发[onInterceptRequest()](https://developer.hua
 4. 构建[WebResourceResponse](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-webresourceresponse)，设置并返回本地资源作为请求响应。
 
   
-```text
+```ArkTS
 /**
    * Processes the intercepted request and returns local resource response if applicable
    * Returns null if request should be allowed through
@@ -507,13 +507,13 @@ Web组件在加载URL之前会触发[onInterceptRequest()](https://developer.hua
 **图 6** Wi-Fi网络环境下加载图片资源
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/8TS24wBxS-GF_j-LLqmi9g/zh-cn_image_0000002747210799.png?HW-CC-KV=V1&HW-CC-Date=20260911T073146Z&HW-CC-Expire=86400&HW-CC-Sign=26D8BBFE67450AFC67C2C413CA0068EF1D1A509B0B99A341348796E8F655656A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/lfKoJWBpSpKf0EN5z2hX8g/zh-cn_image_0000002779091797.png?HW-CC-KV=V1&HW-CC-Date=20261009T013122Z&HW-CC-Expire=86400&HW-CC-Sign=248D10BD89AEC974D064A85A4F54C5DF497DEA4B310C397BB69B36C14D925F0E)
 
  
 **图 7** 非Wi-Fi网络环境下加载本地占位图
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/JkwqnyMiTX-Qb07fDbwWZg/zh-cn_image_0000002717770864.png?HW-CC-KV=V1&HW-CC-Date=20260911T073146Z&HW-CC-Expire=86400&HW-CC-Sign=8B3BAE0533A93194DAB27F2F7415D565A3B4D1A5777FC0A27461D4DFC66BF2EF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/miO0EY5RTci0oI6DqjX5_g/zh-cn_image_0000002778931939.png?HW-CC-KV=V1&HW-CC-Date=20261009T013122Z&HW-CC-Expire=86400&HW-CC-Sign=839DDAD963D68DD71365719D27DBF3984785BED2E79200F670A76EBFC020ED09)
 
  
 **实现原理**
@@ -524,7 +524,7 @@ Web组件在加载URL之前会触发[onInterceptRequest()](https://developer.hua
  1. 判断当前网络环境，若处于Wi-Fi网络环境下，则直接返回原始请求响应。
 
   
-```text
+```ArkTS
 /**
    * Processes the intercepted request and returns appropriate response
    * Returns null if request should be allowed through
@@ -555,7 +555,7 @@ Web组件在加载URL之前会触发[onInterceptRequest()](https://developer.hua
 2. 获取请求的URL。
 
   
-```text
+```ArkTS
 /**
    * Processes the intercepted request and returns appropriate response
    * Returns null if request should be allowed through
@@ -571,7 +571,7 @@ Web组件在加载URL之前会触发[onInterceptRequest()](https://developer.hua
 3. 判断请求类型，若非图片资源请求，则直接返回原始请求响应。
 
   
-```text
+```ArkTS
 /**
    * Processes the intercepted request and returns appropriate response
    * Returns null if request should be allowed through
@@ -600,7 +600,7 @@ Web组件在加载URL之前会触发[onInterceptRequest()](https://developer.hua
 4. 构建[WebResourceResponse](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-webresourceresponse)，对于非Wi-fi网络环境下的图片资源请求，设置并返回本地占位图作为请求响应。
 
   
-```text
+```ArkTS
 /**
    * Processes the intercepted request and returns appropriate response
    * Returns null if request should be allowed through
@@ -639,7 +639,7 @@ Web组件在加载URL之前会触发[onInterceptRequest()](https://developer.hua
 **图 8** 基于WebSchemeHandler的请求拦截流程图
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/_QU8yk92SL-6WuJho8A9mw/zh-cn_image_0000002717610930.png?HW-CC-KV=V1&HW-CC-Date=20260911T073146Z&HW-CC-Expire=86400&HW-CC-Sign=FEC8AA9BAB82D01068E84174923E4421C7F907EB04B55FBCDABE2DE59142AA87)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/PrGfVAnMQb2NJmBOWYKsFg/zh-cn_image_0000002749332856.png?HW-CC-KV=V1&HW-CC-Date=20261009T013122Z&HW-CC-Expire=86400&HW-CC-Sign=54A724538C7D38ACC785C6FCA328602263232A41E39D29F229CACE5EB488D5B7)
 
  
   
@@ -653,7 +653,7 @@ Web组件在加载URL之前会触发[onInterceptRequest()](https://developer.hua
 **图 9** 配置公共请求头
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/KhEo2bkDSJyewvr0Nq0Weg/zh-cn_image_0000002747290883.png?HW-CC-KV=V1&HW-CC-Date=20260911T073146Z&HW-CC-Expire=86400&HW-CC-Sign=C506200A53DB0FA23188941A48FA948A322C2DB08A2FC9FA1CC87B6ADB32D1DF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/FpKRBEY7Ssm9m3IddISE2A/zh-cn_image_0000002749492740.png?HW-CC-KV=V1&HW-CC-Date=20261009T013122Z&HW-CC-Expire=86400&HW-CC-Sign=7B1AEC54FCC0C95852503ECD7B8AAACB1C410D32E217286D122E953B48F02905)
 
  
 **实现原理**
@@ -664,7 +664,7 @@ Web组件在加载URL之前会触发[onInterceptRequest()](https://developer.hua
  1. 通过[WebviewController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller)将[WebSchemeHandler](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webschemehandler)设置给Web组件。
 
   
-```text
+```ArkTS
 // Bind interceptor to HTTP
   controller.setWebSchemeHandler('http', this.schemeHandler);
 ```
@@ -672,7 +672,7 @@ Web组件在加载URL之前会触发[onInterceptRequest()](https://developer.hua
 2. 在[WebSchemeHandler.onRequestStart()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webschemehandler#onrequeststart12)回调中拦截网络请求。
 
   
-```text
+```ArkTS
 // Set up request interceptor
   this.schemeHandler.onRequestStart((request: webview.WebSchemeHandlerRequest,
     resourceHandler: webview.WebResourceHandler) => {
@@ -685,7 +685,7 @@ Web组件在加载URL之前会触发[onInterceptRequest()](https://developer.hua
 3. 为网络请求添加自定义的公共请求头，并通过rcp.[createSession()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/remote-communication-rcp#createsession)创建HTTP会话。
 
   
-```text
+```ArkTS
 /**
    * Creates an RCP session for the next outbound request.
    */
@@ -706,7 +706,7 @@ Web组件在加载URL之前会触发[onInterceptRequest()](https://developer.hua
 4. 通过[rcp](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/remote-communication-rcp)将请求转发到服务端获取请求响应。
 
   
-```text
+```ArkTS
 /**
    * Sends GET or HEAD requests via the RCP session.
    */
@@ -735,7 +735,7 @@ Web组件在加载URL之前会触发[onInterceptRequest()](https://developer.hua
 5. 调用[didReceiveResponse()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webresourcehandler#didreceiveresponse12)和[didReceiveResponseBody()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webresourcehandler#didreceiveresponsebody12)将构造的响应头和响应体传递给拦截的请求。
 
   
-```text
+```ArkTS
 /**
    * Maps the RCP response to a WebSchemeHandlerResponse.
    */
@@ -771,7 +771,7 @@ Web组件在加载URL之前会触发[onInterceptRequest()](https://developer.hua
 6. 调用[didFinish()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webresourcehandler#didfinish12)通知Web组件被拦截的请求已经完成。
 
   
-```text
+```ArkTS
 /**
    * Maps the RCP response to a WebSchemeHandlerResponse.
    */

@@ -1,6 +1,6 @@
 # ArkWeb组件安全开发
 
-更新时间：2026-09-09 06:06:31
+更新时间：2026-09-15 02:12:10
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-arkweb-component-security
 
@@ -470,8 +470,8 @@ try {
  
 通过JavaScriptProxy接口注册的方法能被攻击者利用，导致加载恶意内容、执行恶意代码、滥用敏感资源等风险。
  
-
  
+
 参考文档：[如何建立应用侧与H5侧的交互通道](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-in-page-app-function-invoking#如何建立应用侧与h5侧的交互通道)
  
  

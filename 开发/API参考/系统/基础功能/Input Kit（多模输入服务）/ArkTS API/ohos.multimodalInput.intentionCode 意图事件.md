@@ -1,6 +1,6 @@
 # @ohos.multimodalInput.intentionCode (意图事件)
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-intentioncode
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -30,9 +30,9 @@ import { IntentionCode } from '@kit.InputKit';
 
 意图事件枚举值。
  
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+**元服务API**：从API version 12开始，该接口支持在元服务中使用。
  
-**系统能力：** SystemCapability.MultimodalInput.Input.Core
+**系统能力**：SystemCapability.MultimodalInput.Input.Core
   
 
 | 名称 | 值 | 说明 |

@@ -1,6 +1,6 @@
 # 获取用户目录环境(C/C++)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-environment-guidelines
 
@@ -60,10 +60,10 @@ void GetUserDownloadDirPathExample()
     FileManagement_ErrCode ret = OH_Environment_GetUserDownloadDir(&downloadPath);
     if (ret == 0) {
         OH_LOG_INFO(LOG_APP, "Succeeded in getting user download directory, path=%{public}s", downloadPath);
-        free(downloadPath);
     } else {
         OH_LOG_ERROR(LOG_APP, "Failed to get download path, error code is %{public}d", ret);
     }
+    free(downloadPath);
 }
 ```
 
@@ -77,10 +77,10 @@ void GetUserDesktopDirPathExample()
     FileManagement_ErrCode ret = OH_Environment_GetUserDesktopDir(&desktopPath);
     if (ret == 0) {
         OH_LOG_INFO(LOG_APP, "Succeeded in getting user desktop directory, path=%{public}s", desktopPath);
-        free(desktopPath);
     } else {
         OH_LOG_ERROR(LOG_APP, "Failed to get user desktop path, error code is %{public}d", ret);
     }
+    free(desktopPath);
 }
 ```
 
@@ -94,10 +94,10 @@ void GetUserDocumentDirPathExample()
     FileManagement_ErrCode ret = OH_Environment_GetUserDocumentDir(&documentPath);
     if (ret == 0) {
         OH_LOG_INFO(LOG_APP, "Succeeded in getting user document directory, path=%{public}s", documentPath);
-        free(documentPath);
     } else {
         OH_LOG_ERROR(LOG_APP, "Failed to get user document path, error code is %{public}d", ret);
     }
+    free(documentPath);
 }
 ```
 
@@ -124,9 +124,9 @@ void GetUserDownloadDirSizeExample()
         } else {
             OH_LOG_ERROR(LOG_APP, "Failed to stat user document directory, error code is %{public}d", result);
         }
-        free(documentPath);
     } else {
         OH_LOG_ERROR(LOG_APP, "Failed to get user document directory, error code is %{public}d", ret);
     }
+    free(documentPath);
 }
 ```

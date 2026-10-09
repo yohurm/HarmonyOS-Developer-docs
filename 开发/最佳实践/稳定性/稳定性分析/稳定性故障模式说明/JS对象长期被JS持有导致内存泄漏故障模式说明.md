@@ -1,6 +1,6 @@
 # JS对象长期被JS持有导致内存泄漏故障模式说明
 
-更新时间：2026-08-26 06:47:01
+更新时间：2026-09-15 02:12:10
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-jsvm-oom-js-object-held-by-js-object
 
@@ -112,21 +112,21 @@ heapMgmtTest()函数封装了OH_JSVM_TakeHeapSnapshot()的调用细节。首次�
 2. 在Memory页中，单击Load profile，上传内存快照文件，如下图所示：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/T8KLhjERScSXRs0aoGjTDA/zh-cn_image_0000002707578265.png?HW-CC-KV=V1&HW-CC-Date=20260911T072341Z&HW-CC-Expire=86400&HW-CC-Sign=2902186EC3DD5885424772A5681A30C59912C0C4EB7EF834756D1329729625AD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/89oSCZwLQKaaPHIi5s0sBA/zh-cn_image_0000002707578265.png?HW-CC-KV=V1&HW-CC-Date=20261009T012646Z&HW-CC-Expire=86400&HW-CC-Sign=E9BCF7A250A770B20CEA888450B1BF0029095EEBFF102BD0089D973B366D1580)
 
  
-
  
+
 3. 打开后，默认显示Summary视图（按对象构造函数分组），按Retained size从大到小排序，可见100%的内存分布在Array对象中，如下图所示：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/T0LbVXDlQbqu3ztoFbEQbw/zh-cn_image_0000002677658554.png?HW-CC-KV=V1&HW-CC-Date=20260911T072341Z&HW-CC-Expire=86400&HW-CC-Sign=FF301CCDE6B1251BAE866531C250AD00097DC800D311887B2BD08E3BE87F6114)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/1_fsied4RGy7Xw78aL7ddw/zh-cn_image_0000002677658554.png?HW-CC-KV=V1&HW-CC-Date=20261009T012646Z&HW-CC-Expire=86400&HW-CC-Sign=85D3C8946664195B1CA46AA5EA7820CB820BD9D291C6F5261F5E85FEF54D6CAE)
 
  
 4. 切换至Containment视图（按引用关系追溯），按Retained size从大到小排序，依次展开Retained size最大的节点，直至无法进一步细分，如下图所示：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/srdYKzBeSVKWmRVNyLi-Lw/zh-cn_image_0000002707458415.png?HW-CC-KV=V1&HW-CC-Date=20260911T072341Z&HW-CC-Expire=86400&HW-CC-Sign=AD51FD083EE1C42F63CCD5767EC32083F97E30C60AFB203A3E0C5DE86CA4B7D1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/98Gxsf4hT2OkrnuBuYlkJw/zh-cn_image_0000002707458415.png?HW-CC-KV=V1&HW-CC-Date=20261009T012646Z&HW-CC-Expire=86400&HW-CC-Sign=812C76601008460DD081AE26A6C3757EB1B5E3A26137F7B3237F90F997C3D43F)
 
  
 可见大量内存被Stack roots引用，表明当前内存分布主要集中在栈上局部变量。
@@ -229,21 +229,21 @@ heapMgmtTest()函数封装了OH_JSVM_TakeHeapSnapshot()的调用细节。foo()�
 2. 在Memory页中，单击Load profile，上传内存快照文件，如下图所示：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/W08v6d6iSSixW9D-eC4z1g/zh-cn_image_0000002677818404.png?HW-CC-KV=V1&HW-CC-Date=20260911T072341Z&HW-CC-Expire=86400&HW-CC-Sign=9E4364021CE86972F5AC3BDF2E29BADF0B67E43597EB0F96203FDD9222331E1A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/SYHaltqqRVKvBH8kvvsqLw/zh-cn_image_0000002677818404.png?HW-CC-KV=V1&HW-CC-Date=20261009T012646Z&HW-CC-Expire=86400&HW-CC-Sign=18D0D8F298807A14852C4F2F73A0110028207FACA1B4DFF2C4551485FC2E7722)
 
  
-
  
+
 3. 打开后，默认显示Summary视图（按对象构造函数分组），按Retained size从大到小排序，可见98%的内存分布在bigObject对象中，如下图所示：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/0r8VMXU_QyCZU1icSqF9Cw/zh-cn_image_0000002707578267.png?HW-CC-KV=V1&HW-CC-Date=20260911T072341Z&HW-CC-Expire=86400&HW-CC-Sign=3BC5B43F898E6631326044E1177BBE0516C0234A96AE584F5C3D71A9346D97C9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/H8vipkg0Sr-CDdFzW6yD4Q/zh-cn_image_0000002707578267.png?HW-CC-KV=V1&HW-CC-Date=20261009T012646Z&HW-CC-Expire=86400&HW-CC-Sign=A8B49D07D8E54FC6C0FB226FA02687B1E1F5A44E159FB77E4865DEB881578BAF)
 
  
 4. 切换至Containment视图（按引用关系追溯），按Retained size从大到小排序，依次展开Retained size最大的节点，直至无法进一步细分，如下图所示：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/fqNT_0X7QcaVlvOhUogDRw/zh-cn_image_0000002677658556.png?HW-CC-KV=V1&HW-CC-Date=20260911T072341Z&HW-CC-Expire=86400&HW-CC-Sign=7BF0F28FE91124541253E4872EAC76B2029633C21D7310A6E778D9CA34F665AE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/O3ssByGpQdOo_4y_k3CjQQ/zh-cn_image_0000002677658556.png?HW-CC-KV=V1&HW-CC-Date=20261009T012646Z&HW-CC-Expire=86400&HW-CC-Sign=847D6174CCF540987713334FA81A8C9052C56528AA400E05D06D2B10EEEB8CD6)
 
  
 可见大量内存被Micro tasks引用，表明当前内存分布集中在微任务所引用的变量。

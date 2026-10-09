@@ -1,6 +1,6 @@
 # 录像实践(C/C++)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera-recording-case
 
@@ -9,7 +9,7 @@
 当前示例提供完整的录像流程及其接口调用顺序的介绍。对于单个流程（如[设备输入](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera-device-input)、[会话管理](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera-session-management)、[录像](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera-recording)）的介绍请参考具体章节。
   
 
-#### 开发流程
+## 开发流程
 
 在获取到相机支持的输出流能力后，开始创建录像流，开发流程如下。
  
@@ -19,7 +19,7 @@
  
   
 
-#### 完整示例
+## 完整示例
 1. 在CMake脚本中链接相关动态库。
 
   
@@ -65,7 +65,7 @@ bool IsAspectRatioEqual(float videoAspectRatio, float previewAspectRatio)
 
 void OnCameraInputError(const Camera_Input* cameraInput, Camera_ErrorCode errorCode)
 {
-    OH_LOG_INFO(LOG_APP, "OnCameraInput errorCode = %{public}d", errorCode);
+    OH_LOG_ERROR(LOG_APP, "OnCameraInput errorCode = %{public}d", errorCode);
 }
 
 CameraInput_Callbacks* GetCameraInputListener(void)
@@ -83,7 +83,7 @@ void CaptureSessionOnFocusStateChange(Camera_CaptureSession* session, Camera_Foc
 
 void CaptureSessionOnError(Camera_CaptureSession* session, Camera_ErrorCode errorCode)
 {
-    OH_LOG_INFO(LOG_APP, "CaptureSessionOnError = %{public}d", errorCode);
+    OH_LOG_ERROR(LOG_APP, "CaptureSessionOnError = %{public}d", errorCode);
 }
 
 CaptureSession_Callbacks* GetCaptureSessionRegister(void)
@@ -107,7 +107,7 @@ void VideoOutputOnFrameEnd(Camera_VideoOutput* videoOutput, int32_t frameCount)
 
 void VideoOutputOnError(Camera_VideoOutput* videoOutput, Camera_ErrorCode errorCode)
 {
-    OH_LOG_INFO(LOG_APP, "VideoOutput errorCode = %{public}d", errorCode);
+    OH_LOG_ERROR(LOG_APP, "VideoOutput errorCode = %{public}d", errorCode);
 }
 
 VideoOutput_Callbacks* GetVideoOutputListener(void)
@@ -171,10 +171,10 @@ NDKCamera::NDKCamera(char* previewId, char* videoId)
     }
 
     for (int index = 0; index < size; index++) {
-        OH_LOG_ERROR(LOG_APP, "cameraId  =  %{public}s ", cameras[index].cameraId);              // 获取相机ID。
-        OH_LOG_ERROR(LOG_APP, "cameraPosition  =  %{public}d ", cameras[index].cameraPosition);  // 获取相机位置。
-        OH_LOG_ERROR(LOG_APP, "cameraType  =  %{public}d ", cameras[index].cameraType);          // 获取相机类型。
-        OH_LOG_ERROR(LOG_APP, "connectionType  =  %{public}d ", cameras[index].connectionType);  // 获取相机连接类型。
+        OH_LOG_INFO(LOG_APP, "cameraId  =  %{public}s ", cameras[index].cameraId);              // 获取相机ID。
+        OH_LOG_INFO(LOG_APP, "cameraPosition  =  %{public}d ", cameras[index].cameraPosition);  // 获取相机位置。
+        OH_LOG_INFO(LOG_APP, "cameraType  =  %{public}d ", cameras[index].cameraType);          // 获取相机类型。
+        OH_LOG_INFO(LOG_APP, "connectionType  =  %{public}d ", cameras[index].connectionType);  // 获取相机连接类型。
     }
 
     if (size < cameraDeviceIndex + 1) {
@@ -380,19 +380,19 @@ NDKCamera::NDKCamera(char* previewId, char* videoId)
     if (ret != CAMERA_OK) {
         OH_LOG_ERROR(LOG_APP, "Delete Cameras failed.");
     } else {
-        OH_LOG_ERROR(LOG_APP, "OH_CameraManager_DeleteSupportedCameras. ok");
+        OH_LOG_INFO(LOG_APP, "OH_CameraManager_DeleteSupportedCameras. ok");
     }
     ret = OH_CameraManager_DeleteSupportedCameraOutputCapability(cameraManager, cameraOutputCapability);
     if (ret != CAMERA_OK) {
         OH_LOG_ERROR(LOG_APP, "Delete Cameras failed.");
     } else {
-        OH_LOG_ERROR(LOG_APP, "OH_CameraManager_DeleteSupportedCameraOutputCapability success");
+        OH_LOG_INFO(LOG_APP, "OH_CameraManager_DeleteSupportedCameraOutputCapability success");
     }
     ret = OH_Camera_DeleteCameraManager(cameraManager);
     if (ret != CAMERA_OK) {
         OH_LOG_ERROR(LOG_APP, "Delete Cameras failed.");
     } else {
-        OH_LOG_ERROR(LOG_APP, "OH_Camera_DeleteCameraManager success");
+        OH_LOG_INFO(LOG_APP, "OH_Camera_DeleteCameraManager success");
     }
 }
 ```
@@ -400,6 +400,6 @@ NDKCamera::NDKCamera(char* previewId, char* videoId)
  
   
 
-#### 示例代码
+## 示例代码
 
 - 录像示例代码请参考[NDKPhotoVideoSample(C/C++)](https://gitcode.com/HarmonyOS_Samples/guide-snippets/tree/master/CameraKit/NDKPhotoVideoSample)。

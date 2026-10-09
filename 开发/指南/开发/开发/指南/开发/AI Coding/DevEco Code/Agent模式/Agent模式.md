@@ -1,6 +1,6 @@
 # Agent模式
 
-更新时间：2026-09-08 02:53:31
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-code-agent
 
@@ -20,14 +20,16 @@ DevEco Code支持三种Agent模式，分别为Build模式、Plan模式、Goal模
 
 ### 约束与限制
 
-推包验证需配置模拟器。
+Windows/macOS版DevEco Code可配置模拟器进行推包验证。
+
+鸿蒙电脑版DevEco Code可使用本地真机进行推包验证。
 
 
 
 ### 实现流程
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/0b3G-UT5T7C0GrzYVNYnWA/zh-cn_image_0000002731383159.png?HW-CC-KV=V1&HW-CC-Date=20260911T072811Z&HW-CC-Expire=86400&HW-CC-Sign=970CE00AB7017A4E03B145261DE0D6B4710C5853C0F95143864D4E554109E428)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/o7ggLCiGS_2Xo4V3CQZuZA/zh-cn_image_0000002731383159.png?HW-CC-KV=V1&HW-CC-Date=20261009T012805Z&HW-CC-Expire=86400&HW-CC-Sign=9BB153B4309E1B391F13D4A958623CECA97CB327DDF1C071B5DA6FA07E9F0AC2)
 
 
 
@@ -48,19 +50,21 @@ DevEco Code支持三种Agent模式，分别为Build模式、Plan模式、Goal模
 
 ### 约束与限制
 
-推包验证需配置模拟器。
+Windows/macOS版DevEco Code可配置模拟器进行推包验证。
+
+鸿蒙电脑版DevEco Code可使用本地真机进行推包验证。
 
 
 
 ### 实现流程
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/K_jENXO_TzugDKKM724C8A/zh-cn_image_0000002701823856.png?HW-CC-KV=V1&HW-CC-Date=20260911T072811Z&HW-CC-Expire=86400&HW-CC-Sign=93B863F027EB7E946E1EB10BAE6A3DF73002A696351EC9C0121D9FDF7DCF3766)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/yiKJst2xTN-MiveBRBhnAg/zh-cn_image_0000002701823856.png?HW-CC-KV=V1&HW-CC-Date=20261009T012805Z&HW-CC-Expire=86400&HW-CC-Sign=575865BC53F4E55DF8AD637E178D43DFC56DBDB9A37A735F5CD61F0A4B69ECFF)
 
 
 Plan + Build模式实现流程分为三大阶段：
 1. 任务列表制定阶段，开发者输入需求描述后，Agent结合用户需求、工程目录结构、代码文件、依赖关系和技术约束等理解需求背景，主动识别需求描述的模糊点、缺失信息和潜在约束，并通过Question工具与用户交互，补全信息。
-2. 计划执行阶段，基于制定的任务列表，Agent自动进行代码生成、语法检查和代码修复，以及自动构建出包、推送至模拟器。
+2. 计划执行阶段，基于制定的任务列表，Agent自动进行代码生成、语法检查和代码修复，以及自动构建出包、推送至模拟器/预览器。
 3. 用户自测阶段，开发者对实现结果测试验证，输入指令后可继续修改。
 
 
@@ -81,14 +85,16 @@ Plan + Build模式实现流程分为三大阶段：
 
 ### 约束与限制
 
-推包验证需配置模拟器。
+Windows/macOS版DevEco Code可配置模拟器进行推包验证。
+
+鸿蒙电脑版DevEco Code可使用本地真机进行推包验证。
 
 
 
 ### 实现流程
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/b8VmW3q9SbKMpYHNq7cPLw/zh-cn_image_0000002701663938.png?HW-CC-KV=V1&HW-CC-Date=20260911T072811Z&HW-CC-Expire=86400&HW-CC-Sign=EDE26FA8CC33D349B6FDB95E6560B75E19D7B3E918A54C35243FF3AC261A851F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/B9DhZyXkTCOIKBafPqVrKA/zh-cn_image_0000002701663938.png?HW-CC-KV=V1&HW-CC-Date=20261009T012805Z&HW-CC-Expire=86400&HW-CC-Sign=A366B1109BA2C98D076A797A9EF1E32DBB98BC42BCDE246CEAEE3B476B0D4188)
 
 
 Goal Agent实现流程分为两大阶段：

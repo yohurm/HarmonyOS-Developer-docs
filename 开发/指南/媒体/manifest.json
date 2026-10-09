@@ -79,5 +79,12 @@
     "slug": "implement-system-audio-recording",
     "title": "实现录制系统音频",
     "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/implement-system-audio-recording"
+  },
+  {
+    "file": "基于AVPlayer播放嵌入式短视频实践.md",
+    "name": "基于AVPlayer播放嵌入式短视频实践",
+    "slug": "avplayer-embedded-short-video",
+    "title": "基于AVPlayer播放嵌入式短视频实践",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avplayer-embedded-short-video"
   }
 ]

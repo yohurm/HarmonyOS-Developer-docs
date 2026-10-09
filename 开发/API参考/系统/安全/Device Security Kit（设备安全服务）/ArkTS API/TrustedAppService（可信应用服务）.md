@@ -1,6 +1,6 @@
 # TrustedAppService（可信应用服务）
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesecurity-taas-api
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -758,7 +758,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 
 try {
   const secureLocation = await trustedAppService.getCurrentSecureLocation(3000, trustedAppService.LocatingPriority.PRIORITY_LOCATING_SPEED);
-  hilog.info(0x0000, 'testTag', 'Succeeded in getting secure location, result = ${JSON.stringify(secureLocation)}');
+  hilog.info(0x0000, 'testTag', `Succeeded in getting secure location, result = ${JSON.stringify(secureLocation)}`);
 } catch (error) {
   let err = error as BusinessError;
   hilog.error(0x0000, 'testTag', `Failed to get secure location, code:${err.code}, message:${err.message}`);
@@ -987,7 +987,7 @@ await trustedAppService.procSecImageTransform(srcSecImageBuffer, procParams).the
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | tag | SecImageProcTag | 否 | 否 | 应用传入的标签，用于安全图像压缩、裁剪处理的配置信息。 |
-| value | number \| CropRegion | 否 | 否 | 应用传入的标签对应的值，用于安全图像压缩、裁剪处理的配置信息。 number： 1）tag为SECIMAGE_TAG_SRC_IMAGE_FORMAT或者 SECIMAGE_TAG_DEST_IMAGE_FORMAT ，其值为SecImageProcParamsArray类型； 2）tag为SECIMAGE_TAG_PROC_OPERATION，其值为SecImageProcOperation类型； 3）tag为SECIMAGE_TAG_COMPRESSION_QUALITY，其值为1到100之间； CropRegion： tag为SECIMAGE_TAG_CROP_REGION，其值为CropRegion类型。 |
+| value | number \| CropRegion | 否 | 否 | 应用传入的标签对应的值，用于安全图像压缩、裁剪处理的配置信息。 number： 1）tag为SECIMAGE_TAG_SRC_IMAGE_FORMAT或者 SECIMAGE_TAG_DEST_IMAGE_FORMAT ，其值为SecImageProcFormat类型； 2）tag为SECIMAGE_TAG_PROC_OPERATION，其值为SecImageProcOperation类型； 3）tag为SECIMAGE_TAG_COMPRESSION_QUALITY，其值为1到100之间； CropRegion： tag为SECIMAGE_TAG_CROP_REGION，其值为CropRegion类型。 |
  
  
   

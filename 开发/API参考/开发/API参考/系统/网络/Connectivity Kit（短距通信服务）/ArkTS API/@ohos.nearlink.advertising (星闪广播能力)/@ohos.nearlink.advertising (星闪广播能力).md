@@ -1,6 +1,6 @@
 # @ohos.nearlink.advertising (星闪广播能力)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-nearlink-advertising
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -268,21 +268,21 @@ serviceValueBuffer[3] = 8;
 console.info('manufactureValueBuffer = ' + JSON.stringify(manufactureValueBuffer));
 console.info('serviceValueBuffer = ' + JSON.stringify(serviceValueBuffer));
 let setting: advertising.AdvertisingSettings = {
-  interval:5000,
-  power:advertising.TxPowerMode.ADV_TX_POWER_LOW
+  interval: 5000,
+  power: advertising.TxPowerMode.ADV_TX_POWER_LOW
 };
 let manufactureDataUnit: advertising.ManufacturerData = {
-  manufacturerId:4567,
-  manufacturerData:manufactureValueBuffer.buffer
+  manufacturerId: 4567,
+  manufacturerData: manufactureValueBuffer.buffer
 };
 let serviceDataUnit: advertising.ServiceData = {
-  serviceUuid:'FFFFFFFF-1234-5678-ABCD-000000001234',
-  serviceData:serviceValueBuffer.buffer
+  serviceUuid: 'FFFFFFFF-1234-5678-ABCD-000000001234',
+  serviceData: serviceValueBuffer.buffer
 };
 let advData: advertising.AdvertisingData = {
-  serviceUuids:['FFFFFFFF-1234-5678-ABCD-000000001234'],
-  manufacturerData:[manufactureDataUnit],
-  serviceData:[serviceDataUnit]
+  serviceUuids: ['FFFFFFFF-1234-5678-ABCD-000000001234'],
+  manufacturerData: [manufactureDataUnit],
+  serviceData: [serviceDataUnit]
 };
 let advertisingParams: advertising.AdvertisingParams = {
   advertisingSettings: setting,

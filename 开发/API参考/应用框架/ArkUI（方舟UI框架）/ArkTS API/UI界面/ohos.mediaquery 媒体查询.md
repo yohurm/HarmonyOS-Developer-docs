@@ -1,6 +1,6 @@
 # @ohos.mediaquery (媒体查询)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-17 01:44:14
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-mediaquery
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -148,7 +148,7 @@ off(type: 'change', callback?: Callback&lt;MediaQueryResult&gt;): void
 ```text
 import { mediaquery } from '@kit.ArkUI';
 
-let listener: mediaquery.MediaQueryListener = mediaquery.matchMediaSync('(orientation: landscape)'); // 监听横屏事件
+let listener: mediaquery.MediaQueryListener = this.getUIContext().getMediaQuery().matchMediaSync('(orientation: landscape)'); // 监听横屏事件
 function onPortrait(mediaQueryResult:mediaquery.MediaQueryResult) {
   if (mediaQueryResult.matches) {
     // do something here
@@ -241,4 +241,4 @@ struct MediaQueryExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/pyGrHqA2T7eJBA7MIzAm_A/zh-cn_image_0000002747212277.png?HW-CC-KV=V1&HW-CC-Date=20260911T072922Z&HW-CC-Expire=86400&HW-CC-Sign=DF8523B0C38FD52A08E12A58A8CC4B53C6B85DF00E2E0B8A95235A434968B9C4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/z04wNY_VRaaZOWPsBvbxqw/zh-cn_image_0000002779093283.png?HW-CC-KV=V1&HW-CC-Date=20261009T012938Z&HW-CC-Expire=86400&HW-CC-Sign=43781AC595876AE15388DBC8BEBB66B2BCC85FA3A16C07DB6A3500D2C8282799)

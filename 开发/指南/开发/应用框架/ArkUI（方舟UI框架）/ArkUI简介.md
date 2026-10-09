@@ -78,33 +78,18 @@ ArkUI（方舟UI框架）为应用的UI开发提供了完整的基础设施，�
  - 其他差异，不支持模拟器的功能以及组件如下：
 
 | 组件名 | 不支持情况 |
-
 | --- | --- |
-
 | Image | 不支持enableAnalyzer |
-
 | 图像类型定义 | 不支持图像AI分析，例如ImageAnalyzerController |
-
 | @ohos.arkui.drawableDescriptor | HDR特性不支持，例如setHdrComposition |
-
 | OH_ArkUI_TextDataDetectorConfig | 不支持 |
-
 | EmbeddedComponent | 不支持 |
-
 | @ohos.pluginComponent | 不支持 |
-
 | toolbar | 不支持 |
-
 | @Preview装饰器 | 不支持 |
-
 | AbilityBase_Want | 不支持 |
-
 | ArkUI_EmbeddedComponentOption | 不支持 |
-
 | ArkUI_SelectedDragPreviewStyle | 不支持 |
-
 | embedded_component.h | 不支持 |
-
 | ArkUI_NodeAttributeType（EmbeddedComponent组件相关属性） | 不支持 |
-
 | restoreId | 不支持 |

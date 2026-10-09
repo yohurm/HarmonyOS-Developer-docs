@@ -1,6 +1,6 @@
 # @ohos.nfc.controller (标准NFC)
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-nfccontroller
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable

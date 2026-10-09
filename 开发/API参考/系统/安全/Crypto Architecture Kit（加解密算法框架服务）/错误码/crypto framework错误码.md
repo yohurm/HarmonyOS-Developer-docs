@@ -1,6 +1,6 @@
 # cryptoFramework错误码
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-crypto-framework
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
@@ -47,12 +47,14 @@ Failed to obtain the native object or convert parameters.
 获取Native对象失败或参数转换失败。
 
 **可能原因**
-
-系统出现的不可预期的错误。
+1. 调用接口的实例对象不是由本模块对应的接口创建，导致获取Native对象失败。
+2. 系统内部出现空指针。
+3. 系统出现的不可预期的错误。
 
 **处理步骤**
-
-检查当前系统功能是否正常。
+1. 检查调用接口的实例对象是否由本模块对应的接口正确创建。
+2. 系统异常，请稍后重试或重启设备。
+3. 若以上检查均无法定位问题，请收集日志信息并联系华为技术支持。
 
 
 

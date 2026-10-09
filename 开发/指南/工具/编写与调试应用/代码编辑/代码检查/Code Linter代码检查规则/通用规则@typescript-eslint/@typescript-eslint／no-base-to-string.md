@@ -1,18 +1,18 @@
 # @typescript-eslint/no-base-to-string
 
-更新时间：2026-01-15 06:51:04
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_no-base-to-string
 
 要求当一个对象在字符串化时提供了有用的信息，才能调用“toString()”方法。
  
 
-#### 规则配置
+## 规则配置
 
 ```json
 // code-linter.json5
 {
-  "rules": {
+  <span style="color: rgb(135,16,148);">"rules"</span>: {
     "@typescript-eslint/no-base-to-string": "error"
   }
 }
@@ -20,13 +20,13 @@
  
  
 
-#### 选项
+## 选项
 
 详情请参考[@typescript-eslint/no-base-to-string选项](https://typescript-eslint.nodejs.cn/rules/no-base-to-string/#options)。
  
  
 
-#### 正例
+## 正例
 
 ```text
 // These types all have useful .toString()s
@@ -40,7 +40,7 @@ export const v2 = `Value: ${num}`;
  
  
 
-#### 反例
+## 反例
 
 ```text
 interface MyType {
@@ -63,10 +63,10 @@ export const v4 = obj.toString();
  
  
 
-#### 规则集
+## 规则集
 
 ```text
-plugin:@typescript-eslint/all
+<span style="color: rgb(6,125,23);">plugin:@typescript-eslint/all</span>
 ```
  
 Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-code-linter)。

@@ -1,6 +1,6 @@
 # SubHeader
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-subheader
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -41,7 +41,7 @@ import { SubHeader } from '@kit.ArkUI';
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-SubHeader({icon?: ResourceStr, iconSymbolOptions?: SymbolOptions, primaryTitle?: ResourceStr, secondaryTitle?: ResourceStr, select?: SelectOptions, operationType?: OperationType, operationItem?: Array&lt;OperationOption&gt;, operationSymbolOptions?: Array&lt;SymbolOptions&gt;, primaryTitleModifier?: TextModifier, secondaryTitleModifier?: TextModifier, titleBuilder?: () => void, contentMargin?: LocalizedMargin, contentPadding?: LocalizedPadding, titleId?: string })
+SubHeader({icon?: ResourceStr, iconSymbolOptions?: SymbolOptions, primaryTitle?: ResourceStr, secondaryTitle?: ResourceStr, select?: SelectOptions, operationType?: OperationType, operationItem?: Array&lt;OperationOption&gt;, operationSymbolOptions?: Array&lt;SymbolOptions&gt;, primaryTitleModifier?: TextModifier, secondaryTitleModifier?: TextModifier, titleBuilder?: () => void, contentMargin?: LocalizedMargin, contentPadding?: LocalizedPadding, titleAccessibilityText?: ResourceStr, titleId?: string })
  
 **装饰器类型：**@Component
  
@@ -585,7 +585,7 @@ struct SubHeaderExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/nwbIMNvCRF6GBjxRMEgTsA/zh-cn_image_0000002717613180.png?HW-CC-KV=V1&HW-CC-Date=20260911T073029Z&HW-CC-Expire=86400&HW-CC-Sign=B4F1F60865D24EB83B061DCD91962EE481C0651CD3368CEB88DF2CD2F804A0F6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/ctcgAXIASS-DOK0KHjuGmw/zh-cn_image_0000002779094193.png?HW-CC-KV=V1&HW-CC-Date=20261009T013039Z&HW-CC-Expire=86400&HW-CC-Sign=46308A5395126F9CC1C459E8C3A1C49075E6F9A4D74FEFAF176757D04DE9BB0B)
 
  
   
@@ -626,4 +626,4 @@ struct SubHeaderExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/4XpZJA7ARfWxy4-qRYN2dQ/zh-cn_image_0000002747293133.png?HW-CC-KV=V1&HW-CC-Date=20260911T073029Z&HW-CC-Expire=86400&HW-CC-Sign=0CB87479549DF28BA3A224E783ADB5A0EF6287A60415FFBA0B56375163A36F80)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/zaPqZTa7SgCo3FRZqxTK_Q/zh-cn_image_0000002778934337.png?HW-CC-KV=V1&HW-CC-Date=20261009T013039Z&HW-CC-Expire=86400&HW-CC-Sign=5AA43D59E9A5DD8CB377C28FCEE2D1E6B9D4EB31661E6EB71959F3793BA41AB4)

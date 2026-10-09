@@ -1,6 +1,6 @@
 # 华为账号一键登录（获取手机号和UnionID/OpenID）
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-phone-unionid-login
 
@@ -559,7 +559,6 @@ struct QuickLoginButtonComponent {
 
             Text($r('app.string.app_name'))
               .fontFamily($r('sys.string.ohos_id_text_font_family_medium'))
-              .fontWeight(FontWeight.Medium)
               .fontWeight(FontWeight.Bold)
               .maxFontSize($r('sys.float.ohos_id_text_size_headline8'))
               .minFontSize($r('sys.float.ohos_id_text_size_body1'))
@@ -1064,7 +1063,7 @@ struct WebPage {
  - 在应用客户端调用应用服务端提供的接口，将Authorization Code传输给应用的服务端。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/U_T6C9DASnSM-4nBz_UXJA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072214Z&HW-CC-Expire=86400&HW-CC-Sign=C69D696CCF8EA69B7A7E735B051B7E2AD0DCCE9D967192886602DC99C4CB7F39)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/TBqF9INFS1O-IkxpCgqhog/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20261009T012550Z&HW-CC-Expire=86400&HW-CC-Sign=3C9BD06A39A493F29A7573875103C3BEC36754C2169124051E0ABBA3FEDE2B15)
  
 
   应用客户端与应用服务端的交互安全需要应用自行保证。
@@ -1139,13 +1138,13 @@ export function rcpRequest(authCode: string) {
 1. 在客户端获取到Authorization Code之后，传送给服务端接口；在服务端使用Authorization Code获取华为账号绑定的手机号、UnionID、OpenID。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/twBYnjJGSru0HCgwBa7-OQ/zh-cn_image_0000002717771550.png?HW-CC-KV=V1&HW-CC-Date=20260911T072214Z&HW-CC-Expire=86400&HW-CC-Sign=0E4263EDC6F631B1F5CF8D14E5DCB41B37A5B90C7769E61E8BE273EAE92A62D5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/DutUmlLgT0O89Fb2mXQXOQ/zh-cn_image_0000002778932625.png?HW-CC-KV=V1&HW-CC-Date=20261009T012550Z&HW-CC-Expire=86400&HW-CC-Sign=837D77542CF8DBD327A5632F3B930FFDDC558855E37E16E53FDE12D9F56EB167)
 
 2. 根据应用登录方案使用华为账号绑定的手机号、UnionID、OpenID登录成功后，应用服务端返回用户信息给应用客户端，应用客户端可根据需要进行本地持久化存储，例如：登录状态、用户账号名、手机号、用户身份标识等。
 3. 在应用客户端首页或个人信息页等位置，对当前登录用户信息进行展示，举例如下图：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/2--exb-FSBWFQXL_RH0SYQ/zh-cn_image_0000002717611618.png?HW-CC-KV=V1&HW-CC-Date=20260911T072214Z&HW-CC-Expire=86400&HW-CC-Sign=372ACF5DEEFB82E32E0C14F9108CAEE989562D16B9058175CEAACC837427D856)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/ZzL21sg-SH-Vxo7DBq4xwQ/zh-cn_image_0000002749333544.png?HW-CC-KV=V1&HW-CC-Date=20261009T012550Z&HW-CC-Expire=86400&HW-CC-Sign=5B79C0E22C1A7689820A3A967F5D204EC6975D9D6AE4855B9DB5C4E81C392BF8)
 
 
 

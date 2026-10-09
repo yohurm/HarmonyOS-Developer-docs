@@ -1,6 +1,6 @@
 # HarmonyOS应用备案指导和常见问题
 
-更新时间：2026-08-26 01:00:31
+更新时间：2026-09-22 06:06:40
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery-32
 
@@ -23,7 +23,7 @@
 - APP主办者需要在接入商备案系统提交备案材料，由接入商代为备案。常见的接入商有：华为云、阿里云、腾讯云、移动云、天翼云、联通云等。关于如何选择接入商具体还需要根据您所选择的服务器提供商而定。一般来说服务器选择的是哪家接入商，备案可以在同一个接入商网站完成。
 
 2. 一般通用的流程如下：
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/7sW4797RR8y6plXYibpicQ/zh-cn_image_0000002722888675.png?HW-CC-KV=V1&HW-CC-Date=20260911T072741Z&HW-CC-Expire=86400&HW-CC-Sign=108BDEF762E509E97AD4D3CBA368AA3891D7E4CEDAF4EBBC98B2F7C4A72EB093)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/7xaUIgq0QaKmsWhkCw40DA/zh-cn_image_0000002738198112.png?HW-CC-KV=V1&HW-CC-Date=20261009T012739Z&HW-CC-Expire=86400&HW-CC-Sign=5B56BE2965CAFF7EE0CC22D3D5097FA5214754ED9582ED6089E0A38721439EE2)
 
 
 3. 具体根据不同接入商备案流程不一致，可以参考各大接入商具体流程：[华为云备案指引](https://support.huaweicloud.com/usermanual-icp/zh-cn_topic_0000002127712329.html)。
@@ -38,68 +38,57 @@
 
   [联通云备案指引](https://support.cucloud.cn/document/127/593/756.html?id=756&arcid=1063)。
 
-4. 应用备案特征信息中的公钥和签名怎么获取？
+1. 应用备案特征信息中的公钥和签名怎么获取？
 登录AppGallery Connect，点击"证书、APP ID和Profile"，在页面左侧点击"证书"，下载需要备案的HarmonyOS应用/元服务开发者证书；
 
-5. 使用文本编辑器（如记事本）打开已下载的证书，可以看到直接下载的证书链有3段，分别：根证书、中间证书和服务器证书；
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/y3mb8A_9Q9mtuB4lU9Ew2g/zh-cn_image_0000002723008605.png?HW-CC-KV=V1&HW-CC-Date=20260911T072741Z&HW-CC-Expire=86400&HW-CC-Sign=52B9135E7F56A4D3DF40CA622388D7E7C6190D5F6C7E83F06C950418DE0BFFC0)
+2. 使用文本编辑器（如记事本）打开已下载的证书，可以看到直接下载的证书链有3段，分别：根证书、中间证书和服务器证书；
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/gu1p6Zn6SPK85-fSAtnPpA/zh-cn_image_0000002738038216.png?HW-CC-KV=V1&HW-CC-Date=20261009T012739Z&HW-CC-Expire=86400&HW-CC-Sign=9C173DE3A19F63EEC44DC74C9CBA891DA409184AC0FC7A5DD569B5DB8F1E40B8)
 
 
-6. 删除根证书和中间证书，保留服务器证书后，点击保存；
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/tkz-XSvzSBOnS0HOt7tkpw/zh-cn_image_0000002693209120.png?HW-CC-KV=V1&HW-CC-Date=20260911T072741Z&HW-CC-Expire=86400&HW-CC-Sign=F8F0475B6B72D1F69717A0F1D3BBDC406414A3A2332340B8554FD76A3F3701B3)
+3. 删除根证书和中间证书，保留服务器证书后，点击保存；
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/ONdVkQD8SLypE8HVHxqEug/zh-cn_image_0000002738038218.png?HW-CC-KV=V1&HW-CC-Date=20261009T012739Z&HW-CC-Expire=86400&HW-CC-Sign=263FE1DCC4A4B48410F5C34FDDFCF7CD9B9B928A1B45AAA42F846A99391766EF)
 
 
-7. 双击打开已保存的证书，点击"详细信息-公钥"，获取APP的公钥信息；
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/dhxP0NOORWyGkbgMEPmILw/zh-cn_image_0000002693049260.png?HW-CC-KV=V1&HW-CC-Date=20260911T072741Z&HW-CC-Expire=86400&HW-CC-Sign=8C5CCFBFE92553AC9A4D1C0B51FD4FB4FB69B26E7BFBC33F96D3466566B8E182)
+4. 双击打开已保存的证书，点击"详细信息-公钥"，获取APP的公钥信息；
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/avr9kzTuTpeOvr6QZ11BIQ/zh-cn_image_0000002738038220.png?HW-CC-KV=V1&HW-CC-Date=20261009T012739Z&HW-CC-Expire=86400&HW-CC-Sign=308B700CBB42EEF5C5A28BCC8868B4A3DF175E6122D423B35CF82F8E75FF1E39)
 
 
-8. 双击打开已保存的证书点击"详细信息-指纹"，获取APP的sha1签名信息。
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/LCJpe3pQT1i50IHbdf73oA/zh-cn_image_0000002722888677.png?HW-CC-KV=V1&HW-CC-Date=20260911T072741Z&HW-CC-Expire=86400&HW-CC-Sign=8BBD5BBF8E3D34C122A1215B712AB4E196DD733A785A98EC1685806380D65D0B)
+5. 双击打开已保存的证书点击"详细信息-指纹"，获取APP的sha1签名信息。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/BegZcxuZRFGXGoMC-JOkjA/zh-cn_image_0000002767557615.png?HW-CC-KV=V1&HW-CC-Date=20261009T012739Z&HW-CC-Expire=86400&HW-CC-Sign=95E2D547C78233C122D3582B3DCB223CA95A205EBA9E40A487198A000C6B1975)
 
 
-9. 如何校验应用已经完成备案？
+1. 如何校验应用已经完成备案？
 接入商网站查询。可以登录接入商网站查询备案进度和结果。
 
-10. 短信通知。备案完成后一般也会通过短信通知给备案信息填写时提供的主办者手机号。
+2. 短信通知。备案完成后一般也会通过短信通知给备案信息填写时提供的主办者手机号。
 
-11. 工信部网站查询。可以登录[备案管理系统](https://beian.miit.gov.cn/)查询备案号和域名等信息。
+3. 工信部网站查询。可以登录[备案管理系统](https://beian.miit.gov.cn/)查询备案号和域名等信息。
 
-12. AGC网站备案校验。登录AGC网站，左侧导航栏选择"应用上架>版本信息"，右侧页面进入"备案信息"区域，根据备案信息如实填写后，点击"校验证件号"查询。
+4. AGC网站备案校验。登录AGC网站，左侧导航栏选择"应用上架>版本信息"，右侧页面进入"备案信息"区域，根据备案信息如实填写后，点击"校验证件号"查询。
 
-13. 上架备案信息如何填写？上架备案信息涉及的信息如下：
-
-  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/K-aBkmqTQOaHx01aMmioog/zh-cn_image_0000002723007625.png?HW-CC-KV=V1&HW-CC-Date=20260911T072741Z&HW-CC-Expire=86400&HW-CC-Sign=BCFA9132E0C92F429DCE5EA5AE4427CC3ECA6E1862DFE75C3D2E8FE233FB9504)
+1. 上架备案信息如何填写？上架备案信息涉及的信息如下：
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/Hr0sQL02R8GtxR4YlkVZ4w/zh-cn_image_0000002767557619.png?HW-CC-KV=V1&HW-CC-Date=20261009T012739Z&HW-CC-Expire=86400&HW-CC-Sign=F8194E18DC5AE34D2643E592F386FE4A66DD34915D105D1A03F1E85DF612EB7F)
 
 
-14. 应用需要备案：APP服务器在中国大陆，且APP需要上架应用市场。
+2. 应用需要备案：APP服务器在中国大陆，且APP需要上架应用市场。
 选择APP类型信息选择"您的APP服务器在中国大陆"。
 
-15. 主办单位类型，根据备案主办单位的实际情况勾选企业、个人或机构。
+3. 主办单位类型，根据备案主办单位的实际情况勾选企业、个人或机构。
 
-16. 主办单位与开发者账号主体是否一致，如您的APP备案主办单位与开发者账号主体一致，请勾选与开发者账号主体一致。
-> [!NOTE]
-> 勾选主办单位与开发者账号主体一致时，需确保上述主办单位类型勾选正确，否则无法正常完成校验（如您的备案主办单位类型为企业/机构，请勿勾选个人）。
+4. 主办单位与开发者账号主体是否一致，如您的APP备案主办单位与开发者账号主体一致，请勾选与开发者账号主体一致，此处需注意，勾选主办单位与开发者账号主体一致时，需确保上述主办单位类型勾选正确，否则无法正常完成校验（如您的备案主办单位类型为企业/机构，请勿勾选个人）。
 
+5. 确保提交审核时填写的应用名称、包名与备案时填写的应用名称、包名完全一致。
 
-17. 确保提交审核时填写的应用名称、包名与备案时填写的应用名称、包名完全一致。
+6. 在填写"主体证件号"时，要区分"数字5"和"字母S"，"数字1"和"字母I"，"数字0"和"字母O"。
 
-18. 在填写"主体证件号"时，要区分"数字5"和"字母S"，"数字1"和"字母I"，"数字0"和"字母O"。
+7. 备案信息填写后，可以点击"校验证件号"查询。
 
-19. 备案信息填写后，可以点击"校验证件号"查询。
+1. 应用不需要备案：APP服务器不在中国大陆（境外应用）。备案信息勾选"您的APP服务器不在中国大陆"。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/v7653GIwSyaETUKt--Bw9w/zh-cn_image_0000002738038222.png?HW-CC-KV=V1&HW-CC-Date=20261009T012739Z&HW-CC-Expire=86400&HW-CC-Sign=9773686B90D3185E4293576DDECC19081BA1C75C2EA314E64B63B9B3CD61AD02)
+境外应用定义：由境外主体运营且服务器仅放置在境外的移动互联网应用程序。
 
-20. 应用不需要备案：APP服务器不在中国大陆（境外应用）。备案信息勾选"您的APP服务器不在中国大陆"。
-
-  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/sq58M4_LRq6b7Jt7VcouHQ/zh-cn_image_0000002693048818.png?HW-CC-KV=V1&HW-CC-Date=20260911T072741Z&HW-CC-Expire=86400&HW-CC-Sign=D64ECBD2F4B7CB6A470EE60FCAF86616B0D863583755569AD86402D59413B57B)
-
-
-  境外应用定义：由境外主体运营且服务器仅放置在境外的移动互联网应用程序。
-
-21. 应用不需要备案：单机应用。备案信息勾选"您的APP为单机APP"。
-
-  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/Qh0m-g8YQBio1I5fj7Y9nA/zh-cn_image_0000002723008369.png?HW-CC-KV=V1&HW-CC-Date=20260911T072741Z&HW-CC-Expire=86400&HW-CC-Sign=D1CA13762C63C036D14755202B8348B09C19A824CA5F2966EF3453FD37C41992)
+2. 应用不需要备案：单机应用。备案信息勾选"您的APP为单机APP"。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/pIIhkAsUTB63nV4jB3xcuw/zh-cn_image_0000002738198114.png?HW-CC-KV=V1&HW-CC-Date=20261009T012739Z&HW-CC-Expire=86400&HW-CC-Sign=D9A9F5D5A1740A1FDA8E3790A97968FD4E009E049632EA8AB6EFE84EFAF905AC)
 
 
   单机应用定义：未通过连接公共互联网提供互联网信息服务的移动应用程序。
@@ -182,4 +171,10 @@ A：应用发布账号主体可以和备案主体不一致，您可以在AppGall
  
 Q：鸿蒙PC应用上架为什么一定要提供ICP备案，其他PC客户端没有这样的要求？
  
-A：应用资质审核要求中未强制要求提交ICP备案，具体可参考[应用资质审核要求](https://developer.huawei.com/consumer/cn/doc/app/80301)。
+A：鸿蒙PC应用属于鸿蒙应用，所以需要正常办理APP备案。需参考[APP备案指引](https://developer.huawei.com/consumer/cn/doc/app/50130)。
+ 
+另外，.exe格式的PC应用，需办理ICP备案，ICP备案示例请参考[ICP备案](https://developer.huawei.com/consumer/cn/doc/app/50111-03#section3355141513234)。
+ 
+Q：应用未搭建服务器，仅使用联网权限将照片上传至云端，备案信息是否可以选择单机APP？
+ 
+A：不可以选择单机APP。单机应用定义为未通过连接公共互联网提供互联网信息服务的移动应用程序。应用需要通过网络权限将照片上传至云端，属于通过公共互联网提供互联网信息服务，故不属于单机应用。

@@ -1,6 +1,6 @@
 # Telephony Kit简介
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/telephony-overview
 
@@ -23,4 +23,4 @@ Telephony Kit（蜂窝通信服务）提供一系列API帮助开发者开发通�
 
 ## 模拟器支持情况
 
-本Kit支持模拟器，但与真机存在差异，详情请参见“[模拟器与真机的差异](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-specification#section38231424133213)”。
+本Kit支持模拟器，但与真机存在差异，详情请参见“[模拟器与真机的差异](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-specification#section1227613205203)”。

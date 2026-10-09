@@ -1,11 +1,11 @@
 # LazyVWaterFlowLayout
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-lazyvwaterflowlayout
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-LazyVWaterFlowLayout用于实现支持懒加载的瀑布流布局，适用于展示大量高度不一的列表项场景，如图片墙、商品列表等。通过懒加载机制，该组件仅加载可视区域及附近内容，减少内存占用和渲染开销，提升滚动流畅度。该组件应位于竖直方向的[List](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list)、[Scroll](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll)或[WaterFlow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-waterflow)组件下，并支持通过[FlowItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-flowitem)、[LazyColumnLayout](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-lazycolumnlayout)、自定义组件或[NodeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-nodecontainer)组件封装后使用。
+LazyVWaterFlowLayout用于实现支持懒加载的瀑布流布局，适用于展示大量高度不一的列表项场景，如图片墙、商品列表等。通过懒加载机制，该组件仅加载可视区域及附近内容，减少内存占用和渲染开销，提升滚动流畅度。该组件应位于竖直方向的[List](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list)、[Scroll](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll)或[WaterFlow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-waterflow)组件下，并支持通过[FlowItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-flowitem)、[LazyColumnLayout](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-lazycolumnlayout)、[自定义组件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-custom-components)或[NodeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-nodecontainer)组件封装后使用。
 
 更多关于懒加载布局的使用场景和完整示例，可参考[创建懒加载布局](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-create-lazy-layout)。
 
@@ -77,6 +77,10 @@ columnsTemplate(value: string | ItemFillPolicy | undefined)
   其中，repeat、auto-fit、auto-fill、auto-stretch为关键字。track-size为列宽，支持的单位包括px、vp、%或有效数字，默认单位为vp，track-size至少包括一个有效列宽。
 
   auto-fit模式和auto-stretch模式只支持track-size为一个有效列宽值，并且auto-stretch模式中的track-size只支持px、vp和有效数字，不支持%。auto-fill模式支持一个或多个有效列宽，如columnsTemplate('repeat(auto-fill, 20)')、columnsTemplate('repeat(auto-fill, 20 80px)')。
+
+  非repeat形式的模板串中每项仅支持'数字+fr'、'数字+px'、'数字+%'三种格式，不支持vp（如columnsTemplate('100vp 100vp')）。需要按固定vp尺寸自动计算列数时，应使用repeat(auto-fill, track-size)。
+
+  设置为'0fr'时，该列的列宽为0，不显示子组件。设置为其他非法值时，子组件显示为固定1列。
  - value设置为ItemFillPolicy类型时，将根据LazyVWaterFlowLayout组件宽度对应的[断点类型](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-grid-layout#栅格容器断点)确定列数。例如，ItemFillPolicy的fillType属性设置为PresetFillType.BREAKPOINT_DEFAULT时，在组件宽度属于sm及更小的断点区间时显示2列，属于md断点区间时显示3列，属于lg及更大的断点区间时显示5列，且每列均为1fr（表示每列占用1等份可用宽度）。
  - value设置undefined时，恢复为默认值（1列）。
 
@@ -516,7 +520,7 @@ export class MyDataSource<T> extends BasicDataSource<T> {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/ZajuFRpeTwOGivfiPQiqRA/zh-cn_image_0000002747292615.png?HW-CC-KV=V1&HW-CC-Date=20260911T073113Z&HW-CC-Expire=86400&HW-CC-Sign=95C865ADC2F7F5BC87A94BFB1CDF9F76FCE48A6AEAAA8950FCA97831530CEACB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/BNpG-hQ-RqeSkRtzwzuQwQ/zh-cn_image_0000002749494562.png?HW-CC-KV=V1&HW-CC-Date=20261009T013103Z&HW-CC-Expire=86400&HW-CC-Sign=BF490EF6C76FFAE9C0A7581092B33D23E7A20B74C731DA6C2438BD4D5DA27425)
 
 
 
@@ -531,7 +535,7 @@ export class MyDataSource<T> extends BasicDataSource<T> {
 从API版本26.0.0开始，新增支持header、footer和sticky属性。
 
 ```text
-import { LengthMetrics, LazyVWaterFlowLayout, LazyVWaterFlowLayoutAttribute, StickyStyle } from '@kit.ArkUI';
+import { LengthMetrics, LazyVWaterFlowLayout, LazyVWaterFlowLayoutAttribute } from '@kit.ArkUI';
 // MyDataSource是自定义数据源类，实现了LazyForEach所需的IDataSource接口
 import { MyDataSource } from './MyDataSource';
 
@@ -632,7 +636,7 @@ struct LazyVWaterFlowLayoutStickyDemo {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/zHVU90GrTt-y4pMAV-whrA/zh-cn_image_0000002747212531.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073113Z&HW-CC-Expire=86400&HW-CC-Sign=E6A6805E4C33065A9128AB01BDABAC5DBFFCD92F66930441204B802DDE443379)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/R9185C36RlufasfL6GOT4w/zh-cn_image_0000002779093619.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013103Z&HW-CC-Expire=86400&HW-CC-Sign=F6ADB1963B6DF429A7469E6ED02A15E6620A1020306CAC10FD5B03479E3DFEAA)
 
 
 
@@ -769,4 +773,4 @@ struct LazyVWaterFlowLayoutColumnsTemplateDemo {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/9jvG02TnRSa0mlTo5iWfig/zh-cn_image_0000002717772596.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073113Z&HW-CC-Expire=86400&HW-CC-Sign=64875CB09DBC9FF1CEBC885A01E75EB59BE2CF5795CFC94BFBA956A48DB048AC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/27mOmNLHRaepCVKQ_Z0Hkw/zh-cn_image_0000002778933765.gif?HW-CC-KV=V1&HW-CC-Date=20261009T013103Z&HW-CC-Expire=86400&HW-CC-Sign=3F4F682E73DAD92D53E92172256C5EA0A2F708E2BD476728D5DD134A61B017C8)

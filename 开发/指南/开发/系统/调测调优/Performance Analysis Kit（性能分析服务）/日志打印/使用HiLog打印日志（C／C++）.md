@@ -1,6 +1,6 @@
 # 使用HiLog打印日志（C/C++）
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hilog-guidelines-ndk
 
@@ -142,10 +142,8 @@ OH_LOG_ERROR(LOG_APP, "this is an another error level log");
 
 ![](assets/使用HiLog打印日志（C／C++）/file-20260708103749e7f448b4.png)
 
-
-1.在回调函数中禁止递归调用HiLog接口，否则会导致循环调用问题。
-
-2.一个进程只需注册一次回调函数，若多次注册，以最后一次注册的回调函数为准。
+1. 在回调函数中禁止递归调用HiLog接口，否则会导致循环调用问题。
+2. 一个进程只需注册一次回调函数，若多次注册，以最后一次注册的回调函数为准。
 
 
 

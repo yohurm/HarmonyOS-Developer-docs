@@ -6804,5 +6804,61 @@
     "slug": "upgrade-adaptation",
     "title": "应用升级适配指导——向26.0.0升级",
     "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/upgrade-adaptation"
+  },
+  {
+    "file": "新增和增强特性.md",
+    "name": "新增和增强特性",
+    "slug": "deveco-studio-hmos-new-features-2600",
+    "title": "新增和增强特性",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/deveco-studio-hmos-new-features-2600"
+  },
+  {
+    "file": "Agent Framework Kit.md",
+    "name": "Agent Framework Kit",
+    "slug": "js-apidiff-agentframeworkkit-7003",
+    "title": "Agent Framework Kit",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-agentframeworkkit-7003"
+  },
+  {
+    "file": "ArkWeb.md",
+    "name": "ArkWeb",
+    "slug": "js-apidiff-arkweb-7003",
+    "title": "ArkWeb",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-arkweb-7003"
+  },
+  {
+    "file": "Background Tasks Kit.md",
+    "name": "Background Tasks Kit",
+    "slug": "js-apidiff-backgroundtaskskit-7003",
+    "title": "Background Tasks Kit",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-backgroundtaskskit-7003"
+  },
+  {
+    "file": "ArkUI.md",
+    "name": "ArkUI",
+    "slug": "js-apidiff-arkui-7003",
+    "title": "ArkUI",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-arkui-7003"
+  },
+  {
+    "file": "MDM Kit.md",
+    "name": "MDM Kit",
+    "slug": "js-apidiff-mdmkit-7003",
+    "title": "MDM Kit",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-mdmkit-7003"
+  },
+  {
+    "file": "Media Library Kit.md",
+    "name": "Media Library Kit",
+    "slug": "js-apidiff-medialibrarykit-7003",
+    "title": "Media Library Kit",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-medialibrarykit-7003"
+  },
+  {
+    "file": "Device Security Kit.md",
+    "name": "Device Security Kit",
+    "slug": "js-apidiff-devicesecuritykit-7003",
+    "title": "Device Security Kit",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-devicesecuritykit-7003"
   }
 ]

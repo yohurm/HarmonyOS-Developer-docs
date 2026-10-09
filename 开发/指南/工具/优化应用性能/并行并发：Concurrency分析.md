@@ -1,10 +1,10 @@
 # 并行并发：Concurrency分析
 
-更新时间：2026-06-12 06:54:33
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-parallel-concurrency-analysis
 
-#### 功能介绍
+## 功能介绍
 
  
 [任务池（TaskPool）](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-taskpool)是为应用程序提供一个多线程的运行环境，降低整体资源的消耗和提高系统的整体性能，且您无需关心线程实例的生命周期。您可以使用任务池API创建后台任务（Task），并对所创建的任务进行如任务执行、任务取消的操作。
@@ -22,7 +22,7 @@ Concurrency模板支持的泳道包括：FFRT、TaskPool、Async NAPI、Async Ar
 
  
 
-#### 查看Task统计信息
+## 查看Task统计信息
 1. 选择展开某个泳道，可以用options下拉框筛选不同进程。
 
   
@@ -37,7 +37,7 @@ Concurrency模板支持的泳道包括：FFRT、TaskPool、Async NAPI、Async Ar
  
  
 
-#### 查看某一个Task的所有状态
+## 查看某一个Task的所有状态
 1. 选择展开某个泳道，可以用options下拉框筛选不同进程。
 
   
@@ -62,9 +62,9 @@ Concurrency模板支持的泳道包括：FFRT、TaskPool、Async NAPI、Async Ar
  
  
 
-#### 查看Task的某个状态
+## 查看Task的某个状态
 
 点击Task子泳道的某个执行节点，**Details**详情区里会出现task在该状态下的详细信息。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/ZxOZsRnHT4yak-5N7kAojw/zh-cn_image_0000002594475102.png?HW-CC-KV=V1&HW-CC-Date=20260624T020721Z&HW-CC-Expire=86400&HW-CC-Sign=B7A1CBD7FC371C7BF8D6B79675B38FF8ACB3B6C90F0CFD99376A8CC8987A434D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/6h7M-GJ5RbqphvtHLyo0nA/zh-cn_image_0000002701663776.png?HW-CC-KV=V1&HW-CC-Date=20261009T012822Z&HW-CC-Expire=86400&HW-CC-Sign=44D4270767FDCF0741316718DD73904EE8789467937AAE232ED5B3E6D0D57C96)

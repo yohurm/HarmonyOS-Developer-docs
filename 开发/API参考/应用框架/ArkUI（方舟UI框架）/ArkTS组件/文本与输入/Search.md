@@ -1,6 +1,6 @@
 # Search
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -2496,7 +2496,7 @@ struct SearchExample {
       .width('100%')
       .padding({ bottom: 50 })
 
-      Search({ controller: this.controller, value: this.inputValue })// 绑定自定义键盘
+      Search({ controller: this.controller, value: this.inputValue }) // 绑定自定义键盘
         .customKeyboard(this.CustomKeyboardBuilder(), { supportAvoidance: this.supportAvoidance })
         .margin(10)
         .border({ width: 1 })

@@ -1,6 +1,6 @@
 # 设置浮层（OverlayManager）
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-overlaymanager
 
@@ -100,7 +100,7 @@ export struct OverlayManagerComponent {
               let componentContent = this.contentArray.splice(this.arrayIndex, 1);
               this.overlayNode.removeComponentContent(componentContent.pop());
             } else {
-              hilog.info(DOMAIN, TAG, '%{public}s', 'arrayIndex error');
+              hilog.error(DOMAIN, TAG, '%{public}s', 'arrayIndex error');
             }
           })
         Button('Show ComponentContent:' + this.arrayIndex)
@@ -109,7 +109,7 @@ export struct OverlayManagerComponent {
               let componentContent = this.contentArray[this.arrayIndex];
               this.overlayNode.showComponentContent(componentContent);
             } else {
-              hilog.info(DOMAIN, TAG, '%{public}s', 'arrayIndex error');
+              hilog.error(DOMAIN, TAG, '%{public}s', 'arrayIndex error');
             }
           })
         Button('Hide ComponentContent:' + this.arrayIndex)
@@ -118,7 +118,7 @@ export struct OverlayManagerComponent {
               let componentContent = this.contentArray[this.arrayIndex];
               this.overlayNode.hideComponentContent(componentContent);
             } else {
-              hilog.info(DOMAIN, TAG, '%{public}s', 'arrayIndex error');
+              hilog.error(DOMAIN, TAG, '%{public}s', 'arrayIndex error');
             }
           })
         Button('Show All ComponentContent')
@@ -148,7 +148,7 @@ export struct OverlayManagerComponent {
 ![](assets/设置浮层（OverlayManager）/file-20260514130647869-1.gif)
 
 
-显示一个始终在屏幕左侧的悬浮球，点击可以弹出alertDialog弹窗。
+显示一个始终在屏幕左侧的悬浮球，点击可以弹出AlertDialog弹窗。
 
 ```ArkTS
 import { ComponentContent, OverlayManager } from '@kit.ArkUI';
@@ -311,7 +311,7 @@ export struct OverlayManagerWithOrder {
               let componentContent = this.contentArray.splice(this.arrayIndex, 1);
               this.overlayManager.removeComponentContent(componentContent.pop());
             } else {
-              hilog.info(DOMAIN, TAG, '%{public}s', 'arrayIndex error');
+              hilog.error(DOMAIN, TAG, '%{public}s', 'arrayIndex error');
             }
           })
         }.width('100%')
@@ -497,4 +497,4 @@ export struct OverlayManagerOnBackPress {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/QxvvlQ3vSXa5ewldvrLVyQ/zh-cn_image_0000002717770500.png?HW-CC-KV=V1&HW-CC-Date=20260911T072500Z&HW-CC-Expire=86400&HW-CC-Sign=7066E061E5797B44C8059B4929049ACD9D8B93F26FB3A86266ADD8418D67731C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/84vZnVHGRMOoRj0Y_DoRoA/zh-cn_image_0000002778931557.png?HW-CC-KV=V1&HW-CC-Date=20261009T012624Z&HW-CC-Expire=86400&HW-CC-Sign=21A4EED73D3F674E5F1ECBBADAAEED62859CD13179DAB81EF26EFE2636293036)

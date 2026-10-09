@@ -1,6 +1,6 @@
 # 性能/内存优化：多HAP/HSP工程编译优化实践
 
-更新时间：2026-08-29 09:41:34
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-multi-hap-hsp-practice
 
@@ -29,12 +29,12 @@
   因此，修改单模块后，建议通过Make Module进行构建，这样可以在多HAP/HSP场景下减少单次修改所编译的安装包数量，从而降低耗时和内存占用。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/IbgljGj-RA2gMeJ7nBc3Tw/zh-cn_image_0000002701663412.png?HW-CC-KV=V1&HW-CC-Date=20260911T072347Z&HW-CC-Expire=86400&HW-CC-Sign=D89FBF43478102E554B0FD8D446DB1A28AD9501526056DF919B4EF0B7662DE00)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/W7ftjJahTqODaRAnS5DsmQ/zh-cn_image_0000002701663412.png?HW-CC-KV=V1&HW-CC-Date=20261009T012816Z&HW-CC-Expire=86400&HW-CC-Sign=BA1DFD5F2CA90C7BB3B85E47ECE00B89967CCB682F17170CEF1B3B03EE1A4D67)
 
 - 运行（Run）启动优化通过推包运行的方式启动编译构建，可以降低某些场景下的耗时和内存占用。例如频繁增量修改某个HSP模块，如果不涉及修改其导出接口，可以优先选择运行该HSP模块，从而避免重新编译和打包其他未修改的HAP/HSP模块。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/9mIyezprTr-ENbfNDdHudA/zh-cn_image_0000002731542607.png?HW-CC-KV=V1&HW-CC-Date=20260911T072347Z&HW-CC-Expire=86400&HW-CC-Sign=272BA0DF2193A26520CDFFAB98B4CA63DE70E89C2D48B51D0FCB6C7563DC899D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/TZg4VXkSR8i4qKoVSLlOpg/zh-cn_image_0000002731542607.png?HW-CC-KV=V1&HW-CC-Date=20261009T012816Z&HW-CC-Expire=86400&HW-CC-Sign=A610F3A03B761FA1BF404509B3421DA1DAC283CCA30C549BB179EBA6110003F6)
 
 
  
@@ -45,7 +45,7 @@
 HAP和HSP、HSP之间可能依赖相同的HAR，导致编译、包体积都会有重复的部分。如果模块不需要按需加载特性，将HSP改造为HAR，可以降低编译耗时及内存占用，减小包体积。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/tMAsrpv-RYS8gbWeNQ54ng/zh-cn_image_0000002731382639.png?HW-CC-KV=V1&HW-CC-Date=20260911T072347Z&HW-CC-Expire=86400&HW-CC-Sign=D50B105E5BE1E18FE3B62EDBF8A0E2607AFDBED6172DD93EB5B4ED8E076A1E5F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/rEgScrJdRDi2jl2l2W0aww/zh-cn_image_0000002731382639.png?HW-CC-KV=V1&HW-CC-Date=20261009T012816Z&HW-CC-Expire=86400&HW-CC-Sign=7981F7D0AD91833E69C9C96E6E99ACFE2A3E6F37522C6A0945F57FE632CB7DA5)
 
  
  
@@ -76,7 +76,7 @@ HAP和HSP、HSP之间可能依赖相同的HAR，导致编译、包体积都会�
   资源命名规范化，为各模块的资源文件增加唯一标识。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/crsPOeASTCK5TxX3J_WSwA/zh-cn_image_0000002731382637.png?HW-CC-KV=V1&HW-CC-Date=20260911T072347Z&HW-CC-Expire=86400&HW-CC-Sign=5002267E29980511915285F0EF87E0F5F2D822D35C3B8468D22DB442492DE511)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/zZNC06f_R6e-__CVHBA3dw/zh-cn_image_0000002731382637.png?HW-CC-KV=V1&HW-CC-Date=20261009T012816Z&HW-CC-Expire=86400&HW-CC-Sign=7A1F3AF785BCF486F449B4FCB94576636BE19CA9565CCAE32685FF6097B180BC)
 
 2. Worker线程加载路径变更**问题现象**
 

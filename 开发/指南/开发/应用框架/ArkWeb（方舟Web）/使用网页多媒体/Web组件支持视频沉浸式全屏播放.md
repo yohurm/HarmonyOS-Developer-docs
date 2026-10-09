@@ -1,6 +1,6 @@
 # Web组件支持视频沉浸式全屏播放
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-08-29 09:41:17（官网已下线）
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web_full_screen
 
@@ -11,7 +11,6 @@ Web组件引用第三方H5页面加载的视频，当单击视频全屏时，视
 
 | 图1 退出全屏模式 | 图2 非沉浸式全屏模式 | 图3 沉浸式全屏模式 |
 | --- | --- | --- |
-|  |  |  |
 
 
 Web组件可通过[onFullScreenEnter](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-events#onfullscreenenter9)和[onFullScreenExit](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-events#onfullscreenexit9)回调监听全屏按键的单击事件。其中，onFullScreenEnter表示Web组件进入全屏模式，onFullScreenExit表示Web组件退出全屏模式。在这两个监听事件中，可根据具体业务场景调整某些全局变量，例如组件的显隐状态、组件的margin属性等，以实现退出和进入沉浸式全屏模式的界面效果，如图1和图3所示。

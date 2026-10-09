@@ -1,10 +1,10 @@
 # Buffer低功耗优化
 
-更新时间：2026-03-17 02:20:01
+更新时间：2026-09-15 02:12:10
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-buffer-power-optimization
 
-#### 概述
+## 概述
 
 在HarmonyOS中，Buffer是承载自绘制内容循环渲染的主要载体，有别于Vsync统一执行的思想，自绘制内容的生产不依赖于系统事件，而是由三方主导控制。Buffer在渲染过程中通过BufferQueue来进行轮转，采用了生产者与消费者的设计思想，应用将作为生产者将生产好的渲染内容准备好后，从BufferQueue中获取并Flush Buffer，而RS则作为消费者可以通过AcquireBuffer接口获取Buffer，让该Buffer作为自绘制Surface中的一帧在屏幕上显示，并将使用后的Buffer调用ReleaseBuffer释放进入轮转池。相关的流转逻辑可以参考下图：
  
@@ -24,7 +24,7 @@
  
  
 
-#### 分析思路
+## 分析思路
 
 在定位问题时，开发者可以按照以下步骤来确定Buffer使用是否无误：
  
@@ -57,15 +57,15 @@
 ![](assets/Buffer低功耗优化/file-20260515115101475-14.png)
 
  
-
  
- 
-
-#### Web预渲染优化案例
 
  
 
-#### 问题现象
+## Web预渲染优化案例
+
+ 
+
+### 问题现象
 
 [Web的预渲染](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-web-develop-optimization#section172031338172719)是一种广泛使用的性能优化手段，让Web组件在挂载之前完成渲染可以有效减少Web初次加载时的时延表现，但处理不当也同样可能引起Buffer类空跑问题。在Web类应用中，对于预加载的离线Web节点，开发者需要确保这些后台的Web处于冻结状态，不会产生持续性的冗余Buffer影响正常场景的功能。下图展示了一个在非Web首页通过Tab预加载两个Web页面的Trace，分析Buffer的Release情况，发现Trace中RSUniRenderThre的帧率表现高于实际的显示帧率，表明空跑问题存在。进一步观察发现，RSUni中有两处ReleaseBuffer，来自两个不同的queueId，由此可以推断该页面可能存在两个离线的Web组件正在后台渲染，带来冗余负载。
  
@@ -81,7 +81,7 @@
  
  
 
-#### 优化思路
+### 优化思路
 
 > [!NOTE]
 > 当前系统对Web组件接入了 可见性回调 来方便开发者规避大部分Web空跑问题，该接口可以保证当Web挂载到ArkUI树上之后，跟随Web组件的可见性来控制Controller，当组件不可见时设置Web为冻结，可见时设置为活跃。但可见性接口对于离线组件不会返回结果，依赖三方开发者进行控制。
@@ -124,11 +124,11 @@ Tab是一种较为特殊的加载结构，Tab默认的切换动效会将路径�
  
  
 
-#### 自绘制组件空跑优化案例
+## 自绘制组件空跑优化案例
 
  
 
-#### 问题现象
+### 问题现象
 
 
 ![](assets/Buffer低功耗优化/file-20260515115101475-5.png)
@@ -138,7 +138,7 @@ Tab是一种较为特殊的加载结构，Tab默认的切换动效会将路径�
  
  
 
-#### 优化思路
+### 优化思路
 
 ```ArkTS
 @Component
@@ -162,7 +162,7 @@ export struct MyVideoComponent {
         // 确保视频组件完全可见时播放，完全不可见时停止
         .onVisibleAreaChange([0.0], (isExpanding: boolean, currentRatio: number) => {
           if (isExpanding && currentRatio >= 1.0) {
-            console.info('Component is completely visiable.');
+            console.info('Component is completely visible.');
             if (this.controller) {
               this.controller.start();
             }
@@ -183,11 +183,11 @@ export struct MyVideoComponent {
  
  
 
-#### 自绘制图层GPU重绘问题低功耗建议
+## 自绘制图层GPU重绘问题低功耗建议
 
  
 
-#### 问题现象
+### 问题现象
 
  
 
@@ -212,7 +212,7 @@ GPU重绘问题对功耗的影响巨大，且多数情况下，开发者所设�
 
  
 
-#### 问题定位
+### 问题定位
 
 
 ![](assets/Buffer低功耗优化/file-20260515115101475-8.png)
@@ -230,10 +230,10 @@ GPU重绘问题对功耗的影响巨大，且多数情况下，开发者所设�
  
  
 
-#### 优化思路
+### 优化思路
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/AF1dBbYqSvy5YCFkdzneiQ/zh-cn_image_0000002445518333.png?HW-CC-KV=V1&HW-CC-Date=20260528T024723Z&HW-CC-Expire=86400&HW-CC-Sign=DD038933EB57B96799BDDD8F1AB28A4B782B5BE3AE5EECA8E06767F7E3241C56)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/FHDlGQqJQqWY0ZzB4r_eZg/zh-cn_image_0000002445518333.png?HW-CC-KV=V1&HW-CC-Date=20261009T012641Z&HW-CC-Expire=86400&HW-CC-Sign=36133BECB49EF7077D57F91198A07BD0CAF36C79243628BF123E50B7C861179E)
 
  
 如上图，开发者可以使用HiSmartPerf的RS树工具查看可疑节点，在OtherModifier位置可以查看到来自pid进程58867，为该节点添加了一个0.4的Alpha透明度，结合该信息可进一步定位到对应的代码片段，如下图代码，注释掉透明度效果后问题不复现。
@@ -266,7 +266,7 @@ export struct MyVideoComponent_opacity {
 修改好的Trace表现如下图所示，在直通情况下，自绘制图层在图中“1”处获取Buffer，“2”处释放Buffer，无需交由RSUniRender进行重绘计算，也没有DisplayNode的刷新显示，达到预期的低功耗效果。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/WnbU3bfPQ9e23s3ffkBYpw/zh-cn_image_0000002411759196.png?HW-CC-KV=V1&HW-CC-Date=20260528T024723Z&HW-CC-Expire=86400&HW-CC-Sign=46F1F95B4CBA97BFF93D40984601B797B4D0461BBFA78C7C18D323F7B089E449)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/NK-72_-bRzmk4N_DjY50EA/zh-cn_image_0000002411759196.png?HW-CC-KV=V1&HW-CC-Date=20261009T012641Z&HW-CC-Expire=86400&HW-CC-Sign=9A27C171C9729AE557582369A8CCF9DE5DD77AF598AB0FB9C27EDB4C50CD97A8)
 
  
 > [!NOTE]

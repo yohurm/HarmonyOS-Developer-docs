@@ -1,6 +1,6 @@
 # 即时反馈（Toast）
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-toast
 
@@ -17,7 +17,7 @@
 
  - 合理使用弹出场景，避免过度提醒用户。
 
-  可以针对以下常用场景使用即时反馈操作，例如，当用户执行某个操作时及时结果反馈，用来提示用户操作是否成功或失败；或是当应用程序的状态发生变化时提供状态更新等。
+  可以针对以下常用场景使用即时反馈操作，例如，当用户执行某个操作时及时给出结果反馈，用来提示用户操作是否成功或失败；或是当应用程序的状态发生变化时提供状态更新等。
  - 注意文本的信息密度，即时反馈展示时间有限，应当避免长文本的出现。
 
   Toast控件的文本应该清晰可读，字体大小和颜色应该与应用程序的主题相符。除此之外，即时反馈控件本身不应该包含任何可交互的元素，如按钮或链接。
@@ -215,4 +215,4 @@ export struct OpenCloseToastExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/5tUiSaHtSF6_k1HzulZoKQ/zh-cn_image_0000002747210433.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072500Z&HW-CC-Expire=86400&HW-CC-Sign=86AB45E61BA75AC32A3B799A9B0222AF3355525565371528091CABD6F16A4685)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/y-wnVNyOQialhkd23xQ6jg/zh-cn_image_0000002779091409.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012624Z&HW-CC-Expire=86400&HW-CC-Sign=B0DD1767FEA2CBB98F47E7ADEBB9ACAF754166644E9A8379DF3731CF9A8EF6D6)

@@ -224,5 +224,68 @@
     "slug": "universal-keystore-glossary",
     "title": "Universal Keystore Kit术语",
     "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/universal-keystore-glossary"
+  },
+  {
+    "file": "安全/个人数据处理说明.md",
+    "name": "个人数据处理说明",
+    "slug": "huks-personal-data-processing-notice",
+    "title": "个人数据处理说明",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-personal-data-processing-notice"
+  },
+  {
+    "file": "网络/Connectivity Kit（短距通信服务）/获取星闪合作设备集合信息.md",
+    "name": "获取星闪合作设备集合信息",
+    "slug": "nearlink-cdsm-information-guide",
+    "title": "获取星闪合作设备集合信息",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nearlink-cdsm-information-guide"
+  },
+  {
+    "file": "网络/Connectivity Kit（短距通信服务）/星闪术语.md",
+    "name": "星闪术语",
+    "slug": "nearlink-glossary-guide",
+    "title": "星闪术语",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nearlink-glossary-guide"
+  },
+  {
+    "file": "网络/Connectivity Kit（短距通信服务）/星闪简介.md",
+    "name": "星闪简介",
+    "slug": "nearlink-introduction-guide",
+    "title": "星闪简介",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nearlink-introduction-guide"
+  },
+  {
+    "file": "网络/Connectivity Kit（短距通信服务）/使用星闪传输数据.md",
+    "name": "使用星闪传输数据",
+    "slug": "nearlink-data-transfer-guide",
+    "title": "使用星闪传输数据",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nearlink-data-transfer-guide"
+  },
+  {
+    "file": "网络/Connectivity Kit（短距通信服务）/星闪常见问题.md",
+    "name": "星闪常见问题",
+    "slug": "nearlink-faq-guide",
+    "title": "星闪常见问题",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nearlink-faq-guide"
+  },
+  {
+    "file": "网络/Connectivity Kit（短距通信服务）/开发准备.md",
+    "name": "开发准备",
+    "slug": "nearlink-preparations-guide",
+    "title": "开发准备",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nearlink-preparations-guide"
+  },
+  {
+    "file": "网络/Connectivity Kit（短距通信服务）/发现星闪设备.md",
+    "name": "发现星闪设备",
+    "slug": "nearlink-device-discovery-guide",
+    "title": "发现星闪设备",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nearlink-device-discovery-guide"
+  },
+  {
+    "file": "网络/Connectivity Kit（短距通信服务）/管理SSAP连接及服务.md",
+    "name": "管理SSAP连接及服务",
+    "slug": "nearlink-ssap-connection-guide",
+    "title": "管理SSAP连接及服务",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nearlink-ssap-connection-guide"
   }
 ]

@@ -1,13 +1,14 @@
 # preview_kit.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-23 02:54:26
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/openfileboost-preview__kit_8h
-**支持设备：** PC/2in1 | Tablet
+**支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
 
-**支持设备：** PC/2in1 | Tablet
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 声明Preview Kit所包含的所有头文件。
  

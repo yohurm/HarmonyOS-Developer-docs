@@ -1,6 +1,6 @@
 # avmetakeys.h
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avmetakeys-h
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -42,9 +42,9 @@
 | const char * OH_AVMETA_KEY_TRACK_INDEX | 轨道索引，值类型为int32_t。 起始版本： 23 |
 | const char * OH_AVMETA_KEY_TRACK_TYPE | 轨道类型，值类型为int32_t。 起始版本： 23 |
 | const char * OH_AVMETA_KEY_MIME_TYPE | 编解码器MIME类型，值类型为字符串（string）。 起始版本： 23 |
-| const char * OH_AVMETA_KEY_DURATION | 媒体时长（单位：微秒），值类型为int64_t。 起始版本： 23 |
+| const char * OH_AVMETA_KEY_DURATION | 媒体时长，单位为微秒（μs），值类型为int64_t。 起始版本： 23 |
 | const char * OH_AVMETA_KEY_BITRATE | 比特率（单位：bps），值类型为int64_t。 起始版本： 23 |
-| const char * OH_AVMETA_KEY_FRAME_RATE | 视频帧率，单位为每秒帧数（fps），值类型为double。 起始版本： 23 |
+| const char * OH_AVMETA_KEY_FRAME_RATE | 视频帧率（每100秒的帧数），值类型为double。 起始版本： 23 |
 | const char * OH_AVMETA_KEY_WIDTH | 视频宽度，单位为像素（px），值类型为int32_t。 起始版本： 23 |
 | const char * OH_AVMETA_KEY_HEIGHT | 视频高度，单位为像素（px），值类型为int32_t。 起始版本： 23 |
 | const char * OH_AVMETA_KEY_CHANNEL_COUNT | 音频声道数，值类型为int32_t。 起始版本： 23 |

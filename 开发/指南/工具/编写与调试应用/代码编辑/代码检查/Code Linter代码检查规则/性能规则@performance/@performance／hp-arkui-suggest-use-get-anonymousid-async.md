@@ -1,6 +1,6 @@
 # @performance/hp-arkui-suggest-use-get-anonymousid-async
 
-更新时间：2026-08-29 09:41:34
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hp-arkui-sg-anonymousid-async
 
@@ -34,7 +34,7 @@
 import { ifaa } from '@kit.OnlineAuthenticationKit'
 import { BusinessError } from '@kit.BasicServicesKit';
 
-// 开发者需要按照IIFAA的TLV格式构造入参，并转换为Uint8Array参数；此处arg需要开发者替换为真实入参。
+// 开发者需要按照IFAA的TLV格式构造入参，并转换为Uint8Array参数；此处arg需要开发者替换为真实入参。
 let arg = new Uint8Array([0]);
 let getAnonIdPromise: Promise<Uint8Array> = ifaa.getAnonymousId(arg);
 getAnonIdPromise.then(result => {
@@ -52,7 +52,7 @@ getAnonIdPromise.then(result => {
 ```text
 import { ifaa } from '@kit.OnlineAuthenticationKit'
 
-// 开发者需要按照IIFAA的TLV格式构造入参，并转换为Uint8Array参数；此处arg需要开发者替换为真实入参。
+// 开发者需要按照IFAA的TLV格式构造入参，并转换为Uint8Array参数；此处arg需要开发者替换为真实入参。
 let arg = new Uint8Array([0]);
 let getAnonIdResult: Uint8Array = ifaa.getAnonymousIdSync(arg);
 ```

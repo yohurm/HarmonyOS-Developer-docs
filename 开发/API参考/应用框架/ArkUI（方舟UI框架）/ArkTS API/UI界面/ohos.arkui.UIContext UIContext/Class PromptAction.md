@@ -1,6 +1,6 @@
 # Class (PromptAction)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-14 10:46:18
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-promptaction
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -356,9 +356,9 @@ showToast(options: promptAction.ShowToastOptions): void
 
 该示例通过options参数中的systemMaterial属性设置组件的系统材质，实现了Toast的沉浸光感效果。
 
-从API版本26.0.0开始，参数options的类型[promptAction.ShowToastOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-promptaction#showtoastoptions)中新增了systemMaterial属性。
+该示例配图为高算力设备强档效果，组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
 
-组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
+从API版本26.0.0开始，参数options的类型[promptAction.ShowToastOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-promptaction#showtoastoptions)中新增了systemMaterial属性。
 
 ```text
 import { PromptAction, promptAction, uiMaterial } from '@kit.ArkUI';
@@ -403,13 +403,13 @@ struct Index {
 未设置系统材质时：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/gS1pUU_nQ_23BWb32e4Tlw/zh-cn_image_0000002717612380.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072446Z&HW-CC-Expire=86400&HW-CC-Sign=1CF24337F02979E629B55C57E0168AFEF16CC8DF5269576F5DCA7A9EC66C1E21)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/08PtZt-AS3SKZ0Quv99W5Q/zh-cn_image_0000002749334312.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012613Z&HW-CC-Expire=86400&HW-CC-Sign=1C25A0FE2A039098265096F9C00A84AFCB56AC413A463BEBBF5DC14B02E9B858)
 
 
 设置系统材质后：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/-2iQQDw8TveqEidX4FZgDQ/zh-cn_image_0000002747292333.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072446Z&HW-CC-Expire=86400&HW-CC-Sign=F8B05BBAF90F64EE6C851CC45F48108C41F9C655BA38E3FA35150AAB64C102B2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/BQOlXFaUQy-F7qQC6YQEmA/zh-cn_image_0000002749494198.gif?HW-CC-KV=V1&HW-CC-Date=20261009T012613Z&HW-CC-Expire=86400&HW-CC-Sign=F94DCA81068784EF532B2008BAB97E88C416692B8BC609CB69AF7651505F168F)
 
 
 

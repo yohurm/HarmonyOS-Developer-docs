@@ -1,6 +1,6 @@
 # ToolBarV2
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-30 06:16:13
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-toolbarv2
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -39,7 +39,7 @@ import { ToolBarV2 } from '@kit.ArkUI';
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-ToolBarV2({toolBarList: ToolBarV2Item[], activatedIndex?: number, dividerModifier: DividerModifier, toolBarModifier: ToolBarV2Modifier})
+ToolBarV2({toolBarList: ToolBarV2Item[], activatedIndex?: number, dividerModifier?: DividerModifier, toolBarModifier?: ToolBarV2Modifier})
 
 工具栏。
 
@@ -1005,4 +1005,4 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/Idp8CsHzSkSo2Eh6vqYJiA/zh-cn_image_0000002717613184.png?HW-CC-KV=V1&HW-CC-Date=20260911T073030Z&HW-CC-Expire=86400&HW-CC-Sign=56CBFBD53C8B34BF30BF3D9BABFBC401EB5A94B83BDF14330678796F644C2335)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/PM7k_VgSTcWjWpcIy10ZpQ/zh-cn_image_0000002779094197.png?HW-CC-KV=V1&HW-CC-Date=20261009T013039Z&HW-CC-Expire=86400&HW-CC-Sign=B758F920058C7E5EB58F26F8ADC1BEA80073CF800465A9F132C5CEA177954AA4)

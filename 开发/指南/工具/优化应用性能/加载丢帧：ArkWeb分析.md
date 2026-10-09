@@ -1,10 +1,10 @@
 # 加载丢帧：ArkWeb分析
 
-更新时间：2026-07-28 12:07:32
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-profiler-arkweb
 
-#### 功能介绍
+## 功能介绍
 
  
 应用开发过程中，会通过在App中嵌入WebView以提高开发效率，可能面临ArkWeb加载和丢帧等问题。DevEco Profiler提供ArkWeb分析模板，可以结合ArkWeb执行流程的关键trace点来定位问题发生的阶段。如果问题发生在渲染阶段，可以结合H:RosenWeb数据，线程运行状态以及帧渲染流程打点数据，进一步分析丢帧问题。
@@ -23,7 +23,7 @@ ArkWeb模板支持的泳道包括：ArkWeb、User Events、ArkTS Callstack、Cal
 
  
 
-#### ArkWeb加载问题分析
+## ArkWeb加载问题分析
 
 根据Web页面加载过程中的关键trace点，划分了五个阶段，分别是：点击事件（Click Event）， 组件初始化（Component Initialization），主资源下载（Primary Resource Download），子资源下载（Sub-resource Download），渲染输出（Render And Output）。
  
@@ -37,7 +37,7 @@ ArkWeb模板支持的泳道包括：ArkWeb、User Events、ArkTS Callstack、Cal
  
  
 
-#### ArkWeb丢帧问题分析
+## ArkWeb丢帧问题分析
 1. **ArkWeb**子泳道聚合了Web相关线程的trace信息，通过分析Web渲染过程的关键函数的trace点，可以分析出每一帧的执行流程。聚合的Web线程信息如下：
 
   
@@ -66,4 +66,4 @@ H:RosenWeb：用于记录准备提交给Render Service进行统一渲染的数�
 2. 点选某一行，可以查看该URL对应的缓存信息。包括缓存存在时长、最后修改时刻、过期时刻、缓存指令、资源的唯一标识符以及资源是否过期。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/ZZ7HXx4PSaety-EHayStEg/zh-cn_image_0000002647917740.png?HW-CC-KV=V1&HW-CC-Date=20260730T071823Z&HW-CC-Expire=86400&HW-CC-Sign=ECD4F39ADFADD5953B6EB79DB6D268B344C1DA51CD40ECB70930D518E6AB048A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/a08sMOXqR66G-D4MkX6qWA/zh-cn_image_0000002701663770.png?HW-CC-KV=V1&HW-CC-Date=20261009T012823Z&HW-CC-Expire=86400&HW-CC-Sign=9A1071112B2F95399A35284FEB4B6F6FBA4F219C6B6DFD691F962018F19FB7AA)

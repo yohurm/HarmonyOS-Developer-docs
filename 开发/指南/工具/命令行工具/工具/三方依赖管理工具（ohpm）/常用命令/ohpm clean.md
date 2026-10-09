@@ -1,13 +1,13 @@
 # ohpm clean
 
-更新时间：2026-06-12 06:54:33
+更新时间：2026-10-08 09:38:49
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-clean
 
 清理工程下所有模块的ohpm安装产物。
  
 
-#### 命令格式
+## 命令格式
 
 ```text
 ohpm clean|cls
@@ -15,17 +15,17 @@ ohpm clean|cls
  
  
 
-#### 功能描述
+## 功能描述
 
 清理工程下所有模块的oh_modules目录、oh-package-lock.json5文件和oh-package-targetName-lock.json5文件（指定选项--target_path安装时生成），清理完成后会在控制台打印耗时信息。
  
  
 
-#### Options
+## Options
 
  
 
-#### keep-lockfile
+### keep-lockfile
 
 - 默认值：false
 - 类型：Boolean
@@ -36,7 +36,7 @@ ohpm clean|cls
  
  
 
-#### log_level
+### log_level
 
 - 默认值：无
 - 类型：String
@@ -46,7 +46,7 @@ ohpm clean|cls
  
  
 
-#### debug
+### debug
 
 - 默认值：false
 - 类型：Boolean
@@ -56,7 +56,7 @@ ohpm clean|cls
  
  
 
-#### 注意事项
+## 注意事项
 
 - clean命令只会清理工程根目录和在build-profile.json5文件中modules节点下配置的模块。
 - 当build-profile.json5文件不存在时，当前oh-package.json5文件所在目录即为工程根目录。
@@ -64,7 +64,7 @@ ohpm clean|cls
  
  
 
-#### 示例
+## 示例
 
 当前工程为 test，子模块为testModule1，工程结构如下：
 ```json
@@ -77,16 +77,16 @@ test
 ```
  
  
-
  
+
 在当前工程的任意子目录执行（以libs目录下执行为例）：
 ```text
 ohpm clean
 ```
  
  
-
  
+
 结果示例：
 ```text
 D:\test\testModule1\libs>ohpm clean 

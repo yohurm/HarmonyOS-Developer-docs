@@ -1,6 +1,6 @@
 # Interface (AVCastController)
 
-更新时间：2026-09-09 06:54:05
+更新时间：2026-09-24 09:52:23
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-avsession-avcastcontroller
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -1195,7 +1195,7 @@ avCastController.on('mediaItemChange', (item: avSession.AVQueueItem) => {
 
 off(type: 'mediaItemChange'): void
 
-取消设置投播当前播放媒体内容事件监听。指定callback，可取消对应监听；未指定callback，取消所有事件监听。
+取消设置投播当前播放媒体内容事件监听。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1280,7 +1280,7 @@ avCastController.on('playNext', () => {
 
 off(type: 'playNext'): void
 
-取消设置播放下一首资源事件监听。指定callback，可取消对应监听；未指定callback，取消所有事件监听。
+取消设置播放下一首资源事件监听。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1365,7 +1365,7 @@ avCastController.on('playPrevious', () => {
 
 off(type: 'playPrevious'): void
 
-取消设置播放上一首资源事件监听。指定callback，可取消对应监听；未指定callback，取消所有事件监听。
+取消设置播放上一首资源事件监听。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1614,7 +1614,7 @@ avCastController.on('seekDone', (pos: number) => {
 
 off(type: 'seekDone'): void
 
-取消设置seek结束事件监听。指定callback，可取消对应监听；未指定callback，取消所有事件监听。
+取消设置seek结束事件监听。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1782,7 +1782,7 @@ avCastController.on('videoSizeChange', (width: number, height: number) => {
 
 off(type: 'videoSizeChange'): void
 
-取消视频尺寸事件监听。指定callback，可取消对应监听；未指定callback，取消所有事件监听。
+取消视频尺寸事件监听。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVCast
 
@@ -1873,7 +1873,7 @@ avCastController.on('error', (error: BusinessError) => {
 
 off(type: 'error'): void
 
-取消播放的错误事件监听。指定callback，可取消对应监听；未指定callback，取消所有事件监听。
+取消播放的错误事件监听。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 

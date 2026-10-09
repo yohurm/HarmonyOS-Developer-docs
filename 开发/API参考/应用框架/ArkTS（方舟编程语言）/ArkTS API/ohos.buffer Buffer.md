@@ -1,6 +1,6 @@
 # @ohos.buffer (Buffer)
 
-更新时间：2026-08-29 09:41:17
+更新时间：2026-09-20 11:26:08
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-buffer
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -789,7 +789,7 @@ compare(target: Buffer | Uint8Array, targetStart?: number, targetEnd?: number, s
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 返回比较结果。-1：当前排列在目标前，0：当前与目标相同，1：当前排列在目标后。 |
+| -1 \| 0 \| 1 | 返回比较结果。-1：当前排列在目标前，0：当前与目标相同，1：当前排列在目标后。 |
  
  
 **错误码：**

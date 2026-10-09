@@ -30,6 +30,7 @@
 实现方案如下：
   
 | 应用场景 | 实现方案 | 实现效果 | 方案对比 |
+| --- | --- | --- | --- |
 | 场景一：在Tabs组件切换时实现全局监听。 | 方案：使用uiObserver.on('tabContentUpdate')实现监听。 | 不依赖组件内部逻辑，实现全局解耦。可获取TabContent的tabContentId、state、index等切换信息。 | / |
 | 场景二：实现对TabContent组件可见状态变化的监听。 | 方案一：使用onWillShow和onWillHide实现监听。 | onWillShow在TabContent即将完全显示前打开视频，onWillHide在TabContent即将完全隐藏前关闭视频。 | 仅支持监听所绑定的单个TabContent显隐。 |
 | 场景二：实现对TabContent组件可见状态变化的监听。 | 方案二：使用onVisibleAreaChange实现监听。 | 进入监听范围开启视频，离开监听范围关闭视频。 | 可精细监听组件在屏幕内的可见区域变化。 |
